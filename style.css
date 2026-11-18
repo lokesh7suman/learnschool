@@ -67,19 +67,20 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
-textarea,
 select {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 12px 20px;
+	min-height: 52px;
+	padding: 14px 24px;
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast);
 	border: 1.5px solid #e2e8f0;
-	border-radius: 16px;
+	border-radius: 9999px;
 	font-family: var(--wp--preset--font-family--quicksand), system-ui, sans-serif;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight: 500;
 	line-height: 1.5;
-	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 input[type="text"]:focus,
@@ -93,23 +94,34 @@ textarea:focus,
 select:focus {
 	outline: none;
 	border-color: var(--wp--preset--color--primary);
-	box-shadow: 0 0 0 3px rgba(112, 79, 230, 0.16);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
 }
 
 input::placeholder,
 textarea::placeholder {
 	color: #94a3b8;
+	font-weight: 400;
 }
 
 textarea {
-	min-height: 120px;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 130px;
+	padding: 18px 24px;
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast);
+	border: 1.5px solid #e2e8f0;
+	border-radius: 24px;
+	font-family: var(--wp--preset--font-family--quicksand), system-ui, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
 	resize: vertical;
-	border-radius: 18px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 select {
 	border-radius: 9999px;
-	padding-right: 40px;
+	padding-right: 44px;
 	cursor: pointer;
 }
 
@@ -2545,8 +2557,8 @@ input.wk-cta-input-field,
 .wk-cta-input {
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast, #121212);
-	border-radius: 64px;
-	height: 60px;
+	border-radius: 9999px;
+	height: 58px;
 	padding: 0 28px;
 	font-size: 16px;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
@@ -2555,16 +2567,17 @@ input.wk-cta-input-field,
 	width: 100%;
 	max-width: 453px;
 	box-sizing: border-box;
-	border: 1px solid transparent;
+	border: 1.5px solid transparent;
 	outline: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .wk-cta-input-field:focus,
 input.wk-cta-input-field:focus,
 .wk-cta-input:focus {
-	border-color: var(--wp--preset--color--secondary);
-	box-shadow: 0 0 0 3px rgba(255, 190, 23, 0.35);
+	border-color: var(--wp--preset--color--secondary, #ffbe17);
+	box-shadow: 0 0 0 4px rgba(255, 190, 23, 0.4);
 }
 
 .wk-cta-input-field:user-invalid,
@@ -2580,21 +2593,22 @@ input.wk-cta-input-field:user-invalid,
 .wk-cta-submit-btn .wp-block-button__link,
 button.wk-cta-submit-btn,
 .wk-cta-submit-btn {
-	background-color: var(--wp--preset--color--secondary-dark);
-	color: var(--wp--preset--color--contrast);
+	background-color: var(--wp--preset--color--secondary, #ffbe17);
+	color: var(--wp--preset--color--contrast, #121028);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	height: 56px;
-	border-radius: 40px;
-	padding: 8px 48px;
+	border-radius: 9999px;
+	padding: 0 48px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	border: none;
 	cursor: pointer;
 	text-decoration: none;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 4px 14px rgba(255, 190, 23, 0.35);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link:hover,
@@ -2603,8 +2617,9 @@ button.wk-cta-submit-btn,
 .wk-cta-submit-btn .wp-block-button__link:hover,
 button.wk-cta-submit-btn:hover,
 .wk-cta-submit-btn:hover {
+	background-color: #f5a600;
 	transform: translateY(-2px);
-	box-shadow: 0 8px 20px rgba(255, 184, 2, 0.45);
+	box-shadow: 0 8px 24px rgba(255, 184, 2, 0.5);
 }
 
 .wk-cta-input {
@@ -2902,14 +2917,14 @@ button.wk-cta-submit-btn:hover,
 	font-size: 15px;
 	font-weight: 700;
 	cursor: pointer;
-	box-shadow: 0 8px 20px -4px rgba(112, 79, 230, 0.35);
+	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.15);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .form-submit input[type="submit"]:hover {
 	background-color: var(--wp--preset--color--primary-dark);
 	transform: translateY(-2px);
-	box-shadow: 0 12px 24px -4px rgba(112, 79, 230, 0.45);
+	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.25);
 }
 
 /* Modern Rounded Table Block */
@@ -3137,36 +3152,83 @@ hr {
 	padding: 4px 0;
 }
 
-/* Search Block */
+/* Search Block - Unified Pill Implementation */
 .wp-block-search {
 	margin: 24px 0;
 }
 
 .wp-block-search__input {
 	border-radius: 9999px;
-	padding: 12px 22px;
+	padding: 14px 24px;
+	min-height: 50px;
 	border: 1.5px solid #e2e8f0;
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
+	font-size: 15px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-search__input:focus {
+	outline: none;
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
 }
 
 .wp-block-search__button {
 	border-radius: 9999px;
-	padding: 12px 26px;
+	padding: 12px 28px;
+	min-height: 50px;
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base, #fff);
 	border: none;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-weight: 700;
+	font-size: 15px;
 	cursor: pointer;
-	box-shadow: 0 6px 18px -3px rgba(112, 79, 230, 0.3);
-	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.2);
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .wp-block-search__button:hover {
 	background-color: var(--wp--preset--color--primary-dark);
 	transform: translateY(-1px);
-	box-shadow: 0 10px 22px -3px rgba(112, 79, 230, 0.4);
+	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.3);
+}
+
+/* Button-Inside Unified Single Pill Layout */
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	display: flex;
+	align-items: center;
+	padding: 5px 6px 5px 22px;
+	border: 1.5px solid #e2e8f0;
+	border-radius: 9999px;
+	background-color: var(--wp--preset--color--base, #fff);
+	box-sizing: border-box;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper:focus-within {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__input {
+	border: none !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	padding: 8px 12px 8px 0 !important;
+	min-height: auto !important;
+	height: auto !important;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__button {
+	border-radius: 9999px;
+	padding: 10px 24px;
+	min-height: 42px;
+	font-size: 14px;
+	flex-shrink: 0;
 }
 
 /* Post Terms & Category Badges */
