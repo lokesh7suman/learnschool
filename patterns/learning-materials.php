@@ -2,7 +2,7 @@
 /**
  * Title: Learning Materials
  * Slug: learnschool/learning-materials
- * Categories: featured, services, learnschool
+ * Categories: services, learnschool
  * Description: Showcase section with student photography and enjoyable learning materials.
  * Keywords: materials, showcase, learning, education
  *

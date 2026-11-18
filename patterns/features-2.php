@@ -2,7 +2,7 @@
 /**
  * Title: Features - Four-Step Learning Journey
  * Slug: learnschool/features-2
- * Categories: services, featured
+ * Categories: services, learnschool
  * Keywords: steps, journey, progression, features, process, milestone
  * Description: Four-column sequential journey cards highlighting the student learning progression from discovery to mastery.
  * Inserter: yes

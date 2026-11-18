@@ -2,7 +2,7 @@
 /**
  * Title: Course & Program Catalog Grid
  * Slug: learnschool/course-catalog
- * Categories: featured, learnschool
+ * Categories: services, learnschool
  * Keywords: courses, programs, curriculum, academy, classes, subjects
  * Description: Academic course and program showcase grid with age brackets, duration badges, teacher info, and enrollment links.
  * Inserter: yes

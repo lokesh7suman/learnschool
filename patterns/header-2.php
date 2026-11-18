@@ -2,7 +2,7 @@
 /**
  * Title: Header - Two-Row with Top Utility Bar
  * Slug: learnschool/header-2
- * Categories: header
+ * Categories: header, learnschool
  * Block Types: core/template-part/header
  * Keywords: header, two-row, utility, top-bar, contact, portals, navigation
  * Description: Two-tier header featuring a top utility contact strip above the primary navigation bar.

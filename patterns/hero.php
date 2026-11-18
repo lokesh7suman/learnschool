@@ -2,7 +2,7 @@
 /**
  * Title: School Hero with Tour Booking & Arch Photo
  * Slug: learnschool/hero
- * Categories: school-hero, featured, learnschool
+ * Categories: banner, featured, learnschool
  * Description: Split hero layout with headline, handwriting accent, tour booking CTA, trust metrics, and arch-framed classroom portrait.
  * Keywords: hero, banner, tour, admissions, preschool, kindergarten
  *

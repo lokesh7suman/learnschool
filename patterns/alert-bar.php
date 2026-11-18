@@ -2,7 +2,7 @@
 /**
  * Title: Alert Bar
  * Slug: learnschool/alert-bar
- * Categories: banner, header
+ * Categories: banner, learnschool
  * Keywords: alert, notice, emergency, banner, announcement
  * Description: A high-visibility alert banner for urgent school notices and announcements.
  * Inserter: yes

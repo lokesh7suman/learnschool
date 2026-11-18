@@ -2,7 +2,7 @@
 /**
  * Title: School Complete Home Page Starter
  * Slug: learnschool/page-home-starter
- * Categories: school-pages, pages, learnschool
+ * Categories: pages, featured, learnschool
  * Description: Complete full-page starter layout for preschools, daycares, and kindergartens.
  * Keywords: home, starter, full page, preschool, kindergarten, template
  *

@@ -2,7 +2,7 @@
 /**
  * Title: Call to Action
  * Slug: learnschool/call-to-action
- * Categories: call-to-action, banner, learnschool
+ * Categories: call-to-action, learnschool
  * Description: Curved purple call-to-action card with mascot student illustration, cursive title, and pill form inputs.
  * Keywords: cta, call to action, subscribe, form, learnschool
  *

@@ -2,7 +2,7 @@
 /**
  * Title: Call to Action (Split Card with Benefits)
  * Slug: learnschool/call-to-action-2
- * Categories: call-to-action, banner
+ * Categories: call-to-action, learnschool
  * Keywords: cta, split, benefits, checkmarks, inquiry, form
  * Description: Two-tone split call-to-action card showcasing institutional benefits on the left and an admissions inquiry form on the right.
  * Inserter: yes
