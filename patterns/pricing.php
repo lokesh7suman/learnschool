@@ -20,8 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"center","level":2,"className":"wk-section-title"} -->
-<h2 class="wp-block-heading has-text-align-center wk-section-title"><?php echo esc_html__( 'Simple, Transparent Tuition Plans', 'learnschool' ); ?></h2>
+<div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"center","level":2} -->
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Simple, Transparent Tuition Plans', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-6"}}},"textColor":"contrast-subtle"} -->
@@ -30,8 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"level":3,"metadata":{"name":"plan_1_title","bindings":{"content":{"source":"core/pattern-overrides"}}},"fontSize":"large"} -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"metadata":{"name":"plan_1_title","bindings":{"content":{"source":"core/pattern-overrides"}}},"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Explorer', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
@@ -45,7 +46,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks"><li><?php echo esc_html__( 'Morning sessions (9am - 12pm)', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Creative arts & sensory play', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Healthy snack included daily', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Parent communication portal', 'learnschool' ); ?></li></ul>
-<!-- /wp:list -->
+<!-- /wp:list --></div>
+<!-- /wp:group -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-5)"><!-- wp:button {"metadata":{"name":"plan_1_cta","bindings":{"text":{"source":"core/pattern-overrides"},"url":{"source":"core/pattern-overrides"}}},"className":"is-style-learnschool-outline"} -->
@@ -56,8 +58,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"border":{"color":"var:preset|color|primary","width":"2px"},"shadow":"var:preset|shadow|elevated"},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-border-color has-primary-border-color has-base-background-color has-background" style="border-color:var(--wp--preset--color--primary);border-width:2px;box-shadow:var(--wp--preset--shadow--elevated);padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"4px","bottom":"4px","left":"12px","right":"12px"}}},"backgroundColor":"primary-light","layout":{"type":"flex","justifyContent":"left"}} -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"border":{"color":"var:preset|color|primary","width":"2px"},"shadow":"var:preset|shadow|elevated"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-border-color has-primary-border-color has-base-background-color has-background" style="border-color:var(--wp--preset--color--primary);border-width:2px;box-shadow:var(--wp--preset--shadow--elevated);min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"4px","bottom":"4px","left":"12px","right":"12px"}}},"backgroundColor":"primary-light","layout":{"type":"flex","justifyContent":"left"}} -->
 <div class="wp-block-group has-primary-light-background-color has-background" style="border-radius:9999px;padding-top:4px;padding-right:12px;padding-bottom:4px;padding-left:12px"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"primary-dark","fontSize":"x-small"} -->
 <p class="has-primary-dark-color has-text-color has-x-small-font-size" style="font-weight:700"><?php echo esc_html__( 'MOST POPULAR', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
@@ -77,7 +80,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks"><li><?php echo esc_html__( 'Full day (8:30am - 3:30pm)', 'learnschool' ); ?></li><li><?php echo esc_html__( 'STEM, coding & language labs', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Organic lunch & 2 snacks included', 'learnschool' ); ?></li><li><?php echo esc_html__( 'After-school club access included', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Weekly progress reports & portfolio', 'learnschool' ); ?></li></ul>
-<!-- /wp:list -->
+<!-- /wp:list --></div>
+<!-- /wp:group -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-5)"><!-- wp:button {"metadata":{"name":"plan_2_cta","bindings":{"text":{"source":"core/pattern-overrides"},"url":{"source":"core/pattern-overrides"}}},"className":"is-style-learnschool-pill"} -->
@@ -88,8 +92,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"level":3,"metadata":{"name":"plan_3_title","bindings":{"content":{"source":"core/pattern-overrides"}}},"fontSize":"large"} -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"metadata":{"name":"plan_3_title","bindings":{"content":{"source":"core/pattern-overrides"}}},"fontSize":"large"} -->
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Scholar Honor', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
@@ -103,7 +108,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks"><li><?php echo esc_html__( 'Extended hours (8am - 5:30pm)', 'learnschool' ); ?></li><li><?php echo esc_html__( '1-on-1 tutoring (4 hrs/month)', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Robotics, chess & math Olympiad', 'learnschool' ); ?></li><li><?php echo esc_html__( 'All field trips & materials covered', 'learnschool' ); ?></li><li><?php echo esc_html__( 'Dedicated academic advisor', 'learnschool' ); ?></li></ul>
-<!-- /wp:list -->
+<!-- /wp:list --></div>
+<!-- /wp:group -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-5)"><!-- wp:button {"metadata":{"name":"plan_3_cta","bindings":{"text":{"source":"core/pattern-overrides"},"url":{"source":"core/pattern-overrides"}}},"className":"is-style-learnschool-outline"} -->
@@ -113,4 +119,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
