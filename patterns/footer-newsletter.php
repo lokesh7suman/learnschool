@@ -22,10 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"tagName":"footer","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-6","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <footer class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-6);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"30%"} -->
-<div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"className":"wk-logo-group","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
-<div class="wp-block-group wk-logo-group"><!-- wp:site-logo {"width":34,"className":"wk-logo-icon","shouldSyncIcon":false} /-->
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":34,"shouldSyncIcon":false} /-->
 
-<!-- wp:site-title {"className":"wk-logo-title","level":0,"isLink":true} /--></div>
+<!-- wp:site-title {"level":0,"isLink":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -36,17 +36,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '100 Academy Way, Cambridge, MA', 'learnschool' ); ?><br><a href="tel:5552345678" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Phone: (555) 234-5678', 'learnschool' ); ?></a><br><a href="mailto:info@learnschool.edu" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Email: info@learnschool.edu', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"className":"wk-footer-doodles","layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
-<div class="wp-block-group wk-footer-doodles" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":36,"height":36,"sizeSlug":"full","className":"wk-footer-doodle-star"} -->
-<figure class="wp-block-image size-full is-resized wk-footer-doodle-star"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-star.svg' ) ); ?>" alt=""/></figure>
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":36,"height":36,"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-star.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"width":36,"height":36,"sizeSlug":"full","className":"wk-footer-doodle-circle"} -->
-<figure class="wp-block-image size-full is-resized wk-footer-doodle-circle"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/footer-circle-doodle.svg' ) ); ?>" alt=""/></figure>
+<!-- wp:image {"width":36,"height":36,"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/footer-circle-doodle.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"width":36,"height":36,"sizeSlug":"full","className":"wk-footer-doodle-wavy"} -->
-<figure class="wp-block-image size-full is-resized wk-footer-doodle-wavy"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-wavy.svg' ) ); ?>" alt=""/></figure>
+<!-- wp:image {"width":36,"height":36,"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-wavy.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -80,25 +80,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Subscribe to our weekly school bulletin and educational parenting guides.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:html -->
-<form class="learnschool-newsletter-form" action="#" method="post" style="display:flex;gap:8px;margin-top:12px;margin-bottom:16px;flex-wrap:wrap">
-<label class="screen-reader-text" for="learnschool-footer2-email"><?php echo esc_html__( 'Email Address', 'learnschool' ); ?></label>
-<input id="learnschool-footer2-email" type="email" name="email" placeholder="<?php echo esc_attr__( 'Enter your email...', 'learnschool' ); ?>" required style="flex:1;min-width:160px;border-radius:9999px;border:1px solid var(--wp--preset--color--contrast-subtle, #d1d5db);padding:8px 14px;font-size:14px"/>
-<button type="submit" class="wp-block-button__link wp-element-button" style="border-radius:9999px;background-color:var(--wp--preset--color--primary);color:var(--wp--preset--color--base);padding:8px 16px;font-size:14px;border:none;cursor:pointer"><?php echo esc_html__( 'Subscribe', 'learnschool' ); ?></button>
-</form>
-<!-- /wp:html -->
+<!-- wp:search {"label":"<?php echo esc_attr__( 'Email Address', 'learnschool' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( 'Enter your email address', 'learnschool' ); ?>","buttonText":"<?php echo esc_attr__( 'Subscribe', 'learnschool' ); ?>","buttonPosition":"button-inside","buttonUseIcon":false,"style":{"border":{"radius":"100px"}}} /-->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
-<div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"wk-social-circle"} -->
-<figure class="wp-block-image size-full wk-social-circle"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-1.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Instagram', 'learnschool' ); ?>"/></a></figure>
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-1.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Instagram', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"wk-social-circle"} -->
-<figure class="wp-block-image size-full wk-social-circle"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-2.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Facebook', 'learnschool' ); ?>"/></a></figure>
+<!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-2.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Facebook', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"wk-social-circle"} -->
-<figure class="wp-block-image size-full wk-social-circle"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>"/></a></figure>
+<!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
