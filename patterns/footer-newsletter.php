@@ -93,6 +93,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
 <figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-4.svg' ) ); ?>" alt="<?php echo esc_attr__( 'YouTube', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
