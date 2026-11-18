@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Pastel Nursery",
+	"slug": "pastel-nursery",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base",            "color": "#faf9fe", "name": "Base / Pastel Whisper" },
+				{ "slug": "base-subtle",     "color": "#f1effd", "name": "Base Subtle / Soft Lavender" },
+				{ "slug": "contrast",        "color": "#1c192b", "name": "Contrast / Midnight Ink" },
+				{ "slug": "contrast-subtle", "color": "#5e577a", "name": "Contrast Subtle / Muted Iris" },
+				{ "slug": "primary",         "color": "#8b6bf7", "name": "Primary / Pastel Violet" },
+				{ "slug": "primary-dark",    "color": "#6e4ce0", "name": "Primary Dark" },
+				{ "slug": "primary-light",   "color": "#dec8fe", "name": "Primary Light / Lilac Mist" },
+				{ "slug": "secondary",       "color": "#4ecdc4", "name": "Secondary / Pastel Mint" },
+				{ "slug": "secondary-dark",  "color": "#2ca89f", "name": "Secondary Dark" },
+				{ "slug": "accent",          "color": "#ffd25d", "name": "Accent / Pastel Yellow" },
+				{ "slug": "surface",         "color": "#ffffff", "name": "Surface / White" },
+				{ "slug": "surface-slate",   "color": "#f7f6fc", "name": "Surface Tint" },
+				{ "slug": "border",          "color": "#e2def2", "name": "Border / Iris Tint" },
+				{ "slug": "success",         "color": "#16a34a", "name": "Success" },
+				{ "slug": "error",           "color": "#dc2626", "name": "Error" },
+				{ "slug": "warning",         "color": "#fef3c7", "name": "Warning Background" },
+				{ "slug": "warning-text",    "color": "#92400e", "name": "Warning Text" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|contrast"
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "var:preset|color|primary" },
+				":hover": { "color": { "text": "var:preset|color|primary-dark" } }
+			},
+			"heading": {
+				"color": { "text": "var:preset|color|contrast" }
+			},
+			"button": {
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|surface"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|primary-dark",
+						"text": "var:preset|color|surface"
+					}
+				}
+			}
+		}
+	}
+}

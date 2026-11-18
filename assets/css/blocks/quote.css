@@ -1,0 +1,24 @@
+/* Block Style: core/quote */
+
+.wp-block-quote.is-style-learnschool-philosophy {
+	position: relative;
+	border-left: 4px solid var(--wp--preset--color--primary, #d96b43);
+	padding: 1.5rem 1.75rem;
+	background-color: var(--wp--preset--color--base-alt, #f7f4ee);
+	border-radius: 0 20px 20px 0;
+}
+
+.wp-block-quote.is-style-learnschool-philosophy p {
+	font-size: var(--wp--preset--font-size--large, 1.5rem);
+	font-style: italic;
+	line-height: 1.5;
+	color: var(--wp--preset--color--contrast, #1f2937);
+	margin-bottom: 0.5rem;
+}
+
+.wp-block-quote.is-style-learnschool-philosophy cite {
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-style: normal;
+	font-weight: 700;
+	color: var(--wp--preset--color--contrast-subtle, #4b5563);
+}

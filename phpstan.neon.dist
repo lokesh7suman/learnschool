@@ -8,8 +8,9 @@ parameters:
         - patterns
         - inc
     excludePaths:
-        - vendor/
-        - node_modules/
-        - assets/
-        - build/
+        analyseAndScan:
+            - vendor/ (?)
+            - node_modules/ (?)
+            - assets/ (?)
+            - build/ (?)
     treatPhpDocTypesAsCertain: false

@@ -1,11 +1,11 @@
 <?php
 /**
- * Title: Header
+ * Title: Header with Navigation & Tour CTA
  * Slug: learnschool/header
- * Categories: header
+ * Categories: header, learnschool
  * Block Types: core/template-part/header
- * Description: Header with logo, navigation links, and contact button.
- * Keywords: header, navigation, logo, menu
+ * Description: Clean mobile-first header with logo, navigation links, and a prominent Book a Tour pill CTA button.
+ * Keywords: header, navigation, logo, menu, tour, cta
  *
  * @package LearnSchool
  * @since 1.0.0
@@ -15,31 +15,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"align":"full","className":"wk-header-wrapper","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull wk-header-wrapper"><!-- wp:group {"align":"wide","className":"wk-header-inner","layout":{"type":"flex","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide wk-header-inner"><!-- wp:group {"className":"wk-logo-group","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group wk-logo-group"><!-- wp:site-logo {"width":34,"className":"wk-logo-icon","shouldSyncIcon":false} /-->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-3);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":40,"shouldSyncIcon":false} /-->
 
-<!-- wp:site-title {"className":"wk-logo-title","level":0,"isLink":true} /--></div>
+<!-- wp:site-title {"level":0,"isLink":true,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"className":"wk-header-nav","overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
+<!-- wp:navigation {"overlayMenu":"mobile","style":{"typography":{"fontWeight":"600"}},"layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Home', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/' ) ); ?>"} /-->
-<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Features', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#features' ) ); ?>"} /-->
-<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Materials', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#materials' ) ); ?>"} /-->
-<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Teachers', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#teachers' ) ); ?>"} /-->
-<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Blog', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/blog/' ) ); ?>"} /-->
-<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'FAQ', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#faq' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Programs', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#programs' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Admissions', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#admissions' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Curriculum', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#curriculum' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Educators', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#educators' ) ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Parent FAQs', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/#faq' ) ); ?>"} /-->
 <!-- /wp:navigation -->
 
-<!-- wp:group {"className":"wk-header-actions","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group wk-header-actions"><!-- wp:paragraph {"className":"wk-signin-link"} -->
-<p class="wk-signin-link"><a href="<?php echo esc_url( home_url( '/#signin' ) ); ?>"><?php echo esc_html__( 'Sign In', 'learnschool' ); ?></a></p>
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color" style="font-weight:600"><a href="<?php echo esc_url( 'tel:5551234567' ); ?>"><?php echo esc_html__( '(555) 123-4567', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline-purple wk-header-contact-btn"} -->
-<div class="wp-block-button is-style-outline-purple wk-header-contact-btn"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#contact' ) ); ?>"><?php echo esc_html__( 'Contact Us', 'learnschool' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill","backgroundColor":"primary","textColor":"base"} -->
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#tour' ) ); ?>"><?php echo esc_html__( 'Book a Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

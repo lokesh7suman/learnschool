@@ -1,0 +1,39 @@
+/* Block Style: core/group */
+
+.wp-block-group.is-style-learnschool-card {
+	border-radius: 24px;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	box-shadow: var(--wp--preset--shadow--card);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--elevated);
+}
+
+.wp-block-group.is-style-learnschool-surface {
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	border-radius: 28px;
+}
+
+.wp-block-group.is-style-learnschool-card-arch {
+	border-radius: 48px 48px 24px 24px;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	box-shadow: var(--wp--preset--shadow--card);
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card-arch:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--elevated);
+}
+
+.wp-block-group.is-style-learnschool-trust-strip {
+	border-top: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	border-bottom: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+}
