@@ -43,8 +43,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#admissions"><?php esc_html_e( 'Apply for Admission', 'learnschool' ); ?></a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"className":"is-style-outline-purple"} -->
-<div class="wp-block-button is-style-outline-purple"><a class="wp-block-button__link wp-element-button" href="#visit"><?php esc_html_e( 'Schedule Campus Visit', 'learnschool' ); ?></a></div>
+<!-- wp:button {"className":"is-style-learnschool-outline"} -->
+<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="#visit"><?php esc_html_e( 'Schedule Campus Visit', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></section>

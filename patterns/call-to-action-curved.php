@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="wp-block-group alignfull has-primary-background-color has-background has-base-color has-text-color" style="padding-top:var(--wp--preset--spacing--step-7);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4)">
 
 <!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|step-6"}}}} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-center" style="--wp--style--block-gap:var(--wp--preset--spacing--step-6)">
+<div class="wp-block-columns alignwide are-vertically-aligned-center">
 
 <!-- wp:column {"verticalAlignment":"center","width":"58%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:58%">

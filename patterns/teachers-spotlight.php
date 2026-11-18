@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:1px;text-transform:uppercase"><?php esc_html_e( 'Academic Leadership &amp; Faculty', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-2"}}},"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Meet Our Dedicated', 'learnschool' ); ?> <span class="wk-accent-joy"><?php echo esc_html__( 'Educators &amp; Mentors', 'learnschool' ); ?></span></h2>
+<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand"},"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-2"}}},"fontSize":"xx-large"} -->
+<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2);font-family:var(--wp--preset--font-family--quicksand)"><?php echo esc_html__( 'Meet Our Dedicated', 'learnschool' ); ?> <span style="font-family:var(--wp--preset--font-family--courgette);color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Educators &amp; Mentors', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
@@ -140,7 +140,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}}} -->
-<p style="font-weight:700"><a href="#careers" style="color:var(--wp--preset--color--primary-dark);text-decoration:none;"><?php echo esc_html__( 'View Open Positions →', 'learnschool' ); ?></a></p>
+<p style="font-weight:700"><a href="#careers" style="color:var(--wp--preset--color--primary-dark);text-decoration:none;"><?php echo esc_html__( 'View Open Positions', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

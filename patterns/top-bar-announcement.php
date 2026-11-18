@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="font-weight:700"><a href="<?php echo esc_url( home_url( '/#open-house' ) ); ?>" style="color:var(--wp--preset--color--secondary);text-decoration:none"><?php echo esc_html__( 'Fall 2026 Admissions Now Open — Register for Open House →', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size" style="font-weight:700"><a href="<?php echo esc_url( home_url( '/#open-house' ) ); ?>" style="color:var(--wp--preset--color--secondary);text-decoration:none"><?php echo esc_html__( 'Fall 2026 Admissions Now Open — Register for Open House', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->

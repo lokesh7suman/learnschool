@@ -37,15 +37,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":36,"height":36,"sizeSlug":"full"} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-star.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"width":36,"height":36,"sizeSlug":"full"} -->
+<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/footer-circle-doodle.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"width":36,"height":36,"sizeSlug":"full"} -->
+<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-wavy.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>

@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"fontSize":"small","textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( 'Enrolling for Fall →', 'learnschool' ); ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( 'Enrolling for Fall', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
