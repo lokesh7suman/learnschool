@@ -259,20 +259,20 @@ summary:focus-visible,
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 16px;
-	min-height: 54px;
+	gap: 12px;
+	min-height: 48px;
 	height: auto;
-	padding: 0.75rem 1rem 0.75rem 1.75rem;
+	padding: 0.625rem 0.875rem 0.625rem 1.5rem;
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base, #fff);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 600;
 	border-radius: 40px;
 	text-decoration: none;
 	border: none;
 	cursor: pointer;
-	box-shadow: 0 16px 36px -6px rgba(112, 79, 230, 0.30);
+	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.15);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 	position: relative;
 }
@@ -280,7 +280,7 @@ summary:focus-visible,
 .wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--primary-dark);
 	transform: translateY(-2px);
-	box-shadow: 0 20px 40px -4px rgba(112, 79, 230, 0.55);
+	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.25);
 }
 
 .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after {
@@ -288,14 +288,14 @@ summary:focus-visible,
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
+	width: 34px;
+	height: 34px;
 	border-radius: 50%;
 	background-color: rgba(255, 255, 255, 0.2);
 	background-image: url(assets/images/icons/arrow-diagonal-up-right-white.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 16px 16px;
+	background-size: 14px 14px;
 	flex-shrink: 0;
 	transition: transform 0.2s ease;
 }
@@ -3738,6 +3738,46 @@ figure.wp-block-gallery {
 	max-width: 420px;
 	margin: 20px 0 24px 32px;
 	text-align: right;
+}
+
+/* Site Branding (Modern Logo Mark + Text Title) */
+.wp-block-site-logo {
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+.wp-block-site-logo img {
+	display: block;
+	width: 36px;
+	height: 36px;
+	object-fit: contain;
+	transition: transform 0.25s ease;
+}
+
+.wp-block-site-logo a:hover img {
+	transform: scale(1.06) rotate(3deg);
+}
+
+.wp-block-site-title {
+	margin: 0;
+	line-height: 1.2;
+}
+
+.wp-block-site-title a {
+	color: var(--wp--preset--color--contrast, #1c1a2e) !important;
+	text-decoration: none !important;
+	font-weight: 800;
+	letter-spacing: -0.5px;
+	transition: opacity 0.2s ease;
+}
+
+.wp-block-site-title .learnschool-title-accent {
+	color: var(--wp--preset--color--primary, #5b42f3);
+}
+
+.wp-block-site-title a:hover {
+	opacity: 0.85;
 }
 
 /* Dots Separator Centering */

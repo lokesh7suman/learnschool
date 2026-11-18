@@ -1,0 +1,29 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mb-left" x1="6" y1="12" x2="24" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#764CFE"/>
+      <stop offset="100%" stop-color="#4A1FE2"/>
+    </linearGradient>
+    <linearGradient id="mb-right" x1="24" y1="12" x2="42" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#936DFF"/>
+      <stop offset="100%" stop-color="#5E31EB"/>
+    </linearGradient>
+    <linearGradient id="mb-spark" x1="18" y1="4" x2="30" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFD338"/>
+      <stop offset="100%" stop-color="#FF8A00"/>
+    </linearGradient>
+    <filter id="mb-shadow" x="2" y="2" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#4A1FE2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <g filter="url(#mb-shadow)">
+    <!-- Left Wing / Curved Book Page -->
+    <path d="M8 32C8 20 16 12 23 11V37C17 37 11 35 8 32Z" fill="url(#mb-left)"/>
+    <path d="M8 32C8 35.314 10.686 38 14 38H23V37C17 37 11 35 8 32Z" fill="#3210AC"/>
+    <!-- Right Wing / Curved Book Page -->
+    <path d="M40 32C40 20 32 12 25 11V37C31 37 37 35 40 32Z" fill="url(#mb-right)"/>
+    <path d="M40 32C40 35.314 37.314 38 34 38H25V37C31 37 37 35 40 32Z" fill="#3C15BE"/>
+    <!-- Radiant 4-Point Star Rising from center -->
+    <path d="M24 4C24 9.5 20.5 13 15 14C20.5 15 24 18.5 24 24C24 18.5 27.5 15 33 14C27.5 13 24 9.5 24 4Z" fill="url(#mb-spark)"/>
+  </g>
+</svg>

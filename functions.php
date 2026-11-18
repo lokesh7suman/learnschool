@@ -69,3 +69,24 @@ add_action( 'wp_enqueue_scripts', 'learnschool_scripts' );
 // Load modular component configurations.
 require_once get_template_directory() . '/inc/pattern-categories.php';
 require_once get_template_directory() . '/inc/block-styles.php';
+
+if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
+	/**
+	 * Style the site title wordmark with two-tone branding ("Learn" in dark, "School" in brand purple).
+	 *
+	 * @since 1.0.0
+	 * @param string $block_content Rendered block HTML.
+	 * @return string Modified block HTML.
+	 */
+	function learnschool_filter_site_title( $block_content ) {
+		if ( ! is_admin() && is_string( $block_content ) && false !== strpos( $block_content, 'LearnSchool' ) ) {
+			return str_replace(
+				'LearnSchool',
+				'Learn<span class="learnschool-title-accent">School</span>',
+				$block_content
+			);
+		}
+		return (string) $block_content;
+	}
+endif;
+add_filter( 'render_block_core/site-title', 'learnschool_filter_site_title' );

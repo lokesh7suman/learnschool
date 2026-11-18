@@ -1,0 +1,25 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ma-grad-purple" x1="6" y1="6" x2="36" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7B5AF7"/>
+      <stop offset="100%" stop-color="#4C23E7"/>
+    </linearGradient>
+    <linearGradient id="ma-grad-gold" x1="16" y1="10" x2="42" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFC837"/>
+      <stop offset="100%" stop-color="#FF9200"/>
+    </linearGradient>
+    <filter id="ma-shadow" x="0" y="2" width="48" height="46" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#4C23E7" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <g filter="url(#ma-shadow)">
+    <!-- Back Purple Ribbon Loop -->
+    <path d="M14 30C10.686 30 8 27.314 8 24C8 18.477 12.477 14 18 14C22.5 14 26.5 17 28 21.5L20 29.5C18.5 31 16 30 14 30Z" fill="#3617A8"/>
+    <!-- Main Electric Purple "L" Swoop -->
+    <path d="M18 10C11.373 10 6 15.373 6 22C6 30.837 13.163 38 22 38C29 38 34 33 36 28L29 22C27 26 24 30 20 30C15.582 30 12 26.418 12 22C12 17.582 15.582 14 20 14C23.5 14 26.5 16 27.5 19L34 12.5C31 11 25 10 18 10Z" fill="url(#ma-grad-purple)"/>
+    <!-- Golden Rising Spark / S-Curve -->
+    <path d="M24 16C25.5 12 29.5 9 34 9C40.627 9 46 14.373 46 21C46 28 40 33 34 33C30 33 26.5 31 25 28L31 22C32 24 34 25 36 25C38.209 25 40 23.209 40 21C40 18.791 38.209 17 36 17C34 17 32 18 31 20L24 16Z" fill="url(#ma-grad-gold)"/>
+    <!-- Center Radiant Spark -->
+    <path d="M30 14L31 18L35 19L31 20L30 24L29 20L25 19L29 18L30 14Z" fill="#FFFFFF"/>
+  </g>
+</svg>

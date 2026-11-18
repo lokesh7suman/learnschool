@@ -1,0 +1,25 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mc-purple" x1="6" y1="8" x2="30" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6941FF"/>
+      <stop offset="100%" stop-color="#4216DE"/>
+    </linearGradient>
+    <linearGradient id="mc-gold" x1="20" y1="16" x2="44" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFB703"/>
+      <stop offset="100%" stop-color="#FB8500"/>
+    </linearGradient>
+    <filter id="mc-shadow" x="2" y="2" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#4216DE" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#mc-shadow)">
+    <!-- Foundation Arch -->
+    <path d="M8 15C8 10.582 11.582 7 16 7H20C24.418 7 28 10.582 28 15V33C28 37.418 24.418 41 20 41H16C11.582 41 8 37.418 8 33V15Z" fill="url(#mc-purple)"/>
+    <!-- Inner playful spark circle -->
+    <circle cx="18" cy="18" r="4.5" fill="#FFFFFF"/>
+    <!-- Rising Sun Geometric Disc -->
+    <path d="M22 25C22 17.82 27.82 12 35 12C42.18 12 48 17.82 48 25C48 32.18 42.18 38 35 38H22V25Z" fill="url(#mc-gold)"/>
+    <!-- Four-point star spark in upper right -->
+    <path d="M35 7C35 11 38 14 42 14C38 14 35 17 35 21C35 17 32 14 28 14C32 14 35 11 35 7Z" fill="#FFD54F"/>
+  </g>
+</svg>
