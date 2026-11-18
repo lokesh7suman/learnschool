@@ -1,14 +1,17 @@
 <?php
 /**
- * Title: Blog
- * Slug: learnschool/blog
+ * Title: Blog Grid (3 Columns)
+ * Slug: learnschool/blog-grid
  * Categories: posts, learnschool
  * Description: Exact Figma 3-column rounded blog cards with top cover images, titles, excerpts, and mini pill buttons.
  * Keywords: blog, articles, news, kids, learnschool, figma
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

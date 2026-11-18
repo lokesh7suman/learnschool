@@ -1,14 +1,17 @@
 <?php
 /**
- * Title: Features
- * Slug: learnschool/features
+ * Title: Features Cards Grid
+ * Slug: learnschool/features-cards
  * Categories: services, learnschool
  * Description: Three-column interactive feature cards with icons and hashtags.
  * Keywords: features, services, cards, interactive
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

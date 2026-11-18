@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.1.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -27,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}}},"backgroundColor":"base-subtle","shadow":"var:preset|shadow|card","layout":{"type":"constrained"}} -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card has-base-subtle-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-5);padding-left:0"><!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"full"} -->
 <figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-1.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Early Literacy & Phonics student', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:cover"/></figure>
 <!-- /wp:image -->
@@ -61,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}}},"backgroundColor":"base-subtle","shadow":"var:preset|shadow|card","layout":{"type":"constrained"}} -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card has-base-subtle-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-5);padding-left:0"><!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"full"} -->
 <figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-2.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Young Inventors STEM Lab student', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:cover"/></figure>
 <!-- /wp:image -->
@@ -95,7 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}}},"backgroundColor":"base-subtle","shadow":"var:preset|shadow|card","layout":{"type":"constrained"}} -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card has-base-subtle-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-5);padding-left:0"><!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"full"} -->
 <figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-3.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Creative Arts & Music student', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:cover"/></figure>
 <!-- /wp:image -->

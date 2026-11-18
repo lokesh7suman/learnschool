@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Teachers (Faculty Spotlight with Principal Welcome)
- * Slug: learnschool/teachers-2
+ * Title: Faculty Spotlight with Principal Welcome
+ * Slug: learnschool/teachers-spotlight
  * Categories: team, learnschool
  * Inserter: yes
  * Keywords: teachers, principal, leadership, faculty, team
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

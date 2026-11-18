@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: FAQ - Two-Column Accordion Grid
- * Slug: learnschool/faq-2
+ * Title: FAQ Two-Column Accordion Grid
+ * Slug: learnschool/faq-two-column
  * Categories: text, learnschool
  * Keywords: faq, accordion, two-column, admissions, academic, categories
  * Description: Two-column grid of expandable accordion questions organized into Academic and Administrative categories.
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

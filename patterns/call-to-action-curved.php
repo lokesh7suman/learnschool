@@ -1,14 +1,17 @@
 <?php
 /**
- * Title: Call to Action
- * Slug: learnschool/call-to-action
+ * Title: Call to Action (Curved Accent)
+ * Slug: learnschool/call-to-action-curved
  * Categories: call-to-action, learnschool
  * Description: Curved purple call-to-action card with mascot student illustration, cursive title, and pill form inputs.
  * Keywords: cta, call to action, subscribe, form, learnschool
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

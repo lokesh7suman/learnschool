@@ -8,7 +8,10 @@
  *
  * @package LearnSchool
  * @since 1.1.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

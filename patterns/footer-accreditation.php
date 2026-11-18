@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: School Multi-Column Footer with Accreditation
- * Slug: learnschool/footer
+ * Title: Footer with Accreditation
+ * Slug: learnschool/footer-accreditation
  * Categories: footer, learnschool
  * Block Types: core/template-part/footer
  * Description: 4-column preschool footer with state licensing badge, program links, campus hours, and parent resources.
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -29,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"}},"border":{"radius":"9999px","width":"1px","style":"solid"}},"borderColor":"border","backgroundColor":"surface","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group has-surface-background-color has-border-color has-background" style="border-style:solid;border-width:1px;border-radius:9999px;padding-top:var(--wp--preset--spacing--step-2);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-2);padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"fontSize":"small","textColor":"primary"} -->
+<div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:9999px;padding-top:var(--wp--preset--spacing--step-2);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-2);padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"fontSize":"small","textColor":"primary"} -->
 <p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( '✓ State Licensed #ECE-94812', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

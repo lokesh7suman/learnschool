@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Top Bar
- * Slug: learnschool/top-bar
+ * Title: Top Bar with Contact Details
+ * Slug: learnschool/top-bar-contact
  * Categories: banner, learnschool
  * Keywords: top bar, utility, contact, phone
  * Description: Top utility row providing contact info and portal links.
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

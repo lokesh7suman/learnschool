@@ -1,14 +1,17 @@
 <?php
 /**
- * Title: FAQ
- * Slug: learnschool/faq
+ * Title: FAQ Simple Cards
+ * Slug: learnschool/faq-simple
  * Categories: text, learnschool
  * Description: Frequently asked questions accordion with circular toggle buttons.
  * Keywords: faq, questions, accordion, help
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

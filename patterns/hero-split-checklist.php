@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Hero (Split 2-Column with Media & Checklist)
- * Slug: learnschool/hero-2
+ * Title: Hero Split with Media & Checklist
+ * Slug: learnschool/hero-split-checklist
  * Categories: banner, learnschool
  * Keywords: hero, split, checklist, enrollment, education
  * Description: Two-column split hero section with enrollment checklist, dual CTA buttons, and student showcase card with floating rating badge.
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

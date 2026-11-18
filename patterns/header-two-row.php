@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Header - Two-Row with Top Utility Bar
- * Slug: learnschool/header-2
+ * Title: Header Two-Row with Utility Bar
+ * Slug: learnschool/header-two-row
  * Categories: header, learnschool
  * Block Types: core/template-part/header
  * Keywords: header, two-row, utility, top-bar, contact, portals, navigation
@@ -10,7 +10,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

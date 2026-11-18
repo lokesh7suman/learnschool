@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Testimonials (Large Featured Quote & Parent Spotlight)
- * Slug: learnschool/testimonials-2
+ * Title: Testimonials Featured Quote & Parent Spotlight
+ * Slug: learnschool/testimonials-spotlight
  * Categories: testimonials, learnschool
  * Inserter: yes
  * Keywords: testimonials, spotlight, story, quote, featured
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

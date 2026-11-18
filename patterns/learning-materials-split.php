@@ -1,14 +1,17 @@
 <?php
 /**
- * Title: Learning Materials
- * Slug: learnschool/learning-materials
+ * Title: Learning Materials Split Showcase
+ * Slug: learnschool/learning-materials-split
  * Categories: services, learnschool
  * Description: Showcase section with student photography and enjoyable learning materials.
  * Keywords: materials, showcase, learning, education
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

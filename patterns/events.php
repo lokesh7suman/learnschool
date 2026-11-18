@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.1.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -26,10 +29,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|step-4"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}}},"backgroundColor":"base","shadow":"var:preset|shadow|card","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-4"}}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"16px"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"18px","right":"18px"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background" style="border-radius:16px;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;text-align:center"><!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700","lineHeight":"1"}}} -->
+<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background" style="border-radius:16px;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700","lineHeight":"1"}}} -->
 <p style="font-size:1.5rem;font-weight:700;line-height:1;margin:0"><?php echo esc_html__( '12', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
@@ -40,11 +43,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin:0"><?php echo esc_html__( 'Fall Academy Open House', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Fall Academy Open House', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin:4px 0 0"><?php echo esc_html__( 'Saturday, 10:00 AM - 1:00 PM • Main Campus Auditorium', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Saturday, 10:00 AM - 1:00 PM • Main Campus Auditorium', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -56,10 +59,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}}},"backgroundColor":"base","shadow":"var:preset|shadow|card","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-4"}}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"16px"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"18px","right":"18px"}}},"backgroundColor":"accent","textColor":"contrast","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-contrast-color has-accent-background-color has-text-color has-background" style="border-radius:16px;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;text-align:center"><!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700","lineHeight":"1"}}} -->
+<div class="wp-block-group has-contrast-color has-accent-background-color has-text-color has-background" style="border-radius:16px;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700","lineHeight":"1"}}} -->
 <p style="font-size:1.5rem;font-weight:700;line-height:1;margin:0"><?php echo esc_html__( '24', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
@@ -70,11 +73,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin:0"><?php echo esc_html__( 'STEM Robotics & Invention Fair', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'STEM Robotics & Invention Fair', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin:4px 0 0"><?php echo esc_html__( 'Thursday, 4:00 PM - 6:30 PM • Science Discovery Wing', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Thursday, 4:00 PM - 6:30 PM • Science Discovery Wing', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -86,10 +89,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}}},"backgroundColor":"base","shadow":"var:preset|shadow|card","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-4"}}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"16px"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"18px","right":"18px"}}},"backgroundColor":"primary-dark","textColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-base-color has-primary-dark-background-color has-text-color has-background" style="border-radius:16px;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px;text-align:center"><!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700","lineHeight":"1"}}} -->
+<div class="wp-block-group has-base-color has-primary-dark-background-color has-text-color has-background" style="border-radius:16px;padding-top:12px;padding-right:18px;padding-bottom:12px;padding-left:18px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700","lineHeight":"1"}}} -->
 <p style="font-size:1.5rem;font-weight:700;line-height:1;margin:0"><?php echo esc_html__( '05', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
@@ -100,11 +103,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin:0"><?php echo esc_html__( 'Early Childhood Discovery Morning', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Early Childhood Discovery Morning', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin:4px 0 0"><?php echo esc_html__( 'Tuesday, 9:00 AM - 11:30 AM • Kindergarten Pavilion', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Tuesday, 9:00 AM - 11:30 AM • Kindergarten Pavilion', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

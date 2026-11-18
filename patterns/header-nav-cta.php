@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header with Navigation & Tour CTA
- * Slug: learnschool/header
+ * Slug: learnschool/header-nav-cta
  * Categories: header, learnschool
  * Block Types: core/template-part/header
  * Description: Clean mobile-first header with logo, navigation links, and a prominent Book a Tour pill CTA button.
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

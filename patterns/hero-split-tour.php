@@ -1,14 +1,17 @@
 <?php
 /**
- * Title: School Hero with Tour Booking & Arch Photo
- * Slug: learnschool/hero
+ * Title: Hero with Tour Booking & Arch Photo
+ * Slug: learnschool/hero-split-tour
  * Categories: banner, featured, learnschool
  * Description: Split hero layout with headline, handwriting accent, tour booking CTA, trust metrics, and arch-framed classroom portrait.
  * Keywords: hero, banner, tour, admissions, preschool, kindergarten
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

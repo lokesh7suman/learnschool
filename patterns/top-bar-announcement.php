@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Top Bar (Announcement Banner & Social Links)
- * Slug: learnschool/top-bar-2
+ * Title: Top Bar Announcement Banner & Social Links
+ * Slug: learnschool/top-bar-announcement
  * Categories: banner, learnschool
  * Keywords: top bar, announcement, social, alert, notice
  * Description: High-visibility top bar featuring a centered seasonal announcement flanked by school operating hours and social profile links.
@@ -9,7 +9,10 @@
  *
  * @package LearnSchool
  * @since 1.0.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

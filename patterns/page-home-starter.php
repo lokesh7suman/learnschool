@@ -8,13 +8,16 @@
  *
  * @package LearnSchool
  * @since 1.1.0
+ * Viewport Width: 1280
  */
+
+declare(strict_types=1);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:pattern {"slug":"learnschool/hero"} /-->
+<!-- wp:pattern {"slug":"learnschool/hero-split-tour"} /-->
 
 <!-- wp:pattern {"slug":"learnschool/trust-strip"} /-->
 
@@ -24,10 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:pattern {"slug":"learnschool/daily-rhythm"} /-->
 
-<!-- wp:pattern {"slug":"learnschool/teachers"} /-->
+<!-- wp:pattern {"slug":"learnschool/teachers-grid"} /-->
 
 <!-- wp:pattern {"slug":"learnschool/admissions-roadmap"} /-->
 
 <!-- wp:pattern {"slug":"learnschool/faq-accordion"} /-->
 
-<!-- wp:pattern {"slug":"learnschool/call-to-action"} /-->
+<!-- wp:pattern {"slug":"learnschool/call-to-action-curved"} /-->
