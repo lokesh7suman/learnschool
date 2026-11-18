@@ -39,8 +39,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-base-color has-text-color has-medium-font-size" style="line-height:1.7">Join over a thousand families who trust LearnSchool to provide an innovative, loving, and academically enriching environment from preschool to graduation.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:list {"fontSize":"medium"} -->
-<ul class="wp-block-list has-medium-font-size"><!-- wp:list-item -->
+<!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"medium"} -->
+<ul class="wp-block-list is-style-learnschool-checkmarks has-medium-font-size"><!-- wp:list-item -->
 <li>Accredited STEM &amp; creative arts curriculum tailored for each developmental stage</li>
 <!-- /wp:list-item -->
 
@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size">🔒 Your information is safe. We never share your details.</p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/icon-lock.svg' ) ); ?>" alt="" width="16" height="16" style="vertical-align:-2px;margin-right:6px;display:inline-block"/>Your information is safe. We never share your details.</p>
 <!-- /wp:paragraph -->
 
 </div>
