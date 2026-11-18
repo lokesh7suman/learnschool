@@ -160,38 +160,38 @@ span.script-accent,
 
 /* Accessibility: Screen Reader Text with Focusable Skip-Link Support */
 .screen-reader-text:where(:not(:focus-within, :active)) {
-	border: 0 !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;
+	border: 0;
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
 }
 
 .skip-link.screen-reader-text:focus,
 .skip-link.screen-reader-text:focus-visible {
-	position: fixed !important;
-	top: 16px !important;
-	inset-inline-start: 16px !important;
-	z-index: 999999 !important;
-	width: auto !important;
-	height: auto !important;
-	clip-path: none !important;
-	overflow: visible !important;
-	padding: 12px 24px !important;
-	background-color: var(--wp--preset--color--primary) !important;
-	color: var(--wp--preset--color--base, #fff) !important;
-	font-family: var(--wp--preset--font-family--quicksand), system-ui, sans-serif !important;
-	font-weight: 700 !important;
-	font-size: 16px !important;
-	border-radius: 40px !important;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
-	outline: 3px solid #fff !important;
-	outline-offset: 2px !important;
-	text-decoration: none !important;
+	position: fixed;
+	top: 16px;
+	inset-inline-start: 16px;
+	z-index: 999999;
+	width: auto;
+	height: auto;
+	clip-path: none;
+	overflow: visible;
+	padding: 12px 24px;
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base, #fff);
+	font-family: var(--wp--preset--font-family--quicksand), system-ui, sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	border-radius: 40px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+	outline: 3px solid #fff;
+	outline-offset: 2px;
+	text-decoration: none;
 }
 
 /* Accessibility: Consistent focus rings */
@@ -214,10 +214,10 @@ summary:focus-visible,
 	*,
 	*::before,
 	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
+		animation-duration: 0.01ms;
+		animation-iteration-count: 1;
+		transition-duration: 0.01ms;
+		scroll-behavior: auto;
 	}
 }
 
@@ -229,8 +229,8 @@ summary:focus-visible,
 	input:focus-visible,
 	summary:focus-visible,
 	.wp-block-button__link:focus-visible {
-		outline: 3px solid Highlight !important;
-		outline-offset: 3px !important;
+		outline: 3px solid Highlight;
+		outline-offset: 3px;
 	}
 
 	.wp-block-button.is-style-learnschool-pill .wp-block-button__link,
@@ -238,11 +238,11 @@ summary:focus-visible,
 	.wp-block-button.is-style-outline-purple .wp-block-button__link,
 	.wk-cta-submit-btn,
 	.wk-cta-input-field {
-		border: 2px solid ButtonText !important;
+		border: 2px solid ButtonText;
 	}
 
 	.wp-block-details.wk-faq-item {
-		border: 2px solid CanvasText !important;
+		border: 2px solid CanvasText;
 	}
 }
 
@@ -634,7 +634,7 @@ img.is-style-learnschool-flip {
 @media (max-width: 600px) {
 
 	.wp-block-image.is-style-learnschool-hide-mobile {
-		display: none !important;
+		display: none;
 	}
 }
 
@@ -696,20 +696,20 @@ img.is-style-learnschool-flip {
 .is-style-clean .wk-cta-corner-lines,
 .is-style-clean .wk-cta-logo-doodle,
 .is-style-clean .wk-footer-doodles {
-	display: none !important;
+	display: none;
 }
 
 /* Clean CTA Section Mode: Centered headline and form without mascot */
 .is-style-learnschool-clean.wk-cta-wrapper .wk-cta-card,
 .is-style-clean.wk-cta-wrapper .wk-cta-card {
-	justify-content: center !important;
+	justify-content: center;
 	text-align: center;
 	padding: 60px 32px;
 }
 
 .is-style-learnschool-clean .wk-cta-mascot,
 .is-style-clean .wk-cta-mascot {
-	display: none !important;
+	display: none;
 }
 
 .is-style-learnschool-clean .wk-cta-content,
@@ -731,30 +731,30 @@ img.is-style-learnschool-flip {
 .is-style-reverse .wk-faq-container,
 .wp-block-columns.is-style-learnschool-reverse,
 .wp-block-columns.is-style-reverse {
-	flex-direction: row-reverse !important;
+	flex-direction: row-reverse;
 }
 
 .is-style-learnschool-reverse .wk-cta-card,
 .is-style-reverse .wk-cta-card {
-	justify-content: flex-start !important;
+	justify-content: flex-start;
 }
 
 .is-style-learnschool-reverse .wk-cta-mascot,
 .is-style-reverse .wk-cta-mascot {
-	left: auto !important;
-	right: -20px !important;
+	left: auto;
+	right: -20px;
 }
 
 .is-style-learnschool-reverse .wk-cta-mascot img,
 .is-style-reverse .wk-cta-mascot img {
-	transform: scaleX(1) !important;
+	transform: scaleX(1);
 }
 
 .is-style-learnschool-reverse .wk-cta-squiggle-doodle,
 .is-style-reverse .wk-cta-squiggle-doodle {
-	right: auto !important;
-	left: 0 !important;
-	transform: scaleX(-1) !important;
+	right: auto;
+	left: 0;
+	transform: scaleX(-1);
 }
 
 /* Image & Doodle Customizations */
@@ -1482,40 +1482,40 @@ img.is-style-flip-horizontal {
 
 /* Step / Journey Cards (features-2) */
 .wk-step-card {
-	position: relative !important;
-	overflow: hidden !important;
-	display: flex !important;
-	flex-direction: column !important;
-	justify-content: flex-start !important;
-	align-items: flex-start !important;
-	min-height: 100% !important;
-	height: 100% !important;
-	border-radius: 24px !important;
-	box-shadow: var(--wp--preset--shadow--card) !important;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	min-height: 100%;
+	height: 100%;
+	border-radius: 24px;
+	box-shadow: var(--wp--preset--shadow--card);
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .wk-step-card:hover {
 	transform: translateY(-4px);
-	box-shadow: 0 16px 32px -8px rgba(108, 92, 231, 0.15) !important;
+	box-shadow: 0 16px 32px -8px rgba(108, 92, 231, 0.15);
 }
 
 .wk-step-card .wk-step-doodle {
-	position: absolute !important;
-	top: -6px !important;
-	right: -6px !important;
-	width: 88px !important;
-	height: 88px !important;
-	pointer-events: none !important;
-	z-index: 0 !important;
-	margin: 0 !important;
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	width: 88px;
+	height: 88px;
+	pointer-events: none;
+	z-index: 0;
+	margin: 0;
 	opacity: 0.9;
 }
 
 .wk-step-card .wk-step-doodle img {
-	width: 100% !important;
-	height: 100% !important;
-	object-fit: contain !important;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .wk-step-card .wk-step-pill {
@@ -1529,30 +1529,30 @@ img.is-style-flip-horizontal {
 .wk-step-card .wk-step-icon {
 	position: relative;
 	z-index: 1;
-	width: 48px !important;
-	height: 48px !important;
-	margin: var(--wp--preset--spacing--step-3) 0 var(--wp--preset--spacing--step-2) 0 !important;
+	width: 48px;
+	height: 48px;
+	margin: var(--wp--preset--spacing--step-3) 0 var(--wp--preset--spacing--step-2) 0;
 }
 
 .wk-step-card .wk-step-icon img {
-	width: 48px !important;
-	height: 48px !important;
-	object-fit: contain !important;
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
 }
 
 .wk-step-card h3 {
 	position: relative;
 	z-index: 1;
-	margin-top: 0 !important;
-	margin-bottom: var(--wp--preset--spacing--step-2) !important;
-	color: var(--wp--preset--color--contrast, #121212) !important;
+	margin-top: 0;
+	margin-bottom: var(--wp--preset--spacing--step-2);
+	color: var(--wp--preset--color--contrast, #121212);
 }
 
 .wk-step-card p:not(.wk-step-pill) {
 	position: relative;
 	z-index: 1;
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /* ==========================================================================
@@ -2157,8 +2157,8 @@ img.is-style-flip-horizontal {
 }
 
 .wk-blog-card-title a {
-	color: var(--wp--preset--color--contrast) !important;
-	text-decoration: none !important;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
 	transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 	border-radius: 4px;
 	display: inline;
@@ -2166,7 +2166,7 @@ img.is-style-flip-horizontal {
 
 .wk-blog-card-title a:hover,
 .wk-blog-card:hover .wk-blog-card-title a {
-	color: var(--wp--preset--color--primary) !important;
+	color: var(--wp--preset--color--primary);
 }
 
 .wk-blog-card-excerpt {
@@ -2401,7 +2401,7 @@ img.is-style-flip-horizontal {
 }
 
 .wk-cta-logo-doodle {
-	display: none !important;
+	display: none;
 }
 
 .wk-cta-headline {
@@ -2448,35 +2448,35 @@ img.is-style-flip-horizontal {
 .wk-cta-input-field,
 input.wk-cta-input-field,
 .wk-cta-input {
-	background-color: var(--wp--preset--color--base, #fff) !important;
-	color: var(--wp--preset--color--contrast, #121212) !important;
-	border-radius: 64px !important;
-	height: 60px !important;
-	padding: 0 28px !important;
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast, #121212);
+	border-radius: 64px;
+	height: 60px;
+	padding: 0 28px;
 	font-size: 16px;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-weight: 500;
-	margin: 0 !important;
-	width: 100% !important;
-	max-width: 453px !important;
-	box-sizing: border-box !important;
-	border: 1px solid transparent !important;
-	outline: none !important;
+	margin: 0;
+	width: 100%;
+	max-width: 453px;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	outline: none;
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .wk-cta-input-field:focus,
 input.wk-cta-input-field:focus,
 .wk-cta-input:focus {
-	border-color: var(--wp--preset--color--secondary) !important;
-	box-shadow: 0 0 0 3px rgba(255, 190, 23, 0.35) !important;
+	border-color: var(--wp--preset--color--secondary);
+	box-shadow: 0 0 0 3px rgba(255, 190, 23, 0.35);
 }
 
 .wk-cta-input-field:user-invalid,
 input.wk-cta-input-field:user-invalid,
 .wk-cta-input:user-invalid {
-	border-color: #d9383a !important;
-	box-shadow: 0 0 0 3px rgba(217, 56, 58, 0.25) !important;
+	border-color: #d9383a;
+	box-shadow: 0 0 0 3px rgba(217, 56, 58, 0.25);
 }
 
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link,
@@ -3113,9 +3113,9 @@ hr {
 /* Sticky Post Styling */
 .sticky,
 .wp-block-post-template > li.sticky {
-	background: linear-gradient(180deg, #fffcf0 0%, #fff 100%) !important;
-	border-color: var(--wp--preset--color--secondary) !important;
-	box-shadow: 0 12px 32px rgba(255, 190, 23, 0.12) !important;
+	background: linear-gradient(180deg, #fffcf0 0%, #fff 100%);
+	border-color: var(--wp--preset--color--secondary);
+	box-shadow: 0 12px 32px rgba(255, 190, 23, 0.12);
 	position: relative;
 }
 
@@ -3815,9 +3815,9 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 
 	.wk-materials-visual-col {
 		position: relative;
-		width: 580px !important;
-		max-width: none !important;
-		height: 600px !important;
+		width: 580px;
+		max-width: none;
+		height: 600px;
 		margin: 0 auto;
 		transform: scale(min(1, calc((100vw - 48px) / 580px)));
 		transform-origin: top center;
@@ -3825,8 +3825,8 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	}
 
 	.wk-materials-pills-visual {
-		width: 580px !important;
-		height: 600px !important;
+		width: 580px;
+		height: 600px;
 		transform: none;
 	}
 
@@ -3865,7 +3865,7 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 
 	.is-style-learnschool-hide-mobile,
 	.is-style-hide-mobile {
-		display: none !important;
+		display: none;
 	}
 
 	.is-style-learnschool-reverse .wk-materials-container,
@@ -3874,7 +3874,7 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	.is-style-reverse .wk-faq-container,
 	.wp-block-columns.is-style-learnschool-reverse,
 	.wp-block-columns.is-style-reverse {
-		flex-direction: column !important;
+		flex-direction: column;
 	}
 
 	.wk-cta-content {
@@ -3926,9 +3926,9 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 
 	.wk-materials-visual-col {
 		position: relative;
-		width: 580px !important;
-		max-width: none !important;
-		height: 600px !important;
+		width: 580px;
+		max-width: none;
+		height: 600px;
 		margin: 0 auto;
 		transform: scale(min(1, calc((100vw - 48px) / 580px)));
 		transform-origin: top center;
@@ -3940,8 +3940,8 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	}
 
 	.wk-materials-pills-visual {
-		width: 580px !important;
-		height: 600px !important;
+		width: 580px;
+		height: 600px;
 		transform: none;
 	}
 
