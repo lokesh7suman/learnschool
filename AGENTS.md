@@ -35,6 +35,7 @@ All agents operating in this workspace must adhere to these instructions.
 | **`inc/*.php`** | Modular PHP logic: Block Bindings API registrations, pattern categories, Interactivity API state. | Presentation HTML `echo`, classic widget/sidebar registrations, shortcodes for layout. |
 | **`functions.php`** | Minimal theme bootstrap (`wp_enqueue_scripts`, `add_theme_support`, modular includes). | Presentation HTML markup, `register_sidebar()`, `register_nav_menus()`. |
 | **`style.css`** | Theme metadata header required by WordPress Core. Edge-case fallback CSS only. | Full CSS resets, layout grid/flexbox sheets, utility padding/color classes handled by `theme.json`. |
+| **`assets/images/icons/`** | Standalone optimized vector SVG assets (`viewBox`, `currentColor` fill/stroke). | Raster images (PNG, JPG) for iconography, unoptimized SVGs with hardcoded fills where theming is required. |
 
 ---
 
@@ -178,3 +179,109 @@ npm run bundle
 - `npm run check` exits with code `0` (Zero PHPCS errors, Zero PHPStan errors, Zero Stylelint errors).
 - `npm run test:patterns` exits with code `0` (Zero invalid block markup errors).
 - No uncommitted extraneous or temporary build artifacts left in repository.
+
+---
+
+## 8. Premium Theme & Iconography Guidelines
+
+### 1. Local Vector SVGs & Glyph Consistency
+- **Optimized Standalone Icons:** Store all custom iconography in `assets/images/icons/` as clean, standalone SVG vector assets (standard `viewBox="0 0 256 256"` or `0 0 24 24"`, and `fill="currentColor"` or `stroke="currentColor"` for dynamic theming).
+- **Asset Referencing:** In block pattern markup (`patterns/*.php`), reference icon paths via `esc_url( get_theme_file_uri( 'assets/images/icons/<name>.svg' ) )` for `<img>` tags, or embed clean inline SVG vectors.
+- **Strict Emoji Ban:** **NEVER** use OS emojis (such as 🔒, ⭐, 🚀, 💡) in production patterns or templates. System emojis render inconsistently across operating systems and clash with the theme's visual standards.
+- **CSS Mask Data-URIs:** For bullet checkmarks (e.g., `ul.is-style-learnschool-checkmarks`) and recurring UI glyphs, use CSS mask data-URIs in `style.css` so icons render crisply and inherit theme color tokens:
+  ```css
+  ul.is-style-learnschool-checkmarks > li::before {
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--wp--preset--color--primary, currentColor);
+    mask-image: url("data:image/svg+xml,...");
+    -webkit-mask-image: url("data:image/svg+xml,...");
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  }
+  ```
+
+### 2. Section Styles via Block Style Variations
+- **`theme.json` Registration:** Declare container style variations under `styles.blocks["core/group"].variations` in `theme.json` (e.g., `learnschool-glass`, `learnschool-elevated`, `learnschool-tinted`):
+  ```json
+  "styles": {
+    "blocks": {
+      "core/group": {
+        "variations": {
+          "learnschool-glass": {
+            "color": {
+              "background": "rgba(255, 255, 255, 0.75)"
+            },
+            "border": {
+              "color": "rgba(255, 255, 255, 0.3)",
+              "width": "1px",
+              "style": "solid",
+              "radius": "16px"
+            },
+            "css": "backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+          },
+          "learnschool-elevated": {
+            "shadow": "var:preset|shadow|card",
+            "border": { "radius": "12px" }
+          },
+          "learnschool-tinted": {
+            "color": {
+              "background": "var:preset|color|surface-accent"
+            },
+            "border": {
+              "color": "var:preset|color|primary-light",
+              "width": "1px",
+              "style": "solid",
+              "radius": "12px"
+            }
+          }
+        }
+      }
+    }
+  }
+  ```
+- **Block Markup Invariant:** In patterns and templates, attach variations using the `className` attribute (`<!-- wp:group {"className":"is-style-learnschool-glass"} -->`) and the corresponding HTML class `<div class="wp-block-group is-style-learnschool-glass">`.
+
+### 3. Modern Zero-JS CSS Features & Micro-Interactions
+- **Scroll-Driven Animations:** Utilize native CSS scroll-driven animations (`animation-timeline: scroll(root);`) for performance-critical interactions like reading progress indicators:
+  ```css
+  @keyframes learnschool-progress-grow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .learnschool-reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: learnschool-progress-grow linear;
+    animation-timeline: scroll(root);
+    z-index: 9999;
+  }
+  ```
+- **Card Micro-Interactions:** Enhance card interactivity with subtle hover lifts (`transform: translateY(-4px); transition: transform 0.25s ease, box-shadow 0.25s ease;`).
+- **Motion Preference Fallbacks:** **ALWAYS** pair animations and transitions with `prefers-reduced-motion` fallbacks to respect accessibility requirements:
+  ```css
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+      transition-duration: 0.01ms;
+      scroll-behavior: auto;
+    }
+    .learnschool-reading-progress {
+      display: none;
+    }
+  }
+  ```
