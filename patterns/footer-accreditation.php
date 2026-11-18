@@ -31,10 +31,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-contrast-subtle-color has-text-color" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Nurturing curiosity, confidence, and compassion in young minds through inquiry-based learning and joyful play.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"}},"border":{"radius":"9999px","width":"1px","style":"solid"}},"borderColor":"border","backgroundColor":"surface","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:9999px;padding-top:var(--wp--preset--spacing--step-2);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-2);padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"fontSize":"small","textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( '✓ State Licensed #ECE-94812', 'learnschool' ); ?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-star.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/footer-circle-doodle.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-wavy.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -43,8 +51,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Our Programs', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:list {"className":"is-style-default"} -->
-<ul class="wp-block-list is-style-default"><!-- wp:list-item -->
+<!-- wp:list {"className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list is-style-learnschool-clean-list"><!-- wp:list-item -->
 <li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Infants (6w–12m)', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
@@ -71,8 +79,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Parent Resources', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:list {"className":"is-style-default"} -->
-<ul class="wp-block-list is-style-default"><!-- wp:list-item -->
+<!-- wp:list {"className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list is-style-learnschool-clean-list"><!-- wp:list-item -->
 <li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Admissions Roadmap', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
@@ -107,9 +115,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-contrast-subtle-color has-text-color has-small-font-size"><strong><?php echo esc_html__( 'Campus Location:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '124 Early Learning Way, Suite 100', 'learnschool' ); ?><br><?php echo esc_html__( 'Austin, TX 78701', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="<?php echo esc_url( 'tel:5551234567' ); ?>"><?php echo esc_html__( '📞 (555) 123-4567', 'learnschool' ); ?></a></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"fontSize":"small","textColor":"primary"} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600"><a href="<?php echo esc_url( 'tel:5551234567' ); ?>" style="text-decoration:none;color:inherit"><?php echo esc_html__( '(555) 123-4567', 'learnschool' ); ?></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"learnschool-social-links","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
+<div class="wp-block-group learnschool-social-links" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-1.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Instagram', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-2.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Facebook', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
+<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

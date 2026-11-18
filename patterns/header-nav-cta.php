@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color" style="font-weight:600"><a href="<?php echo esc_url( 'tel:5551234567' ); ?>"><?php echo esc_html__( '(555) 123-4567', 'learnschool' ); ?></a></p>
+<p class="has-contrast-subtle-color has-text-color" style="font-weight:600"><a href="<?php echo esc_url( 'tel:5551234567' ); ?>" style="text-decoration:none;color:inherit"><?php echo esc_html__( '(555) 123-4567', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->

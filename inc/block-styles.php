@@ -129,6 +129,14 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			)
 		);
 
+		register_block_style(
+			'core/list',
+			array(
+				'name'  => 'learnschool-clean-list',
+				'label' => __( 'Clean Unstyled List', 'learnschool' ),
+			)
+		);
+
 		// ── Image style variations ────────────────────────────────────────────
 		register_block_style(
 			'core/image',

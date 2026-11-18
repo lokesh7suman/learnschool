@@ -3780,6 +3780,105 @@ ul.is-style-learnschool-checkmarks.has-base-color > li::before,
 	background-color: currentcolor;
 }
 
+/* Clean Unstyled List (No bullets, no indent, clean link styling) */
+ul.is-style-learnschool-clean-list,
+ol.is-style-learnschool-clean-list {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+}
+
+ul.is-style-learnschool-clean-list > li,
+ol.is-style-learnschool-clean-list > li {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin-bottom: 12px;
+	line-height: 1.6;
+}
+
+ul.is-style-learnschool-clean-list a,
+ol.is-style-learnschool-clean-list a {
+	color: var(--wp--preset--color--contrast-subtle) !important;
+	text-decoration: none !important;
+	transition: color 0.2s ease;
+}
+
+ul.is-style-learnschool-clean-list a:hover,
+ol.is-style-learnschool-clean-list a:hover {
+	color: var(--wp--preset--color--primary) !important;
+	text-decoration: none !important;
+}
+
+/* Footer Link Reset - Removes default browser underlines & bullets in footers */
+.learnschool-footer .wp-block-list,
+footer .wp-block-list,
+[class*="footer"] .wp-block-list {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+}
+
+.learnschool-footer .wp-block-list > li,
+footer .wp-block-list > li,
+[class*="footer"] .wp-block-list > li {
+	list-style: none !important;
+	padding-left: 0 !important;
+	margin-bottom: 10px;
+}
+
+.learnschool-footer .wp-block-list a,
+footer .wp-block-list a,
+[class*="footer"] .wp-block-list a {
+	color: var(--wp--preset--color--contrast-subtle) !important;
+	text-decoration: none !important;
+	transition: color 0.2s ease;
+}
+
+.learnschool-footer .wp-block-list a:hover,
+footer .wp-block-list a:hover,
+[class*="footer"] .wp-block-list a:hover {
+	color: var(--wp--preset--color--primary) !important;
+	text-decoration: none !important;
+}
+
+/* Clean Phone / Contact Links */
+.learnschool-phone-link,
+.learnschool-footer a[href^="tel:"],
+header a[href^="tel:"] {
+	text-decoration: none !important;
+	transition: color 0.2s ease;
+}
+
+.learnschool-footer a[href^="tel:"]:hover,
+header a[href^="tel:"]:hover {
+	color: var(--wp--preset--color--primary-dark) !important;
+}
+
+/* Social Icon Badges in Footer */
+.learnschool-social-badge,
+.learnschool-social-links a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 9999px;
+	border: 1.5px solid var(--wp--preset--color--border, #e5e5ea);
+	transition: all 0.2s ease;
+	background-color: var(--wp--preset--color--surface, #fff);
+}
+
+.learnschool-social-badge:hover,
+.learnschool-social-links a:hover {
+	border-color: var(--wp--preset--color--primary);
+	background-color: var(--wp--preset--color--primary-light, #f0ebfe);
+	transform: translateY(-2px);
+}
+
+.learnschool-social-links figure {
+	margin: 0 !important;
+}
+
 /* RTL (Right-to-Left) Language Layout Support */
 body.rtl,
 [dir="rtl"] {
