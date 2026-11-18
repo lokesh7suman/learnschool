@@ -54,6 +54,7 @@
 		"color": {
 			"defaultPalette": false,
 			"defaultGradients": false,
+			"defaultDuotone": false,
 			"palette": [
 				{
 					"slug": "base",
@@ -282,9 +283,6 @@
 		"spacing": {
 			"defaultSpacingSizes": false,
 			"units": [ "px", "em", "rem", "%", "vh", "vw" ],
-			"spacingScale": {
-				"steps": 0
-			},
 			"spacingSizes": [
 				{
 					"slug": "step-1",
