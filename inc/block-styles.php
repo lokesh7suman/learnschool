@@ -22,103 +22,10 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 	 */
 	function learnschool_register_block_styles() {
 
-		// ── Group / Container card variations ────────────────────────────────
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card',
-				'label' => __( 'Soft Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card-arch',
-				'label' => __( 'Arch Top Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card-large',
-				'label' => __( 'Large Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-surface',
-				'label' => __( 'Surface', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-trust-strip',
-				'label' => __( 'Trust Strip', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-lilac',
-				'label' => __( 'Lilac Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-midnight',
-				'label' => __( 'Midnight Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-glass',
-				'label' => __( 'Glass Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-clean',
-				'label' => __( 'Clean (No Doodles)', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-reverse',
-				'label' => __( 'Reverse Layout', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-prose',
-				'label' => __( 'Prose / Article', 'learnschool' ),
-			)
-		);
-
-		// ── Columns variations ────────────────────────────────────────────────
-		register_block_style(
-			'core/columns',
-			array(
-				'name'  => 'learnschool-reverse',
-				'label' => __( 'Reverse Layout', 'learnschool' ),
-			)
-		);
+		// Note: Following Ollie theme architectural standards, we intentionally do NOT
+		// register block styles on core/group or core/columns. Registering styles on core/group
+		// pollutes the Gutenberg inspector with a grid of buttons on every pattern, section,
+		// and container. Card and container styling is handled via native block attributes and modular CSS classes.
 
 		// ── Button style variations ───────────────────────────────────────────
 		register_block_style(
