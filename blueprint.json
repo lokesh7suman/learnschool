@@ -1,0 +1,30 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "phpVersion": "8.3",
+  "preferredVersions": {
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "step": "activateTheme",
+      "themeFolderName": "learnschool"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp theme status learnschool"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp eval '$d = WP_Theme_JSON_Resolver::get_theme_data()->get_data(); exit(isset($d[\"version\"]) && $d[\"version\"] === 3 ? 0 : 1);'"
+    }
+  ]
+}

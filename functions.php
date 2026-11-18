@@ -51,9 +51,11 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 	 * @return void
 	 */
 	function learnschool_scripts() {
-		$version = defined( 'WP_DEBUG' ) && WP_DEBUG
-			? filemtime( get_stylesheet_directory() . '/style.css' )
-			: wp_get_theme()->get( 'Version' );
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG
+			? (string) filemtime( get_stylesheet_directory() . '/style.css' )
+			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
+
 		wp_enqueue_style(
 			'learnschool-style',
 			get_stylesheet_uri(),
@@ -63,23 +65,6 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'learnschool_scripts' );
-
-if ( ! function_exists( 'learnschool_preload_webfonts' ) ) :
-	/**
-	 * Preload critical local web fonts in <head> for fast First Contentful Paint.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	function learnschool_preload_webfonts() {
-		$quicksand = get_theme_file_uri( 'assets/fonts/quicksand-variable.woff2' );
-		$courgette = get_theme_file_uri( 'assets/fonts/courgette-regular.woff2' );
-		echo '<meta name="color-scheme" content="light">' . "\n";
-		echo '<link rel="preload" href="' . esc_url( $quicksand ) . '" as="font" type="font/woff2" crossorigin>' . "\n";
-		echo '<link rel="preload" href="' . esc_url( $courgette ) . '" as="font" type="font/woff2" crossorigin>' . "\n";
-	}
-endif;
-add_action( 'wp_head', 'learnschool_preload_webfonts', 2 );
 
 // Load modular component configurations.
 require_once get_template_directory() . '/inc/pattern-categories.php';
