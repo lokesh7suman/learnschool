@@ -1,0 +1,32 @@
+# Development & Repository Files
+.git
+.github
+.gitignore
+.gitattributes
+
+# Environment and Editor Configs
+.editorconfig
+.stylelintrc.json
+
+# Development Dependencies & Tooling
+bin/
+node_modules/
+vendor/
+composer.json
+composer.lock
+package.json
+package-lock.json
+
+# Quality Assurance & Testing Configurations
+phpcs.xml*
+phpstan.neon*
+phpunit.xml*
+tests/
+
+# Operating System Files & Logs
+.DS_Store
+Thumbs.db
+*.log
+
+# Distribution Archives
+*.zip

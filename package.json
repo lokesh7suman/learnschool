@@ -1,0 +1,37 @@
+{
+	"name": "learnschool",
+	"version": "1.0.5",
+	"description": "Full-site editing block theme built for educational institutions, academies, and schools.",
+	"author": "codeclove",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"block-theme",
+		"full-site-editing",
+		"education"
+	],
+	"homepage": "https://codeclove.com/learnschool",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/codeclove/learnschool.git"
+	},
+	"bugs": {
+		"url": "https://github.com/codeclove/learnschool/issues"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^10.0.0",
+		"@wordpress/scripts": "^30.0.0"
+	},
+	"scripts": {
+		"build:zip": "node bin/build-zip.js",
+		"bundle": "npm run check && node bin/build-zip.js",
+		"check": "npm run lint:css && npm run lint:json && composer run lint && composer run analyze",
+		"env": "wp-env",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style 'style.css'",
+		"lint:json": "wp-scripts lint-pkg-json",
+		"test": "npm run check",
+		"test:patterns": "php .tests/e2e-patterns-test.php --strict && node .tests/gutenberg-e2e-validate.js",
+		"test:setup": "node bin/setup-test-data.js"
+	}
+}

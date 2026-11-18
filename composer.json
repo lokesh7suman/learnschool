@@ -1,0 +1,26 @@
+{
+	"name": "codeclove/learnschool",
+	"description": "Full-site editing block theme built for schools, academies, and universities.",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"wp-coding-standards/wpcs": "^3.1",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"szepeviktor/phpstan-wordpress": "^1.3",
+		"phpstan/phpstan": "^1.10"
+	},
+	"scripts": {
+		"lint": "phpcs -p -s",
+		"lint:fix": "phpcbf -p",
+		"analyze": "phpstan analyze --debug --memory-limit=512M"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

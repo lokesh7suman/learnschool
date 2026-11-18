@@ -1,0 +1,79 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Midnight Lilac",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"color": "#120e24",
+					"name": "Base / Dark Midnight"
+				},
+				{
+					"slug": "base-subtle",
+					"color": "#1c1736",
+					"name": "Base Subtle / Dark Violet"
+				},
+				{
+					"slug": "contrast",
+					"color": "#ffffff",
+					"name": "Contrast / Pure White"
+				},
+				{
+					"slug": "contrast-subtle",
+					"color": "#a5a0c8",
+					"name": "Contrast Subtle / Muted Lavender"
+				},
+				{
+					"slug": "primary",
+					"color": "#9b7cf8",
+					"name": "Primary / Neon Purple"
+				},
+				{
+					"slug": "primary-dark",
+					"color": "#7a55f5",
+					"name": "Primary Dark / Deep Purple"
+				},
+				{
+					"slug": "primary-light",
+					"color": "#e0d4fe",
+					"name": "Primary Light / Soft Lilac"
+				},
+				{
+					"slug": "secondary",
+					"color": "#ffd25d",
+					"name": "Secondary / Bright Gold"
+				},
+				{
+					"slug": "surface",
+					"color": "#1c1736",
+					"name": "Surface / Card Midnight"
+				},
+				{
+					"slug": "surface-lilac",
+					"color": "#28214d",
+					"name": "Surface Lilac Dark"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|contrast"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var:preset|color|contrast"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var:preset|color|primary"
+				}
+			}
+		}
+	}
+}

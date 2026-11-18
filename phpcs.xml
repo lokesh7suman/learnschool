@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ruleset name="LearnSchool Coding Standards">
+	<description>PHP_CodeSniffer ruleset for LearnSchool block theme.</description>
+
+	<!-- Pass flags -->
+	<arg value="ps"/>
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/>
+
+	<!-- Scan these files and directories -->
+	<file>.</file>
+
+	<!-- Exclude dependencies and assets -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/assets/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+
+	<!-- Set minimum supported PHP version -->
+	<config name="testVersion" value="7.4-"/>
+
+	<!-- Rules: WordPress Coding Standards -->
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Extra"/>
+
+	<!-- Rules: PHP Compatibility for WordPress -->
+	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- Enforce theme text-domain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="learnschool"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Enforce prefixing for theme functions, classes, and variables -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="learnschool"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

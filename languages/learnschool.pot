@@ -1,0 +1,653 @@
+# Copyright (C) 2026 codeclove
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: LearnSchool 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/learnschool\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-17 16:57:55\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: LearnSchool i18n\n"
+"X-Domain: learnschool\n\n"
+#: inc/block-styles.php
+msgid "LearnSchool Card (48px Radius)"
+msgstr ""
+
+#: inc/block-styles.php
+msgid "LearnSchool Large Card (64px Radius)"
+msgstr ""
+
+#: inc/block-styles.php
+msgid "LearnSchool Pill"
+msgstr ""
+
+#: inc/block-styles.php
+msgid "Outline Purple Pill"
+msgstr ""
+
+#: inc/block-styles.php
+msgid "LearnSchool Link (Small)"
+msgstr ""
+
+#: inc/block-styles.php
+msgid "LearnSchool Yellow Pill"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "LearnSchool: Education Landing"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Playful, modern learning sections for LearnSchool."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Alerts & Notices"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Urgent announcements, weather advisories, and school status alerts."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Heroes & Banners"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "High-impact banners with tour bookings and admissions calls to action."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Academics & Programs"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Curriculums, school divisions, departments, and course showcases."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Admissions & Aid"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Enrollment timelines, tuition schedules, and application steps."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: News & Calendar"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Academic term dates, athletic calendars, and school press releases."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Campus & Facilities"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Virtual tours, STEM labs, libraries, and athletic pavilions."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Faculty & Leadership"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Leadership profiles, department heads, and faculty directories."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Community & Testimonials"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Social proof from students, alumni, and parents."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "LearnSchool: Headers"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Header and navigation patterns."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "LearnSchool: Footers"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Footer and colophon patterns."
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "School: Starter Pages"
+msgstr ""
+
+#: inc/pattern-categories.php
+msgid "Full-page starter layouts for Admissions, Academics, and About Us."
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "We aim to help children "
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "discover the joy of creative"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "learning and grow into well-rounded individuals."
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Kristin Watson"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Science Teacher"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Jenny Wilson"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Drawing Teacher"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Jacob Jones"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Math Teacher"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Savannah Nguyen"
+msgstr ""
+
+#: patterns/page-landing.php
+#: patterns/teachers.php
+msgid "Reading Teacher"
+msgstr ""
+
+#: patterns/hero-campus-banner.php
+msgid "Inspiring Excellence Since 1898"
+msgstr ""
+
+#: patterns/hero-campus-banner.php
+msgid "Nurturing Curious Minds. Shaping Future Leaders."
+msgstr ""
+
+#: patterns/hero-campus-banner.php
+msgid "LearnSchool provides rigorous academics, competitive athletics, and vibrant arts programs across an inclusive, values-driven campus community."
+msgstr ""
+
+#: patterns/hero-campus-banner.php
+msgid "Apply for Admission"
+msgstr ""
+
+#: patterns/hero-campus-banner.php
+msgid "Schedule Campus Visit"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Our "
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "interactive"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "features"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "#enjoy"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "#funny"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "#happy"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Quiz icon"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Fun "
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Quiz"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Test your understanding with a short but fun quizzes!"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Creative activities icon"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Creative "
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Activities"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Discover enjoyable activities such as coloring, crafting, and science."
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Game controller icon"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Learn with "
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Games"
+msgstr ""
+
+#: patterns/features.php
+#: patterns/page-landing.php
+msgid "Learn something new while your kids playing games!"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "LearnSchool student smiling"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "LearnSchool learning sticker badge"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "LearnSchool student thumbs up"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "The best place to"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "learn"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid " and "
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "play"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "for kids"
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "Discover thousands of fun and interactive learning activities to support your child's growth and learning process."
+msgstr ""
+
+#: patterns/hero.php
+#: patterns/page-landing.php
+msgid "Get Started"
+msgstr ""
+
+#: patterns/alert-emergency-bar.php
+msgid "CAMPUS NOTICE:"
+msgstr ""
+
+#: patterns/alert-emergency-bar.php
+msgid "Admissions for Academic Year 2026â2027 are now open. Priority enrollment deadline: January 15."
+msgstr ""
+
+#: patterns/alert-emergency-bar.php
+msgid "View Admissions Guide â"
+msgstr ""
+
+#: patterns/utility-top-bar.php
+msgid "Main Office: (555) 234-5678"
+msgstr ""
+
+#: patterns/utility-top-bar.php
+msgid "Main Campus: 100 Academy Way, Cambridge"
+msgstr ""
+
+#: patterns/utility-top-bar.php
+msgid "Parent Portal"
+msgstr ""
+
+#: patterns/utility-top-bar.php
+msgid "Student Portal"
+msgstr ""
+
+#: patterns/utility-top-bar.php
+msgid "Staff Directory"
+msgstr ""
+
+#: patterns/utility-top-bar.php
+msgid "Academic Calendar"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "LearnSchool cheerful student mascot"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "Join our"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "LearnSchool"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "community now"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "Name"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "Email or Phone"
+msgstr ""
+
+#: patterns/cta.php
+#: patterns/page-landing.php
+msgid "Submit"
+msgstr ""
+
+#: patterns/footer.php
+#: patterns/header.php
+msgid "LearnSchool Logo"
+msgstr ""
+
+#: patterns/header.php
+msgid "Sign In"
+msgstr ""
+
+#: patterns/header.php
+msgid "Contact Us"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "Read our "
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "blog"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "See All"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "Learning with games"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "Learning with Games? Why not?"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "Embrace the joy of games to enhance your learning experience!"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "Learn more"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "10 Learning Game Ideas"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "10 ideas for learning with for your kids to have fun."
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "Fun Activities for Kids"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/page-landing.php
+msgid "Want to do something outside from your laptop? Here are our recommendations."
+msgstr ""
+
+#: patterns/footer.php
+msgid "LearnSchool empowers children with interactive problem-solving, cognitive development games, and joyful educational journeys."
+msgstr ""
+
+#: patterns/footer.php
+msgid "Â© %s LearnSchool Learning Platform. All rights reserved."
+msgstr ""
+
+#: patterns/footer.php
+msgid "Home"
+msgstr ""
+
+#: patterns/footer.php
+msgid "App"
+msgstr ""
+
+#: patterns/footer.php
+msgid "About"
+msgstr ""
+
+#: patterns/footer.php
+msgid "People"
+msgstr ""
+
+#: patterns/footer.php
+msgid "For school"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Brain training"
+msgstr ""
+
+#: patterns/footer.php
+msgid "E-learning"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Online modules"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Media"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Support Us"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Contact"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Places"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Instagram"
+msgstr ""
+
+#: patterns/footer.php
+msgid "Facebook"
+msgstr ""
+
+#: patterns/footer.php
+msgid "X (formerly Twitter)"
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "Frequently "
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "asked"
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "questions"
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "What makes LearnSchool different from other education platforms?"
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "LearnSchool combines gamified learning science, child-friendly adaptive feedback, and zero-distraction interactive interfaces crafted exclusively for elementary and primary learners."
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "How can I access LearnSchool?"
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "LearnSchool is accessible through modern web browsers, tablet apps (iPad, Android), and desktop environments, with progress syncing seamlessly across all parent-linked devices."
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "What about the security of children's data using this platform?"
+msgstr ""
+
+#: patterns/faq.php
+#: patterns/page-landing.php
+msgid "We strictly adhere to COPPA, FERPA, and GDPR-K regulations. There are no third-party ad trackers, zero behavioral targeting, and all student data is encrypted at rest and in transit."
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "The learning materials provided are "
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "enjoyable"
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "for children"
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "Don't worry! Your children will be having a fun time while learning with our materials that are easy to understand."
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "Student smiling while learning"
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "Student reading learning materials"
+msgstr ""
+
+#: patterns/learning-materials.php
+#: patterns/page-landing.php
+msgid "Student holding study book"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/landing-page.php
+msgid "about Learning with Games? Why not?"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/landing-page.php
+msgid "about 10 Learning Game Ideas"
+msgstr ""
+
+#: patterns/blog.php
+#: patterns/landing-page.php
+msgid "about Fun Activities for Kids"
+msgstr ""
+

@@ -1,0 +1,25 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# Build artifacts and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+composer.lock
+package-lock.json
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Static analysis baseline
+phpstan-baseline.neon
+
+# Test data & artifacts
+/.tests/
+/tests/
