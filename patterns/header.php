@@ -3,6 +3,7 @@
  * Title: Header
  * Slug: learnschool/header
  * Categories: header
+ * Block Types: core/template-part/header
  * Description: Header with logo, navigation links, and contact button.
  * Keywords: header, navigation, logo, menu
  *
@@ -17,13 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"align":"full","className":"wk-header-wrapper","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull wk-header-wrapper"><!-- wp:group {"align":"wide","className":"wk-header-inner","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide wk-header-inner"><!-- wp:group {"className":"wk-logo-group","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group wk-logo-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"wk-logo-icon"} -->
-<figure class="wp-block-image size-full wk-logo-icon"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/branding/logo.svg' ) ); ?>" alt="<?php echo esc_attr__( 'LearnSchool Logo', 'learnschool' ); ?>"/></a></figure>
-<!-- /wp:image -->
+<div class="wp-block-group wk-logo-group"><!-- wp:site-logo {"width":34,"className":"wk-logo-icon","shouldSyncIcon":false} /-->
 
-<!-- wp:paragraph {"className":"wk-logo-title"} -->
-<p class="wk-logo-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">LearnSchool</a></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:site-title {"className":"wk-logo-title","level":0,"isLink":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:navigation {"className":"wk-header-nav","overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->

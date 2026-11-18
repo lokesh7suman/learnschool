@@ -2,6 +2,9 @@
 /**
  * LearnSchool Block Styles Registration
  *
+ * All slugs are prefixed with `learnschool-` to prevent collision with
+ * core WordPress or third-party plugin block style namespaces.
+ *
  * @package LearnSchool
  * @since 1.0.0
  */
@@ -14,13 +17,12 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 	/**
 	 * Registers custom block styles for buttons, group cards, and sections.
 	 *
-	 * Labels are kept short and clean to prevent ellipsis truncation in the Gutenberg sidebar.
-	 *
 	 * @since 1.0.0
 	 * @return void
 	 */
 	function learnschool_register_block_styles() {
-		// Group / Container card variations.
+
+		// ── Group / Container card variations ────────────────────────────────
 		register_block_style(
 			'core/group',
 			array(
@@ -37,7 +39,72 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			)
 		);
 
-		// Button style variations.
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-surface',
+				'label' => __( 'Surface', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-lilac',
+				'label' => __( 'Lilac', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-midnight',
+				'label' => __( 'Midnight', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-glass',
+				'label' => __( 'Glass Card', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-clean',
+				'label' => __( 'Clean (No Doodles)', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-reverse',
+				'label' => __( 'Reverse Layout', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-prose',
+				'label' => __( 'Prose / Article', 'learnschool' ),
+			)
+		);
+
+		// ── Columns variations ────────────────────────────────────────────────
+		register_block_style(
+			'core/columns',
+			array(
+				'name'  => 'learnschool-reverse',
+				'label' => __( 'Reverse Layout', 'learnschool' ),
+			)
+		);
+
+		// ── Button style variations ───────────────────────────────────────────
 		register_block_style(
 			'core/button',
 			array(
@@ -49,7 +116,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 		register_block_style(
 			'core/button',
 			array(
-				'name'  => 'outline-purple',
+				'name'  => 'learnschool-outline',
 				'label' => __( 'Outline', 'learnschool' ),
 			)
 		);
@@ -57,7 +124,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 		register_block_style(
 			'core/button',
 			array(
-				'name'  => 'yellow-pill',
+				'name'  => 'learnschool-yellow',
 				'label' => __( 'Yellow', 'learnschool' ),
 			)
 		);
@@ -70,16 +137,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			)
 		);
 
-		// Table style variations.
-		register_block_style(
-			'core/table',
-			array(
-				'name'  => 'learnschool-table',
-				'label' => __( 'Card Table', 'learnschool' ),
-			)
-		);
-
-		// Quote style variations.
+		// ── Quote style variations ────────────────────────────────────────────
 		register_block_style(
 			'core/quote',
 			array(
@@ -88,133 +146,66 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			)
 		);
 
-		// Details / Accordion style variations.
+		// ── Details / Accordion style variations ──────────────────────────────
 		register_block_style(
 			'core/details',
 			array(
 				'name'  => 'learnschool-accordion',
-				'label' => __( 'Playful Card', 'learnschool' ),
+				'label' => __( 'Accordion Card', 'learnschool' ),
 			)
 		);
 
-		// Separator style variations.
+		// ── Separator style variations ────────────────────────────────────────
 		register_block_style(
 			'core/separator',
 			array(
-				'name'  => 'gradient-pill',
+				'name'  => 'learnschool-gradient-pill',
 				'label' => __( 'Gradient Pill', 'learnschool' ),
 			)
 		);
 
-		// Post terms (category/tag) style variations.
+		// ── Post terms (category / tag) style variations ──────────────────────
 		register_block_style(
 			'core/post-terms',
 			array(
-				'name'  => 'badge-pill',
-				'label' => __( 'Badge Pill', 'learnschool' ),
+				'name'  => 'learnschool-badge',
+				'label' => __( 'Badge', 'learnschool' ),
 			)
 		);
 
-		// List style variations.
+		// ── List style variations ─────────────────────────────────────────────
 		register_block_style(
 			'core/list',
 			array(
 				'name'  => 'learnschool-checkmarks',
-				'label' => __( 'Playful List', 'learnschool' ),
+				'label' => __( 'Checkmarks', 'learnschool' ),
 			)
 		);
 
-		// Gallery style variations.
+		// ── Image style variations ────────────────────────────────────────────
 		register_block_style(
-			'core/gallery',
+			'core/image',
 			array(
-				'name'  => 'learnschool-cards',
-				'label' => __( 'Card Gallery', 'learnschool' ),
+				'name'  => 'learnschool-flip',
+				'label' => __( 'Flip Horizontal', 'learnschool' ),
 			)
 		);
 
-		// Fallback section & image customization styles (registered only if companion plugin hasn't registered them).
-		$registry = WP_Block_Styles_Registry::get_instance();
+		register_block_style(
+			'core/image',
+			array(
+				'name'  => 'learnschool-subtle',
+				'label' => __( 'Subtle / Decorative', 'learnschool' ),
+			)
+		);
 
-		if ( ! $registry->is_registered( 'core/group', 'clean' ) ) {
-			register_block_style(
-				'core/group',
-				array(
-					'name'  => 'clean',
-					'label' => __( 'Clean', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/group', 'reverse' ) ) {
-			register_block_style(
-				'core/group',
-				array(
-					'name'  => 'reverse',
-					'label' => __( 'Reverse', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/columns', 'reverse' ) ) {
-			register_block_style(
-				'core/columns',
-				array(
-					'name'  => 'reverse',
-					'label' => __( 'Reverse', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/group', 'surface' ) ) {
-			register_block_style(
-				'core/group',
-				array(
-					'name'  => 'surface',
-					'label' => __( 'Surface', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/group', 'lilac' ) ) {
-			register_block_style(
-				'core/group',
-				array(
-					'name'  => 'lilac',
-					'label' => __( 'Lilac', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/image', 'flip' ) ) {
-			register_block_style(
-				'core/image',
-				array(
-					'name'  => 'flip',
-					'label' => __( 'Flip', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/image', 'subtle' ) ) {
-			register_block_style(
-				'core/image',
-				array(
-					'name'  => 'subtle',
-					'label' => __( 'Subtle', 'learnschool' ),
-				)
-			);
-		}
-
-		if ( ! $registry->is_registered( 'core/image', 'hide-mobile' ) ) {
-			register_block_style(
-				'core/image',
-				array(
-					'name'  => 'hide-mobile',
-					'label' => __( 'Hide Mobile', 'learnschool' ),
-				)
-			);
-		}
+		register_block_style(
+			'core/image',
+			array(
+				'name'  => 'learnschool-hide-mobile',
+				'label' => __( 'Hide on Mobile', 'learnschool' ),
+			)
+		);
 	}
 endif;
 add_action( 'init', 'learnschool_register_block_styles' );

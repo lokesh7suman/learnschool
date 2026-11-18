@@ -2,7 +2,7 @@
 /**
  * Title: Testimonials & Reviews
  * Slug: learnschool/testimonials
- * Categories: testimonials
+ * Categories: testimonials, learnschool
  * Keywords: testimonials, reviews, parents, quotes, rating
  * Description: Section featuring parent and student reviews with star ratings and feedback cards.
  * Inserter: yes

@@ -54,15 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php esc_html_e( 'Fill in your details below to receive our 2026–2027 curriculum prospectus and campus visit pass.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:html -->
-<form action="#request-pack" method="post" onsubmit="event.preventDefault(); alert('<?php echo esc_attr__( 'Thank you! Your admissions pack has been requested.', 'learnschool' ); ?>');">
-<p style="margin-bottom:12px;"><label for="cta-parent-name" style="display:block;font-weight:600;font-size:14px;margin-bottom:4px;"><?php esc_html_e( 'Parent or Guardian Name', 'learnschool' ); ?></label><input id="cta-parent-name" type="text" name="parent_name" placeholder="<?php echo esc_attr__( 'e.g., Sarah Jenkins', 'learnschool' ); ?>" required autocomplete="name" /></p>
-<p style="margin-bottom:12px;"><label for="cta-email" style="display:block;font-weight:600;font-size:14px;margin-bottom:4px;"><?php esc_html_e( 'Email Address', 'learnschool' ); ?></label><input id="cta-email" type="email" name="email" placeholder="<?php echo esc_attr__( 'name@example.com', 'learnschool' ); ?>" required autocomplete="email" /></p>
-<p style="margin-bottom:16px;"><label for="cta-grade-select" style="display:block;font-weight:600;font-size:14px;margin-bottom:4px;"><?php esc_html_e( 'Select Grade Level', 'learnschool' ); ?></label><select id="cta-grade-select" name="grade"><option value=""><?php esc_html_e( 'Select grade level of interest', 'learnschool' ); ?></option><option value="early-years"><?php esc_html_e( 'Early Learning (Ages 3–5)', 'learnschool' ); ?></option><option value="elementary"><?php esc_html_e( 'Elementary School (Grades 1–5)', 'learnschool' ); ?></option><option value="middle"><?php esc_html_e( 'Middle School (Grades 6–8)', 'learnschool' ); ?></option><option value="high"><?php esc_html_e( 'High School (Grades 9–12)', 'learnschool' ); ?></option></select></p>
-<div class="wp-block-button is-style-yellow-pill" style="margin-bottom:12px;"><button type="submit" class="wp-block-button__link wp-element-button" style="width:100%;"><?php echo esc_html__( 'Schedule a Campus Tour', 'learnschool' ); ?></button></div>
-<p style="font-size:12px;color:var(--wp--preset--color--contrast-subtle);margin:0;text-align:center;"><?php esc_html_e( 'We respect your privacy. No spam, guaranteed.', 'learnschool' ); ?></p>
-</form>
-<!-- /wp:html --></div>
+<!-- wp:group {"className":"wk-cta-form","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"flex-start"}} -->
+<div class="wp-block-group wk-cta-form"><!-- wp:search {"label":"Email","showLabel":false,"placeholder":"Enter your email address","buttonText":"Get Started","buttonPosition":"button-inside","buttonUseIcon":false,"className":"wk-cta-search-form"} /--></div>
+<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->

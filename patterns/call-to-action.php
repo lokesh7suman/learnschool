@@ -2,7 +2,7 @@
 /**
  * Title: Call to Action
  * Slug: learnschool/call-to-action
- * Categories: call-to-action, banner
+ * Categories: call-to-action, banner, learnschool
  * Description: Curved purple call-to-action card with mascot student illustration, cursive title, and pill form inputs.
  * Keywords: cta, call to action, subscribe, form, learnschool
  *
@@ -33,16 +33,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading wk-cta-headline"><?php echo esc_html__( 'Join our', 'learnschool' ); ?><br><span class="wk-accent-learnschool"><?php echo esc_html__( 'LearnSchool', 'learnschool' ); ?></span><br><?php echo esc_html__( 'community now', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"className":"wk-cta-form","layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group wk-cta-form"><!-- wp:html -->
-<form class="wk-cta-form-el" action="#join" method="post" onsubmit="event.preventDefault(); alert('<?php echo esc_attr__( 'Thank you for joining LearnSchool!', 'learnschool' ); ?>');">
-<input class="wk-cta-input-field" type="text" name="name" placeholder="<?php echo esc_attr__( 'Name', 'learnschool' ); ?>" required aria-label="<?php echo esc_attr__( 'Name', 'learnschool' ); ?>" autocomplete="name" autocapitalize="words" autocorrect="off" enterkeyhint="next"/>
-<input class="wk-cta-input-field" type="text" name="contact" placeholder="<?php echo esc_attr__( 'Email or Phone', 'learnschool' ); ?>" required aria-label="<?php echo esc_attr__( 'Email or Phone', 'learnschool' ); ?>" autocomplete="email" enterkeyhint="done"/>
-<div class="wk-cta-btn-wrap">
-<button type="submit" class="wp-block-button__link wp-element-button wk-cta-submit-btn"><?php echo esc_html__( 'Submit', 'learnschool' ); ?></button>
-</div>
-</form>
-<!-- /wp:html --></div>
+<!-- wp:group {"className":"wk-cta-form","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"flex-start"}} -->
+<div class="wp-block-group wk-cta-form"><!-- wp:search {"label":"Email","showLabel":false,"placeholder":"Enter your email address","buttonText":"Get Started","buttonPosition":"button-inside","buttonUseIcon":false,"className":"wk-cta-search-form"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

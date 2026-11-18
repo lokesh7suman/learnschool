@@ -2,7 +2,7 @@
 /**
  * Title: Teachers
  * Slug: learnschool/teachers
- * Categories: team
+ * Categories: team, learnschool
  * Description: Team section featuring circular photo cards with teacher profiles.
  * Keywords: teachers, team, faculty, educators
  *

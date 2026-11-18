@@ -2,7 +2,7 @@
 /**
  * Title: Campus Hero
  * Slug: learnschool/hero-campus
- * Categories: banner, call-to-action
+ * Categories: banner, featured, learnschool
  * Keywords: hero, campus, banner, admissions
  * Description: Campus hero section with call-to-action buttons and accreditation highlights.
  * Inserter: yes

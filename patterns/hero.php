@@ -2,7 +2,7 @@
 /**
  * Title: Hero
  * Slug: learnschool/hero
- * Categories: banner, featured
+ * Categories: banner, featured, learnschool
  * Description: Hero section with headline, call-to-action button, and decorative student badges.
  * Keywords: hero, banner, intro, education
  *

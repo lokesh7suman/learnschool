@@ -2,7 +2,7 @@
 /**
  * Title: Testimonials (Large Featured Quote & Parent Spotlight)
  * Slug: learnschool/testimonials-2
- * Categories: testimonials
+ * Categories: testimonials, learnschool
  * Inserter: yes
  * Keywords: testimonials, spotlight, story, quote, featured
  * Description: Heroic single-story spotlight pairing a large high-impact parent quote and star rating with a full-height student portrait photo and school trust metrics.

@@ -2,7 +2,7 @@
 /**
  * Title: FAQ
  * Slug: learnschool/faq
- * Categories: text
+ * Categories: text, learnschool
  * Description: Frequently asked questions accordion with circular toggle buttons.
  * Keywords: faq, questions, accordion, help
  *

@@ -1,79 +1,76 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 3,
-	"title": "Midnight Lilac",
-	"settings": {
-		"color": {
-			"palette": [
-				{
-					"slug": "base",
-					"color": "#120e24",
-					"name": "Base / Dark Midnight"
-				},
-				{
-					"slug": "base-subtle",
-					"color": "#1c1736",
-					"name": "Base Subtle / Dark Violet"
-				},
-				{
-					"slug": "contrast",
-					"color": "#ffffff",
-					"name": "Contrast / Pure White"
-				},
-				{
-					"slug": "contrast-subtle",
-					"color": "#a5a0c8",
-					"name": "Contrast Subtle / Muted Lavender"
-				},
-				{
-					"slug": "primary",
-					"color": "#9b7cf8",
-					"name": "Primary / Neon Purple"
-				},
-				{
-					"slug": "primary-dark",
-					"color": "#7a55f5",
-					"name": "Primary Dark / Deep Purple"
-				},
-				{
-					"slug": "primary-light",
-					"color": "#e0d4fe",
-					"name": "Primary Light / Soft Lilac"
-				},
-				{
-					"slug": "secondary",
-					"color": "#ffd25d",
-					"name": "Secondary / Bright Gold"
-				},
-				{
-					"slug": "surface",
-					"color": "#1c1736",
-					"name": "Surface / Card Midnight"
-				},
-				{
-					"slug": "surface-lilac",
-					"color": "#28214d",
-					"name": "Surface Lilac Dark"
-				}
-			]
-		}
-	},
-	"styles": {
-		"color": {
-			"background": "var:preset|color|base",
-			"text": "var:preset|color|contrast"
-		},
-		"elements": {
-			"heading": {
-				"color": {
-					"text": "var:preset|color|contrast"
-				}
-			},
-			"link": {
-				"color": {
-					"text": "var:preset|color|primary"
-				}
-			}
-		}
-	}
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "title": "Midnight Lilac",
+  "slug": "midnight-lilac",
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "base",             "color": "#120e24", "name": "Base / Deep Night" },
+        { "slug": "base-subtle",      "color": "#1e1844", "name": "Base Subtle / Night Purple" },
+        { "slug": "contrast",         "color": "#f0ebff", "name": "Contrast / Soft White" },
+        { "slug": "contrast-subtle",  "color": "#a8a0c8", "name": "Contrast Subtle / Muted Lavender" },
+        { "slug": "primary",          "color": "#9b7cf8", "name": "Primary / Bright Lilac" },
+        { "slug": "primary-dark",     "color": "#7a55f5", "name": "Primary Dark" },
+        { "slug": "primary-light",    "color": "#3d2d7a", "name": "Primary Light / Deep Violet" },
+        { "slug": "secondary",        "color": "#ffbe17", "name": "Secondary / Gold" },
+        { "slug": "secondary-dark",   "color": "#d97706", "name": "Secondary Dark / Amber" },
+        { "slug": "accent",           "color": "#ffd25d", "name": "Accent / Pastel Gold" },
+        { "slug": "amber-accessible", "color": "#fbbf24", "name": "Accessible Gold" },
+        { "slug": "purple-tint",      "color": "#6b55c8", "name": "Purple Tint" },
+        { "slug": "midnight",         "color": "#0a0818", "name": "Midnight Deep" },
+        { "slug": "surface-slate",    "color": "#1a1535", "name": "Surface Slate / Dark" },
+        { "slug": "border",           "color": "#2e2660", "name": "Border / Dark Purple" },
+        { "slug": "success",          "color": "#34d399", "name": "Success" },
+        { "slug": "error",            "color": "#f87171", "name": "Error" },
+        { "slug": "warning",          "color": "#1e1844", "name": "Warning Background" },
+        { "slug": "warning-text",     "color": "#fbbf24", "name": "Warning Text" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|base",
+      "text": "var:preset|color|contrast"
+    },
+    "elements": {
+      "link": {
+        "color": { "text": "var:preset|color|primary" },
+        ":hover": { "color": { "text": "var:preset|color|primary-dark" } }
+      },
+      "heading": {
+        "color": { "text": "var:preset|color|contrast" }
+      },
+      "button": {
+        "color": {
+          "background": "var:preset|color|primary",
+          "text": "var:preset|color|contrast"
+        },
+        ":hover": {
+          "color": {
+            "background": "var:preset|color|primary-dark",
+            "text": "var:preset|color|contrast"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/table": {
+        "border": {
+          "color": "var:preset|color|border",
+          "width": "1.5px",
+          "style": "solid"
+        }
+      },
+      "core/separator": {
+        "color": { "text": "var:preset|color|primary-light" }
+      },
+      "core/quote": {
+        "color": { "background": "var:preset|color|base-subtle" },
+        "border": {
+          "left": { "color": "var:preset|color|primary", "width": "4px", "style": "solid" }
+        }
+      }
+    }
+  }
 }

@@ -25,6 +25,14 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 				'description' => __( 'Full page layouts and starter templates.', 'learnschool' ),
 			)
 		);
+
+		register_block_pattern_category(
+			'learnschool',
+			array(
+				'label'       => _x( 'LearnSchool', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'All patterns from the LearnSchool theme.', 'learnschool' ),
+			)
+		);
 	}
 endif;
 add_action( 'init', 'learnschool_register_pattern_categories' );

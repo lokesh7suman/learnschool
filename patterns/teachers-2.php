@@ -2,7 +2,7 @@
 /**
  * Title: Teachers (Faculty Spotlight with Principal Welcome)
  * Slug: learnschool/teachers-2
- * Categories: team
+ * Categories: team, learnschool
  * Inserter: yes
  * Keywords: teachers, principal, leadership, faculty, team
  * Description: Asymmetrical layout featuring an expansive message and bio from the school principal on the left, paired with a 2x2 grid of key subject educators on the right.
