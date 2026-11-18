@@ -2,7 +2,7 @@
 /**
  * Title: Learning Materials Split Showcase
  * Slug: learnschool/learning-materials-split
- * Categories: services, learnschool
+ * Categories: features, learnschool
  * Description: Showcase section with student photography and enjoyable learning materials.
  * Keywords: materials, showcase, learning, education
  *

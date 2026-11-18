@@ -2,7 +2,7 @@
 /**
  * Title: Age-Group Program Tracks (Infants to Pre-K)
  * Slug: learnschool/program-tracks
- * Categories: services, featured, learnschool
+ * Categories: features, featured, learnschool
  * Description: 4-column curriculum showcase with age pills, low student-teacher ratios, and learning highlights.
  * Keywords: programs, infants, toddlers, preschool, pre-k, curriculum, ages
  *

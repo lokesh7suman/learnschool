@@ -2,7 +2,7 @@
 /**
  * Title: Top Bar with Contact Details
  * Slug: learnschool/top-bar-contact
- * Categories: banner, learnschool
+ * Categories: header, learnschool
  * Keywords: top bar, utility, contact, phone
  * Description: Top utility row providing contact info and portal links.
  * Inserter: yes

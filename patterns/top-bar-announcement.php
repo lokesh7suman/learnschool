@@ -2,7 +2,7 @@
 /**
  * Title: Top Bar Announcement Banner & Social Links
  * Slug: learnschool/top-bar-announcement
- * Categories: banner, learnschool
+ * Categories: header, learnschool
  * Keywords: top bar, announcement, social, alert, notice
  * Description: High-visibility top bar featuring a centered seasonal announcement flanked by school operating hours and social profile links.
  * Inserter: yes

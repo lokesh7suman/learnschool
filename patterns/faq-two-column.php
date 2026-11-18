@@ -2,7 +2,7 @@
 /**
  * Title: FAQ Two-Column Accordion Grid
  * Slug: learnschool/faq-two-column
- * Categories: text, learnschool
+ * Categories: faq, learnschool
  * Keywords: faq, accordion, two-column, admissions, academic, categories
  * Description: Two-column grid of expandable accordion questions organized into Academic and Administrative categories.
  * Inserter: yes

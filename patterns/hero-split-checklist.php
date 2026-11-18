@@ -2,7 +2,7 @@
 /**
  * Title: Hero Split with Media & Checklist
  * Slug: learnschool/hero-split-checklist
- * Categories: banner, learnschool
+ * Categories: hero, learnschool
  * Keywords: hero, split, checklist, enrollment, education
  * Description: Two-column split hero section with enrollment checklist, dual CTA buttons, and student showcase card with floating rating badge.
  * Inserter: yes

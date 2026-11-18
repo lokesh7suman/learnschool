@@ -2,7 +2,7 @@
 /**
  * Title: Hero Centered Campus
  * Slug: learnschool/hero-centered-campus
- * Categories: banner, learnschool
+ * Categories: hero, learnschool
  * Keywords: hero, campus, banner, admissions
  * Description: Campus hero section with call-to-action buttons and accreditation highlights.
  * Inserter: yes

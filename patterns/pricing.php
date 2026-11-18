@@ -2,7 +2,7 @@
 /**
  * Title: Tuition & Pricing Plans
  * Slug: learnschool/pricing
- * Categories: text, learnschool
+ * Categories: pricing, learnschool
  * Keywords: pricing, tuition, plans, fee, tiers, enroll
  * Description: Three-tier tuition and admission pricing plan comparison with badge highlights and CTA buttons.
  * Viewport Width: 1280
