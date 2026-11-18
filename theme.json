@@ -485,6 +485,42 @@
 			}
 		},
 		"blocks": {
+			"core/group": {
+				"variations": {
+					"learnschool-glass": {
+						"border": {
+							"color": "rgba(255, 255, 255, 0.5)",
+							"radius": "20px",
+							"style": "solid",
+							"width": "1px"
+						},
+						"color": {
+							"background": "rgba(255, 255, 255, 0.75)"
+						},
+						"css": "& { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }"
+					},
+					"learnschool-elevated": {
+						"border": {
+							"radius": "24px"
+						},
+						"color": {
+							"background": "var:preset|color|surface"
+						},
+						"shadow": "var:preset|shadow|elevated"
+					},
+					"learnschool-tinted": {
+						"border": {
+							"color": "var:preset|color|primary-light",
+							"radius": "20px",
+							"style": "solid",
+							"width": "1px"
+						},
+						"color": {
+							"background": "rgba(112, 79, 230, 0.05)"
+						}
+					}
+				}
+			},
 			"core/button": {
 				"border": {
 					"radius": "9999px"

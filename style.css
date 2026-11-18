@@ -577,11 +577,73 @@ summary:focus-visible,
 }
 
 .wp-block-group.is-style-learnschool-glass {
-	background: rgba(255, 255, 255, 0.72);
-	backdrop-filter: blur(16px) saturate(180%);
-	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	background: rgba(255, 255, 255, 0.75);
+	backdrop-filter: blur(12px) saturate(180%);
+	-webkit-backdrop-filter: blur(12px) saturate(180%);
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-radius: 20px;
+}
+
+.wp-block-group.is-style-learnschool-elevated {
+	background-color: var(--wp--preset--color--surface, #fff);
+	border-radius: 24px;
+	box-shadow: var(--wp--preset--shadow--elevated);
+}
+
+.wp-block-group.is-style-learnschool-tinted {
+	background-color: rgba(112, 79, 230, 0.05);
+	border: 1px solid var(--wp--preset--color--primary-light, #dec8fe);
+	border-radius: 20px;
+}
+
+/* Card Hover Lift & Image Zoom Micro-Interactions */
+.is-style-learnschool-card,
+.is-style-learnschool-card-arch,
+.is-style-learnschool-card-large,
+.is-style-learnschool-elevated,
+.is-style-learnschool-glass,
+.is-style-learnschool-tinted {
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.is-style-learnschool-card:hover,
+.is-style-learnschool-card-arch:hover,
+.is-style-learnschool-card-large:hover,
+.is-style-learnschool-elevated:hover,
+.is-style-learnschool-glass:hover,
+.is-style-learnschool-tinted:hover {
+	transform: translateY(-4px);
+}
+
+.is-style-learnschool-elevated:hover {
+	box-shadow: 0 24px 48px -12px rgba(18, 18, 18, 0.14), 0 10px 14px -4px rgba(18, 18, 18, 0.06);
+}
+
+.is-style-learnschool-glass:hover {
+	box-shadow: 0 12px 32px -4px rgba(112, 79, 230, 0.12);
+}
+
+.is-style-learnschool-tinted:hover {
+	box-shadow: 0 12px 28px -4px rgba(112, 79, 230, 0.08);
+}
+
+.is-style-learnschool-card .wp-block-image img,
+.is-style-learnschool-card-arch .wp-block-image img,
+.is-style-learnschool-card-large .wp-block-image img,
+.is-style-learnschool-elevated .wp-block-image img,
+.is-style-learnschool-glass .wp-block-image img,
+.is-style-learnschool-tinted .wp-block-image img {
+	transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-style-learnschool-card:hover .wp-block-image img,
+.is-style-learnschool-card-arch:hover .wp-block-image img,
+.is-style-learnschool-card-large:hover .wp-block-image img,
+.is-style-learnschool-elevated:hover .wp-block-image img,
+.is-style-learnschool-glass:hover .wp-block-image img,
+.is-style-learnschool-tinted:hover .wp-block-image img {
+	transform: scale(1.04);
 }
 
 .wp-block-group.is-style-learnschool-prose {
@@ -646,6 +708,39 @@ img.is-style-learnschool-flip {
 	border: none;
 	max-width: 80px;
 	margin-inline: auto;
+}
+
+/* Zero-JS Scroll-Driven Reading Progress Bar */
+@keyframes learnschool-progress-grow {
+
+	from {
+		transform: scaleX(0);
+	}
+
+	to {
+		transform: scaleX(1);
+	}
+}
+
+.learnschool-reading-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(90deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%);
+	transform-origin: left;
+	transform: scaleX(0);
+	animation: learnschool-progress-grow linear;
+	animation-timeline: scroll(root);
+	z-index: 9999;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.learnschool-reading-progress {
+		display: none;
+	}
 }
 
 /* ==========================================================================
@@ -3667,20 +3762,22 @@ ul.is-style-learnschool-checkmarks > li {
 }
 
 ul.is-style-learnschool-checkmarks > li::before {
-	content: "✓";
+	content: "";
 	position: absolute;
 	left: 0;
 	top: 2px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	display: inline-block;
 	width: 22px;
 	height: 22px;
-	border-radius: 50%;
-	background-color: var(--wp--preset--color--primary-light, #dec8fe);
-	color: var(--wp--preset--color--primary-dark);
-	font-size: 12px;
-	font-weight: 800;
+	background-color: var(--wp--preset--color--primary, currentcolor);
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+:where(.has-base-color, .has-primary-background-color) ul.is-style-learnschool-checkmarks > li::before,
+ul.is-style-learnschool-checkmarks.has-base-color > li::before,
+[class*="has-primary-background"] ul.is-style-learnschool-checkmarks > li::before {
+	background-color: currentcolor;
 }
 
 /* RTL (Right-to-Left) Language Layout Support */
