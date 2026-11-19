@@ -34,21 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
 <p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '100 Academy Way, Cambridge, MA', 'learnschool' ); ?><br><a href="tel:5552345678" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Phone: (555) 234-5678', 'learnschool' ); ?></a><br><a href="mailto:info@learnschool.edu" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Email: info@learnschool.edu', 'learnschool' ); ?></a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-star.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/footer-circle-doodle.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-wavy.svg' ) ); ?>" alt="" style="width:36px;height:36px"/></figure>
-<!-- /wp:image --></div>
-<!-- /wp:group --></div>
+<!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->

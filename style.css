@@ -809,43 +809,6 @@ img.is-style-learnschool-flip {
 	background-color: var(--wp--preset--color--primary-light, #dec8fe);
 }
 
-/* Clean Style: Hides decorative vector doodles across sections with 1 click */
-.is-style-learnschool-clean .wk-hero-loop-arrow,
-.is-style-learnschool-clean .wk-hero-ripple-rings,
-.is-style-learnschool-clean .wk-hero-sticker-badge,
-.is-style-learnschool-clean .wk-hero-lilac-dot,
-.is-style-learnschool-clean .wk-materials-doodle-sparkle,
-.is-style-learnschool-clean .wk-materials-doodle-wavy,
-.is-style-learnschool-clean .wk-materials-doodle-lines,
-.is-style-learnschool-clean .wk-teacher-doodle-star,
-.is-style-learnschool-clean .wk-teacher-doodle-wavy,
-.is-style-learnschool-clean .wk-cta-squiggle-doodle,
-.is-style-learnschool-clean .wk-cta-corner-lines,
-.is-style-learnschool-clean .wk-cta-logo-doodle,
-.is-style-learnschool-clean .wk-footer-doodles,
-.is-style-learnschool-clean .wk-step-doodle,
-.is-style-learnschool-clean .wk-footer-doodle-star,
-.is-style-learnschool-clean .wk-footer-doodle-circle,
-.is-style-learnschool-clean .wk-footer-doodle-wavy,
-.is-style-clean .wk-hero-loop-arrow,
-.is-style-clean .wk-hero-ripple-rings,
-.is-style-clean .wk-hero-sticker-badge,
-.is-style-clean .wk-hero-lilac-dot,
-.is-style-clean .wk-materials-doodle-sparkle,
-.is-style-clean .wk-materials-doodle-wavy,
-.is-style-clean .wk-materials-doodle-lines,
-.is-style-clean .wk-teacher-doodle-star,
-.is-style-clean .wk-teacher-doodle-wavy,
-.is-style-clean .wk-cta-squiggle-doodle,
-.is-style-clean .wk-cta-corner-lines,
-.is-style-clean .wk-cta-logo-doodle,
-.is-style-clean .wk-footer-doodles,
-.is-style-clean .wk-step-doodle,
-.is-style-clean .wk-footer-doodle-star,
-.is-style-clean .wk-footer-doodle-circle,
-.is-style-clean .wk-footer-doodle-wavy {
-	display: none;
-}
 
 /* ==========================================================================
    2b. Group & Container Card Variations (Clean Professional Cards)
@@ -1072,31 +1035,6 @@ span.learnschool-underline-loop.is-style-clean::after {
 	display: none;
 }
 
-/* Clean CTA Section Mode: Centered headline and form without mascot */
-.is-style-learnschool-clean.wk-cta-wrapper .wk-cta-card,
-.is-style-clean.wk-cta-wrapper .wk-cta-card {
-	justify-content: center;
-	text-align: center;
-	padding: 60px 32px;
-}
-
-.is-style-learnschool-clean .wk-cta-mascot,
-.is-style-clean .wk-cta-mascot {
-	display: none;
-}
-
-.is-style-learnschool-clean .wk-cta-content,
-.is-style-clean .wk-cta-content {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 580px;
-}
-
-.is-style-learnschool-clean .wk-cta-form,
-.is-style-clean .wk-cta-form {
-	align-items: center;
-}
-
 /* Reverse Section Layout Style: Swapped columns and alignments */
 .is-style-learnschool-reverse .wk-materials-container,
 .is-style-reverse .wk-materials-container,
@@ -1105,29 +1043,6 @@ span.learnschool-underline-loop.is-style-clean::after {
 .wp-block-columns.is-style-learnschool-reverse,
 .wp-block-columns.is-style-reverse {
 	flex-direction: row-reverse;
-}
-
-.is-style-learnschool-reverse .wk-cta-card,
-.is-style-reverse .wk-cta-card {
-	justify-content: flex-start;
-}
-
-.is-style-learnschool-reverse .wk-cta-mascot,
-.is-style-reverse .wk-cta-mascot {
-	left: auto;
-	right: -20px;
-}
-
-.is-style-learnschool-reverse .wk-cta-mascot img,
-.is-style-reverse .wk-cta-mascot img {
-	transform: scaleX(1);
-}
-
-.is-style-learnschool-reverse .wk-cta-squiggle-doodle,
-.is-style-reverse .wk-cta-squiggle-doodle {
-	right: auto;
-	left: 0;
-	transform: scaleX(-1);
 }
 
 /* Image & Doodle Customizations */
@@ -1151,147 +1066,19 @@ img.is-style-flip-horizontal {
    ========================================================================== */
 
 .wk-hero-wrapper {
-	position: relative;
 	width: 100%;
-	padding: 44px 24px 80px;
+	padding: 80px 24px 88px;
 	box-sizing: border-box;
 	background-color: var(--wp--preset--color--base, #fff);
-	overflow: hidden;
 }
 
 .wk-hero-container {
-	max-width: 1080px;
+	max-width: 900px;
 	margin: 0 auto;
-	position: relative;
-	min-height: 620px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-}
-
-/* Left floating decorative elements */
-.wk-hero-decor-left {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 280px;
-	height: 100%;
-	pointer-events: none;
-	z-index: 2;
-}
-
-.wk-hero-kid-badge {
-	position: absolute;
-	left: 0;
-	top: 15px;
-	width: 245px;
-	height: 200px;
-	margin: 0;
-}
-
-.wk-hero-kid-badge img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.wk-hero-loop-arrow {
-	position: absolute;
-	left: 65px;
-	top: 205px;
-	width: 137px;
-	height: 160px;
-	margin: 0;
-}
-
-.wk-hero-loop-arrow img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.wk-hero-ripple-rings {
-	position: absolute;
-	left: 110px;
-	top: 370px;
-	width: 90px;
-	height: 90px;
-	margin: 0;
-}
-
-.wk-hero-ripple-rings img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-/* Right floating decorative elements */
-.wk-hero-decor-right {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 320px;
-	height: 100%;
-	pointer-events: none;
-	z-index: 2;
-}
-
-.wk-hero-sticker-badge {
-	position: absolute;
-	right: 35px;
-	top: 30px;
-	width: 140px;
-	height: 140px;
-	margin: 0;
-	animation: wk-spin-slow 24s linear infinite;
-}
-
-@keyframes wk-spin-slow {
-
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-.wk-hero-sticker-badge img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.wk-hero-lilac-dot {
-	position: absolute;
-	right: 155px;
-	top: 220px;
-	width: 28px;
-	height: 28px;
-	margin: 0;
-}
-
-.wk-hero-lilac-dot img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.wk-hero-thumbsup-kid {
-	position: absolute;
-	right: 0;
-	top: 285px;
-	width: 280px;
-	height: 212px;
-	margin: 0;
-}
-
-.wk-hero-thumbsup-kid img {
-	width: 100%;
-	height: auto;
-	display: block;
 }
 
 /* Headline & Wavy Brush Underline Strokes */
@@ -1427,49 +1214,36 @@ img.is-style-flip-horizontal {
 }
 
 .wk-tags-cluster {
-	position: relative;
-	width: 338px;
-	height: 232px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	gap: 12px;
+	flex-wrap: wrap;
 }
 
 .wk-tag-pill {
-	position: absolute;
-	z-index: 2;
-	display: inline-block;
-	padding: 8px 24px;
+	display: inline-flex;
+	align-items: center;
+	padding: 8px 20px;
 	border-radius: 72px;
-	font-size: 18px;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 600;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	margin: 0;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .wk-tag-enjoy {
 	background-color: var(--wp--preset--color--accent);
 	color: var(--wp--preset--color--contrast);
-	top: 65px;
-	left: 165px;
-	transform: rotate(19.1deg);
 }
 
 .wk-tag-funny {
 	background-color: var(--wp--preset--color--primary-light);
 	color: var(--wp--preset--color--contrast);
-	top: 33px;
-	left: 38px;
-	transform: rotate(41.4deg);
 }
 
 .wk-tag-happy {
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base, #fff);
-	top: 159px;
-	left: 133px;
-	transform: rotate(0.93deg);
 }
 
 .wk-features-grid {
@@ -1482,16 +1256,12 @@ img.is-style-flip-horizontal {
 
 .wk-feature-card {
 	flex: 1 1 0;
-	min-height: 448px;
-	height: 100%;
-	border-radius: 64px;
+	border-radius: 36px;
 	padding: 40px;
 	box-sizing: border-box;
-	position: relative;
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 	margin: 0;
 }
@@ -1560,28 +1330,12 @@ img.is-style-flip-horizontal {
 }
 
 .wk-card-icon {
-	position: absolute;
-	top: 40px;
-	left: 40px;
-	width: 127px;
-	height: 127px;
-	z-index: 2;
-	margin: 0;
+	width: 64px;
+	height: 64px;
+	margin: 0 0 24px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.wk-card-quiz .wk-card-icon {
-	background: url(assets/images/doodles/card-quiz-bg.svg) no-repeat center / contain;
-}
-
-.wk-card-activities .wk-card-icon {
-	background: url(assets/images/doodles/card-activities-bg.svg) no-repeat center / contain;
-}
-
-.wk-card-games .wk-card-icon {
-	background: url(assets/images/doodles/card-games-bg.svg) no-repeat center / contain;
 }
 
 .wk-card-icon img {
@@ -1651,23 +1405,6 @@ img.is-style-flip-horizontal {
 	box-shadow: 0 16px 32px -8px rgba(108, 92, 231, 0.15);
 }
 
-.wk-step-card .wk-step-doodle {
-	position: absolute;
-	top: -6px;
-	right: -6px;
-	width: 88px;
-	height: 88px;
-	pointer-events: none;
-	z-index: 0;
-	margin: 0;
-	opacity: 0.9;
-}
-
-.wk-step-card .wk-step-doodle img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
 
 .wk-step-card .wk-step-pill {
 	position: relative;
@@ -1843,157 +1580,16 @@ img.is-style-flip-horizontal {
 
 .wk-materials-visual-col {
 	flex: 1 1 0;
-	position: relative;
 	max-width: 580px;
 	width: 100%;
 }
 
-/* Top Lilac Pill (Figma: 327px x 146px, top 66px, left 220px) */
-.wk-materials-visual-col::before {
-	content: "";
-	position: absolute;
-	top: 66px;
-	left: 220px;
-	width: 327px;
-	height: 146px;
-	background-color: var(--wp--preset--color--primary-light);
-	border-radius: 100px;
-	z-index: 1;
-}
-
-.wk-materials-pills-visual {
-	position: relative;
-	width: 100%;
-	height: 600px;
-	overflow: clip;
-}
-
-/* Middle Purple Pill (Figma: 458px x 146px, top 236px, left 89px) */
-.wk-materials-pills-visual::after {
-	content: "";
-	position: absolute;
-	top: 236px;
-	left: 89px;
-	width: 458px;
-	height: 146px;
-	background-color: var(--wp--preset--color--primary);
-	border-radius: 100px;
-	z-index: 3;
-}
-
-/* Bottom Yellow Pill (Figma: 532px x 146px, top 405px, left 15px) */
-.wk-materials-pills-visual::before {
-	content: "";
-	position: absolute;
-	top: 405px;
-	left: 15px;
-	width: 532px;
-	height: 146px;
-	background-color: var(--wp--preset--color--accent, #ffd25d);
-	border-radius: 100px;
-	z-index: 5;
-}
-
-/* Starburst doodle on lilac pill */
-.wk-materials-doodle-sparkle {
-	position: absolute;
-	top: -1.5%;
-	left: 70%;
-	width: clamp(80px, 22.5%, 130px);
-	max-width: 100%;
-	height: auto;
-	aspect-ratio: 1 / 1;
-	margin: 0;
-	z-index: 2;
-	pointer-events: none;
-}
-
-.wk-materials-doodle-sparkle img {
+.wk-materials-visual-col img {
 	width: 100%;
 	height: auto;
+	border-radius: 32px;
+	box-shadow: var(--wp--preset--shadow--card);
 	display: block;
-}
-
-/* Wavy doodle on purple pill */
-.wk-materials-doodle-wavy {
-	position: absolute;
-	top: 27.5%;
-	left: 9.5%;
-	width: clamp(110px, 33.5%, 195px);
-	max-width: 100%;
-	height: auto;
-	margin: 0;
-	z-index: 4;
-	pointer-events: none;
-	transform: rotate(15deg);
-}
-
-.wk-materials-doodle-wavy img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-/* Concentric circles doodle on yellow pill */
-.wk-materials-doodle-lines {
-	position: absolute;
-	top: 63.3%;
-	left: 62%;
-	width: clamp(100px, 30%, 175px);
-	max-width: 100%;
-	height: auto;
-	aspect-ratio: 1 / 1;
-	margin: 0;
-	z-index: 6;
-	pointer-events: none;
-}
-
-.wk-materials-doodle-lines img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-/* Kids Layering & Precise Bottom Grounding */
-.wk-kid-layer {
-	position: absolute;
-	pointer-events: none;
-	margin: 0;
-}
-
-.wk-kid-layer img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	object-position: bottom center;
-	display: block;
-}
-
-/* Top Kid 3: Girl with teddy bear on lilac pill */
-.wk-kid-3 {
-	top: 0;
-	left: 280px;
-	width: 116px;
-	height: 212px;
-	z-index: 2;
-}
-
-/* Middle Kid 2: Girl in yellow shirt & overalls on purple pill */
-.wk-kid-2 {
-	top: 138px;
-	left: 295px;
-	width: 232px;
-	height: 244px;
-	z-index: 4;
-}
-
-/* Bottom Kid 1: Girl in cyan dress with notebook on yellow pill */
-.wk-kid-1 {
-	top: 270px;
-	left: 175px;
-	width: 187px;
-	height: 281px;
-	z-index: 6;
 }
 
 /* ==========================================================================
@@ -2015,41 +1611,6 @@ img.is-style-flip-horizontal {
 	margin: 0 auto;
 	text-align: center;
 	position: relative;
-}
-
-.wk-teacher-doodle-star {
-	position: absolute;
-	left: 40px;
-	top: 10px;
-	width: 90px;
-	height: 90px;
-	margin: 0;
-	z-index: 2;
-	pointer-events: none;
-}
-
-.wk-teacher-doodle-star img {
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-.wk-teacher-doodle-wavy {
-	position: absolute;
-	right: 40px;
-	top: 130px;
-	width: 110px;
-	height: 104px;
-	margin: 0;
-	z-index: 1;
-	pointer-events: none;
-	opacity: 0.85;
-}
-
-.wk-teacher-doodle-wavy img {
-	width: 100%;
-	height: auto;
-	display: block;
 }
 
 .wk-teachers-title {
@@ -2077,31 +1638,7 @@ img.is-style-flip-horizontal {
 	white-space: nowrap;
 }
 
-@media (max-width: 1100px) {
-
-	.wk-teacher-doodle-star {
-		left: 10px;
-		top: 0;
-		width: 70px;
-		height: 70px;
-		opacity: 0.6;
-	}
-
-	.wk-teacher-doodle-wavy {
-		right: 10px;
-		top: 110px;
-		width: 80px;
-		height: 76px;
-		opacity: 0.6;
-	}
-}
-
 @media (max-width: 768px) {
-
-	.wk-teacher-doodle-star,
-	.wk-teacher-doodle-wavy {
-		display: none;
-	}
 
 	.wk-accent-joy {
 		white-space: normal;
@@ -2412,73 +1949,25 @@ img.is-style-flip-horizontal {
 	margin: 0 auto;
 	background-color: var(--wp--preset--color--primary);
 	border-radius: 64px;
-	padding: 60px 112px;
+	padding: 80px 48px;
 	box-sizing: border-box;
-	position: relative;
-	overflow: hidden;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
-	min-height: 580px;
-}
-
-.wk-cta-mascot {
-	position: absolute;
-	left: -20px;
-	bottom: 0;
-	width: 620px;
-	pointer-events: none;
-	z-index: 1;
-	margin: 0;
-}
-
-.wk-cta-mascot img {
-	width: 100%;
-	height: auto;
-	transform: scaleX(-1);
-}
-
-.wk-cta-squiggle-doodle {
-	position: absolute;
-	top: 0;
-	right: 0;
-	pointer-events: none;
-	z-index: 1;
-	margin: 0;
-	opacity: 0.35;
-}
-
-.wk-cta-corner-lines {
-	position: absolute;
-	left: 30px;
-	top: 60px;
-	width: 130px;
-	height: auto;
-	margin: 0;
-	z-index: 2;
-	pointer-events: none;
-	opacity: 0.85;
-}
-
-.wk-cta-corner-lines img {
-	width: 100%;
-	height: auto;
-	display: block;
+	justify-content: center;
+	text-align: center;
 }
 
 .wk-cta-content {
-	width: 453px;
-	position: relative;
-	z-index: 2;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
 	color: var(--wp--preset--color--base, #fff);
-}
-
-.wk-cta-logo-doodle {
-	display: none;
+	text-align: center;
 }
 
 .wk-cta-headline {
-	font-size: 56px;
+	font-size: clamp(32px, 4vw, 56px);
 	font-weight: 600;
 	line-height: 1.15;
 	margin: 0 0 32px;
@@ -2491,7 +1980,6 @@ img.is-style-flip-horizontal {
 .wk-accent-learnschool {
 	display: inline-flex;
 	align-items: center;
-	gap: 12px;
 	font-family: var(--wp--preset--font-family--courgette), Courgette, "Brush Script MT", cursive;
 	color: var(--wp--preset--color--secondary, #ffd25d);
 	font-size: 1.1em;
@@ -2499,22 +1987,15 @@ img.is-style-flip-horizontal {
 	font-style: normal;
 }
 
-.wk-accent-learnschool::before {
-	content: "";
-	display: inline-block;
-	width: 44px;
-	height: 44px;
-	background: url(assets/images/doodles/cta-logo.svg) no-repeat center / contain;
-	flex-shrink: 0;
-}
-
 .wk-cta-form,
 .wk-cta-form-el {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 16px;
 	width: 100%;
 	max-width: 453px;
+	margin: 0 auto;
 	box-sizing: border-box;
 }
 
@@ -2651,28 +2132,6 @@ button.wk-cta-submit-btn:hover,
 	margin: 0;
 }
 
-.wk-footer-doodles {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 12px;
-	margin: 20px 0 0;
-}
-
-.wk-footer-doodle-star,
-.wk-footer-doodle-circle,
-.wk-footer-doodle-wavy {
-	margin: 0;
-}
-
-.wk-footer-doodle-star img,
-.wk-footer-doodle-circle img,
-.wk-footer-doodle-wavy img {
-	width: 38px;
-	height: 38px;
-	object-fit: contain;
-	display: block;
-}
 
 .wk-footer-nav-col-wrap {
 	flex: 1 1 0;
@@ -4036,24 +3495,9 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 /* Scaling on Medium / Tablet-Landscape Screens (861px - 1280px) */
 @media (max-width: 1280px) and (min-width: 861px) {
 
-	.wk-hero-decor-left {
-		transform: scale(0.8);
-		transform-origin: left top;
-	}
-
-	.wk-hero-decor-right {
-		transform: scale(0.8);
-		transform-origin: right top;
-	}
-
 	.wk-materials-container,
 	.wk-faq-container {
 		gap: 32px;
-	}
-
-	.wk-materials-visual-col {
-		transform: scale(0.85);
-		transform-origin: right center;
 	}
 
 	.wk-footer-nav-grid {
@@ -4086,11 +3530,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 /* Tablet & Mobile Screens (<= 1024px) */
 @media (max-width: 1024px) {
 
-	.wk-hero-decor-left,
-	.wk-hero-decor-right {
-		display: none;
-	}
-
 	.wk-features-grid,
 	.wk-blog-grid {
 		flex-direction: column;
@@ -4112,42 +3551,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		max-width: 100%;
 		overflow: hidden;
 		flex-direction: column;
-	}
-
-	.wk-materials-visual-col {
-		position: relative;
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		min-height: 440px;
-		margin: 0 auto;
-		transform: none;
-		margin-bottom: 0;
-		overflow: hidden;
-	}
-
-	.wk-materials-visual-col::before {
-		display: none;
-	}
-
-	.wk-materials-pills-visual {
-		position: relative;
-		width: 100%;
-		max-width: 100%;
-		height: 440px;
-		transform: none;
-		overflow: hidden;
-	}
-
-	.wk-materials-pills-visual::after,
-	.wk-materials-pills-visual::before {
-		max-width: calc(100% - 24px);
-		width: 100%;
-		left: 12px;
-	}
-
-	.wk-kid-layer {
-		max-width: 100%;
 	}
 
 	.wk-faq-wrapper {
@@ -4192,10 +3595,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	.wk-cta-card {
 		padding: 40px 24px;
 		justify-content: center;
-	}
-
-	.wk-cta-mascot {
-		display: none;
 	}
 
 	.is-style-learnschool-hide-mobile,
@@ -4254,7 +3653,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		min-height: 360px;
 	}
 
-	/* Responsive Materials Visual & Anti-Blowout Fix */
 	.wk-materials-desc {
 		max-width: 100%;
 	}
@@ -4273,51 +3671,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	.wk-materials-text-col {
 		max-width: 100%;
 		width: 100%;
-	}
-
-	.wk-materials-visual-col {
-		position: relative;
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		min-height: 440px;
-		margin: 0 auto;
-		transform: none;
-		margin-bottom: 0;
-		overflow: hidden;
-	}
-
-	.wk-materials-visual-col::before {
-		display: none;
-	}
-
-	.wk-materials-pills-visual {
-		position: relative;
-		width: 100%;
-		max-width: 100%;
-		height: 440px;
-		transform: none;
-		overflow: hidden;
-	}
-
-	.wk-materials-pills-visual::after {
-		max-width: calc(100% - 24px);
-		width: 100%;
-		left: 12px;
-	}
-
-	.wk-materials-pills-visual::before {
-		max-width: calc(100% - 24px);
-		width: 100%;
-		left: 12px;
-	}
-
-	.wk-kid-layer {
-		max-width: 100%;
-	}
-
-	.wk-tags-cluster {
-		max-width: 100%;
 	}
 
 	.wk-hero-container {
@@ -4411,28 +3764,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		flex-direction: column;
 		gap: 24px;
 	}
-}
-
-/* ==========================================================================
-   13. Editor Canvas Absolute Positioning Parity (Gutenberg Wrapper Overrides)
-   ========================================================================== */
-
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-decor-left,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-decor-right,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-kid-badge,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-loop-arrow,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-ripple-rings,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-sticker-badge,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-lilac-dot,
-.editor-styles-wrapper .block-editor-block-list__block.wk-hero-thumbsup-kid,
-.editor-styles-wrapper .block-editor-block-list__block.wk-materials-doodle-sparkle,
-.editor-styles-wrapper .block-editor-block-list__block.wk-materials-doodle-wavy,
-.editor-styles-wrapper .block-editor-block-list__block.wk-materials-doodle-lines,
-.editor-styles-wrapper .block-editor-block-list__block.wk-kid-layer,
-.editor-styles-wrapper .block-editor-block-list__block.wk-cta-mascot,
-.editor-styles-wrapper .block-editor-block-list__block.wk-cta-squiggle-doodle,
-.editor-styles-wrapper .block-editor-block-list__block.wk-cta-corner-lines {
-	position: absolute;
 }
 
 /* End of LearnSchool theme styles */

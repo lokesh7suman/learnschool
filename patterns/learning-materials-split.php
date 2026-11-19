@@ -37,31 +37,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"className":"wk-materials-visual-col"} -->
-<div class="wp-block-column wk-materials-visual-col"><!-- wp:group {"className":"wk-materials-pills-visual","layout":{"type":"default"}} -->
-<div class="wp-block-group wk-materials-pills-visual"><!-- wp:image {"sizeSlug":"full","className":"wk-materials-doodle-sparkle"} -->
-<figure class="wp-block-image size-full wk-materials-doodle-sparkle"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/materials-doodle-sparkle.svg' ) ); ?>" alt=""/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"sizeSlug":"full","className":"wk-materials-doodle-wavy"} -->
-<figure class="wp-block-image size-full wk-materials-doodle-wavy"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/card-activities-wavy-doodle.svg' ) ); ?>" alt=""/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"sizeSlug":"full","className":"wk-materials-doodle-lines"} -->
-<figure class="wp-block-image size-full wk-materials-doodle-lines"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/card-quiz-ripple-purple.svg' ) ); ?>" alt=""/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"sizeSlug":"full","className":"wk-kid-layer wk-kid-1"} -->
-<figure class="wp-block-image size-full wk-kid-layer wk-kid-1"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-1.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Student smiling while learning', 'learnschool' ); ?>"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"sizeSlug":"full","className":"wk-kid-layer wk-kid-2"} -->
-<figure class="wp-block-image size-full wk-kid-layer wk-kid-2"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-2.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Student reading learning materials', 'learnschool' ); ?>"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"sizeSlug":"full","className":"wk-kid-layer wk-kid-3"} -->
-<figure class="wp-block-image size-full wk-kid-layer wk-kid-3"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-3.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Student smiling with teddy bear', 'learnschool' ); ?>"/></figure>
+<div class="wp-block-column wk-materials-visual-col"><!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-2.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Student smiling while learning with engaging textbooks', 'learnschool' ); ?>"/></figure>
 <!-- /wp:image --></div>
-<!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->

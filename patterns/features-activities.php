@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading wk-section-title"><?php echo esc_html__( 'Our ', 'learnschool' ); ?><span class="learnschool-script" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'interactive', 'learnschool' ); ?></span><br><?php echo esc_html__( 'features', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"className":"wk-tags-cluster","layout":{"type":"default"}} -->
+<!-- wp:group {"className":"wk-tags-cluster","layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group wk-tags-cluster"><!-- wp:paragraph {"className":"wk-tag-pill wk-tag-enjoy"} -->
 <p class="wk-tag-pill wk-tag-enjoy"><?php echo esc_html__( '#enjoy', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->

@@ -20,15 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"align":"full","className":"wk-teachers-wrapper","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull wk-teachers-wrapper"><!-- wp:group {"align":"wide","className":"wk-teachers-container","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide wk-teachers-container"><!-- wp:image {"sizeSlug":"full","className":"wk-teacher-doodle-star"} -->
-<figure class="wp-block-image size-full wk-teacher-doodle-star"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-star.svg' ) ); ?>" alt=""/></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"sizeSlug":"full","className":"wk-teacher-doodle-wavy"} -->
-<figure class="wp-block-image size-full wk-teacher-doodle-wavy"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/teacher-doodle-wavy.svg' ) ); ?>" alt=""/></figure>
-<!-- /wp:image -->
-
-<!-- wp:heading {"textAlign":"center","level":2,"className":"wk-teachers-title"} -->
+<div class="wp-block-group alignwide wk-teachers-container"><!-- wp:heading {"textAlign":"center","level":2,"className":"wk-teachers-title"} -->
 <h2 class="wp-block-heading has-text-align-center wk-teachers-title"><?php echo esc_html__( 'We aim to help children', 'learnschool' ); ?><br><span class="learnschool-underline-wavy"><?php echo esc_html__( 'discover the joy of creative', 'learnschool' ); ?></span><br><?php echo esc_html__( 'learning and grow into well-rounded individuals.', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
