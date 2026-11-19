@@ -2,7 +2,7 @@
 /**
  * Title: Blog & News 3-Column Cards
  * Slug: learnschool/blog-recent-cards
- * Categories: learnschool/posts, learnschool/card
+ * Categories: learnschool/posts
  * Description: Three-column card grid highlighting recent school news, educational game ideas, and learning articles with category tags and dates.
  * Keywords: blog, news, articles, posts, updates, cards, education
  * Viewport Width: 1280

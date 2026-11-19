@@ -2,7 +2,7 @@
 /**
  * Title: Admissions 3-Step Enrollment Roadmap
  * Slug: learnschool/admissions-roadmap
- * Categories: learnschool/features, learnschool/call-to-action
+ * Categories: learnschool/call-to-action
  * Description: 3-step admissions and enrollment process guide with private tour call to action.
  * Keywords: admissions, enrollment, tour, registration, roadmap, steps
  *

@@ -2,7 +2,7 @@
 /**
  * Title: Teachers 4-Card Grid
  * Slug: learnschool/teachers-cards-grid
- * Categories: learnschool/card, learnschool/features
+ * Categories: learnschool/card
  * Description: Four-column portrait cards of dedicated early childhood educators with degrees and subjects.
  * Keywords: teachers, team, staff, educators, cards
  * Viewport Width: 1280

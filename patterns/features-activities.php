@@ -2,7 +2,7 @@
 /**
  * Title: Creative Activities 3-Card Grid
  * Slug: learnschool/features-activities
- * Categories: learnschool/features, learnschool/card
+ * Categories: learnschool/features
  * Description: Three-column creative activity cards highlighting quizzes, art, and educational games with clean modern cards.
  * Keywords: features, activities, cards, quiz, games, creative
  * Viewport Width: 1280

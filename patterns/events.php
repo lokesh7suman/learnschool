@@ -2,7 +2,7 @@
 /**
  * Title: Upcoming Events & Open House Schedule
  * Slug: learnschool/events
- * Categories: learnschool/posts, learnschool/call-to-action
+ * Categories: learnschool/posts
  * Keywords: events, open house, schedule, calendar, admission, tour
  * Description: Upcoming academy events and open-house schedule list with date badges, location markers, and RSVP buttons.
  * Inserter: true

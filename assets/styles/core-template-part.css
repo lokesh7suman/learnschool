@@ -1,0 +1,18 @@
+/**
+ * Core Template Part Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/template-part') on init.
+ * Ensures root template parts (Header & Footer) connect seamlessly with page content.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Seamless Structural Chrome ──────────────────────────────────────── */
+
+/* Prevent default root blockGap margins from pushing Header or Footer away from Main */
+.wp-site-blocks > .wp-block-template-part,
+.is-root-container > .wp-block-template-part,
+.wp-block-template-part {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}

@@ -175,16 +175,24 @@
 
 /* ── Equal-Height Card Grids and Bottom-Aligned Buttons ─────────────── */
 
-.wp-block-columns .wp-block-column .wp-block-group[style*="border-radius"],
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-card {
+.wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"],
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-soft-card,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-elevated,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-glass,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-tinted,
+.wp-block-columns .wp-block-column > .wp-block-group:has(.wp-block-buttons) {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 	height: 100%;
 }
 
-.wp-block-columns .wp-block-column .wp-block-group[style*="border-radius"] .wp-block-buttons,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-card .wp-block-buttons {
+.wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"] .wp-block-buttons,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-soft-card .wp-block-buttons,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-elevated .wp-block-buttons,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-glass .wp-block-buttons,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-tinted .wp-block-buttons,
+.wp-block-columns .wp-block-column > .wp-block-group > .wp-block-buttons:last-child {
 	margin-top: auto;
 }
 
@@ -199,4 +207,14 @@
 
 .wp-block-group.is-style-learnschool-prose :where(h2, h3, h4) {
 	margin-top: var(--wp--preset--spacing--step-5);
+}
+
+/* ── Full-Width Section Layout Resets ────────────────────────────────── */
+
+/* Adjacent full-width sections and structural chrome meet edge-to-edge without blockGap margins */
+.wp-block-group.alignfull + .wp-block-group.alignfull,
+.wp-block-template-part + main.alignfull,
+main.alignfull + .wp-block-template-part {
+	margin-top: 0;
+	margin-block-start: 0;
 }

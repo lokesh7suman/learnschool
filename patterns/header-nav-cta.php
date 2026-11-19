@@ -2,7 +2,7 @@
 /**
  * Title: Header with Navigation & Tour CTA
  * Slug: learnschool/header-nav-cta
- * Categories: header, learnschool/call-to-action
+ * Categories: header
  * Block Types: core/template-part/header
  * Description: Clean mobile-first header with logo, multi-level school navigation, and Sign In & Contact Us action buttons.
  * Keywords: header, navigation, logo, menu, tour, cta, contact, signin, school, academics, admissions

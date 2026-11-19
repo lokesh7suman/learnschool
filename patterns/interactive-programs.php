@@ -2,7 +2,7 @@
 /**
  * Title: WonderKids 3 Interactive Learning Pillars
  * Slug: learnschool/interactive-programs
- * Categories: learnschool/features, learnschool/card
+ * Categories: learnschool/features
  * Description: 3 signature WonderKids interactive learning cards (Quiz, Activities, Games) with custom pastel backgrounds and illustration vectors.
  * Keywords: wonderkids, pillars, activities, games, quiz, pastel, interactive
  *

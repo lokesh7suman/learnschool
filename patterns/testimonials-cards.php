@@ -2,7 +2,7 @@
 /**
  * Title: Testimonials & Reviews Cards
  * Slug: learnschool/testimonials-cards
- * Categories: learnschool/testimonial, learnschool/card
+ * Categories: learnschool/testimonial
  * Keywords: testimonials, reviews, parents, quotes, rating
  * Description: Section featuring parent and student reviews with star ratings and feedback cards.
  * Viewport Width: 1280

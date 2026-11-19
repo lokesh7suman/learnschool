@@ -2,7 +2,7 @@
 /**
  * Title: Course & Program Catalog Grid
  * Slug: learnschool/course-catalog
- * Categories: learnschool/features, learnschool/card
+ * Categories: learnschool/card
  * Keywords: courses, programs, curriculum, academy, classes, subjects, cards
  * Description: Academic course and program showcase grid with age brackets, duration badges, equal-height card alignment, and enrollment links.
  * Viewport Width: 1280

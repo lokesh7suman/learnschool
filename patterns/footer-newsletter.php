@@ -2,7 +2,7 @@
 /**
  * Title: Footer with Newsletter & Legal Bar
  * Slug: learnschool/footer-newsletter
- * Categories: footer, learnschool/call-to-action
+ * Categories: footer
  * Block Types: core/template-part/footer
  * Keywords: footer, newsletter, sitemap, legal, columns, mega-footer
  * Description: Four-column footer featuring newsletter signup, categorized sitemaps, social links, and bottom legal bar.

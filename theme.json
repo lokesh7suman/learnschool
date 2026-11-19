@@ -487,6 +487,14 @@
 			}
 		},
 		"blocks": {
+			"core/template-part": {
+				"spacing": {
+					"margin": {
+						"top": "0px",
+						"bottom": "0px"
+					}
+				}
+			},
 			"core/group": {
 				"variations": {
 					"learnschool-card": {
@@ -525,6 +533,34 @@
 						},
 						"color": {
 							"background": "rgba(112, 79, 230, 0.05)"
+						}
+					},
+					"learnschool-midnight": {
+						"color": {
+							"background": "var:preset|color|midnight",
+							"text": "var:preset|color|base"
+						},
+						"elements": {
+							"heading": {
+								"color": {
+									"text": "var:preset|color|base"
+								}
+							},
+							"link": {
+								"color": {
+									"text": "var:preset|color|primary-light"
+								}
+							}
+						}
+					},
+					"learnschool-surface": {
+						"color": {
+							"background": "var:preset|color|base-subtle"
+						}
+					},
+					"learnschool-lilac": {
+						"color": {
+							"background": "var:preset|color|primary-light"
 						}
 					}
 				}

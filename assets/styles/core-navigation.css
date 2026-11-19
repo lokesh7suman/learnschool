@@ -19,3 +19,90 @@
 	z-index: 100;
 }
 
+/* ==========================================================================
+   Mobile Responsive Navigation Drawer & Touch UX
+   ========================================================================== */
+
+/* Touch-friendly interactive targets (minimum 44px height for accessibility) */
+.wp-block-navigation .wp-block-navigation-item__content {
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	transition: color 0.2s ease;
+}
+
+/* Hamburger toggle button */
+.wp-block-navigation__responsive-container-open {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	border-radius: 12px;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	color: var(--wp--preset--color--contrast, #1a162b);
+	cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.wp-block-navigation__responsive-container-open:hover {
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	border-color: var(--wp--preset--color--primary-light, #dec8fe);
+}
+
+.wp-block-navigation__responsive-container-open:focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+}
+
+/* Fullscreen / Drawer overlay when open */
+.wp-block-navigation__responsive-container.is-menu-open {
+	background-color: rgba(255, 255, 255, 0.98);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	padding: var(--wp--preset--spacing--step-5, 32px) var(--wp--preset--spacing--step-4, 24px);
+}
+
+/* Close button inside mobile drawer */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	border-radius: 9999px;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	color: var(--wp--preset--color--contrast, #1a162b);
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:hover {
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	transform: rotate(90deg);
+}
+
+/* Mobile drawer navigation links */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	gap: var(--wp--preset--spacing--step-3, 16px);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+	font-size: var(--wp--preset--font-size--large, 22px);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item .wp-block-navigation__submenu-container {
+	padding-left: var(--wp--preset--spacing--step-3, 16px);
+	margin-top: var(--wp--preset--spacing--step-2, 8px);
+	border-left: 2px solid var(--wp--preset--color--primary-light, #dec8fe);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item .wp-block-navigation__submenu-container .wp-block-navigation-item {
+	font-size: var(--wp--preset--font-size--medium, 16px);
+	font-weight: 600;
+}
+

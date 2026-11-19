@@ -2,7 +2,7 @@
 /**
  * Title: Hero with Kid Photos & Playful Doodles
  * Slug: learnschool/hero-playful-doodles
- * Categories: learnschool/hero, learnschool/call-to-action
+ * Categories: learnschool/hero
  * Description: Playful hero section featuring student photo badges, floating hand-drawn doodle accents, and headline with handwriting highlights.
  * Keywords: hero, banner, kids, doodles, playful, preschool, activities
  * Viewport Width: 1280

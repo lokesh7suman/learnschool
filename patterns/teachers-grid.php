@@ -2,7 +2,7 @@
 /**
  * Title: Educator & Director Bios Grid
  * Slug: learnschool/teachers-grid
- * Categories: learnschool/features, learnschool/card
+ * Categories: learnschool/card
  * Keywords: teachers, educators, team, staff, directors, credentials
  * Viewport Width: 1280
  * Inserter: true
