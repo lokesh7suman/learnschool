@@ -19,8 +19,8 @@
 		"url": "https://github.com/codeclove/learnschool/issues"
 	},
 	"engines": {
-		"node": ">=20.10.0",
-		"npm": ">=10.2.3"
+		"node": ">=24.0.0",
+		"npm": ">=10.0.0"
 	},
 	"devDependencies": {
 		"@wordpress/env": "^10.0.0",
