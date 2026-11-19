@@ -68,9 +68,9 @@ Source: https://fonts.google.com/specimen/Courgette
 License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL, bundled in assets/fonts/OFL.txt)
 Copyright: Copyright 2012 The Courgette Project Authors (https://github.com/googlefonts/courgette)
 
-=== Vector Graphics, Doodles, and UI Icons ===
+=== Vector Graphics & UI Icons ===
 
-All SVG vector assets, hand-drawn brush underlines, circular target doodles, stars, loop arrows, stickers, and UI icons located in `assets/images/branding/`, `assets/images/doodles/`, and `assets/images/icons/` were created specifically for LearnSchool.
+All SVG vector assets, hand-drawn text highlight brush and underline doodles, and UI icons located in `assets/images/doodles/text-highlights/` and `assets/images/icons/` were created specifically for LearnSchool.
 Author: codeclove
 License: GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -83,15 +83,11 @@ Sources: WordPress Photo Directory (https://wordpress.org/photos/) & Public Doma
 * `blog-2.webp` - 10 Learning game ideas - CC0 Public Domain
 * `blog-3.webp` - Fun activities for students - CC0 Public Domain
 * `hero-kid-1.webp` - Student with camera - CC0 Public Domain
-* `hero-kid-2.webp` - Student thumbs up - CC0 Public Domain
-* `materials-kid-1.webp` - Smiling student with learning material - CC0 Public Domain
 * `materials-kid-1-card.webp` - Smiling student with learning material (card layout) - CC0 Public Domain
 * `materials-kid-2.webp` - Student exploring learning activities - CC0 Public Domain
 * `materials-kid-2-card.webp` - Student exploring learning activities (card layout) - CC0 Public Domain
-* `materials-kid-3.webp` - Student smiling with teddy bear - CC0 Public Domain
 * `materials-kid-3-card.webp` - Student smiling with teddy bear (card layout) - CC0 Public Domain
 * `teacher-kristin.webp` - Educator portrait (Science) - CC0 Public Domain
 * `teacher-jenny.webp` - Educator portrait (Drawing) - CC0 Public Domain
 * `teacher-jacob.webp` - Educator portrait (Math) - CC0 Public Domain
 * `teacher-savannah.webp` - Educator portrait (Reading) - CC0 Public Domain
-* `cta-kid.webp` - Educational community mascot - CC0 Public Domain
