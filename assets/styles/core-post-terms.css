@@ -1,0 +1,69 @@
+/**
+ * Core Post Terms Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/post-terms') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Category Pill Badges ────────────────────────────────────────────── */
+
+.wk-post-category-badge,
+.taxonomy-category,
+.wp-block-post-terms,
+.wp-block-post-terms.is-style-learnschool-badge {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.wp-block-post-terms__separator {
+	display: none;
+}
+
+.wk-post-category-badge a,
+.taxonomy-category a,
+.wp-block-post-terms a,
+.wp-block-post-terms.is-style-learnschool-badge a {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 14px;
+	border-radius: 9999px;
+	background-color: #f3eefc;
+	color: var(--wp--preset--color--primary);
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.wk-post-category-badge a:hover,
+.taxonomy-category a:hover,
+.wp-block-post-terms a:hover,
+.wp-block-post-terms.is-style-learnschool-badge a:hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base, #fff);
+}
+
+/* ── Post Tags Badge List ────────────────────────────────────────────── */
+
+.wp-block-post-terms.taxonomy-post_tag a {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 14px;
+	border-radius: 9999px;
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	color: var(--wp--preset--color--contrast-subtle, #636363);
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.wp-block-post-terms.taxonomy-post_tag a:hover {
+	background-color: var(--wp--preset--color--primary, #704fe6);
+	color: var(--wp--preset--color--base, #fff);
+	border-color: var(--wp--preset--color--primary, #704fe6);
+}

@@ -1,0 +1,91 @@
+/**
+ * Core Image Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/image') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Arch Mask Variation ────────────────────────────────────────────── */
+
+.wp-block-image.is-style-learnschool-arch img,
+.is-style-learnschool-arch img {
+	border-radius: 9999px 9999px 24px 24px;
+	overflow: hidden;
+}
+
+/* ── Pebble Blob Mask Variation ─────────────────────────────────────── */
+
+.wp-block-image.is-style-learnschool-pebble img,
+.is-style-learnschool-pebble img {
+	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	overflow: hidden;
+	transition: border-radius 0.5s ease;
+}
+
+/* ── Flip Horizontal Variation ───────────────────────────────────────── */
+
+.wp-block-image.is-style-learnschool-flip img,
+.is-style-learnschool-flip img,
+.is-style-flip img,
+.is-style-flip-horizontal img,
+img.is-style-learnschool-flip,
+img.is-style-flip,
+img.is-style-flip-horizontal {
+	transform: scaleX(-1);
+}
+
+/* ── Subtle Decorative Doodle Style ─────────────────────────────────── */
+
+.wp-block-image.is-style-learnschool-subtle img,
+.is-style-learnschool-subtle,
+.is-style-subtle,
+.is-style-subtle-doodle {
+	opacity: 0.70;
+}
+
+/* ── Sketch Image Variation ──────────────────────────────────────────── */
+
+.wp-block-image.is-style-learnschool-sketch img,
+.wp-block-image.is-style-sketch img {
+	border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+	border: 2px solid var(--wp--preset--color--border, currentcolor);
+	transition: border-radius 0.3s ease, border-color 0.25s ease;
+}
+
+.wp-block-image.is-style-learnschool-sketch,
+.wp-block-image.is-style-sketch {
+	border: none;
+}
+
+/* ── Card Image Zoom Micro-Interactions ──────────────────────────────── */
+
+.is-style-learnschool-card .wp-block-image img,
+.is-style-learnschool-card-arch .wp-block-image img,
+.is-style-learnschool-card-large .wp-block-image img,
+.is-style-learnschool-elevated .wp-block-image img,
+.is-style-learnschool-glass .wp-block-image img,
+.is-style-learnschool-tinted .wp-block-image img,
+.wp-block-image.learnschool-zoom img {
+	transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-style-learnschool-card:hover .wp-block-image img,
+.is-style-learnschool-card-arch:hover .wp-block-image img,
+.is-style-learnschool-card-large:hover .wp-block-image img,
+.is-style-learnschool-elevated:hover .wp-block-image img,
+.is-style-learnschool-glass:hover .wp-block-image img,
+.is-style-learnschool-tinted:hover .wp-block-image img,
+.wp-block-image.learnschool-zoom:hover img {
+	transform: scale(1.04);
+}
+
+/* ── Responsive Image Helpers ────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+
+	.wp-block-image.is-style-learnschool-hide-mobile,
+	.is-style-learnschool-hide-mobile {
+		display: none;
+	}
+}

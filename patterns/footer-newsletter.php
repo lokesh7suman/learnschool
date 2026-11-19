@@ -102,8 +102,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:separator {"align":"wide","className":"is-style-gradient-pill","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-4"}}}} -->
-<hr class="wp-block-separator alignwide has-alpha-channel-opacity is-style-gradient-pill" style="margin-top:var(--wp--preset--spacing--step-5);margin-bottom:var(--wp--preset--spacing--step-4)"/>
+<!-- wp:separator {"align":"wide","className":"is-style-learnschool-gradient-pill","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-4"}}}} -->
+<hr class="wp-block-separator alignwide has-alpha-channel-opacity is-style-learnschool-gradient-pill" style="margin-top:var(--wp--preset--spacing--step-5);margin-bottom:var(--wp--preset--spacing--step-4)"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->

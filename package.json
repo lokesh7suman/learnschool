@@ -37,7 +37,7 @@
 		"fix:patterns": "node bin/fix-patterns.js --clean-db",
 		"format": "wp-scripts format",
 		"lint:blocks": "node bin/lint-blocks.js",
-		"lint:css": "wp-scripts lint-style 'style.css'",
+		"lint:css": "wp-scripts lint-style 'style.css' 'assets/styles/*.css'",
 		"lint:json": "wp-scripts lint-pkg-json",
 		"lint:schema": "node bin/validate-theme.js",
 		"test": "npm run check",

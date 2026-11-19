@@ -9,6 +9,8 @@
  * @since 1.0.0
  */
 
+declare(strict_types=1);
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -20,12 +22,40 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 	 * @since 1.0.0
 	 * @return void
 	 */
-	function learnschool_register_block_styles() {
+	function learnschool_register_block_styles(): void {
 
-		// Note: Following Ollie theme architectural standards, we intentionally do NOT
-		// register block styles on core/group or core/columns. Registering styles on core/group
-		// pollutes the Gutenberg inspector with a grid of buttons on every pattern, section,
-		// and container. Card and container styling is handled via native block attributes and modular CSS classes.
+		// ── Group style variations ────────────────────────────────────────────
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-card',
+				'label' => __( 'Card', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-card-border',
+				'label' => __( 'Card Border', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-soft-card',
+				'label' => __( 'Soft Card', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-card-arch',
+				'label' => __( 'Card Arch', 'learnschool' ),
+			)
+		);
 
 		// ── Button style variations ───────────────────────────────────────────
 		register_block_style(

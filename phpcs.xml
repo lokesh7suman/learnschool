@@ -16,9 +16,11 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/assets/*</exclude-pattern>
 	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/bin/*</exclude-pattern>
+	<exclude-pattern>*/.tests/*</exclude-pattern>
 
 	<!-- Set minimum supported PHP version -->
-	<config name="testVersion" value="7.4-"/>
+	<config name="testVersion" value="8.0-"/>
 
 	<!-- Rules: WordPress Coding Standards -->
 	<rule ref="WordPress-Core"/>
@@ -42,6 +44,7 @@
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="learnschool"/>
+				<element value="LearnSchool"/>
 			</property>
 		</properties>
 	</rule>

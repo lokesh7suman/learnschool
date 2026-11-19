@@ -20,6 +20,10 @@ All agents operating in this workspace must adhere to these instructions.
   - **NEVER** use `!important` in theme stylesheets.
 - **Componentized, Pattern-First Architecture:**
   Page layouts are composed of Core blocks and structured into auto-discovered block patterns (`patterns/*.php`) and semantic template parts (`parts/*.html`).
+- **Dynamic Per-Block CSS Loading (`wp_enqueue_block_style`):**
+  Block-specific styles are decoupled into separate modular stylesheets (`assets/styles/core-<block-name>.css`) and registered via `wp_enqueue_block_style()` on `init`. Styles are loaded conditionally only when that block is rendered on the page, keeping `style.css` lean and optimizing Core Web Vitals.
+- **Modern PHP 8.0+ Typing & Defensive Standards:**
+  The theme requires PHP 8.0+. All theme PHP code must enforce strict typing (`declare(strict_types=1);`), explicit parameter/return type hinting, direct script access guards (`if ( ! defined( 'ABSPATH' ) ) { exit; }`), and clean namespacing or prefixing.
 
 ---
 
@@ -32,6 +36,8 @@ All agents operating in this workspace must adhere to these instructions.
 | **`parts/*.html`** | Structural site chrome (Header, Footer, Post Meta, Comments). Preferred: delegates inner content to patterns (`<!-- wp:pattern {"slug":"learnschool/..."} /-->`). | Page-specific content, hardcoded navigation lists bypassing `core/navigation`. |
 | **`patterns/*.php`** | PHP docblock header registration + block markup grammar. Translatable text strings wrapped in `esc_html__()` / `esc_attr__()`. | Database queries (`WP_Query`), procedural `while(have_posts())` loops, presentation PHP logic, unescaped output. |
 | **`styles/*.json`** | Global style variations or section styles (`"blockTypes": ["core/group", "core/cover"]`). | PHP code, invalid JSON syntax, root properties conflicting with `theme.json` schema. |
+| **`assets/styles/*.css`** | Per-block modular stylesheets (`core-button.css`, `core-group.css`, etc.) enqueued via `wp_enqueue_block_style()`. | Global CSS resets, full site layout rules belonging in `theme.json` or `style.css`. |
+| **`assets/fonts/`** | Bundled WOFF2 font files + `OFL.txt` (SIL Open Font License 1.1). | Remote font CDN URLs, uncompressed TTF/OTF fonts, uncredited font distributions. |
 | **`inc/*.php`** | Modular PHP logic: Block Bindings API registrations, pattern categories, Interactivity API state. | Presentation HTML `echo`, classic widget/sidebar registrations, shortcodes for layout. |
 | **`functions.php`** | Minimal theme bootstrap (`wp_enqueue_scripts`, `add_theme_support`, modular includes). | Presentation HTML markup, `register_sidebar()`, `register_nav_menus()`. |
 | **`style.css`** | Theme metadata header required by WordPress Core. Edge-case fallback CSS only. | Full CSS resets, layout grid/flexbox sheets, utility padding/color classes handled by `theme.json`. |
@@ -84,6 +90,17 @@ In `theme.json` Version 3 (WP 6.6+), core defaults remain active unless explicit
    - Spacing: `"var:preset|spacing|<slug>"` $\rightarrow$ `var(--wp--preset--spacing--<slug>)`
    - Typography: `"var:preset|font-size|<slug>"` $\rightarrow$ `var(--wp--preset--font-size--<slug>)`
    - Shadows: `"var:preset|shadow|<slug>"` $\rightarrow$ `var(--wp--preset--shadow--<slug>)`
+3. **Hybrid Fluid Spacing Scale:**
+   Spacing sizes presets (`step-1` through `step-8`) use a hybrid fluid model:
+   - `step-1`: `0.5rem` (fixed compact)
+   - `step-2`: `0.75rem` (fixed compact)
+   - `step-3`: `clamp(0.875rem, 0.4vw + 0.75rem, 1.125rem)`
+   - `step-4`: `clamp(1.25rem, 1vw + 1rem, 1.75rem)`
+   - `step-5`: `clamp(1.5rem, 2vw + 1rem, 2.5rem)`
+   - `step-6`: `clamp(2rem, 3.5vw + 1.125rem, 3.75rem)`
+   - `step-7`: `clamp(2.5rem, 5vw + 1.25rem, 5.5rem)`
+   - `step-8`: `clamp(3.5rem, 7vw + 1.75rem, 7.5rem)`
+   This preserves pixel-precise rhythm for tight inner padding/gaps (`step-1`, `step-2`) while providing responsive viewport-proportional cadence for major section containers.
 
 ---
 
@@ -145,6 +162,20 @@ Bind post metadata directly to block attributes rather than authoring custom dyn
 
 ### 4. Native Interactivity API
 For interactive UI widgets (accordions, mobile navigation toggles, dynamic counters), use the native `@wordpress/interactivity` runtime with directives (`data-wp-interactive`, `data-wp-context`, `data-wp-on--click`) instead of custom standalone JS libraries or jQuery.
+
+### 5. Safe Markup Modification via `\WP_HTML_Tag_Processor` (WP 6.2+)
+When intercepting and augmenting block output via render filters (`render_block` or `render_block_{$this->name}`), **NEVER** use fragile regex (`preg_replace`), string splitting, or `str_replace()` on serialized HTML tags. 
+Always use WordPress Core's official `\WP_HTML_Tag_Processor` to inspect, set, or modify tags, classes, and attributes safely:
+```php
+function learnschool_filter_block_markup( string $block_content ): string {
+	$processor = new \WP_HTML_Tag_Processor( $block_content );
+	if ( $processor->next_tag( array( 'class_name' => 'target-class' ) ) ) {
+		$processor->set_attribute( 'aria-expanded', 'false' );
+		$processor->add_class( 'is-enhanced' );
+	}
+	return $processor->get_updated_html();
+}
+```
 
 ---
 
@@ -285,3 +316,33 @@ npm run bundle
     }
   }
   ```
+
+### 4. Dynamic Per-Block CSS Enqueuing (`wp_enqueue_block_style`)
+To optimize page performance and Core Web Vitals (FCP/LCP), block-specific styles are stored in separate files under `assets/styles/core-<block>.css` and enqueued dynamically on `init`:
+```php
+function learnschool_enqueue_block_styles(): void {
+	$files = glob( get_template_directory() . '/assets/styles/*.css' );
+	if ( ! is_array( $files ) ) {
+		return;
+	}
+	foreach ( $files as $file ) {
+		$filename   = basename( $file, '.css' );
+		$block_name = str_replace( 'core-', 'core/', $filename );
+		wp_enqueue_block_style(
+			$block_name,
+			array(
+				'handle' => "learnschool-block-{$filename}",
+				'src'    => get_theme_file_uri( "assets/styles/{$filename}.css" ),
+				'path'   => get_theme_file_path( "assets/styles/{$filename}.css" ),
+			)
+		);
+	}
+}
+add_action( 'init', 'learnschool_enqueue_block_styles' );
+```
+WordPress Core loads these stylesheets **only when the corresponding block is rendered on the page**.
+
+### 5. Font Licensing & Privacy-First Typography (Zero-CDN)
+- **Local Font Bundling:** All fonts (`Quicksand`, `Courgette`) must be self-hosted locally in `assets/fonts/*.woff2` and declared in `theme.json` `settings.typography.fontFamilies`.
+- **Zero External CDNs:** Theme files must **NEVER** link or enqueue fonts from external CDNs (Google Fonts, Bunny, Typekit). This is mandatory for GDPR privacy compliance.
+- **SIL OFL 1.1 Documentation:** All bundled fonts must be licensed under SIL Open Font License 1.1. The complete license text and upstream author copyright statements must be maintained in `assets/fonts/OFL.txt` and referenced in `readme.txt`.

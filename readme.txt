@@ -2,7 +2,7 @@
 Contributors: codeclove
 Requires at least: 6.6
 Tested up to: 7.0
-Requires PHP: 7.4
+Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: full-site-editing, block-patterns, block-styles, education, wide-blocks, custom-colors, custom-logo, editor-style
@@ -53,16 +53,19 @@ This theme bundles the following third-party resources:
 
 === Fonts ===
 
+Both bundled font families are licensed under the SIL Open Font License, Version 1.1.
+The full license terms are included in `assets/fonts/OFL.txt`.
+
 Quicksand Variable Font
 Author: Andrew Paglinawan
 Source: https://fonts.google.com/specimen/Quicksand
-License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL, bundled in assets/fonts/OFL.txt)
 Copyright: Copyright 2011 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily)
 
 Courgette Regular Font
 Author: Karolina Lach / Sorkin Type Co
 Source: https://fonts.google.com/specimen/Courgette
-License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL, bundled in assets/fonts/OFL.txt)
 Copyright: Copyright 2012 The Courgette Project Authors (https://github.com/googlefonts/courgette)
 
 === Vector Graphics, Doodles, and UI Icons ===
@@ -82,8 +85,11 @@ Sources: WordPress Photo Directory (https://wordpress.org/photos/) & Public Doma
 * `hero-kid-1.webp` - Student with camera - CC0 Public Domain
 * `hero-kid-2.webp` - Student thumbs up - CC0 Public Domain
 * `materials-kid-1.webp` - Smiling student with learning material - CC0 Public Domain
+* `materials-kid-1-card.webp` - Smiling student with learning material (card layout) - CC0 Public Domain
 * `materials-kid-2.webp` - Student exploring learning activities - CC0 Public Domain
+* `materials-kid-2-card.webp` - Student exploring learning activities (card layout) - CC0 Public Domain
 * `materials-kid-3.webp` - Student smiling with teddy bear - CC0 Public Domain
+* `materials-kid-3-card.webp` - Student smiling with teddy bear (card layout) - CC0 Public Domain
 * `teacher-kristin.webp` - Educator portrait (Science) - CC0 Public Domain
 * `teacher-jenny.webp` - Educator portrait (Drawing) - CC0 Public Domain
 * `teacher-jacob.webp` - Educator portrait (Math) - CC0 Public Domain

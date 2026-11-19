@@ -1,0 +1,81 @@
+/**
+ * Core Quote & Pullquote Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/quote') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Base Quote Block ───────────────────────────────────────────────── */
+
+.wp-block-quote {
+	position: relative;
+	border-left: 4px solid var(--wp--preset--color--primary);
+	background: #fbf9ff;
+	border-radius: 0 20px 20px 0;
+	padding: 22px 30px;
+	margin: 28px 0;
+	box-shadow: 0 4px 16px rgba(112, 79, 230, 0.04);
+}
+
+.wp-block-quote p {
+	font-size: 18px;
+	line-height: 1.7;
+	color: #1e293b;
+	margin: 0 0 8px;
+}
+
+.wp-block-quote cite {
+	display: block;
+	margin-top: 10px;
+	font-weight: 700;
+	font-size: 14px;
+	color: var(--wp--preset--color--primary);
+	font-style: normal;
+}
+
+/* ── Philosophy Quote Card Variation ────────────────────────────────── */
+
+.wp-block-quote.is-style-learnschool-philosophy,
+.wp-block-quote.is-style-learnschool-quote {
+	position: relative;
+	border-left: 4px solid var(--wp--preset--color--primary, #704fe6);
+	padding: 1.5rem 1.75rem;
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	border-radius: 0 20px 20px 0;
+}
+
+/* ── Pullquote Block ─────────────────────────────────────────────────── */
+
+.wp-block-pullquote {
+	border: 2px solid var(--wp--preset--color--accent);
+	border-radius: 28px;
+	background: #fffdf5;
+	padding: 36px 40px;
+	margin: 36px 0;
+	text-align: center;
+	box-shadow: 0 10px 30px rgba(255, 190, 23, 0.08);
+}
+
+.wp-block-pullquote p {
+	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.6;
+	color: var(--wp--preset--color--contrast);
+	margin: 0;
+}
+
+.wp-block-pullquote cite {
+	font-family: var(--wp--preset--font-family--courgette), Courgette, cursive;
+	font-size: 18px;
+	color: var(--wp--preset--color--secondary-dark, #d97706);
+	display: block;
+	margin-top: 16px;
+	font-style: normal;
+}
+
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright {
+	max-width: 380px;
+}

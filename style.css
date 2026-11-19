@@ -6,7 +6,7 @@ Author URI: https://codeclove.com
 Description: LearnSchool - A playful, high-fidelity Full Site Editing block theme for schools, academies, and children's e-learning platforms. Faithful to the Paperpillar Figma UI Kit.
 Requires at least: 6.6
 Tested up to: 7.0
-Requires PHP: 7.4
+Requires PHP: 8.0
 Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -253,7 +253,8 @@ summary:focus-visible,
 		border: 2px solid ButtonText;
 	}
 
-	.wp-block-details.wk-faq-item {
+	.wp-block-details.wk-faq-item,
+	.wp-block-details.is-style-learnschool-faq-pill {
 		border: 2px solid CanvasText;
 	}
 }
@@ -447,7 +448,8 @@ summary:focus-visible,
 }
 
 /* Group / Container Card Variations (Registered in inc/block-styles.php) */
-.wp-block-group.is-style-learnschool-card {
+.wp-block-group.is-style-learnschool-card,
+.is-style-learnschool-card {
 	border-radius: 24px;
 	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
 	background-color: var(--wp--preset--color--surface, #fff);
@@ -456,7 +458,8 @@ summary:focus-visible,
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.wp-block-group.is-style-learnschool-card:hover {
+.wp-block-group.is-style-learnschool-card:hover,
+.is-style-learnschool-card:hover {
 	transform: translateY(-4px);
 	box-shadow: var(--wp--preset--shadow--elevated);
 }
@@ -481,57 +484,84 @@ summary:focus-visible,
 	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
 }
 
-.wp-block-details.is-style-learnschool-faq-pill {
-	border-radius: 20px;
-	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
-	background-color: var(--wp--preset--color--surface, #fff);
-	padding: 1.25rem 1.75rem;
+.wp-block-details.is-style-learnschool-faq-pill,
+.wp-block-details.wk-faq-item {
+	background-color: var(--wp--preset--color--base, #fff);
+	border: 1px solid rgba(18, 18, 18, 0.24);
+	border-radius: 80px;
+	padding: 24px 32px;
+	box-sizing: border-box;
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	margin: 0 0 16px;
 }
 
-.wp-block-details.is-style-learnschool-faq-pill summary {
-	cursor: pointer;
-	font-weight: 700;
-	font-size: var(--wp--preset--font-size--medium, 1.125rem);
-	color: var(--wp--preset--color--contrast, #121212);
-	list-style: none;
+.wp-block-details.is-style-learnschool-faq-pill:hover,
+.wp-block-details.wk-faq-item:hover {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 8px 24px rgba(112, 79, 230, 0.08);
+}
+
+.wp-block-details.is-style-learnschool-faq-pill[open],
+.wp-block-details.wk-faq-item[open] {
+	border-radius: 40px;
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 8px 24px rgba(112, 79, 230, 0.08);
+}
+
+.wp-block-details.is-style-learnschool-faq-pill summary,
+.wp-block-details.wk-faq-item summary {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	list-style: none;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	user-select: none;
 }
 
-.wp-block-details.is-style-learnschool-faq-pill summary::-webkit-details-marker {
+.wp-block-details.is-style-learnschool-faq-pill summary::-webkit-details-marker,
+.wp-block-details.wk-faq-item summary::-webkit-details-marker {
 	display: none;
 }
 
-.wp-block-details.is-style-learnschool-faq-pill summary::after {
-	content: "+";
+.wp-block-details.is-style-learnschool-faq-pill summary::after,
+.wp-block-details.wk-faq-item summary::after {
+	content: "";
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 32px;
-	height: 32px;
-	border-radius: 9999px;
-	background-color: var(--wp--preset--color--primary-light, #dec8fe);
-	color: var(--wp--preset--color--primary, #704fe6);
-	font-size: 1.25rem;
-	font-weight: 700;
-	line-height: 1;
-	transition: transform 0.2s ease, background-color 0.2s ease;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--base-subtle);
+	background-image: url(assets/images/icons/icon-add.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 24px 24px;
 	flex-shrink: 0;
-	margin-left: 1rem;
+	transition: transform 0.25s ease, background-color 0.2s ease;
+	margin-left: 20px;
 }
 
-.wp-block-details.is-style-learnschool-faq-pill[open] summary::after {
-	content: "−";
-	background-color: var(--wp--preset--color--primary, #704fe6);
-	color: #fff;
+.wp-block-details.is-style-learnschool-faq-pill[open] summary::after,
+.wp-block-details.wk-faq-item[open] summary::after {
+	transform: rotate(45deg);
+	background-color: var(--wp--preset--color--primary-light);
 }
 
-.wp-block-details.is-style-learnschool-faq-pill[open] {
-	border-color: var(--wp--preset--color--primary-light, #dec8fe);
-	box-shadow: var(--wp--preset--shadow--card);
+.wp-block-details.is-style-learnschool-faq-pill p:not(.has-text-color),
+.wp-block-details.wk-faq-item p:not(.has-text-color) {
+	color: var(--wp--preset--color--contrast-subtle);
+}
+
+.wp-block-details.is-style-learnschool-faq-pill p,
+.wp-block-details.wk-faq-item p {
+	padding-top: 16px;
+	font-size: 16px;
+	line-height: 1.7;
+	margin: 0;
 }
 
 .wp-block-image.is-style-learnschool-arch img {
@@ -559,21 +589,21 @@ summary:focus-visible,
 }
 
 /* Equal-height Card Grids and Bottom-Aligned Buttons */
-.wp-block-columns > .wp-block-column {
+.wp-block-columns .wp-block-column {
 	display: flex;
 	flex-direction: column;
 }
 
-.wp-block-columns > .wp-block-column > .wp-block-group[style*="border-radius"],
-.wp-block-columns > .wp-block-column > .wp-block-group.is-style-learnschool-card {
+.wp-block-columns .wp-block-column .wp-block-group[style*="border-radius"],
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-card {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 	height: 100%;
 }
 
-.wp-block-columns > .wp-block-column > .wp-block-group[style*="border-radius"] > .wp-block-buttons,
-.wp-block-columns > .wp-block-column > .wp-block-group.is-style-learnschool-card > .wp-block-buttons {
+.wp-block-columns .wp-block-column .wp-block-group[style*="border-radius"] .wp-block-buttons,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-card .wp-block-buttons {
 	margin-top: auto;
 }
 
@@ -750,6 +780,15 @@ img.is-style-learnschool-flip {
 
 @media (prefers-reduced-motion: reduce) {
 
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms;
+		animation-iteration-count: 1;
+		transition-duration: 0.01ms;
+		scroll-behavior: auto;
+	}
+
 	.learnschool-reading-progress {
 		display: none;
 	}
@@ -775,34 +814,261 @@ img.is-style-learnschool-flip {
 .is-style-learnschool-clean .wk-hero-ripple-rings,
 .is-style-learnschool-clean .wk-hero-sticker-badge,
 .is-style-learnschool-clean .wk-hero-lilac-dot,
-.is-style-learnschool-clean .wk-tags-bg-doodle,
-.is-style-learnschool-clean .wk-card-doodle-bg,
 .is-style-learnschool-clean .wk-materials-doodle-sparkle,
 .is-style-learnschool-clean .wk-materials-doodle-wavy,
 .is-style-learnschool-clean .wk-materials-doodle-lines,
 .is-style-learnschool-clean .wk-teacher-doodle-star,
 .is-style-learnschool-clean .wk-teacher-doodle-wavy,
-.is-style-learnschool-clean .wk-faq-doodle-bg,
 .is-style-learnschool-clean .wk-cta-squiggle-doodle,
 .is-style-learnschool-clean .wk-cta-corner-lines,
 .is-style-learnschool-clean .wk-cta-logo-doodle,
 .is-style-learnschool-clean .wk-footer-doodles,
+.is-style-learnschool-clean .wk-step-doodle,
+.is-style-learnschool-clean .wk-footer-doodle-star,
+.is-style-learnschool-clean .wk-footer-doodle-circle,
+.is-style-learnschool-clean .wk-footer-doodle-wavy,
 .is-style-clean .wk-hero-loop-arrow,
 .is-style-clean .wk-hero-ripple-rings,
 .is-style-clean .wk-hero-sticker-badge,
 .is-style-clean .wk-hero-lilac-dot,
-.is-style-clean .wk-tags-bg-doodle,
-.is-style-clean .wk-card-doodle-bg,
 .is-style-clean .wk-materials-doodle-sparkle,
 .is-style-clean .wk-materials-doodle-wavy,
 .is-style-clean .wk-materials-doodle-lines,
 .is-style-clean .wk-teacher-doodle-star,
 .is-style-clean .wk-teacher-doodle-wavy,
-.is-style-clean .wk-faq-doodle-bg,
 .is-style-clean .wk-cta-squiggle-doodle,
 .is-style-clean .wk-cta-corner-lines,
 .is-style-clean .wk-cta-logo-doodle,
-.is-style-clean .wk-footer-doodles {
+.is-style-clean .wk-footer-doodles,
+.is-style-clean .wk-step-doodle,
+.is-style-clean .wk-footer-doodle-star,
+.is-style-clean .wk-footer-doodle-circle,
+.is-style-clean .wk-footer-doodle-wavy {
+	display: none;
+}
+
+/* ==========================================================================
+   2b. Group & Container Card Variations (Clean Professional Cards)
+   ========================================================================== */
+
+/* Card Border Variation — Clean outline card with subtle elevation on hover */
+.wp-block-group.is-style-learnschool-card-border,
+.is-style-learnschool-card-border {
+	border-radius: 24px;
+	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: transparent;
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card-border:hover,
+.is-style-learnschool-card-border:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--card);
+	border-color: var(--wp--preset--color--primary-light, #dec8fe);
+}
+
+/* Soft Card Variation — Subtle filled card for soft contrast */
+.wp-block-group.is-style-learnschool-soft-card,
+.is-style-learnschool-soft-card {
+	border-radius: 24px;
+	border: 1.5px solid transparent;
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-soft-card:hover,
+.is-style-learnschool-soft-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--card);
+	border-color: var(--wp--preset--color--border, #e2e8f0);
+}
+
+/* Sketch Block Style Variation (Organic Hand-Drawn 8-Value Border Radius) */
+.is-style-learnschool-sketch,
+.is-style-sketch {
+	border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+	border: 2px solid var(--wp--preset--color--border, currentColor);
+	transition: border-radius 0.3s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.is-style-learnschool-sketch:hover,
+.is-style-sketch:hover {
+	border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+}
+
+.wp-block-image.is-style-learnschool-sketch img,
+.wp-block-image.is-style-sketch img {
+	border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+	border: 2px solid var(--wp--preset--color--border, currentColor);
+	transition: border-radius 0.3s ease, border-color 0.25s ease;
+}
+
+.wp-block-image.is-style-learnschool-sketch,
+.wp-block-image.is-style-sketch {
+	border: none;
+}
+
+/* ==========================================================================
+   2c. Inline RichText Doodle Formats (Word-level Highlights & Underlines)
+   ========================================================================== */
+
+/* 1. Doodle Highlight (Brush) — Wraps word in organic yellow brush oval */
+mark.learnschool-highlight,
+span.learnschool-highlight,
+.wk-highlight-brush,
+.wk-accent-enjoyable,
+.has-accent-enjoyable strong {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	background-color: transparent;
+	color: inherit;
+	padding: 0 0.16em;
+	text-decoration: none;
+	isolation: isolate;
+}
+
+mark.learnschool-highlight::after,
+span.learnschool-highlight::after,
+.wk-highlight-brush::after,
+.wk-accent-enjoyable::after,
+.has-accent-enjoyable strong::after {
+	content: "";
+	position: absolute;
+	left: calc(50% + var(--doodle-offset-x, 0px));
+	top: calc(52% + var(--doodle-offset-y, 0px));
+	transform: translate(-50%, -50%) rotate(-1.5deg);
+	width: calc(100% + 0.4em);
+	min-width: 48px;
+	height: 1.25em;
+	min-height: 24px;
+	background: url(assets/images/doodles/text-highlights/highlight-brush.svg) no-repeat center center / 100% 100%;
+	pointer-events: none;
+	z-index: -1;
+}
+
+/* 2. Doodle Wavy Underline — Lilac hand-drawn wave beneath word */
+span.learnschool-underline-wavy,
+.wk-accent-learn,
+.wk-accent-joy {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	text-decoration: none;
+	padding-right: 0.08em;
+}
+
+span.learnschool-underline-wavy::after,
+.wk-accent-learn::after,
+.wk-accent-joy::after {
+	content: "";
+	position: absolute;
+	left: calc(50.5% + var(--doodle-offset-x, 0px));
+	transform: translateX(-50%);
+	bottom: calc(-0.22em + var(--doodle-offset-y, 0px));
+	width: calc(100% + 0.4em);
+	min-width: 36px;
+	height: 0.42em;
+	min-height: 10px;
+	background: url(assets/images/doodles/text-highlights/underline-wavy.svg) no-repeat center bottom / 100% 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* 3. Doodle Loop Underline — Yellow playful flourish loop beneath word */
+span.learnschool-underline-loop,
+.wk-accent-play {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	text-decoration: none;
+	padding-right: 0.12em;
+}
+
+span.learnschool-underline-loop::after,
+.wk-accent-play::after {
+	content: "";
+	position: absolute;
+	left: calc(51% + var(--doodle-offset-x, 0px));
+	transform: translateX(-50%);
+	bottom: calc(-0.25em + var(--doodle-offset-y, 0px));
+	width: calc(100% + 0.45em);
+	min-width: 38px;
+	height: 0.48em;
+	min-height: 12px;
+	background: url(assets/images/doodles/text-highlights/underline-loop.svg) no-repeat center bottom / 100% 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* 4. Script Accent — Playful Courgette cursive font */
+span.learnschool-script,
+.wk-font-script {
+	font-family: var(--wp--preset--font-family--courgette), Courgette, "Brush Script MT", cursive;
+	font-style: normal;
+	font-weight: 400;
+	padding-right: 0.08em;
+}
+
+/* Suppress inline text doodle highlights and underlines in clean mode */
+.is-style-learnschool-clean mark.learnschool-highlight,
+.is-style-learnschool-clean span.learnschool-highlight,
+.is-style-learnschool-clean span.learnschool-underline-wavy,
+.is-style-learnschool-clean span.learnschool-underline-loop,
+.is-style-learnschool-clean .wk-highlight-brush,
+.is-style-learnschool-clean .wk-accent-enjoyable,
+.is-style-learnschool-clean .wk-accent-learn,
+.is-style-learnschool-clean .wk-accent-joy,
+.is-style-learnschool-clean .wk-accent-play,
+.is-style-clean mark.learnschool-highlight,
+.is-style-clean span.learnschool-highlight,
+.is-style-clean span.learnschool-underline-wavy,
+.is-style-clean span.learnschool-underline-loop,
+.is-style-clean .wk-highlight-brush,
+.is-style-clean .wk-accent-enjoyable,
+.is-style-clean .wk-accent-learn,
+.is-style-clean .wk-accent-joy,
+.is-style-clean .wk-accent-play,
+mark.learnschool-highlight.is-style-learnschool-clean,
+span.learnschool-highlight.is-style-learnschool-clean,
+span.learnschool-underline-wavy.is-style-learnschool-clean,
+span.learnschool-underline-loop.is-style-learnschool-clean,
+mark.learnschool-highlight.is-style-clean,
+span.learnschool-highlight.is-style-clean,
+span.learnschool-underline-wavy.is-style-clean,
+span.learnschool-underline-loop.is-style-clean {
+	background-image: none;
+	padding: 0;
+}
+
+.is-style-learnschool-clean mark.learnschool-highlight::after,
+.is-style-learnschool-clean span.learnschool-highlight::after,
+.is-style-learnschool-clean span.learnschool-underline-wavy::after,
+.is-style-learnschool-clean span.learnschool-underline-loop::after,
+.is-style-learnschool-clean .wk-highlight-brush::after,
+.is-style-learnschool-clean .wk-accent-enjoyable::after,
+.is-style-learnschool-clean .wk-accent-learn::after,
+.is-style-learnschool-clean .wk-accent-joy::after,
+.is-style-learnschool-clean .wk-accent-play::after,
+.is-style-clean mark.learnschool-highlight::after,
+.is-style-clean span.learnschool-highlight::after,
+.is-style-clean span.learnschool-underline-wavy::after,
+.is-style-clean span.learnschool-underline-loop::after,
+.is-style-clean .wk-highlight-brush::after,
+.is-style-clean .wk-accent-enjoyable::after,
+.is-style-clean .wk-accent-learn::after,
+.is-style-clean .wk-accent-joy::after,
+.is-style-clean .wk-accent-play::after,
+mark.learnschool-highlight.is-style-learnschool-clean::after,
+span.learnschool-highlight.is-style-learnschool-clean::after,
+span.learnschool-underline-wavy.is-style-learnschool-clean::after,
+span.learnschool-underline-loop.is-style-learnschool-clean::after,
+mark.learnschool-highlight.is-style-clean::after,
+span.learnschool-highlight.is-style-clean::after,
+span.learnschool-underline-wavy.is-style-clean::after,
+span.learnschool-underline-loop.is-style-clean::after {
 	display: none;
 }
 
@@ -931,7 +1197,7 @@ img.is-style-flip-horizontal {
 	border-radius: 8px;
 }
 
-/* Navigation pill menu buttons matching Figma exactly */
+/* Navigation pill menu buttons matching Figma & Education UX standards */
 .wk-header-nav,
 .wp-block-navigation.wk-header-nav {
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
@@ -941,8 +1207,8 @@ img.is-style-flip-horizontal {
 
 .wk-header-nav ul.wp-block-navigation__container {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
+	flex-wrap: nowrap;
+	gap: 6px;
 	align-items: center;
 	justify-content: center;
 	list-style: none;
@@ -950,80 +1216,190 @@ img.is-style-flip-horizontal {
 	padding: 0;
 }
 
-.wk-header-nav .wp-block-navigation-item {
+/* Top-level unified pill container */
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item {
+	display: inline-flex;
+	align-items: center;
 	margin: 0;
 	position: relative;
+	border-radius: 9999px;
+	border: 1px solid rgba(18, 18, 18, 0.16);
+	background-color: var(--wp--preset--color--base, #fff);
+	transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+	box-sizing: border-box;
 }
 
-.wk-header-nav .wp-block-navigation-item__content {
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item:hover,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item:focus-within {
+	border-color: var(--wp--preset--color--primary);
+	background-color: #f7f4fe;
+	color: var(--wp--preset--color--primary);
+	box-shadow: 0 4px 12px rgba(112, 79, 230, 0.08);
+}
+
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.current_page_item,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.current-menu-ancestor {
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary);
+	background-color: #f7f4fe;
+}
+
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
 	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 42px;
-	padding: 8px 20px;
+	min-height: 40px;
+	padding: 6px 14px;
 	border-radius: 9999px;
-	font-size: 14px;
+	font-size: 13.5px;
 	font-weight: 600;
 	text-decoration: none;
-	border: 1px solid rgba(18, 18, 18, 0.2);
+	border: none;
 	color: var(--wp--preset--color--contrast);
-	background-color: var(--wp--preset--color--base, #fff);
-	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	background-color: transparent;
+	transition: color 0.2s ease;
 	line-height: 1.4;
+	white-space: nowrap;
 }
 
-.wk-header-nav .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
-.wk-header-nav .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content {
-	border-color: var(--wp--preset--color--primary);
-	color: var(--wp--preset--color--primary);
-	background-color: #f7f4fe;
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-item__content {
+	padding-right: 2px;
 }
 
-.wk-header-nav .wp-block-navigation-item__content:hover {
-	border-color: var(--wp--preset--color--primary);
-	background-color: #f7f4fe;
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:hover,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:focus {
 	color: var(--wp--preset--color--primary);
 }
 
-/* Navigation Submenu Dropdowns */
+/* Submenu chevron toggle button in top-level pill */
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 40px;
+	padding: 6px 10px 6px 2px;
+	border: none;
+	background: transparent;
+	border-radius: 9999px;
+	color: var(--wp--preset--color--contrast);
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle:hover,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle:focus {
+	color: var(--wp--preset--color--primary);
+}
+
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg {
+	width: 12px;
+	height: 12px;
+	stroke: currentcolor;
+	transition: transform 0.25s ease;
+}
+
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child:hover > .wp-block-navigation-submenu__toggle svg,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child:focus-within > .wp-block-navigation-submenu__toggle svg,
+.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle[aria-expanded="true"] svg {
+	transform: rotate(180deg);
+}
+
+/* Navigation Submenu Dropdowns (Level 2 Floating Card) */
 .wk-header-nav .wp-block-navigation__submenu-container,
 .wp-block-navigation .wp-block-navigation__submenu-container {
 	background-color: var(--wp--preset--color--base, #fff);
-	border: 1px solid #edf0f8;
-	border-radius: 18px;
-	box-shadow: 0 16px 36px -4px rgba(112, 79, 230, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+	border: 1px solid rgba(112, 79, 230, 0.12);
+	border-radius: 16px;
+	box-shadow: 0 16px 36px -4px rgba(112, 79, 230, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
 	padding: 8px;
-	min-width: 200px;
+	min-width: 240px;
 	list-style: none;
-	z-index: 100;
+	z-index: 1000;
+	box-sizing: border-box;
 }
 
 .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item {
 	width: 100%;
 	margin: 0;
+	position: relative;
+	border: none;
+	background: transparent;
+	border-radius: 10px;
 }
 
 .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
 	border: none;
-	border-radius: 12px;
-	padding: 10px 16px;
+	border-radius: 10px;
+	padding: 10px 14px;
 	width: 100%;
 	min-height: auto;
 	justify-content: flex-start;
 	font-size: 14px;
 	font-weight: 500;
-	color: #374151;
+	color: var(--wp--preset--color--contrast);
 	background-color: transparent;
 	text-align: left;
-	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+	box-sizing: border-box;
 }
 
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
+.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus {
 	background-color: #f7f4fe;
 	color: var(--wp--preset--color--primary);
 	font-weight: 600;
 	transform: translateX(3px);
+}
+
+/* Level 2 item with nested Level 3 submenu */
+.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
+	border: none;
+	background: transparent;
+	padding: 8px 10px;
+	cursor: pointer;
+	color: var(--wp--preset--color--contrast);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+}
+
+.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg {
+	width: 10px;
+	height: 10px;
+	stroke: currentcolor;
+	transform: rotate(-90deg);
+	transition: transform 0.2s ease;
+}
+
+body.rtl .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg,
+[dir="rtl"] .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg {
+	transform: rotate(90deg);
+}
+
+/* Level 3 Nested Submenu (Grandchild Flyout) */
+.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
+	top: -8px;
+	left: 100%;
+	margin-left: 6px;
+	position: absolute;
+	z-index: 1001;
+}
+
+body.rtl .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,
+[dir="rtl"] .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
+	left: auto;
+	right: 100%;
+	margin-left: 0;
+	margin-right: 6px;
 }
 
 .wk-header-actions {
@@ -1043,10 +1419,29 @@ img.is-style-flip-horizontal {
 .wk-signin-link a {
 	color: inherit;
 	text-decoration: none;
+	transition: color 0.2s ease;
 }
 
 .wk-signin-link a:hover {
 	color: var(--wp--preset--color--primary);
+}
+
+.wk-header-actions .wp-block-buttons {
+	margin: 0;
+}
+
+.wk-header-actions .wp-block-button__link {
+	min-height: 44px;
+	height: 44px;
+	padding: 4px 6px 4px 18px;
+	font-size: 15px;
+	gap: 12px;
+}
+
+.wk-header-actions .wp-block-button__link::after {
+	width: 32px;
+	height: 32px;
+	background-size: 14px 14px;
 }
 
 /* ==========================================================================
@@ -1056,14 +1451,14 @@ img.is-style-flip-horizontal {
 .wk-hero-wrapper {
 	position: relative;
 	width: 100%;
-	padding: 60px 24px 80px;
+	padding: 44px 24px 80px;
 	box-sizing: border-box;
 	background-color: var(--wp--preset--color--base, #fff);
 	overflow: hidden;
 }
 
 .wk-hero-container {
-	max-width: 1280px;
+	max-width: 1080px;
 	margin: 0 auto;
 	position: relative;
 	min-height: 620px;
@@ -1199,7 +1594,7 @@ img.is-style-flip-horizontal {
 
 /* Headline & Wavy Brush Underline Strokes */
 .wk-hero-headline {
-	font-family: var(--wp--preset--font-family--quicksand), Quicksand, Fredoka, "Plus Jakarta Sans", system-ui, sans-serif;
+	font-family: var(--wp--preset--font-family--quicksand), Quicksand, "Plus Jakarta Sans", system-ui, sans-serif;
 	font-size: clamp(40px, 4.5vw, 68px);
 	font-weight: 700;
 	line-height: 1.15;
@@ -1234,7 +1629,7 @@ img.is-style-flip-horizontal {
 	width: 112%;
 	max-width: 240px;
 	height: clamp(20px, 2.6vw, 34px);
-	background: url(assets/images/doodles/hero-line-1.svg) no-repeat center bottom / contain;
+	background: url(assets/images/doodles/text-highlights/underline-wavy.svg) no-repeat center bottom / contain;
 	pointer-events: none;
 	z-index: -1;
 }
@@ -1260,7 +1655,7 @@ img.is-style-flip-horizontal {
 	width: 125%;
 	max-width: 240px;
 	height: clamp(20px, 2.6vw, 34px);
-	background: url(assets/images/doodles/hero-line-2.svg) no-repeat left bottom / contain;
+	background: url(assets/images/doodles/text-highlights/underline-loop.svg) no-repeat left bottom / contain;
 	pointer-events: none;
 	z-index: -1;
 }
@@ -1336,22 +1731,6 @@ img.is-style-flip-horizontal {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.wk-tags-bg-doodle {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	z-index: 1;
-	margin: 0;
-}
-
-.wk-tags-bg-doodle img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
 }
 
 .wk-tag-pill {
@@ -1478,43 +1857,6 @@ img.is-style-flip-horizontal {
 	color: rgba(18, 18, 18, 0.85);
 }
 
-.wk-card-doodle-bg {
-	position: absolute;
-	top: 0;
-	right: 0;
-	pointer-events: none;
-	z-index: 1;
-	margin: 0;
-}
-
-.wk-card-quiz .wk-card-doodle-bg {
-	width: 155px;
-	height: 155px;
-	top: -15px;
-	right: -15px;
-}
-
-.wk-card-activities .wk-card-doodle-bg {
-	width: 145px;
-	height: 136px;
-	top: -15px;
-	right: -15px;
-}
-
-.wk-card-games .wk-card-doodle-bg {
-	width: 130px;
-	height: auto;
-	top: 20px;
-	right: 20px;
-}
-
-.wk-card-milestone .wk-card-doodle-bg {
-	width: 120px;
-	height: 120px;
-	top: -10px;
-	right: -10px;
-}
-
 .wk-card-icon {
 	position: absolute;
 	top: 40px;
@@ -1550,7 +1892,7 @@ img.is-style-flip-horizontal {
 }
 
 .wk-card-title {
-	font-family: var(--wp--preset--font-family--quicksand), Quicksand, Fredoka, "Plus Jakarta Sans", system-ui, sans-serif;
+	font-family: var(--wp--preset--font-family--quicksand), Quicksand, "Plus Jakarta Sans", system-ui, sans-serif;
 	font-size: clamp(1.75rem, 2.5vw, 2.25rem);
 	font-weight: 700;
 	line-height: 1.15;
@@ -1576,7 +1918,7 @@ img.is-style-flip-horizontal {
 }
 
 .wk-card-desc {
-	font-family: var(--wp--preset--font-family--quicksand), Quicksand, Fredoka, "Plus Jakarta Sans", system-ui, sans-serif;
+	font-family: var(--wp--preset--font-family--quicksand), Quicksand, "Plus Jakarta Sans", system-ui, sans-serif;
 	font-size: 17px;
 	font-weight: 500;
 	line-height: 1.6;
@@ -1675,25 +2017,25 @@ img.is-style-flip-horizontal {
 }
 
 .wk-materials-container {
-	max-width: 1280px;
+	max-width: 1200px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 60px;
+	gap: 48px;
 }
 
 .wk-materials-text-col {
 	flex: 1 1 0;
-	max-width: 680px;
+	max-width: 580px;
 	text-align: left;
 }
 
 .wk-materials-text-col .wk-section-title {
-	font-family: var(--wp--preset--font-family--quicksand), Quicksand, Fredoka, "Plus Jakarta Sans", system-ui, sans-serif;
-	font-size: clamp(2.25rem, 4vw, 3.25rem);
+	font-family: var(--wp--preset--font-family--quicksand), Quicksand, "Plus Jakarta Sans", system-ui, sans-serif;
+	font-size: clamp(2rem, 3.2vw, 2.75rem);
 	font-weight: 700;
-	line-height: 1.2;
+	line-height: 1.25;
 	letter-spacing: -0.02em;
 	margin-bottom: 24px;
 	text-align: left;
@@ -1735,7 +2077,7 @@ img.is-style-flip-horizontal {
 	min-width: 160px;
 	height: 122%;
 	min-height: 54px;
-	background: url(assets/images/doodles/materials-highlight.svg) no-repeat center center / 100% 100%;
+	background: url(assets/images/doodles/text-highlights/highlight-brush.svg) no-repeat center center / 100% 100%;
 	pointer-events: none;
 	z-index: -1;
 }
@@ -1769,7 +2111,7 @@ img.is-style-flip-horizontal {
 	width: calc(100% + 20px);
 	min-width: 120px;
 	height: 28px;
-	background: url(assets/images/doodles/hero-line-1.svg) no-repeat center bottom / contain;
+	background: url(assets/images/doodles/text-highlights/underline-wavy.svg) no-repeat center bottom / contain;
 	pointer-events: none;
 	z-index: -1;
 }
@@ -1789,7 +2131,7 @@ img.is-style-flip-horizontal {
 }
 
 .wk-materials-desc {
-	font-family: var(--wp--preset--font-family--quicksand), Quicksand, Fredoka, "Plus Jakarta Sans", system-ui, sans-serif;
+	font-family: var(--wp--preset--font-family--quicksand), Quicksand, "Plus Jakarta Sans", system-ui, sans-serif;
 	font-size: 18px;
 	line-height: 1.7;
 	margin: 0 0 36px;
@@ -1821,6 +2163,7 @@ img.is-style-flip-horizontal {
 	position: relative;
 	width: 100%;
 	height: 600px;
+	overflow: clip;
 }
 
 /* Middle Purple Pill (Figma: 458px x 146px, top 236px, left 89px) */
@@ -1852,10 +2195,12 @@ img.is-style-flip-horizontal {
 /* Starburst doodle on lilac pill */
 .wk-materials-doodle-sparkle {
 	position: absolute;
-	top: 8px;
-	left: 400px;
-	width: 126px;
-	height: 126px;
+	top: -1.5%;
+	left: 70%;
+	width: clamp(80px, 22.5%, 130px);
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	margin: 0;
 	z-index: 2;
 	pointer-events: none;
@@ -1870,9 +2215,10 @@ img.is-style-flip-horizontal {
 /* Wavy doodle on purple pill */
 .wk-materials-doodle-wavy {
 	position: absolute;
-	top: 165px;
-	left: 60px;
-	width: 195px;
+	top: 27.5%;
+	left: 9.5%;
+	width: clamp(110px, 33.5%, 195px);
+	max-width: 100%;
 	height: auto;
 	margin: 0;
 	z-index: 4;
@@ -1889,10 +2235,12 @@ img.is-style-flip-horizontal {
 /* Concentric circles doodle on yellow pill */
 .wk-materials-doodle-lines {
 	position: absolute;
-	top: 395px;
-	left: 355px;
-	width: 170px;
-	height: 170px;
+	top: 63.3%;
+	left: 62%;
+	width: clamp(100px, 30%, 175px);
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	margin: 0;
 	z-index: 6;
 	pointer-events: none;
@@ -1921,28 +2269,28 @@ img.is-style-flip-horizontal {
 
 /* Top Kid 3: Girl with teddy bear on lilac pill */
 .wk-kid-3 {
-	top: 16px;
-	left: 270px;
-	width: 110px;
-	height: 196px;
+	top: 0;
+	left: 280px;
+	width: 116px;
+	height: 212px;
 	z-index: 2;
 }
 
 /* Middle Kid 2: Girl in yellow shirt & overalls on purple pill */
 .wk-kid-2 {
-	top: 154px;
-	left: 285px;
-	width: 260px;
-	height: 228px;
+	top: 138px;
+	left: 295px;
+	width: 232px;
+	height: 244px;
 	z-index: 4;
 }
 
 /* Bottom Kid 1: Girl in cyan dress with notebook on yellow pill */
 .wk-kid-1 {
-	top: 305px;
-	left: 160px;
-	width: 165px;
-	height: 246px;
+	top: 270px;
+	left: 175px;
+	width: 187px;
+	height: 281px;
 	z-index: 6;
 }
 
@@ -2003,7 +2351,7 @@ img.is-style-flip-horizontal {
 }
 
 .wk-teachers-title {
-	font-family: var(--wp--preset--font-family--quicksand), Quicksand, Fredoka, "Plus Jakarta Sans", system-ui, sans-serif;
+	font-family: var(--wp--preset--font-family--quicksand), Quicksand, "Plus Jakarta Sans", system-ui, sans-serif;
 	font-size: clamp(22px, 3.8vw, 56px);
 	font-weight: 600;
 	line-height: 1.3;
@@ -2327,22 +2675,6 @@ img.is-style-flip-horizontal {
 	z-index: 2;
 }
 
-.wk-faq-doodle-bg {
-	position: absolute;
-	left: -20px;
-	top: 210px;
-	width: 680px;
-	z-index: 1;
-	pointer-events: none;
-	margin: 0;
-	opacity: 0.95;
-}
-
-.wk-faq-doodle-bg img {
-	width: 100%;
-	height: auto;
-}
-
 .wk-accent-asked {
 	font-family: var(--wp--preset--font-family--courgette), "Brush Script MT", cursive;
 	color: var(--wp--preset--color--primary);
@@ -2359,75 +2691,7 @@ img.is-style-flip-horizontal {
 	gap: 16px;
 }
 
-.wp-block-details.wk-faq-item {
-	background-color: var(--wp--preset--color--base, #fff);
-	border: 1px solid rgba(18, 18, 18, 0.24);
-	border-radius: 80px;
-	padding: 24px 32px;
-	box-sizing: border-box;
-	transition: border-color 0.2s ease, box-shadow 0.2s ease;
-	margin: 0 0 16px;
-}
-
-.wp-block-details.wk-faq-item:hover {
-	border-color: var(--wp--preset--color--primary);
-	box-shadow: 0 8px 24px rgba(112, 79, 230, 0.08);
-}
-
-.wp-block-details.wk-faq-item[open] {
-	border-radius: 40px;
-	border-color: var(--wp--preset--color--primary);
-	box-shadow: 0 8px 24px rgba(112, 79, 230, 0.08);
-}
-
-.wp-block-details.wk-faq-item summary {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	cursor: pointer;
-	list-style: none;
-	font-size: 24px;
-	font-weight: 600;
-	line-height: 1.4;
-	color: var(--wp--preset--color--contrast);
-	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-}
-
-.wp-block-details.wk-faq-item summary::-webkit-details-marker {
-	display: none;
-}
-
-.wp-block-details.wk-faq-item summary::after {
-	content: "";
-	display: inline-flex;
-	width: 56px;
-	height: 56px;
-	border-radius: 50%;
-	background-color: var(--wp--preset--color--base-subtle);
-	background-image: url(assets/images/icons/icon-add.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 24px 24px;
-	flex-shrink: 0;
-	transition: transform 0.25s ease, background-color 0.2s ease;
-	margin-left: 20px;
-}
-
-.wp-block-details.wk-faq-item[open] summary::after {
-	transform: rotate(45deg);
-	background-color: var(--wp--preset--color--primary-light);
-}
-
-.wp-block-details.wk-faq-item p:not(.has-text-color) {
-	color: var(--wp--preset--color--contrast-subtle);
-}
-
-.wp-block-details.wk-faq-item p {
-	padding-top: 16px;
-	font-size: 16px;
-	line-height: 1.7;
-	margin: 0;
-}
+/* FAQ Accordion items (.wk-faq-item and .is-style-learnschool-faq-pill) are styled in Section 4 Block Styles */
 
 /* ==========================================================================
    10. CTA Banner Section
@@ -3213,14 +3477,15 @@ hr {
 	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
 }
 
+.wp-block-search.wp-block-search__button-inside input.wp-block-search__input,
 .wp-block-search.wp-block-search__button-inside .wp-block-search__input {
-	border: none !important;
-	border-radius: 0 !important;
-	background: transparent !important;
-	box-shadow: none !important;
-	padding: 8px 12px 8px 0 !important;
-	min-height: auto !important;
-	height: auto !important;
+	border: none;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	padding: 8px 12px 8px 0;
+	min-height: auto;
+	height: auto;
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__button {
@@ -3278,7 +3543,7 @@ hr {
 
 .sticky::before,
 .wp-block-post-template > li.sticky::before {
-	content: "★ Featured";
+	content: "Featured";
 	display: inline-flex;
 	align-items: center;
 	align-self: flex-start;
@@ -3827,15 +4092,38 @@ figure.wp-block-gallery {
 }
 
 .wp-block-site-title a {
-	color: var(--wp--preset--color--contrast, #1c1a2e) !important;
-	text-decoration: none !important;
+	color: var(--wp--preset--color--primary, #5b42f3);
+	text-decoration: none;
 	font-weight: 800;
 	letter-spacing: -0.5px;
 	transition: opacity 0.2s ease;
 }
 
+.wp-block-site-title .learnschool-title-dark {
+	color: var(--wp--preset--color--contrast, #1c1a2e);
+}
+
 .wp-block-site-title .learnschool-title-accent {
 	color: var(--wp--preset--color--primary, #5b42f3);
+	position: relative;
+	display: inline-block;
+}
+
+.wp-block-site-title .learnschool-title-accent::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 6px;
+	background-color: var(--wp--preset--color--secondary, #ffb802);
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' fill='none'%3E%3Cpath d='M2 7 C 28 2, 60 10, 98 6' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' fill='none'%3E%3Cpath d='M2 7 C 28 2, 60 10, 98 6' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+	mask-size: 100% 100%;
+	-webkit-mask-size: 100% 100%;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	pointer-events: none;
 }
 
 .wp-block-site-title a:hover {
@@ -3885,75 +4173,75 @@ ul.is-style-learnschool-checkmarks.has-base-color > li::before,
 /* Clean Unstyled List (No bullets, no indent, clean link styling) */
 ul.is-style-learnschool-clean-list,
 ol.is-style-learnschool-clean-list {
-	list-style: none !important;
-	padding-left: 0 !important;
-	margin-left: 0 !important;
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
 }
 
 ul.is-style-learnschool-clean-list > li,
 ol.is-style-learnschool-clean-list > li {
-	list-style: none !important;
-	padding-left: 0 !important;
+	list-style: none;
+	padding-left: 0;
 	margin-bottom: 12px;
 	line-height: 1.6;
 }
 
 ul.is-style-learnschool-clean-list a,
 ol.is-style-learnschool-clean-list a {
-	color: var(--wp--preset--color--contrast-subtle) !important;
-	text-decoration: none !important;
+	color: var(--wp--preset--color--contrast-subtle);
+	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
 ul.is-style-learnschool-clean-list a:hover,
 ol.is-style-learnschool-clean-list a:hover {
-	color: var(--wp--preset--color--primary) !important;
-	text-decoration: none !important;
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
 }
 
 /* Footer Link Reset - Removes default browser underlines & bullets in footers */
 .learnschool-footer .wp-block-list,
 footer .wp-block-list,
 [class*="footer"] .wp-block-list {
-	list-style: none !important;
-	padding-left: 0 !important;
-	margin-left: 0 !important;
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
 }
 
 .learnschool-footer .wp-block-list > li,
 footer .wp-block-list > li,
 [class*="footer"] .wp-block-list > li {
-	list-style: none !important;
-	padding-left: 0 !important;
+	list-style: none;
+	padding-left: 0;
 	margin-bottom: 10px;
 }
 
 .learnschool-footer .wp-block-list a,
 footer .wp-block-list a,
 [class*="footer"] .wp-block-list a {
-	color: var(--wp--preset--color--contrast-subtle) !important;
-	text-decoration: none !important;
+	color: var(--wp--preset--color--contrast-subtle);
+	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
 .learnschool-footer .wp-block-list a:hover,
 footer .wp-block-list a:hover,
 [class*="footer"] .wp-block-list a:hover {
-	color: var(--wp--preset--color--primary) !important;
-	text-decoration: none !important;
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
 }
 
 /* Clean Phone / Contact Links */
 .learnschool-phone-link,
 .learnschool-footer a[href^="tel:"],
 header a[href^="tel:"] {
-	text-decoration: none !important;
+	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
 .learnschool-footer a[href^="tel:"]:hover,
 header a[href^="tel:"]:hover {
-	color: var(--wp--preset--color--primary-dark) !important;
+	color: var(--wp--preset--color--primary-dark);
 }
 
 /* Social Icon Badges in Footer */
@@ -3978,7 +4266,7 @@ header a[href^="tel:"]:hover {
 }
 
 .learnschool-social-links figure {
-	margin: 0 !important;
+	margin: 0;
 }
 
 /* RTL (Right-to-Left) Language Layout Support */
@@ -4080,8 +4368,213 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	}
 }
 
-/* Tablet Portrait & Mobile Screens (<= 1100px) */
-@media (max-width: 1100px) {
+/* Tablet / iPad Landscape & Portrait Navigation (<= 1024px) */
+@media (max-width: 1024px) {
+
+	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 44px;
+		min-height: 44px;
+		padding: 8px;
+		border-radius: 12px;
+		border: 1px solid rgba(18, 18, 18, 0.16);
+		background-color: var(--wp--preset--color--base, #fff);
+		color: var(--wp--preset--color--contrast);
+		cursor: pointer;
+		transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+	}
+
+	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container-open:hover,
+	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container-open:focus {
+		border-color: var(--wp--preset--color--primary);
+		background-color: #f7f4fe;
+		color: var(--wp--preset--color--primary);
+	}
+
+	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container:not(.is-menu-open) {
+		display: none;
+	}
+
+	.wk-header-inner {
+		gap: 16px;
+	}
+}
+
+/* Responsive Mobile & Tablet Navigation Drawer Modal */
+.wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--base, #fff);
+	padding: 24px 20px 40px;
+	box-sizing: border-box;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+	align-self: flex-end;
+	min-width: 44px;
+	min-height: 44px;
+	border-radius: 10px;
+	border: 1px solid rgba(18, 18, 18, 0.12);
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	margin-bottom: 20px;
+	transition: all 0.2s ease;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:hover,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:focus {
+	border-color: var(--wp--preset--color--primary);
+	background-color: #f7f4fe;
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	width: 100%;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-right: 4px;
+}
+
+/* Vertical stack for drawer list items */
+.wp-block-navigation__responsive-container.is-menu-open ul.wp-block-navigation__container {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 8px;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	width: 100%;
+	border-radius: 12px;
+	border: 1px solid rgba(18, 18, 18, 0.08);
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fc);
+	box-shadow: none;
+	overflow: hidden;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	font-size: 16px;
+	font-weight: 600;
+	min-height: 48px;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	border: none;
+	background: transparent;
+	border-radius: 0;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item.has-child {
+	position: relative;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	min-width: 44px;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: var(--wp--preset--color--contrast);
+	border-radius: 8px;
+}
+
+/* Submenu Accordion inside Mobile/Tablet Drawer */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	position: static;
+	width: 100%;
+	box-shadow: none;
+	border: none;
+	background-color: rgba(112, 79, 230, 0.03);
+	border-top: 1px solid rgba(18, 18, 18, 0.06);
+	border-radius: 0;
+	padding: 8px 12px 10px 16px;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	box-sizing: border-box;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item {
+	width: 100%;
+	border: none;
+	background: transparent;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 10px 14px;
+	font-size: 14.5px;
+	font-weight: 500;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	border-left: 2px solid var(--wp--preset--color--primary, #704fe6);
+	background-color: var(--wp--preset--color--base, #fff);
+	border-radius: 0 8px 8px 0;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus {
+	color: var(--wp--preset--color--primary);
+	font-weight: 600;
+	transform: translateX(2px);
+}
+
+/* Level 3 Accordion inside Drawer */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
+	position: static;
+	margin-left: 10px;
+	margin-top: 4px;
+	padding: 4px 8px;
+	background-color: transparent;
+	border-top: none;
+	border-left: 2px dashed rgba(112, 79, 230, 0.25);
+	gap: 4px;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	border-left: none;
+	padding: 8px 12px;
+	font-size: 13.5px;
+	min-height: 40px;
+	background-color: rgba(255, 255, 255, 0.85);
+	color: var(--wp--preset--color--contrast-subtle);
+}
+
+/* Tablet & Mobile Screens (<= 781px) */
+@media (max-width: 781px) {
 
 	.wk-hero-decor-left,
 	.wk-hero-decor-right {
@@ -4117,9 +4610,9 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		max-width: none;
 		height: 600px;
 		margin: 0 auto;
-		transform: scale(min(1, calc((100vw - 48px) / 580px)));
+		transform: scale(min(1, calc((100% - 48px) / 580px)));
 		transform-origin: top center;
-		margin-bottom: calc((600px * (1 - min(1, calc((100vw - 48px) / 580px)))) * -1);
+		margin-bottom: calc((600px * (1 - min(1, calc((100% - 48px) / 580px)))) * -1);
 	}
 
 	.wk-materials-pills-visual {
@@ -4142,10 +4635,6 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		width: 100%;
 		max-width: 100%;
 		min-height: auto;
-	}
-
-	.wk-faq-doodle-bg {
-		display: none;
 	}
 
 	.wk-footer-inner {
@@ -4228,9 +4717,9 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		max-width: none;
 		height: 600px;
 		margin: 0 auto;
-		transform: scale(min(1, calc((100vw - 48px) / 580px)));
+		transform: scale(min(1, calc((100% - 48px) / 580px)));
 		transform-origin: top center;
-		margin-bottom: calc((600px * (1 - min(1, calc((100vw - 48px) / 580px)))) * -1);
+		margin-bottom: calc((600px * (1 - min(1, calc((100% - 48px) / 580px)))) * -1);
 	}
 
 	.wk-materials-visual-col::before {
@@ -4259,19 +4748,51 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		font-size: 38px;
 	}
 
-	.wk-faq-item summary {
+	.wk-faq-item summary,
+	.wp-block-details.is-style-learnschool-faq-pill summary {
 		font-size: 20px;
 	}
 
-	.wp-block-details.wk-faq-item {
+	.wp-block-details.wk-faq-item,
+	.wp-block-details.is-style-learnschool-faq-pill {
 		padding: 18px 24px;
 		border-radius: 40px;
+	}
+
+	.wk-faq-item summary::after,
+	.wp-block-details.is-style-learnschool-faq-pill summary::after {
+		width: 44px;
+		height: 44px;
+		background-size: 20px 20px;
+		margin-left: 12px;
 	}
 
 	.wk-footer-nav-grid {
 		flex-direction: column;
 		gap: 24px;
 	}
+}
+
+/* ==========================================================================
+   13. Editor Canvas Absolute Positioning Parity (Gutenberg Wrapper Overrides)
+   ========================================================================== */
+
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-decor-left,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-decor-right,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-kid-badge,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-loop-arrow,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-ripple-rings,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-sticker-badge,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-lilac-dot,
+.editor-styles-wrapper .block-editor-block-list__block.wk-hero-thumbsup-kid,
+.editor-styles-wrapper .block-editor-block-list__block.wk-materials-doodle-sparkle,
+.editor-styles-wrapper .block-editor-block-list__block.wk-materials-doodle-wavy,
+.editor-styles-wrapper .block-editor-block-list__block.wk-materials-doodle-lines,
+.editor-styles-wrapper .block-editor-block-list__block.wk-kid-layer,
+.editor-styles-wrapper .block-editor-block-list__block.wk-cta-mascot,
+.editor-styles-wrapper .block-editor-block-list__block.wk-cta-squiggle-doodle,
+.editor-styles-wrapper .block-editor-block-list__block.wk-cta-corner-lines {
+	position: absolute;
 }
 
 /* End of LearnSchool theme styles */

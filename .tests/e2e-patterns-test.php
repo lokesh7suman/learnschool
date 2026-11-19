@@ -69,7 +69,6 @@ class LearnSchool_E2E_Patterns_Test_Runner {
 	private array $parentPatterns = [
 		'alert-bar'          => 'patterns/alert-bar.php',
 		'blog'               => 'patterns/blog-grid.php',
-		'call-to-action'     => 'patterns/call-to-action-curved.php',
 		'faq'                => 'patterns/faq-simple.php',
 		'features'           => 'patterns/features-cards.php',
 		'footer'             => 'patterns/footer-accreditation.php',
@@ -109,7 +108,6 @@ class LearnSchool_E2E_Patterns_Test_Runner {
 		'hero-campus-2'                => [ 'family' => 'hero-campus',        'milestone' => 'M2', 'file' => 'patterns/hero-campus-2.php' ],
 		'hero-campus-3'                => [ 'family' => 'hero-campus',        'milestone' => 'M2', 'file' => 'patterns/hero-campus-3.php' ],
 		'hero-campus-4'                => [ 'family' => 'hero-campus',        'milestone' => 'M2', 'file' => 'patterns/hero-campus-4.php' ],
-		'call-to-action-split'         => [ 'family' => 'call-to-action',     'milestone' => 'M2', 'file' => 'patterns/call-to-action-split.php' ],
 		'call-to-action-3'             => [ 'family' => 'call-to-action',     'milestone' => 'M2', 'file' => 'patterns/call-to-action-3.php' ],
 		'call-to-action-4'             => [ 'family' => 'call-to-action',     'milestone' => 'M2', 'file' => 'patterns/call-to-action-4.php' ],
 		// M3: Academic & Service Patterns
@@ -119,14 +117,12 @@ class LearnSchool_E2E_Patterns_Test_Runner {
 		'learning-materials-reversed'  => [ 'family' => 'learning-materials', 'milestone' => 'M3', 'file' => 'patterns/learning-materials-reversed.php' ],
 		'learning-materials-3'         => [ 'family' => 'learning-materials', 'milestone' => 'M3', 'file' => 'patterns/learning-materials-3.php' ],
 		'learning-materials-4'         => [ 'family' => 'learning-materials', 'milestone' => 'M3', 'file' => 'patterns/learning-materials-4.php' ],
-		'faq-two-column'               => [ 'family' => 'faq',                'milestone' => 'M3', 'file' => 'patterns/faq-two-column.php' ],
 		'faq-3'                        => [ 'family' => 'faq',                'milestone' => 'M3', 'file' => 'patterns/faq-3.php' ],
 		'faq-4'                        => [ 'family' => 'faq',                'milestone' => 'M3', 'file' => 'patterns/faq-4.php' ],
 		// M4: Community & Content Patterns
 		'teachers-spotlight'           => [ 'family' => 'teachers',           'milestone' => 'M4', 'file' => 'patterns/teachers-spotlight.php' ],
 		'teachers-3'                   => [ 'family' => 'teachers',           'milestone' => 'M4', 'file' => 'patterns/teachers-3.php' ],
 		'teachers-4'                   => [ 'family' => 'teachers',           'milestone' => 'M4', 'file' => 'patterns/teachers-4.php' ],
-		'testimonials-spotlight'       => [ 'family' => 'testimonials',       'milestone' => 'M4', 'file' => 'patterns/testimonials-spotlight.php' ],
 		'testimonials-3'               => [ 'family' => 'testimonials',       'milestone' => 'M4', 'file' => 'patterns/testimonials-3.php' ],
 		'testimonials-4'               => [ 'family' => 'testimonials',       'milestone' => 'M4', 'file' => 'patterns/testimonials-4.php' ],
 		'blog-magazine'                => [ 'family' => 'blog',               'milestone' => 'M4', 'file' => 'patterns/blog-magazine.php' ],

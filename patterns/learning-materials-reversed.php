@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( '✨ Interactive Labs', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( 'Interactive Labs', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

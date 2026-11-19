@@ -1,0 +1,84 @@
+/**
+ * Core List Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/list') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Playful Checkmarks List Style ──────────────────────────────────── */
+
+ul.is-style-learnschool-checkmarks {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.is-style-learnschool-checkmarks > li {
+	position: relative;
+	padding-left: 32px;
+	margin-bottom: 12px;
+	line-height: 1.6;
+}
+
+ul.is-style-learnschool-checkmarks > li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 2px;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background-color: var(--wp--preset--color--primary, currentcolor);
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+:where(.has-base-color, .has-primary-background-color) ul.is-style-learnschool-checkmarks > li::before,
+ul.is-style-learnschool-checkmarks.has-base-color > li::before,
+[class*="has-primary-background"] ul.is-style-learnschool-checkmarks > li::before {
+	background-color: currentcolor;
+}
+
+/* ── Clean Unstyled List (No bullets, no indent, clean link styling) ── */
+
+ul.is-style-learnschool-clean-list,
+ol.is-style-learnschool-clean-list {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+ul.is-style-learnschool-clean-list > li,
+ol.is-style-learnschool-clean-list > li {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 12px;
+	line-height: 1.6;
+}
+
+ul.is-style-learnschool-clean-list a,
+ol.is-style-learnschool-clean-list a {
+	color: var(--wp--preset--color--contrast-subtle);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+ul.is-style-learnschool-clean-list a:hover,
+ol.is-style-learnschool-clean-list a:hover {
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+}
+
+/* ── RTL Language Support for Checkmarks ─────────────────────────────── */
+
+body.rtl ul.is-style-learnschool-checkmarks > li,
+[dir="rtl"] ul.is-style-learnschool-checkmarks > li {
+	padding-left: 0;
+	padding-right: 32px;
+}
+
+body.rtl ul.is-style-learnschool-checkmarks > li::before,
+[dir="rtl"] ul.is-style-learnschool-checkmarks > li::before {
+	left: auto;
+	right: 0;
+}

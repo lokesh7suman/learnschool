@@ -109,7 +109,7 @@ async function main() {
 	}
 
 	// 5. Trigger Block Unit Test page creation & publish
-	console.log('\n[4/4] Verifying Block Unit Test page...');
+	console.log('\n[4/5] Verifying Block Unit Test page...');
 	try {
 		runWpCli('eval "do_action(\'admin_init\');"');
 		runWpCli('post update $(wp post list --post_type=page --name=block-unit-test --field=ID --format=ids ' + (wpRoot ? `--path="${wpRoot}"` : '') + ') --post_status=publish');
@@ -117,12 +117,23 @@ async function main() {
 		// Ignore if already published
 	}
 
+	// 6. Generate School Test Data & Multi-Level Navigation
+	console.log('\n[5/5] Generating School Test Data & Multi-Level Navigation...');
+	try {
+		const schoolScriptPath = path.join(themeDir, 'bin', 'create-school-test-data.php');
+		runWpCli(`eval-file "${schoolScriptPath}"`);
+	} catch (e) {
+		console.warn('School data setup notice:', e.message);
+	}
+
 	console.log('\n=====================================================');
 	console.log(' ✓ Test data successfully configured!');
 	console.log('=====================================================');
 	console.log('You can now visually test your block theme at:');
+	console.log('  - School Homepage:  /');
+	console.log('  - Academics:        /academics/');
+	console.log('  - AP & Honors:      /academics/high-school/ap-honors/');
 	console.log('  - Block Unit Test:  /block-unit-test/');
-	console.log('  - Blog / Archives:  /');
 	console.log('  - Single Post:      /?p=1 (or any imported post)');
 	console.log('  - 404 Page:         /non-existent-page-url');
 	console.log('=====================================================\n');

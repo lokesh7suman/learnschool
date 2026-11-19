@@ -1,0 +1,52 @@
+/**
+ * Core Separator Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/separator') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Base Playful Separator ─────────────────────────────────────────── */
+
+.wp-block-separator,
+hr {
+	border: none;
+	height: 3px;
+	background: linear-gradient(90deg, transparent, var(--wp--preset--color--primary-light), var(--wp--preset--color--primary), var(--wp--preset--color--secondary), transparent);
+	border-radius: 9999px;
+	margin: 40px auto;
+	max-width: 260px;
+	opacity: 0.85;
+}
+
+.wp-block-separator.is-style-wide {
+	max-width: 100%;
+}
+
+.wp-block-separator.is-style-dots {
+	background: none;
+	height: auto;
+	border: none;
+	letter-spacing: 14px;
+	font-size: 26px;
+	color: var(--wp--preset--color--primary);
+	text-align: center;
+}
+
+.wp-block-separator.is-style-dots::before {
+	color: var(--wp--preset--color--primary);
+	font-size: 24px;
+	letter-spacing: 12px;
+	padding-left: 12px;
+}
+
+/* ── Gradient Pill Separator Variation ──────────────────────────────── */
+
+.wp-block-separator.is-style-learnschool-gradient-pill {
+	height: 4px;
+	border-radius: 9999px;
+	background: linear-gradient(90deg, var(--wp--preset--color--primary, #704fe6), var(--wp--preset--color--secondary, #ffbe17));
+	border: none;
+	max-width: 80px;
+	margin-inline: auto;
+}

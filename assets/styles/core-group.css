@@ -1,0 +1,202 @@
+/**
+ * Core Group Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/group') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* ── Group / Container Card Variations ──────────────────────────────── */
+
+.wp-block-group.is-style-learnschool-card,
+.is-style-learnschool-card {
+	border-radius: 24px;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	box-shadow: var(--wp--preset--shadow--card);
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card:hover,
+.is-style-learnschool-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--elevated);
+}
+
+.wp-block-group.is-style-learnschool-card-arch {
+	border-radius: 48px 48px 24px 24px;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	box-shadow: var(--wp--preset--shadow--card);
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card-arch:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--elevated);
+}
+
+.wp-block-group.is-style-learnschool-card-large {
+	border-radius: 28px;
+	overflow: hidden;
+}
+
+.wp-block-group.is-style-learnschool-trust-strip {
+	border-top: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	border-bottom: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+}
+
+/* ── Card Border & Soft Card Variations ──────────────────────────────── */
+
+.wp-block-group.is-style-learnschool-card-border,
+.is-style-learnschool-card-border {
+	border-radius: 24px;
+	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: transparent;
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card-border:hover,
+.is-style-learnschool-card-border:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--card);
+	border-color: var(--wp--preset--color--primary-light, #dec8fe);
+}
+
+.wp-block-group.is-style-learnschool-soft-card,
+.is-style-learnschool-soft-card {
+	border-radius: 24px;
+	border: 1.5px solid transparent;
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-soft-card:hover,
+.is-style-learnschool-soft-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--card);
+	border-color: var(--wp--preset--color--border, #e2e8f0);
+}
+
+/* ── Sketch Block Style Variation (Organic Hand-Drawn Radius) ───────── */
+
+.wp-block-group.is-style-learnschool-sketch,
+.is-style-learnschool-sketch,
+.is-style-sketch {
+	border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+	border: 2px solid var(--wp--preset--color--border, currentcolor);
+	transition: border-radius 0.3s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-sketch:hover,
+.is-style-learnschool-sketch:hover,
+.is-style-sketch:hover {
+	border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+}
+
+/* ── Elevated, Glass, Tinted, Midnight & Surface Variations ─────────── */
+
+.wp-block-group.is-style-learnschool-elevated {
+	background-color: var(--wp--preset--color--surface, #fff);
+	border-radius: 24px;
+	box-shadow: var(--wp--preset--shadow--elevated);
+}
+
+.wp-block-group.is-style-learnschool-glass {
+	background: rgba(255, 255, 255, 0.75);
+	backdrop-filter: blur(12px) saturate(180%);
+	-webkit-backdrop-filter: blur(12px) saturate(180%);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+}
+
+.wp-block-group.is-style-learnschool-tinted {
+	background-color: rgba(112, 79, 230, 0.05);
+	border: 1px solid var(--wp--preset--color--primary-light, #dec8fe);
+	border-radius: 20px;
+}
+
+.wp-block-group.is-style-learnschool-midnight {
+	background-color: var(--wp--preset--color--midnight, #0f172a);
+	color: var(--wp--preset--color--base, #fff);
+}
+
+.wp-block-group.is-style-learnschool-midnight :where(h1, h2, h3, h4, h5, h6, .wp-block-heading):not([class*="has-"]) {
+	color: var(--wp--preset--color--base, #fff);
+}
+
+.wp-block-group.is-style-learnschool-surface,
+.wp-block-group.is-style-surface {
+	background-color: var(--wp--preset--color--base-subtle, #f5f5f5);
+}
+
+.wp-block-group.is-style-learnschool-lilac,
+.wp-block-group.is-style-lilac {
+	background-color: var(--wp--preset--color--primary-light, #dec8fe);
+}
+
+/* ── Card Hover Lift & Micro-Interactions ───────────────────────────── */
+
+.is-style-learnschool-card,
+.is-style-learnschool-card-arch,
+.is-style-learnschool-card-large,
+.is-style-learnschool-elevated,
+.is-style-learnschool-glass,
+.is-style-learnschool-tinted {
+	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.is-style-learnschool-card:hover,
+.is-style-learnschool-card-arch:hover,
+.is-style-learnschool-card-large:hover,
+.is-style-learnschool-elevated:hover,
+.is-style-learnschool-glass:hover,
+.is-style-learnschool-tinted:hover {
+	transform: translateY(-4px);
+}
+
+.is-style-learnschool-elevated:hover {
+	box-shadow: 0 24px 48px -12px rgba(18, 18, 18, 0.14), 0 10px 14px -4px rgba(18, 18, 18, 0.06);
+}
+
+.is-style-learnschool-glass:hover {
+	box-shadow: 0 12px 32px -4px rgba(112, 79, 230, 0.12);
+}
+
+.is-style-learnschool-tinted:hover {
+	box-shadow: 0 12px 28px -4px rgba(112, 79, 230, 0.08);
+}
+
+/* ── Equal-Height Card Grids and Bottom-Aligned Buttons ─────────────── */
+
+.wp-block-columns .wp-block-column .wp-block-group[style*="border-radius"],
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-card {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	height: 100%;
+}
+
+.wp-block-columns .wp-block-column .wp-block-group[style*="border-radius"] .wp-block-buttons,
+.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-card .wp-block-buttons {
+	margin-top: auto;
+}
+
+/* ── Prose Content Wrapper ───────────────────────────────────────────── */
+
+.wp-block-group.is-style-learnschool-prose {
+	max-width: 68ch;
+	margin-inline: auto;
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.75;
+}
+
+.wp-block-group.is-style-learnschool-prose :where(h2, h3, h4) {
+	margin-top: var(--wp--preset--spacing--step-5);
+}
