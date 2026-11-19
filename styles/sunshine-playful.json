@@ -10,11 +10,11 @@
 				{ "slug": "base-subtle",     "color": "#fef8e7", "name": "Base Subtle / Honey Tint" },
 				{ "slug": "contrast",        "color": "#1f1d18", "name": "Contrast / Dark Espresso" },
 				{ "slug": "contrast-subtle", "color": "#615c50", "name": "Contrast Subtle / Muted Toast" },
-				{ "slug": "primary",         "color": "#ffbe17", "name": "Primary / Sunshine Gold" },
-				{ "slug": "primary-dark",    "color": "#d97706", "name": "Primary Dark / Warm Amber" },
+				{ "slug": "primary",         "color": "#d97706", "name": "Primary / Warm Amber" },
+				{ "slug": "primary-dark",    "color": "#b45309", "name": "Primary Dark / Deep Bronze" },
 				{ "slug": "primary-light",   "color": "#fef3c7", "name": "Primary Light / Pale Amber" },
-				{ "slug": "secondary",       "color": "#704fe6", "name": "Secondary / WonderKids Purple" },
-				{ "slug": "secondary-dark",  "color": "#5837c7", "name": "Secondary Dark" },
+				{ "slug": "secondary",       "color": "#ffbe17", "name": "Secondary / Sunshine Gold" },
+				{ "slug": "secondary-dark",  "color": "#d97706", "name": "Secondary Dark / Warm Amber" },
 				{ "slug": "accent",          "color": "#ffd25d", "name": "Accent / Pastel Yellow" },
 				{ "slug": "surface",         "color": "#ffffff", "name": "Surface / White" },
 				{ "slug": "surface-slate",   "color": "#fbfaf4", "name": "Surface Warm" },
@@ -33,8 +33,8 @@
 		},
 		"elements": {
 			"link": {
-				"color": { "text": "var:preset|color|primary-dark" },
-				":hover": { "color": { "text": "var:preset|color|contrast" } }
+				"color": { "text": "var:preset|color|primary" },
+				":hover": { "color": { "text": "var:preset|color|primary-dark" } }
 			},
 			"heading": {
 				"color": { "text": "var:preset|color|contrast" }
@@ -42,7 +42,7 @@
 			"button": {
 				"color": {
 					"background": "var:preset|color|primary",
-					"text": "var:preset|color|contrast"
+					"text": "var:preset|color|surface"
 				},
 				":hover": {
 					"color": {
