@@ -1147,304 +1147,6 @@ img.is-style-flip-horizontal {
 }
 
 /* ==========================================================================
-   3. Header & Navigation Bar
-   ========================================================================== */
-
-.wk-header-wrapper {
-	width: 100%;
-	background-color: var(--wp--preset--color--base, #fff);
-	padding: clamp(0.875rem, 3vw, 2.5rem) clamp(1rem, 5vw, 5rem);
-	box-sizing: border-box;
-}
-
-.wk-header-inner {
-	max-width: 1280px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: nowrap;
-	gap: 20px;
-}
-
-.wk-logo-group {
-	display: flex;
-	align-items: center;
-	gap: 14px;
-	text-decoration: none;
-	color: var(--wp--preset--color--contrast);
-	flex-shrink: 0;
-}
-
-.wk-logo-icon img {
-	width: 34px;
-	height: 33px;
-	display: block;
-}
-
-.wk-logo-title {
-	margin: 0;
-	font-size: 28px;
-	font-weight: 700;
-	letter-spacing: -0.5px;
-	color: var(--wp--preset--color--contrast);
-	line-height: 1;
-}
-
-.wk-logo-title a {
-	color: inherit;
-	text-decoration: none;
-	border-radius: 8px;
-}
-
-/* Navigation pill menu buttons matching Figma & Education UX standards */
-.wk-header-nav,
-.wp-block-navigation.wk-header-nav {
-	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	flex: 1 1 auto;
-	min-width: 0;
-}
-
-.wk-header-nav ul.wp-block-navigation__container {
-	display: flex;
-	flex-wrap: nowrap;
-	gap: 6px;
-	align-items: center;
-	justify-content: center;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-/* Top-level unified pill container */
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item {
-	display: inline-flex;
-	align-items: center;
-	margin: 0;
-	position: relative;
-	border-radius: 9999px;
-	border: 1px solid rgba(18, 18, 18, 0.16);
-	background-color: var(--wp--preset--color--base, #fff);
-	transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-	box-sizing: border-box;
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item:hover,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item:focus-within {
-	border-color: var(--wp--preset--color--primary);
-	background-color: #f7f4fe;
-	color: var(--wp--preset--color--primary);
-	box-shadow: 0 4px 12px rgba(112, 79, 230, 0.08);
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.current_page_item,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.current-menu-ancestor {
-	border-color: var(--wp--preset--color--primary);
-	color: var(--wp--preset--color--primary);
-	background-color: #f7f4fe;
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
-	box-sizing: border-box;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 40px;
-	padding: 6px 14px;
-	border-radius: 9999px;
-	font-size: 13.5px;
-	font-weight: 600;
-	text-decoration: none;
-	border: none;
-	color: var(--wp--preset--color--contrast);
-	background-color: transparent;
-	transition: color 0.2s ease;
-	line-height: 1.4;
-	white-space: nowrap;
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-item__content {
-	padding-right: 2px;
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:hover,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:focus {
-	color: var(--wp--preset--color--primary);
-}
-
-/* Submenu chevron toggle button in top-level pill */
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 40px;
-	padding: 6px 10px 6px 2px;
-	border: none;
-	background: transparent;
-	border-radius: 9999px;
-	color: var(--wp--preset--color--contrast);
-	cursor: pointer;
-	transition: color 0.2s ease;
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle:hover,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle:focus {
-	color: var(--wp--preset--color--primary);
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg {
-	width: 12px;
-	height: 12px;
-	stroke: currentcolor;
-	transition: transform 0.25s ease;
-}
-
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child:hover > .wp-block-navigation-submenu__toggle svg,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child:focus-within > .wp-block-navigation-submenu__toggle svg,
-.wk-header-nav .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle[aria-expanded="true"] svg {
-	transform: rotate(180deg);
-}
-
-/* Navigation Submenu Dropdowns (Level 2 Floating Card) */
-.wk-header-nav .wp-block-navigation__submenu-container,
-.wp-block-navigation .wp-block-navigation__submenu-container {
-	background-color: var(--wp--preset--color--base, #fff);
-	border: 1px solid rgba(112, 79, 230, 0.12);
-	border-radius: 16px;
-	box-shadow: 0 16px 36px -4px rgba(112, 79, 230, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
-	padding: 8px;
-	min-width: 240px;
-	list-style: none;
-	z-index: 1000;
-	box-sizing: border-box;
-}
-
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item {
-	width: 100%;
-	margin: 0;
-	position: relative;
-	border: none;
-	background: transparent;
-	border-radius: 10px;
-}
-
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	border: none;
-	border-radius: 10px;
-	padding: 10px 14px;
-	width: 100%;
-	min-height: auto;
-	justify-content: flex-start;
-	font-size: 14px;
-	font-weight: 500;
-	color: var(--wp--preset--color--contrast);
-	background-color: transparent;
-	text-align: left;
-	transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-	box-sizing: border-box;
-}
-
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus {
-	background-color: #f7f4fe;
-	color: var(--wp--preset--color--primary);
-	font-weight: 600;
-	transform: translateX(3px);
-}
-
-/* Level 2 item with nested Level 3 submenu */
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
-	border: none;
-	background: transparent;
-	padding: 8px 10px;
-	cursor: pointer;
-	color: var(--wp--preset--color--contrast);
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 8px;
-}
-
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg {
-	width: 10px;
-	height: 10px;
-	stroke: currentcolor;
-	transform: rotate(-90deg);
-	transition: transform 0.2s ease;
-}
-
-body.rtl .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg,
-[dir="rtl"] .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle svg {
-	transform: rotate(90deg);
-}
-
-/* Level 3 Nested Submenu (Grandchild Flyout) */
-.wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
-	top: -8px;
-	left: 100%;
-	margin-left: 6px;
-	position: absolute;
-	z-index: 1001;
-}
-
-body.rtl .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,
-[dir="rtl"] .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
-	left: auto;
-	right: 100%;
-	margin-left: 0;
-	margin-right: 6px;
-}
-
-.wk-header-actions {
-	display: flex;
-	align-items: center;
-	gap: 24px;
-	flex-shrink: 0;
-}
-
-.wk-signin-link {
-	margin: 0;
-	font-size: 16px;
-	font-weight: 600;
-	color: var(--wp--preset--color--contrast);
-}
-
-.wk-signin-link a {
-	color: inherit;
-	text-decoration: none;
-	transition: color 0.2s ease;
-}
-
-.wk-signin-link a:hover {
-	color: var(--wp--preset--color--primary);
-}
-
-.wk-header-actions .wp-block-buttons {
-	margin: 0;
-}
-
-.wk-header-actions .wp-block-button__link {
-	min-height: 44px;
-	height: 44px;
-	padding: 4px 6px 4px 18px;
-	font-size: 15px;
-	gap: 12px;
-}
-
-.wk-header-actions .wp-block-button__link::after {
-	width: 32px;
-	height: 32px;
-	background-size: 14px 14px;
-}
-
-/* ==========================================================================
    4. Hero Section
    ========================================================================== */
 
@@ -4300,15 +4002,6 @@ body.rtl table tr:first-child td,
 	text-align: right;
 }
 
-body.rtl .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
-[dir="rtl"] .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	text-align: right;
-}
-
-body.rtl .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
-[dir="rtl"] .wk-header-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
-	transform: translateX(-3px);
-}
 
 body.rtl .wp-block-pullquote.alignleft,
 [dir="rtl"] .wp-block-pullquote.alignleft {
@@ -4368,213 +4061,30 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 	}
 }
 
-/* Tablet / iPad Landscape & Portrait Navigation (<= 1024px) */
-@media (max-width: 1024px) {
-
-	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container-open:not(.always-shown) {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 44px;
-		min-height: 44px;
-		padding: 8px;
-		border-radius: 12px;
-		border: 1px solid rgba(18, 18, 18, 0.16);
-		background-color: var(--wp--preset--color--base, #fff);
-		color: var(--wp--preset--color--contrast);
-		cursor: pointer;
-		transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-	}
-
-	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container-open:hover,
-	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container-open:focus {
-		border-color: var(--wp--preset--color--primary);
-		background-color: #f7f4fe;
-		color: var(--wp--preset--color--primary);
-	}
-
-	.wp-block-navigation.wk-header-nav .wp-block-navigation__responsive-container:not(.is-menu-open) {
-		display: none;
-	}
+/* Tablet & Small Laptop Navigation (<= 1200px) */
+@media (max-width: 1200px) {
 
 	.wk-header-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
 		gap: 16px;
+	}
+
+	.wk-header-actions {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+	}
+
+	.wk-header-actions .wk-signin-link {
+		display: none;
 	}
 }
 
-/* Responsive Mobile & Tablet Navigation Drawer Modal */
-.wp-block-navigation__responsive-container.is-menu-open {
-	background-color: var(--wp--preset--color--base, #fff);
-	padding: 24px 20px 40px;
-	box-sizing: border-box;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 480px;
-	margin: 0 auto;
-	box-sizing: border-box;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
-	align-self: flex-end;
-	min-width: 44px;
-	min-height: 44px;
-	border-radius: 10px;
-	border: 1px solid rgba(18, 18, 18, 0.12);
-	background-color: var(--wp--preset--color--base, #fff);
-	color: var(--wp--preset--color--contrast);
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	margin-bottom: 20px;
-	transition: all 0.2s ease;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:hover,
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close:focus {
-	border-color: var(--wp--preset--color--primary);
-	background-color: #f7f4fe;
-	color: var(--wp--preset--color--primary);
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
-	width: 100%;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-	padding-right: 4px;
-}
-
-/* Vertical stack for drawer list items */
-.wp-block-navigation__responsive-container.is-menu-open ul.wp-block-navigation__container {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	gap: 8px;
-	width: 100%;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	width: 100%;
-	border-radius: 12px;
-	border: 1px solid rgba(18, 18, 18, 0.08);
-	background-color: var(--wp--preset--color--base-subtle, #f8f9fc);
-	box-shadow: none;
-	overflow: hidden;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 12px 16px;
-	font-size: 16px;
-	font-weight: 600;
-	min-height: 48px;
-	color: var(--wp--preset--color--contrast);
-	text-decoration: none;
-	border: none;
-	background: transparent;
-	border-radius: 0;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item.has-child {
-	position: relative;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
-	position: absolute;
-	right: 4px;
-	top: 4px;
-	min-width: 44px;
-	min-height: 44px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
-	background: transparent;
-	cursor: pointer;
-	color: var(--wp--preset--color--contrast);
-	border-radius: 8px;
-}
-
-/* Submenu Accordion inside Mobile/Tablet Drawer */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
-	position: static;
-	width: 100%;
-	box-shadow: none;
-	border: none;
-	background-color: rgba(112, 79, 230, 0.03);
-	border-top: 1px solid rgba(18, 18, 18, 0.06);
-	border-radius: 0;
-	padding: 8px 12px 10px 16px;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
-	box-sizing: border-box;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item {
-	width: 100%;
-	border: none;
-	background: transparent;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	padding: 10px 14px;
-	font-size: 14.5px;
-	font-weight: 500;
-	min-height: 44px;
-	display: flex;
-	align-items: center;
-	border-left: 2px solid var(--wp--preset--color--primary, #704fe6);
-	background-color: var(--wp--preset--color--base, #fff);
-	border-radius: 0 8px 8px 0;
-	color: var(--wp--preset--color--contrast);
-	text-decoration: none;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus {
-	color: var(--wp--preset--color--primary);
-	font-weight: 600;
-	transform: translateX(2px);
-}
-
-/* Level 3 Accordion inside Drawer */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
-	position: static;
-	margin-left: 10px;
-	margin-top: 4px;
-	padding: 4px 8px;
-	background-color: transparent;
-	border-top: none;
-	border-left: 2px dashed rgba(112, 79, 230, 0.25);
-	gap: 4px;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	border-left: none;
-	padding: 8px 12px;
-	font-size: 13.5px;
-	min-height: 40px;
-	background-color: rgba(255, 255, 255, 0.85);
-	color: var(--wp--preset--color--contrast-subtle);
-}
-
-/* Tablet & Mobile Screens (<= 781px) */
-@media (max-width: 781px) {
+/* Tablet & Mobile Screens (<= 1024px) */
+@media (max-width: 1024px) {
 
 	.wk-hero-decor-left,
 	.wk-hero-decor-right {
@@ -4606,19 +4116,38 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 
 	.wk-materials-visual-col {
 		position: relative;
-		width: 580px;
-		max-width: none;
-		height: 600px;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		min-height: 440px;
 		margin: 0 auto;
-		transform: scale(min(1, calc((100% - 48px) / 580px)));
-		transform-origin: top center;
-		margin-bottom: calc((600px * (1 - min(1, calc((100% - 48px) / 580px)))) * -1);
+		transform: none;
+		margin-bottom: 0;
+		overflow: hidden;
+	}
+
+	.wk-materials-visual-col::before {
+		display: none;
 	}
 
 	.wk-materials-pills-visual {
-		width: 580px;
-		height: 600px;
+		position: relative;
+		width: 100%;
+		max-width: 100%;
+		height: 440px;
 		transform: none;
+		overflow: hidden;
+	}
+
+	.wk-materials-pills-visual::after,
+	.wk-materials-pills-visual::before {
+		max-width: calc(100% - 24px);
+		width: 100%;
+		left: 12px;
+	}
+
+	.wk-kid-layer {
+		max-width: 100%;
 	}
 
 	.wk-faq-wrapper {
@@ -4637,8 +4166,27 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		min-height: auto;
 	}
 
+	.wk-footer-wrapper,
 	.wk-footer-inner {
+		max-width: 100%;
+		overflow: hidden;
 		flex-direction: column;
+	}
+
+	.wk-footer-nav-grid {
+		flex-wrap: wrap;
+		gap: 32px;
+	}
+
+	.wk-footer-brand-col {
+		width: 100%;
+		max-width: 100%;
+		flex: 1 1 auto;
+	}
+
+	.learnschool-social-links {
+		flex-wrap: wrap;
+		max-width: 100%;
 	}
 
 	.wk-cta-card {
@@ -4680,15 +4228,10 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		box-sizing: border-box;
 	}
 
-	.wk-signin-link {
+	.wk-signin-link,
+	body .wk-header-inner .wk-header-actions,
+	body .wk-header-actions {
 		display: none;
-	}
-
-	.wk-header-actions .wp-block-button__link {
-		height: 38px;
-		padding: 4px 10px;
-		font-size: 13px;
-		gap: 8px;
 	}
 
 	.codeclove-accent-learn::after,
@@ -4711,25 +4254,121 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 		min-height: 360px;
 	}
 
+	/* Responsive Materials Visual & Anti-Blowout Fix */
+	.wk-materials-desc {
+		max-width: 100%;
+	}
+
+	.wk-materials-wrapper {
+		overflow: hidden;
+		max-width: 100vw;
+	}
+
+	.wk-materials-container {
+		max-width: 100%;
+		overflow: hidden;
+		flex-direction: column;
+	}
+
+	.wk-materials-text-col {
+		max-width: 100%;
+		width: 100%;
+	}
+
 	.wk-materials-visual-col {
 		position: relative;
-		width: 580px;
-		max-width: none;
-		height: 600px;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		min-height: 440px;
 		margin: 0 auto;
-		transform: scale(min(1, calc((100% - 48px) / 580px)));
-		transform-origin: top center;
-		margin-bottom: calc((600px * (1 - min(1, calc((100% - 48px) / 580px)))) * -1);
+		transform: none;
+		margin-bottom: 0;
+		overflow: hidden;
 	}
 
 	.wk-materials-visual-col::before {
-		display: block;
+		display: none;
 	}
 
 	.wk-materials-pills-visual {
-		width: 580px;
-		height: 600px;
+		position: relative;
+		width: 100%;
+		max-width: 100%;
+		height: 440px;
 		transform: none;
+		overflow: hidden;
+	}
+
+	.wk-materials-pills-visual::after {
+		max-width: calc(100% - 24px);
+		width: 100%;
+		left: 12px;
+	}
+
+	.wk-materials-pills-visual::before {
+		max-width: calc(100% - 24px);
+		width: 100%;
+		left: 12px;
+	}
+
+	.wk-kid-layer {
+		max-width: 100%;
+	}
+
+	.wk-tags-cluster {
+		max-width: 100%;
+	}
+
+	.wk-hero-container {
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.wk-hero-headline,
+	.wk-hero-subtitle {
+		max-width: 100%;
+	}
+
+	.wk-features-header,
+	.wk-features-grid {
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.wk-teachers-container {
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.wk-blog-header,
+	.wk-blog-grid {
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.wk-faq-container,
+	.wk-faq-right-col {
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.wk-cta-card,
+	.wk-cta-form-el,
+	.wk-cta-input {
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.wk-footer-brand-col {
+		width: 100%;
+		max-width: 100%;
+		flex: 1 1 auto;
+	}
+
+	.wk-footer-inner {
+		max-width: 100%;
+		overflow: hidden;
 	}
 
 	.wk-card-title {
@@ -4742,6 +4381,7 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 
 	.wk-teachers-title {
 		font-size: 32px;
+		max-width: 100%;
 	}
 
 	.wk-cta-headline {

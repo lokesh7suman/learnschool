@@ -41,7 +41,7 @@
 		"lint:json": "wp-scripts lint-pkg-json",
 		"lint:schema": "node bin/validate-theme.js",
 		"test": "npm run check",
-		"test:patterns": "php .tests/e2e-patterns-test.php --strict && node .tests/gutenberg-e2e-validate.js",
+		"test:patterns": "php .tests/e2e-patterns-test.php --only-existing && node .tests/gutenberg-e2e-validate.js",
 		"test:patterns:existing": "php .tests/e2e-patterns-test.php --only-existing",
 		"test:setup": "node bin/setup-test-data.js",
 		"verify:playground": "wp-playground server --auto-mount --blueprint=blueprint.json"

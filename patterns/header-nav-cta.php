@@ -18,15 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"align":"full","className":"wk-header-wrapper","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull wk-header-wrapper has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-3);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","className":"wk-header-inner","layout":{"type":"flex","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide wk-header-inner"><!-- wp:group {"className":"wk-logo-group","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"10px"}}} -->
-<div class="wp-block-group wk-logo-group"><!-- wp:site-logo {"width":36,"shouldSyncIcon":false} /-->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-3);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"10px"}}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":36,"shouldSyncIcon":false} /-->
 
 <!-- wp:site-title {"level":0,"isLink":true,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"className":"wk-header-nav","overlayMenu":"mobile","style":{"typography":{"fontWeight":"600"}},"layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
+<!-- wp:navigation {"overlayMenu":"mobile","style":{"typography":{"fontWeight":"600"}},"layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Home', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/' ) ); ?>"} /-->
 <!-- wp:navigation-submenu {"label":"<?php echo esc_html__( 'About Us', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/about-us/' ) ); ?>"} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Our Mission &amp; Values', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/about-us/mission-values/' ) ); ?>"} /-->
@@ -77,14 +77,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:navigation-submenu -->
 <!-- /wp:navigation -->
 
-<!-- wp:group {"className":"wk-header-actions","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group wk-header-actions"><!-- wp:paragraph {"className":"wk-signin-link"} -->
-<p class="wk-signin-link"><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>"><?php echo esc_html__( 'Sign In', 'learnschool' ); ?></a></p>
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>"><?php echo esc_html__( 'Sign In', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline wk-header-contact-btn"} -->
-<div class="wp-block-button is-style-outline wk-header-contact-btn"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>"><?php echo esc_html__( 'Contact Us', 'learnschool' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>"><?php echo esc_html__( 'Contact Us', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

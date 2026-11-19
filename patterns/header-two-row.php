@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:site-title {"level":0,"isLink":true} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"className":"wk-header-nav","overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
+<!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Home', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/' ) ); ?>"} /-->
 <!-- wp:navigation-submenu {"label":"<?php echo esc_html__( 'About Us', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/about-us/' ) ); ?>"} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_html__( 'Our Mission &amp; Values', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/about-us/mission-values/' ) ); ?>"} /-->
