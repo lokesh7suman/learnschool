@@ -21,8 +21,9 @@ Thumbs.db
 phpstan-baseline.neon
 
 # Test data & artifacts
-/.tests/
-/tests/
+/artifacts/
+/playwright-report/
+/test-results/
 
 # Internal task tracking
 /tasks/

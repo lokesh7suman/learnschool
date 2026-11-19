@@ -15,6 +15,35 @@
 	padding: 0;
 }
 
+@media (max-width: 1024px) {
+
+	.wp-block-post-template.is-layout-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		gap: var(--wp--preset--spacing--step-4, 24px);
+	}
+}
+
+@media (max-width: 640px) {
+
+	.wp-block-post-template.is-layout-grid {
+		grid-template-columns: 1fr !important;
+		gap: var(--wp--preset--spacing--step-4, 20px);
+	}
+}
+
+.wp-block-post-template.is-layout-grid > li {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.wp-block-post-template.is-layout-grid > li > .wp-block-group {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .wp-block-post-template > li {
 	background-color: var(--wp--preset--color--base, #fff);
 	border: 1.5px solid #edf0f8;
@@ -121,4 +150,19 @@
 	padding: 4px 12px;
 	border-radius: 9999px;
 	margin-bottom: 12px;
+}
+
+.wp-block-post-template > li:has(.wp-block-group).sticky::before,
+.wp-block-post-template > li:has(.is-style-learnschool-card).sticky::before {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	z-index: 2;
+	margin-bottom: 0;
+}
+
+/* Remove bottom divider from last item in sidebar story lists */
+.wp-block-columns .wp-block-column .wp-block-post-template > li:last-child > .wp-block-group {
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
 }

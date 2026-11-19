@@ -50,6 +50,8 @@
 		"lint:patterns:fix": "node theme-utils.mjs escape-patterns --text-domain=learnschool",
 		"makepot": "wp i18n make-pot . languages/learnschool.pot",
 		"prepare": "husky",
-		"test": "npm run check"
+		"test": "npm run check",
+		"test:e2e": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 wp-scripts test-playwright",
+		"test:e2e:ui": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 wp-scripts test-playwright --ui"
 	}
 }

@@ -1,5 +1,5 @@
 <!-- wp:comments {"className":"wp-block-comments-query-loop","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-6"}}}} -->
-<div class="wp-block-comments wp-block-comments-query-loop">
+<div class="wp-block-comments wp-block-comments-query-loop" style="margin-top:var(--wp--preset--spacing--step-6)">
 	<!-- wp:comments-title /-->
 	<!-- wp:comment-template -->
 		<!-- wp:columns -->
@@ -20,7 +20,11 @@
 		</div>
 		<!-- /wp:columns -->
 	<!-- /wp:comment-template -->
-	<!-- wp:comments-pagination /-->
+	<!-- wp:comments-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+		<!-- wp:comments-pagination-previous /-->
+		<!-- wp:comments-pagination-numbers /-->
+		<!-- wp:comments-pagination-next /-->
+	<!-- /wp:comments-pagination -->
 	<!-- wp:post-comments-form /-->
 </div>
 <!-- /wp:comments -->
