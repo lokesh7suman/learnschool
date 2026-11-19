@@ -1,0 +1,96 @@
+/**
+ * Core Table Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/table') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-table,
+figure.wp-block-table {
+	overflow-x: auto;
+	margin: var(--wp--preset--spacing--step-4, 24px) 0;
+	width: 100%;
+}
+
+.wp-block-table table,
+table.wp-block-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border: 1.5px solid var(--wp--preset--color--border, #e5e7eb);
+	border-radius: 20px;
+	overflow: hidden;
+	background-color: var(--wp--preset--color--base, #fff);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+}
+
+.wp-block-table th,
+table.wp-block-table th,
+.wp-block-table thead tr th {
+	background: var(--wp--preset--color--base-subtle, #f7f4fe);
+	color: var(--wp--preset--color--primary-dark);
+	font-weight: 700;
+	padding: 14px 20px;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	border-bottom: 1.5px solid var(--wp--preset--color--primary-light, #ded6f6);
+}
+
+.wp-block-table td,
+table.wp-block-table td {
+	padding: 14px 20px;
+	border-bottom: 1px solid var(--wp--preset--color--border, #f1f3f7);
+	border-right: 1px solid var(--wp--preset--color--border, #f8f9fa);
+	color: var(--wp--preset--color--contrast);
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.wp-block-table td:last-child,
+.wp-block-table th:last-child,
+table.wp-block-table td:last-child,
+table.wp-block-table th:last-child {
+	border-right: none;
+}
+
+.wp-block-table tr:last-child td,
+table.wp-block-table tr:last-child td {
+	border-bottom: none;
+}
+
+.wp-block-table tr:nth-child(even) td,
+table.wp-block-table tr:nth-child(even) td {
+	background-color: var(--wp--preset--color--base-subtle, #fafafc);
+}
+
+.wp-block-table tr:hover td,
+table.wp-block-table tr:hover td {
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 30%, #fff);
+}
+
+.wp-block-table.is-style-stripes,
+table.wp-block-table.is-style-stripes {
+	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes table,
+table.wp-block-table.is-style-stripes {
+	border: 1.5px solid var(--wp--preset--color--primary-light, #ede8fb);
+}
+
+.wp-block-table.is-style-stripes th,
+table.wp-block-table.is-style-stripes th {
+	background-color: var(--wp--preset--color--primary-light, #efe9fc);
+}
+
+.wp-block-table.is-style-stripes tr:nth-child(odd) td,
+table.wp-block-table.is-style-stripes tr:nth-child(odd) td {
+	background-color: var(--wp--preset--color--base, #fff);
+}
+
+.wp-block-table.is-style-stripes tr:nth-child(even) td,
+table.wp-block-table.is-style-stripes tr:nth-child(even) td {
+	background-color: var(--wp--preset--color--base-subtle, #f8f6fd);
+}

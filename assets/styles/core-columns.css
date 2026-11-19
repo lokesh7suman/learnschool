@@ -1,0 +1,30 @@
+/**
+ * Core Columns Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/columns') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* Responsive Column Order Reverse on Mobile */
+@media (max-width: 1024px) {
+
+	.wp-block-columns.is-style-learnschool-reverse,
+	.wp-block-columns.is-style-reverse {
+		flex-direction: column-reverse;
+	}
+}
+
+/* Card Columns Variation */
+.wp-block-columns.is-style-learnschool-column-cards > .wp-block-column {
+	border-radius: var(--wp--preset--spacing--step-4, 24px);
+	padding: var(--wp--preset--spacing--step-4, 24px);
+	background-color: var(--wp--preset--color--surface, #fff);
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-columns.is-style-learnschool-column-cards > .wp-block-column:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--wp--preset--shadow--card);
+}

@@ -1,0 +1,25 @@
+/**
+ * Core Site Logo Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/site-logo') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-site-logo {
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+.wp-block-site-logo img {
+	display: block;
+	width: 36px;
+	height: 36px;
+	object-fit: contain;
+	transition: transform 0.25s ease;
+}
+
+.wp-block-site-logo a:hover img {
+	transform: scale(1.06) rotate(3deg);
+}

@@ -8,7 +8,6 @@
 
 /* ── Category Pill Badges ────────────────────────────────────────────── */
 
-.wk-post-category-badge,
 .taxonomy-category,
 .wp-block-post-terms,
 .wp-block-post-terms.is-style-learnschool-badge {
@@ -22,7 +21,6 @@
 	display: none;
 }
 
-.wk-post-category-badge a,
 .taxonomy-category a,
 .wp-block-post-terms a,
 .wp-block-post-terms.is-style-learnschool-badge a {
@@ -38,7 +36,6 @@
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.wk-post-category-badge a:hover,
 .taxonomy-category a:hover,
 .wp-block-post-terms a:hover,
 .wp-block-post-terms.is-style-learnschool-badge a:hover {

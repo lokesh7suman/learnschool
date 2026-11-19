@@ -40,18 +40,17 @@
 }
 
 .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after {
-	content: "";
+	content: "\2197";
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	width: 34px;
 	height: 34px;
 	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.2);
-	background-image: url(../images/icons/arrow-diagonal-up-right-white.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 14px 14px;
+	background-color: color-mix(in srgb, currentcolor 20%, transparent);
+	font-size: 18px;
+	line-height: 1;
+	font-weight: 700;
 	flex-shrink: 0;
 	transition: transform 0.2s ease;
 }
@@ -132,7 +131,7 @@
 }
 
 .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover,
-.wk-blog-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
+.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base, #fff);
 	border-color: var(--wp--preset--color--primary);
@@ -157,7 +156,7 @@
 }
 
 .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover::after,
-.wk-blog-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
+.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
 	transform: translate(2px, -2px);
 	background-color: rgba(255, 255, 255, 0.25);
 	background-image: url(../images/icons/arrow-diagonal-up-right-white.svg);
@@ -166,8 +165,7 @@
 /* Yellow Button Style */
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link,
 .is-style-learnschool-yellow .wp-block-button__link,
-.is-style-yellow-pill .wp-block-button__link,
-.wk-btn-yellow {
+.is-style-yellow-pill .wp-block-button__link {
 	background-color: var(--wp--preset--color--secondary, #ffbe17);
 	color: var(--wp--preset--color--contrast, #121028);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
@@ -188,8 +186,7 @@
 
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link:hover,
 .is-style-learnschool-yellow .wp-block-button__link:hover,
-.is-style-yellow-pill .wp-block-button__link:hover,
-.wk-btn-yellow:hover {
+.is-style-yellow-pill .wp-block-button__link:hover {
 	background-color: #f5a600;
 	transform: translateY(-2px);
 	box-shadow: 0 8px 24px rgba(255, 184, 2, 0.5);

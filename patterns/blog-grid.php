@@ -2,10 +2,10 @@
 /**
  * Title: Blog Grid (3 Columns)
  * Slug: learnschool/blog-grid
- * Categories: posts, learnschool
+ * Categories: learnschool/posts
  * Description: Exact Figma 3-column rounded blog cards with top cover images, titles, excerpts, and mini pill buttons.
  * Keywords: blog, articles, news, kids, learnschool, figma
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.0.0
@@ -36,7 +36,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9"} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:post-date {"fontSize":"small","textColor":"primary"} /-->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:post-terms {"term":"category","className":"is-style-learnschool-badge"} /-->
+
+<!-- wp:post-date {"fontSize":"small","textColor":"primary","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"0"}}}} /-->
 
 <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"large","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}}} /-->
 

@@ -2,10 +2,10 @@
 /**
  * Title: Safety & Credential Trust Strip
  * Slug: learnschool/trust-strip
- * Categories: features, learnschool
+ * Categories: learnschool/features, learnschool/call-to-action
  * Description: 4-item credential bar highlighting keypad security, background checks, organic kitchen, and state licensing.
  * Keywords: trust, safety, licensing, credentials, security, preschool
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.1.0

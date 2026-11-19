@@ -1,7 +1,21 @@
 /**
  * Core Navigation Styles — LearnSchool Theme
  *
- * Native WordPress Core block styles are used for navigation.
+ * Enqueued dynamically via wp_enqueue_block_style('core/navigation') on init.
  *
  * @package LearnSchool
  */
+
+/* ==========================================================================
+   Navigation Dropdown Menus
+   ========================================================================== */
+
+/**
+ * Elevate dropdown submenus above hero elements, badges, and floating doodles.
+ * WordPress Core defaults to z-index: 2 on .wp-block-navigation__submenu-container.
+ */
+.wp-block-navigation .wp-block-navigation__submenu-container,
+.wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+	z-index: 100;
+}
+

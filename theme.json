@@ -183,7 +183,7 @@
 							"fontStretch": "normal",
 							"fontDisplay": "swap",
 							"src": [
-								"file:./assets/fonts/quicksand-variable.woff2"
+								"file:./assets/fonts/quicksand/quicksand-variable.woff2"
 							]
 						}
 					]
@@ -199,7 +199,7 @@
 							"fontStyle": "normal",
 							"fontDisplay": "swap",
 							"src": [
-								"file:./assets/fonts/courgette-regular.woff2"
+								"file:./assets/fonts/courgette/courgette-regular.woff2"
 							]
 						}
 					]
@@ -590,6 +590,93 @@
 				"typography": {
 					"fontWeight": "600",
 					"fontSize": "var:preset|font-size|medium"
+				}
+			},
+			"core/code": {
+				"border": {
+					"color": "var:preset|color|border",
+					"radius": "16px",
+					"style": "solid",
+					"width": "1.5px"
+				},
+				"color": {
+					"background": "var:preset|color|base-subtle",
+					"text": "var:preset|color|contrast"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var:preset|spacing|step-3",
+						"bottom": "var:preset|spacing|step-3",
+						"left": "var:preset|spacing|step-4",
+						"right": "var:preset|spacing|step-4"
+					}
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|small",
+					"lineHeight": "1.6"
+				}
+			},
+			"core/verse": {
+				"border": {
+					"color": "var:preset|color|primary-light",
+					"radius": "0 20px 20px 0",
+					"style": "solid",
+					"width": "1.5px",
+					"left": {
+						"color": "var:preset|color|primary",
+						"style": "solid",
+						"width": "4px"
+					}
+				},
+				"color": {
+					"background": "#fbf9ff",
+					"text": "var:preset|color|contrast"
+				},
+				"spacing": {
+					"padding": {
+						"top": "24px",
+						"bottom": "24px",
+						"left": "32px",
+						"right": "32px"
+					},
+					"margin": {
+						"top": "28px",
+						"bottom": "28px"
+					}
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|quicksand",
+					"fontStyle": "italic",
+					"fontSize": "18px",
+					"lineHeight": "1.8"
+				}
+			},
+			"core/audio": {
+				"border": {
+					"color": "var:preset|color|primary-light",
+					"radius": "24px",
+					"style": "solid",
+					"width": "1.5px"
+				},
+				"color": {
+					"background": "#fbf9ff"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var:preset|spacing|step-4",
+						"bottom": "var:preset|spacing|step-4",
+						"left": "var:preset|spacing|step-4",
+						"right": "var:preset|spacing|step-4"
+					},
+					"margin": {
+						"top": "28px",
+						"bottom": "28px"
+					}
+				}
+			},
+			"core/social-links": {
+				"spacing": {
+					"blockGap": "var:preset|spacing|step-2"
 				}
 			}
 		}

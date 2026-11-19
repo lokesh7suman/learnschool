@@ -2,7 +2,7 @@
 /**
  * Title: Parent Handbook & FAQ Accordion (Zero-JS)
  * Slug: learnschool/faq-accordion
- * Categories: faq, learnschool
+ * Categories: learnschool/features
  * Description: Zero-JS expandable accordion built with native core/details blocks for parent questions.
  * Keywords: faq, accordion, questions, details, immunization, meals, tuition
  *

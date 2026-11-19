@@ -2,10 +2,10 @@
 /**
  * Title: Educator & Director Bios Grid
  * Slug: learnschool/teachers-grid
- * Categories: team, featured, learnschool
+ * Categories: learnschool/features, learnschool/card
  * Keywords: teachers, educators, team, staff, directors, credentials
  * Viewport Width: 1280
- * Inserter: yes
+ * Inserter: true
  * Description: Warm portrait grid of accredited early-childhood educators with degrees, credentials, and tenure.
  *
  * @package LearnSchool

@@ -23,3 +23,6 @@ phpstan-baseline.neon
 # Test data & artifacts
 /.tests/
 /tests/
+
+# Internal task tracking
+/tasks/

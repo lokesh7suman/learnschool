@@ -2,27 +2,24 @@
 /**
  * Block pattern categories for LearnSchool theme.
  *
- * Follows the Ollie/FSE community standard taxonomy so categories map
- * predictably to the Site Editor Patterns panel (Appearance → Editor → Patterns).
+ * Strictly follows the Ollie FSE taxonomy architecture:
+ * Categories are namespaced (`learnschool/*`) to guarantee isolation from
+ * core and third-party plugins while presenting clean, canonical section labels
+ * in the Site Editor and Block Inserter.
  *
- * Standard Ollie-aligned category slugs registered here:
- *   hero            Hero / banner sections at the top of pages
- *   headers         Utility top bars and navigation chrome above the main header
- *   call-to-action  CTA sections and lead capture forms
- *   features        Feature grids, showcases, curriculum highlights, materials
- *   cards           Card-based grid layouts (future use)
- *   pricing         Pricing / tuition / plan comparison sections
- *   testimonials    Parent / student review and quote sections
- *   team            Educator bios and staff spotlights
- *   posts           Blog articles, news, and events
- *   pages           Full starter page compositions
- *   faq             Frequently asked questions and accordion panels
- *   learnschool     Namespace bucket — every theme pattern belongs here
+ * Registered theme categories:
+ *   learnschool/card           Cards (modular card grids, faculty, program cards)
+ *   learnschool/call-to-action Call To Action (admissions roadmaps, tours, enrollments)
+ *   learnschool/features       Features (program pillars, highlights, daily rhythm, FAQs)
+ *   learnschool/hero           Hero (entrance banners and campus introductions)
+ *   learnschool/pages          Pages (full-page starter layouts and compositions)
+ *   learnschool/posts          Posts (blog queries, news, and school events)
+ *   learnschool/pricing        Pricing (tuition, fees, and plan comparisons)
+ *   learnschool/testimonial    Testimonials (parent reviews, ratings, leadership quotes)
  *
- * WordPress core natively provides: footer, header, text, featured, banner,
- * services, images, gallery, media, portfolio, columns, buttons, query.
- * We intentionally override core 'header'/'footer' labels with our own for
- * the Site Editor so they read "LearnSchool – Headers" vs the generic label.
+ * Core template part categories:
+ *   header                     Headers (navigation chrome, top bars, alert bars)
+ *   footer                     Footers (site footers, newsletter footers, accreditation)
  *
  * @package LearnSchool
  * @since   1.0.0
@@ -38,50 +35,65 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 	/**
 	 * Registers custom block pattern categories for LearnSchool theme.
 	 *
+	 * Hooked at priority 9 (matching Ollie) so categories exist before
+	 * theme and core patterns are registered.
+	 *
 	 * @since 1.0.0
 	 * @return void
 	 */
 	function learnschool_register_pattern_categories(): void {
 
 		$categories = array(
-
-			// ── Brand namespace ──────────────────────────────────────────────
-			'learnschool' => array(
-				'label'       => _x( 'LearnSchool', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'All patterns from the LearnSchool theme.', 'learnschool' ),
+			'learnschool/card'           => array(
+				'label'       => _x( 'Cards', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Modular card-based layouts for program highlights, educator profiles, and articles.', 'learnschool' ),
 			),
 
-			// ── Page sections — Ollie standard ───────────────────────────────
-			'hero'        => array(
+			'learnschool/call-to-action' => array(
+				'label'       => _x( 'Call To Action', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Conversion-focused sections, admissions roadmaps, and enrollment forms.', 'learnschool' ),
+			),
+
+			'learnschool/features'       => array(
+				'label'       => _x( 'Features', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Feature highlight grids, program showcases, curriculum sections, and FAQs.', 'learnschool' ),
+			),
+
+			'learnschool/hero'           => array(
 				'label'       => _x( 'Hero', 'Block pattern category', 'learnschool' ),
 				'description' => __( 'Full-width hero and banner sections for the top of pages.', 'learnschool' ),
 			),
 
-			'features'    => array(
-				'label'       => _x( 'Features', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Feature highlight grids, program showcases, learning materials, and curriculum sections.', 'learnschool' ),
+			'learnschool/pages'          => array(
+				'label'       => _x( 'Pages', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Complete starter page layouts and full-width compositions.', 'learnschool' ),
 			),
 
-			'pricing'     => array(
+			'learnschool/posts'          => array(
+				'label'       => _x( 'Posts', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Display articles, news, and events in lists or card grids.', 'learnschool' ),
+			),
+
+			'learnschool/pricing'        => array(
 				'label'       => _x( 'Pricing', 'Block pattern category', 'learnschool' ),
 				'description' => __( 'Tuition, fee, and pricing plan comparison sections.', 'learnschool' ),
 			),
 
-			'team'        => array(
-				'label'       => _x( 'Team', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Educator bios, director spotlights, and staff profile grids.', 'learnschool' ),
-			),
-
-			'faq'         => array(
-				'label'       => _x( 'FAQ', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Frequently asked questions, accordion panels, and parent handbooks.', 'learnschool' ),
+			'learnschool/testimonial'    => array(
+				'label'       => _x( 'Testimonials', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Parent reviews, student stories, and quote showcases.', 'learnschool' ),
 			),
 		);
 
 		foreach ( $categories as $slug => $args ) {
 			register_block_pattern_category( $slug, $args );
 		}
+
+		// Ensure pattern cache is invalidated during local development.
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			wp_get_theme()->delete_pattern_cache();
+		}
 	}
 endif;
 
-add_action( 'init', 'learnschool_register_pattern_categories' );
+add_action( 'init', 'learnschool_register_pattern_categories', 9 );

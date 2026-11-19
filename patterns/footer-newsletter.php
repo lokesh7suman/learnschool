@@ -2,11 +2,11 @@
 /**
  * Title: Footer with Newsletter & Legal Bar
  * Slug: learnschool/footer-newsletter
- * Categories: footer, learnschool
+ * Categories: footer, learnschool/call-to-action
  * Block Types: core/template-part/footer
  * Keywords: footer, newsletter, sitemap, legal, columns, mega-footer
  * Description: Four-column footer featuring newsletter signup, categorized sitemaps, social links, and bottom legal bar.
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.0.0
@@ -68,23 +68,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:search {"label":"<?php echo esc_attr__( 'Email Address', 'learnschool' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( 'Enter your email address', 'learnschool' ); ?>","buttonText":"<?php echo esc_attr__( 'Subscribe', 'learnschool' ); ?>","buttonPosition":"button-inside","buttonUseIcon":false,"style":{"border":{"radius":"100px"}}} /-->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-1.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Instagram', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-2.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Facebook', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"20px","height":"20px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-4.svg' ) ); ?>" alt="<?php echo esc_attr__( 'YouTube', 'learnschool' ); ?>" style="width:20px;height:20px"/></a></figure>
-<!-- /wp:image --></div>
-<!-- /wp:group --></div>
+<!-- wp:social-links {"iconColor":"primary","iconBackgroundColor":"base-subtle","size":"has-normal-icon-size","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"},"margin":{"top":"var:preset|spacing|step-3"}}}} -->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-default" style="margin-top:var(--wp--preset--spacing--step-3)">
+<!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
+<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
+<!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
+<!-- wp:social-link {"url":"https://youtube.com","service":"youtube"} /-->
+</ul>
+<!-- /wp:social-links --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

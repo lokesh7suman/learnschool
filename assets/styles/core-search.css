@@ -1,0 +1,86 @@
+/**
+ * Core Search Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/search') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-search {
+	margin: var(--wp--preset--spacing--step-4, 24px) 0;
+}
+
+.wp-block-search__input {
+	border-radius: 9999px;
+	padding: 14px 24px;
+	min-height: 50px;
+	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
+	font-size: 15px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-search__input:focus {
+	outline: none;
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
+}
+
+.wp-block-search__button {
+	border-radius: 9999px;
+	padding: 12px 28px;
+	min-height: 50px;
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base, #fff);
+	border: none;
+	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.2);
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-search__button:hover {
+	background-color: var(--wp--preset--color--primary-dark);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.3);
+}
+
+/* Button-Inside Unified Single Pill Layout */
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	display: flex;
+	align-items: center;
+	padding: 5px 6px 5px 22px;
+	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border-radius: 9999px;
+	background-color: var(--wp--preset--color--base, #fff);
+	box-sizing: border-box;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper:focus-within {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
+}
+
+.wp-block-search.wp-block-search__button-inside input.wp-block-search__input,
+.wp-block-search.wp-block-search__button-inside .wp-block-search__input {
+	border: none;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	padding: 8px 12px 8px 0;
+	min-height: auto;
+	height: auto;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__button {
+	border-radius: 9999px;
+	padding: 10px 24px;
+	min-height: 42px;
+	font-size: 14px;
+	flex-shrink: 0;
+}

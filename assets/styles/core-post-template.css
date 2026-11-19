@@ -1,0 +1,124 @@
+/**
+ * Core Post Template Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/post-template') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* Post Cards in Archive Grid */
+.wp-block-post-template.is-layout-grid {
+	display: grid;
+	gap: var(--wp--preset--spacing--step-5, 32px);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wp-block-post-template > li {
+	background-color: var(--wp--preset--color--base, #fff);
+	border: 1.5px solid #edf0f8;
+	border-radius: var(--wp--preset--spacing--step-5, 28px);
+	padding: var(--wp--preset--spacing--step-5, 28px);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+	transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.wp-block-post-template > li:hover {
+	transform: translateY(-4px);
+	border-color: var(--wp--preset--color--primary-light);
+	box-shadow: 0 16px 36px rgba(112, 79, 230, 0.1);
+}
+
+.wp-block-post-template > li:has(.wp-block-group),
+.wp-block-post-template > li:has(.is-style-learnschool-card) {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	box-shadow: none;
+}
+
+.wp-block-post-template > li:has(.wp-block-group):hover,
+.wp-block-post-template > li:has(.is-style-learnschool-card):hover {
+	transform: none;
+	box-shadow: none;
+}
+
+.wp-block-post-template .wp-block-post-title {
+	font-size: var(--wp--preset--font-size--large, 24px);
+	font-weight: 700;
+	line-height: 1.3;
+	margin: 12px 0 8px;
+}
+
+.wp-block-post-template .wp-block-post-title a {
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.wp-block-post-template .wp-block-post-title a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-post-template .wp-block-post-featured-image {
+	margin-bottom: 16px;
+	border-radius: 18px;
+	overflow: hidden;
+}
+
+.wp-block-post-template .wp-block-post-featured-image img {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	border-radius: 18px;
+	transition: transform 0.3s ease;
+}
+
+.wp-block-post-template > li:hover .wp-block-post-featured-image img {
+	transform: scale(1.03);
+}
+
+.wp-block-post-template .wp-block-post-excerpt__more-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: auto;
+	padding-top: 16px;
+	font-weight: 700;
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+	transition: gap 0.2s ease;
+}
+
+.wp-block-post-template .wp-block-post-excerpt__more-link:hover {
+	gap: 10px;
+}
+
+/* Sticky Post Styling */
+.sticky,
+.wp-block-post-template > li.sticky {
+	background: linear-gradient(180deg, #fffcf0 0%, #fff 100%);
+	border-color: var(--wp--preset--color--secondary);
+	box-shadow: 0 12px 32px rgba(255, 190, 23, 0.12);
+	position: relative;
+}
+
+.sticky::before,
+.wp-block-post-template > li.sticky::before {
+	content: "Featured";
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start;
+	width: fit-content;
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--contrast);
+	font-size: 12px;
+	font-weight: 700;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	margin-bottom: 12px;
+}

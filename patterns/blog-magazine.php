@@ -2,9 +2,9 @@
 /**
  * Title: School Editorial Stories & Magazine Split
  * Slug: learnschool/blog-magazine
- * Categories: posts, featured, learnschool
+ * Categories: learnschool/posts
  * Keywords: blog, magazine, editorial, featured, stories, articles
- * Inserter: yes
+ * Inserter: true
  * Viewport Width: 1280
  * Description: Asymmetric magazine editorial layout with featured article and compact stories sidebar.
  *
@@ -38,7 +38,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"24px","width":"1px","style":"solid"}},"borderColor":"border","backgroundColor":"surface","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:24px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:post-featured-image {"aspectRatio":"16/9","style":{"border":{"radius":"16px"}}} /-->
 
-<!-- wp:post-date {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-2"}}},"fontSize":"small","textColor":"primary"} /-->
+<!-- wp:post-terms {"term":"category","className":"is-style-learnschool-badge"} /-->
+
+<!-- wp:post-date {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}},"fontSize":"small","textColor":"primary"} /-->
 
 <!-- wp:post-title {"level":3,"isLink":true,"fontSize":"x-large"} /-->
 

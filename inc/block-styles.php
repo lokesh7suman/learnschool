@@ -57,6 +57,22 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			)
 		);
 
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-card-large',
+				'label' => __( 'Card Large', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/group',
+			array(
+				'name'  => 'learnschool-trust-strip',
+				'label' => __( 'Trust Strip', 'learnschool' ),
+			)
+		);
+
 		// ── Button style variations ───────────────────────────────────────────
 		register_block_style(
 			'core/button',
@@ -164,6 +180,23 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			array(
 				'name'  => 'learnschool-clean-list',
 				'label' => __( 'Clean Unstyled List', 'learnschool' ),
+			)
+		);
+
+		// ── Cover style variations ────────────────────────────────────────────
+		register_block_style(
+			'core/cover',
+			array(
+				'name'  => 'learnschool-rounded',
+				'label' => __( 'Rounded Frame', 'learnschool' ),
+			)
+		);
+
+		register_block_style(
+			'core/cover',
+			array(
+				'name'  => 'learnschool-arch',
+				'label' => __( 'Arch Frame', 'learnschool' ),
 			)
 		);
 

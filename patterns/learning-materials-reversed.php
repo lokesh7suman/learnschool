@@ -2,10 +2,10 @@
 /**
  * Title: Learning Materials Reversed Split with Highlights
  * Slug: learnschool/learning-materials-reversed
- * Categories: features, learnschool
+ * Categories: learnschool/features
  * Keywords: materials, reversed, split, books, curriculum
  * Description: Reversed two-column layout with a prominent visual showcase on the left and structured feature breakdown with bullet points and action button on the right.
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.0.0

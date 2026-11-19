@@ -1,0 +1,28 @@
+/**
+ * Core Post Navigation Link Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/post-navigation-link') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-post-navigation-link {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.wp-block-post-navigation-link a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 700;
+	font-size: 15px;
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.wp-block-post-navigation-link a:hover {
+	color: var(--wp--preset--color--primary-dark);
+}

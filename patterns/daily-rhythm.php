@@ -2,7 +2,7 @@
 /**
  * Title: Daily Rhythm & Daily Routine Schedule
  * Slug: learnschool/daily-rhythm
- * Categories: features, learnschool
+ * Categories: learnschool/features
  * Description: Step-by-step visual daily rhythm timeline from morning drop-off to afternoon pickup.
  * Keywords: rhythm, schedule, daily, routine, hours, preschool, daycare
  *

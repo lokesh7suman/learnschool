@@ -1,0 +1,65 @@
+/**
+ * Core Categories & Archives Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/categories') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-categories-list,
+.wp-block-archives-list {
+	list-style: none;
+	padding-left: 0;
+	margin: 20px 0;
+}
+
+.wp-block-categories-list > li,
+.wp-block-archives-list > li {
+	padding: 10px 16px;
+	margin-bottom: 8px;
+	background: #fff;
+	border: 1.5px solid #edf0f8;
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	font-weight: 600;
+	font-size: 15px;
+	color: var(--wp--preset--color--contrast);
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.wp-block-categories-list > li:hover,
+.wp-block-archives-list > li:hover {
+	border-color: var(--wp--preset--color--primary-light);
+	background-color: #faf8ff;
+	transform: translateX(3px);
+}
+
+.wp-block-categories-list a,
+.wp-block-archives-list a {
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transition: color 0.2s ease;
+	font-weight: 600;
+}
+
+.wp-block-categories-list a:hover,
+.wp-block-archives-list a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-categories-list .children {
+	list-style: none;
+	width: 100%;
+	padding-left: 18px;
+	margin-top: 8px;
+	border-left: 2px solid var(--wp--preset--color--primary-light, #dec8fe);
+}
+
+.wp-block-categories-list .children li {
+	padding: 6px 12px;
+	margin-bottom: 4px;
+	font-size: 14px;
+}

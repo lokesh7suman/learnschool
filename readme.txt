@@ -54,18 +54,17 @@ This theme bundles the following third-party resources:
 === Fonts ===
 
 Both bundled font families are licensed under the SIL Open Font License, Version 1.1.
-The full license terms are included in `assets/fonts/OFL.txt`.
 
 Quicksand Variable Font
 Author: Andrew Paglinawan
 Source: https://fonts.google.com/specimen/Quicksand
-License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL, bundled in assets/fonts/OFL.txt)
+License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL)
 Copyright: Copyright 2011 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily)
 
 Courgette Regular Font
 Author: Karolina Lach / Sorkin Type Co
 Source: https://fonts.google.com/specimen/Courgette
-License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL, bundled in assets/fonts/OFL.txt)
+License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL)
 Copyright: Copyright 2012 The Courgette Project Authors (https://github.com/googlefonts/courgette)
 
 === Vector Graphics & UI Icons ===

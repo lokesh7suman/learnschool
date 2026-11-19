@@ -2,7 +2,7 @@
 /**
  * Title: Landing Page
  * Slug: learnschool/landing-page
- * Categories: pages, featured, learnschool
+ * Categories: learnschool/pages
  * Template Types: front-page, page
  * Description: Full landing page layout composed of modular hero, features, materials, team, blog, and FAQ patterns.
  * Keywords: landing page, home, starter, education

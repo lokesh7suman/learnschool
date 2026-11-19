@@ -2,10 +2,10 @@
 /**
  * Title: FAQ Simple Cards
  * Slug: learnschool/faq-simple
- * Categories: faq, learnschool
+ * Categories: learnschool/features
  * Description: Frequently asked questions accordion with circular toggle buttons.
  * Keywords: faq, questions, accordion, help
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.0.0

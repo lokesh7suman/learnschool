@@ -1,0 +1,30 @@
+/**
+ * Core Gallery Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/gallery') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-gallery,
+figure.wp-block-gallery {
+	margin: var(--wp--preset--spacing--step-5, 32px) 0;
+	gap: 20px;
+}
+
+.wp-block-gallery .wp-block-image img,
+.wp-block-gallery figure img {
+	border-radius: 20px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-gallery .wp-block-image:hover img,
+.wp-block-gallery figure:hover img {
+	transform: scale(1.02);
+	box-shadow: 0 12px 28px rgba(112, 79, 230, 0.12);
+}
+
+.wp-block-gallery figcaption {
+	border-radius: 0 0 20px 20px;
+}

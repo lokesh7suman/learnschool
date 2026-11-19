@@ -1,0 +1,22 @@
+/**
+ * Core Cover Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/cover') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* Playful Cover Block Variations */
+.wp-block-cover.is-style-learnschool-rounded {
+	border-radius: var(--wp--preset--spacing--step-5, 32px);
+	overflow: hidden;
+}
+
+.wp-block-cover.is-style-learnschool-arch {
+	border-radius: 48px 48px 24px 24px;
+	overflow: hidden;
+}
+
+.wp-block-cover:where(.has-custom-content-position) {
+	min-height: 380px;
+}

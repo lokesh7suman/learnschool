@@ -18,32 +18,38 @@
 	"bugs": {
 		"url": "https://github.com/codeclove/learnschool/issues"
 	},
+	"engines": {
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
+	},
 	"devDependencies": {
-		"@wordpress/block-serialization-default-parser": "^6.1.0",
 		"@wordpress/env": "^10.0.0",
 		"@wordpress/scripts": "^30.0.0",
-		"@wp-playground/cli": "^3.1.65",
 		"adm-zip": "^0.6.1",
 		"ajv": "^8.20.0",
-		"ajv-cli": "^5.0.0",
-		"fast-glob": "^3.3.3"
+		"ajv-formats": "^3.0.1",
+		"fast-glob": "^3.3.2",
+		"husky": "^9.0.0",
+		"lint-staged": "^15.0.0"
+	},
+	"overrides": {
+		"typescript": "5.7.3"
 	},
 	"scripts": {
 		"build:zip": "node bin/build-zip.js",
 		"bundle": "npm run check && node bin/build-zip.js",
-		"check": "npm run lint:schema && npm run lint:blocks && npm run lint:css && npm run lint:json && composer run lint && composer run analyze",
-		"clean:db": "node bin/fix-patterns.js --clean-db --no-browser",
-		"env": "wp-env",
-		"fix:patterns": "node bin/fix-patterns.js --clean-db",
+		"check": "npm run lint:css && npm run lint:js && npm run lint:json && npm run lint:php && npm run lint:theme",
 		"format": "wp-scripts format",
-		"lint:blocks": "node bin/lint-blocks.js",
-		"lint:css": "wp-scripts lint-style 'style.css' 'assets/styles/*.css'",
+		"lint:css": "wp-scripts lint-style '**/*.css' --ignore-path .gitignore",
+		"lint:js": "wp-scripts lint-js 'assets/js/**/*.js'",
 		"lint:json": "wp-scripts lint-pkg-json",
-		"lint:schema": "node bin/validate-theme.js",
-		"test": "npm run check",
-		"test:patterns": "php .tests/e2e-patterns-test.php --only-existing && node .tests/gutenberg-e2e-validate.js",
-		"test:patterns:existing": "php .tests/e2e-patterns-test.php --only-existing",
-		"test:setup": "node bin/setup-test-data.js",
-		"verify:playground": "wp-playground server --auto-mount --blueprint=blueprint.json"
+		"lint:php": "composer run lint",
+		"lint:php:fix": "composer run lint:fix",
+		"lint:phpstan": "composer run phpstan",
+		"lint:theme": "node theme-utils.mjs validate-theme",
+		"lint:patterns:fix": "node theme-utils.mjs escape-patterns --text-domain=learnschool",
+		"makepot": "wp i18n make-pot . languages/learnschool.pot",
+		"prepare": "husky",
+		"test": "npm run check"
 	}
 }

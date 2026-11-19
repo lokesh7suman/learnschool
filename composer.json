@@ -10,13 +10,14 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
 		"wp-coding-standards/wpcs": "^3.1",
 		"phpcompatibility/phpcompatibility-wp": "^2.1",
-		"szepeviktor/phpstan-wordpress": "^2.0",
-		"phpstan/phpstan": "^2.3"
+		"phpstan/phpstan": "^2.0",
+		"szepeviktor/phpstan-wordpress": "^2.0"
 	},
 	"scripts": {
 		"lint": "phpcs -p -s",
 		"lint:fix": "phpcbf -p",
-		"analyze": "phpstan analyze --debug --memory-limit=512M"
+		"phpstan": "phpstan analyse --memory-limit=512M",
+		"makepot": "wp i18n make-pot . languages/learnschool.pot"
 	},
 	"config": {
 		"allow-plugins": {

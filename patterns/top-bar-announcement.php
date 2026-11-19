@@ -2,10 +2,10 @@
 /**
  * Title: Top Bar Announcement Banner & Social Links
  * Slug: learnschool/top-bar-announcement
- * Categories: header, learnschool
+ * Categories: header
  * Keywords: top bar, announcement, social, alert, notice
  * Description: High-visibility top bar featuring a centered seasonal announcement flanked by school operating hours and social profile links.
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.0.0
@@ -28,18 +28,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-small-font-size" style="font-weight:700"><a href="<?php echo esc_url( home_url( '/#open-house' ) ); ?>" style="color:var(--wp--preset--color--secondary);text-decoration:none"><?php echo esc_html__( 'Fall 2026 Admissions Now Open — Register for Open House', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
-<div class="wp-block-group"><!-- wp:image {"width":"16px","height":"16px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-1.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Instagram', 'learnschool' ); ?>" style="width:16px;height:16px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"16px","height":"16px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-2.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Facebook', 'learnschool' ); ?>" style="width:16px;height:16px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"16px","height":"16px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>" style="width:16px;height:16px"/></a></figure>
-<!-- /wp:image --></div>
-<!-- /wp:group --></div>
+<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
+<!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
+<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
+<!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
+</ul>
+<!-- /wp:social-links --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

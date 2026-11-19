@@ -1,0 +1,107 @@
+/**
+ * Core Latest Posts Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/latest-posts') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-latest-posts {
+	margin: var(--wp--preset--spacing--step-4, 24px) 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li {
+	padding: 14px 18px;
+	margin-bottom: 10px;
+	background-color: var(--wp--preset--color--base, #fff);
+	border: 1.5px solid #edf0f8;
+	border-radius: 16px;
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:hover {
+	border-color: var(--wp--preset--color--primary-light);
+	background-color: #faf8ff;
+	transform: translateX(4px);
+}
+
+.wp-block-latest-posts:not(.is-grid) > li a {
+	font-weight: 700;
+	font-size: 17px;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-latest-posts.is-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: var(--wp--preset--spacing--step-4, 24px);
+	list-style: none;
+	padding-left: 0;
+	margin: var(--wp--preset--spacing--step-4, 24px) 0;
+}
+
+.wp-block-latest-posts.is-grid > li {
+	background-color: var(--wp--preset--color--base, #fff);
+	border: 1.5px solid #edf0f8;
+	border-radius: var(--wp--preset--spacing--step-4, 24px);
+	padding: var(--wp--preset--spacing--step-4, 24px);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.wp-block-latest-posts.is-grid > li:hover {
+	transform: translateY(-4px);
+	border-color: var(--wp--preset--color--primary-light);
+	box-shadow: 0 16px 36px rgba(112, 79, 230, 0.1);
+}
+
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__featured-image {
+	margin-bottom: 14px;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+.wp-block-latest-posts.is-grid .wp-block-latest-posts__featured-image img {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	border-radius: 16px;
+	transition: transform 0.3s ease;
+}
+
+.wp-block-latest-posts.is-grid > li:hover .wp-block-latest-posts__featured-image img {
+	transform: scale(1.03);
+}
+
+.wp-block-latest-posts__post-title {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.35;
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.wp-block-latest-posts__post-title:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-latest-posts__post-author,
+.wp-block-latest-posts__post-date {
+	font-size: 13px;
+	color: var(--wp--preset--color--contrast-subtle);
+	margin-top: 6px;
+}

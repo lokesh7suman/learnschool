@@ -2,10 +2,10 @@
 /**
  * Title: Features Cards Grid
  * Slug: learnschool/features-cards
- * Categories: features, learnschool
+ * Categories: learnschool/features, learnschool/card
  * Description: Three-column interactive feature cards with icons and hashtags.
  * Keywords: features, services, cards, interactive
- * Inserter: yes
+ * Inserter: true
  *
  * @package LearnSchool
  * @since 1.0.0

@@ -2,7 +2,7 @@
 /**
  * Title: Footer with Accreditation
  * Slug: learnschool/footer-accreditation
- * Categories: footer, learnschool
+ * Categories: footer
  * Block Types: core/template-part/footer
  * Description: 4-column preschool footer with state licensing badge, program links, campus hours, and parent resources.
  * Keywords: footer, licensing, hours, campus, contact, links
@@ -105,23 +105,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-primary-color has-text-color has-small-font-size" style="font-weight:600"><a href="<?php echo esc_url( 'tel:5551234567' ); ?>" style="text-decoration:none;color:inherit"><?php echo esc_html__( '(555) 123-4567', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"className":"learnschool-social-links","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"top":"var:preset|spacing|step-3"}}}} -->
-<div class="wp-block-group learnschool-social-links" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-1.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Instagram', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-2.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Facebook', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-3.svg' ) ); ?>" alt="<?php echo esc_attr__( 'X', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
-<!-- /wp:image -->
-
-<!-- wp:image {"width":"36px","height":"36px","sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><a href="#"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/icons/social-4.svg' ) ); ?>" alt="<?php echo esc_attr__( 'YouTube', 'learnschool' ); ?>" style="width:36px;height:36px"/></a></figure>
-<!-- /wp:image --></div>
-<!-- /wp:group --></div>
+<!-- wp:social-links {"iconColor":"primary","iconBackgroundColor":"base-subtle","size":"has-normal-icon-size","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"},"margin":{"top":"var:preset|spacing|step-3"}}}} -->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-default" style="margin-top:var(--wp--preset--spacing--step-3)">
+<!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
+<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
+<!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
+<!-- wp:social-link {"url":"https://youtube.com","service":"youtube"} /-->
+</ul>
+<!-- /wp:social-links --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

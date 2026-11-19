@@ -20,8 +20,21 @@ package-lock.json
 # Quality Assurance & Testing Configurations
 phpcs.xml*
 phpstan.neon*
+phpstan-baseline.neon
 phpunit.xml*
 tests/
+
+# Local development
+.nvmrc
+.wp-env.json
+.wp-env.override.json
+
+# Pre-commit hooks
+.husky/
+lint-staged.config.mjs
+
+# Theme utilities (dev-only)
+theme-utils.mjs
 
 # Operating System Files & Logs
 .DS_Store
