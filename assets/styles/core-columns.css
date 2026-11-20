@@ -41,3 +41,12 @@
 		flex-grow: 0;
 	}
 }
+
+/* Subtle vertical dividers between trust strip items on desktop */
+@media (min-width: 1025px) {
+
+	.is-style-learnschool-trust-strip .wp-block-columns > .wp-block-column:not(:last-child) {
+		border-right: 1px solid var(--wp--preset--color--border, #e2e8f0);
+		padding-right: var(--wp--preset--spacing--step-4, 24px);
+	}
+}
