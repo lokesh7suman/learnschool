@@ -21,27 +21,77 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-6","left":"var:preset|spacing|step-6"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"style":{"border":{"radius":"28px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"shadow":"var:preset|shadow|card"},"borderColor":"border","backgroundColor":"surface","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:28px;box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"warning","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-warning-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="font-weight:700"><?php echo esc_html__( 'Research-Backed Learning Kits', 'learnschool' ); ?></h3>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"},"blockGap":"var:preset|spacing|step-3"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:html -->
+<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--primary);background:rgba(112,79,230,0.08);width:48px;height:48px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"base"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-base-font-size" style="font-weight:700"><?php echo esc_html__( 'Visual Storybooks & Phonics', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><?php echo esc_html__( 'Every learning material is tactile, non-toxic, and intentionally curated to foster spatial reasoning, fine motor coordination, and problem solving.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"2px","bottom":"2px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
+<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:2px;padding-right:10px;padding-bottom:2px;padding-left:10px;font-weight:700"><?php echo esc_html__( 'Ages 3–5', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Illustrated readers, vocabulary cards, and tactile sensory trace sheets for early literacy.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3"}}},"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"4px","bottom":"4px","left":"14px","right":"14px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"secondary","textColor":"contrast","fontSize":"small"} -->
-<p class="has-contrast-color has-secondary-background-color has-text-color has-background has-small-font-size" style="border-radius:9999px;padding-top:4px;padding-right:14px;padding-bottom:4px;padding-left:14px;font-weight:700"><?php echo esc_html__( 'Updated 2026 Curriculum', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"},"blockGap":"var:preset|spacing|step-3"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:html -->
+<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--secondary-dark);background:rgba(255,190,23,0.15);width:48px;height:48px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+</div>
+<!-- /wp:html -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="font-weight:600"><?php echo esc_html__( 'Interactive Labs', 'learnschool' ); ?></p>
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"base"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-base-font-size" style="font-weight:700"><?php echo esc_html__( 'Interactive Digital Touch Labs', 'learnschool' ); ?></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"2px","bottom":"2px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"warning","textColor":"warning-text","fontSize":"x-small"} -->
+<p class="has-warning-text-color has-warning-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:2px;padding-right:10px;padding-bottom:2px;padding-left:10px;font-weight:700"><?php echo esc_html__( 'Adaptive', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Self-paced audio puzzles, pattern matching, and guided science explorations on safe tablets.', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"},"blockGap":"var:preset|spacing|step-3"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:html -->
+<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--primary);background:rgba(112,79,230,0.08);width:48px;height:48px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2"/><path d="M17 5c0 4.5-2 9-5 13-3-4-5-8.5-5-13a5 5 0 0 1 10 0z"/></svg>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"base"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-base-font-size" style="font-weight:700"><?php echo esc_html__( 'Physical Science & Craft Packs', 'learnschool' ); ?></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"2px","bottom":"2px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
+<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:2px;padding-right:10px;padding-bottom:2px;padding-left:10px;font-weight:700"><?php echo esc_html__( 'Hands-On', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Botanical seed germination kits, non-toxic modeling clays, and tactile geometric arches.', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
