@@ -29,9 +29,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"24px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-learnschool-arch"} -->
-<figure class="wp-block-image size-full is-style-learnschool-arch"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/teacher-kristin.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Kristin Watson - Science Teacher', 'learnschool' ); ?>"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
+<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
+<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">KW</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-1"}}},"fontSize":"large"} -->
 <h3 class="wp-block-heading has-text-align-center has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Kristin Watson', 'learnschool' ); ?></h3>
@@ -47,9 +51,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"24px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-learnschool-arch"} -->
-<figure class="wp-block-image size-full is-style-learnschool-arch"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/teacher-jenny.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Jenny Wilson - Drawing Teacher', 'learnschool' ); ?>"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"secondary","textColor":"contrast","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-contrast-color has-secondary-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
+<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
+<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">JW</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-1"}}},"fontSize":"large"} -->
 <h3 class="wp-block-heading has-text-align-center has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Jenny Wilson', 'learnschool' ); ?></h3>
@@ -65,9 +73,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"24px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-learnschool-arch"} -->
-<figure class="wp-block-image size-full is-style-learnschool-arch"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/teacher-jacob.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Jacob Jones - Math Teacher', 'learnschool' ); ?>"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
+<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
+<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">JJ</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-1"}}},"fontSize":"large"} -->
 <h3 class="wp-block-heading has-text-align-center has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Jacob Jones', 'learnschool' ); ?></h3>
@@ -83,9 +95,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"24px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-learnschool-arch"} -->
-<figure class="wp-block-image size-full is-style-learnschool-arch"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/teacher-savannah.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Savannah Nguyen - English Teacher', 'learnschool' ); ?>"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"secondary","textColor":"contrast","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-contrast-color has-secondary-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
+<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
+<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">SN</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-1"}}},"fontSize":"large"} -->
 <h3 class="wp-block-heading has-text-align-center has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Savannah Nguyen', 'learnschool' ); ?></h3>

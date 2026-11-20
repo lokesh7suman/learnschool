@@ -34,9 +34,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}},"border":{"radius":"24px","width":"1px","style":"solid"},"shadow":"var:preset|shadow|card"},"borderColor":"border","backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-5);padding-left:0"><!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"24px","topRight":"24px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"0","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-primary-light-background-color has-background" style="border-top-left-radius:24px;border-top-right-radius:24px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:image {"aspectRatio":"16/9","scale":"contain","sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-1-card.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Early Literacy &amp; Phonics student', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:contain"/></figure>
-<!-- /wp:image --></div>
+<div class="wp-block-group has-primary-light-background-color has-background" style="border-top-left-radius:24px;border-top-right-radius:24px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"16px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:16px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","textTransform":"uppercase"}},"fontSize":"small"} -->
+<p class="has-small-font-size" style="font-weight:700;text-transform:uppercase"><?php echo esc_html__( 'Ages 3–4', 'learnschool' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium-large"} -->
+<h3 class="wp-block-heading has-medium-large-font-size" style="font-weight:700"><?php echo esc_html__( 'Early Literacy & Phonics', 'learnschool' ); ?></h3>
+<!-- /wp:heading --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"layout":{"type":"default"}} -->
@@ -74,9 +80,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}},"border":{"radius":"24px","width":"1px","style":"solid"},"shadow":"var:preset|shadow|card"},"borderColor":"border","backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-5);padding-left:0"><!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"24px","topRight":"24px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"0","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"}}},"backgroundColor":"warning","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-warning-background-color has-background" style="border-top-left-radius:24px;border-top-right-radius:24px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:image {"aspectRatio":"16/9","scale":"contain","sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-2-card.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Young Inventors STEM Lab student', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:contain"/></figure>
-<!-- /wp:image --></div>
+<div class="wp-block-group has-warning-background-color has-background" style="border-top-left-radius:24px;border-top-right-radius:24px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"16px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"secondary","textColor":"contrast","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-contrast-color has-secondary-background-color has-text-color has-background" style="border-radius:16px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","textTransform":"uppercase"}},"fontSize":"small"} -->
+<p class="has-small-font-size" style="font-weight:700;text-transform:uppercase"><?php echo esc_html__( 'Ages 4–5', 'learnschool' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium-large"} -->
+<h3 class="wp-block-heading has-medium-large-font-size" style="font-weight:700"><?php echo esc_html__( 'Young Inventors STEM Lab', 'learnschool' ); ?></h3>
+<!-- /wp:heading --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"layout":{"type":"default"}} -->
@@ -114,9 +126,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-5","left":"0","right":"0"}},"border":{"radius":"24px","width":"1px","style":"solid"},"shadow":"var:preset|shadow|card"},"borderColor":"border","backgroundColor":"surface","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group has-border-color has-border-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-5);padding-left:0"><!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"24px","topRight":"24px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"0","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-base-subtle-background-color has-background" style="border-top-left-radius:24px;border-top-right-radius:24px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:image {"aspectRatio":"16/9","scale":"contain","sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/photos/materials-kid-3-card.webp' ) ); ?>" alt="<?php echo esc_attr__( 'Creative Arts &amp; Expression student', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:contain"/></figure>
-<!-- /wp:image --></div>
+<div class="wp-block-group has-base-subtle-background-color has-background" style="border-top-left-radius:24px;border-top-right-radius:24px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"16px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-base-subtle-background-color has-background" style="border-radius:16px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","textTransform":"uppercase"}},"textColor":"primary","fontSize":"small"} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700;text-transform:uppercase"><?php echo esc_html__( 'Ages 2–5', 'learnschool' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium-large"} -->
+<h3 class="wp-block-heading has-medium-large-font-size" style="font-weight:700"><?php echo esc_html__( 'Creative Arts & Expression', 'learnschool' ); ?></h3>
+<!-- /wp:heading --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"layout":{"type":"default"}} -->
