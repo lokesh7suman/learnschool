@@ -165,6 +165,57 @@
 	color: var(--wp--preset--color--base, #fff);
 }
 
+/* Card Variations with Colored Backgrounds: WCAG AA High Contrast */
+.has-primary-light-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+	border: 1.5px solid rgba(88, 55, 199, 0.2);
+	box-shadow: 0 2px 8px rgba(88, 55, 199, 0.1);
+}
+
+.has-primary-light-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
+	background-color: var(--wp--preset--color--primary-light, #dec8fe);
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+}
+
+.has-primary-light-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover,
+.has-primary-light-background-color.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
+	background-color: var(--wp--preset--color--primary-dark, #5837c7);
+	color: var(--wp--preset--color--base, #fff);
+	border-color: var(--wp--preset--color--primary-dark, #5837c7);
+}
+
+.has-primary-light-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover::after,
+.has-primary-light-background-color.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
+	background-color: rgba(255, 255, 255, 0.25);
+	color: var(--wp--preset--color--base, #fff);
+}
+
+.has-accent-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast, #121212);
+	border: 1.5px solid rgba(18, 18, 18, 0.15);
+	box-shadow: 0 2px 8px rgba(18, 18, 18, 0.06);
+}
+
+.has-accent-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
+	background-color: var(--wp--preset--color--accent, #ffd25d);
+	color: var(--wp--preset--color--contrast, #121212);
+}
+
+.has-accent-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover,
+.has-accent-background-color.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
+	background-color: var(--wp--preset--color--contrast, #121212);
+	color: var(--wp--preset--color--base, #fff);
+	border-color: var(--wp--preset--color--contrast, #121212);
+}
+
+.has-accent-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover::after,
+.has-accent-background-color.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
+	background-color: rgba(255, 255, 255, 0.25);
+	color: var(--wp--preset--color--base, #fff);
+}
+
 /* Yellow Button Style */
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link,
 .is-style-learnschool-yellow .wp-block-button__link,
@@ -252,6 +303,19 @@
 /* Header CTA button: maintain single-line text and compact padding on mobile */
 .learnschool-header-actions .wp-block-button__link {
 	white-space: nowrap;
+}
+
+/* Card action buttons: stretch full width with spaced arrow */
+.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline,
+.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill {
+	width: 100%;
+}
+
+.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill .wp-block-button__link {
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
 }
 
 @media (max-width: 640px) {
