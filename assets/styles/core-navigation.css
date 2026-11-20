@@ -41,11 +41,33 @@
 	}
 }
 
-/* Hide secondary sign-in text on small phone viewports to prevent button wrapping */
-@media (max-width: 640px) {
+/* Mobile Header Layout & Action Button Suppression (< 768px) */
+@media (max-width: 768px) {
 
+	/* Hide desktop action buttons and secondary sign-in links on mobile bar */
+	header .learnschool-header-actions,
+	header .wp-block-group.alignwide > .learnschool-header-actions,
+	header .wp-block-buttons:not(.wp-block-navigation *),
+	.wp-block-template-part header .learnschool-header-actions,
+	.wp-block-template-part header .wp-block-buttons:not(.wp-block-navigation *),
+	.wp-block-template-part[data-area="header"] .wp-block-buttons:not(.wp-block-navigation *),
+	.wp-block-group.alignwide > .learnschool-header-actions,
 	.learnschool-header-signin {
 		display: none;
+	}
+
+	/* Anchor the navigation hamburger toggle cleanly to the far right */
+	header .wp-block-navigation,
+	.wp-block-template-part header .wp-block-navigation,
+	.wp-block-template-part[data-area="header"] .wp-block-navigation,
+	.wp-block-group.alignwide > .wp-block-navigation {
+		margin-left: auto;
+	}
+
+	/* Prevent header container wrap to guarantee single-line brand and hamburger */
+	header .wp-block-group.alignwide,
+	.wp-block-template-part header .wp-block-group.alignwide {
+		flex-wrap: nowrap;
 	}
 }
 
@@ -111,7 +133,28 @@
 	transform: rotate(90deg);
 }
 
-/* Mobile drawer navigation links */
+/* Mobile drawer navigation links — Left-aligned modern layout */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-page-list {
+	align-items: flex-start;
+	text-align: left;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+	width: 100%;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+	justify-content: flex-start;
+	text-align: left;
+	width: 100%;
+}
+
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
 	gap: var(--wp--preset--spacing--step-3, 16px);
 }

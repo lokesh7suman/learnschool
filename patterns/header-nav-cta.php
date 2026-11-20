@@ -28,9 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:navigation {"overlayMenu":"mobile","style":{"typography":{"fontWeight":"600"}},"layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} /-->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>"><?php echo esc_html__( 'Sign In', 'learnschool' ); ?></a></p>
+<!-- wp:group {"className":"learnschool-header-actions","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
+<div class="wp-block-group learnschool-header-actions"><!-- wp:paragraph {"className":"learnschool-header-signin"} -->
+<p class="learnschool-header-signin"><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>"><?php echo esc_html__( 'Sign In', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
