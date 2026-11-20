@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"center"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/creative-classroom.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Creative classroom arts and science discovery illustration with school kids', 'learnschool' ); ?>" width="520" height="445"/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/creative-classroom.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Creative classroom arts and science discovery illustration with school kids', 'learnschool' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

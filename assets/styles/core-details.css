@@ -78,19 +78,25 @@
 	width: 56px;
 	height: 56px;
 	border-radius: 50%;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
 	background-color: var(--wp--preset--color--base-subtle);
-	background-image: url(../images/icons/icon-add.svg);
+	background-image:
+		linear-gradient(currentcolor, currentcolor),
+		linear-gradient(currentcolor, currentcolor);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 24px 24px;
+	background-size: 20px 2.5px, 2.5px 20px;
+	color: var(--wp--preset--color--primary);
 	flex-shrink: 0;
-	transition: transform 0.25s ease, background-color 0.2s ease;
+	transition: transform 0.25s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 	margin-left: 20px;
 }
 
 .wp-block-details.is-style-learnschool-faq-pill[open] summary::after {
 	transform: rotate(45deg);
-	background-color: var(--wp--preset--color--primary-light);
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--surface, #fff);
 }
 
 .wp-block-details.is-style-learnschool-faq-pill p:not(.has-text-color) {
@@ -120,7 +126,7 @@
 	.wp-block-details.is-style-learnschool-faq-pill summary::after {
 		width: 44px;
 		height: 44px;
-		background-size: 20px 20px;
+		background-size: 16px 2px, 2px 16px;
 		margin-left: 12px;
 	}
 }

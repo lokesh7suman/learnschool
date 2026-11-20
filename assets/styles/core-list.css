@@ -65,6 +65,7 @@ ol.is-style-learnschool-clean-list > li {
 ul.is-style-learnschool-clean-list a,
 ol.is-style-learnschool-clean-list a {
 	color: var(--wp--preset--color--contrast-subtle);
+	font-weight: 600;
 	text-decoration: none;
 	transition: color 0.2s ease;
 }

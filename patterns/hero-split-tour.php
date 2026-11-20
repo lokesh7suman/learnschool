@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"center"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/kids-discovery.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Joyful early learning discovery illustration with school kids, building blocks, and books', 'learnschool' ); ?>" width="520" height="445"/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/kids-discovery.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Joyful early learning discovery illustration with school kids, building blocks, and books', 'learnschool' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

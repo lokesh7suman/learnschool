@@ -37,8 +37,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Our Programs', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:list {"className":"is-style-learnschool-clean-list"} -->
-<ul class="wp-block-list is-style-learnschool-clean-list"><!-- wp:list-item -->
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
 <li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Infants (6w–12m)', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
@@ -65,8 +65,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Parent Resources', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:list {"className":"is-style-learnschool-clean-list"} -->
-<ul class="wp-block-list is-style-learnschool-clean-list"><!-- wp:list-item -->
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
 <li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Admissions Roadmap', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
