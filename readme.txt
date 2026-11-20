@@ -67,26 +67,23 @@ Source: https://fonts.google.com/specimen/Courgette
 License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL)
 Copyright: Copyright 2012 The Courgette Project Authors (https://github.com/googlefonts/courgette)
 
-=== Vector Graphics & UI Icons ===
+=== Vector Graphics, Illustrations & Starter Media ===
 
-All SVG vector assets, hand-drawn text highlight brush and underline doodles, and UI icons located in `assets/images/doodles/text-highlights/` and `assets/images/icons/` were created specifically for LearnSchool.
+All SVG vector assets, hand-drawn text highlight brush and underline doodles, UI icons, educational course graphics, and educator avatars located in `assets/images/` (including `assets/images/doodles/`, `assets/images/icons/`, `assets/images/illustrations/`, and `assets/images/photos/`) as well as `screenshot.png` were created specifically for LearnSchool by the theme author (codeclove).
 Author: codeclove
 License: GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+Copyright: Copyright (C) 2026 codeclove
 
-=== Photography & Starter Media ===
-
-All images bundled in `assets/images/photos/` are released under the Creative Commons CC0 1.0 Universal (Public Domain) license:
-License: Creative Commons CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
-Sources: WordPress Photo Directory (https://wordpress.org/photos/) & Public Domain Archive
-* `blog-1.webp` - Learning with games educational scene - CC0 Public Domain
-* `blog-2.webp` - 10 Learning game ideas - CC0 Public Domain
-* `blog-3.webp` - Fun activities for students - CC0 Public Domain
-* `hero-kid-1.webp` - Student with camera - CC0 Public Domain
-* `materials-kid-1-card.webp` - Smiling student with learning material (card layout) - CC0 Public Domain
-* `materials-kid-2.webp` - Student exploring learning activities - CC0 Public Domain
-* `materials-kid-2-card.webp` - Student exploring learning activities (card layout) - CC0 Public Domain
-* `materials-kid-3-card.webp` - Student smiling with teddy bear (card layout) - CC0 Public Domain
-* `teacher-kristin.webp` - Educator portrait (Science) - CC0 Public Domain
-* `teacher-jenny.webp` - Educator portrait (Drawing) - CC0 Public Domain
-* `teacher-jacob.webp` - Educator portrait (Math) - CC0 Public Domain
-* `teacher-savannah.webp` - Educator portrait (Reading) - CC0 Public Domain
+* `teacher-kristin.webp` - Custom vector educator avatar (Science / Preschool) - GPLv2+
+* `teacher-jenny.webp` - Custom vector educator avatar (Campus Director / Arts) - GPLv2+
+* `teacher-jacob.webp` - Custom vector educator avatar (Math / STEM Coordinator) - GPLv2+
+* `teacher-savannah.webp` - Custom vector educator avatar (Toddler Program Lead / Sensory) - GPLv2+
+* `hero-kid-1.webp` - Custom vector student character illustration - GPLv2+
+* `materials-kid-1-card.webp` - Custom vector literacy & phonics course card - GPLv2+
+* `materials-kid-2-card.webp` - Custom vector STEM robotics & lab course card - GPLv2+
+* `materials-kid-3-card.webp` - Custom vector creative arts studio course card - GPLv2+
+* `materials-kid-2.webp` - Custom vector learning desk & discovery scene - GPLv2+
+* `blog-1.webp` - Custom vector science laboratory exploration illustration - GPLv2+
+* `blog-2.webp` - Custom vector creative studio & painting illustration - GPLv2+
+* `blog-3.webp` - Custom vector storytelling & pop-up book illustration - GPLv2+
+* `screenshot.png` - Theme presentation screenshot composed entirely of author-created GPLv2+ elements

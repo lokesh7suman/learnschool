@@ -89,10 +89,8 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 			register_block_pattern_category( $slug, $args );
 		}
 
-		// Ensure pattern cache is invalidated during local development.
-		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-			wp_get_theme()->delete_pattern_cache();
-		}
+		// Ensure pattern cache is invalidated so editor reflects pattern removals/updates.
+		wp_get_theme()->delete_pattern_cache();
 	}
 endif;
 

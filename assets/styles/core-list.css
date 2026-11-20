@@ -18,6 +18,12 @@ ul.is-style-learnschool-checkmarks > li {
 	padding-left: 32px;
 	margin-bottom: 12px;
 	line-height: 1.6;
+	color: var(--wp--preset--color--contrast, #121212);
+}
+
+:where(.has-base-color, .has-primary-background-color, .has-primary-dark-background-color, .has-contrast-background-color) ul.is-style-learnschool-checkmarks > li,
+ul.is-style-learnschool-checkmarks.has-base-color > li {
+	color: currentcolor;
 }
 
 ul.is-style-learnschool-checkmarks > li::before {

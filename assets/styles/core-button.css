@@ -83,7 +83,9 @@
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover,
 .wp-block-button.is-style-outline-purple .wp-block-button__link:hover {
-	background-color: var(--wp--preset--color--primary-light, #dec8fe);
+	background-color: var(--wp--preset--color--primary, #704fe6);
+	color: var(--wp--preset--color--base, #fff);
+	border-color: var(--wp--preset--color--primary, #704fe6);
 	transform: translateY(-2px);
 }
 
@@ -107,7 +109,8 @@
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after,
 .wp-block-button.is-style-outline-purple .wp-block-button__link:hover::after {
-	background-color: var(--wp--preset--color--primary-dark, #5837c7);
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--primary, #704fe6);
 	transform: translate(2px, -2px);
 }
 
@@ -244,4 +247,19 @@
 	color: var(--wp--preset--color--base, #fff);
 	transform: translateY(-2px);
 	box-shadow: 0 10px 24px -4px color-mix(in srgb, var(--wp--preset--color--primary) 35%, transparent);
+}
+
+/* Header CTA button: maintain single-line text and compact padding on mobile */
+.learnschool-header-actions .wp-block-button__link {
+	white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+
+	.learnschool-header-actions .wp-block-button__link {
+		padding: 8px 16px;
+		font-size: var(--wp--preset--font-size--small, 14px);
+		min-height: 40px;
+		height: auto;
+	}
 }

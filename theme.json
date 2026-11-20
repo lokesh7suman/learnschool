@@ -73,7 +73,7 @@
 				},
 				{
 					"slug": "contrast-subtle",
-					"color": "#636363",
+					"color": "#4b5563",
 					"name": "Contrast Subtle / Muted Gray"
 				},
 				{
@@ -98,7 +98,7 @@
 				},
 				{
 					"slug": "secondary-dark",
-					"color": "#d97706",
+					"color": "#b45309",
 					"name": "Secondary Dark / Warm Amber"
 				},
 				{
@@ -206,6 +206,15 @@
 				}
 			],
 			"fontSizes": [
+				{
+					"slug": "x-small",
+					"size": "0.75rem",
+					"fluid": {
+						"min": "0.75rem",
+						"max": "0.75rem"
+					},
+					"name": "Extra Small (12px)"
+				},
 				{
 					"slug": "small",
 					"size": "0.875rem",

@@ -162,7 +162,6 @@ add_filter( 'default_wp_template_part_areas', 'learnschool_template_part_areas' 
 // Load modular component configurations.
 require_once get_template_directory() . '/inc/pattern-categories.php';
 require_once get_template_directory() . '/inc/block-styles.php';
-require_once get_template_directory() . '/inc/post-featured-image-fallback.php';
 
 if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 	/**

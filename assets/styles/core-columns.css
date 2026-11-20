@@ -28,3 +28,16 @@
 	transform: translateY(-4px);
 	box-shadow: var(--wp--preset--shadow--card);
 }
+
+/* Tablet Responsive 2x2 Layout for Trust Strip & Multi-Column Grids */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+	.is-style-learnschool-trust-strip .wp-block-columns {
+		flex-wrap: wrap;
+	}
+
+	.is-style-learnschool-trust-strip .wp-block-columns > .wp-block-column {
+		flex-basis: calc(50% - var(--wp--preset--spacing--step-4, 24px));
+		flex-grow: 0;
+	}
+}
