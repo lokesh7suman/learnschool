@@ -2,7 +2,7 @@
 /**
  * Title: Faculty Spotlight with Principal Welcome
  * Slug: learnschool/teachers-spotlight
- * Categories: learnschool/card
+ * Categories: learnschool/team
  * Inserter: true
  * Keywords: teachers, principal, leadership, faculty, team
  * Description: Asymmetrical layout featuring an expansive message and bio from the school principal on the left, paired with a 2x2 grid of key subject educators on the right.
@@ -18,150 +18,184 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:1px;text-transform:uppercase"><?php esc_html_e( 'Academic Leadership &amp; Faculty', 'learnschool' ); ?></p>
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-6"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"}},"typography":{"fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"small"} -->
+<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-3);font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-block"><?php echo esc_html__( 'Academic Leadership & Faculty', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand"},"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-2"}}},"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2);font-family:var(--wp--preset--font-family--quicksand)"><?php echo esc_html__( 'Meet Our Dedicated', 'learnschool' ); ?> <span style="font-family:var(--wp--preset--font-family--courgette);color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Educators &amp; Mentors', 'learnschool' ); ?></span></h2>
+<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand"}},"fontSize":"xx-large"} -->
+<h2 class="wp-block-heading has-xx-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand)"><?php echo esc_html__( 'Meet Our Dedicated ', 'learnschool' ); ?><span style="font-family:var(--wp--preset--font-family--courgette);color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Educators & Mentors', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php esc_html_e( 'Our certified faculty brings decades of collective experience, academic credentials, and unwavering dedication to every classroom.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Our certified faculty brings decades of collective experience, academic credentials, and unwavering dedication to every classroom.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"45%"} -->
-<div class="wp-block-column" style="flex-basis:45%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"border":{"radius":"24px"}},"backgroundColor":"base","className":"is-style-learnschool-card-large","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card-large has-base-background-color has-background" style="border-radius:24px;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
-<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">KW</p>
-<!-- /wp:paragraph -->
-</div>
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"46%"} -->
+<div class="wp-block-column" style="flex-basis:46%"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}},"border":{"radius":"24px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:24px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"},"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-4)"><!-- wp:group {"style":{"border":{"radius":"22px"},"dimensions":{"width":"68px","height":"68px"}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:22px;width:68px;height:68px"><!-- wp:html -->
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-1"}}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-1)"><?php esc_html_e( 'Dr. Kristin Watson', 'learnschool' ); ?></h3>
+<!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.2"}},"textColor":"contrast","fontSize":"large"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="font-weight:700;line-height:1.2"><?php echo esc_html__( 'Dr. Kristin Watson', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700"><?php esc_html_e( 'Head of School &amp; Science Faculty', 'learnschool' ); ?></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Head of School & Active Faculty', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.65"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.65"><?php echo esc_html__( '“At LearnSchool, we believe that joyful academic excellence is not the finish line—it is the foundation. Every child holds boundless potential waiting to be ignited through guided inquiry, respectful mentorship, and loving curiosity.”', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7;margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-4)"><?php esc_html_e( '“At LearnSchool, we nurture not just academic excellence, but the innate curiosity, creative resilience, and empathetic character in every child. Welcome to our vibrant learning community.”', 'learnschool' ); ?></p>
+<!-- wp:group {"style":{"border":{"radius":"12px"},"spacing":{"padding":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"},"margin":{"bottom":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group has-base-subtle-background-color has-background" style="border-radius:12px;padding-top:var(--wp--preset--spacing--step-2);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-2);padding-left:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-4)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"small"} -->
+<p class="has-contrast-color has-text-color has-small-font-size" style="font-weight:700"><?php echo esc_html__( '18+ Years Leadership', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Ed.D Harvard University', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-4"}}}} -->
+<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-4)"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
 <div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#principal-welcome"><?php echo esc_html__( "Read Headmaster's Welcome", 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"55%"} -->
-<div class="wp-block-column" style="flex-basis:55%"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4"},"margin":{"bottom":"var:preset|spacing|step-4"}}}} -->
-<div class="wp-block-columns" style="margin-bottom:var(--wp--preset--spacing--step-4)"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"}},"backgroundColor":"base","className":"is-style-learnschool-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"secondary","textColor":"contrast","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group has-contrast-color has-secondary-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
-<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">JW</p>
-<!-- /wp:paragraph -->
-</div>
+<!-- wp:column {"width":"54%"} -->
+<div class="wp-block-column" style="flex-basis:54%"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4"}}}} -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"},"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-2)"><!-- wp:group {"style":{"border":{"radius":"14px"},"dimensions":{"width":"48px","height":"48px"}},"backgroundColor":"warning","textColor":"warning-text","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-warning-text-color has-warning-background-color has-text-color has-background" style="border-radius:14px;width:48px;height:48px"><!-- wp:html -->
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-1"}}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-1)"><?php esc_html_e( 'Jenny Wilson', 'learnschool' ); ?></h4>
+<!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700","lineHeight":"1.2"}},"textColor":"contrast","fontSize":"medium"} -->
+<h4 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700;line-height:1.2"><?php echo esc_html__( 'Jenny Wilson', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
-
-<!-- wp:paragraph {"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-small-font-size"><?php esc_html_e( 'Visual Arts &amp; Studio Lead', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php esc_html_e( '8+ Years Experience • B.F.A. RISD', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"secondary-dark","fontSize":"x-small"} -->
+<p class="has-secondary-dark-color has-text-color has-x-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Preschool Lead', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '10+ Years Experience • M.Ed Texas. Specializes in child-led sensory discovery.', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"}},"backgroundColor":"base","className":"is-style-learnschool-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
-<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">JJ</p>
-<!-- /wp:paragraph -->
-</div>
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"},"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-2)"><!-- wp:group {"style":{"border":{"radius":"14px"},"dimensions":{"width":"48px","height":"48px"}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:14px;width:48px;height:48px"><!-- wp:html -->
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-1"}}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-1)"><?php esc_html_e( 'Jacob Jones', 'learnschool' ); ?></h4>
+<!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700","lineHeight":"1.2"}},"textColor":"contrast","fontSize":"medium"} -->
+<h4 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700;line-height:1.2"><?php echo esc_html__( 'Jacob Jones', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
-
-<!-- wp:paragraph {"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-small-font-size"><?php esc_html_e( 'Mathematics &amp; Logic', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php esc_html_e( '10+ Years Experience • M.S. MIT', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"primary","fontSize":"x-small"} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Math & Logic', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '8+ Years Experience • M.S. MIT. Guiding early spatial reasoning and numeracy.', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4"}}}} -->
-<div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"}},"backgroundColor":"base","className":"is-style-learnschool-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"style":{"border":{"radius":"9999px"},"dimensions":{"width":"80px","height":"80px"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2","left":"auto","right":"auto"}}},"backgroundColor":"secondary","textColor":"contrast","layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group has-contrast-color has-secondary-background-color has-text-color has-background" style="border-radius:9999px;margin-top:0;margin-right:auto;margin-bottom:var(--wp--preset--spacing--step-2);margin-left:auto;width:80px;height:80px">
-<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","fontWeight":"700"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand);font-weight:700">SN</p>
-<!-- /wp:paragraph -->
-</div>
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4"},"margin":{"top":"var:preset|spacing|step-4"}}}} -->
+<div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--step-4)"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"},"shadow":"var:preset|shadow|card"},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:20px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"},"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-2)"><!-- wp:group {"style":{"border":{"radius":"14px"},"dimensions":{"width":"48px","height":"48px"}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:14px;width:48px;height:48px"><!-- wp:html -->
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-1"}}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-1)"><?php esc_html_e( 'Savannah Nguyen', 'learnschool' ); ?></h4>
+<!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700","lineHeight":"1.2"}},"textColor":"contrast","fontSize":"medium"} -->
+<h4 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700;line-height:1.2"><?php echo esc_html__( 'Savannah Nguyen', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
-
-<!-- wp:paragraph {"textColor":"primary","fontSize":"small"} -->
-<p class="has-primary-color has-text-color has-small-font-size"><?php esc_html_e( 'Literature &amp; Phonics', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php esc_html_e( '6+ Years Experience • M.A. Columbia', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"textColor":"primary","fontSize":"x-small"} -->
+<p class="has-primary-color has-text-color has-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Literature & Phonics', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '6+ Years Experience • M.A. Columbia. Fostering phonemic awareness and storytelling.', 'learnschool' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px"}},"backgroundColor":"primary-light","className":"is-style-lilac","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-lilac has-primary-light-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}},"textColor":"primary-dark","fontSize":"small"} -->
-<p class="has-primary-dark-color has-text-color has-small-font-size" style="font-weight:700;letter-spacing:1px;text-transform:uppercase"><?php esc_html_e( 'We Are Hiring!', 'learnschool' ); ?></p>
+<div class="wp-block-column"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"radius":"20px","width":"1.5px","style":"dashed"},"shadow":"var:preset|shadow|card"},"borderColor":"primary","backgroundColor":"primary-light","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group is-style-learnschool-card has-border-color has-border-primary-color has-primary-light-background-color has-text-color has-background" style="border-style:dashed;border-width:1.5px;border-radius:20px;box-shadow:var(--wp--preset--shadow--card);min-height:100%;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"},"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-2)"><!-- wp:group {"style":{"border":{"radius":"14px"},"dimensions":{"width":"48px","height":"48px"}},"backgroundColor":"base","textColor":"primary-dark","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
+<div class="wp-block-group has-primary-dark-color has-base-background-color has-text-color has-background" style="border-radius:14px;width:48px;height:48px"><!-- wp:html -->
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"0.8px","textTransform":"uppercase"}},"textColor":"primary-dark","fontSize":"x-small"} -->
+<p class="has-primary-dark-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:0.8px;text-transform:uppercase"><?php echo esc_html__( 'We Are Hiring!', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
+<!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700","lineHeight":"1.2"}},"textColor":"contrast","fontSize":"medium"} -->
+<h4 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700;line-height:1.2"><?php echo esc_html__( 'Join Our Team', 'learnschool' ); ?></h4>
+<!-- /wp:heading --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
 
-<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php esc_html_e( 'Join Our Academic Team', 'learnschool' ); ?></h4>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"textColor":"contrast","fontSize":"small","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}}} -->
-<p class="has-contrast-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3)"><?php esc_html_e( 'Looking for exceptional educators passionate about shaping the next generation.', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}}} -->
-<p style="font-weight:700"><a href="#careers" style="color:var(--wp--preset--color--primary-dark);text-decoration:none;"><?php echo esc_html__( 'View Open Positions', 'learnschool' ); ?></a></p>
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.5"><?php echo esc_html__( 'Looking for passionate educators to inspire the next generation.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-outline"} -->
+<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="#careers"><?php echo esc_html__( 'View Positions', 'learnschool' ); ?></a></div>
+<!-- /wp:button --></div><!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group --></section>
 <!-- /wp:group -->

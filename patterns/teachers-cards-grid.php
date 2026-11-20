@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"},"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"18px"},"dimensions":{"width":"56px","height":"56px"}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:18px;width:56px;height:56px"><!-- wp:html -->
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"},"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"18px"},"dimensions":{"width":"56px","height":"56px"}},"backgroundColor":"warning","textColor":"warning-text","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-warning-text-color has-warning-background-color has-text-color has-background" style="border-radius:18px;width:56px;height:56px"><!-- wp:html -->
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
@@ -116,7 +116,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"},"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"18px"},"dimensions":{"width":"56px","height":"56px"}},"backgroundColor":"primary-light","textColor":"primary-dark","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-primary-dark-color has-primary-light-background-color has-text-color has-background" style="border-radius:18px;width:56px;height:56px"><!-- wp:html -->
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
@@ -154,7 +154,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"},"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:group {"style":{"border":{"radius":"18px"},"dimensions":{"width":"56px","height":"56px"}},"backgroundColor":"warning","textColor":"warning-text","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-warning-text-color has-warning-background-color has-text-color has-background" style="border-radius:18px;width:56px;height:56px"><!-- wp:html -->
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
