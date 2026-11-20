@@ -11,7 +11,7 @@
 	display: grid;
 	gap: var(--wp--preset--spacing--step-5, 32px);
 	list-style: none;
-	margin: 0;
+	margin: 0 0 var(--wp--preset--spacing--step-6, 48px);
 	padding: 0;
 }
 

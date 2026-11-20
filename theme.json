@@ -496,6 +496,14 @@
 			}
 		},
 		"blocks": {
+			"core/query-pagination": {
+				"spacing": {
+					"margin": {
+						"top": "var:preset|spacing|step-6",
+						"bottom": "var:preset|spacing|step-5"
+					}
+				}
+			},
 			"core/template-part": {
 				"spacing": {
 					"margin": {

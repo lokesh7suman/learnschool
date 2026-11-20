@@ -49,20 +49,16 @@
 		<!-- /wp:group -->
 		<!-- /wp:post-template -->
 
-		<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+		<!-- wp:query-pagination {"paginationArrow":"arrow","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-6","bottom":"var:preset|spacing|step-5"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 			<!-- wp:query-pagination-previous /-->
 			<!-- wp:query-pagination-numbers /-->
 			<!-- wp:query-pagination-next /-->
 		<!-- /wp:query-pagination -->
 
 		<!-- wp:query-no-results -->
-			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-6","bottom":"var:preset|spacing|step-6"}}},"layout":{"type":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"}} -->
-			<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--step-6);padding-bottom:var(--wp--preset--spacing--step-6)">
-				<!-- wp:paragraph {"align":"center","textColor":"contrast-subtle","fontSize":"medium","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-				<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-top:0;margin-bottom:0">No results found matching your search. Please try another keyword.</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
+			<!-- wp:paragraph {"align":"center","textColor":"contrast-subtle","fontSize":"medium","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4"}}}} -->
+			<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-4);margin-bottom:var(--wp--preset--spacing--step-4)">No results found matching your search. Please try another keyword.</p>
+			<!-- /wp:paragraph -->
 		<!-- /wp:query-no-results -->
 	</div>
 	<!-- /wp:query -->
