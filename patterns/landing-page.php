@@ -25,6 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:pattern {"slug":"learnschool/teachers-cards-grid"} /-->
 
-<!-- wp:pattern {"slug":"learnschool/blog-recent-cards"} /-->
+<!-- wp:pattern {"slug":"learnschool/blog-grid"} /-->
 
 <!-- wp:pattern {"slug":"learnschool/faq-accordion-doodle"} /-->

@@ -15,7 +15,6 @@
  *   learnschool/hero           Hero (entrance banners and campus introductions)
  *   learnschool/pages          Pages (full-page starter layouts and compositions)
  *   learnschool/posts          Posts (blog queries, news, and school events)
- *   learnschool/pricing        Pricing (tuition, fees, and plan comparisons)
  *   learnschool/team           Faculty & Staff (educator profiles, teacher grids, leadership bios)
  *   learnschool/testimonial    Testimonials (parent reviews, ratings, leadership quotes)
  *
@@ -79,11 +78,6 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 			'learnschool/posts'          => array(
 				'label'       => _x( 'Posts', 'Block pattern category', 'learnschool' ),
 				'description' => __( 'Display articles, news, and events in lists or card grids.', 'learnschool' ),
-			),
-
-			'learnschool/pricing'        => array(
-				'label'       => _x( 'Pricing', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Tuition, fee, and pricing plan comparison sections.', 'learnschool' ),
 			),
 
 			'learnschool/team'           => array(

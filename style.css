@@ -98,11 +98,11 @@ select {
 	box-sizing: border-box;
 	width: 100%;
 	min-height: 52px;
-	padding: 14px 24px;
+	padding: 14px 20px;
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast);
-	border: 1.5px solid #e2e8f0;
-	border-radius: 9999px;
+	border: 1.5px solid #cbd5e1;
+	border-radius: 14px;
 	font-family: var(--wp--preset--font-family--quicksand), system-ui, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
@@ -119,14 +119,30 @@ input[type="number"]:focus,
 input[type="tel"]:focus,
 textarea:focus,
 select:focus {
-	outline: none;
+	outline: 2px solid transparent;
+	outline-offset: 2px;
 	border-color: var(--wp--preset--color--primary);
 	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
 }
 
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="url"]:focus-visible,
+input[type="password"]:focus-visible,
+input[type="search"]:focus-visible,
+input[type="number"]:focus-visible,
+input[type="tel"]:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	outline: 3px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.2);
+}
+
 input::placeholder,
 textarea::placeholder {
-	color: #94a3b8;
+	color: #64748b;
 	font-weight: 400;
 }
 
@@ -134,11 +150,11 @@ textarea {
 	box-sizing: border-box;
 	width: 100%;
 	min-height: 130px;
-	padding: 18px 24px;
+	padding: 18px 20px;
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast);
-	border: 1.5px solid #e2e8f0;
-	border-radius: 24px;
+	border: 1.5px solid #cbd5e1;
+	border-radius: 14px;
 	font-family: var(--wp--preset--font-family--quicksand), system-ui, sans-serif;
 	font-size: 16px;
 	line-height: 1.6;
@@ -147,9 +163,28 @@ textarea {
 }
 
 select {
-	border-radius: 9999px;
-	padding-right: 44px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 14px;
+	padding-right: 48px;
 	cursor: pointer;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23704fe6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 18px center;
+	background-size: 16px 16px;
+}
+
+/* Responsive Two-Column Form Field Grid */
+.learnschool-form-grid-2col {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: var(--wp--preset--spacing--step-3);
+}
+
+.learnschool-newsletter-form:focus-within {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
 }
 
 /* Modern Typography: Balanced Headings & Refined Paragraph Wraps */
@@ -178,7 +213,6 @@ p,
 /* Script cursive font for accent words in titles */
 .font-accent-script,
 .font-courgette,
-.codeclove-font-script,
 .has-courgette-font-family,
 span.script-accent,
 .script-accent,
@@ -232,6 +266,8 @@ span.learnschool-script {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
 summary:focus-visible,
 .wp-block-button__link:focus-visible {
 	outline: 3px solid var(--wp--preset--color--primary);
@@ -257,10 +293,19 @@ summary:focus-visible,
 	a:focus-visible,
 	button:focus-visible,
 	input:focus-visible,
+	select:focus-visible,
+	textarea:focus-visible,
 	summary:focus-visible,
 	.wp-block-button__link:focus-visible {
 		outline: 3px solid Highlight;
 		outline-offset: 3px;
+	}
+
+	select {
+		appearance: auto;
+		-webkit-appearance: auto;
+		-moz-appearance: auto;
+		background-image: none;
 	}
 
 	.wp-block-button.is-style-learnschool-pill .wp-block-button__link,
@@ -488,14 +533,12 @@ body.rtl .wp-block-quote,
 [dir="rtl"] .wp-block-quote {
 	border-left: none;
 	border-right: 4px solid var(--wp--preset--color--primary);
-	border-radius: 20px 0 0 20px;
 }
 
 body.rtl .wp-block-verse,
 [dir="rtl"] .wp-block-verse {
-	border-left: 1.5px solid var(--wp--preset--color--primary-light, #dec8fe);
-	border-right: 4px solid var(--wp--preset--color--primary);
-	border-radius: 20px 0 0 20px;
+	border: 1.5px solid var(--wp--preset--color--primary-light, #dec8fe);
+	border-radius: 20px;
 }
 
 body.rtl .wp-block-table th,
@@ -533,4 +576,11 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 [dir="rtl"] ul.is-style-learnschool-checkmarks > li::before {
 	left: auto;
 	right: 0;
+}
+
+body.rtl select,
+[dir="rtl"] select {
+	padding-right: 20px;
+	padding-left: 48px;
+	background-position: left 18px center;
 }

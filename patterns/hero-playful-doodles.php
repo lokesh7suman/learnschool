@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Hero with Kid Photos & Playful Doodles
+ * Title: Hero with Playful Script Highlights
  * Slug: learnschool/hero-playful-doodles
  * Categories: learnschool/hero
- * Description: Playful brand hero section with handcrafted script highlights and dual call-to-action buttons.
- * Keywords: hero, banner, kids, doodles, playful, preschool, activities
+ * Description: Playful brand hero section with handcrafted script highlights, display typography, and dual call-to-action buttons.
+ * Keywords: hero, banner, script, highlights, playful, preschool, activities, buttons
  * Viewport Width: 1280
  * Inserter: true
  *
@@ -18,10 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"960px","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":1,"textAlign":"center","style":{"typography":{"lineHeight":"1.28","fontFamily":"var:preset|font-family|quicksand"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-4"}}},"fontSize":"xx-large"} -->
-<h1 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-4);font-family:var(--wp--preset--font-family--quicksand);line-height:1.28"><?php echo esc_html__( 'The Best Place to ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Learn', 'learnschool' ); ?></span></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-loop" style="color:var(--wp--preset--color--secondary-dark)"><?php echo esc_html__( 'Play', 'learnschool' ); ?></span></span><br><?php echo esc_html__( 'for Curious Kids', 'learnschool' ); ?></h1>
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-8","bottom":"var:preset|spacing|step-8","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-8);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-8);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"960px","justifyContent":"center"}} -->
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":1,"textAlign":"center","style":{"typography":{"lineHeight":"1.15","fontFamily":"var:preset|font-family|quicksand"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-4"}}},"fontSize":"display"} -->
+<h1 class="wp-block-heading has-text-align-center has-display-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-4);font-family:var(--wp--preset--font-family--quicksand);line-height:1.15"><?php echo esc_html__( 'The Best Place to ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Learn', 'learnschool' ); ?></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-loop" style="color:var(--wp--preset--color--secondary-dark)"><?php echo esc_html__( 'Play', 'learnschool' ); ?></span> <br><?php echo esc_html__( 'for Curious Kids', 'learnschool' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"textColor":"contrast-subtle","fontSize":"large"} -->

@@ -43,8 +43,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;line-height:1.2"><?php echo esc_html__( 'Jenny Wilson, M.Ed', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","metadata":{"name":"teacher_1_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"},"margin":{"bottom":"var:preset|spacing|step-3"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
-<p class="has-text-align-center has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700;display:inline-block"><?php echo esc_html__( 'Campus Director • 12 Years Tenure', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_1_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"primary","fontSize":"small"} -->
+<p class="has-text-align-center has-primary-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700"><?php echo esc_html__( 'Campus Director • 12 Years Tenure', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_1_bio","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.55"}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -67,8 +67,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;line-height:1.2"><?php echo esc_html__( 'Kristin Watson, B.S.', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","metadata":{"name":"teacher_2_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"},"margin":{"bottom":"var:preset|spacing|step-3"}},"typography":{"fontWeight":"700"}},"backgroundColor":"warning","textColor":"warning-text","fontSize":"x-small"} -->
-<p class="has-text-align-center has-warning-text-color has-warning-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700;display:inline-block"><?php echo esc_html__( 'Lead Preschool Educator • 8 Years', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_2_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"secondary-dark","fontSize":"small"} -->
+<p class="has-text-align-center has-secondary-dark-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700"><?php echo esc_html__( 'Lead Preschool Educator • 8 Years', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_2_bio","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.55"}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -91,8 +91,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;line-height:1.2"><?php echo esc_html__( 'Savannah Nguyen', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","metadata":{"name":"teacher_3_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"},"margin":{"bottom":"var:preset|spacing|step-3"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
-<p class="has-text-align-center has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700;display:inline-block"><?php echo esc_html__( 'Toddler Specialist • 6 Years', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_3_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"primary","fontSize":"small"} -->
+<p class="has-text-align-center has-primary-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700"><?php echo esc_html__( 'Toddler Specialist • 6 Years', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_3_bio","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.55"}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -115,8 +115,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;line-height:1.2"><?php echo esc_html__( 'Jacob Jones, B.A.', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","metadata":{"name":"teacher_4_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"},"margin":{"bottom":"var:preset|spacing|step-3"}},"typography":{"fontWeight":"700"}},"backgroundColor":"warning","textColor":"warning-text","fontSize":"x-small"} -->
-<p class="has-text-align-center has-warning-text-color has-warning-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-3);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700;display:inline-block"><?php echo esc_html__( 'Pre-K & STEM Lead • 7 Years', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_4_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"secondary-dark","fontSize":"small"} -->
+<p class="has-text-align-center has-secondary-dark-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3);font-weight:700"><?php echo esc_html__( 'Pre-K & STEM Lead • 7 Years', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textAlign":"center","metadata":{"name":"teacher_4_bio","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.55"}},"textColor":"contrast-subtle","fontSize":"small"} -->

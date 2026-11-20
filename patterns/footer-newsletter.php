@@ -66,7 +66,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Subscribe to our weekly school bulletin and educational parenting guides.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"<?php echo esc_attr__( 'Email Address', 'learnschool' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( 'Enter your email address', 'learnschool' ); ?>","buttonText":"<?php echo esc_attr__( 'Subscribe', 'learnschool' ); ?>","buttonPosition":"button-inside","buttonUseIcon":false,"style":{"border":{"radius":"100px"}}} /-->
+<!-- wp:html -->
+<form action="<?php echo esc_url( home_url( '/#newsletter' ) ); ?>" method="post" class="learnschool-newsletter-form" style="display:flex;align-items:center;background:var(--wp--preset--color--base);border:1.5px solid var(--wp--preset--color--border);border-radius:9999px;padding:4px;margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3)">
+	<label for="newsletter-email-footer" class="screen-reader-text"><?php echo esc_html__( 'Email Address', 'learnschool' ); ?></label>
+	<input type="email" id="newsletter-email-footer" name="email" required placeholder="<?php echo esc_attr__( 'Enter your email address', 'learnschool' ); ?>" style="flex:1;border:none;background:transparent;padding:8px 16px;font-family:var(--wp--preset--font-family--quicksand);font-size:var(--wp--preset--font-size--small);outline:none;color:var(--wp--preset--color--contrast)" />
+	<button type="submit" style="background:var(--wp--preset--color--primary);color:var(--wp--preset--color--base);border:none;border-radius:9999px;padding:8px 18px;font-family:var(--wp--preset--font-family--quicksand);font-size:var(--wp--preset--font-size--small);font-weight:700;cursor:pointer"><?php echo esc_html__( 'Subscribe', 'learnschool' ); ?></button>
+</form>
+<!-- /wp:html -->
 
 <!-- wp:social-links {"iconColor":"primary","iconBackgroundColor":"base-subtle","size":"has-normal-icon-size","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"},"margin":{"top":"var:preset|spacing|step-3"}}}} -->
 <ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-default" style="margin-top:var(--wp--preset--spacing--step-3)">

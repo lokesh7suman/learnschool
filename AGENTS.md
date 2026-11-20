@@ -30,8 +30,9 @@ Minimal, non-negotiable standards for agents and developers working on this Word
 
 ---
 
-## 4. Verification Suite
-Before completing any task, run and pass the official verification suite (exit code `0`):
+## 4. Verification Suite (Zero-Docker & Playwright)
+- **Zero-Docker / Native Valet:** Never run Docker or `wp-env`. Tests execute directly against native WordPress (`https://development.test`) via `@wordpress/scripts test-playwright`.
+- **Required Checks:** Run and pass before completing any task (exit code `0`):
 ```bash
 npm run test:e2e # Automated Playwright UI & WordPress.org TRT compliance suite
 npm run check    # Stylelint (CSS), ESLint (JS), pkg-json lint, PHPCS, and theme-utils

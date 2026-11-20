@@ -117,6 +117,11 @@
 					"name": "Surface Slate"
 				},
 				{
+					"slug": "midnight",
+					"color": "#1a162b",
+					"name": "Midnight / Deep Navy"
+				},
+				{
 					"slug": "border",
 					"color": "#e2e8f0",
 					"name": "Border / Soft Gray"
@@ -687,20 +692,20 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "24px",
-						"bottom": "24px",
-						"left": "32px",
-						"right": "32px"
+						"top": "var:preset|spacing|step-4",
+						"bottom": "var:preset|spacing|step-4",
+						"left": "var:preset|spacing|step-5",
+						"right": "var:preset|spacing|step-5"
 					},
 					"margin": {
-						"top": "28px",
-						"bottom": "28px"
+						"top": "var:preset|spacing|step-5",
+						"bottom": "var:preset|spacing|step-5"
 					}
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|quicksand",
 					"fontStyle": "italic",
-					"fontSize": "18px",
+					"fontSize": "var:preset|font-size|medium",
 					"lineHeight": "1.8"
 				}
 			},
@@ -722,8 +727,8 @@
 						"right": "var:preset|spacing|step-4"
 					},
 					"margin": {
-						"top": "28px",
-						"bottom": "28px"
+						"top": "var:preset|spacing|step-5",
+						"bottom": "var:preset|spacing|step-5"
 					}
 				}
 			},

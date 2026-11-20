@@ -206,20 +206,22 @@
 
 /* ── Equal-Height Card Grids and Bottom-Aligned Buttons ─────────────── */
 
-.wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"],
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-soft-card,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-elevated,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-glass,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-tinted,
-.wp-block-columns .wp-block-column > .wp-block-group:has(.wp-block-buttons) {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	height: 100%;
+@media (min-width: 782px) {
+
+	.wp-block-columns .wp-block-column > .wp-block-group:only-child[class*="is-style-learnschool-card"],
+	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-soft-card:only-child,
+	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-elevated:only-child,
+	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-glass:only-child,
+	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-tinted:only-child,
+	.wp-block-columns .wp-block-column > .wp-block-group:only-child:has(.wp-block-buttons) {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		height: 100%;
+	}
 }
 
-.wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"] > .wp-block-group.is-layout-flex,
-.is-style-learnschool-card > .wp-block-group.is-layout-flex {
+.wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"] > .wp-block-group.is-layout-flex {
 	width: 100%;
 }
 
@@ -235,6 +237,19 @@
 .wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-tinted .wp-block-buttons,
 .wp-block-columns .wp-block-column > .wp-block-group > .wp-block-buttons:last-child {
 	margin-top: auto;
+}
+
+/* ── Calendar & Event Date Badges ───────────────────────────────────── */
+
+.is-style-learnschool-card .has-primary-background-color.has-base-color {
+	min-width: 64px;
+	box-sizing: border-box;
+	text-align: center;
+	flex-shrink: 0;
+}
+
+.is-style-learnschool-card .has-primary-background-color.has-base-color p {
+	margin: 0;
 }
 
 /* ── Prose Content Wrapper ───────────────────────────────────────────── */

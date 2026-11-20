@@ -29,12 +29,32 @@ if ( ! function_exists( 'learnschool_setup' ) ) :
 		// Make theme available for translation.
 		load_theme_textdomain( 'learnschool', get_template_directory() . '/languages' );
 
-		// Enqueue editor styles.
+		// Enqueue editor styles for consistent front-end and block editor parity.
 		add_theme_support( 'editor-styles' );
-		add_editor_style( 'style.css' );
+
+		$editor_styles = array( 'style.css' );
+		$block_styles  = glob( get_template_directory() . '/assets/styles/core-*.css' );
+		if ( is_array( $block_styles ) ) {
+			foreach ( $block_styles as $style_path ) {
+				$editor_styles[] = str_replace( get_template_directory() . '/', '', $style_path );
+			}
+		}
+		add_editor_style( $editor_styles );
 
 		// Add support for core block styles for consistent design rendering.
 		add_theme_support( 'wp-block-styles' );
+
+		// Add support for custom logo with flexible dimensions.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'               => 512,
+				'width'                => 512,
+				'flex-height'          => true,
+				'flex-width'           => true,
+				'unlink-homepage-logo' => true,
+			)
+		);
 
 		// Remove default core bundled patterns to keep block inserter clean and curated.
 		remove_theme_support( 'core-block-patterns' );
@@ -162,6 +182,7 @@ add_filter( 'default_wp_template_part_areas', 'learnschool_template_part_areas' 
 // Load modular component configurations.
 require_once get_template_directory() . '/inc/pattern-categories.php';
 require_once get_template_directory() . '/inc/block-styles.php';
+require_once get_template_directory() . '/inc/site-logo.php';
 
 if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 	/**

@@ -295,17 +295,40 @@
 	white-space: nowrap;
 }
 
-/* Card action buttons: stretch full width with spaced arrow */
-.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline,
-.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill {
+/* Card action buttons: stretch full width with spaced arrow in column cards */
+.wp-block-columns .wp-block-column .is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline,
+.wp-block-columns .wp-block-column .is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill,
+:not(.is-layout-flex).is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline,
+:not(.is-layout-flex).is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill {
 	width: 100%;
 }
 
-.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-.is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill .wp-block-button__link {
+.wp-block-columns .wp-block-column .is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+.wp-block-columns .wp-block-column .is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+:not(.is-layout-flex).is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+:not(.is-layout-flex).is-style-learnschool-card .wp-block-buttons .wp-block-button.is-style-learnschool-pill .wp-block-button__link {
 	display: inline-flex;
 	width: 100%;
 	justify-content: space-between;
+}
+
+/* Horizontal flex card buttons: stay compact on desktop, full-width on mobile */
+.is-style-learnschool-card.is-layout-flex .wp-block-buttons {
+	flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+
+	.is-style-learnschool-card.is-layout-flex .wp-block-buttons,
+	.is-style-learnschool-card.is-layout-flex .wp-block-buttons .wp-block-button {
+		width: 100%;
+	}
+
+	.is-style-learnschool-card.is-layout-flex .wp-block-buttons .wp-block-button .wp-block-button__link {
+		display: inline-flex;
+		width: 100%;
+		justify-content: space-between;
+	}
 }
 
 @media (max-width: 640px) {

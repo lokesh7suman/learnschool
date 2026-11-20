@@ -69,10 +69,15 @@ Copyright: Copyright 2012 The Courgette Project Authors (https://github.com/goog
 
 === Vector Graphics, Illustrations & Starter Media ===
 
-All SVG vector assets, hand-drawn text highlight brush and underline doodles, UI icons, educational course graphics, and educator avatars located in `assets/images/` (including `assets/images/doodles/`, `assets/images/icons/`, `assets/images/illustrations/`, and `assets/images/photos/`) as well as `screenshot.png` were created specifically for LearnSchool by the theme author (codeclove).
+All SVG vector assets, editorial illustrations, hand-drawn text highlight brush and underline doodles, UI icons, educational course graphics, and educator avatars located in `assets/images/` (including `assets/images/doodles/`, `assets/images/icons/`, `assets/images/illustrations/`, and `assets/images/photos/`) as well as `screenshot.png` were created specifically for LearnSchool by the theme author (codeclove).
 Author: codeclove
 License: GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 Copyright: Copyright (C) 2026 codeclove
+
+* `campus-showcase-art.png` - Custom editorial campus grounds & schoolhouse hero illustration - GPLv2+
+* `creative-classroom-art.png` - Custom editorial arts & science discovery classroom illustration - GPLv2+
+* `kids-discovery-art.png` - Custom editorial early-learning discovery & Montessori blocks illustration - GPLv2+
+* `educator-portrait-art.png` - Custom editorial educator portrait & avatar illustration - GPLv2+
 
 * `teacher-kristin.webp` - Custom vector educator avatar (Science / Preschool) - GPLv2+
 * `teacher-jenny.webp` - Custom vector educator avatar (Campus Director / Arts) - GPLv2+
