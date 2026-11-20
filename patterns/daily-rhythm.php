@@ -60,8 +60,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"3px","bottom":"3px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"secondary-dark","fontSize":"x-small"} -->
-<p class="has-secondary-dark-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;font-weight:700;display:inline-block"><?php echo esc_html__( '9:00 AM – 10:15 AM', 'learnschool' ); ?></p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"3px","bottom":"3px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"contrast","fontSize":"x-small"} -->
+<p class="has-contrast-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;font-weight:700;display:inline-block"><?php echo esc_html__( '9:00 AM – 10:15 AM', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1"}}},"fontSize":"medium","textColor":"contrast"} -->
@@ -102,8 +102,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"3px","bottom":"3px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"secondary-dark","fontSize":"x-small"} -->
-<p class="has-secondary-dark-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;font-weight:700;display:inline-block"><?php echo esc_html__( '11:45 AM – 12:45 PM', 'learnschool' ); ?></p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"3px","bottom":"3px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"contrast","fontSize":"x-small"} -->
+<p class="has-contrast-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;font-weight:700;display:inline-block"><?php echo esc_html__( '11:45 AM – 12:45 PM', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1"}}},"fontSize":"medium","textColor":"contrast"} -->
@@ -144,8 +144,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"3px","bottom":"3px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"secondary-dark","fontSize":"x-small"} -->
-<p class="has-secondary-dark-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;font-weight:700;display:inline-block"><?php echo esc_html__( '2:30 PM – 5:30 PM', 'learnschool' ); ?></p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"3px","bottom":"3px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"contrast","fontSize":"x-small"} -->
+<p class="has-contrast-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:3px;padding-right:10px;padding-bottom:3px;padding-left:10px;font-weight:700;display:inline-block"><?php echo esc_html__( '2:30 PM – 5:30 PM', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1"}}},"fontSize":"medium","textColor":"contrast"} -->

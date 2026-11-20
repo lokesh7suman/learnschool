@@ -105,8 +105,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns alignwide" style="margin-top:var(--wp--preset--spacing--step-4)"><!-- wp:column {"width":"42%"} -->
 <div class="wp-block-column" style="flex-basis:42%"><!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"border":{"radius":"24px"},"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}}},"backgroundColor":"accent","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
 <div class="wp-block-group is-style-learnschool-card has-accent-background-color has-background" style="border-radius:24px;min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}},"textColor":"secondary-dark","fontSize":"x-small"} -->
-<p class="has-secondary-dark-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:1px;text-transform:uppercase"><?php echo esc_html__( 'Language & Storytelling', 'learnschool' ); ?></p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}},"textColor":"contrast","fontSize":"x-small"} -->
+<p class="has-contrast-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:1px;text-transform:uppercase"><?php echo esc_html__( 'Language & Storytelling', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"},"spacing":{"margin":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-3"}}},"fontSize":"large"} -->

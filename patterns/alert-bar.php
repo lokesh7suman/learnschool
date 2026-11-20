@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"textColor":"base","style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"4px","bottom":"4px","left":"14px","right":"14px"}},"color":{"background":"rgba(255,255,255,0.2)"}},"fontSize":"small"} -->
-<div class="wp-block-button has-custom-font-size has-small-font-size"><a class="wp-block-button__link has-base-color has-text-color has-background has-small-font-size has-custom-font-size wp-element-button" href="#admissions" style="border-radius:9999px;background-color:rgba(255,255,255,0.2);padding-top:4px;padding-right:14px;padding-bottom:4px;padding-left:14px"><?php echo esc_html__( 'Apply Online', 'learnschool' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"base","textColor":"primary-dark","style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"5px","bottom":"5px","left":"16px","right":"16px"}},"typography":{"fontWeight":"700"}},"fontSize":"small"} -->
+<div class="wp-block-button has-custom-font-size has-small-font-size"><a class="wp-block-button__link has-primary-dark-color has-base-background-color has-text-color has-background has-small-font-size has-custom-font-size wp-element-button" href="#admissions" style="border-radius:9999px;padding-top:5px;padding-right:16px;padding-bottom:5px;padding-left:16px;font-weight:700"><?php echo esc_html__( 'Apply Online', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></aside>
