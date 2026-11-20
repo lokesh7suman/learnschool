@@ -6,40 +6,32 @@
  * @package LearnSchool
  */
 
-/* Main Purple Pill Button Style */
-.wp-block-button.is-style-learnschool-pill {
-	position: relative;
-}
-
-.wp-block-button.is-style-learnschool-pill .wp-block-button__link {
+/* Shared Action Button Geometry (Pill & Outline) */
+.wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+.wp-block-button.is-style-outline-purple .wp-block-button__link {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
 	gap: 12px;
-	min-height: 48px;
+	min-height: 54px;
 	height: auto;
-	padding: 0.625rem 0.875rem 0.625rem 1.5rem;
-	background-color: var(--wp--preset--color--primary);
-	color: var(--wp--preset--color--base, #fff);
+	padding: 0.5rem 0.875rem 0.5rem 1.5rem;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-size: 16px;
 	font-weight: 600;
-	border-radius: 40px;
+	border-radius: 9999px;
+	border: 1.5px solid transparent;
 	text-decoration: none;
-	border: none;
 	cursor: pointer;
-	box-shadow: 0 2px 8px color-mix(in srgb, var(--wp--preset--color--primary) 15%, transparent);
-	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-	position: relative;
+	transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover {
-	background-color: var(--wp--preset--color--primary-dark);
-	transform: translateY(-2px);
-	box-shadow: 0 4px 14px color-mix(in srgb, var(--wp--preset--color--primary) 25%, transparent);
-}
-
-.wp-block-button.is-style-learnschool-pill .wp-block-button__link::after {
+/* Shared Arrow Badge */
+.wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
+.wp-block-button.is-style-outline-purple .wp-block-button__link::after {
 	content: "\2197";
 	display: inline-flex;
 	align-items: center;
@@ -47,38 +39,49 @@
 	width: 34px;
 	height: 34px;
 	border-radius: 50%;
-	background-color: color-mix(in srgb, currentcolor 20%, transparent);
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1;
 	font-weight: 700;
 	flex-shrink: 0;
-	transition: transform 0.2s ease;
+	transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover::after {
+.wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover::after,
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after,
+.wp-block-button.is-style-outline-purple .wp-block-button__link:hover::after {
 	transform: translate(2px, -2px);
 }
 
-/* Outline Purple Pill Button */
+/* Solid Purple Pill Button Variant */
+.wp-block-button.is-style-learnschool-pill {
+	position: relative;
+}
+
+.wp-block-button.is-style-learnschool-pill .wp-block-button__link {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base, #fff);
+	border-color: transparent;
+	box-shadow: 0 2px 8px color-mix(in srgb, var(--wp--preset--color--primary) 15%, transparent);
+}
+
+.wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--primary-dark);
+	border-color: transparent;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 14px color-mix(in srgb, var(--wp--preset--color--primary) 25%, transparent);
+}
+
+.wp-block-button.is-style-learnschool-pill .wp-block-button__link::after {
+	background-color: color-mix(in srgb, currentcolor 20%, transparent);
+	color: inherit;
+}
+
+/* Outline Purple Pill Button Variant */
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
 .wp-block-button.is-style-outline-purple .wp-block-button__link {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 16px;
-	min-height: 48px;
-	height: auto;
-	padding: 0.75rem 1rem 0.75rem 1.5rem;
 	background-color: transparent;
 	color: var(--wp--preset--color--primary, #704fe6);
-	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: 16px;
-	font-weight: 600;
-	border: 1.5px solid var(--wp--preset--color--primary, #704fe6);
-	border-radius: 9999px;
-	text-decoration: none;
-	cursor: pointer;
-	transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+	border-color: var(--wp--preset--color--primary, #704fe6);
 }
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover,
@@ -91,27 +94,14 @@
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
 .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
-	content: "\2197";
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 34px;
-	height: 34px;
-	border-radius: 50%;
 	background-color: var(--wp--preset--color--primary, #704fe6);
 	color: var(--wp--preset--color--base, #fff);
-	font-size: 16px;
-	line-height: 1;
-	font-weight: 700;
-	flex-shrink: 0;
-	transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after,
 .wp-block-button.is-style-outline-purple .wp-block-button__link:hover::after {
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--primary, #704fe6);
-	transform: translate(2px, -2px);
 }
 
 /* Small Link Button for Cards */
