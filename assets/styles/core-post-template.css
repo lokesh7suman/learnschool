@@ -62,7 +62,8 @@
 	box-shadow: 0 16px 36px rgba(112, 79, 230, 0.1);
 }
 
-.wp-block-post-template > li:has(> .is-style-learnschool-card) {
+.wp-block-post-template > li:has(> .is-style-learnschool-card),
+.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky {
 	background: transparent;
 	border: none;
 	border-radius: 0;
@@ -70,7 +71,8 @@
 	box-shadow: none;
 }
 
-.wp-block-post-template > li:has(> .is-style-learnschool-card):hover {
+.wp-block-post-template > li:has(> .is-style-learnschool-card):hover,
+.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky:hover {
 	transform: none;
 	box-shadow: none;
 }
@@ -142,29 +144,23 @@
 	gap: 10px;
 }
 
-/* Sticky Post Styling */
-.sticky,
-.wp-block-post-template > li.sticky {
-	background: linear-gradient(180deg, #fffcf0 0%, #fff 100%);
-	border-color: var(--wp--preset--color--secondary);
-	box-shadow: 0 12px 32px rgba(255, 190, 23, 0.12);
+/* Sticky Post Styling — Default Grid Item (Unwrapped) */
+.sticky:not(:has(> .is-style-learnschool-card)),
+.wp-block-post-template > li.sticky:not(:has(> .is-style-learnschool-card)) {
+	border-color: var(--wp--preset--color--primary, #704fe6);
+	box-shadow: 0 10px 28px -4px rgba(112, 79, 230, 0.12), 0 4px 8px -2px rgba(112, 79, 230, 0.04);
 	position: relative;
 }
 
-.wp-block-post-template > li.sticky .is-style-learnschool-card {
-	border-color: #ffd86b;
-	box-shadow: 0 8px 28px rgba(255, 190, 23, 0.12);
-}
-
-.sticky::before,
-.wp-block-post-template > li.sticky::before {
+.sticky:not(:has(> .is-style-learnschool-card))::before,
+.wp-block-post-template > li.sticky:not(:has(> .is-style-learnschool-card))::before {
 	content: "Featured";
 	display: inline-flex;
 	align-items: center;
 	align-self: flex-start;
 	width: fit-content;
-	background-color: var(--wp--preset--color--secondary);
-	color: var(--wp--preset--color--contrast);
+	background-color: var(--wp--preset--color--secondary, #ffbe17);
+	color: var(--wp--preset--color--contrast, #121212);
 	font-size: 11px;
 	font-weight: 700;
 	padding: 4px 12px;
@@ -172,22 +168,68 @@
 	margin-bottom: 12px;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
+	line-height: 1.4;
 }
 
-.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky::before {
-	position: absolute;
-	top: 16px;
-	left: 16px;
-	z-index: 2;
-	margin-bottom: 0;
-	background: rgba(255, 190, 23, 0.95);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	box-shadow: 0 4px 12px rgba(255, 190, 23, 0.3);
+/* Sticky Post Styling — LearnSchool Modular Card */
+.wp-block-post-template > li.sticky .is-style-learnschool-card {
+	border: 1.5px solid var(--wp--preset--color--primary, #704fe6);
+	background-color: var(--wp--preset--color--base, #fff);
+	box-shadow: 0 10px 28px -4px rgba(112, 79, 230, 0.12), 0 4px 8px -2px rgba(112, 79, 230, 0.04);
 }
 
-/* Post Card Metadata Flex Row — scoped strictly to the direct metadata group */
-.wp-block-post-template .is-style-learnschool-card .wp-block-post-terms + .wp-block-post-date {
+.wp-block-post-template > li.sticky .is-style-learnschool-card:hover {
+	border-color: var(--wp--preset--color--primary-dark, #5837c7);
+	box-shadow: 0 18px 36px -6px rgba(112, 79, 230, 0.18), 0 6px 12px -3px rgba(112, 79, 230, 0.08);
+	transform: translateY(-4px);
+}
+
+/* Featured Badge in Modular Card — Flows as flex item alongside Category Badges */
+.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky .wp-block-post-terms::before {
+	content: "Featured";
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	background-color: var(--wp--preset--color--secondary, #ffbe17);
+	color: var(--wp--preset--color--contrast, #121212);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	line-height: 1.4;
+}
+
+/* Post Card Content Spacing after Featured Image */
+.wp-block-post-template .is-style-learnschool-card .wp-block-post-featured-image + .wp-block-group,
+.is-style-learnschool-card .wp-block-post-featured-image + .wp-block-group {
+	margin-top: 0;
+}
+
+/* Post Card Metadata (Category Badges & Date) */
+.wp-block-post-template .is-style-learnschool-card .wp-block-post-date,
+.is-style-learnschool-card .wp-block-post-date {
+	margin: var(--wp--preset--spacing--step-1, 8px) 0 var(--wp--preset--spacing--step-2, 12px);
+	display: block;
+}
+
+/* Post Card Title clamping */
+.wp-block-post-template .is-style-learnschool-card .wp-block-post-title,
+.is-style-learnschool-card .wp-block-post-title {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* Post Card Excerpt clamping & line-height */
+.wp-block-post-template .is-style-learnschool-card .wp-block-post-excerpt p,
+.is-style-learnschool-card .wp-block-post-excerpt p {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: 1.6;
 	margin: 0;
 }
 

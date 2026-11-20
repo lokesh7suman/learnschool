@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide","layout":{"type":"default"}} -->
-<div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
 <!-- wp:pattern {"slug":"learnschool/card-post"} /-->
 <!-- /wp:post-template -->
 
