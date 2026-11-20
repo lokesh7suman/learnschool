@@ -2,7 +2,7 @@
 /**
  * Title: FAQ Accordion
  * Slug: learnschool/faq-accordion-doodle
- * Categories: learnschool/features
+ * Categories: learnschool/faq
  * Description: Two-column frequently asked questions section with expandable accordion panels.
  * Keywords: faq, questions, answers, accordion, details, help, support
  * Viewport Width: 1280

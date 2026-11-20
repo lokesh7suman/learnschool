@@ -2,7 +2,7 @@
 /**
  * Title: Upcoming Events & Open House Schedule
  * Slug: learnschool/events
- * Categories: learnschool/features, learnschool/call-to-action
+ * Categories: learnschool/call-to-action
  * Keywords: events, open house, schedule, calendar, admission, tour
  * Description: Upcoming academy events and open-house schedule list with date badges, location markers, and RSVP buttons.
  * Inserter: true
@@ -117,6 +117,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/admissions/campus-tour/' ) ); ?>"><?php echo esc_html__( 'Reserve Seat', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

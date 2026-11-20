@@ -8,13 +8,15 @@
  * in the Site Editor and Block Inserter.
  *
  * Registered theme categories:
- *   learnschool/card           Cards (modular card grids, faculty, program cards)
+ *   learnschool/card           Cards (modular card grids, program cards)
  *   learnschool/call-to-action Call To Action (admissions roadmaps, tours, enrollments)
- *   learnschool/features       Features (program pillars, highlights, daily rhythm, FAQs)
+ *   learnschool/faq            FAQ (frequently asked questions, expandable accordions)
+ *   learnschool/features       Features (program pillars, highlights, daily rhythm)
  *   learnschool/hero           Hero (entrance banners and campus introductions)
  *   learnschool/pages          Pages (full-page starter layouts and compositions)
  *   learnschool/posts          Posts (blog queries, news, and school events)
  *   learnschool/pricing        Pricing (tuition, fees, and plan comparisons)
+ *   learnschool/team           Faculty & Staff (educator profiles, teacher grids, leadership bios)
  *   learnschool/testimonial    Testimonials (parent reviews, ratings, leadership quotes)
  *
  * Core template part categories:
@@ -46,17 +48,22 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 		$categories = array(
 			'learnschool/card'           => array(
 				'label'       => _x( 'Cards', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Modular card-based layouts for program highlights, educator profiles, and articles.', 'learnschool' ),
+				'description' => __( 'Modular card-based layouts for program highlights, catalogs, and overview cards.', 'learnschool' ),
 			),
 
 			'learnschool/call-to-action' => array(
 				'label'       => _x( 'Call To Action', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Conversion-focused sections, admissions roadmaps, and enrollment forms.', 'learnschool' ),
+				'description' => __( 'Conversion-focused sections, admissions roadmaps, event schedules, and enrollment forms.', 'learnschool' ),
+			),
+
+			'learnschool/faq'            => array(
+				'label'       => _x( 'FAQ', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Frequently asked questions, expandable accordions, and parent handbook guides.', 'learnschool' ),
 			),
 
 			'learnschool/features'       => array(
 				'label'       => _x( 'Features', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Feature highlight grids, program showcases, curriculum sections, and FAQs.', 'learnschool' ),
+				'description' => __( 'Feature highlight grids, program showcases, and curriculum sections.', 'learnschool' ),
 			),
 
 			'learnschool/hero'           => array(
@@ -77,6 +84,11 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 			'learnschool/pricing'        => array(
 				'label'       => _x( 'Pricing', 'Block pattern category', 'learnschool' ),
 				'description' => __( 'Tuition, fee, and pricing plan comparison sections.', 'learnschool' ),
+			),
+
+			'learnschool/team'           => array(
+				'label'       => _x( 'Faculty & Staff', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Educator profiles, teacher grids, leadership bios, and faculty spotlights.', 'learnschool' ),
 			),
 
 			'learnschool/testimonial'    => array(
