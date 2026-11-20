@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Hero with Tour Booking & Arch Photo
+ * Title: Hero with Tour Booking & Discovery Illustration
  * Slug: learnschool/hero-split-tour
  * Categories: learnschool/hero
- * Description: Split hero layout with headline, handwriting accent, tour booking CTA, trust metrics, and classroom discovery showcase.
- * Keywords: hero, banner, tour, admissions, preschool, kindergarten
+ * Description: Clean split hero layout with joyful discovery illustration, handwriting highlights, and dual call-to-action buttons.
+ * Keywords: hero, banner, tour, admissions, preschool, kindergarten, illustration
  *
  * @package LearnSchool
  * @since 1.0.0
@@ -17,78 +17,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-6","left":"var:preset|spacing|step-6"}}}} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"54%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:54%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"4px","bottom":"4px","left":"12px","right":"12px"}},"border":{"radius":"9999px"}},"backgroundColor":"primary-light","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group has-primary-light-background-color has-background" style="border-radius:9999px;padding-top:4px;padding-right:12px;padding-bottom:4px;padding-left:12px"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-small","textColor":"primary-dark"} -->
-<p class="has-primary-dark-color has-text-color has-x-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Montessori-Inspired Early Education • Ages 6 Wks – 5 Yrs', 'learnschool' ); ?></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3"}},"typography":{"fontFamily":"var:preset|font-family|quicksand","lineHeight":"1.15"}},"fontSize":"display"} -->
-<h1 class="wp-block-heading has-display-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3);font-family:var(--wp--preset--font-family--quicksand);line-height:1.15"><?php echo esc_html__( 'A Joyful Foundation for ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Curiosity', 'learnschool' ); ?></span></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-loop" style="color:var(--wp--preset--color--secondary-dark)"><?php echo esc_html__( 'Wonder', 'learnschool' ); ?></span></span></h1>
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4"}}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}},"typography":{"fontFamily":"var:preset|font-family|quicksand","lineHeight":"1.15"}},"fontSize":"xx-large"} -->
+<h1 class="wp-block-heading has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);font-family:var(--wp--preset--font-family--quicksand);line-height:1.15"><?php echo esc_html__( 'A Joyful Foundation for ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Curiosity', 'learnschool' ); ?></span></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-loop" style="color:var(--wp--preset--color--secondary-dark)"><?php echo esc_html__( 'Wonder', 'learnschool' ); ?></span></span></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"fontSize":"large","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-5);line-height:1.7"><?php echo esc_html__( 'Empowering young children through intentional sensory discovery, low student-teacher ratios, and joyful play-based learning environments that foster natural independence.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"large","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.7"><?php echo esc_html__( 'Empowering young children through intentional sensory discovery, low student-teacher ratios, and joyful play-based learning environments that foster natural independence.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|step-3","margin":{"bottom":"var:preset|spacing|step-5"}}}} -->
-<div class="wp-block-buttons" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
 <div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#tour"><?php echo esc_html__( 'Schedule a Discovery Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-learnschool-outline"} -->
 <div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="#programs"><?php echo esc_html__( 'Explore Classrooms', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
-<!-- /wp:buttons -->
-
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium","textColor":"secondary-dark"} -->
-<p class="has-secondary-dark-color has-text-color has-medium-font-size" style="font-weight:700" aria-label="<?php esc_attr_e( '5 out of 5 stars', 'learnschool' ); ?>"><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Rated 4.9/5 by 350+ local parent reviews', 'learnschool' ); ?></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center","width":"46%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:46%"><!-- wp:group {"className":"is-style-learnschool-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}},"textColor":"primary","fontSize":"x-small"} -->
-<p class="has-primary-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:1px;text-transform:uppercase"><?php echo esc_html__( 'Our Classroom Environments', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="font-weight:700"><?php echo esc_html__( 'Daily Discovery in Action', 'learnschool' ); ?></h3>
-<!-- /wp:heading -->
-
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><strong class="has-contrast-color"><?php echo esc_html__( 'Nature Atrium:', 'learnschool' ); ?></strong> <?php echo esc_html__( 'Sunlit greenhouses, soil discovery tables, and botanical terrariums.', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><strong class="has-contrast-color"><?php echo esc_html__( 'Sensory Studio:', 'learnschool' ); ?></strong> <?php echo esc_html__( 'Tactile manipulatives, water works, and fine-motor coordination blocks.', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><strong class="has-contrast-color"><?php echo esc_html__( 'Literacy Nook:', 'learnschool' ); ?></strong> <?php echo esc_html__( '500+ curated early books and expressive storytelling drama spaces.', 'learnschool' ); ?></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"8px","bottom":"8px","left":"16px","right":"16px"}},"border":{"radius":"9999px"}},"backgroundColor":"base-subtle","layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group has-base-subtle-background-color has-background" style="border-radius:9999px;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-small","textColor":"contrast"} -->
-<p class="has-contrast-color has-text-color has-x-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Fall 2026: 85% Enrolled', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"x-small","textColor":"primary"} -->
-<p class="has-primary-color has-text-color has-x-small-font-size" style="font-weight:700"><?php echo esc_html__( 'Limited Spots', 'learnschool' ); ?></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","align":"center"} -->
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/kids-discovery.svg' ) ); ?>" alt="<?php echo esc_attr__( 'Joyful early learning discovery illustration with school kids, building blocks, and books', 'learnschool' ); ?>" width="520" height="445"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>
 <!-- /wp:group -->
