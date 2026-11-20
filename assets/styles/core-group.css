@@ -121,6 +121,37 @@
 	border-radius: 20px;
 }
 
+/* ── Squircle Avatar & Icon Container Reset (Eliminate WP Core Padding) ─ */
+
+.wp-block-group[style*="width:48px"],
+.wp-block-group[style*="width: 48px"],
+.wp-block-group[style*="width:56px"],
+.wp-block-group[style*="width: 56px"],
+.wp-block-group[style*="width:68px"],
+.wp-block-group[style*="width: 68px"],
+.wp-block-group[style*="width:72px"],
+.wp-block-group[style*="width: 72px"] {
+	box-sizing: border-box;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.wp-block-group[style*="width:48px"] svg,
+.wp-block-group[style*="width: 48px"] svg,
+.wp-block-group[style*="width:56px"] svg,
+.wp-block-group[style*="width: 56px"] svg,
+.wp-block-group[style*="width:68px"] svg,
+.wp-block-group[style*="width: 68px"] svg,
+.wp-block-group[style*="width:72px"] svg,
+.wp-block-group[style*="width: 72px"] svg {
+	display: block;
+	flex-shrink: 0;
+	margin: auto;
+}
+
 .wp-block-group.is-style-learnschool-midnight {
 	background-color: var(--wp--preset--color--midnight, #0f172a);
 	color: var(--wp--preset--color--base, #fff);
