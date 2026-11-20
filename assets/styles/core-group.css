@@ -187,6 +187,11 @@
 	height: 100%;
 }
 
+.wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"] > .wp-block-group.is-layout-flex,
+.is-style-learnschool-card > .wp-block-group.is-layout-flex {
+	width: 100%;
+}
+
 .wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"] .wp-block-buttons,
 .wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-soft-card .wp-block-buttons,
 .wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-elevated .wp-block-buttons,
