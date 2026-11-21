@@ -74,7 +74,6 @@ Author: codeclove
 License: GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 Copyright: Copyright (C) 2026 codeclove
 
-* `campus-showcase-art.png` - Custom editorial campus grounds & schoolhouse hero illustration - GPLv2+
 * `creative-classroom-art.png` - Custom editorial arts & science discovery classroom illustration - GPLv2+
 * `kids-discovery-art.png` - Custom editorial early-learning discovery & Montessori blocks illustration - GPLv2+
 * `educator-portrait-art.png` - Custom editorial educator portrait & avatar illustration - GPLv2+

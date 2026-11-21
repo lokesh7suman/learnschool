@@ -227,3 +227,17 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 	}
 endif;
 add_filter( 'render_block_core/site-title', 'learnschool_filter_site_title' );
+
+if ( ! function_exists( 'learnschool_preload_webfonts' ) ) :
+	/**
+	 * Preload critical self-hosted web fonts for improved LCP and layout stability.
+	 *
+	 * @since 1.0.8
+	 * @return void
+	 */
+	function learnschool_preload_webfonts(): void {
+		$font_url = get_theme_file_uri( 'assets/fonts/quicksand/quicksand-variable.woff2' );
+		echo '<link rel="preload" href="' . esc_url( $font_url ) . '" as="font" type="font/woff2" crossorigin>' . "\n";
+	}
+endif;
+add_action( 'wp_head', 'learnschool_preload_webfonts', 1 );

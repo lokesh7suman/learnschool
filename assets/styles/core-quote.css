@@ -18,7 +18,7 @@
 }
 
 .wp-block-quote p {
-	font-size: 18px;
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	line-height: 1.7;
 	color: #1e293b;
 	margin: 0 0 8px;
@@ -28,7 +28,7 @@
 	display: block;
 	margin-top: 10px;
 	font-weight: 700;
-	font-size: 14px;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	color: var(--wp--preset--color--primary);
 	font-style: normal;
 }
@@ -57,7 +57,7 @@
 
 .wp-block-pullquote p {
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: 22px;
+	font-size: var(--wp--preset--font-size--large, 1.5rem);
 	font-weight: 600;
 	line-height: 1.6;
 	color: var(--wp--preset--color--contrast);
@@ -66,7 +66,7 @@
 
 .wp-block-pullquote cite {
 	font-family: var(--wp--preset--font-family--courgette), Courgette, cursive;
-	font-size: 18px;
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	color: var(--wp--preset--color--secondary-dark, #d97706);
 	display: block;
 	margin-top: 16px;

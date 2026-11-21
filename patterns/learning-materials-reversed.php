@@ -31,8 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Visual Storybooks & Phonics', 'learnschool' ); ?></h3>
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"textColor":"contrast","fontSize":"large"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Visual Storybooks & Phonics', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"2px","bottom":"2px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
@@ -55,8 +55,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Interactive Digital Touch Labs', 'learnschool' ); ?></h3>
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"textColor":"contrast","fontSize":"large"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Interactive Digital Touch Labs', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"2px","bottom":"2px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"warning","textColor":"warning-text","fontSize":"x-small"} -->
@@ -79,8 +79,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Physical Science & Craft Packs', 'learnschool' ); ?></h3>
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"textColor":"contrast","fontSize":"large"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Physical Science & Craft Packs', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"2px","bottom":"2px","left":"10px","right":"10px"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
@@ -97,12 +97,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"primary","fontSize":"x-small"} -->
-<p class="has-primary-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase"><?php echo esc_html__( 'Interactive Curriculum', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
+<h6 class="wp-block-heading has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Interactive Curriculum', 'learnschool' ); ?></h6>
+<!-- /wp:heading -->
 
-<!-- wp:heading {"level":2,"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-xx-large-font-size"><?php echo esc_html__( 'Engaging Textbooks, Digital Labs & ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Creative Kits', 'learnschool' ); ?></span></span></h2>
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Engaging Textbooks, Digital Labs & ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Creative Kits', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->

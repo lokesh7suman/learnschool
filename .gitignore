@@ -25,5 +25,8 @@ phpstan-baseline.neon
 /playwright-report/
 /test-results/
 
+# Impeccable local runtime state
+/.impeccable/
+
 # Internal task tracking
 /tasks/

@@ -70,7 +70,7 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		expect( Array.isArray( patterns ) ).toBe( true );
 
 		const themePatterns = patterns.filter( ( p ) => p.name && p.name.startsWith( 'learnschool/' ) );
-		expect( themePatterns.length ).toBeGreaterThanOrEqual( 30 );
+		expect( themePatterns.length ).toBeGreaterThanOrEqual( 20 );
 
 		for ( const pattern of themePatterns ) {
 			// Pattern must have title and non-empty content

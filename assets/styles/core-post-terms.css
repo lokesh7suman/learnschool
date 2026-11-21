@@ -30,7 +30,7 @@
 	border-radius: 9999px;
 	background-color: #f3eefc;
 	color: var(--wp--preset--color--primary);
-	font-size: 13px;
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
 	text-decoration: none;
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -52,7 +52,7 @@
 	border-radius: 9999px;
 	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
 	color: var(--wp--preset--color--contrast-subtle, #636363);
-	font-size: 13px;
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
 	text-decoration: none;
 	border: 1px solid var(--wp--preset--color--border, #e2e8f0);

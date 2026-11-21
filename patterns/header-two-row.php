@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":34,"shouldSyncIcon":false} /-->
 
-<!-- wp:site-title {"level":0,"isLink":true} /--></div>
+<!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} /-->

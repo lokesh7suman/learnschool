@@ -35,7 +35,7 @@ module.exports = defineConfig( {
 		},
 		storageState: process.env.STORAGE_STATE_PATH,
 		actionTimeout: 10_000,
-		trace: 'retain-on-failure',
+		trace: process.env.CI ? 'retain-on-failure' : 'off',
 		screenshot: 'only-on-failure',
 	},
 	webServer: undefined, // Zero Docker: direct native Valet execution

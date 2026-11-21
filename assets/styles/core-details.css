@@ -25,7 +25,7 @@
 
 .wp-block-details summary {
 	font-weight: 700;
-	font-size: 17px;
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	color: var(--wp--preset--color--contrast);
 	cursor: pointer;
 	padding: 4px 0;
@@ -60,7 +60,7 @@
 	justify-content: space-between;
 	cursor: pointer;
 	list-style: none;
-	font-size: 24px;
+	font-size: var(--wp--preset--font-size--large, 1.5rem);
 	font-weight: 600;
 	line-height: 1.4;
 	color: var(--wp--preset--color--contrast);
@@ -105,7 +105,7 @@
 
 .wp-block-details.is-style-learnschool-faq-pill p {
 	padding-top: 16px;
-	font-size: 16px;
+	font-size: var(--wp--preset--font-size--base, 1rem);
 	line-height: 1.7;
 	margin: 0;
 }
@@ -115,7 +115,7 @@
 @media (max-width: 781px) {
 
 	.wp-block-details.is-style-learnschool-faq-pill summary {
-		font-size: 20px;
+		font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	}
 
 	.wp-block-details.is-style-learnschool-faq-pill {

@@ -41,7 +41,7 @@
 
 .wp-block-comment-author-name {
 	font-weight: 700;
-	font-size: 17px;
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	color: var(--wp--preset--color--contrast);
 	margin-bottom: 2px;
 }
@@ -56,13 +56,13 @@
 }
 
 .wp-block-comment-date {
-	font-size: 13px;
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	color: var(--wp--preset--color--contrast-subtle);
 	margin-bottom: 12px;
 }
 
 .wp-block-comment-content {
-	font-size: 16px;
+	font-size: var(--wp--preset--font-size--base, 1rem);
 	line-height: 1.7;
 	color: var(--wp--preset--color--contrast);
 }
@@ -76,7 +76,7 @@
 	border-radius: 9999px;
 	background-color: #f3eefc;
 	color: var(--wp--preset--color--primary);
-	font-size: 13px;
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
 	text-decoration: none;
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -95,7 +95,7 @@
 .comment-form-url label {
 	display: block;
 	font-weight: 600;
-	font-size: 14px;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	margin-bottom: 8px;
 	color: var(--wp--preset--color--contrast);
 }
@@ -105,7 +105,7 @@
 	align-items: center;
 	gap: 10px;
 	margin: 16px 0;
-	font-size: 14px;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	color: var(--wp--preset--color--contrast-subtle);
 }
 
@@ -127,7 +127,7 @@
 	color: var(--wp--preset--color--base, #fff);
 	border: none;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: 15px;
+	font-size: var(--wp--preset--font-size--base, 1rem);
 	font-weight: 700;
 	cursor: pointer;
 	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.15);

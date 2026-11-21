@@ -24,17 +24,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column" style="flex-basis:34%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"10px"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":36,"shouldSyncIcon":false} /-->
 
-<!-- wp:site-title {"level":0,"isLink":true,"style":{"typography":{"fontWeight":"700"}},"fontSize":"large"} /--></div>
+<!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Nurturing curiosity, confidence, and compassion in young minds through inquiry-based learning and joyful play.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Nurturing curiosity, confidence, and compassion in young minds through inquiry-based learning and joyful play.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"22%"} -->
-<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Our Programs', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
+<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Our Programs', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
@@ -61,8 +61,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"22%"} -->
-<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Parent Resources', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
+<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Parent Resources', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
@@ -89,8 +89,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"22%"} -->
-<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Campus Hours', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
+<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Campus Hours', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->

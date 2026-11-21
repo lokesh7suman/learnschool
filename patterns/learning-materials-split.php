@@ -21,16 +21,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"48%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"}},"textColor":"primary","fontSize":"x-small"} -->
-<p class="has-primary-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase"><?php echo esc_html__( 'Tactile Learning Standards', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":2,"style":{"typography":{"lineHeight":"1.2"},"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-3"}}},"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.2"><?php echo esc_html__( 'Curated Materials Built for ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Sensory Wonder', 'learnschool' ); ?></span></span></h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%"><!-- wp:heading {"level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
+<h6 class="wp-block-heading has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Tactile Learning Standards', 'learnschool' ); ?></h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"large"} -->
-<p class="has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.7"><?php echo esc_html__( 'We eliminate plastic sensory overload in favor of organic, research-backed materials that engage fine-motor coordination and spatial intuition.', 'learnschool' ); ?></p>
+<!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-3"}}}} -->
+<h2 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Curated Materials Built for ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Sensory Wonder', 'learnschool' ); ?></span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.7"><?php echo esc_html__( 'We eliminate plastic sensory overload in favor of organic, research-backed materials that engage fine-motor coordination and spatial intuition.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
@@ -43,8 +43,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'FSC-Certified Natural Hardwoods', 'learnschool' ); ?></h3>
+<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'FSC-Certified Natural Hardwoods', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->
@@ -53,8 +53,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Sensory Tactile Manipulatives', 'learnschool' ); ?></h3>
+<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Sensory Tactile Manipulatives', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->
@@ -63,8 +63,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"20px"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Montessori Spatial & Math Chains', 'learnschool' ); ?></h3>
+<div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:20px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"fontSize":"large"} -->
+<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Montessori Spatial & Math Chains', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->

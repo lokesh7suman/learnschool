@@ -45,6 +45,19 @@ ul.is-style-learnschool-checkmarks.has-base-color > li::before,
 	background-color: currentcolor;
 }
 
+@media (max-width: 781px) {
+
+	ul.is-style-learnschool-checkmarks > li {
+		padding-left: 28px;
+	}
+
+	ul.is-style-learnschool-checkmarks > li::before {
+		top: 0.15em;
+		width: 18px;
+		height: 18px;
+	}
+}
+
 /* ── Clean Unstyled List (No bullets, no indent, clean link styling) ── */
 
 ul.is-style-learnschool-clean-list,
@@ -88,4 +101,13 @@ body.rtl ul.is-style-learnschool-checkmarks > li::before,
 [dir="rtl"] ul.is-style-learnschool-checkmarks > li::before {
 	left: auto;
 	right: 0;
+}
+
+@media (max-width: 781px) {
+
+	body.rtl ul.is-style-learnschool-checkmarks > li,
+	[dir="rtl"] ul.is-style-learnschool-checkmarks > li {
+		padding-left: 0;
+		padding-right: 28px;
+	}
 }

@@ -161,7 +161,7 @@
 	width: fit-content;
 	background-color: var(--wp--preset--color--secondary, #ffbe17);
 	color: var(--wp--preset--color--contrast, #121212);
-	font-size: 11px;
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 700;
 	padding: 4px 12px;
 	border-radius: 9999px;
@@ -193,7 +193,7 @@
 	border-radius: 9999px;
 	background-color: var(--wp--preset--color--secondary, #ffbe17);
 	color: var(--wp--preset--color--contrast, #121212);
-	font-size: 11px;
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 700;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;

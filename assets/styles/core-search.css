@@ -18,7 +18,7 @@
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: 15px;
+	font-size: var(--wp--preset--font-size--base, 1rem);
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -37,7 +37,7 @@
 	border: none;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-weight: 700;
-	font-size: 15px;
+	font-size: var(--wp--preset--font-size--base, 1rem);
 	cursor: pointer;
 	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.2);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
@@ -81,6 +81,6 @@
 	border-radius: 9999px;
 	padding: 10px 24px;
 	min-height: 42px;
-	font-size: 14px;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	flex-shrink: 0;
 }

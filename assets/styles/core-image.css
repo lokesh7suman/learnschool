@@ -59,6 +59,13 @@ img.is-style-flip-horizontal {
 
 /* ── Card Image Zoom Micro-Interactions ──────────────────────────────── */
 
+.is-style-learnschool-card .wp-block-image img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	display: block;
+}
+
 .is-style-learnschool-card .wp-block-image img,
 .is-style-learnschool-card-arch .wp-block-image img,
 .is-style-learnschool-card-large .wp-block-image img,

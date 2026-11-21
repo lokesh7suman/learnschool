@@ -19,12 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-6"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:heading {"textAlign":"center","level":2,"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size"><?php echo esc_html__( 'Frequently Asked ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Parent Questions', 'learnschool' ); ?></span></span></h2>
+<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:heading {"textAlign":"center","level":2} -->
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Frequently Asked ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Parent Questions', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","fontSize":"large","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-large-font-size"><?php echo esc_html__( 'Clear answers on health, safety, tuition, and classroom routines.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"fontSize":"medium","textColor":"contrast-subtle"} -->
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Clear answers on health, safety, tuition, and classroom routines.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

@@ -25,7 +25,7 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	font-weight: 600;
-	font-size: 15px;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	color: var(--wp--preset--color--contrast);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
@@ -61,5 +61,5 @@
 .wp-block-categories-list .children li {
 	padding: 6px 12px;
 	margin-bottom: 4px;
-	font-size: 14px;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 }

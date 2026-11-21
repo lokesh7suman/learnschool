@@ -20,12 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-6"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}},"textColor":"primary","fontSize":"x-small"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-x-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;letter-spacing:0.1em;text-transform:uppercase"><?php echo esc_html__( 'How Your Child Grows at LearnSchool', 'learnschool' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:heading {"textAlign":"center","level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
+<h6 class="wp-block-heading has-text-align-center has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'How Your Child Grows at LearnSchool', 'learnschool' ); ?></h6>
+<!-- /wp:heading -->
 
-<!-- wp:heading {"textAlign":"center","level":2,"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size"><?php echo esc_html__( 'Four-Step Progressive ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Learning Pathway', 'learnschool' ); ?></span></span></h2>
+<!-- wp:heading {"textAlign":"center","level":2} -->
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Four-Step Progressive ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Learning Pathway', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->
@@ -51,8 +51,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Curiosity ', 'learnschool' ); ?><span class="learnschool-script" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Spark', 'learnschool' ); ?></span></h3>
+<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast"} -->
+<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color"><?php echo esc_html__( 'Curiosity ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'Spark', 'learnschool' ); ?></span></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -77,8 +77,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Creative ', 'learnschool' ); ?><span class="learnschool-script" style="color:var(--wp--preset--color--secondary-dark)"><?php echo esc_html__( 'Labs', 'learnschool' ); ?></span></h3>
+<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast"} -->
+<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color"><?php echo esc_html__( 'Creative ', 'learnschool' ); ?><span class="learnschool-script has-secondary-dark-color"><?php echo esc_html__( 'Labs', 'learnschool' ); ?></span></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -103,8 +103,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Social ', 'learnschool' ); ?><span class="learnschool-script" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Play', 'learnschool' ); ?></span></h3>
+<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast"} -->
+<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color"><?php echo esc_html__( 'Social ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'Play', 'learnschool' ); ?></span></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -129,8 +129,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html --></div>
 <!-- /wp:group -->
 
-<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Milestone ', 'learnschool' ); ?><span class="learnschool-script" style="color:var(--wp--preset--color--secondary-dark)"><?php echo esc_html__( 'Badges', 'learnschool' ); ?></span></h3>
+<!-- wp:heading {"textAlign":"center","level":3,"textColor":"contrast"} -->
+<h3 class="wp-block-heading has-text-align-center has-contrast-color has-text-color"><?php echo esc_html__( 'Milestone ', 'learnschool' ); ?><span class="learnschool-script has-secondary-dark-color"><?php echo esc_html__( 'Badges', 'learnschool' ); ?></span></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->

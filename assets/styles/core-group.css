@@ -239,6 +239,30 @@
 	margin-top: auto;
 }
 
+/* ── Card Role Badge Pill ────────────────────────────────────────────── */
+
+.is-style-learnschool-card .wp-block-group[style*="border-radius:100px"],
+.is-style-learnschool-card .wp-block-group[style*="border-radius: 100px"] {
+	width: fit-content;
+	display: inline-flex;
+	align-items: center;
+}
+
+.is-style-learnschool-card .wp-block-group[style*="border-radius:100px"] p,
+.is-style-learnschool-card .wp-block-group[style*="border-radius: 100px"] p {
+	margin: 0;
+	line-height: 1.25;
+	letter-spacing: 0.02em;
+}
+
+/* ── Card Footer Metadata ────────────────────────────────────────────── */
+
+.is-style-learnschool-card .wp-block-group[style*="border-top-color"] p {
+	letter-spacing: 0.02em;
+	font-feature-settings: "tnum" 1;
+	line-height: 1.4;
+}
+
 /* ── Calendar & Event Date Badges ───────────────────────────────────── */
 
 .is-style-learnschool-card .has-primary-background-color.has-base-color {

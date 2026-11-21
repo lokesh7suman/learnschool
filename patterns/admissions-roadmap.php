@@ -19,12 +19,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-6"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:heading {"textAlign":"center","level":2,"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size"><?php echo esc_html__( 'Simple 3-Step ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Enrollment Journey', 'learnschool' ); ?></span></span></h2>
+<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-6)"><!-- wp:heading {"textAlign":"center","level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
+<h6 class="wp-block-heading has-text-align-center has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Admissions Process', 'learnschool' ); ?></h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","fontSize":"large","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-large-font-size"><?php echo esc_html__( 'We make admissions warm, transparent, and pressure-free for busy families.', 'learnschool' ); ?></p>
+<!-- wp:heading {"textAlign":"center","level":2} -->
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Simple 3-Step ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Enrollment Journey', 'learnschool' ); ?></span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"fontSize":"medium","textColor":"contrast-subtle"} -->
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'We make admissions warm, transparent, and pressure-free for busy families.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -35,8 +39,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-primary-color has-text-color has-x-large-font-size" style="font-weight:700"><?php echo esc_html__( '01', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></h3>
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium","textColor":"contrast-subtle"} -->
@@ -51,8 +55,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-secondary-dark-color has-text-color has-x-large-font-size" style="font-weight:700"><?php echo esc_html__( '02', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Family Playdate', 'learnschool' ); ?></h3>
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Family Playdate', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium","textColor":"contrast-subtle"} -->
@@ -67,8 +71,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-primary-color has-text-color has-x-large-font-size" style="font-weight:700"><?php echo esc_html__( '03', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Welcome & Enrollment', 'learnschool' ); ?></h3>
+<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2"}}}} -->
+<h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Welcome & Enrollment', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"medium","textColor":"contrast-subtle"} -->
@@ -80,8 +84,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"},"margin":{"top":"var:preset|spacing|step-6"}},"border":{"radius":"24px"}},"backgroundColor":"primary-light","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide has-primary-light-background-color has-background" style="border-radius:24px;margin-top:var(--wp--preset--spacing--step-6);padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"large"} -->
-<h3 class="wp-block-heading has-large-font-size" style="font-weight:700"><?php echo esc_html__( 'Now Accepting Fall & Year-Round Applications', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><?php echo esc_html__( 'Now Accepting Fall & Year-Round Applications', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle"} -->

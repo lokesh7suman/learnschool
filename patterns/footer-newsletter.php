@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":34,"shouldSyncIcon":false} /-->
 
-<!-- wp:site-title {"level":0,"isLink":true} /--></div>
+<!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -38,28 +38,64 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
-<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
+<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2"}}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-2)"><a href="<?php echo esc_url( home_url( '/#early-learning' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Early Learning', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#primary-stem' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Primary STEM', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#arts-music' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Arts & Music', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#summer-camps' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Summer Camps', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#online-modules' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Online Modules', 'learnschool' ); ?></a></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#early-learning' ) ); ?>"><?php echo esc_html__( 'Early Learning', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#primary-stem' ) ); ?>"><?php echo esc_html__( 'Primary STEM', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#arts-music' ) ); ?>"><?php echo esc_html__( 'Arts & Music', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#summer-camps' ) ); ?>"><?php echo esc_html__( 'Summer Camps', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#online-modules' ) ); ?>"><?php echo esc_html__( 'Online Modules', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
-<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'School Life', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
+<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'School Life', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2"}}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-2)"><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#portal' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#directory' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Faculty Directory', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#calendar' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Academic Calendar', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( home_url( '/#campus-safety' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Campus Safety', 'learnschool' ); ?></a></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#portal' ) ); ?>"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#directory' ) ); ?>"><?php echo esc_html__( 'Faculty Directory', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#calendar' ) ); ?>"><?php echo esc_html__( 'Academic Calendar', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/#campus-safety' ) ); ?>"><?php echo esc_html__( 'Campus Safety', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"30%"} -->
-<div class="wp-block-column" style="flex-basis:30%"><!-- wp:heading {"level":4,"style":{"typography":{"fontWeight":"700"}},"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size" style="font-weight:700"><?php echo esc_html__( 'Stay Connected', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
+<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Stay Connected', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
