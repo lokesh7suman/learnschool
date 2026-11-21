@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Frequently Asked ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Parent Questions', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"fontSize":"medium","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Clear answers on health, safety, tuition, and classroom routines.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"align":"center","fontSize":"medium","textColor":"contrast-subtle"} -->
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Clear answers on health, safety, tuition, and classroom routines.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

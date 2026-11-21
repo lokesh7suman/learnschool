@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Meet Our Dedicated ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Educators & Mentors', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Our certified faculty brings decades of collective experience, academic credentials, and unwavering dedication to every classroom.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Our certified faculty brings decades of collective experience, academic credentials, and unwavering dedication to every classroom.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -52,8 +52,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.65"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.65"><?php echo esc_html__( '“At LearnSchool, we believe that joyful academic excellence is not the finish line—it is the foundation. Every child holds boundless potential waiting to be ignited through guided inquiry, respectful mentorship, and loving curiosity.”', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( '“At LearnSchool, we believe that joyful academic excellence is not the finish line—it is the foundation. Every child holds boundless potential waiting to be ignited through guided inquiry, respectful mentorship, and loving curiosity.”', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"border":{"radius":"12px"},"spacing":{"padding":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-2","left":"var:preset|spacing|step-3","right":"var:preset|spacing|step-3"},"margin":{"bottom":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
@@ -97,8 +97,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '10+ Years Experience • M.Ed Texas. Specializes in child-led sensory discovery.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '10+ Years Experience • M.Ed Texas. Specializes in child-led sensory discovery.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -124,8 +124,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '8+ Years Experience • M.S. MIT. Guiding early spatial reasoning and numeracy.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '8+ Years Experience • M.S. MIT. Guiding early spatial reasoning and numeracy.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -153,8 +153,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '6+ Years Experience • M.A. Columbia. Fostering phonemic awareness and storytelling.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '6+ Years Experience • M.A. Columbia. Fostering phonemic awareness and storytelling.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -180,8 +180,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.5"><?php echo esc_html__( 'Looking for passionate educators to inspire the next generation.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Looking for passionate educators to inspire the next generation.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

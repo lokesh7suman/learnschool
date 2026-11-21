@@ -29,12 +29,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1);font-weight:700;line-height:1.3"><?php echo esc_html__( 'Keypad Security', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Keypad Security', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Controlled badge access & 24/7 HD video monitors', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Controlled badge access & 24/7 HD video monitors', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -49,12 +49,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1);font-weight:700;line-height:1.3"><?php echo esc_html__( 'Vetted Educators', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Vetted Educators', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( '100% FBI background-checked & CPR-certified staff', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '100% FBI background-checked & CPR-certified staff', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -69,12 +69,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1);font-weight:700;line-height:1.3"><?php echo esc_html__( 'Allergy-Safe Food', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Allergy-Safe Food', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Organic scratch kitchen & 100% nut-free campus', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Organic scratch kitchen & 100% nut-free campus', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -89,12 +89,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1);font-weight:700;line-height:1.3"><?php echo esc_html__( 'State Licensed', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'State Licensed', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Exceeds state early-education quality and safety bars', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Exceeds state early-education quality and safety bars', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

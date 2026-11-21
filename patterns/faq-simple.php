@@ -23,11 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"38%"} -->
 <div class="wp-block-column" style="flex-basis:38%"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Frequently ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Asked', 'learnschool' ); ?></span><br><?php echo esc_html__( 'Questions', 'learnschool' ); ?></h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Frequently ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Asked', 'learnschool' ); ?></span> <?php echo esc_html__( 'Questions', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Everything you need to know about our modern curriculum, safety standards, and daily classroom routines.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Everything you need to know about our modern curriculum, safety standards, and daily classroom routines.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

@@ -40,8 +40,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Illustrated readers, vocabulary cards, and tactile sensory trace sheets for early literacy.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Illustrated readers, vocabulary cards, and tactile sensory trace sheets for early literacy.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -64,8 +64,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Self-paced audio puzzles, pattern matching, and guided science explorations on safe tablets.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Self-paced audio puzzles, pattern matching, and guided science explorations on safe tablets.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -88,8 +88,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.5"><?php echo esc_html__( 'Botanical seed germination kits, non-toxic modeling clays, and tactile geometric arches.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Botanical seed germination kits, non-toxic modeling clays, and tactile geometric arches.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -97,16 +97,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
-<h6 class="wp-block-heading has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Interactive Curriculum', 'learnschool' ); ?></h6>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"level":2} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Engaging Textbooks, Digital Labs & ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Creative Kits', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'We believe educational materials should feel like invitations to wonder, not obligations. Our blended curriculum combines tactile books, responsive touch apps, and physical maker kits.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'We believe educational materials should feel like invitations to wonder, not obligations. Our blended curriculum combines tactile books, responsive touch apps, and physical maker kits.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"medium"} -->

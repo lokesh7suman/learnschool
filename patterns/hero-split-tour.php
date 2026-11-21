@@ -24,8 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h1 class="wp-block-heading" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.15"><?php echo esc_html__( 'A Joyful Foundation for ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Curiosity', 'learnschool' ); ?></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-loop has-secondary-dark-color"><?php echo esc_html__( 'Wonder', 'learnschool' ); ?></span></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}},"typography":{"lineHeight":"1.7"}},"fontSize":"large","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-5);line-height:1.7"><?php echo esc_html__( 'Empowering young children through intentional sensory discovery, low student-teacher ratios, and joyful play-based learning environments that foster natural independence.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"fontSize":"large","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-5)"><?php echo esc_html__( 'Empowering young children through intentional sensory discovery, low student-teacher ratios, and joyful play-based learning environments that foster natural independence.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->

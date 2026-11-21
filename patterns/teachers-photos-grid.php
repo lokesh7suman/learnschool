@@ -26,8 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Meet Our Dedicated ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Educators', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"}},"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Degreed, CPR-certified, and compassionate early-childhood specialists devoted to each child\'s emotional and cognitive growth.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Degreed, CPR-certified, and compassionate early-childhood specialists devoted to each child\'s emotional and cognitive growth.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -64,8 +64,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Kristin Watson', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"metadata":{"name":"teacher_bio_1","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Fostering natural curiosity through outdoor botany and hands-on laboratory quests.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"metadata":{"name":"teacher_bio_1","bindings":{"content":{"source":"core/pattern-overrides"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Fostering natural curiosity through outdoor botany and hands-on laboratory quests.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -100,8 +100,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Jenny Wilson', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"metadata":{"name":"teacher_bio_2","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Creating immersive phonics worlds, speech development, and puppet storytelling.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"metadata":{"name":"teacher_bio_2","bindings":{"content":{"source":"core/pattern-overrides"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Creating immersive phonics worlds, speech development, and puppet storytelling.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -136,8 +136,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Marcus Hayes', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"metadata":{"name":"teacher_bio_3","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Orff Schulwerk rhythm specialist unlocking cognitive focus through melody and movement.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"metadata":{"name":"teacher_bio_3","bindings":{"content":{"source":"core/pattern-overrides"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Orff Schulwerk rhythm specialist unlocking cognitive focus through melody and movement.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -172,8 +172,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Sofia Chen', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"metadata":{"name":"teacher_bio_4","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"lineHeight":"1.6"}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Guiding fine motor coordination and joyful sensory creativity with clay and tempera.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"metadata":{"name":"teacher_bio_4","bindings":{"content":{"source":"core/pattern-overrides"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Guiding fine motor coordination and joyful sensory creativity with clay and tempera.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

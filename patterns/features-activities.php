@@ -20,16 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"layout":{"type":"constrained","contentSize":"780px","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"textAlign":"center","level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
-<h6 class="wp-block-heading has-text-align-center has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Hands-On Discovery', 'learnschool' ); ?></h6>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"textAlign":"center","level":2,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
+<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"textAlign":"center","level":2,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
 <h2 class="wp-block-heading has-text-align-center" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Signature ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Enrichment', 'learnschool' ); ?></span><?php echo esc_html__( ' Activities', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"fontSize":"medium","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'Every afternoon brings specialized creative labs designed to stretch imagination, musicality, and ecological appreciation.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"align":"center","fontSize":"medium","textColor":"contrast-subtle"} -->
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Every afternoon brings specialized creative labs designed to stretch imagination, musicality, and ecological appreciation.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -45,8 +41,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Rhythm & Chimes', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Orff percussion, melodic chimes, and body percussion that develop auditory discrimination.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Orff percussion, melodic chimes, and body percussion that develop auditory discrimination.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -63,8 +59,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Clay & Sculpting', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Tactile terra-cotta clay, non-toxic mineral dyes, and hand-molding fine-motor exercises.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Tactile terra-cotta clay, non-toxic mineral dyes, and hand-molding fine-motor exercises.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -81,8 +77,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Junior Greenhouse', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Organic seed sprout tables, botanical magnifying, and hands-on soil care.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Organic seed sprout tables, botanical magnifying, and hands-on soil care.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -99,8 +95,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--step-1);margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'World Language Nook', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.6"}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="line-height:1.6"><?php echo esc_html__( 'Bilingual songs, puppet conversations, and joyful cultural vocabulary immersion.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Bilingual songs, puppet conversations, and joyful cultural vocabulary immersion.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

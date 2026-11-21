@@ -20,16 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"layout":{"type":"constrained","contentSize":"780px","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"textAlign":"center","level":6,"textColor":"primary","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
-<h6 class="wp-block-heading has-text-align-center has-primary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Our Academic Pathways', 'learnschool' ); ?></h6>
-<!-- /wp:heading -->
-
-<!-- wp:heading {"textAlign":"center","level":2,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
+<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"textAlign":"center","level":2,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
 <h2 class="wp-block-heading has-text-align-center" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Age-Tailored Programs for ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Every Child', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"fontSize":"medium","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="line-height:1.7"><?php echo esc_html__( 'From sensory infant care to confident kindergarten preparation, our curriculum is engineered for joyful discovery at every stage.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"align":"center","fontSize":"medium","textColor":"contrast-subtle"} -->
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'From sensory infant care to confident kindergarten preparation, our curriculum is engineered for joyful discovery at every stage.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -51,8 +47,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Infant & Toddler Discovery', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.7"><?php echo esc_html__( 'Gentle sensory exploration, warm responsive caregiving, and soft motor coordination spaces designed for tender early milestones.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Gentle sensory exploration, warm responsive caregiving, and soft motor coordination spaces designed for tender early milestones.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"small"} -->
@@ -95,8 +91,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Preschool Exploration', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.7"><?php echo esc_html__( 'Self-directed learning stations, collaborative group play, phonics song circles, and nature discovery that build lasting confidence.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Self-directed learning stations, collaborative group play, phonics song circles, and nature discovery that build lasting confidence.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"small"} -->
@@ -139,8 +135,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Pre-K & Kindergarten', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.7"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.7"><?php echo esc_html__( 'Early reading mastery, mathematical pattern blocks, collaborative science labs, and smooth elementary school readiness.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Early reading mastery, mathematical pattern blocks, collaborative science labs, and smooth elementary school readiness.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"small"} -->
