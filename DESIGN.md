@@ -52,6 +52,7 @@ typography:
     lineHeight: 1.4
     letterSpacing: "0.1em"
 rounded:
+  xs: "8px"
   sm: "12px"
   md: "16px"
   lg: "20px"
@@ -106,7 +107,7 @@ Name: LearnSchool Design System
 Colors: primary: primary #704fe6; secondary: secondary #ffbe17; neutral: surface #ffffff; accent: success #16a34a; primary: primary-dark #5837c7; primary: primary-light #dec8fe (+9 more in the sidecar)
 Fonts: Quicksand (display, headline, title, body, label)
 Spacing: step-1 0.5rem, step-2 0.75rem, step-3 1rem, step-4 1.5rem, step-5 2rem, step-6 3rem, step-7 4.5rem, step-8 6rem
-Radius: sm 12px, md 16px, lg 20px, xl 24px, arch 120px 120px 24px 24px, pill 9999px
+Radius: xs 8px, sm 12px, md 16px, lg 20px, xl 24px, arch 120px 120px 24px 24px, pill 9999px
 North Star: "The Nurturing Studio"
 Rules:
 - The 10% Spark Rule. Sunny Gold (`#ffbe17`) is never used for entire page backgrounds or long-form body copy.

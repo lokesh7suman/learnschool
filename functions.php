@@ -84,6 +84,14 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			array(),
 			$version
 		);
+
+		wp_enqueue_script(
+			'learnschool-navigation',
+			get_template_directory_uri() . '/assets/js/navigation.js',
+			array(),
+			$version,
+			true
+		);
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'learnschool_scripts' );

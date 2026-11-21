@@ -24,21 +24,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group alignfull has-contrast-subtle-color has-base-subtle-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="tel:5550192834" style="color:var(--wp--preset--color--contrast-subtle);text-decoration:none"><?php echo esc_html__( 'Call: (555) 019-2834', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size"><a href="tel:5550192834" style="color:inherit;text-decoration:none;white-space:nowrap"><?php echo esc_html__( 'Call: (555) 019-2834', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><?php echo esc_html__( 'Mon–Fri: 8:00 AM – 5:00 PM', 'learnschool' ); ?></p>
+<p class="has-small-font-size"><span style="white-space:nowrap"><?php echo esc_html__( 'Mon–Fri: 8:00 AM – 5:00 PM', 'learnschool' ); ?></span></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>" style="color:var(--wp--preset--color--contrast-subtle);text-decoration:none"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/about-us/leadership/faculty-directory/' ) ); ?>" style="color:var(--wp--preset--color--contrast-subtle);text-decoration:none"><?php echo esc_html__( 'Staff Directory', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/about-us/leadership/faculty-directory/' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Staff Directory', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"contrast-subtle","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-1","left":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -52,8 +52,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"bottom":{"color":"var:preset|color|base-subtle","width":"1px"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-base-background-color has-background" style="border-bottom-color:var(--wp--preset--color--base-subtle);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-3);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"var:preset|spacing|step-3","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-base-background-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-3);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":34,"shouldSyncIcon":false} /-->
 

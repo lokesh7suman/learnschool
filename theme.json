@@ -127,6 +127,21 @@
 					"name": "Border / Soft Gray"
 				},
 				{
+					"slug": "border-subtle",
+					"color": "#f1f5f9",
+					"name": "Border Subtle / Extra Light"
+				},
+				{
+					"slug": "info",
+					"color": "#0284c7",
+					"name": "Info Blue"
+				},
+				{
+					"slug": "info-light",
+					"color": "#e0f2fe",
+					"name": "Info Light / Sky Tint"
+				},
+				{
 					"slug": "success",
 					"color": "#16a34a",
 					"name": "Success Green"
