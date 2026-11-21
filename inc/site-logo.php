@@ -48,9 +48,10 @@ if ( ! function_exists( 'learnschool_default_custom_logo' ) ) :
 		);
 
 		return sprintf(
-			'<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>',
+			'<a href="%1$s" class="custom-logo-link" rel="home"%2$s aria-label="%3$s">%4$s</a>',
 			esc_url( home_url( '/' ) ),
 			$aria_current,
+			esc_attr( $site_title ),
 			$image
 		);
 	}
@@ -73,6 +74,15 @@ if ( ! function_exists( 'learnschool_render_site_logo_block' ) ) :
 		}
 
 		$processor = new \WP_HTML_Tag_Processor( $block_content );
+		if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
+			if ( ! $processor->get_attribute( 'aria-label' ) ) {
+				$site_title = get_bloginfo( 'name', 'display' );
+				if ( ! empty( $site_title ) ) {
+					$processor->set_attribute( 'aria-label', $site_title );
+				}
+			}
+		}
+
 		if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
 			$width = (int) $block['attrs']['width'];
 			if ( $width > 0 ) {
@@ -81,11 +91,10 @@ if ( ! function_exists( 'learnschool_render_site_logo_block' ) ) :
 				$existing_style = $processor->get_attribute( 'style' );
 				$style          = ! empty( $existing_style ) ? rtrim( $existing_style, ';' ) . "; width: {$width}px;" : "width: {$width}px;";
 				$processor->set_attribute( 'style', $style );
-				return $processor->get_updated_html();
 			}
 		}
 
-		return $block_content;
+		return $processor->get_updated_html();
 	}
 endif;
 add_filter( 'render_block_core/site-logo', 'learnschool_render_site_logo_block', 10, 2 );

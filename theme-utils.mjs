@@ -162,8 +162,8 @@ async function validateTheme() {
 		}
 	}
 
-	// 3. Pattern file headers ───────────────────────────────────────────────
-	heading( '3/4  Pattern file headers' );
+	// 3. Pattern file headers & block syntax ────────────────────────────────
+	heading( '3/4  Pattern headers & block syntax' );
 
 	const patternsDir = path.join( ROOT, 'patterns' );
 	const patterns = listFiles( patternsDir, '.php' );
@@ -171,6 +171,7 @@ async function validateTheme() {
 	for ( const filePath of patterns ) {
 		const name = path.relative( ROOT, filePath );
 		const content = fs.readFileSync( filePath, 'utf8' );
+		const fileErrors = [];
 
 		const missing = [];
 		if ( ! /^\s*\*\s*Title:/m.test( content ) ) missing.push( 'Title' );
@@ -178,8 +179,36 @@ async function validateTheme() {
 		if ( ! /^\s*\*\s*Categories:/m.test( content ) ) missing.push( 'Categories' );
 
 		if ( missing.length ) {
-			fail( `${ name }: missing header field(s): ${ missing.join( ', ' ) }` );
-			errors++;
+			fileErrors.push( `missing header field(s): ${ missing.join( ', ' ) }` );
+		}
+
+		const slugMatch = content.match( /^\s*\*\s*Slug:\s*(\S+)/m );
+		if ( slugMatch && ! slugMatch[ 1 ].startsWith( 'learnschool/' ) ) {
+			fileErrors.push( `Slug "${ slugMatch[ 1 ] }" must be prefixed with "learnschool/"` );
+		}
+
+		// Block comment grammar checks
+		if ( /,\s*\}/.test( content ) ) {
+			fileErrors.push( 'trailing comma in block attribute JSON (RFC 8259 violation)' );
+		}
+
+		const badSelfClose = content.match( /<!--\s*wp:\S+\/-->/g );
+		if ( badSelfClose ) {
+			fileErrors.push(
+				`${ badSelfClose.length } self-closing tag(s) missing space before /--> (e.g. ${ badSelfClose[ 0 ] })`
+			);
+		}
+
+		const customHexColors = content.match( /"(?:background|text)":\s*"#[0-9a-fA-F]{3,8}"/g );
+		if ( customHexColors ) {
+			fileErrors.push(
+				`hardcoded custom color override (${ customHexColors[ 0 ] }) — use theme.json palette presets`
+			);
+		}
+
+		if ( fileErrors.length ) {
+			fileErrors.forEach( ( e ) => fail( `${ name }: ${ e }` ) );
+			errors += fileErrors.length;
 		} else {
 			pass( name );
 		}
@@ -210,6 +239,14 @@ async function validateTheme() {
 			if ( badSelfClose ) {
 				fileErrors.push(
 					`${ badSelfClose.length } self-closing tag(s) missing space before /--> (e.g. ${ badSelfClose[ 0 ] })`
+				);
+			}
+
+			// Flag hardcoded custom hex overrides in style.color
+			const customHexColors = content.match( /"(?:background|text)":\s*"#[0-9a-fA-F]{3,8}"/g );
+			if ( customHexColors ) {
+				fileErrors.push(
+					`hardcoded custom color override (${ customHexColors[ 0 ] }) — use theme.json palette presets`
 				);
 			}
 

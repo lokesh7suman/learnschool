@@ -7,14 +7,14 @@ Minimal, non-negotiable standards for agents and developers working on this Word
 ## 1. Core Architecture (FSE Strictness)
 - **100% Declarative Presentation:** All layout markup lives in `templates/*.html`, `parts/*.html`, and `patterns/*.php`. Root `index.php` must exist strictly as an empty compatibility stub. NEVER create legacy PHP templates (`single.php`, `header.php`, `footer.php`, etc.) or call legacy template tags (`get_header()`, `wp_head()`, `the_content()`).
 - **`theme.json` v3 is Single Source of Truth:** Colors, typography, spacing scale (`var:preset|spacing|step-*`), layout dimensions, and element styles belong strictly in `theme.json`. Never write CSS utility classes in `style.css` for properties supported by `theme.json`. Never use `!important`.
-- **Modular Block Styles:** Block-specific CSS belongs in `assets/styles/core-<block-name>.css` (auto-enqueued via `wp_enqueue_block_style`). Keep `style.css` strictly for minimal edge-case fallbacks.
+- **Modular Block Styles:** Block-specific CSS belongs in `assets/styles/core-<block-name>.css` (auto-enqueued via `wp_enqueue_block_style`). Recurring UI treatments (cards, badges) belong in block styles (`is-style-*`) so visual updates cascade without touching pattern markup. Keep `style.css` strictly for minimal edge-case fallbacks.
 
 ---
 
 ## 2. File Boundaries & Responsibilities
-- **`templates/*.html`:** Pure Gutenberg block comment grammar (`<!-- wp:... -->`). NO executable PHP (`<?php ... ?>`). Prefer dynamic self-closing blocks.
+- **`templates/*.html`:** Pure Gutenberg block comment grammar (`<!-- wp:... -->`). NO executable PHP (`<?php ... ?>`). Prefer dynamic self-closing blocks. Delegate layout sections to patterns (`<!-- wp:pattern {"slug":"..."} /-->`).
 - **`parts/*.html`:** Reusable structural chrome (Header, Footer, Meta). Prefer delegating inner content to patterns (`<!-- wp:pattern {"slug":"..."} /-->`).
-- **`patterns/*.php`:** Docblock metadata header (slug prefixed with `learnschool/`) + block markup. Escape all translatable text using the `'learnschool'` text domain (`esc_html__( 'Text', 'learnschool' )`, `esc_attr__()`). NEVER run database queries (`WP_Query`) or PHP render loops.
+- **`patterns/*.php`:** Docblock metadata header (slug prefixed with `learnschool/`) + block markup. **Structure only:** Consume `theme.json` presets (`var:preset|spacing|step-*`, semantic color classes) and block styles (`is-style-*`). NEVER hardcode raw hex colors or fixed pixel spacing—UI/design updates must cascade from `theme.json` or CSS without mass-editing pattern files. Escape all translatable text using `'learnschool'` (`esc_html__( 'Text', 'learnschool' )`, `esc_attr__()`). NEVER run database queries (`WP_Query`) or PHP render loops.
 - **`inc/*.php`:** Modular backend PHP (Block Bindings, pattern categories). Strict typing (`declare(strict_types=1);`), access guard (`if ( ! defined( 'ABSPATH' ) ) exit;`).
 - **`assets/fonts/`:** Self-hosted WOFF2 only (SIL OFL 1.1). Zero external font CDNs (Google Fonts, Bunny, etc.).
 - **`assets/images/icons/`:** Vector SVGs only (`viewBox`, `currentColor`). NO system/OS emojis (🔒, ⭐, 🚀).

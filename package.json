@@ -23,7 +23,7 @@
 		"npm": ">=10.0.0"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^10.0.0",
+		"@axe-core/playwright": "^4.14.0",
 		"@wordpress/scripts": "^30.0.0",
 		"adm-zip": "^0.6.1",
 		"ajv": "^8.20.0",
@@ -38,7 +38,7 @@
 	"scripts": {
 		"build:zip": "node bin/build-zip.js",
 		"bundle": "npm run check && node bin/build-zip.js",
-		"check": "npm run lint:css && npm run lint:js && npm run lint:json && npm run lint:php && npm run lint:theme",
+		"check": "npm run lint:css && npm run lint:js && npm run lint:json && npm run lint:php && npm run lint:phpstan && npm run lint:theme",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style '**/*.css' --ignore-path .gitignore",
 		"lint:js": "wp-scripts lint-js 'assets/js/**/*.js'",

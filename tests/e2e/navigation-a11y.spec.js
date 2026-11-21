@@ -2,6 +2,7 @@
  * External dependencies
  */
 const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+const AxeBuilder = require( '@axe-core/playwright' ).default || require( '@axe-core/playwright' );
 
 test.describe( 'Interactive Navigation & Accessibility (a11y)', () => {
 
@@ -75,6 +76,22 @@ test.describe( 'Interactive Navigation & Accessibility (a11y)', () => {
 				h1Count,
 				`Expected at most one h1 element on route "${ route }", found ${ h1Count }`
 			).toBeLessThanOrEqual( 1 );
+		}
+	} );
+
+	test( 'Key templates pass automated WCAG 2.2 AA accessibility audit', async ( { page } ) => {
+		const routes = [ '/', '/sample-page/', '/hello-world/', '/category/uncategorized/', '/?s=school' ];
+
+		for ( const route of routes ) {
+			await page.goto( route );
+			const accessibilityScanResults = await new AxeBuilder( { page } )
+				.withTags( [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa' ] )
+				.analyze();
+
+			expect(
+				accessibilityScanResults.violations,
+				`Axe WCAG violations detected on route "${ route }"`
+			).toEqual( [] );
 		}
 	} );
 
