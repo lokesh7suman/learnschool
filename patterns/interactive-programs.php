@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-text-align-center has-primary-color has-text-color has-x-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;letter-spacing:0.1em;text-transform:uppercase"><?php echo esc_html__( 'Our Academic Pathways', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand","lineHeight":"1.2"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}},"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);font-family:var(--wp--preset--font-family--quicksand);line-height:1.2"><?php echo esc_html__( 'Age-Tailored Programs for ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Every Child', 'learnschool' ); ?></span></span></h2>
+<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"lineHeight":"1.2"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}},"fontSize":"xx-large"} -->
+<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.2"><?php echo esc_html__( 'Age-Tailored Programs for ', 'learnschool' ); ?><span class="learnschool-script"><span class="learnschool-underline-wavy" style="color:var(--wp--preset--color--primary)"><?php echo esc_html__( 'Every Child', 'learnschool' ); ?></span></span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.7"}},"fontSize":"large","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-large-font-size"><?php echo esc_html__( 'From sensory infant care to confident kindergarten preparation, our curriculum is engineered for joyful discovery at every stage.', 'learnschool' ); ?></p>
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-large-font-size" style="line-height:1.7"><?php echo esc_html__( 'From sensory infant care to confident kindergarten preparation, our curriculum is engineered for joyful discovery at every stage.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

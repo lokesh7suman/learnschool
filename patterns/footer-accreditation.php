@@ -75,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#curriculum' ) ); ?>"><?php echo esc_html__( 'Daily Rhythm Schedule', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#curriculum' ) ); ?>"><?php echo esc_html__( 'Curriculum & Programs', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->

@@ -20,16 +20,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-6","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-6);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.1em"}},"textColor":"primary","fontSize":"x-small"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-x-small-font-size" style="font-weight:700;letter-spacing:0.1em;text-transform:uppercase"><?php esc_html_e( 'Loved by Parents &amp; Students', 'learnschool' ); ?></p>
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"0.1em","textTransform":"uppercase","fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}},"textColor":"primary","fontSize":"x-small"} -->
+<p class="has-text-align-center has-primary-color has-text-color has-x-small-font-size" style="margin-bottom:var(--wp--preset--spacing--step-2);font-weight:700;letter-spacing:0.1em;text-transform:uppercase"><?php esc_html_e( 'Loved by Parents &amp; Students', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontFamily":"var:preset|font-family|quicksand"},"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}},"fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="font-family:var(--wp--preset--font-family--quicksand)"><?php esc_html_e( 'What Our School Community Says', 'learnschool' ); ?></h2>
+<!-- wp:heading {"textAlign":"center","level":2,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}},"fontSize":"xx-large"} -->
+<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php esc_html_e( 'What Our School Community Says', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textAlign":"center","textColor":"contrast-subtle","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"fontSize":"medium"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size"><?php esc_html_e( 'Real experiences shared by parents, alumni, and students about their journey with us.', 'learnschool' ); ?></p>
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-5)"><?php esc_html_e( 'Real experiences shared by parents, alumni, and students about their journey with us.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
