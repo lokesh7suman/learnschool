@@ -23,6 +23,10 @@ Tags: education, blog, full-site-editing, block-patterns, block-styles, style-va
 	accent-color: var(--wp--preset--color--primary, #704fe6);
 }
 
+html {
+	scroll-padding-top: calc(88px + var(--wp-admin--admin-bar--height, 0px));
+}
+
 html,
 body {
 	overflow-x: clip;
@@ -74,8 +78,8 @@ body:not(.wp-admin) header.wp-block-template-part > .wp-block-group > .wp-block-
 	position: sticky;
 	top: calc(0px + var(--wp-admin--admin-bar--height, 0px));
 	z-index: 100;
-	border-bottom-color: var(--wp--preset--color--border, #e2e8f0);
-	box-shadow: 0 1px 10px rgba(15, 23, 42, 0.04);
+	border-bottom-color: var(--wp--preset--color--border-default, #e2e8f0);
+	box-shadow: 0 4px 18px -4px rgba(112, 79, 230, 0.08);
 }
 
 @media (max-width: 600px) {
@@ -109,10 +113,14 @@ figure.wp-block-image {
 	height: auto;
 }
 
-pre {
+pre,
+.wp-block-code,
+.wp-block-preformatted {
 	max-width: 100%;
 	overflow-x: auto;
 	box-sizing: border-box;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
 }
 
 .wp-block-image img[style*="aspect-ratio"] {
@@ -318,8 +326,12 @@ input[type="reset"]:focus-visible,
 	outline-offset: 3px;
 }
 
-:is(.has-primary-background-color, .has-primary-dark-background-color, .has-midnight-background-color, .has-contrast-background-color) :is(button, input[type="submit"], input[type="button"], input[type="reset"], .wp-block-button__link, .wp-element-button):focus-visible {
+:is(.has-primary-background-color, .has-primary-dark-background-color, .has-midnight-background-color, .has-contrast-background-color, .has-secondary-dark-background-color, .has-rose-background-color) :is(button, input[type="submit"], input[type="button"], input[type="reset"], .wp-block-button__link, .wp-element-button):focus-visible {
 	outline-color: var(--wp--preset--color--base, #fff);
+}
+
+:is(.has-primary-background-color, .has-primary-dark-background-color, .has-midnight-background-color, .has-contrast-background-color, .has-secondary-dark-background-color, .has-rose-background-color) :is(.has-base-background-color, .has-base-subtle-background-color, .has-surface-background-color, .has-surface-slate-background-color, .has-primary-light-background-color, .has-accent-background-color, .is-style-learnschool-card):not(.has-primary-background-color, .has-primary-dark-background-color, .has-midnight-background-color, .has-contrast-background-color) :is(button, input[type="submit"], input[type="button"], input[type="reset"], .wp-block-button__link, .wp-element-button):focus-visible {
+	outline-color: var(--wp--preset--color--primary-dark, #5837c7);
 }
 
 :where(a:focus-visible) {

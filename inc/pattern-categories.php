@@ -14,8 +14,8 @@
  *   learnschool/hero           Hero (entrance banners and campus introductions)
  *   learnschool/pages          Pages (complete full-page starter layouts)
  *   learnschool/posts          Posts (blog grids, lists, archives, and author cards)
- *   learnschool/pricing        Tuition & Pricing (tuition tables and program plan comparisons)
- *   learnschool/team           Faculty & Staff (educator profiles, teacher grids, leadership bios)
+ *   learnschool/pricing        Pricing (tuition tables and program plan comparisons)
+ *   learnschool/team           Team (educator profiles, teacher grids, leadership bios)
  *   learnschool/testimonial    Testimonials (parent reviews, ratings, leadership quotes)
  *
  * Core template part categories:
@@ -46,48 +46,48 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 
 		$categories = array(
 			'learnschool/call-to-action' => array(
-				'label'       => esc_html_x( 'Call To Action', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Conversion-focused sections, admissions roadmaps, event schedules, and enrollment forms.', 'learnschool' ),
+				'label'       => _x( 'Call To Action', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Conversion-focused sections, admissions roadmaps, event schedules, and enrollment forms.', 'learnschool' ),
 			),
 
 			'learnschool/faq'            => array(
-				'label'       => esc_html_x( 'FAQ', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Frequently asked questions, expandable accordions, and parent handbook guides.', 'learnschool' ),
+				'label'       => _x( 'FAQ', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Frequently asked questions, expandable accordions, and parent handbook guides.', 'learnschool' ),
 			),
 
 			'learnschool/features'       => array(
-				'label'       => esc_html_x( 'Features', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Feature highlight grids, program showcases, and curriculum sections.', 'learnschool' ),
+				'label'       => _x( 'Features', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Feature highlight grids, program showcases, and curriculum sections.', 'learnschool' ),
 			),
 
 			'learnschool/hero'           => array(
-				'label'       => esc_html_x( 'Hero', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Full-width hero and banner sections for the top of pages.', 'learnschool' ),
+				'label'       => _x( 'Hero', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Full-width hero and banner sections for the top of pages.', 'learnschool' ),
 			),
 
 			'learnschool/pages'          => array(
-				'label'       => esc_html_x( 'Pages', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Complete starter layouts for school home, about, programs, admissions, blog, and contact pages.', 'learnschool' ),
+				'label'       => _x( 'Pages', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Complete starter layouts for school home, about, programs, admissions, blog, and contact pages.', 'learnschool' ),
 			),
 
 			'learnschool/posts'          => array(
-				'label'       => esc_html_x( 'Posts & Blog', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Blog post grids, list layouts, archive streams, and single-post author cards.', 'learnschool' ),
+				'label'       => _x( 'Posts', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Blog post grids, list layouts, archive streams, and single-post author cards.', 'learnschool' ),
 			),
 
 			'learnschool/pricing'        => array(
-				'label'       => esc_html_x( 'Tuition & Pricing', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Tuition tables, program tier comparisons, and sibling discount highlights.', 'learnschool' ),
+				'label'       => _x( 'Pricing', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Tuition tables, program tier comparisons, and sibling discount highlights.', 'learnschool' ),
 			),
 
 			'learnschool/team'           => array(
-				'label'       => esc_html_x( 'Faculty & Staff', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Educator profiles, teacher grids, leadership bios, and faculty spotlights.', 'learnschool' ),
+				'label'       => _x( 'Team', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Educator profiles, teacher grids, leadership bios, and faculty spotlights.', 'learnschool' ),
 			),
 
 			'learnschool/testimonial'    => array(
-				'label'       => esc_html_x( 'Testimonials', 'Block pattern category', 'learnschool' ),
-				'description' => esc_html__( 'Parent reviews, student stories, and quote showcases.', 'learnschool' ),
+				'label'       => _x( 'Testimonials', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Parent reviews, student stories, and quote showcases.', 'learnschool' ),
 			),
 		);
 

@@ -82,6 +82,16 @@
 				return;
 			}
 
+			// Re-sync collapsed mobile submenu aria-expanded after WP Interactivity opens the modal.
+			if (
+				target.closest(
+					'.wp-block-navigation__responsive-container-open'
+				)
+			) {
+				window.requestAnimationFrame( initMobileSubmenus );
+				return;
+			}
+
 			// Check if click is inside an open mobile responsive navigation container.
 			const container = target.closest(
 				'.wp-block-navigation__responsive-container.is-menu-open'

@@ -253,6 +253,7 @@ add_filter( 'default_wp_template_part_areas', 'learnschool_template_part_areas' 
 // Load modular component configurations.
 require_once get_template_directory() . '/inc/pattern-categories.php';
 require_once get_template_directory() . '/inc/block-styles.php';
+require_once get_template_directory() . '/inc/block-filters.php';
 require_once get_template_directory() . '/inc/site-logo.php';
 require_once get_template_directory() . '/inc/theme-admin.php';
 
@@ -356,3 +357,26 @@ if ( ! function_exists( 'learnschool_respect_static_front_page' ) ) :
 	}
 endif;
 add_filter( 'frontpage_template', 'learnschool_respect_static_front_page' );
+
+if ( ! function_exists( 'learnschool_post_classes' ) ) :
+	/**
+	 * Add a consistent sticky modifier class for sticky posts on non-paged views,
+	 * including archives and custom Query Loop patterns outside the main blog index.
+	 *
+	 * @since 1.0.0
+	 * @param array<int, string> $classes   Space-separated post class names.
+	 * @param array<int, string> $css_class Additional classes passed to post_class().
+	 * @param int                $post_id   Current post ID.
+	 * @return array<int, string> Filtered post class names.
+	 */
+	function learnschool_post_classes( array $classes, array $css_class, int $post_id ): array {
+		unset( $css_class );
+
+		if ( ! is_admin() && ! is_paged() && $post_id > 0 && is_sticky( $post_id ) && ! in_array( 'sticky', $classes, true ) ) {
+			$classes[] = 'learnschool-is-sticky';
+		}
+
+		return $classes;
+	}
+endif;
+add_filter( 'post_class', 'learnschool_post_classes', 10, 3 );

@@ -26,7 +26,7 @@
 
 .wp-block-comments .wp-block-comment-template > li {
 	background-color: var(--wp--preset--color--base, #fff);
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 24px;
 	padding: var(--wp--preset--spacing--step-4, 24px) var(--wp--preset--spacing--step-5, 28px);
 	margin-bottom: 20px;
@@ -172,5 +172,9 @@
 
 	.wp-block-comments .wp-block-comment-template ol {
 		padding-left: var(--wp--preset--spacing--step-3, 16px);
+	}
+
+	.wp-block-comments .wp-block-comment-template ol ol ol ol {
+		padding-left: 0;
 	}
 }

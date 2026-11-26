@@ -21,7 +21,8 @@
 
 .wp-block-site-title a {
 	display: inline-block;
-	max-width: 100%;
+	box-sizing: border-box;
+	max-width: calc(100% + 16px);
 	padding: 4px 8px 6px;
 	margin: -4px -8px -6px;
 	border-radius: 10px;

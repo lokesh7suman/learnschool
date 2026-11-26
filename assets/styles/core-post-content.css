@@ -1,0 +1,69 @@
+/**
+ * Core Post Content Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/post-content') on init.
+ * Ensures floated media clears cleanly and styles multi-page post pagination links.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-post-content::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Paginated Post Links (<!--nextpage--> / wp_link_pages) */
+.post-nav-links {
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-top: var(--wp--preset--spacing--step-5, 32px);
+	margin-bottom: var(--wp--preset--spacing--step-4, 24px);
+	padding-top: var(--wp--preset--spacing--step-4, 24px);
+	border-top: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 600;
+	color: var(--wp--preset--color--contrast-subtle, #4b5563);
+}
+
+.post-nav-links .post-page-numbers {
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 38px;
+	height: 38px;
+	padding: 0 12px;
+	border-radius: 9999px;
+	border: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	color: var(--wp--preset--color--contrast, #121212);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 700;
+	line-height: 1;
+	text-decoration: none;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.post-nav-links a.post-page-numbers:hover {
+	border-color: var(--wp--preset--color--primary, #704fe6);
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary-light, #dec8fe) 25%, var(--wp--preset--color--base, #fff));
+}
+
+.post-nav-links .post-page-numbers.current {
+	background-color: var(--wp--preset--color--primary, #704fe6);
+	border-color: var(--wp--preset--color--primary, #704fe6);
+	color: var(--wp--preset--color--base, #fff);
+}
+
+@media (max-width: 640px) {
+
+	.post-nav-links .post-page-numbers {
+		min-width: 44px;
+		height: 44px;
+	}
+}

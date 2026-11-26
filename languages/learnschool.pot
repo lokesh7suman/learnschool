@@ -210,7 +210,7 @@ msgstr ""
 
 #: inc/pattern-categories.php:74
 msgctxt "Block pattern category"
-msgid "Posts & Blog"
+msgid "Posts"
 msgstr ""
 
 #: inc/pattern-categories.php:75
@@ -219,7 +219,7 @@ msgstr ""
 
 #: inc/pattern-categories.php:79
 msgctxt "Block pattern category"
-msgid "Tuition & Pricing"
+msgid "Pricing"
 msgstr ""
 
 #: inc/pattern-categories.php:80
@@ -228,7 +228,7 @@ msgstr ""
 
 #: inc/pattern-categories.php:84
 msgctxt "Block pattern category"
-msgid "Faculty & Staff"
+msgid "Team"
 msgstr ""
 
 #: inc/pattern-categories.php:85
