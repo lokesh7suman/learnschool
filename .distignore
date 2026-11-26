@@ -3,6 +3,9 @@
 .github
 .gitignore
 .gitattributes
+.impeccable/
+DESIGN.md
+PRODUCT.md
 
 # Environment and Editor Configs
 .editorconfig

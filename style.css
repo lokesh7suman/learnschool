@@ -11,7 +11,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: learnschool
-Tags: full-site-editing, block-patterns, block-styles, education, wide-blocks, custom-colors, custom-logo, editor-style
+Tags: full-site-editing, block-patterns, block-styles, style-variations, education, wide-blocks, custom-logo, editor-style, translation-ready
 
 LearnSchool WordPress Theme, Copyright 2026 codeclove.
 LearnSchool is distributed under the terms of the GNU GPL v2 or later.
@@ -235,13 +235,23 @@ h5,
 h6,
 .wp-block-heading {
 	text-wrap: balance;
-	overflow-wrap: normal;
+	overflow-wrap: break-word;
 	word-break: normal;
 }
 
 /* Ensure headings on primary/dark containers default to base white */
 :where(.has-primary-background-color, .has-primary-dark-background-color, .has-contrast-background-color) :where(h1, h2, h3, h4, h5, h6, .wp-block-heading):not([class*="has-"]) {
 	color: var(--wp--preset--color--base, #fff);
+}
+
+p,
+.wp-block-paragraph,
+li,
+.wp-block-list,
+.wp-block-post-content,
+.wp-block-post-title,
+.wp-block-site-title {
+	overflow-wrap: break-word;
 }
 
 p,

@@ -117,4 +117,36 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		).toBe( true );
 	} );
 
+	test( 'Static front page Reading setting renders selected page content instead of overriding it', async ( { page, requestUtils } ) => {
+		const originalSettings = await requestUtils.rest( { path: '/wp/v2/settings' } );
+		const pages = await requestUtils.rest( { path: '/wp/v2/pages?slug=sample-page' } );
+		expect( pages.length ).toBeGreaterThan( 0 );
+
+		try {
+			await requestUtils.rest( {
+				method: 'POST',
+				path: '/wp/v2/settings',
+				data: {
+					show_on_front: 'page',
+					page_on_front: pages[ 0 ].id,
+				},
+			} );
+
+			const response = await page.goto( '/' );
+			expect( response.status() ).toBe( 200 );
+
+			await expect( page.locator( 'h1.wp-block-post-title' ) ).toContainText( 'Sample Page' );
+			await expect( page.locator( '.learnschool-hero-doodles' ) ).toHaveCount( 0 );
+		} finally {
+			await requestUtils.rest( {
+				method: 'POST',
+				path: '/wp/v2/settings',
+				data: {
+					show_on_front: originalSettings.show_on_front,
+					page_on_front: originalSettings.page_on_front,
+				},
+			} );
+		}
+	} );
+
 } );

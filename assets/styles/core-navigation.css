@@ -491,7 +491,7 @@
 
 @media (max-width: 359px) {
 
-	/* Ultra-narrow screens keep Brand + Hamburger clean; Enroll CTA remains inside drawer */
+	/* Keep Brand + Hamburger clean on ultra-narrow screens */
 	header .learnschool-header-actions {
 		display: none;
 	}
@@ -946,7 +946,7 @@
 
 
 /* ==========================================================================
-   6. Header Action Buttons & Drawer Footer Controls
+   6. Header Action Buttons
    ========================================================================== */
 
 .learnschool-header-actions {
@@ -1045,118 +1045,6 @@ aside.wp-block-group p a:focus-visible {
 	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
 		0 0 0 4px rgba(112, 79, 230, 0.14);
 	border-radius: 6px;
-}
-
-/* ==========================================================================
-   6c. Mobile Drawer Footer (CTA & Quick Actions)
-   ========================================================================== */
-
-/* Mobile Drawer Footer — ONLY visible when mobile drawer is open */
-.learnschool-mobile-drawer__footer {
-	display: none;
-}
-
-.wp-block-navigation__responsive-container.is-menu-open .learnschool-mobile-drawer__footer {
-	box-sizing: border-box;
-	width: 100%;
-	max-width: 100%;
-	flex: 0 0 auto;
-	margin-top: 28px;
-	padding-top: 20px;
-	border-top: 1px solid var(--wp--preset--color--border, #e2e8f0);
-	padding-bottom: 8px;
-	display: flex;
-	flex-direction: column;
-	gap: 14px;
-}
-
-.learnschool-mobile-drawer__divider {
-	display: none;
-}
-
-.learnschool-mobile-drawer__cta {
-	box-sizing: border-box;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	width: 100%;
-	max-width: 100%;
-	min-height: 48px;
-	padding: 12px 24px;
-	border-radius: 9999px;
-	background-color: var(--wp--preset--color--primary, #704fe6);
-	color: var(--wp--preset--color--surface, #fff);
-	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: var(--wp--preset--font-size--small, 0.875rem);
-	font-weight: 700;
-	text-decoration: none;
-	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.25);
-	transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.learnschool-mobile-drawer__cta:hover {
-	background-color: var(--wp--preset--color--primary-dark, #5837c7);
-	box-shadow: 0 6px 18px rgba(112, 79, 230, 0.35);
-	color: var(--wp--preset--color--surface, #fff);
-}
-
-.learnschool-mobile-drawer__cta:active {
-	transform: scale(0.97);
-}
-
-.learnschool-mobile-drawer__cta:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary);
-	outline-offset: 2px;
-}
-
-.learnschool-mobile-drawer__meta {
-	box-sizing: border-box;
-	width: 100%;
-	max-width: 100%;
-	display: grid;
-	grid-template-columns: auto minmax(0, 1fr);
-	align-items: center;
-	gap: 4px 12px;
-	padding-inline: 0;
-}
-
-@media (max-width: 359px) {
-
-	.learnschool-mobile-drawer__meta {
-		grid-template-columns: 1fr;
-	}
-}
-
-.learnschool-mobile-drawer__meta-link {
-	box-sizing: border-box;
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
-	font-weight: 600;
-	line-height: 1.35;
-	color: var(--wp--preset--color--contrast-subtle, #4b5563);
-	text-decoration: none;
-	min-height: 44px;
-	transition: color 0.15s ease;
-}
-
-.learnschool-mobile-drawer__meta-link svg {
-	flex-shrink: 0;
-}
-
-.learnschool-mobile-drawer__meta-link:hover {
-	color: var(--wp--preset--color--primary, #704fe6);
-}
-
-.learnschool-mobile-drawer__meta-link:focus-visible {
-	outline: none;
-	border-radius: 8px;
-	color: var(--wp--preset--color--primary, #704fe6);
-	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
-		0 0 0 4px rgba(112, 79, 230, 0.14);
 }
 
 /* ==========================================================================
@@ -1265,9 +1153,6 @@ aside.wp-block-group p a:focus-visible {
 	.learnschool-header-actions .wp-block-button__link:hover,
 	.learnschool-header-actions .wp-block-button__link:active,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover,
-	.learnschool-mobile-drawer__cta,
-	.learnschool-mobile-drawer__cta:hover,
-	.learnschool-mobile-drawer__cta:active,
 	.wp-block-navigation__responsive-container-open,
 	.wp-block-navigation__responsive-container-open:active,
 	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close,
@@ -1499,7 +1384,7 @@ header .learnschool-utility-bar__portal a {
 
 @media (max-width: 640px) {
 
-	/* Hide utility strip on mobile phones; utility links remain neatly organized inside the drawer */
+	/* Hide secondary utility strip on mobile phones to keep header compact */
 	header .learnschool-utility-bar,
 	header > .wp-block-group > .has-base-subtle-background-color {
 		display: none;

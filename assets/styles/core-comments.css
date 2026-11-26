@@ -39,11 +39,16 @@
 	box-shadow: 0 8px 24px rgba(112, 79, 230, 0.06);
 }
 
+.wp-block-comments .wp-block-columns > .wp-block-column {
+	min-width: 0;
+}
+
 .wp-block-comment-author-name {
 	font-weight: 700;
 	font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	color: var(--wp--preset--color--contrast);
 	margin-bottom: 2px;
+	overflow-wrap: break-word;
 }
 
 .wp-block-comment-author-name a {
@@ -74,6 +79,7 @@
 	font-size: var(--wp--preset--font-size--base, 1rem);
 	line-height: 1.7;
 	color: var(--wp--preset--color--contrast);
+	overflow-wrap: break-word;
 }
 
 .wp-block-comment-reply-link .comment-reply-link,

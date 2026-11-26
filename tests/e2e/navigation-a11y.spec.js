@@ -57,6 +57,18 @@ test.describe( 'Interactive Navigation & Accessibility (a11y)', () => {
 			await expect( menuLinks.first() ).toBeVisible();
 		}
 
+		// Mobile drawer should stay clean and focused on navigation links without extra injected CTA or meta strips
+		await expect( drawer.locator( '.learnschool-mobile-drawer__footer' ) ).toHaveCount( 0 );
+		await expect( drawer.locator( '.learnschool-mobile-drawer__meta' ) ).toHaveCount( 0 );
+
+		// Pressing Escape closes the drawer via keyboard navigation
+		await page.keyboard.press( 'Escape' );
+		await expect( drawer ).not.toBeVisible();
+
+		// Re-open and close with close button
+		await hamburger.click();
+		await expect( drawer ).toBeVisible();
+
 		// Click close button
 		const closeButton = page.locator( '.wp-block-navigation__responsive-container-close' );
 		await expect( closeButton ).toBeVisible();

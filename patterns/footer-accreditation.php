@@ -71,11 +71,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#tuition' ) ); ?>"><?php echo esc_html__( 'Tuition & Financial Aid', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Tuition & Financial Aid', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#curriculum' ) ); ?>"><?php echo esc_html__( 'Curriculum & Programs', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Curriculum & Programs', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -83,7 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#tour' ) ); ?>"><?php echo esc_html__( 'Schedule Campus Visit', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Schedule Campus Visit', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
@@ -126,7 +126,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 $learnschool_site_name = wp_strip_all_tags( get_bloginfo( 'name' ) );
 /* translators: 1: Current calendar year, 2: Site title. */
-printf( esc_html__( '© %1$s %2$s. All rights reserved.', 'learnschool' ), esc_html( gmdate( 'Y' ) ), '' !== $learnschool_site_name ? esc_html( $learnschool_site_name ) : esc_html__( 'My School', 'learnschool' ) );
+printf( esc_html__( '© %1$s %2$s', 'learnschool' ), esc_html( gmdate( 'Y' ) ), '' !== $learnschool_site_name ? esc_html( $learnschool_site_name ) : esc_html__( 'My School', 'learnschool' ) );
 ?>
 </p>
 <!-- /wp:paragraph -->

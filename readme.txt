@@ -6,7 +6,7 @@ Requires PHP: 8.0
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: full-site-editing, block-patterns, block-styles, education, wide-blocks, custom-colors, custom-logo, editor-style
+Tags: full-site-editing, block-patterns, block-styles, style-variations, education, wide-blocks, custom-logo, editor-style, translation-ready
 
 == Description ==
 

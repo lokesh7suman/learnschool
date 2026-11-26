@@ -30,10 +30,14 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 		// 3. Post with unbroken 85-character word title (Taumatawhakatangihangakoauau...)
 		const res3 = await page.goto( '/title-should-not-overflow-the-content-area/' );
 		expect( res3.status() ).toBe( 200 );
-		const isOverflowing = await page.evaluate( () => {
-			return document.documentElement.scrollWidth > window.innerWidth;
+		const headingOverflows = await page.evaluate( () => {
+			const h1 = document.querySelector( 'h1.wp-block-post-title' );
+			const headingOverflow = h1 ? h1.scrollWidth > h1.clientWidth + 1 : true;
+			const docOverflow = document.documentElement.scrollWidth > window.innerWidth;
+			return { headingOverflow, docOverflow };
 		} );
-		expect( isOverflowing, 'Unbroken long title caused horizontal page overflow' ).toBe( false );
+		expect( headingOverflows.docOverflow, 'Unbroken long title caused horizontal page overflow' ).toBe( false );
+		expect( headingOverflows.headingOverflow, 'Unbroken long title clipped or overflowed its h1 container' ).toBe( false );
 	} );
 
 	test( 'Paginated posts (<!--nextpage-->) render page numbers and navigate correctly', async ( { page } ) => {

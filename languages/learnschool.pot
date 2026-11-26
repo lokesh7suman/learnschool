@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T07:34:12+00:00\n"
+"POT-Creation-Date: 2026-11-26T10:01:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -42,46 +42,23 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: functions.php:106
-#: patterns/header-right-aligned.php:34
-#: patterns/header-two-row.php:59
-msgid "Enroll Now"
+#: functions.php:105
+msgid "Menu"
 msgstr ""
 
-#: functions.php:108
-#: patterns/header-two-row.php:27
-msgid "Call: (555) 019-2834"
-msgstr ""
-
-#: functions.php:110
-#: patterns/header-two-row.php:37
-msgid "Programs Overview"
-msgstr ""
-
-#: functions.php:112
-#: patterns/header-two-row.php:41
-msgid "Staff Directory"
-msgstr ""
-
-#: functions.php:113
-#: patterns/contact-campus.php:76
-#: patterns/header-two-row.php:31
-msgid "Mon–Fri: 8:00 AM – 5:00 PM"
-msgstr ""
-
-#: functions.php:193
+#: functions.php:185
 msgid "Banner"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:186
 msgid "Top announcement bars, campus alert strips, and utility ribbons."
 msgstr ""
 
-#: functions.php:201
+#: functions.php:193
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:194
 msgid "Curriculum navigation, educator profiles, and school widget sidebars."
 msgstr ""
 
@@ -581,6 +558,11 @@ msgstr ""
 
 #: patterns/contact-campus.php:72
 msgid "Morning tours by appointment Tuesday through Friday."
+msgstr ""
+
+#: patterns/contact-campus.php:76
+#: patterns/header-two-row.php:31
+msgid "Mon–Fri: 8:00 AM – 5:00 PM"
 msgstr ""
 
 #: patterns/contact-campus.php:84
@@ -1227,7 +1209,7 @@ msgstr ""
 #: patterns/footer-accreditation.php:129
 #: patterns/footer-newsletter.php:132
 #, php-format
-msgid "© %1$s %2$s. All rights reserved."
+msgid "© %1$s %2$s"
 msgstr ""
 
 #. translators: 1: Current calendar year, 2: Site title.
@@ -1390,6 +1372,11 @@ msgctxt "Pattern description"
 msgid "Clean header with site logo and title on the left, primary navigation aligned to the right, and call-to-action button."
 msgstr ""
 
+#: patterns/header-right-aligned.php:34
+#: patterns/header-two-row.php:59
+msgid "Enroll Now"
+msgstr ""
+
 #: patterns/header-two-row.php
 msgctxt "Pattern title"
 msgid "Header Two-Row with Utility Bar"
@@ -1398,6 +1385,18 @@ msgstr ""
 #: patterns/header-two-row.php
 msgctxt "Pattern description"
 msgid "Two-tier header featuring a top utility contact strip above the primary multi-level navigation bar."
+msgstr ""
+
+#: patterns/header-two-row.php:27
+msgid "Call: (555) 019-2834"
+msgstr ""
+
+#: patterns/header-two-row.php:37
+msgid "Programs Overview"
+msgstr ""
+
+#: patterns/header-two-row.php:41
+msgid "Staff Directory"
 msgstr ""
 
 #: patterns/hero-playful-doodles.php
@@ -1837,6 +1836,20 @@ msgstr ""
 #: patterns/page-programs.php
 msgctxt "Pattern description"
 msgid "Complete Programs page layout with campus tour hero, signature learning programs, tactile curriculum showcase, four-step learning journey, and tour CTA."
+msgstr ""
+
+#: patterns/post-meta.php
+msgctxt "Pattern title"
+msgid "Post Meta"
+msgstr ""
+
+#: patterns/post-meta.php
+msgctxt "Pattern description"
+msgid "Post publish date and author byline metadata bar for single posts."
+msgstr ""
+
+#: patterns/post-meta.php:29
+msgid "By"
 msgstr ""
 
 #: patterns/teachers-photos-grid.php

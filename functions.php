@@ -102,16 +102,7 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			'learnschool-navigation',
 			'learnschoolNavData',
 			array(
-				'menuTitle'      => __( 'Menu', 'learnschool' ),
-				'ctaUrl'         => esc_url_raw( home_url( '/#admissions' ) ),
-				'ctaLabel'       => __( 'Enroll Now', 'learnschool' ),
-				'phoneHref'      => 'tel:5550192834',
-				'phoneLabel'     => __( 'Call: (555) 019-2834', 'learnschool' ),
-				'portalUrl'      => esc_url_raw( home_url( '/#programs' ) ),
-				'portalLabel'    => __( 'Programs Overview', 'learnschool' ),
-				'directoryUrl'   => esc_url_raw( home_url( '/#faculty' ) ),
-				'directoryLabel' => __( 'Staff Directory', 'learnschool' ),
-				'hoursLabel'     => __( 'Mon–Fri: 8:00 AM – 5:00 PM', 'learnschool' ),
+				'menuTitle' => __( 'Menu', 'learnschool' ),
 			)
 		);
 	}
@@ -288,3 +279,33 @@ if ( ! function_exists( 'learnschool_preload_webfonts' ) ) :
 	}
 endif;
 add_action( 'wp_head', 'learnschool_preload_webfonts', 1 );
+
+if ( ! function_exists( 'learnschool_respect_static_front_page' ) ) :
+	/**
+	 * Defer to the selected static page template when Settings -> Reading uses a static front page,
+	 * unless the user explicitly saved a custom Front Page template in the Site Editor.
+	 *
+	 * @since 1.0.0
+	 * @param string $template Resolved front-page template path.
+	 * @return string Empty string to fall back to the page template hierarchy, or the original template.
+	 */
+	function learnschool_respect_static_front_page( string $template ): string {
+		if ( is_admin() ) {
+			return $template;
+		}
+
+		if ( 'page' !== get_option( 'show_on_front' ) || (int) get_option( 'page_on_front' ) <= 0 ) {
+			return $template;
+		}
+
+		$front_templates = get_block_templates( array( 'slug__in' => array( 'front-page' ) ) );
+		foreach ( $front_templates as $front_template ) {
+			if ( 'front-page' === $front_template->slug && 'custom' === $front_template->source ) {
+				return $template;
+			}
+		}
+
+		return '';
+	}
+endif;
+add_filter( 'frontpage_template', 'learnschool_respect_static_front_page' );
