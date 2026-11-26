@@ -137,7 +137,7 @@
 					"name": "Midnight / Deep Navy"
 				},
 				{
-					"slug": "border",
+					"slug": "border-default",
 					"color": "#e2e8f0",
 					"name": "Border / Soft Gray"
 				},
@@ -599,7 +599,7 @@
 			},
 			"core/details": {
 				"border": {
-					"color": "var:preset|color|border",
+					"color": "var:preset|color|border-default",
 					"radius": "20px",
 					"style": "solid",
 					"width": "1px"
@@ -638,7 +638,7 @@
 			},
 			"core/table": {
 				"border": {
-					"color": "var:preset|color|border",
+					"color": "var:preset|color|border-default",
 					"style": "solid",
 					"width": "1px"
 				},
@@ -662,7 +662,7 @@
 			},
 			"core/code": {
 				"border": {
-					"color": "var:preset|color|border",
+					"color": "var:preset|color|border-default",
 					"radius": "16px",
 					"style": "solid",
 					"width": "1.5px"

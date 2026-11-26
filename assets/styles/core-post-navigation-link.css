@@ -34,7 +34,7 @@
 .wp-block-post-navigation-link:has(a) {
 	padding: var(--wp--preset--spacing--step-3, 16px) var(--wp--preset--spacing--step-4, 24px);
 	border-radius: 20px;
-	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
 	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
 	box-sizing: border-box;
 	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;

@@ -55,7 +55,7 @@
 	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
 	text-decoration: none;
-	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
 	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 

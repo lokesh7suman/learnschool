@@ -18,7 +18,7 @@ table.wp-block-table {
 	width: 100%;
 	border-collapse: separate;
 	border-spacing: 0;
-	border: 1.5px solid var(--wp--preset--color--border, #e5e7eb);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e5e7eb);
 	border-radius: 20px;
 	overflow: hidden;
 	background-color: var(--wp--preset--color--base, #fff);
@@ -41,8 +41,8 @@ table.wp-block-table th,
 .wp-block-table td,
 table.wp-block-table td {
 	padding: 14px 20px;
-	border-bottom: 1px solid var(--wp--preset--color--border, #f1f3f7);
-	border-right: 1px solid var(--wp--preset--color--border, #f8f9fa);
+	border-bottom: 1px solid var(--wp--preset--color--border-default, #f1f3f7);
+	border-right: 1px solid var(--wp--preset--color--border-default, #f8f9fa);
 	color: var(--wp--preset--color--contrast);
 	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	line-height: 1.5;

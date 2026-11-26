@@ -38,7 +38,7 @@
 	height: 38px;
 	padding: 0 8px;
 	border-radius: 9999px;
-	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
 	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
 	line-height: 1;

@@ -9,7 +9,7 @@
 /* ── Base Details / Accordion Block ─────────────────────────────────── */
 
 .wp-block-details {
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 20px;
 	padding: 18px 24px;
 	background-color: var(--wp--preset--color--base, #fff);
@@ -35,7 +35,7 @@
 
 .wp-block-details.is-style-learnschool-faq-pill {
 	background-color: var(--wp--preset--color--surface, #fff);
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 36px;
 	padding: 18px 28px;
 	box-sizing: border-box;

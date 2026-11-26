@@ -20,7 +20,7 @@
 				{ "slug": "surface",         "color": "#ffffff", "name": "Surface / White" },
 				{ "slug": "surface-slate",   "color": "#fdf4f5", "name": "Surface Soft" },
 				{ "slug": "midnight",        "color": "#1a162b", "name": "Midnight / Deep Ink" },
-				{ "slug": "border",          "color": "#f3e4e6", "name": "Border / Soft Rose" },
+				{ "slug": "border-default",  "color": "#f3e4e6", "name": "Border / Soft Rose" },
 				{ "slug": "border-subtle",   "color": "#fdf2f3", "name": "Border Subtle / Extra Light" },
 				{ "slug": "info",            "color": "#0284c7", "name": "Info Blue" },
 				{ "slug": "info-light",      "color": "#e0f2fe", "name": "Info Light / Sky Tint" },
