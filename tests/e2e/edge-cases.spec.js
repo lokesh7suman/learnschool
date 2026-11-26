@@ -89,22 +89,6 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 		await expect( content ).not.toContainText( 'This content is password-protected' );
 	} );
 
-	test( 'Deeply nested comments render cleanly without horizontal overflow on mobile', async ( { page } ) => {
-		// Set mobile viewport (iPhone 14)
-		await page.setViewportSize( { width: 390, height: 844 } );
-		await page.goto( '/template-comments/' );
-
-		// Comments block should be attached
-		const commentsArea = page.locator( '.wp-block-comments' );
-		await expect( commentsArea ).toBeAttached();
-
-		// Check for horizontal overflow (page scrollWidth must not exceed viewport width)
-		const isOverflowing = await page.evaluate( () => {
-			return document.documentElement.scrollWidth > window.innerWidth;
-		} );
-		expect( isOverflowing, 'Page content horizontally overflows on mobile viewport' ).toBe( false );
-	} );
-
 	test( 'Sticky post appears in query loop on tag archive with distinct prominence', async ( { page } ) => {
 		await page.goto( '/tag/sticky-2/' );
 

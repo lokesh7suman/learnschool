@@ -24,17 +24,17 @@ const PHP_ERROR_PATTERNS = [
 ];
 
 const ROUTES_TO_AUDIT = [
-	'/',
-	'/hello-world/',
-	'/sample-page/',
-	'/category/uncategorized/',
-	'/?s=school',
-	'/this-page-definitely-does-not-exist-404/',
+	{ path: '/', expectedStatus: 200 },
+	{ path: '/hello-world/', expectedStatus: 200 },
+	{ path: '/about/page-markup-and-formatting/', expectedStatus: 200 },
+	{ path: '/category/uncategorized/', expectedStatus: 200 },
+	{ path: '/?s=school', expectedStatus: 200 },
+	{ path: '/this-page-definitely-does-not-exist-404/', expectedStatus: 404 },
 ];
 
 test.describe( 'WordPress.org TRT Quality & Compliance Audit', () => {
 
-	for ( const route of ROUTES_TO_AUDIT ) {
+	for ( const { path: route, expectedStatus } of ROUTES_TO_AUDIT ) {
 		test( `Route "${ route }" passes strict hygiene (no external CDNs, no 404 assets, no PHP errors)`, async ( { page } ) => {
 			const consoleErrors = [];
 			const failedThemeAssets = [];
@@ -61,7 +61,11 @@ test.describe( 'WordPress.org TRT Quality & Compliance Audit', () => {
 				}
 			} );
 
-			await page.goto( route );
+			const response = await page.goto( route );
+			expect(
+				response.status(),
+				`Unexpected HTTP status on route ${ route }`
+			).toBe( expectedStatus );
 
 			// Assert Zero external CDN leaks (GDPR compliance)
 			expect(

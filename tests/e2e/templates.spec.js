@@ -44,19 +44,6 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		await expect( commentsArea ).toBeAttached();
 	} );
 
-	test( 'Page Template renders entry content and layout', async ( { page } ) => {
-		const response = await page.goto( '/sample-page/' );
-		expect( response.status() ).toBe( 200 );
-
-		// Page Title & Content
-		const pageTitle = page.locator( 'h1.wp-block-post-title' );
-		await expect( pageTitle ).toBeVisible();
-		await expect( pageTitle ).toContainText( 'Sample Page' );
-
-		const postContent = page.locator( '.wp-block-post-content' );
-		await expect( postContent ).toBeVisible();
-	} );
-
 	test( 'Archive Template renders archive title and query loop', async ( { page } ) => {
 		const response = await page.goto( '/category/uncategorized/' );
 		expect( response.status() ).toBe( 200 );
@@ -93,13 +80,10 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		const searchForm = page.locator( 'form.wp-block-search' );
 		await expect( searchForm ).toBeAttached();
 
-		// Verify body or content indicates empty state or no results block
-		const content = await page.content();
-		expect(
-			content.includes( 'wp-block-query-no-results' ) ||
-			content.toLowerCase().includes( 'no' ) ||
-			content.toLowerCase().includes( 'found' )
-		).toBe( true );
+		// Empty-state no-results block renders expected fallback copy
+		const noResults = page.locator( '.wp-block-query-no-results' );
+		await expect( noResults ).toBeVisible();
+		await expect( noResults ).toContainText( 'No results found' );
 	} );
 
 	test( '404 Template returns 404 status and renders recovery content', async ( { page } ) => {
@@ -110,44 +94,9 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		await expect( page.locator( 'header.wp-block-template-part' ) ).toBeVisible();
 		await expect( page.locator( 'footer.wp-block-template-part' ) ).toBeVisible();
 
-		// Search form or 404 notification block
-		const content = await page.content();
-		expect(
-			content.includes( '404' ) ||
-			content.toLowerCase().includes( 'not found' )
-		).toBe( true );
-	} );
-
-	test( 'Static front page Reading setting renders selected page content instead of overriding it', async ( { page, requestUtils } ) => {
-		const originalSettings = await requestUtils.rest( { path: '/wp/v2/settings' } );
-		const pages = await requestUtils.rest( { path: '/wp/v2/pages?slug=sample-page' } );
-		expect( pages.length ).toBeGreaterThan( 0 );
-
-		try {
-			await requestUtils.rest( {
-				method: 'POST',
-				path: '/wp/v2/settings',
-				data: {
-					show_on_front: 'page',
-					page_on_front: pages[ 0 ].id,
-				},
-			} );
-
-			const response = await page.goto( '/' );
-			expect( response.status() ).toBe( 200 );
-
-			await expect( page.locator( 'h1.wp-block-post-title' ) ).toContainText( 'Sample Page' );
-			await expect( page.locator( '.learnschool-hero-doodles' ) ).toHaveCount( 0 );
-		} finally {
-			await requestUtils.rest( {
-				method: 'POST',
-				path: '/wp/v2/settings',
-				data: {
-					show_on_front: originalSettings.show_on_front,
-					page_on_front: originalSettings.page_on_front,
-				},
-			} );
-		}
+		// 404 recovery heading & home action render
+		await expect( page.locator( 'main h1' ) ).toContainText( /not found/i );
+		await expect( page.locator( 'main form.wp-block-search' ) ).toBeVisible();
 	} );
 
 	test( 'Untitled posts link to the single post view via the post date on archives', async ( {

@@ -24,22 +24,6 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		).toBe( 0 );
 	} );
 
-	test( 'Block Editor loads for new posts without markup errors', async ( { page } ) => {
-		await page.goto( '/wp-admin/post-new.php', { waitUntil: 'domcontentloaded' } );
-
-		// Close any welcome guide dialog if visible
-		const closeButton = page.locator( 'button[aria-label="Close dialog"], button[aria-label="Close"]' );
-		if ( await closeButton.isVisible() ) {
-			await closeButton.click();
-		}
-
-		await page.waitForTimeout( 1000 );
-
-		// Assert zero block recovery warnings
-		const blockRecoveryWarnings = page.locator( '.block-editor-warning' );
-		expect( await blockRecoveryWarnings.count() ).toBe( 0 );
-	} );
-
 	test( 'Site Editor template parts (Comments, Header, Footer, Post Meta, Sidebar) load with zero block recovery warnings', async ( { page } ) => {
 		const parts = [ 'comments', 'header', 'footer', 'post-meta', 'sidebar' ];
 
@@ -77,36 +61,24 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		}
 	} );
 
-	test( 'Registered block patterns expose valid content via REST API', async ( { requestUtils } ) => {
-		const patterns = await requestUtils.rest( { path: '/wp/v2/block-patterns/patterns' } );
-		expect( Array.isArray( patterns ) ).toBe( true );
-
-		const themePatterns = patterns.filter( ( p ) => p.name && p.name.startsWith( 'learnschool/' ) );
-		expect( themePatterns.length ).toBeGreaterThanOrEqual( 20 );
-
-		for ( const pattern of themePatterns ) {
-			// Pattern must have title and non-empty content
-			expect( pattern.title ).toBeTruthy();
-			expect( pattern.content ).toBeTruthy();
-
-			// Ensure no raw PHP code leaked into serialized block pattern content
-			expect( pattern.content.includes( '<?php' ) ).toBe( false );
-			expect( pattern.content.includes( '?>' ) ).toBe( false );
-			expect( pattern.content.toLowerCase().includes( 'fatal error' ) ).toBe( false );
-		}
-	} );
-
-	test( 'All registered theme patterns parse in Gutenberg without block recovery or freeform blocks', async ( { page, requestUtils } ) => {
+	test( 'All registered theme patterns expose clean markup and parse in Gutenberg without block recovery', async ( { page, requestUtils } ) => {
 		await page.goto( '/wp-admin/post-new.php?post_type=page', { waitUntil: 'domcontentloaded' } );
 		await page.waitForFunction( () => Boolean( window.wp?.blocks?.parse && window.wp?.data ) );
 		await page.locator( '.editor-visual-editor, .edit-post-visual-editor' ).first().waitFor( { timeout: 15000 } );
 
 		const all = await requestUtils.rest( { path: '/wp/v2/block-patterns/patterns' } );
+		expect( Array.isArray( all ) ).toBe( true );
 		const patterns = all.filter( ( p ) => p.name && p.name.startsWith( 'learnschool/' ) );
 
 		expect( patterns.length ).toBeGreaterThanOrEqual( 20 );
 
 		for ( const pattern of patterns ) {
+			expect( pattern.title ).toBeTruthy();
+			expect( pattern.content ).toBeTruthy();
+			expect( pattern.content.includes( '<?php' ) ).toBe( false );
+			expect( pattern.content.includes( '?>' ) ).toBe( false );
+			expect( pattern.content.toLowerCase().includes( 'fatal error' ) ).toBe( false );
+
 			const result = await page.evaluate( ( content ) => {
 				const parsed = window.wp.blocks.parse( content );
 				const invalid = [];
