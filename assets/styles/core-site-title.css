@@ -50,3 +50,12 @@
 .wp-block-site-title a:hover {
 	opacity: 0.85;
 }
+
+:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title a,
+:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title .learnschool-title-dark {
+	color: var(--wp--preset--color--base, #fff);
+}
+
+:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title .learnschool-title-accent {
+	color: var(--wp--preset--color--primary-light, #dec8fe);
+}

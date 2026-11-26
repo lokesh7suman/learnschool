@@ -84,4 +84,60 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		}
 	} );
 
+	test( 'All registered theme patterns parse in Gutenberg without block recovery or freeform blocks', async ( { page } ) => {
+		await page.goto( '/wp-admin/post-new.php?post_type=page', { waitUntil: 'domcontentloaded' } );
+		await page.waitForFunction( () => Boolean( window.wp?.blocks?.parse && window.wp?.data && window.wp?.apiFetch ) );
+
+		const patterns = await page.evaluate( async () => {
+			const all = await window.wp.apiFetch( { path: '/wp/v2/block-patterns/patterns' } );
+			return all.filter( ( p ) => p.name && p.name.startsWith( 'learnschool/' ) );
+		} );
+
+		expect( patterns.length ).toBeGreaterThanOrEqual( 20 );
+
+		for ( const pattern of patterns ) {
+			const result = await page.evaluate( ( content ) => {
+				const parsed = window.wp.blocks.parse( content );
+				const invalid = [];
+
+				function walk( blocks, pathStr = '' ) {
+					blocks.forEach( ( block, idx ) => {
+						const blockPath = `${ pathStr }/${ idx }:${ block.name }`;
+						if ( ! block.isValid || block.name === 'core/freeform' || block.name === 'core/missing' ) {
+							invalid.push( { path: blockPath, name: block.name, isValid: block.isValid } );
+						}
+						if ( block.innerBlocks?.length ) {
+							walk( block.innerBlocks, blockPath );
+						}
+					} );
+				}
+
+				walk( parsed );
+				window.wp.data.dispatch( 'core/block-editor' ).resetBlocks( parsed );
+
+				return {
+					topCount: parsed.length,
+					invalid,
+				};
+			}, pattern.content );
+
+			expect(
+				result.topCount,
+				`Pattern "${ pattern.name }" parsed into ${ result.topCount } top-level blocks (expected 1)`
+			).toBe( 1 );
+			expect(
+				result.invalid,
+				`Pattern "${ pattern.name }" has invalid or freeform blocks: ${ JSON.stringify( result.invalid ) }`
+			).toEqual( [] );
+
+			for ( const frame of page.frames() ) {
+				const warnings = await frame.locator( '.block-editor-warning' ).count().catch( () => 0 );
+				expect(
+					warnings,
+					`Block recovery warning detected for pattern "${ pattern.name }"`
+				).toBe( 0 );
+			}
+		}
+	} );
+
 } );

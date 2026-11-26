@@ -5,7 +5,7 @@
  * inside the responsive navigation drawer.
  *
  * @package
- * @since 1.2.0
+ * @since 1.0.0
  */
 
 ( function () {
@@ -131,14 +131,69 @@
 	);
 
 	/**
+	 * Build an accessible decorative SVG icon element using DOM APIs.
+	 *
+	 * @param {number} size        Square icon dimension in px.
+	 * @param {number} strokeWidth Stroke width for icon lines.
+	 * @param {Array}  shapes      Tag descriptor tuples `[ tag, attrs ]`.
+	 * @return {SVGElement} Built SVG icon element.
+	 */
+	function createSvgIcon( size, strokeWidth, shapes ) {
+		const ns = 'http://www.w3.org/2000/svg';
+		const svg = document.createElementNS( ns, 'svg' );
+		svg.setAttribute( 'width', String( size ) );
+		svg.setAttribute( 'height', String( size ) );
+		svg.setAttribute( 'viewBox', '0 0 24 24' );
+		svg.setAttribute( 'fill', 'none' );
+		svg.setAttribute( 'stroke', 'currentColor' );
+		svg.setAttribute( 'stroke-width', String( strokeWidth ) );
+		svg.setAttribute( 'stroke-linecap', 'round' );
+		svg.setAttribute( 'stroke-linejoin', 'round' );
+		svg.setAttribute( 'aria-hidden', 'true' );
+
+		shapes.forEach( ( [ tag, attrs ] ) => {
+			const node = document.createElementNS( ns, tag );
+			Object.keys( attrs ).forEach( ( key ) => {
+				node.setAttribute( key, attrs[ key ] );
+			} );
+			svg.appendChild( node );
+		} );
+
+		return svg;
+	}
+
+	/**
+	 * Build a meta item (link or text span) with an icon for the mobile drawer.
+	 *
+	 * @param {string}     href  Optional destination URL; omit for plain text span.
+	 * @param {string}     label Visible text content.
+	 * @param {SVGElement} icon  Decorative icon node.
+	 * @return {HTMLElement} Constructed meta item element.
+	 */
+	function createMetaItem( href, label, icon ) {
+		const el = document.createElement( href ? 'a' : 'span' );
+		el.className = 'learnschool-mobile-drawer__meta-link';
+		if ( href ) {
+			el.setAttribute( 'href', href );
+		}
+		el.appendChild( icon );
+		const textSpan = document.createElement( 'span' );
+		textSpan.textContent = label;
+		el.appendChild( textSpan );
+		return el;
+	}
+
+	/**
 	 * Inject conversion CTA and utility contact info into mobile drawer if not already present.
 	 *
 	 * @return {void}
 	 */
 	function initMobileDrawerFooter() {
+		const navData = window.learnschoolNavData || {};
 		const dialogs = document.querySelectorAll(
 			'.wp-block-navigation__responsive-dialog'
 		);
+
 		dialogs.forEach( ( dialog ) => {
 			if (
 				dialog.querySelector( '.learnschool-mobile-drawer__footer' )
@@ -146,39 +201,119 @@
 				return;
 			}
 
-			// Get CTA URL from desktop header button if present, or fall back to /admissions/how-to-apply/.
+			// Prefer the live desktop header CTA button URL/label if present.
 			const desktopCta = document.querySelector(
 				'.learnschool-header-actions .wp-block-button__link'
 			);
-			const ctaHref = desktopCta
-				? desktopCta.getAttribute( 'href' ) || '#'
-				: '/admissions/how-to-apply/';
-			const ctaText = desktopCta
-				? desktopCta.textContent.trim() || 'Enroll Now'
-				: 'Enroll Now';
+			const ctaHref =
+				( desktopCta && desktopCta.getAttribute( 'href' ) ) ||
+				navData.ctaUrl ||
+				'#';
+			const ctaText =
+				( desktopCta && desktopCta.textContent.trim() ) ||
+				navData.ctaLabel ||
+				'';
 
 			const footer = document.createElement( 'div' );
 			footer.className = 'learnschool-mobile-drawer__footer';
-			footer.innerHTML =
-				'<div class="learnschool-mobile-drawer__divider" aria-hidden="true"></div>' +
-				'<a class="learnschool-mobile-drawer__cta" href="' +
-				encodeURI( ctaHref ) +
-				'">' +
-				'<span>' +
-				ctaText +
-				'</span>' +
-				'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
-				'</a>' +
-				'<div class="learnschool-mobile-drawer__meta">' +
-				'<a href="tel:5550192834" class="learnschool-mobile-drawer__meta-link">' +
-				'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>' +
-				'<span>Call: (555) 019-2834</span>' +
-				'</a>' +
-				'<a href="/contact-us/parent-portal/" class="learnschool-mobile-drawer__meta-link">' +
-				'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>' +
-				'<span>Parent Portal</span>' +
-				'</a>' +
-				'</div>';
+
+			const divider = document.createElement( 'div' );
+			divider.className = 'learnschool-mobile-drawer__divider';
+			divider.setAttribute( 'aria-hidden', 'true' );
+			footer.appendChild( divider );
+
+			if ( ctaText ) {
+				const ctaLink = document.createElement( 'a' );
+				ctaLink.className = 'learnschool-mobile-drawer__cta';
+				ctaLink.setAttribute( 'href', ctaHref );
+				const ctaLabel = document.createElement( 'span' );
+				ctaLabel.textContent = ctaText;
+				ctaLink.appendChild( ctaLabel );
+				ctaLink.appendChild(
+					createSvgIcon( 18, 2.5, [
+						[ 'path', { d: 'M5 12h14M12 5l7 7-7 7' } ],
+					] )
+				);
+				footer.appendChild( ctaLink );
+			}
+
+			const meta = document.createElement( 'div' );
+			meta.className = 'learnschool-mobile-drawer__meta';
+
+			if ( navData.phoneLabel && navData.phoneHref ) {
+				meta.appendChild(
+					createMetaItem(
+						navData.phoneHref,
+						navData.phoneLabel,
+						createSvgIcon( 15, 2, [
+							[
+								'path',
+								{
+									d: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z',
+								},
+							],
+						] )
+					)
+				);
+			}
+
+			if ( navData.portalLabel && navData.portalUrl ) {
+				meta.appendChild(
+					createMetaItem(
+						navData.portalUrl,
+						navData.portalLabel,
+						createSvgIcon( 15, 2, [
+							[
+								'path',
+								{
+									d: 'M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3',
+								},
+							],
+						] )
+					)
+				);
+			}
+
+			if ( navData.directoryLabel && navData.directoryUrl ) {
+				meta.appendChild(
+					createMetaItem(
+						navData.directoryUrl,
+						navData.directoryLabel,
+						createSvgIcon( 15, 2, [
+							[
+								'path',
+								{
+									d: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2',
+								},
+							],
+							[ 'circle', { cx: '9', cy: '7', r: '4' } ],
+							[
+								'path',
+								{
+									d: 'M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
+								},
+							],
+						] )
+					)
+				);
+			}
+
+			if ( navData.hoursLabel ) {
+				meta.appendChild(
+					createMetaItem(
+						'',
+						navData.hoursLabel,
+						createSvgIcon( 15, 2, [
+							[ 'circle', { cx: '12', cy: '12', r: '10' } ],
+							[ 'polyline', { points: '12 6 12 12 16 14' } ],
+						] )
+					)
+				);
+			}
+
+			if ( meta.childElementCount > 0 ) {
+				footer.appendChild( meta );
+			}
 
 			dialog.appendChild( footer );
 		} );

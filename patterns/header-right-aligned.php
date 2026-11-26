@@ -8,7 +8,7 @@
  * Keywords: header, navigation, logo, menu, clean, right-aligned, school, academics, shadcn
  *
  * @package LearnSchool
- * @since 1.2.0
+ * @since 1.0.0
  * Viewport Width: 1280
  */
 

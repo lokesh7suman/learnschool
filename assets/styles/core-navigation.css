@@ -1135,15 +1135,48 @@ aside.wp-block-group p a:focus-visible {
    10. Header Utility Bar & Announcement Responsive Collapse (< 768px)
    ========================================================================== */
 
+header .learnschool-utility-bar .wp-block-group.alignwide,
+header .has-base-subtle-background-color .wp-block-group.alignwide {
+	width: 100%;
+}
+
+header .learnschool-utility-bar a,
+header .has-base-subtle-background-color a {
+	color: inherit;
+	text-decoration: none;
+	text-underline-offset: 3px;
+	transition: color 0.15s ease;
+}
+
+header .learnschool-utility-bar a:hover,
+header .learnschool-utility-bar a:focus-visible,
+header .has-base-subtle-background-color a:hover,
+header .has-base-subtle-background-color a:focus-visible {
+	color: var(--wp--preset--color--primary, #704fe6);
+	text-decoration: underline;
+}
+
+header .learnschool-utility-bar a:focus-visible,
+header .has-base-subtle-background-color a:focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary, #704fe6);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+header .learnschool-utility-bar__portal a {
+	color: var(--wp--preset--color--contrast, #121212);
+	font-weight: 600;
+}
+
 @media (max-width: 768px) {
 
-	/* Utility top bar: center content and reduce horizontal padding */
+	/* Utility top bar: keep full-width alignment and compact padding */
 	header .has-base-subtle-background-color,
 	aside.wp-block-group.has-primary-background-color {
 		padding-inline: var(--wp--preset--spacing--step-3, 16px);
 	}
 
-	/* In two-row header utility bar: hide operating hours & staff directory on mobile to prevent 4-row vertical stack */
+	/* In two-row header utility bar: hide operating hours & staff directory on mobile (both remain in mobile drawer footer) */
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:first-child p:nth-child(2),
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child p:nth-child(2),
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child .wp-block-social-links {
@@ -1151,12 +1184,12 @@ aside.wp-block-group p a:focus-visible {
 	}
 
 	/* In announcement top bar: hide clock/hours and social links; keep announcement bold and centered */
-	aside.wp-block-group.has-primary-background-color .wp-block-group.alignwide > p:first-child,
-	aside.wp-block-group.has-primary-background-color .wp-block-group.alignwide > .wp-block-social-links {
+	aside.wp-block-group.has-primary-background-color:has(.wp-block-social-links) .wp-block-group.alignwide > p:first-child,
+	aside.wp-block-group.has-primary-background-color:has(.wp-block-social-links) .wp-block-group.alignwide > .wp-block-social-links {
 		display: none;
 	}
 
-	aside.wp-block-group.has-primary-background-color .wp-block-group.alignwide > p:nth-child(2) {
+	aside.wp-block-group.has-primary-background-color:has(.wp-block-social-links) .wp-block-group.alignwide > p:nth-child(2) {
 		text-align: center;
 		width: 100%;
 	}

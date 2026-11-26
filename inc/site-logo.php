@@ -6,7 +6,7 @@
  * is uploaded in the Site Editor, and ensures responsive dimension parity.
  *
  * @package LearnSchool
- * @since 1.1.0
+ * @since 1.0.0
  */
 
 declare(strict_types=1);
@@ -20,7 +20,7 @@ if ( ! function_exists( 'learnschool_default_custom_logo' ) ) :
 	 * Filters the custom logo output to provide our transparent fallback logo
 	 * when no custom logo has been uploaded via the Site Editor or Customizer.
 	 *
-	 * @since 1.1.0
+	 * @since 1.0.0
 	 * @param string $html Existing custom logo HTML markup.
 	 * @return string Filtered logo HTML markup.
 	 */
@@ -63,7 +63,7 @@ if ( ! function_exists( 'learnschool_render_site_logo_block' ) ) :
 	 * Filters core/site-logo block rendering to apply custom width attributes
 	 * to the fallback logo image via \WP_HTML_Tag_Processor.
 	 *
-	 * @since 1.1.0
+	 * @since 1.0.0
 	 * @param string               $block_content Rendered block markup.
 	 * @param array<string, mixed> $block         Parsed block array.
 	 * @return string Modified block markup.

@@ -108,4 +108,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
-<!-- /wp:group --></section>
+</section>
+<!-- /wp:group -->

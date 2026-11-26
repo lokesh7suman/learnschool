@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: FAQ Accordion
+ * Title: FAQ Accordion with Doodles
  * Slug: learnschool/faq-accordion-doodle
  * Categories: learnschool/faq
- * Description: Two-column frequently asked questions section with expandable accordion panels.
- * Keywords: faq, questions, answers, accordion, details, help, support
+ * Description: Two-column frequently asked questions section with playful sunburst/scribble doodles on the left and pill-shaped expandable accordions on the right.
+ * Keywords: faq, questions, answers, accordion, details, help, support, admissions
  * Viewport Width: 1280
  * Inserter: true
  *
@@ -18,34 +18,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignfull has-base-subtle-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-6","left":"var:preset|spacing|step-6"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"40%"} -->
-<div class="wp-block-column" style="flex-basis:40%"><!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Frequently ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'asked', 'learnschool' ); ?></span> <?php echo esc_html__( 'questions', 'learnschool' ); ?></h2>
+<!-- wp:group {"tagName":"section","align":"full","className":"learnschool-faq-doodle-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull learnschool-faq-doodle-section has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-6","left":"var:preset|spacing|step-6"}}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"42%"} -->
+<div class="wp-block-column learnschool-faq-doodle-col" style="flex-basis:42%"><!-- wp:heading {"level":2,"fontSize":"xx-large","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-4"}}}} -->
+<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Frequently ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'asked', 'learnschool' ); ?></span><br><?php echo esc_html__( 'questions', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
-<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Have questions about admissions, daily routines, or tuition? Here are the most common questions from parents.', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Clear answers on admissions, classroom ratios, nutrition, and daily routines.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"60%"} -->
-<div class="wp-block-column" style="flex-basis:60%"><!-- wp:details {"showContent":true,"className":"is-style-learnschool-faq-pill"} -->
-<details class="wp-block-details is-style-learnschool-faq-pill" open><summary><?php echo esc_html__( 'What makes LearnSchool different from other education platforms?', 'learnschool' ); ?></summary><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'LearnSchool combines gamified learning science, child-friendly adaptive feedback, and zero-distraction interactive interfaces crafted exclusively for elementary and primary learners.', 'learnschool' ); ?></p>
+<!-- wp:column {"width":"58%"} -->
+<div class="wp-block-column" style="flex-basis:58%"><!-- wp:details {"className":"is-style-learnschool-faq-pill"} -->
+<details class="wp-block-details is-style-learnschool-faq-pill"><summary><?php echo esc_html__( 'What makes LearnSchool different from other schools?', 'learnschool' ); ?></summary><!-- wp:paragraph {"textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color"><?php echo esc_html__( 'We blend research-backed Montessori manipulatives with small 1:4 to 1:10 educator pods, organic daily meals, and joyful outdoor discovery.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details {"className":"is-style-learnschool-faq-pill"} -->
-<details class="wp-block-details is-style-learnschool-faq-pill"><summary><?php echo esc_html__( 'How can I access LearnSchool?', 'learnschool' ); ?></summary><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'LearnSchool is accessible through modern web browsers, tablet apps (iPad, Android), and desktop environments, with progress syncing seamlessly across all parent-linked devices.', 'learnschool' ); ?></p>
+<details class="wp-block-details is-style-learnschool-faq-pill"><summary><?php echo esc_html__( 'How can parents check daily updates and enrollment availability?', 'learnschool' ); ?></summary><!-- wp:paragraph {"textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color"><?php echo esc_html__( 'Enrolled families receive real-time photo journals and milestone updates in the Parent Portal, and prospective families can schedule a campus tour anytime.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details {"className":"is-style-learnschool-faq-pill"} -->
-<details class="wp-block-details is-style-learnschool-faq-pill"><summary><?php echo esc_html__( "What about the security of children's data using this platform?", 'learnschool' ); ?></summary><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'We strictly adhere to COPPA, FERPA, and GDPR-K regulations. There are no third-party ad trackers, zero behavioral targeting, and all student data is encrypted at rest and in transit.', 'learnschool' ); ?></p>
+<details class="wp-block-details is-style-learnschool-faq-pill"><summary><?php echo esc_html__( 'What about campus safety, allergies, and student privacy?', 'learnschool' ); ?></summary><!-- wp:paragraph {"textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color"><?php echo esc_html__( 'Our campus is 100% nut-free with CPR-certified staff, keypad-secured entry, and strict family-only photo sharing inside our encrypted Parent Portal.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
 <!-- /wp:column --></div>

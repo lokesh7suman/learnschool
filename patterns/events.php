@@ -8,7 +8,7 @@
  * Inserter: true
  *
  * @package LearnSchool
- * @since 1.1.0
+ * @since 1.0.0
  * Viewport Width: 1280
  */
 
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"medium","textColor":"contrast-subtle"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Experience our vibrant classrooms, meet our passionate faculty, and see our curriculum in action.', 'learnschool' ); ?></p>
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Visit our classrooms, meet our faculty, and see our curriculum in action.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -44,11 +44,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php echo esc_html__( 'Fall Academy Open House', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading"><?php echo esc_html__( 'Fall Open House', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Saturday, 10:00 AM - 1:00 PM • Main Campus Auditorium', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Sat, 10:00 AM – 1:00 PM • Main Auditorium', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -74,11 +74,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php echo esc_html__( 'STEM Robotics & Invention Fair', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading"><?php echo esc_html__( 'STEM & Robotics Fair', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Thursday, 4:00 PM - 6:30 PM • Science Discovery Wing', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Thu, 4:00 PM – 6:30 PM • Science Wing', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -104,11 +104,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php echo esc_html__( 'Early Childhood Discovery Morning', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading"><?php echo esc_html__( 'Discovery Morning', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Tuesday, 9:00 AM - 11:30 AM • Kindergarten Pavilion', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( 'Tue, 9:00 AM – 11:30 AM • Kindergarten', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -119,6 +119,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+</section>
 <!-- /wp:group -->

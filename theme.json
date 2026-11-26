@@ -102,6 +102,11 @@
 					"name": "Secondary Dark / Warm Amber"
 				},
 				{
+					"slug": "secondary-gold",
+					"color": "#ffb802",
+					"name": "Secondary Gold / Display Gold"
+				},
+				{
 					"slug": "accent",
 					"color": "#ffd25d",
 					"name": "Accent / Pastel Yellow"
@@ -143,7 +148,7 @@
 				},
 				{
 					"slug": "success",
-					"color": "#16a34a",
+					"color": "#15803d",
 					"name": "Success Green"
 				},
 				{
@@ -173,7 +178,7 @@
 				},
 				{
 					"slug": "rose",
-					"color": "#db2777",
+					"color": "#be185d",
 					"name": "Rose / Studio Pink"
 				}
 			],

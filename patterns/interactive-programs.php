@@ -8,7 +8,7 @@
  * Inserter: true
  *
  * @package LearnSchool
- * @since 1.1.0
+ * @since 1.0.0
  * Viewport Width: 1280
  */
 
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-2","right":"var:preset|spacing|step-2"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
-<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-2);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-2);font-weight:700"><?php echo esc_html__( 'Ages 6 Wks – 2 Yrs', 'learnschool' ); ?></p>
+<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-2);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-2);font-weight:700"><?php echo esc_html__( '6 Wks – 2 Yrs', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle","fontSize":"x-small"} -->
@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-2"}}}} -->
-<h3 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Infant & Toddler Discovery', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading" style="margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Infant & Toddler Care', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
@@ -79,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-2","right":"var:preset|spacing|step-2"}},"typography":{"fontWeight":"700"}},"backgroundColor":"accent","textColor":"contrast","fontSize":"x-small"} -->
-<p class="has-contrast-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-2);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-2);font-weight:700"><?php echo esc_html__( 'Ages 2 – 4 Yrs', 'learnschool' ); ?></p>
+<p class="has-contrast-color has-accent-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-2);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-2);font-weight:700"><?php echo esc_html__( 'Ages 2–4 Yrs', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle","fontSize":"x-small"} -->
@@ -123,7 +123,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;min-height:100%;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-3"}}}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-3)"><!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-2","right":"var:preset|spacing|step-2"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
-<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-2);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-2);font-weight:700"><?php echo esc_html__( 'Ages 4 – 6 Yrs', 'learnschool' ); ?></p>
+<p class="has-primary-dark-color has-primary-light-background-color has-text-color has-background has-x-small-font-size" style="border-radius:9999px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-2);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-2);font-weight:700"><?php echo esc_html__( 'Ages 4–6 Yrs', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}},"textColor":"contrast-subtle","fontSize":"x-small"} -->

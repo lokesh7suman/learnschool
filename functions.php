@@ -92,6 +92,22 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			$version,
 			true
 		);
+
+		wp_localize_script(
+			'learnschool-navigation',
+			'learnschoolNavData',
+			array(
+				'ctaUrl'         => esc_url_raw( home_url( '/admissions/how-to-apply/' ) ),
+				'ctaLabel'       => __( 'Enroll Now', 'learnschool' ),
+				'phoneHref'      => 'tel:5550192834',
+				'phoneLabel'     => __( 'Call: (555) 019-2834', 'learnschool' ),
+				'portalUrl'      => esc_url_raw( home_url( '/contact-us/parent-portal/' ) ),
+				'portalLabel'    => __( 'Parent Portal', 'learnschool' ),
+				'directoryUrl'   => esc_url_raw( home_url( '/about-us/leadership/faculty-directory/' ) ),
+				'directoryLabel' => __( 'Staff Directory', 'learnschool' ),
+				'hoursLabel'     => __( 'Mon–Fri: 8:00 AM – 5:00 PM', 'learnschool' ),
+			)
+		);
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'learnschool_scripts' );
@@ -104,7 +120,7 @@ if ( ! function_exists( 'learnschool_enqueue_block_styles' ) ) :
 	 * wp_enqueue_block_style(), loading CSS conditionally only when that
 	 * block is rendered on the page.
 	 *
-	 * @since 1.1.0
+	 * @since 1.0.0
 	 * @return void
 	 */
 	function learnschool_enqueue_block_styles(): void {
@@ -134,7 +150,7 @@ if ( ! function_exists( 'learnschool_editor_assets' ) ) :
 	/**
 	 * Enqueue block editor assets for inline doodle text formatting.
 	 *
-	 * @since 1.0.6
+	 * @since 1.0.0
 	 * @return void
 	 */
 	function learnschool_editor_assets(): void {
@@ -161,7 +177,7 @@ if ( ! function_exists( 'learnschool_template_part_areas' ) ) :
 	 * Adds 'banner' for announcement top bars and alert strips,
 	 * and 'sidebar' for educational widgets and curriculum navigation.
 	 *
-	 * @since 1.1.0
+	 * @since 1.0.0
 	 * @param array<int, array<string, string>> $areas Existing template part areas.
 	 * @return array<int, array<string, string>> Filtered template part areas.
 	 */
@@ -240,7 +256,7 @@ if ( ! function_exists( 'learnschool_preload_webfonts' ) ) :
 	/**
 	 * Preload critical self-hosted web fonts for improved LCP and layout stability.
 	 *
-	 * @since 1.0.8
+	 * @since 1.0.0
 	 * @return void
 	 */
 	function learnschool_preload_webfonts(): void {

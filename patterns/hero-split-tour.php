@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#tour"><?php echo esc_html__( 'Schedule a Discovery Tour', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#tour"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-learnschool-outline"} -->

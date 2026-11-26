@@ -18,23 +18,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-8","bottom":"var:preset|spacing|step-8","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-8);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-8);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"960px","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":1,"textAlign":"center","style":{"typography":{"lineHeight":"1.15"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-4"}}}} -->
-<h1 class="wp-block-heading has-text-align-center" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-4);line-height:1.15"><?php echo esc_html__( 'The Best Place to ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Learn', 'learnschool' ); ?></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-loop has-secondary-dark-color"><?php echo esc_html__( 'Play', 'learnschool' ); ?></span> <?php echo esc_html__( 'for Curious Kids', 'learnschool' ); ?></h1>
+<!-- wp:group {"tagName":"section","align":"full","className":"learnschool-hero-doodles","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-8","bottom":"var:preset|spacing|step-8","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull learnschool-hero-doodles has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-8);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-8);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"880px","justifyContent":"center"}} -->
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":1,"textAlign":"center","style":{"typography":{"lineHeight":"1.3","fontWeight":"600","letterSpacing":"-0.02em"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-5"}}}} -->
+<h1 class="wp-block-heading has-text-align-center" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-5);font-weight:600;letter-spacing:-0.02em;line-height:1.3"><?php echo esc_html__( 'The best place to', 'learnschool' ); ?><br><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'learn', 'learnschool' ); ?></span> <?php echo esc_html__( 'and', 'learnschool' ); ?> <span class="learnschool-script learnschool-underline-loop has-secondary-gold-color"><?php echo esc_html__( 'play', 'learnschool' ); ?></span><br><?php echo esc_html__( 'for kids', 'learnschool' ); ?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"textColor":"contrast-subtle","fontSize":"large"} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-5)"><?php echo esc_html__( 'Discover a nurturing, play-based early learning community where sensory discovery, foundational literacy, and caring mentorship empower every child to thrive with wonder and confidence.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-6"}}},"textColor":"contrast-subtle","fontSize":"large"} -->
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--step-6)"><?php echo esc_html__( 'Discover fun, interactive learning activities to support your child’s growth and curiosity every day.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#tour"><?php echo esc_html__( 'Schedule a Campus Tour', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/admissions/how-to-apply/' ) ); ?>"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-learnschool-outline"} -->
-<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="#programs"><?php echo esc_html__( 'Explore Our Programs', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/academics/' ) ); ?>"><?php echo esc_html__( 'Explore Programs', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></section>

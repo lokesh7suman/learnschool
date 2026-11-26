@@ -15,14 +15,22 @@
 				{ "slug": "primary-light",   "color": "#ffe4e6", "name": "Primary Light / Soft Blush" },
 				{ "slug": "secondary",       "color": "#00d2d3", "name": "Secondary / Electric Aqua Mint" },
 				{ "slug": "secondary-dark",  "color": "#01a3a4", "name": "Secondary Dark / Deep Teal" },
+				{ "slug": "secondary-gold",  "color": "#01a3a4", "name": "Secondary Gold / Display Teal" },
 				{ "slug": "accent",          "color": "#ffd32a", "name": "Accent / Banana Sunshine" },
 				{ "slug": "surface",         "color": "#ffffff", "name": "Surface / White" },
 				{ "slug": "surface-slate",   "color": "#fdf4f5", "name": "Surface Soft" },
+				{ "slug": "midnight",        "color": "#1a162b", "name": "Midnight / Deep Ink" },
 				{ "slug": "border",          "color": "#f3e4e6", "name": "Border / Soft Rose" },
-				{ "slug": "success",         "color": "#10b981", "name": "Success" },
-				{ "slug": "error",           "color": "#ef4444", "name": "Error" },
+				{ "slug": "border-subtle",   "color": "#fdf2f3", "name": "Border Subtle / Extra Light" },
+				{ "slug": "info",            "color": "#0284c7", "name": "Info Blue" },
+				{ "slug": "info-light",      "color": "#e0f2fe", "name": "Info Light / Sky Tint" },
+				{ "slug": "success",         "color": "#15803d", "name": "Success Green" },
+				{ "slug": "error",           "color": "#dc2626", "name": "Alert Red" },
 				{ "slug": "warning",         "color": "#fef3c7", "name": "Warning Background" },
-				{ "slug": "warning-text",    "color": "#92400e", "name": "Warning Text" }
+				{ "slug": "warning-text",    "color": "#92400e", "name": "Warning Text" },
+				{ "slug": "success-light",   "color": "#dcfce7", "name": "Success Light / Soft Mint" },
+				{ "slug": "rose-light",      "color": "#ffe4e6", "name": "Rose Light / Soft Blush" },
+				{ "slug": "rose",            "color": "#be185d", "name": "Rose / Studio Pink" }
 			]
 		}
 	},

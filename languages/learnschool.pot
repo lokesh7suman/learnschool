@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: LearnSchool 1.0.7\n"
+"Project-Id-Version: LearnSchool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/learnschool\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-21T06:48:15+00:00\n"
+"POT-Creation-Date: 2026-11-26T06:33:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -17,17 +17,19 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 #: inc/site-logo.php:36
+#: patterns/cta-community.php:32
 msgid "LearnSchool"
 msgstr ""
 
 #. Theme URI of the theme
+#. Author URI of the theme
 #: style.css
-msgid "https://codeclove.com/learnschool"
+msgid "https://codeclove.com"
 msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "LearnSchool - A playful, high-fidelity Full Site Editing block theme for schools, academies, and children's e-learning platforms. Faithful to the Paperpillar Figma UI Kit."
+msgid "LearnSchool - A playful Full Site Editing block theme designed for schools, academies, early learning centers, and children's education platforms."
 msgstr ""
 
 #. Author of the theme
@@ -35,24 +37,47 @@ msgstr ""
 msgid "codeclove"
 msgstr ""
 
-#. Author URI of the theme
-#: style.css
-msgid "https://codeclove.com"
+#: functions.php:101
+#: patterns/header-right-aligned.php:36
+#: patterns/header-two-row.php:59
+msgid "Enroll Now"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:103
+#: patterns/header-two-row.php:27
+msgid "Call: (555) 019-2834"
+msgstr ""
+
+#: functions.php:105
+#: patterns/footer-newsletter.php:79
+#: patterns/footer-wonderkids.php:71
+#: patterns/header-two-row.php:37
+msgid "Parent Portal"
+msgstr ""
+
+#: functions.php:107
+#: patterns/header-two-row.php:41
+msgid "Staff Directory"
+msgstr ""
+
+#: functions.php:108
+#: patterns/header-two-row.php:31
+msgid "Mon–Fri: 8:00 AM – 5:00 PM"
+msgstr ""
+
+#: functions.php:188
 msgid "Banner"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:189
 msgid "Top announcement bars, campus alert strips, and utility ribbons."
 msgstr ""
 
-#: functions.php:172
+#: functions.php:196
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:197
 msgid "Curriculum navigation, educator profiles, and school widget sidebars."
 msgstr ""
 
@@ -238,6 +263,9 @@ msgid "01"
 msgstr ""
 
 #: patterns/admissions-roadmap.php:39
+#: patterns/cta-community.php:41
+#: patterns/hero-playful-doodles.php:33
+#: patterns/hero-split-tour.php:33
 msgid "Schedule a Tour"
 msgstr ""
 
@@ -270,16 +298,15 @@ msgid "Complete digital medical/health forms, receive parent portal login creden
 msgstr ""
 
 #: patterns/admissions-roadmap.php:84
-msgid "Now Accepting Fall & Year-Round Applications"
+msgid "Fall & Year-Round Admissions Open"
 msgstr ""
 
 #: patterns/admissions-roadmap.php:88
-msgid "Spaces are limited to preserve our state-accredited low student-teacher ratios."
+msgid "Limited spots to preserve our low student-teacher ratios."
 msgstr ""
 
 #: patterns/admissions-roadmap.php:94
-#: patterns/footer-accreditation.php:86
-msgid "Schedule Campus Visit"
+msgid "Schedule a Visit"
 msgstr ""
 
 #: patterns/alert-bar.php
@@ -304,6 +331,97 @@ msgstr ""
 msgid "Apply Online"
 msgstr ""
 
+#: patterns/blog-latest.php
+msgctxt "Pattern title"
+msgid "Read Our Blog 3-Card Grid"
+msgstr ""
+
+#: patterns/blog-latest.php
+msgctxt "Pattern description"
+msgid "Editorial three-column blog showcase with \"Read our blog\" script heading, \"See All\" action link, and three illustrated story cards."
+msgstr ""
+
+#: patterns/blog-latest.php:24
+msgid "Read our "
+msgstr ""
+
+#: patterns/blog-latest.php:24
+msgid "blog"
+msgstr ""
+
+#: patterns/blog-latest.php:29
+msgid "See All"
+msgstr ""
+
+#: patterns/blog-latest.php:39
+msgid "Sunlit classroom table with wooden pattern blocks, alphabet cubes, and storybook"
+msgstr ""
+
+#: patterns/blog-latest.php:44
+msgid "Learning with Games"
+msgstr ""
+
+#: patterns/blog-latest.php:48
+msgid "Embrace the joy of hands-on games to deepen focus, problem-solving, and curiosity."
+msgstr ""
+
+#: patterns/blog-latest.php:56
+#: patterns/blog-latest.php:84
+#: patterns/blog-latest.php:112
+#: patterns/learning-materials-split.php:34
+msgid "Learn more"
+msgstr ""
+
+#: patterns/blog-latest.php:67
+msgid "Colorful Montessori wooden sorting bowls, counting pegs, and pattern flashcards"
+msgstr ""
+
+#: patterns/blog-latest.php:72
+msgid "10 Learning Game Ideas"
+msgstr ""
+
+#: patterns/blog-latest.php:76
+msgid "Playful counting, sorting, and pattern games families can enjoy together at home."
+msgstr ""
+
+#: patterns/blog-latest.php:95
+msgid "Sunlit studio craft table with watercolor paints, origami paper, and botanical leaves"
+msgstr ""
+
+#: patterns/blog-latest.php:100
+msgid "Fun Activities for Kids"
+msgstr ""
+
+#: patterns/blog-latest.php:104
+msgid "Screen-free watercolor painting, origami shapes, and nature crafts for rainy afternoons."
+msgstr ""
+
+#: patterns/cta-community.php
+msgctxt "Pattern title"
+msgid "Community Enrollment CTA Banner"
+msgstr ""
+
+#: patterns/cta-community.php
+msgctxt "Pattern description"
+msgid "Rounded purple call-to-action card featuring an educator portrait on the left and a community inquiry form with sunny gold submit button on the right."
+msgstr ""
+
+#: patterns/cta-community.php:26
+msgid "Smiling LearnSchool educator holding a notebook and welcoming families"
+msgstr ""
+
+#: patterns/cta-community.php:32
+msgid "Join our "
+msgstr ""
+
+#: patterns/cta-community.php:32
+msgid "community now"
+msgstr ""
+
+#: patterns/cta-community.php:36
+msgid "Schedule a campus visit, meet our dedicated educators, and explore open spaces for your family."
+msgstr ""
+
 #: patterns/events.php
 msgctxt "Pattern title"
 msgid "Upcoming Events & Open House Schedule"
@@ -323,68 +441,68 @@ msgid "Campus Tours"
 msgstr ""
 
 #: patterns/events.php:28
-msgid "Experience our vibrant classrooms, meet our passionate faculty, and see our curriculum in action."
+msgid "Visit our classrooms, meet our faculty, and see our curriculum in action."
 msgstr ""
 
-#: patterns/events.php:36
+#: patterns/events.php:37
 msgid "12"
 msgstr ""
 
-#: patterns/events.php:40
-#: patterns/events.php:70
+#: patterns/events.php:41
+#: patterns/events.php:71
 msgid "OCT"
 msgstr ""
 
-#: patterns/events.php:46
-msgid "Fall Academy Open House"
+#: patterns/events.php:47
+msgid "Fall Open House"
 msgstr ""
 
-#: patterns/events.php:50
-msgid "Saturday, 10:00 AM - 1:00 PM • Main Campus Auditorium"
+#: patterns/events.php:51
+msgid "Sat, 10:00 AM – 1:00 PM • Main Auditorium"
 msgstr ""
 
-#: patterns/events.php:57
-#: patterns/events.php:87
-#: patterns/events.php:117
+#: patterns/events.php:58
+#: patterns/events.php:88
+#: patterns/events.php:118
 msgid "Reserve Seat"
 msgstr ""
 
-#: patterns/events.php:66
+#: patterns/events.php:67
 msgid "24"
 msgstr ""
 
-#: patterns/events.php:76
-msgid "STEM Robotics & Invention Fair"
+#: patterns/events.php:77
+msgid "STEM & Robotics Fair"
 msgstr ""
 
-#: patterns/events.php:80
-msgid "Thursday, 4:00 PM - 6:30 PM • Science Discovery Wing"
+#: patterns/events.php:81
+msgid "Thu, 4:00 PM – 6:30 PM • Science Wing"
 msgstr ""
 
-#: patterns/events.php:96
+#: patterns/events.php:97
 msgid "05"
 msgstr ""
 
-#: patterns/events.php:100
+#: patterns/events.php:101
 msgid "NOV"
 msgstr ""
 
-#: patterns/events.php:106
-msgid "Early Childhood Discovery Morning"
+#: patterns/events.php:107
+msgid "Discovery Morning"
 msgstr ""
 
-#: patterns/events.php:110
-msgid "Tuesday, 9:00 AM - 11:30 AM • Kindergarten Pavilion"
+#: patterns/events.php:111
+msgid "Tue, 9:00 AM – 11:30 AM • Kindergarten"
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php
 msgctxt "Pattern title"
-msgid "FAQ Accordion"
+msgid "FAQ Accordion with Doodles"
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php
 msgctxt "Pattern description"
-msgid "Two-column frequently asked questions section with expandable accordion panels."
+msgid "Two-column frequently asked questions section with playful sunburst/scribble doodles on the left and pill-shaped expandable accordions on the right."
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:25
@@ -401,36 +519,31 @@ msgid "questions"
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:29
-msgid "Have questions about admissions, daily routines, or tuition? Here are the most common questions from parents."
+msgid "Clear answers on admissions, classroom ratios, nutrition, and daily routines."
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:35
-#: patterns/faq-simple.php:44
-msgid "What makes LearnSchool different from other education platforms?"
+msgid "What makes LearnSchool different from other schools?"
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:36
-#: patterns/faq-simple.php:45
-msgid "LearnSchool combines gamified learning science, child-friendly adaptive feedback, and zero-distraction interactive interfaces crafted exclusively for elementary and primary learners."
+msgid "We blend research-backed Montessori manipulatives with small 1:4 to 1:10 educator pods, organic daily meals, and joyful outdoor discovery."
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:41
-msgid "How can I access LearnSchool?"
+msgid "How can parents check daily updates and enrollment availability?"
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:42
-#: patterns/faq-simple.php:51
-msgid "LearnSchool is accessible through modern web browsers, tablet apps (iPad, Android), and desktop environments, with progress syncing seamlessly across all parent-linked devices."
+msgid "Enrolled families receive real-time photo journals and milestone updates in the Parent Portal, and prospective families can schedule a campus tour anytime."
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:47
-#: patterns/faq-simple.php:56
-msgid "What about the security of children's data using this platform?"
+msgid "What about campus safety, allergies, and student privacy?"
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:48
-#: patterns/faq-simple.php:57
-msgid "We strictly adhere to COPPA, FERPA, and GDPR-K regulations. There are no third-party ad trackers, zero behavioral targeting, and all student data is encrypted at rest and in transit."
+msgid "Our campus is 100% nut-free with CPR-certified staff, keypad-secured entry, and strict family-only photo sharing inside our encrypted Parent Portal."
 msgstr ""
 
 #: patterns/faq-accordion.php
@@ -521,8 +634,28 @@ msgstr ""
 msgid "Ask a Question"
 msgstr ""
 
+#: patterns/faq-simple.php:44
+msgid "What makes LearnSchool different from other education platforms?"
+msgstr ""
+
+#: patterns/faq-simple.php:45
+msgid "LearnSchool combines gamified learning science, child-friendly adaptive feedback, and zero-distraction interactive interfaces crafted exclusively for elementary and primary learners."
+msgstr ""
+
 #: patterns/faq-simple.php:50
 msgid "How can I access LearnSchool learning tools and reports?"
+msgstr ""
+
+#: patterns/faq-simple.php:51
+msgid "LearnSchool is accessible through modern web browsers, tablet apps (iPad, Android), and desktop environments, with progress syncing seamlessly across all parent-linked devices."
+msgstr ""
+
+#: patterns/faq-simple.php:56
+msgid "What about the security of children's data using this platform?"
+msgstr ""
+
+#: patterns/faq-simple.php:57
+msgid "We strictly adhere to COPPA, FERPA, and GDPR-K regulations. There are no third-party ad trackers, zero behavioral targeting, and all student data is encrypted at rest and in transit."
 msgstr ""
 
 #: patterns/faq-simple.php:62
@@ -535,76 +668,73 @@ msgstr ""
 
 #: patterns/features-activities.php
 msgctxt "Pattern title"
-msgid "Creative Activities 4-Card Enrichment Grid"
+msgid "Interactive Features 3-Card Showcase"
 msgstr ""
 
 #: patterns/features-activities.php
 msgctxt "Pattern description"
-msgid "Four-column enrichment activities grid highlighting music, clay pottery, junior botany, and language immersion."
+msgid "Three-column playful feature showcase with tilted hashtag doodles and colorful Fun Quiz, Creative Activities, and Learn with Games cards."
 msgstr ""
 
-#: patterns/features-activities.php:24
-msgid "Signature "
+#: patterns/features-activities.php:25
+msgid "Our "
 msgstr ""
 
-#: patterns/features-activities.php:24
-msgid "Enrichment"
+#: patterns/features-activities.php:25
+msgid "interactive"
 msgstr ""
 
-#: patterns/features-activities.php:24
-msgid " Activities"
+#: patterns/features-activities.php:25
+msgid "features"
 msgstr ""
 
-#: patterns/features-activities.php:28
-msgid "Every afternoon brings specialized creative labs designed to stretch imagination, musicality, and ecological appreciation."
+#: patterns/features-activities.php:32
+msgid "#funny"
 msgstr ""
 
-#: patterns/features-activities.php:37
-msgid "01 • MUSIC"
+#: patterns/features-activities.php:36
+msgid "#enjoy"
 msgstr ""
 
-#: patterns/features-activities.php:41
-msgid "Rhythm & Chimes"
+#: patterns/features-activities.php:40
+msgid "#happy"
 msgstr ""
 
-#: patterns/features-activities.php:45
-msgid "Orff percussion, melodic chimes, and body percussion that develop auditory discrimination."
+#: patterns/features-activities.php:57
+msgid "Fun "
 msgstr ""
 
-#: patterns/features-activities.php:55
-msgid "02 • POTTERY"
+#: patterns/features-activities.php:57
+msgid "Quiz"
 msgstr ""
 
-#: patterns/features-activities.php:59
-msgid "Clay & Sculpting"
-msgstr ""
-
-#: patterns/features-activities.php:63
-msgid "Tactile terra-cotta clay, non-toxic mineral dyes, and hand-molding fine-motor exercises."
-msgstr ""
-
-#: patterns/features-activities.php:73
-msgid "03 • BOTANY"
+#: patterns/features-activities.php:61
+msgid "Test your understanding with short, playful quizzes and joyful milestone check-ins."
 msgstr ""
 
 #: patterns/features-activities.php:77
-msgid "Junior Greenhouse"
+#: patterns/features-journey.php:77
+msgid "Creative "
+msgstr ""
+
+#: patterns/features-activities.php:77
+msgid "Activities"
 msgstr ""
 
 #: patterns/features-activities.php:81
-msgid "Organic seed sprout tables, botanical magnifying, and hands-on soil care."
+msgid "Discover enjoyable activities such as watercolor painting, clay crafting, and early science."
 msgstr ""
 
-#: patterns/features-activities.php:91
-msgid "04 • IMMERSION"
+#: patterns/features-activities.php:97
+msgid "Learn with "
 msgstr ""
 
-#: patterns/features-activities.php:95
-msgid "World Language Nook"
+#: patterns/features-activities.php:97
+msgid "Games"
 msgstr ""
 
-#: patterns/features-activities.php:99
-msgid "Bilingual songs, puppet conversations, and joyful cultural vocabulary immersion."
+#: patterns/features-activities.php:101
+msgid "Learn something new every day while children explore collaborative puzzle games."
 msgstr ""
 
 #: patterns/features-cards.php
@@ -768,10 +898,6 @@ msgid "STEP 02"
 msgstr ""
 
 #: patterns/features-journey.php:77
-msgid "Creative "
-msgstr ""
-
-#: patterns/features-journey.php:77
 msgid "Labs"
 msgstr ""
 
@@ -788,7 +914,6 @@ msgid "Social "
 msgstr ""
 
 #: patterns/features-journey.php:103
-#: patterns/hero-playful-doodles.php:24
 msgid "Play"
 msgstr ""
 
@@ -819,7 +944,7 @@ msgstr ""
 
 #: patterns/footer-accreditation.php
 msgctxt "Pattern description"
-msgid "4-column preschool footer with state licensing badge, program links, campus hours, and parent resources."
+msgid "4-column preschool footer on a deep midnight surface with state licensing badge, program links, campus hours, and parent resources."
 msgstr ""
 
 #: patterns/footer-accreditation.php:31
@@ -870,6 +995,10 @@ msgstr ""
 msgid "Immunization & Health"
 msgstr ""
 
+#: patterns/footer-accreditation.php:86
+msgid "Schedule Campus Visit"
+msgstr ""
+
 #: patterns/footer-accreditation.php:93
 msgid "Campus Hours"
 msgstr ""
@@ -898,13 +1027,20 @@ msgstr ""
 msgid "(555) 123-4567"
 msgstr ""
 
-#. translators: %s: Current calendar year.
-#: patterns/footer-accreditation.php:128
+#. translators: 1: Current calendar year, 2: Site title.
+#: patterns/footer-accreditation.php:129
+#: patterns/footer-newsletter.php:132
 #, php-format
-msgid "© %s LearnSchool Early Learning Academy. All rights reserved."
+msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: patterns/footer-accreditation.php:134
+#. translators: 1: Current calendar year, 2: Site title.
+#: patterns/footer-accreditation.php:129
+#: patterns/footer-newsletter.php:132
+msgid "My School"
+msgstr ""
+
+#: patterns/footer-accreditation.php:135
 msgid "Equal Opportunity Early Childhood Care Provider"
 msgstr ""
 
@@ -935,6 +1071,7 @@ msgid "Email: info@learnschool.edu"
 msgstr ""
 
 #: patterns/footer-newsletter.php:42
+#: patterns/footer-wonderkids.php:51
 msgid "Programs"
 msgstr ""
 
@@ -963,12 +1100,8 @@ msgid "School Life"
 msgstr ""
 
 #: patterns/footer-newsletter.php:75
+#: patterns/footer-wonderkids.php:67
 msgid "Admissions"
-msgstr ""
-
-#: patterns/footer-newsletter.php:79
-#: patterns/header-two-row.php:37
-msgid "Parent Portal"
 msgstr ""
 
 #: patterns/footer-newsletter.php:83
@@ -988,37 +1121,64 @@ msgid "Stay Connected"
 msgstr ""
 
 #: patterns/footer-newsletter.php:102
-msgid "Subscribe to our weekly school bulletin and educational parenting guides."
+msgid "Stay up to date with weekly school bulletins, upcoming events, and admissions notices."
 msgstr ""
 
 #: patterns/footer-newsletter.php:107
-msgid "Email Address"
+msgid "Contact Us"
 msgstr ""
 
-#: patterns/footer-newsletter.php:108
-msgid "Enter your email address"
-msgstr ""
-
-#: patterns/footer-newsletter.php:109
-msgid "Subscribe"
-msgstr ""
-
-#. translators: %s: Current calendar year.
-#: patterns/footer-newsletter.php:133
-#, php-format
-msgid "© %s LearnSchool Academy. All rights reserved."
-msgstr ""
-
-#: patterns/footer-newsletter.php:139
+#: patterns/footer-newsletter.php:138
+#: patterns/footer-wonderkids.php:91
 msgid "Privacy Policy"
 msgstr ""
 
-#: patterns/footer-newsletter.php:139
+#: patterns/footer-newsletter.php:138
+#: patterns/footer-wonderkids.php:95
 msgid "Terms of Service"
 msgstr ""
 
-#: patterns/footer-newsletter.php:139
+#: patterns/footer-newsletter.php:138
+#: patterns/footer-wonderkids.php:99
 msgid "Accessibility"
+msgstr ""
+
+#: patterns/footer-wonderkids.php
+msgctxt "Pattern title"
+msgid "Light Studio Footer with Doodles"
+msgstr ""
+
+#: patterns/footer-wonderkids.php
+msgctxt "Pattern description"
+msgid "Clean light footer featuring brand logo with decorative mini doodles, three compact sitemap link columns, and circular outline social buttons."
+msgstr ""
+
+#: patterns/footer-wonderkids.php:32
+msgid "Playful, nurturing early education built for curious young learners."
+msgstr ""
+
+#: patterns/footer-wonderkids.php:47
+msgid "Home"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:55
+msgid "About"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:59
+msgid "Faculty"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:75
+msgid "Curriculum"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:79
+msgid "Our Blog"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:87
+msgid "Contact"
 msgstr ""
 
 #: patterns/header-right-aligned.php
@@ -1028,7 +1188,7 @@ msgstr ""
 
 #: patterns/header-right-aligned.php
 msgctxt "Pattern description"
-msgid "Clean header with site logo and title on the left, and primary navigation aligned to the right without call-to-action buttons."
+msgid "Clean header with site logo and title on the left, primary navigation aligned to the right, and call-to-action button."
 msgstr ""
 
 #: patterns/header-two-row.php
@@ -1039,22 +1199,6 @@ msgstr ""
 #: patterns/header-two-row.php
 msgctxt "Pattern description"
 msgid "Two-tier header featuring a top utility contact strip above the primary multi-level navigation bar."
-msgstr ""
-
-#: patterns/header-two-row.php:27
-msgid "Call: (555) 019-2834"
-msgstr ""
-
-#: patterns/header-two-row.php:31
-msgid "Mon–Fri: 8:00 AM – 5:00 PM"
-msgstr ""
-
-#: patterns/header-two-row.php:41
-msgid "Staff Directory"
-msgstr ""
-
-#: patterns/header-two-row.php:67
-msgid "Enroll Now"
 msgstr ""
 
 #: patterns/hero-playful-doodles.php
@@ -1068,32 +1212,32 @@ msgid "Playful brand hero section with handcrafted script highlights, display ty
 msgstr ""
 
 #: patterns/hero-playful-doodles.php:24
-msgid "The Best Place to "
+msgid "The best place to"
 msgstr ""
 
 #: patterns/hero-playful-doodles.php:24
-msgid "Learn"
+msgid "learn"
 msgstr ""
 
 #: patterns/hero-playful-doodles.php:24
-#: patterns/hero-split-tour.php:24
-msgid " &amp; "
+msgid "and"
 msgstr ""
 
 #: patterns/hero-playful-doodles.php:24
-msgid "for Curious Kids"
+msgid "play"
+msgstr ""
+
+#: patterns/hero-playful-doodles.php:24
+msgid "for kids"
 msgstr ""
 
 #: patterns/hero-playful-doodles.php:28
-msgid "Discover a nurturing, play-based early learning community where sensory discovery, foundational literacy, and caring mentorship empower every child to thrive with wonder and confidence."
-msgstr ""
-
-#: patterns/hero-playful-doodles.php:33
-msgid "Schedule a Campus Tour"
+msgid "Discover fun, interactive learning activities to support your child’s growth and curiosity every day."
 msgstr ""
 
 #: patterns/hero-playful-doodles.php:37
-msgid "Explore Our Programs"
+#: patterns/hero-split-checklist.php:52
+msgid "Explore Programs"
 msgstr ""
 
 #: patterns/hero-split-checklist.php
@@ -1139,11 +1283,7 @@ msgid "Safe, Light-Filled Classrooms &amp; Outdoor Nature Discovery Gardens"
 msgstr ""
 
 #: patterns/hero-split-checklist.php:48
-msgid "Book a Campus Tour"
-msgstr ""
-
-#: patterns/hero-split-checklist.php:52
-msgid "Explore Programs"
+msgid "Book a Tour"
 msgstr ""
 
 #: patterns/hero-split-checklist.php:59
@@ -1169,15 +1309,15 @@ msgid "Curiosity"
 msgstr ""
 
 #: patterns/hero-split-tour.php:24
+msgid " &amp; "
+msgstr ""
+
+#: patterns/hero-split-tour.php:24
 msgid "Wonder"
 msgstr ""
 
 #: patterns/hero-split-tour.php:28
 msgid "Empowering young children through intentional sensory discovery, low student-teacher ratios, and joyful play-based learning environments that foster natural independence."
-msgstr ""
-
-#: patterns/hero-split-tour.php:33
-msgid "Schedule a Discovery Tour"
 msgstr ""
 
 #: patterns/hero-split-tour.php:37
@@ -1211,7 +1351,7 @@ msgid "From sensory infant care to confident kindergarten preparation, our curri
 msgstr ""
 
 #: patterns/interactive-programs.php:38
-msgid "Ages 6 Wks – 2 Yrs"
+msgid "6 Wks – 2 Yrs"
 msgstr ""
 
 #: patterns/interactive-programs.php:42
@@ -1219,7 +1359,7 @@ msgid "1:3 Ratio"
 msgstr ""
 
 #: patterns/interactive-programs.php:47
-msgid "Infant & Toddler Discovery"
+msgid "Infant & Toddler Care"
 msgstr ""
 
 #: patterns/interactive-programs.php:51
@@ -1243,7 +1383,7 @@ msgid "Explore Toddlers"
 msgstr ""
 
 #: patterns/interactive-programs.php:82
-msgid "Ages 2 – 4 Yrs"
+msgid "Ages 2–4 Yrs"
 msgstr ""
 
 #: patterns/interactive-programs.php:86
@@ -1275,7 +1415,7 @@ msgid "Explore Preschool"
 msgstr ""
 
 #: patterns/interactive-programs.php:126
-msgid "Ages 4 – 6 Yrs"
+msgid "Ages 4–6 Yrs"
 msgstr ""
 
 #: patterns/interactive-programs.php:130
@@ -1317,7 +1457,7 @@ msgid "Reversed two-column layout with a prominent visual showcase on the left a
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:35
-msgid "Visual Storybooks & Phonics"
+msgid "Storybooks & Phonics"
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:39
@@ -1329,7 +1469,7 @@ msgid "Illustrated readers, vocabulary cards, and tactile sensory trace sheets f
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:59
-msgid "Interactive Digital Touch Labs"
+msgid "Digital Touch Labs"
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:63
@@ -1341,7 +1481,7 @@ msgid "Self-paced audio puzzles, pattern matching, and guided science exploratio
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:83
-msgid "Physical Science & Craft Packs"
+msgid "Science & Craft Kits"
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:87
@@ -1353,7 +1493,7 @@ msgid "Botanical seed germination kits, non-toxic modeling clays, and tactile ge
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:101
-msgid "Engaging Textbooks, Digital Labs & "
+msgid "Textbooks, Digital Labs & "
 msgstr ""
 
 #: patterns/learning-materials-reversed.php:101
@@ -1376,12 +1516,12 @@ msgstr ""
 msgid "Hands-on Science & Creative Craft Activity Packs"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:128
-msgid "Download Curriculum Guide"
+#: patterns/learning-materials-reversed.php:124
+msgid "Curriculum Guide"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:132
-msgid "Preview Sample Lesson"
+#: patterns/learning-materials-reversed.php:128
+msgid "Sample Lesson"
 msgstr ""
 
 #: patterns/learning-materials-split.php
@@ -1391,171 +1531,130 @@ msgstr ""
 
 #: patterns/learning-materials-split.php
 msgctxt "Pattern description"
-msgid "Two-column showcase highlighting hands-on educational materials, certified curriculum kits, and playful learning."
+msgid "Two-column showcase highlighting enjoyable learning materials on the left and staggered colorful capsule vignettes with doodles on the right."
 msgstr ""
 
 #: patterns/learning-materials-split.php:25
-msgid "Curated Materials Built for "
+msgid "The learning materials provided are "
 msgstr ""
 
 #: patterns/learning-materials-split.php:25
-msgid "Sensory Wonder"
+msgid "enjoyable"
+msgstr ""
+
+#: patterns/learning-materials-split.php:25
+msgid " for children"
 msgstr ""
 
 #: patterns/learning-materials-split.php:29
-msgid "We eliminate plastic sensory overload in favor of organic, research-backed materials that engage fine-motor coordination and spatial intuition."
-msgstr ""
-
-#: patterns/learning-materials-split.php:34
-msgid "Explore Our Material Standards"
+msgid "Don’t worry! Children have a joyful time learning with tactile storybooks, guided touch labs, and creative kits designed to be easy to understand."
 msgstr ""
 
 #: patterns/learning-materials-split.php:43
-msgid "FSC-Certified Natural Hardwoods"
+msgid "Illustrated storybooks and wooden alphabet blocks"
 msgstr ""
 
-#: patterns/learning-materials-split.php:47
-msgid "Silky-smooth beechwood geometric blocks and building arches finished exclusively with vegetable-based food-grade waxes."
+#: patterns/learning-materials-split.php:48
+msgid "Illustrated Storybooks"
 msgstr ""
 
-#: patterns/learning-materials-split.php:53
-msgid "Sensory Tactile Manipulatives"
+#: patterns/learning-materials-split.php:52
+msgid "Phonics readers & wooden blocks"
 msgstr ""
 
-#: patterns/learning-materials-split.php:57
-msgid "Natural wool felt storytelling mats, kinetic silica sand trays, and glass discovery marbles that invite delicate sensory refinement."
+#: patterns/learning-materials-split.php:60
+msgid "Interactive Touch Labs"
 msgstr ""
 
-#: patterns/learning-materials-split.php:63
-msgid "Montessori Spatial & Math Chains"
+#: patterns/learning-materials-split.php:64
+msgid "Play-based geometry & puzzles"
 msgstr ""
 
-#: patterns/learning-materials-split.php:67
-msgid "Golden bead counting chains, graduated cylinder blocks, and wooden fraction boards that make abstract logic concrete."
+#: patterns/learning-materials-split.php:69
+msgid "Kid-safe digital tablet and Montessori wooden shape pieces"
+msgstr ""
+
+#: patterns/learning-materials-split.php:75
+msgid "Creative arts easel, crayons, and sensory play supplies"
+msgstr ""
+
+#: patterns/learning-materials-split.php:80
+msgid "Tactile Craft & STEM Kits"
+msgstr ""
+
+#: patterns/learning-materials-split.php:84
+msgid "Hands-on art, botany & building"
 msgstr ""
 
 #: patterns/teachers-photos-grid.php
 msgctxt "Pattern title"
-msgid "Faculty & Teacher Photo Cards Grid"
+msgid "Faculty & Teacher Circular Portrait Showcase"
 msgstr ""
 
 #: patterns/teachers-photos-grid.php
 msgctxt "Pattern description"
-msgid "Four-column grid of educator portrait photo cards with rounded styling, role badges, bios, and pattern overrides."
+msgid "Full-width brand purple faculty showcase featuring a bold editorial statement, yellow script highlight, and four circular teacher portraits on colored studio backdrops."
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:26
-#: patterns/teachers-spotlight.php:25
-msgid "Meet Our Dedicated "
+#: patterns/teachers-photos-grid.php:24
+msgid "We aim to help children "
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:26
-msgid "Educators"
+#: patterns/teachers-photos-grid.php:24
+msgid "discover the joy of creative"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:30
-msgid "Degreed, CPR-certified, and compassionate early-childhood specialists devoted to each child's emotional and cognitive growth."
+#: patterns/teachers-photos-grid.php:24
+msgid "learning and grow into well-rounded individuals."
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:42
-msgid "Years Combined Teaching Experience"
+#: patterns/teachers-photos-grid.php:33
+msgid "Portrait of Kristin Watson, Science Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:53
-msgid "Portrait of Kristin Watson, Early STEM Lead"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:59
-msgid "Early STEM Lead"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:64
+#: patterns/teachers-photos-grid.php:38
 msgid "Kristin Watson"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:68
-msgid "Fostering natural curiosity through outdoor botany and hands-on laboratory quests."
+#: patterns/teachers-photos-grid.php:42
+msgid "Science Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:75
-msgid "Degree: M.Ed"
+#: patterns/teachers-photos-grid.php:51
+msgid "Portrait of Jenny Wilson, Phonics & Literacy Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:79
-msgid "Tenure: 8 Yrs"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:89
-msgid "Portrait of Jenny Wilson, Phonics & Literacy teacher"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:95
-msgid "Phonics & Literacy"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:100
+#: patterns/teachers-photos-grid.php:56
 #: patterns/teachers-spotlight.php:92
 msgid "Jenny Wilson"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:104
-msgid "Creating immersive phonics worlds, speech development, and puppet storytelling."
+#: patterns/teachers-photos-grid.php:60
+msgid "Literacy Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:111
-msgid "Degree: B.A. ECE"
+#: patterns/teachers-photos-grid.php:69
+msgid "Portrait of Marcus Hayes, Music & Rhythm Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:115
-msgid "Tenure: 6 Yrs"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:125
-msgid "Portrait of Marcus Hayes, Music & Movement teacher"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:131
-msgid "Music & Movement"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:136
+#: patterns/teachers-photos-grid.php:74
 msgid "Marcus Hayes"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:140
-msgid "Orff Schulwerk rhythm specialist unlocking cognitive focus through melody and movement."
+#: patterns/teachers-photos-grid.php:78
+msgid "Music Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:147
-msgid "Degree: B.Mus"
+#: patterns/teachers-photos-grid.php:87
+msgid "Portrait of Sofia Chen, Drawing & Studio Arts Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:151
-msgid "Tenure: 5 Yrs"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:161
-msgid "Portrait of Sofia Chen, Visual Arts Studio teacher"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:167
-msgid "Visual Arts Studio"
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:172
+#: patterns/teachers-photos-grid.php:92
 msgid "Sofia Chen"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:176
-msgid "Guiding fine motor coordination and joyful sensory creativity with clay and tempera."
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:183
-msgid "Degree: B.F.A."
-msgstr ""
-
-#: patterns/teachers-photos-grid.php:187
-msgid "Tenure: 4 Yrs"
+#: patterns/teachers-photos-grid.php:96
+msgid "Drawing Teacher"
 msgstr ""
 
 #: patterns/teachers-spotlight.php
@@ -1566,6 +1665,10 @@ msgstr ""
 #: patterns/teachers-spotlight.php
 msgctxt "Pattern description"
 msgid "Asymmetrical layout featuring an expansive message and bio from the school principal on the left, paired with a 2x2 grid of key subject educators on the right."
+msgstr ""
+
+#: patterns/teachers-spotlight.php:25
+msgid "Meet Our Dedicated "
 msgstr ""
 
 #: patterns/teachers-spotlight.php:25
@@ -1597,7 +1700,7 @@ msgid "Ed.D Harvard University"
 msgstr ""
 
 #: patterns/teachers-spotlight.php:72
-msgid "Read Headmaster's Welcome"
+msgid "Principal's Welcome"
 msgstr ""
 
 #: patterns/teachers-spotlight.php:95
@@ -1645,7 +1748,7 @@ msgid "Looking for passionate educators to inspire the next generation."
 msgstr ""
 
 #: patterns/teachers-spotlight.php:189
-msgid "View Positions"
+msgid "Open Roles"
 msgstr ""
 
 #: patterns/testimonials-cards.php
@@ -1870,6 +1973,12 @@ msgid "Secondary Dark / Warm Amber"
 msgstr ""
 
 #: theme.json
+#: styles/sunshine-playful.json
+msgctxt "Color name"
+msgid "Secondary Gold / Display Gold"
+msgstr ""
+
+#: theme.json
 #: styles/pastel-nursery.json
 #: styles/sunshine-playful.json
 msgctxt "Color name"
@@ -1900,11 +2009,41 @@ msgid "Border / Soft Gray"
 msgstr ""
 
 #: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
+msgctxt "Color name"
+msgid "Border Subtle / Extra Light"
+msgstr ""
+
+#: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
+msgctxt "Color name"
+msgid "Info Blue"
+msgstr ""
+
+#: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
+msgctxt "Color name"
+msgid "Info Light / Sky Tint"
+msgstr ""
+
+#: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
 msgctxt "Color name"
 msgid "Success Green"
 msgstr ""
 
 #: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
 msgctxt "Color name"
 msgid "Alert Red"
 msgstr ""
@@ -1926,16 +2065,24 @@ msgid "Warning Text"
 msgstr ""
 
 #: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
 msgctxt "Color name"
 msgid "Success Light / Soft Mint"
 msgstr ""
 
 #: theme.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
 msgctxt "Color name"
 msgid "Rose Light / Soft Pink"
 msgstr ""
 
 #: theme.json
+#: styles/coral-playground.json
+#: styles/pastel-nursery.json
+#: styles/sunshine-playful.json
 msgctxt "Color name"
 msgid "Rose / Studio Pink"
 msgstr ""
@@ -2132,6 +2279,11 @@ msgstr ""
 
 #: styles/coral-playground.json
 msgctxt "Color name"
+msgid "Secondary Gold / Display Teal"
+msgstr ""
+
+#: styles/coral-playground.json
+msgctxt "Color name"
 msgid "Accent / Banana Sunshine"
 msgstr ""
 
@@ -2141,22 +2293,19 @@ msgid "Surface Soft"
 msgstr ""
 
 #: styles/coral-playground.json
+#: styles/pastel-nursery.json
+msgctxt "Color name"
+msgid "Midnight / Deep Ink"
+msgstr ""
+
+#: styles/coral-playground.json
 msgctxt "Color name"
 msgid "Border / Soft Rose"
 msgstr ""
 
 #: styles/coral-playground.json
-#: styles/pastel-nursery.json
-#: styles/sunshine-playful.json
 msgctxt "Color name"
-msgid "Success"
-msgstr ""
-
-#: styles/coral-playground.json
-#: styles/pastel-nursery.json
-#: styles/sunshine-playful.json
-msgctxt "Color name"
-msgid "Error"
+msgid "Rose Light / Soft Blush"
 msgstr ""
 
 #: styles/pastel-nursery.json
@@ -2207,6 +2356,11 @@ msgstr ""
 #: styles/pastel-nursery.json
 msgctxt "Color name"
 msgid "Secondary Dark"
+msgstr ""
+
+#: styles/pastel-nursery.json
+msgctxt "Color name"
+msgid "Secondary Gold"
 msgstr ""
 
 #: styles/pastel-nursery.json
@@ -2267,6 +2421,11 @@ msgstr ""
 #: styles/sunshine-playful.json
 msgctxt "Color name"
 msgid "Surface Warm"
+msgstr ""
+
+#: styles/sunshine-playful.json
+msgctxt "Color name"
+msgid "Midnight / Deep Espresso"
 msgstr ""
 
 #: styles/sunshine-playful.json

@@ -7,7 +7,7 @@
  * Keywords: admissions, enrollment, tour, registration, roadmap, steps
  *
  * @package LearnSchool
- * @since 1.1.0
+ * @since 1.0.0
  * Viewport Width: 1280
  */
 
@@ -78,21 +78,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"},"margin":{"top":"var:preset|spacing|step-6"}},"border":{"radius":"24px"}},"backgroundColor":"primary-light","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-5","bottom":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"},"margin":{"top":"var:preset|spacing|step-6"}},"border":{"radius":"24px"}},"backgroundColor":"primary-light","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide has-primary-light-background-color has-background" style="border-radius:24px;margin-top:var(--wp--preset--spacing--step-6);padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:var(--wp--preset--spacing--step-5);padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><?php echo esc_html__( 'Now Accepting Fall & Year-Round Applications', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading"><?php echo esc_html__( 'Fall & Year-Round Admissions Open', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color"><?php echo esc_html__( 'Spaces are limited to preserve our state-accredited low student-teacher ratios.', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color"><?php echo esc_html__( 'Limited spots to preserve our low student-teacher ratios.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill","backgroundColor":"primary","textColor":"base"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#tour' ) ); ?>"><?php echo esc_html__( 'Schedule Campus Visit', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#tour' ) ); ?>"><?php echo esc_html__( 'Schedule a Visit', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></section>
+<!-- /wp:group -->
+</section>
+<!-- /wp:group -->

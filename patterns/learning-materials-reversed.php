@@ -30,9 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Visual Storybooks & Phonics', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Storybooks & Phonics', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-2","right":"var:preset|spacing|step-2"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
@@ -54,9 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Interactive Digital Touch Labs', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Digital Touch Labs', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-2","right":"var:preset|spacing|step-2"}},"typography":{"fontWeight":"700"}},"backgroundColor":"warning","textColor":"warning-text","fontSize":"x-small"} -->
@@ -78,9 +78,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:heading {"level":3,"textColor":"contrast","fontSize":"large"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Physical Science & Craft Packs', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size"><?php echo esc_html__( 'Science & Craft Kits', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"border":{"radius":"9999px"},"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-2","right":"var:preset|spacing|step-2"}},"typography":{"fontWeight":"700"}},"backgroundColor":"primary-light","textColor":"primary-dark","fontSize":"x-small"} -->
@@ -98,7 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Engaging Textbooks, Digital Labs & ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Creative Kits', 'learnschool' ); ?></span></h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Textbooks, Digital Labs & ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Creative Kits', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"medium"} -->
@@ -121,11 +121,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-4"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-4)"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#sample-curriculum"><?php echo esc_html__( 'Download Curriculum Guide', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#sample-curriculum"><?php echo esc_html__( 'Curriculum Guide', 'learnschool' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-learnschool-outline"} -->
-<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="#sample-lesson"><?php echo esc_html__( 'Preview Sample Lesson', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="#sample-lesson"><?php echo esc_html__( 'Sample Lesson', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>

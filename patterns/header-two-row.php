@@ -20,11 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <!-- wp:group {"tagName":"header","align":"full","layout":{"type":"default"}} -->
-<header class="wp-block-group alignfull"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base-subtle","textColor":"contrast-subtle","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-contrast-subtle-color has-base-subtle-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<header class="wp-block-group alignfull"><!-- wp:group {"align":"full","className":"learnschool-utility-bar","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}}},"backgroundColor":"base-subtle","textColor":"contrast-subtle","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull learnschool-utility-bar has-contrast-subtle-color has-base-subtle-background-color has-text-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="tel:5550192834" style="color:inherit;text-decoration:none;white-space:nowrap"><?php echo esc_html__( 'Call: (555) 019-2834', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size"><a href="tel:5550192834" style="white-space:nowrap"><?php echo esc_html__( 'Call: (555) 019-2834', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
@@ -33,21 +33,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a></p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"learnschool-utility-bar__portal","fontSize":"small"} -->
+<p class="has-small-font-size learnschool-utility-bar__portal"><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/about-us/leadership/faculty-directory/' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Staff Directory', 'learnschool' ); ?></a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:social-links {"iconColor":"contrast-subtle","size":"has-small-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-1","left":"var:preset|spacing|step-1"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
-<!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
-<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
-<!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
-</ul>
-<!-- /wp:social-links --></div>
+<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/about-us/leadership/faculty-directory/' ) ); ?>"><?php echo esc_html__( 'Staff Directory', 'learnschool' ); ?></a></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

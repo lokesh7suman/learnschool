@@ -1,6 +1,6 @@
 {
 	"name": "learnschool",
-	"version": "1.0.5",
+	"version": "1.0.0",
 	"description": "Full-site editing block theme built for educational institutions, academies, and schools.",
 	"author": "codeclove",
 	"license": "GPL-2.0-or-later",
@@ -10,7 +10,7 @@
 		"full-site-editing",
 		"education"
 	],
-	"homepage": "https://codeclove.com/learnschool",
+	"homepage": "https://codeclove.com",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/codeclove/learnschool.git"

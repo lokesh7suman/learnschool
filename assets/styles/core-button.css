@@ -94,8 +94,8 @@
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
 .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
-	background-color: var(--wp--preset--color--primary, #704fe6);
-	color: var(--wp--preset--color--base, #fff);
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 10%, transparent);
+	color: var(--wp--preset--color--primary, #704fe6);
 }
 
 .wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after,

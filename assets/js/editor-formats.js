@@ -5,7 +5,7 @@
  * individual words/phrases directly inside headings, paragraphs, and list blocks.
  *
  * @param {Object} wp WordPress global namespace.
- * @since 1.0.6
+ * @since 1.0.0
  */
 
 ( function ( wp ) {

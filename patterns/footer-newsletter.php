@@ -98,17 +98,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Stay Connected', 'learnschool' ); ?></h4>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Subscribe to our weekly school bulletin and educational parenting guides.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-2);margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Stay up to date with weekly school bulletins, upcoming events, and admissions notices.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:html -->
-<form action="<?php echo esc_url( home_url( '/#newsletter' ) ); ?>" method="post" class="learnschool-newsletter-form" style="display:flex;align-items:center;background:var(--wp--preset--color--base);border:1.5px solid var(--wp--preset--color--border);border-radius:9999px;padding:4px;margin-top:var(--wp--preset--spacing--step-3);margin-bottom:var(--wp--preset--spacing--step-3)">
-	<label for="newsletter-email-footer" class="screen-reader-text"><?php echo esc_html__( 'Email Address', 'learnschool' ); ?></label>
-	<input type="email" id="newsletter-email-footer" name="email" required placeholder="<?php echo esc_attr__( 'Enter your email address', 'learnschool' ); ?>" style="flex:1;border:none;background:transparent;padding:8px 16px;font-family:var(--wp--preset--font-family--quicksand);font-size:var(--wp--preset--font-size--small);outline:none;color:var(--wp--preset--color--contrast)" />
-	<button type="submit" style="background:var(--wp--preset--color--primary);color:var(--wp--preset--color--base);border:none;border-radius:9999px;padding:8px 18px;font-family:var(--wp--preset--font-family--quicksand);font-size:var(--wp--preset--font-size--small);font-weight:700;cursor:pointer"><?php echo esc_html__( 'Subscribe', 'learnschool' ); ?></button>
-</form>
-<!-- /wp:html -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>"><?php echo esc_html__( 'Contact Us', 'learnschool' ); ?></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
 
 <!-- wp:social-links {"iconColor":"primary","iconBackgroundColor":"base-subtle","size":"has-normal-icon-size","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"},"margin":{"top":"var:preset|spacing|step-3"}}}} -->
 <ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-default" style="margin-top:var(--wp--preset--spacing--step-3)">
@@ -129,8 +127,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group alignwide"><!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
 <p class="has-contrast-subtle-color has-text-color has-small-font-size">
 <?php
-/* translators: %s: Current calendar year. */
-printf( esc_html__( '© %s LearnSchool Academy. All rights reserved.', 'learnschool' ), esc_html( gmdate( 'Y' ) ) );
+$learnschool_site_name = wp_strip_all_tags( get_bloginfo( 'name' ) );
+/* translators: 1: Current calendar year, 2: Site title. */
+printf( esc_html__( '© %1$s %2$s. All rights reserved.', 'learnschool' ), esc_html( gmdate( 'Y' ) ), '' !== $learnschool_site_name ? esc_html( $learnschool_site_name ) : esc_html__( 'My School', 'learnschool' ) );
 ?>
 </p>
 <!-- /wp:paragraph -->

@@ -7,7 +7,7 @@
  * Keywords: faq, accordion, questions, details, immunization, meals, tuition
  *
  * @package LearnSchool
- * @since 1.1.0
+ * @since 1.0.0
  * Viewport Width: 1280
  */
 

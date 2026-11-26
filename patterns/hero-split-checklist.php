@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3","margin":{"top":"var:preset|spacing|step-4"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-4)"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#tour"><?php echo esc_html__( 'Book a Campus Tour', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="#tour"><?php echo esc_html__( 'Book a Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-learnschool-outline"} -->

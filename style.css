@@ -1,13 +1,13 @@
 /*
 Theme Name: LearnSchool
-Theme URI: https://codeclove.com/learnschool
+Theme URI: https://codeclove.com
 Author: codeclove
 Author URI: https://codeclove.com
-Description: LearnSchool - A playful, high-fidelity Full Site Editing block theme for schools, academies, and children's e-learning platforms. Faithful to the Paperpillar Figma UI Kit.
+Description: LearnSchool - A playful Full Site Editing block theme designed for schools, academies, early learning centers, and children's education platforms.
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 8.0
-Version: 1.0.7
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: learnschool
@@ -194,11 +194,6 @@ select {
 	gap: var(--wp--preset--spacing--step-3);
 }
 
-.learnschool-newsletter-form:focus-within {
-	border-color: var(--wp--preset--color--primary);
-	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.15);
-}
-
 /* Modern Typography: Balanced Headings & Refined Paragraph Wraps */
 h1,
 h2,
@@ -382,10 +377,10 @@ span.learnschool-underline-wavy::after {
 	position: absolute;
 	left: calc(50.5% + var(--doodle-offset-x, 0px));
 	transform: translateX(-50%);
-	bottom: calc(-0.06em + var(--doodle-offset-y, 0px));
+	bottom: calc(-0.16em + var(--doodle-offset-y, 0px));
 	width: calc(100% + 0.4em);
 	min-width: 36px;
-	height: 0.42em;
+	height: 0.33em;
 	min-height: 10px;
 	background: url(assets/images/doodles/text-highlights/underline-wavy.svg) no-repeat center bottom / 100% 100%;
 	pointer-events: none;
@@ -407,10 +402,10 @@ span.learnschool-underline-loop::after {
 	position: absolute;
 	left: calc(51% + var(--doodle-offset-x, 0px));
 	transform: translateX(-50%);
-	bottom: calc(-0.08em + var(--doodle-offset-y, 0px));
+	bottom: calc(-0.22em + var(--doodle-offset-y, 0px));
 	width: calc(100% + 0.45em);
 	min-width: 38px;
-	height: 0.48em;
+	height: 0.34em;
 	min-height: 12px;
 	background: url(assets/images/doodles/text-highlights/underline-loop.svg) no-repeat center bottom / 100% 100%;
 	pointer-events: none;
@@ -514,6 +509,16 @@ footer .wp-block-list a:hover,
 [class*="footer"] .wp-block-list a:hover {
 	color: var(--wp--preset--color--primary);
 	text-decoration: none;
+}
+
+footer .has-midnight-background-color .wp-block-list a,
+.has-midnight-background-color .wp-block-list a {
+	color: rgba(255, 255, 255, 0.82);
+}
+
+footer .has-midnight-background-color .wp-block-list a:hover,
+.has-midnight-background-color .wp-block-list a:hover {
+	color: var(--wp--preset--color--secondary, #ffbe17);
 }
 
 /* Clean Phone / Contact Links */
