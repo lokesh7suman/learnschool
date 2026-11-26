@@ -1,0 +1,22 @@
+/**
+ * Core Post Date Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/post-date') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-post-date a {
+	display: inline-block;
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	text-decoration-color: color-mix(in srgb, currentcolor 45%, transparent);
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.wp-block-post-date a:hover {
+	color: var(--wp--preset--color--primary);
+	text-decoration-color: var(--wp--preset--color--primary);
+}

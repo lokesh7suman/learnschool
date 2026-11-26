@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2","margin":{"bottom":"var:preset|spacing|step-1"}}}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--step-1)"><!-- wp:post-terms {"term":"category","className":"is-style-learnschool-badge"} /-->
-<!-- wp:post-date {"fontSize":"small","textColor":"contrast-subtle"} /--></div>
+<!-- wp:post-date {"isLink":true,"fontSize":"small","textColor":"contrast-subtle"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:post-title {"level":2,"isLink":true,"fontSize":"large","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} /-->

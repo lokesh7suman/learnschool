@@ -6,15 +6,22 @@
  * @package LearnSchool
  */
 
+.wp-block-group:has(> .wp-block-site-title) {
+	min-width: 0;
+}
+
 .wp-block-site-title {
 	margin: 0;
+	min-width: 0;
+	max-width: 100%;
 	line-height: 1.2;
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: break-word;
 }
 
 .wp-block-site-title a {
-	display: inline-flex;
-	align-items: center;
+	display: inline-block;
+	max-width: 100%;
 	padding: 4px 8px 6px;
 	margin: -4px -8px -6px;
 	border-radius: 10px;
@@ -40,6 +47,8 @@
 	color: var(--wp--preset--color--primary, #704fe6);
 	position: relative;
 	display: inline-block;
+	max-width: 100%;
+	overflow-wrap: break-word;
 }
 
 .wp-block-site-title .learnschool-title-accent::after {
@@ -83,8 +92,9 @@
 	.wp-block-site-title a {
 		min-height: 44px;
 		box-sizing: border-box;
-		padding: 8px;
-		margin: -8px;
+		max-width: calc(100% + 16px);
+		padding: 10px 8px;
+		margin: -10px -8px;
 	}
 }
 

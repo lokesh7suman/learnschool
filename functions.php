@@ -70,7 +70,7 @@ if ( ! function_exists( 'learnschool_sticky_label_css' ) ) :
 	 * @return string Inline CSS declaration or empty string on encoding failure.
 	 */
 	function learnschool_sticky_label_css(): string {
-		$sticky_label = wp_json_encode( wp_strip_all_tags( __( 'Featured', 'learnschool' ) ) );
+		$sticky_label = wp_json_encode( wp_strip_all_tags( __( 'Featured', 'learnschool' ) ), JSON_HEX_TAG );
 		if ( ! is_string( $sticky_label ) ) {
 			return '';
 		}
@@ -116,7 +116,7 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			'learnschool-navigation',
 			'learnschoolNavData',
 			array(
-				'menuTitle' => __( 'Menu', 'learnschool' ),
+				'menuTitle' => esc_html__( 'Menu', 'learnschool' ),
 			)
 		);
 	}
@@ -223,16 +223,16 @@ if ( ! function_exists( 'learnschool_template_part_areas' ) ) :
 		$areas[] = array(
 			'area'        => 'banner',
 			'area_tag'    => 'aside',
-			'label'       => __( 'Banner', 'learnschool' ),
-			'description' => __( 'Top announcement bars, campus alert strips, and utility ribbons.', 'learnschool' ),
+			'label'       => esc_html__( 'Banner', 'learnschool' ),
+			'description' => esc_html__( 'Top announcement bars, campus alert strips, and utility ribbons.', 'learnschool' ),
 			'icon'        => 'layout',
 		);
 
 		$areas[] = array(
 			'area'        => 'sidebar',
 			'area_tag'    => 'aside',
-			'label'       => __( 'Sidebar', 'learnschool' ),
-			'description' => __( 'Curriculum navigation, educator profiles, and school widget sidebars.', 'learnschool' ),
+			'label'       => esc_html__( 'Sidebar', 'learnschool' ),
+			'description' => esc_html__( 'Curriculum navigation, educator profiles, and school widget sidebars.', 'learnschool' ),
 			'icon'        => 'sidebar',
 		);
 

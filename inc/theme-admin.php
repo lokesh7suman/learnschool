@@ -24,8 +24,8 @@ if ( ! function_exists( 'learnschool_add_welcome_page' ) ) :
 	 */
 	function learnschool_add_welcome_page(): void {
 		add_theme_page(
-			__( 'LearnSchool Setup', 'learnschool' ),
-			__( 'LearnSchool', 'learnschool' ),
+			esc_html__( 'LearnSchool Setup', 'learnschool' ),
+			esc_html__( 'LearnSchool', 'learnschool' ),
 			'edit_theme_options',
 			'learnschool-welcome',
 			'learnschool_render_welcome_page'

@@ -149,4 +149,35 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		}
 	} );
 
+	test( 'Untitled posts link to the single post view via the post date on archives', async ( { page, requestUtils } ) => {
+		const untitledPost = await requestUtils.rest( {
+			method: 'POST',
+			path: '/wp/v2/posts',
+			data: {
+				title: '',
+				content: 'This post has no title, but it still must link to the single post view somehow.',
+				date: '2009-09-05T12:00:00',
+				status: 'publish',
+			},
+		} );
+
+		try {
+			const response = await page.goto( '/category/uncategorized/' );
+			expect( response.status() ).toBe( 200 );
+
+			const dateLink = page.locator( `.wp-block-post-date a[href="${ untitledPost.link }"]` );
+			await expect( dateLink ).toBeVisible();
+			await expect( dateLink ).toContainText( 'September 5, 2009' );
+
+			await dateLink.click();
+			await page.waitForLoadState( 'domcontentloaded' );
+			expect( page.url() ).toBe( untitledPost.link );
+		} finally {
+			await requestUtils.rest( {
+				method: 'DELETE',
+				path: `/wp/v2/posts/${ untitledPost.id }?force=true`,
+			} );
+		}
+	} );
+
 } );
