@@ -17,8 +17,8 @@
 .wp-block-archives-list > li {
 	padding: 10px 16px;
 	margin-bottom: 8px;
-	background: #fff;
-	border: 1.5px solid #edf0f8;
+	background: var(--wp--preset--color--base, #fff);
+	border: 1.5px solid var(--wp--preset--color--border-subtle, #edf0f8);
 	border-radius: 14px;
 	display: flex;
 	align-items: center;
@@ -45,7 +45,7 @@
 .wp-block-categories-list > li:hover,
 .wp-block-archives-list > li:hover {
 	border-color: var(--wp--preset--color--primary-light);
-	background-color: #faf8ff;
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 4%, var(--wp--preset--color--base, #fff));
 	transform: translateX(3px);
 }
 

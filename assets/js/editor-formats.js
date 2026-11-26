@@ -35,7 +35,7 @@
 		},
 		createElement( 'path', {
 			d: 'M3 19h18v2.5H3V19zm15.8-12.7c.4.4.4 1 0 1.4l-9.9 9.9-3.8.9.9-3.8 9.9-9.9c.4-.4 1-.4 1.4 0l1.5 1.5z',
-			fill: '#FFB802',
+			fill: 'var(--wp--preset--color--secondary, #FFB802)',
 		} )
 	);
 
@@ -78,7 +78,7 @@
 		} ),
 		createElement( 'path', {
 			d: 'M4 19.5c1.8-1.2 3.8-1.2 5.5 0s3.8 1.2 5.5 0 3.8-1.2 5 0',
-			stroke: '#704FE6',
+			stroke: 'var(--wp--preset--color--primary, #704FE6)',
 			strokeWidth: '2.2',
 			strokeLinecap: 'round',
 		} )
@@ -123,7 +123,7 @@
 		} ),
 		createElement( 'path', {
 			d: 'M4 19.5c3-1.8 6-1.8 8.5 0s3.5 1.5 5.5 0',
-			stroke: '#FFB802',
+			stroke: 'var(--wp--preset--color--secondary, #FFB802)',
 			strokeWidth: '2.2',
 			strokeLinecap: 'round',
 		} )
@@ -164,7 +164,7 @@
 		},
 		createElement( 'path', {
 			d: 'M6 17.5c2-3.8 4.8-12.5 7.8-13.5 2 1 2 3.8 1 6.8l-6.8 1.9c0 1.9 1.9 2.9 3.8 2.9 1.9 0 3.8-1 5.8-2.9v1.9c-1.9 1.9-3.8 2.9-6.7 2.9-2.9 0-4.9-1.9-4.9-3.9zm4.8-6.8l3.9-.9c.5-1.9.5-3.8 0-4.8-1.9.9-2.9 3.8-3.9 5.7z',
-			fill: '#704FE6',
+			fill: 'var(--wp--preset--color--primary, #704FE6)',
 		} )
 	);
 

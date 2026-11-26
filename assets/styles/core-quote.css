@@ -14,7 +14,7 @@
 	background: var(--wp--preset--color--base-subtle, #f8f9fa);
 	padding: 22px 30px;
 	margin: 28px 0;
-	box-shadow: 0 4px 16px rgba(112, 79, 230, 0.04);
+	box-shadow: 0 4px 16px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 4%, transparent);
 }
 
 .wp-block-quote:not(.has-background) {
@@ -59,7 +59,7 @@
 	padding: 36px 40px;
 	margin: 36px 0;
 	text-align: center;
-	box-shadow: 0 10px 30px rgba(255, 190, 23, 0.08);
+	box-shadow: 0 10px 30px color-mix(in srgb, var(--wp--preset--color--secondary, #ffbe17) 8%, transparent);
 }
 
 .wp-block-pullquote:not(.has-background) {

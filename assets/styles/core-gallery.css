@@ -22,7 +22,7 @@ figure.wp-block-gallery {
 .wp-block-gallery .wp-block-image:hover img,
 .wp-block-gallery figure:hover img {
 	transform: scale(1.02);
-	box-shadow: 0 12px 28px rgba(112, 79, 230, 0.12);
+	box-shadow: 0 12px 28px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 12%, transparent);
 }
 
 .wp-block-gallery figcaption {

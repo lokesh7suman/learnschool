@@ -50,7 +50,7 @@
 
 .wp-block-post-template > li {
 	background-color: var(--wp--preset--color--base, #fff);
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 24px;
 	padding: var(--wp--preset--spacing--step-5, 28px);
 	box-shadow: var(--wp--preset--shadow--card);
@@ -178,7 +178,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: min(60%, 190px) auto, 100% 100%, 100% 100%;
-		border-bottom: 1px solid var(--wp--preset--color--border-subtle, var(--wp--preset--color--border, #e2e8f0));
+		border-bottom: 1px solid var(--wp--preset--color--border-subtle, var(--wp--preset--color--border-default, #e2e8f0));
 	}
 
 	.wp-block-post-template.is-layout-grid.columns-3:has(.wp-block-post-featured-image) > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {

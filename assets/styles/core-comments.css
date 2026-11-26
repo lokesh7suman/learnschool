@@ -36,7 +36,7 @@
 
 .wp-block-comments .wp-block-comment-template > li:hover {
 	border-color: var(--wp--preset--color--primary-light);
-	box-shadow: 0 8px 24px rgba(112, 79, 230, 0.06);
+	box-shadow: 0 8px 24px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 6%, transparent);
 }
 
 .wp-block-comments .wp-block-columns > .wp-block-column {
@@ -147,14 +147,14 @@
 	font-size: var(--wp--preset--font-size--base, 1rem);
 	font-weight: 700;
 	cursor: pointer;
-	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.15);
+	box-shadow: 0 2px 8px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 15%, transparent);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .form-submit input[type="submit"]:hover {
 	background-color: var(--wp--preset--color--primary-dark);
 	transform: translateY(-2px);
-	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.25);
+	box-shadow: 0 4px 14px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 25%, transparent);
 }
 
 .wp-block-comments .wp-block-comment-template > li.bypostauthor {

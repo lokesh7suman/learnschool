@@ -152,8 +152,8 @@
 .has-primary-light-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--primary-dark, #5837c7);
-	border: 1.5px solid rgba(88, 55, 199, 0.2);
-	box-shadow: 0 2px 8px rgba(88, 55, 199, 0.1);
+	border: 1.5px solid color-mix(in srgb, var(--wp--preset--color--primary-dark, #5837c7) 20%, transparent);
+	box-shadow: 0 2px 8px color-mix(in srgb, var(--wp--preset--color--primary-dark, #5837c7) 10%, transparent);
 }
 
 .has-primary-light-background-color .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {

@@ -28,7 +28,7 @@
 .wp-block-search input.wp-block-search__input:focus-visible {
 	outline: none;
 	border-color: var(--wp--preset--color--primary);
-	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.18);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 18%, transparent);
 }
 
 .wp-block-search__button {
@@ -42,14 +42,14 @@
 	font-weight: 700;
 	font-size: var(--wp--preset--font-size--base, 1rem);
 	cursor: pointer;
-	box-shadow: 0 2px 8px rgba(112, 79, 230, 0.2);
+	box-shadow: 0 2px 8px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 20%, transparent);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .wp-block-search__button:hover {
 	background-color: var(--wp--preset--color--primary-dark);
 	transform: translateY(-1px);
-	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.3);
+	box-shadow: 0 4px 14px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 30%, transparent);
 }
 
 /* Button-Inside Unified Single Pill Layout */
@@ -66,7 +66,7 @@
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper:focus-within {
 	border-color: var(--wp--preset--color--primary);
-	box-shadow: 0 0 0 4px rgba(112, 79, 230, 0.18);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 18%, transparent);
 }
 
 .wp-block-search.wp-block-search__button-inside input.wp-block-search__input,

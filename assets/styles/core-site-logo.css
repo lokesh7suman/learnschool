@@ -37,9 +37,9 @@
 
 .wp-block-site-logo a:focus-visible {
 	outline: none;
-	background-color: rgba(112, 79, 230, 0.08);
-	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
-		0 0 0 5px rgba(112, 79, 230, 0.14);
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 8%, transparent);
+	box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 70%, transparent),
+		0 0 0 5px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 14%, transparent);
 	border-radius: 9999px;
 }
 

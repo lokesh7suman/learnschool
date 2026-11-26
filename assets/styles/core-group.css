@@ -573,7 +573,7 @@ main.alignfull + .wp-block-template-part {
 	border: none;
 	border-radius: 9999px;
 	padding: 2px;
-	box-shadow: 0 2px 10px rgba(112, 79, 230, 0.22);
+	box-shadow: 0 2px 10px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 22%, transparent);
 	transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
 		box-shadow 0.22s ease;
 	will-change: transform;
@@ -585,12 +585,12 @@ main.alignfull + .wp-block-template-part {
 
 .learnschool-footer-social .wp-block-social-link:hover {
 	transform: translateY(-3px) scale(1.08);
-	box-shadow: 0 8px 22px rgba(112, 79, 230, 0.38);
+	box-shadow: 0 8px 22px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 38%, transparent);
 }
 
 .learnschool-footer-social .wp-block-social-link:active {
 	transform: translateY(-1px) scale(1.03);
-	box-shadow: 0 4px 12px rgba(112, 79, 230, 0.28);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 28%, transparent);
 }
 
 /* ── Icon Chips & Star Ratings (Theme-Preset Aware) ─────────────────── */
@@ -689,7 +689,7 @@ aside .is-style-learnschool-card-arch:hover,
 
 .wp-block-group.is-style-learnschool-card-arch.has-primary-background-color:hover,
 .wp-block-group.is-style-learnschool-card-arch.has-primary-dark-background-color:hover {
-	box-shadow: 0 24px 48px -12px rgba(88, 55, 199, 0.32), 0 10px 18px -6px rgba(88, 55, 199, 0.18);
+	box-shadow: 0 24px 48px -12px color-mix(in srgb, var(--wp--preset--color--primary-dark, #5837c7) 32%, transparent), 0 10px 18px -6px color-mix(in srgb, var(--wp--preset--color--primary-dark, #5837c7) 18%, transparent);
 }
 
 .wp-block-group.is-style-learnschool-card-arch.has-primary-background-color :where(h1, h2, h3, h4, h5, h6, .wp-block-heading):not(.has-text-color),
@@ -726,5 +726,5 @@ aside .is-style-learnschool-card-arch:hover,
 .is-style-learnschool-card-arch.has-primary-dark-background-color a:focus-visible {
 	outline: 2px solid var(--wp--preset--color--accent, #ffd25d);
 	outline-offset: 3px;
-	box-shadow: 0 0 0 4px rgba(255, 210, 93, 0.28);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--wp--preset--color--accent, #ffd25d) 28%, transparent);
 }
