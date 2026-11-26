@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T06:33:22+00:00\n"
+"POT-Creation-Date: 2026-11-26T07:15:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -37,47 +37,49 @@ msgstr ""
 msgid "codeclove"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:98
 #: patterns/header-right-aligned.php:36
 #: patterns/header-two-row.php:59
 msgid "Enroll Now"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:100
 #: patterns/header-two-row.php:27
 msgid "Call: (555) 019-2834"
 msgstr ""
 
-#: functions.php:105
-#: patterns/footer-newsletter.php:79
-#: patterns/footer-wonderkids.php:71
+#: functions.php:102
 #: patterns/header-two-row.php:37
-msgid "Parent Portal"
+msgid "Programs Overview"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:104
 #: patterns/header-two-row.php:41
 msgid "Staff Directory"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:105
 #: patterns/header-two-row.php:31
 msgid "Mon–Fri: 8:00 AM – 5:00 PM"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:143
+msgid "Featured"
+msgstr ""
+
+#: functions.php:195
 msgid "Banner"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:196
 msgid "Top announcement bars, campus alert strips, and utility ribbons."
 msgstr ""
 
-#: functions.php:196
+#: functions.php:203
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:204
 msgid "Curriculum navigation, educator profiles, and school widget sidebars."
 msgstr ""
 
@@ -264,6 +266,7 @@ msgstr ""
 
 #: patterns/admissions-roadmap.php:39
 #: patterns/cta-community.php:41
+#: patterns/footer-wonderkids.php:100
 #: patterns/hero-playful-doodles.php:33
 #: patterns/hero-split-tour.php:33
 msgid "Schedule a Tour"
@@ -338,62 +341,23 @@ msgstr ""
 
 #: patterns/blog-latest.php
 msgctxt "Pattern description"
-msgid "Editorial three-column blog showcase with \"Read our blog\" script heading, \"See All\" action link, and three illustrated story cards."
+msgid "Editorial three-column blog showcase with \"Read our blog\" script heading, \"See All\" action link, and dynamic three-column latest posts Query Loop."
 msgstr ""
 
-#: patterns/blog-latest.php:24
+#: patterns/blog-latest.php:33
 msgid "Read our "
 msgstr ""
 
-#: patterns/blog-latest.php:24
+#: patterns/blog-latest.php:33
 msgid "blog"
 msgstr ""
 
-#: patterns/blog-latest.php:29
+#: patterns/blog-latest.php:38
 msgid "See All"
 msgstr ""
 
-#: patterns/blog-latest.php:39
-msgid "Sunlit classroom table with wooden pattern blocks, alphabet cubes, and storybook"
-msgstr ""
-
-#: patterns/blog-latest.php:44
-msgid "Learning with Games"
-msgstr ""
-
-#: patterns/blog-latest.php:48
-msgid "Embrace the joy of hands-on games to deepen focus, problem-solving, and curiosity."
-msgstr ""
-
-#: patterns/blog-latest.php:56
-#: patterns/blog-latest.php:84
-#: patterns/blog-latest.php:112
-#: patterns/learning-materials-split.php:34
-msgid "Learn more"
-msgstr ""
-
-#: patterns/blog-latest.php:67
-msgid "Colorful Montessori wooden sorting bowls, counting pegs, and pattern flashcards"
-msgstr ""
-
-#: patterns/blog-latest.php:72
-msgid "10 Learning Game Ideas"
-msgstr ""
-
-#: patterns/blog-latest.php:76
-msgid "Playful counting, sorting, and pattern games families can enjoy together at home."
-msgstr ""
-
-#: patterns/blog-latest.php:95
-msgid "Sunlit studio craft table with watercolor paints, origami paper, and botanical leaves"
-msgstr ""
-
-#: patterns/blog-latest.php:100
-msgid "Fun Activities for Kids"
-msgstr ""
-
-#: patterns/blog-latest.php:104
-msgid "Screen-free watercolor painting, origami shapes, and nature crafts for rainy afternoons."
+#: patterns/blog-latest.php:66
+msgid "No school articles published yet. Add your first post to see it featured here."
 msgstr ""
 
 #: patterns/cta-community.php
@@ -718,6 +682,7 @@ msgid "Creative "
 msgstr ""
 
 #: patterns/features-activities.php:77
+#: patterns/footer-wonderkids.php:108
 msgid "Activities"
 msgstr ""
 
@@ -1071,7 +1036,7 @@ msgid "Email: info@learnschool.edu"
 msgstr ""
 
 #: patterns/footer-newsletter.php:42
-#: patterns/footer-wonderkids.php:51
+#: patterns/footer-wonderkids.php:64
 msgid "Programs"
 msgstr ""
 
@@ -1100,8 +1065,13 @@ msgid "School Life"
 msgstr ""
 
 #: patterns/footer-newsletter.php:75
-#: patterns/footer-wonderkids.php:67
+#: patterns/footer-newsletter.php:138
+#: patterns/footer-wonderkids.php:80
 msgid "Admissions"
+msgstr ""
+
+#: patterns/footer-newsletter.php:79
+msgid "Parent Portal"
 msgstr ""
 
 #: patterns/footer-newsletter.php:83
@@ -1129,18 +1099,12 @@ msgid "Contact Us"
 msgstr ""
 
 #: patterns/footer-newsletter.php:138
-#: patterns/footer-wonderkids.php:91
+#: patterns/footer-wonderkids.php:104
 msgid "Privacy Policy"
 msgstr ""
 
 #: patterns/footer-newsletter.php:138
-#: patterns/footer-wonderkids.php:95
-msgid "Terms of Service"
-msgstr ""
-
-#: patterns/footer-newsletter.php:138
-#: patterns/footer-wonderkids.php:99
-msgid "Accessibility"
+msgid "FAQ"
 msgstr ""
 
 #: patterns/footer-wonderkids.php
@@ -1153,32 +1117,36 @@ msgctxt "Pattern description"
 msgid "Clean light footer featuring brand logo with decorative mini doodles, three compact sitemap link columns, and circular outline social buttons."
 msgstr ""
 
-#: patterns/footer-wonderkids.php:32
+#: patterns/footer-wonderkids.php:45
 msgid "Playful, nurturing early education built for curious young learners."
 msgstr ""
 
-#: patterns/footer-wonderkids.php:47
+#: patterns/footer-wonderkids.php:60
 msgid "Home"
 msgstr ""
 
-#: patterns/footer-wonderkids.php:55
-msgid "About"
-msgstr ""
-
-#: patterns/footer-wonderkids.php:59
-msgid "Faculty"
-msgstr ""
-
-#: patterns/footer-wonderkids.php:75
+#: patterns/footer-wonderkids.php:68
 msgid "Curriculum"
 msgstr ""
 
-#: patterns/footer-wonderkids.php:79
+#: patterns/footer-wonderkids.php:72
+msgid "Faculty"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:84
+msgid "Questions & FAQ"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:88
+msgid "Learning Kits"
+msgstr ""
+
+#: patterns/footer-wonderkids.php:92
 msgid "Our Blog"
 msgstr ""
 
-#: patterns/footer-wonderkids.php:87
-msgid "Contact"
+#: patterns/footer-wonderkids.php:112
+msgid "Support"
 msgstr ""
 
 #: patterns/header-right-aligned.php
@@ -1548,6 +1516,10 @@ msgstr ""
 
 #: patterns/learning-materials-split.php:29
 msgid "Don’t worry! Children have a joyful time learning with tactile storybooks, guided touch labs, and creative kits designed to be easy to understand."
+msgstr ""
+
+#: patterns/learning-materials-split.php:34
+msgid "Learn more"
 msgstr ""
 
 #: patterns/learning-materials-split.php:43

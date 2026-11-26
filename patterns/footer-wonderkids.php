@@ -18,6 +18,19 @@ declare(strict_types=1);
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$learnschool_posts_page = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
+$learnschool_blog_url   = home_url( '/#blog' );
+if ( $learnschool_posts_page > 0 ) {
+	$learnschool_permalink = get_permalink( $learnschool_posts_page );
+	if ( is_string( $learnschool_permalink ) ) {
+		$learnschool_blog_url = $learnschool_permalink;
+	}
+}
+$learnschool_privacy_url = get_privacy_policy_url();
+if ( '' === $learnschool_privacy_url ) {
+	$learnschool_privacy_url = home_url( '/' );
+}
 ?>
 <!-- wp:group {"align":"full","className":"learnschool-footer-studio","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","textColor":"contrast","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull learnschool-footer-studio has-contrast-color has-base-background-color has-text-color has-background" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
@@ -48,15 +61,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/academics/' ) ); ?>"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php echo esc_html__( 'About', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Curriculum', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/about-us/leadership/faculty-directory/' ) ); ?>"><?php echo esc_html__( 'Faculty', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#faculty' ) ); ?>"><?php echo esc_html__( 'Faculty', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
@@ -64,19 +77,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"16%"} -->
 <div class="wp-block-column" style="flex-basis:16%"><!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
 <ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/admissions/how-to-apply/' ) ); ?>"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/contact-us/parent-portal/' ) ); ?>"><?php echo esc_html__( 'Parent Portal', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Questions & FAQ', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/academics/' ) ); ?>"><?php echo esc_html__( 'Curriculum', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Learning Kits', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php echo esc_html__( 'Our Blog', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( $learnschool_blog_url ); ?>"><?php echo esc_html__( 'Our Blog', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
@@ -84,19 +97,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"16%"} -->
 <div class="wp-block-column" style="flex-basis:16%"><!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
 <ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>"><?php echo esc_html__( 'Contact', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php echo esc_html__( 'Privacy Policy', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( $learnschool_privacy_url ); ?>"><?php echo esc_html__( 'Privacy Policy', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>"><?php echo esc_html__( 'Terms of Service', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Activities', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/accessibility/' ) ); ?>"><?php echo esc_html__( 'Accessibility', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Support', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
