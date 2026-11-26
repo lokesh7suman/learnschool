@@ -1,24 +1,16 @@
 === LearnSchool ===
 Contributors: codeclove
-Requires at least: 6.6
+Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.0
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: full-site-editing, block-patterns, block-styles, style-variations, education, wide-blocks, custom-logo, editor-style, translation-ready
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: education, blog, full-site-editing, block-patterns, block-styles, style-variations, education, custom-logo, editor-style, translation-ready, sticky-post, one-column, two-columns, right-sidebar, threaded-comments
 
 == Description ==
 
-LearnSchool is a clean, playful, and accessible Full-Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, fluid typography, self-hosted fonts, global style variations, and modular educational block patterns.
-
-== Features ==
-
-* Full Site Editing (FSE) support with custom block templates and template parts
-* 40 modular Block Patterns including 7 full-page starter layouts (Home, About Us, Programs, Admissions, Tuition, Blog, Contact)
-* 3 Global Style Variations (Coral Playground, Pastel Nursery, Sunshine Playful) plus custom block styles
-* Fluid Typography & Responsive Spacing Tokens
-* Privacy-first: self-hosted WOFF2 fonts with zero external CDN requests
+LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 40 modular block patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
 
 == Installation ==
 
@@ -42,7 +34,7 @@ LearnSchool does not collect, store, or transmit personal visitor data, set trac
 == Changelog ==
 
 = 1.0.0 =
-* Initial public release featuring Full-Site Editing templates, theme.json v3 design tokens, three global style variations, self-hosted typography, and 40 educational and starter-page block patterns.
+* New release.
 
 == Copyright & License ==
 

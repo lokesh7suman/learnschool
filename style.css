@@ -1,20 +1,17 @@
 /*
 Theme Name: LearnSchool
-Theme URI: https://codeclove.com
-Author: codeclove
-Author URI: https://codeclove.com
-Description: LearnSchool - A playful Full Site Editing block theme designed for schools, academies, early learning centers, and children's education platforms.
-Requires at least: 6.6
+Theme URI: https://codeclove.com/themes/learnschool/
+Author: CodeClove
+Author URI: https://codeclove.com/
+Description: LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 40 modular block patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
+Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.0
 Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: learnschool
-Tags: full-site-editing, block-patterns, block-styles, style-variations, education, wide-blocks, custom-logo, editor-style, translation-ready
-
-LearnSchool WordPress Theme, Copyright 2026 codeclove.
-LearnSchool is distributed under the terms of the GNU GPL v2 or later.
+Tags: education, blog, full-site-editing, block-patterns, block-styles, style-variations, education, custom-logo, editor-style, translation-ready, sticky-post, one-column, two-columns, right-sidebar, threaded-comments
 */
 
 /* Cascade layers registered for future specificity management */
