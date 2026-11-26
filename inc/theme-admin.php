@@ -151,34 +151,24 @@ add_action( 'admin_enqueue_scripts', 'learnschool_admin_assets' );
 
 if ( ! function_exists( 'learnschool_get_starter_page_definitions' ) ) :
 	/**
-	 * Returns the core school starter pages supported by one-click draft creation.
+	 * Returns the core school starter pages supported by quick setup creation.
 	 *
 	 * @since 1.0.0
 	 * @return array<string, array{title: string, slug: string, pattern: string}> Starter page definitions keyed by slug.
 	 */
 	function learnschool_get_starter_page_definitions(): array {
 		return array(
-			'home'       => array(
+			'home'    => array(
 				'title'   => __( 'Home', 'learnschool' ),
 				'slug'    => 'home',
 				'pattern' => 'learnschool/page-home',
 			),
-			'about'      => array(
+			'about'   => array(
 				'title'   => __( 'About Us', 'learnschool' ),
 				'slug'    => 'about',
 				'pattern' => 'learnschool/page-about',
 			),
-			'programs'   => array(
-				'title'   => __( 'Programs', 'learnschool' ),
-				'slug'    => 'programs',
-				'pattern' => 'learnschool/page-programs',
-			),
-			'admissions' => array(
-				'title'   => __( 'Admissions', 'learnschool' ),
-				'slug'    => 'admissions',
-				'pattern' => 'learnschool/page-admissions',
-			),
-			'contact'    => array(
+			'contact' => array(
 				'title'   => __( 'Contact', 'learnschool' ),
 				'slug'    => 'contact',
 				'pattern' => 'learnschool/page-contact',
@@ -186,6 +176,112 @@ if ( ! function_exists( 'learnschool_get_starter_page_definitions' ) ) :
 		);
 	}
 endif;
+
+if ( ! function_exists( 'learnschool_insert_starter_page' ) ) :
+	/**
+	 * Inserts a starter page for the given definition or returns the existing post ID.
+	 *
+	 * @since 1.0.0
+	 * @param array{title: string, slug: string, pattern: string} $config      Starter page definition.
+	 * @param string                                              $post_status Target post status ('draft' or 'publish').
+	 * @return int Page ID on success, or 0 on failure.
+	 */
+	function learnschool_insert_starter_page( array $config, string $post_status = 'draft' ): int {
+		$existing = get_posts(
+			array(
+				'post_type'              => 'page',
+				'name'                   => $config['slug'],
+				'post_status'            => array( 'publish', 'draft', 'pending', 'future', 'private' ),
+				'posts_per_page'         => 1,
+				'no_found_rows'          => true,
+				'update_post_meta_cache' => false,
+				'update_post_term_cache' => false,
+			)
+		);
+
+		if ( ! empty( $existing ) && $existing[0] instanceof \WP_Post ) {
+			return (int) $existing[0]->ID;
+		}
+
+		$pattern = \WP_Block_Patterns_Registry::get_instance()->get_registered( $config['pattern'] );
+		$content = is_array( $pattern ) && isset( $pattern['content'] ) && is_string( $pattern['content'] )
+			? $pattern['content']
+			: sprintf( '<!-- wp:pattern {"slug":"%s"} /-->', $config['pattern'] );
+
+		$allowed_status = in_array( $post_status, array( 'publish', 'draft' ), true ) ? $post_status : 'draft';
+		$post_id        = wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => $allowed_status,
+				'post_title'   => $config['title'],
+				'post_name'    => $config['slug'],
+				'post_content' => wp_slash( $content ),
+				'meta_input'   => array(
+					'_wp_page_template' => 'page-no-title',
+				),
+			),
+			true
+		);
+
+		return ! is_wp_error( $post_id ) && $post_id > 0 ? (int) $post_id : 0;
+	}
+endif;
+
+if ( ! function_exists( 'learnschool_set_admin_flash_notice' ) ) :
+	/**
+	 * Stores a one-time Setup Guide notice key for the current admin user.
+	 *
+	 * @since 1.0.0
+	 * @param string $notice_key Notice key identifier.
+	 * @return void
+	 */
+	function learnschool_set_admin_flash_notice( string $notice_key ): void {
+		$user_id = get_current_user_id();
+		if ( $user_id > 0 ) {
+			set_transient( 'learnschool_admin_notice_' . $user_id, sanitize_key( $notice_key ), MINUTE_IN_SECONDS );
+		}
+	}
+endif;
+
+if ( ! function_exists( 'learnschool_consume_admin_flash_notice' ) ) :
+	/**
+	 * Reads and immediately clears the one-time Setup Guide notice key for the current user.
+	 *
+	 * @since 1.0.0
+	 * @return string Notice key if set, otherwise an empty string.
+	 */
+	function learnschool_consume_admin_flash_notice(): string {
+		$user_id = get_current_user_id();
+		if ( $user_id <= 0 ) {
+			return '';
+		}
+
+		$transient_key = 'learnschool_admin_notice_' . $user_id;
+		$notice_key    = get_transient( $transient_key );
+		if ( ! is_string( $notice_key ) || '' === $notice_key ) {
+			return '';
+		}
+
+		delete_transient( $transient_key );
+
+		return sanitize_key( $notice_key );
+	}
+endif;
+
+if ( ! function_exists( 'learnschool_filter_removable_query_args' ) ) :
+	/**
+	 * Registers legacy Setup Guide notice query parameters for automatic browser URL cleanup.
+	 *
+	 * @since 1.0.0
+	 * @param array<int, string> $removable_query_args Query arguments removed by WordPress admin.
+	 * @return array<int, string> Filtered query arguments list.
+	 */
+	function learnschool_filter_removable_query_args( array $removable_query_args ): array {
+		$removable_query_args[] = 'learnschool_notice';
+		return $removable_query_args;
+	}
+endif;
+add_filter( 'removable_query_args', 'learnschool_filter_removable_query_args' );
 
 if ( ! function_exists( 'learnschool_handle_create_starter_page' ) ) :
 	/**
@@ -210,47 +306,8 @@ if ( ! function_exists( 'learnschool_handle_create_starter_page' ) ) :
 
 		check_admin_referer( 'learnschool_create_starter_page_' . $page_key );
 
-		$config   = $definitions[ $page_key ];
-		$existing = get_posts(
-			array(
-				'post_type'              => 'page',
-				'name'                   => $config['slug'],
-				'post_status'            => array( 'publish', 'draft', 'pending', 'future', 'private' ),
-				'posts_per_page'         => 1,
-				'no_found_rows'          => true,
-				'update_post_meta_cache' => false,
-				'update_post_term_cache' => false,
-			)
-		);
-
-		if ( ! empty( $existing ) && $existing[0] instanceof \WP_Post ) {
-			$edit_link = get_edit_post_link( $existing[0]->ID, 'raw' );
-			if ( is_string( $edit_link ) && '' !== $edit_link ) {
-				wp_safe_redirect( $edit_link );
-				exit;
-			}
-		}
-
-		$pattern = \WP_Block_Patterns_Registry::get_instance()->get_registered( $config['pattern'] );
-		$content = is_array( $pattern ) && isset( $pattern['content'] ) && is_string( $pattern['content'] )
-			? $pattern['content']
-			: sprintf( '<!-- wp:pattern {"slug":"%s"} /-->', $config['pattern'] );
-
-		$post_id = wp_insert_post(
-			array(
-				'post_type'    => 'page',
-				'post_status'  => 'draft',
-				'post_title'   => $config['title'],
-				'post_name'    => $config['slug'],
-				'post_content' => wp_slash( $content ),
-				'meta_input'   => array(
-					'_wp_page_template' => 'page-no-title',
-				),
-			),
-			true
-		);
-
-		if ( ! is_wp_error( $post_id ) && $post_id > 0 ) {
+		$post_id = learnschool_insert_starter_page( $definitions[ $page_key ], 'draft' );
+		if ( $post_id > 0 ) {
 			$edit_link = get_edit_post_link( $post_id, 'raw' );
 			if ( is_string( $edit_link ) && '' !== $edit_link ) {
 				wp_safe_redirect( $edit_link );
@@ -263,6 +320,167 @@ if ( ! function_exists( 'learnschool_handle_create_starter_page' ) ) :
 	}
 endif;
 add_action( 'admin_post_learnschool_create_starter_page', 'learnschool_handle_create_starter_page' );
+
+if ( ! function_exists( 'learnschool_handle_setup_starter_pages' ) ) :
+	/**
+	 * Creates all missing starter school pages as published pages (and optionally assigns
+	 * the static Home Reading setting) in one click.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	function learnschool_handle_setup_starter_pages(): void {
+		if ( ! current_user_can( 'publish_pages' ) ) {
+			wp_die( esc_html__( 'Sorry, you are not allowed to publish pages on this site.', 'learnschool' ), '', 403 );
+		}
+
+		check_admin_referer( 'learnschool_setup_starter_pages' );
+
+		$definitions   = learnschool_get_starter_page_definitions();
+		$before_status = learnschool_get_starter_pages_status();
+		$created_ids   = array();
+		$has_changes   = false;
+
+		foreach ( $definitions as $key => $config ) {
+			$post_id             = learnschool_insert_starter_page( $config, 'publish' );
+			$created_ids[ $key ] = $post_id;
+			if ( $post_id > 0 && 'missing' === ( $before_status[ $key ]['status'] ?? 'missing' ) ) {
+				$has_changes = true;
+			}
+		}
+
+		$set_reading = ! empty( $_POST['set_static_reading'] ) && current_user_can( 'manage_options' );
+		if ( $set_reading && ! empty( $created_ids['home'] ) ) {
+			$home_post = get_post( $created_ids['home'] );
+			if ( $home_post instanceof \WP_Post && 'draft' === $home_post->post_status ) {
+				wp_publish_post( $home_post->ID );
+				$home_post   = get_post( $home_post->ID );
+				$has_changes = true;
+			}
+			if ( $home_post instanceof \WP_Post && 'publish' === $home_post->post_status ) {
+				if ( 'page' !== get_option( 'show_on_front' ) ) {
+					update_option( 'show_on_front', 'page' );
+					$has_changes = true;
+				}
+				if ( (int) get_option( 'page_on_front' ) !== (int) $home_post->ID ) {
+					update_option( 'page_on_front', (int) $home_post->ID );
+					$has_changes = true;
+				}
+			}
+		}
+
+		if ( $has_changes ) {
+			learnschool_set_admin_flash_notice( 'pages_created' );
+		}
+		wp_safe_redirect( admin_url( 'admin.php?page=learnschool' ) );
+		exit;
+	}
+endif;
+add_action( 'admin_post_learnschool_setup_starter_pages', 'learnschool_handle_setup_starter_pages' );
+
+if ( ! function_exists( 'learnschool_handle_apply_style_preset' ) ) :
+	/**
+	 * Applies a bundled theme style variation (or resets to the default theme.json palette)
+	 * directly into the theme's wp_global_styles post.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	function learnschool_handle_apply_style_preset(): void {
+		if ( ! current_user_can( 'edit_theme_options' ) ) {
+			wp_die( esc_html__( 'Sorry, you are not allowed to customize theme styles.', 'learnschool' ), '', 403 );
+		}
+
+		$preset_slug = isset( $_POST['style_preset'] ) ? sanitize_key( wp_unslash( (string) $_POST['style_preset'] ) ) : '';
+		if ( '' === $preset_slug ) {
+			wp_safe_redirect( admin_url( 'admin.php?page=learnschool' ) );
+			exit;
+		}
+
+		check_admin_referer( 'learnschool_apply_style_preset_' . $preset_slug );
+
+		$selected_variation = null;
+		if ( 'default' !== $preset_slug ) {
+			$variations = \WP_Theme_JSON_Resolver::get_style_variations( 'theme' );
+			if ( is_array( $variations ) ) {
+				foreach ( $variations as $variation ) {
+					if ( is_array( $variation ) && ! empty( $variation['title'] ) && sanitize_title( (string) $variation['title'] ) === $preset_slug ) {
+						$selected_variation = $variation;
+						break;
+					}
+				}
+			}
+			if ( null === $selected_variation ) {
+				wp_safe_redirect( admin_url( 'admin.php?page=learnschool' ) );
+				exit;
+			}
+		}
+
+		$user_cpt        = \WP_Theme_JSON_Resolver::get_user_data_from_wp_global_styles( wp_get_theme(), false );
+		$existing_config = array();
+		if ( isset( $user_cpt['post_content'] ) && is_string( $user_cpt['post_content'] ) ) {
+			$decoded = json_decode( $user_cpt['post_content'], true );
+			if ( is_array( $decoded ) && ! empty( $decoded['isGlobalStylesUserThemeJSON'] ) ) {
+				$existing_config = $decoded;
+			}
+		}
+
+		// Resetting to default when no custom user Global Styles post exists yet is a no-op.
+		if ( 'default' === $preset_slug && empty( $existing_config ) ) {
+			wp_safe_redirect( admin_url( 'admin.php?page=learnschool' ) );
+			exit;
+		}
+
+		$new_config = array(
+			'version'                     => \WP_Theme_JSON::LATEST_SCHEMA,
+			'isGlobalStylesUserThemeJSON' => true,
+		);
+
+		$custom_css = $existing_config['styles']['css'] ?? '';
+
+		if ( is_array( $selected_variation ) ) {
+			if ( ! empty( $selected_variation['settings'] ) && is_array( $selected_variation['settings'] ) ) {
+				$new_config['settings'] = $selected_variation['settings'];
+			}
+			if ( ! empty( $selected_variation['styles'] ) && is_array( $selected_variation['styles'] ) ) {
+				$new_config['styles'] = $selected_variation['styles'];
+			}
+		}
+
+		if ( is_string( $custom_css ) && '' !== $custom_css ) {
+			if ( ! isset( $new_config['styles'] ) || ! is_array( $new_config['styles'] ) ) {
+				$new_config['styles'] = array();
+			}
+			$new_config['styles']['css'] = $custom_css;
+		}
+
+		$encoded          = wp_json_encode( $new_config );
+		$existing_encoded = ! empty( $existing_config ) ? wp_json_encode( $existing_config ) : '';
+		if ( ! is_string( $encoded ) || $encoded === $existing_encoded ) {
+			wp_safe_redirect( admin_url( 'admin.php?page=learnschool' ) );
+			exit;
+		}
+
+		if ( empty( $user_cpt['ID'] ) ) {
+			$user_cpt = \WP_Theme_JSON_Resolver::get_user_data_from_wp_global_styles( wp_get_theme(), true );
+		}
+
+		if ( ! empty( $user_cpt['ID'] ) ) {
+			wp_update_post(
+				array(
+					'ID'           => (int) $user_cpt['ID'],
+					'post_content' => wp_slash( $encoded ),
+				)
+			);
+			wp_clean_theme_json_cache();
+			learnschool_set_admin_flash_notice( 'style_applied' );
+		}
+
+		wp_safe_redirect( admin_url( 'admin.php?page=learnschool' ) );
+		exit;
+	}
+endif;
+add_action( 'admin_post_learnschool_apply_style_preset', 'learnschool_handle_apply_style_preset' );
 
 if ( ! function_exists( 'learnschool_get_starter_pages_status' ) ) :
 	/**
@@ -344,17 +562,38 @@ if ( ! function_exists( 'learnschool_extract_palette_map' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'learnschool_extract_palette_signature' ) ) :
+	/**
+	 * Builds a normalized signature string from a mapped palette for unambiguous matching.
+	 *
+	 * @since 1.0.0
+	 * @param array<string, string> $map Mapped hex colors keyed by slug.
+	 * @return string Delimited 4-swatch hex signature.
+	 */
+	function learnschool_extract_palette_signature( array $map ): string {
+		return implode(
+			'|',
+			array(
+				$map['base'] ?? '',
+				$map['base-subtle'] ?? '',
+				$map['primary'] ?? '',
+				$map['secondary'] ?? '',
+			)
+		);
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 	/**
 	 * Returns the theme's default palette and bundled style variations with active state detection.
 	 *
 	 * @since 1.0.0
-	 * @return array<int, array{title: string, is_active: bool, colors: array<int, string>}> Style preset swatches.
+	 * @return array<int, array{slug: string, title: string, is_active: bool, colors: array<int, string>}> Style preset swatches.
 	 */
 	function learnschool_get_admin_style_presets(): array {
 		$active_palette_raw = wp_get_global_settings( array( 'color', 'palette', 'theme' ) );
 		$active_map         = is_array( $active_palette_raw ) ? learnschool_extract_palette_map( $active_palette_raw ) : array();
-		$active_primary     = $active_map['primary'] ?? '';
+		$active_signature   = learnschool_extract_palette_signature( $active_map );
 
 		$presets = array();
 
@@ -363,10 +602,11 @@ if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 		$default_map     = is_array( $default_palette ) ? learnschool_extract_palette_map( $default_palette ) : array();
 
 		if ( ! empty( $default_map ) ) {
-			$default_primary = $default_map['primary'] ?? '';
-			$presets[]       = array(
+			$default_signature = learnschool_extract_palette_signature( $default_map );
+			$presets[]         = array(
+				'slug'      => 'default',
 				'title'     => __( 'Default', 'learnschool' ),
-				'is_active' => '' !== $active_primary && $active_primary === $default_primary,
+				'is_active' => '|||' !== $active_signature && $active_signature === $default_signature,
 				'colors'    => array_values(
 					array_filter(
 						array(
@@ -395,10 +635,11 @@ if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 				if ( empty( $var_map ) ) {
 					continue;
 				}
-				$var_primary = $var_map['primary'] ?? '';
-				$presets[]   = array(
+				$var_signature = learnschool_extract_palette_signature( $var_map );
+				$presets[]     = array(
+					'slug'      => sanitize_title( $title ),
 					'title'     => $title,
-					'is_active' => '' !== $active_primary && $active_primary === $var_primary,
+					'is_active' => '|||' !== $active_signature && $active_signature === $var_signature,
 					'colors'    => array_values(
 						array_filter(
 							array(
@@ -419,10 +660,11 @@ endif;
 
 if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 	/**
-	 * Builds the ordered 4-step FSE onboarding guide with concise copy and live status.
+	 * Builds the ordered 4-step FSE onboarding guide with honest status detection.
 	 *
 	 * @since 1.0.0
-	 * @param array<int, array{title: string, is_active: bool, colors: array<int, string>}> $presets Style presets list.
+	 * @param array<int, array{slug: string, title: string, is_active: bool, colors: array<int, string>}> $presets       Style presets list.
+	 * @param array<string, array{key: string, title: string, edit_url: string, status: string}>          $starter_pages Starter page statuses.
 	 * @return array<int, array{
 	 *     number: int,
 	 *     title: string,
@@ -436,7 +678,7 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 	 *     show_starter_pages: bool
 	 * }> Ordered setup steps.
 	 */
-	function learnschool_get_admin_setup_steps( array $presets ): array {
+	function learnschool_get_admin_setup_steps( array $presets, array $starter_pages ): array {
 		$stylesheet      = get_stylesheet();
 		$site_editor_url = admin_url( 'site-editor.php' );
 
@@ -466,7 +708,6 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 			),
 			$site_editor_url
 		);
-		$new_page_url   = admin_url( 'post-new.php?post_type=page' );
 
 		$custom_logo_set = has_custom_logo();
 		$site_icon_set   = has_site_icon();
@@ -479,6 +720,8 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 			$identity_status = __( 'Using fallback mascot', 'learnschool' );
 		}
 
+		$user_styles        = \WP_Theme_JSON_Resolver::get_user_data_from_wp_global_styles( wp_get_theme(), false );
+		$has_saved_styles   = ! empty( $user_styles['ID'] );
 		$active_preset_name = __( 'Custom Palette', 'learnschool' );
 		foreach ( $presets as $preset ) {
 			if ( ! empty( $preset['is_active'] ) ) {
@@ -487,22 +730,24 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 			}
 		}
 
-		$page_counts     = wp_count_posts( 'page' );
-		$published_pages = isset( $page_counts->publish ) ? (int) $page_counts->publish : 0;
-		$has_static_home = 'page' === get_option( 'show_on_front' ) && (int) get_option( 'page_on_front' ) > 0;
-
-		if ( $published_pages > 0 ) {
-			$pages_status = sprintf(
-				/* translators: %d: Number of published WordPress pages. */
-				_n( '%d published', '%d published', $published_pages, 'learnschool' ),
-				$published_pages
-			);
-			$pages_status .= $has_static_home
-				? ' · ' . __( 'Static Home', 'learnschool' )
-				: ' · ' . __( 'Front Page template', 'learnschool' );
-		} else {
-			$pages_status = __( 'No published pages', 'learnschool' );
+		$total_starters   = count( $starter_pages );
+		$created_starters = 0;
+		foreach ( $starter_pages as $starter ) {
+			if ( 'missing' !== $starter['status'] ) {
+				++$created_starters;
+			}
 		}
+
+		$has_static_home = 'page' === get_option( 'show_on_front' ) && (int) get_option( 'page_on_front' ) > 0;
+		$pages_status    = sprintf(
+			/* translators: 1: Created starter pages count, 2: Total starter pages count. */
+			__( '%1$d of %2$d created', 'learnschool' ),
+			$created_starters,
+			$total_starters
+		);
+		$pages_status .= $has_static_home
+			? ' · ' . __( 'Static Home active', 'learnschool' )
+			: ' · ' . __( 'Front Page template active', 'learnschool' );
 
 		$nav_counts    = wp_count_posts( 'wp_navigation' );
 		$has_nav_menus = isset( $nav_counts->publish ) && (int) $nav_counts->publish > 0;
@@ -516,22 +761,17 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 				'is_complete'        => $custom_logo_set && $site_icon_set,
 				'primary_label'      => __( 'Edit Identity', 'learnschool' ),
 				'primary_url'        => $identity_url,
-				'secondary_links'    => array(
-					array(
-						'label' => __( 'General Settings', 'learnschool' ),
-						'url'   => admin_url( 'options-general.php' ),
-					),
-				),
+				'secondary_links'    => array(),
 				'show_swatches'      => false,
 				'show_starter_pages' => false,
 			),
 			array(
 				'number'             => 2,
 				'title'              => __( 'Colors & Typography', 'learnschool' ),
-				'description'        => __( 'Pick a bundled palette in Global Styles so every page and pattern inherits your colors.', 'learnschool' ),
+				'description'        => __( 'Click any palette below to apply it immediately across every page and pattern.', 'learnschool' ),
 				'status_label'       => $active_preset_name,
-				'is_complete'        => true,
-				'primary_label'      => __( 'Open Global Styles', 'learnschool' ),
+				'is_complete'        => $has_saved_styles,
+				'primary_label'      => __( 'Customize in Global Styles', 'learnschool' ),
 				'primary_url'        => $styles_url,
 				'secondary_links'    => array(),
 				'show_swatches'      => ! empty( $presets ),
@@ -540,29 +780,20 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 			array(
 				'number'             => 3,
 				'title'              => __( 'Create Starter School Pages', 'learnschool' ),
-				'description'        => __( 'Generate ready-to-edit draft pages with Page (No Title) pre-applied so headings never duplicate.', 'learnschool' ),
+				'description'        => __( 'Your homepage already runs via Front Page template. Create Page (No Title) layouts below when you want editable menu pages.', 'learnschool' ),
 				'status_label'       => $pages_status,
-				'is_complete'        => $published_pages > 0,
-				'primary_label'      => __( 'New Blank Page', 'learnschool' ),
-				'primary_url'        => $new_page_url,
-				'secondary_links'    => array(
-					array(
-						'label' => __( 'Reading Settings', 'learnschool' ),
-						'url'   => admin_url( 'options-reading.php' ),
-					),
-					array(
-						'label' => __( 'All Pages', 'learnschool' ),
-						'url'   => admin_url( 'edit.php?post_type=page' ),
-					),
-				),
+				'is_complete'        => $created_starters >= $total_starters && $total_starters > 0,
+				'primary_label'      => __( 'All Pages', 'learnschool' ),
+				'primary_url'        => admin_url( 'edit.php?post_type=page' ),
+				'secondary_links'    => array(),
 				'show_swatches'      => false,
 				'show_starter_pages' => true,
 			),
 			array(
 				'number'             => 4,
 				'title'              => __( 'Navigation, Header CTA & Footer', 'learnschool' ),
-				'description'        => __( 'Link your published pages in the menu, update the Enroll Now button, and set footer campus info.', 'learnschool' ),
-				'status_label'       => $has_nav_menus ? __( 'Menu saved', 'learnschool' ) : __( 'Default links', 'learnschool' ),
+				'description'        => __( 'Arrange menu links, update the Enroll Now button, and customize footer campus details.', 'learnschool' ),
+				'status_label'       => $has_nav_menus ? __( 'Menu saved', 'learnschool' ) : __( 'Using page list', 'learnschool' ),
 				'is_complete'        => $has_nav_menus,
 				'primary_label'      => __( 'Manage Navigation', 'learnschool' ),
 				'primary_url'        => $navigation_url,
@@ -650,6 +881,7 @@ if ( ! function_exists( 'learnschool_render_admin_companion_panel' ) ) :
 					</div>
 					<div class="learnschool-admin-plugin-card__actions">
 						<?php if ( '' !== $learnschool_action['primary_url'] ) : ?>
+							<?php $learnschool_is_codeclove = 'codeclove-school-management' === $learnschool_action['slug']; ?>
 						<a
 							class="button <?php echo 'active' === $learnschool_action['status'] ? 'button-secondary' : 'button-primary'; ?> button-compact learnschool-plugin-action"
 							href="<?php echo esc_url( $learnschool_action['primary_url'] ); ?>"
@@ -658,7 +890,8 @@ if ( ! function_exists( 'learnschool_render_admin_companion_panel' ) ) :
 							data-plugin-basename="<?php echo esc_attr( $learnschool_action['basename'] ); ?>"
 							data-plugin-state="<?php echo esc_attr( $learnschool_action['status'] ); ?>"
 							data-loading-label="<?php echo esc_attr( $learnschool_action['loading_label'] ); ?>"
-							data-active-label="<?php echo esc_attr__( 'Manage Plugins', 'learnschool' ); ?>"
+							data-active-label="<?php echo esc_attr( $learnschool_is_codeclove ? __( 'Open Dashboard', 'learnschool' ) : __( 'Manage Plugins', 'learnschool' ) ); ?>"
+							data-active-url="<?php echo esc_url( $learnschool_is_codeclove ? admin_url( 'admin.php?page=codeclove-school-management' ) : self_admin_url( 'plugins.php' ) ); ?>"
 							data-plugins-url="<?php echo esc_url( self_admin_url( 'plugins.php' ) ); ?>"
 							<?php endif; ?>
 						>
@@ -746,12 +979,20 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 		$theme_version = $theme->get( 'Version' );
 		$version_label = is_string( $theme_version ) && '' !== $theme_version ? $theme_version : '1.0.0';
 
-		$site_editor_url = admin_url( 'site-editor.php' );
-		$styles_url      = add_query_arg( array( 'p' => '/styles' ), $site_editor_url );
-		$presets         = learnschool_get_admin_style_presets();
-		$steps           = learnschool_get_admin_setup_steps( $presets );
-		$starter_pages   = learnschool_get_starter_pages_status();
-		$can_edit_pages  = current_user_can( 'edit_pages' );
+		$site_editor_url  = admin_url( 'site-editor.php' );
+		$presets          = learnschool_get_admin_style_presets();
+		$starter_pages    = learnschool_get_starter_pages_status();
+		$steps            = learnschool_get_admin_setup_steps( $presets, $starter_pages );
+		$can_edit_pages   = current_user_can( 'edit_pages' );
+		$can_publish      = current_user_can( 'publish_pages' );
+		$can_edit_styles  = current_user_can( 'edit_theme_options' );
+		$missing_starters = 0;
+
+		foreach ( $starter_pages as $starter ) {
+			if ( 'missing' === $starter['status'] ) {
+				++$missing_starters;
+			}
+		}
 
 		$completed_count = 0;
 		foreach ( $steps as $step ) {
@@ -759,19 +1000,23 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 				++$completed_count;
 			}
 		}
+
+		$notice_key     = learnschool_consume_admin_flash_notice();
+		$notice_message = '';
+		if ( 'style_applied' === $notice_key ) {
+			$notice_message = __( 'Palette applied to Global Styles.', 'learnschool' );
+		} elseif ( 'pages_created' === $notice_key ) {
+			$notice_message = __( 'Starter school pages are ready.', 'learnschool' );
+		}
 		?>
 		<div class="learnschool-admin-page">
 			<div class="learnschool-admin-header">
 				<div class="learnschool-admin-header__inner">
 					<div class="learnschool-admin-header__top">
 						<div class="learnschool-admin-header__identity">
-							<img
-								class="learnschool-admin-header__logo"
-								src="<?php echo esc_url( get_theme_file_uri( 'assets/images/site-logo.png' ) ); ?>"
-								alt="<?php echo esc_attr__( 'LearnSchool logo', 'learnschool' ); ?>"
-								width="44"
-								height="44"
-							/>
+							<svg class="learnschool-admin-header__logo" width="44" height="44" viewBox="1.5 1.5 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M5 1.5H15C16.933 1.5 18.5 3.067 18.5 5V15C18.5 16.933 16.933 18.5 15 18.5H5C3.067 18.5 1.5 16.933 1.5 15V5C1.5 3.067 3.067 1.5 5 1.5ZM6.2 5.4H8.8V12.4H13.8V14.7H6.2V5.4ZM13.1 5.1Q13.65 6.35 14.9 6.9Q13.65 7.45 13.1 8.7Q12.55 7.45 11.3 6.9Q12.55 6.35 13.1 5.1Z"/>
+							</svg>
 							<div>
 								<h1><?php echo esc_html__( 'Welcome to LearnSchool', 'learnschool' ); ?></h1>
 								<p class="learnschool-admin-header__subtitle">
@@ -800,6 +1045,11 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 			<hr class="wp-header-end">
 
 			<div class="wrap learnschool-admin-wrap">
+				<?php if ( '' !== $notice_message ) : ?>
+				<div class="notice notice-success is-dismissible inline learnschool-admin-feedback">
+					<p><?php echo esc_html( $notice_message ); ?></p>
+				</div>
+				<?php endif; ?>
 				<div class="learnschool-admin-workspace">
 					<div class="learnschool-admin-main">
 						<section class="learnschool-admin-panel" aria-labelledby="learnschool-guide-heading">
@@ -846,23 +1096,40 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 
 										<?php if ( ! empty( $step['show_swatches'] ) && ! empty( $presets ) ) : ?>
 										<div class="learnschool-admin-swatches">
-											<?php foreach ( $presets as $preset ) : ?>
-											<a
-												class="learnschool-admin-swatch <?php echo $preset['is_active'] ? 'is-active' : ''; ?>"
-												href="<?php echo esc_url( $styles_url ); ?>"
+											<?php
+											foreach ( $presets as $preset ) :
+												$is_interactive = $can_edit_styles && ! $preset['is_active'];
+												$swatch_class   = 'learnschool-admin-swatch' . ( $preset['is_active'] ? ' is-active' : '' );
+												if ( $is_interactive ) :
+													?>
+											<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="learnschool-admin-swatch-form">
+												<input type="hidden" name="action" value="learnschool_apply_style_preset" />
+												<input type="hidden" name="style_preset" value="<?php echo esc_attr( $preset['slug'] ); ?>" />
+													<?php wp_nonce_field( 'learnschool_apply_style_preset_' . $preset['slug'] ); ?>
+												<button type="submit" class="<?php echo esc_attr( $swatch_class ); ?>" aria-pressed="false">
+												<?php else : ?>
+											<button
+												type="button"
+												class="<?php echo esc_attr( $swatch_class ); ?>"
+												disabled
+												aria-pressed="<?php echo $preset['is_active'] ? 'true' : 'false'; ?>"
 											>
-												<div class="learnschool-admin-swatch__chips" aria-hidden="true">
-													<?php foreach ( $preset['colors'] as $hex ) : ?>
-													<span class="learnschool-admin-swatch__chip" style="background-color: <?php echo esc_attr( $hex ); ?>;"></span>
-													<?php endforeach; ?>
-												</div>
-												<div class="learnschool-admin-swatch__meta">
-													<span class="learnschool-admin-swatch__name"><?php echo esc_html( $preset['title'] ); ?></span>
-													<?php if ( $preset['is_active'] ) : ?>
-													<span class="learnschool-admin-swatch__active"><?php echo esc_html__( 'Active', 'learnschool' ); ?></span>
-													<?php endif; ?>
-												</div>
-											</a>
+												<?php endif; ?>
+													<span class="learnschool-admin-swatch__chips" aria-hidden="true">
+														<?php foreach ( $preset['colors'] as $hex ) : ?>
+														<span class="learnschool-admin-swatch__chip" style="background-color: <?php echo esc_attr( $hex ); ?>;"></span>
+														<?php endforeach; ?>
+													</span>
+													<span class="learnschool-admin-swatch__meta">
+														<span class="learnschool-admin-swatch__name"><?php echo esc_html( $preset['title'] ); ?></span>
+														<?php if ( $preset['is_active'] ) : ?>
+														<span class="learnschool-admin-swatch__active"><?php echo esc_html__( 'Active', 'learnschool' ); ?></span>
+														<?php endif; ?>
+													</span>
+												</button>
+												<?php if ( $is_interactive ) : ?>
+											</form>
+											<?php endif; ?>
 											<?php endforeach; ?>
 										</div>
 										<?php endif; ?>
@@ -892,6 +1159,28 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 												<?php endif; ?>
 											<?php endforeach; ?>
 										</div>
+											<?php if ( $can_publish && ( $missing_starters > 0 || 'page' !== get_option( 'show_on_front' ) ) ) : ?>
+										<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="learnschool-admin-starter-bulk">
+											<input type="hidden" name="action" value="learnschool_setup_starter_pages" />
+												<?php wp_nonce_field( 'learnschool_setup_starter_pages' ); ?>
+												<?php if ( 0 === $missing_starters ) : ?>
+											<input type="hidden" name="set_static_reading" value="1" />
+											<button type="submit" class="button button-primary button-compact">
+													<?php echo esc_html__( 'Set Home as Static Front Page', 'learnschool' ); ?>
+											</button>
+											<?php else : ?>
+											<button type="submit" class="button button-primary button-compact">
+												<?php echo esc_html__( 'Create All Missing Pages', 'learnschool' ); ?>
+											</button>
+												<?php if ( current_user_can( 'manage_options' ) && 'page' !== get_option( 'show_on_front' ) ) : ?>
+												<label class="learnschool-admin-checkbox">
+													<input type="checkbox" name="set_static_reading" value="1" />
+													<span><?php echo esc_html__( 'Set Home as Static Front Page', 'learnschool' ); ?></span>
+												</label>
+												<?php endif; ?>
+											<?php endif; ?>
+										</form>
+										<?php endif; ?>
 										<?php endif; ?>
 
 										<div class="learnschool-admin-step-item__actions">

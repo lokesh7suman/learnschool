@@ -77,16 +77,60 @@ test.describe( 'LearnSchool Top-Level Menu, Setup & Companion Plugin Audit', () 
 			expect( response.status() ).toBeLessThan( 400 );
 
 			await expect( page.getByRole( 'heading', { name: 'Welcome to LearnSchool' } ) ).toBeVisible();
+			await expect( page.locator( 'svg.learnschool-admin-header__logo' ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'Site Setup Guide' } ) ).toBeVisible();
 			await expect( page.locator( '.learnschool-admin-step-item' ) ).toHaveCount( 4 );
 			await expect( page.locator( '.learnschool-admin-swatch' ) ).toHaveCount( 4 );
-			await expect( page.locator( '.learnschool-admin-starter-page' ) ).toHaveCount( 5 );
+			await expect( page.locator( '.learnschool-admin-starter-page' ) ).toHaveCount( 3 );
 			await expect( page.getByRole( 'heading', { name: 'WordPress Launch Settings' } ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'Recommended Companion Plugin' } ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'CodeClove School Management System' } ) ).toBeVisible();
 			await expect( page.locator( '.learnschool-admin-plugin-card__icon svg' ) ).toBeVisible();
 			await expect( page.locator( '.learnschool-plugin-notice' ) ).toHaveCount( 0 );
 			await expect( page.locator( '#contextual-help-link' ) ).toBeVisible();
+
+			// Steps avoid duplicate settings links already provided in WordPress Launch Settings.
+			await expect( page.locator( '.learnschool-admin-steps a[href*="options-general.php"]' ) ).toHaveCount( 0 );
+			await expect( page.locator( '.learnschool-admin-steps a[href*="options-reading.php"]' ) ).toHaveCount( 0 );
+
+			// Active palette swatch is disabled (no redundant request); switching applies once, and reload clears notice.
+			const initialActiveSwatch = page.locator( 'button.learnschool-admin-swatch.is-active' );
+			await expect( initialActiveSwatch ).toContainText( 'Default' );
+			await expect( initialActiveSwatch ).toBeDisabled();
+			expect( await initialActiveSwatch.evaluate( ( btn ) => btn.closest( 'form' ) !== null ) ).toBe( false );
+
+			try {
+				const coralBtn = page.locator( 'button.learnschool-admin-swatch', { hasText: 'Coral Playground' } );
+				await expect( coralBtn ).toBeEnabled();
+				await coralBtn.click();
+				expect( page.url() ).not.toContain( 'learnschool_notice' );
+
+				const feedback = page.locator( '.learnschool-admin-wrap .learnschool-admin-feedback' );
+				await expect( feedback ).toBeVisible();
+				await expect( feedback ).toContainText( 'Palette applied' );
+				await expect( feedback.locator( '.notice-dismiss' ) ).toBeVisible();
+
+				const coralActive = page.locator( 'button.learnschool-admin-swatch.is-active' );
+				await expect( coralActive ).toContainText( 'Coral Playground' );
+				await expect( coralActive ).toBeDisabled();
+
+				// Reloading the page does not re-display the one-time notice.
+				await page.reload( { waitUntil: 'domcontentloaded' } );
+				await expect( page.locator( '.learnschool-admin-feedback' ) ).toHaveCount( 0 );
+
+				// Stale legacy notice URLs do not re-trigger the banner and strip the query arg.
+				await page.goto( '/wp-admin/admin.php?page=learnschool&learnschool_notice=style_applied', {
+					waitUntil: 'domcontentloaded',
+				} );
+				await expect( page.locator( '.learnschool-admin-feedback' ) ).toHaveCount( 0 );
+				await expect( page ).not.toHaveURL( /learnschool_notice=/ );
+			} finally {
+				const defaultBtn = page.locator( 'button.learnschool-admin-swatch', { hasText: 'Default' } );
+				if ( await defaultBtn.isEnabled() ) {
+					await defaultBtn.click();
+					await expect( page.locator( 'button.learnschool-admin-swatch.is-active' ) ).toContainText( 'Default' );
+				}
+			}
 
 			const actionButton = page.locator( '.learnschool-admin-plugin-card__actions a.learnschool-plugin-action' );
 			await expect( actionButton ).toBeVisible();
@@ -118,13 +162,13 @@ test.describe( 'LearnSchool Top-Level Menu, Setup & Companion Plugin Audit', () 
 				deactivatedInTest = true;
 
 				await expect( page.locator( '.learnschool-admin-status' ) ).toHaveText( 'Active' );
-				await expect( actionButton ).toHaveText( 'Manage Plugins' );
+				await expect( actionButton ).toHaveText( /Open Dashboard|Manage Plugins/ );
 
 				await page.goto( '/wp-admin/index.php', { waitUntil: 'domcontentloaded' } );
 				await expect( page.locator( '.learnschool-plugin-notice' ) ).toHaveCount( 0 );
 			} else {
 				await expect( page.locator( '.learnschool-admin-status' ) ).toHaveText( 'Active' );
-				await expect( actionButton ).toHaveText( 'Manage Plugins' );
+				await expect( actionButton ).toHaveText( /Open Dashboard|Manage Plugins/ );
 				await page.goto( '/wp-admin/index.php', { waitUntil: 'domcontentloaded' } );
 				await expect( page.locator( '.learnschool-plugin-notice' ) ).toHaveCount( 0 );
 			}

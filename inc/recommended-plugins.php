@@ -126,7 +126,10 @@ if ( ! function_exists( 'learnschool_get_recommended_plugin_action' ) ) :
 
 		if ( 'active' === $status ) {
 			$status_label = __( 'Active', 'learnschool' );
-			if ( $can_activate ) {
+			if ( 'codeclove-school-management' === $slug && function_exists( 'menu_page_url' ) && '' !== (string) menu_page_url( 'codeclove-school-management', false ) ) {
+				$primary_url   = (string) menu_page_url( 'codeclove-school-management', false );
+				$primary_label = __( 'Open Dashboard', 'learnschool' );
+			} elseif ( $can_activate ) {
 				$primary_url   = self_admin_url( 'plugins.php' );
 				$primary_label = __( 'Manage Plugins', 'learnschool' );
 			}

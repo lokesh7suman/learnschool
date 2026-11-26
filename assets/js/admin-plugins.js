@@ -68,7 +68,9 @@
 	function markPluginActiveUI( actionBtn ) {
 		const activeLabel =
 			actionBtn.getAttribute( 'data-active-label' ) || 'Manage Plugins';
-		const pluginsUrl = actionBtn.getAttribute( 'data-plugins-url' );
+		const activeUrl =
+			actionBtn.getAttribute( 'data-active-url' ) ||
+			actionBtn.getAttribute( 'data-plugins-url' );
 		const card = actionBtn.closest( '.learnschool-admin-plugin-card' );
 		const notice = actionBtn.closest( '.learnschool-plugin-notice' );
 
@@ -78,8 +80,8 @@
 		actionBtn.removeAttribute( 'data-plugin-state' );
 		actionBtn.textContent = activeLabel;
 
-		if ( pluginsUrl ) {
-			actionBtn.setAttribute( 'href', pluginsUrl );
+		if ( activeUrl ) {
+			actionBtn.setAttribute( 'href', activeUrl );
 		}
 
 		if ( card ) {

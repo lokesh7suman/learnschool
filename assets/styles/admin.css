@@ -55,13 +55,10 @@
 }
 
 .learnschool-admin-header__logo {
+	display: block;
 	width: 44px;
 	height: 44px;
-	padding: 5px;
-	box-sizing: border-box;
-	border-radius: 8px;
-	background: #f6f7f7;
-	border: 1px solid rgba(0, 0, 0, 0.08);
+	color: var(--wp-admin-theme-color, #3858e9);
 	flex-shrink: 0;
 }
 
@@ -278,16 +275,25 @@
 	margin: 0 0 12px;
 }
 
+.learnschool-admin-swatch-form {
+	margin: 0;
+	display: flex;
+}
+
 .learnschool-admin-swatch {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+	width: 100%;
 	padding: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	border-radius: 6px;
 	background: #fff;
+	font: inherit;
+	text-align: start;
 	text-decoration: none;
 	color: #1e1e1e;
+	cursor: pointer;
 	transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
@@ -302,7 +308,14 @@
 	box-shadow: 0 0 0 var(--wp-admin-border-width-focus, 1.5px) var(--wp-admin-theme-color, #3858e9);
 }
 
-.learnschool-admin-swatch.is-active {
+.learnschool-admin-swatch:disabled {
+	opacity: 1;
+	cursor: default;
+	color: #1e1e1e;
+}
+
+.learnschool-admin-swatch.is-active,
+.learnschool-admin-swatch.is-active:hover {
 	border-color: var(--wp-admin-theme-color, #3858e9);
 	background: rgba(var(--wp-admin-theme-color--rgb, 56, 88, 233), 0.05);
 }
@@ -310,6 +323,7 @@
 .learnschool-admin-swatch__chips {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	width: 100%;
 	height: 22px;
 	border-radius: 4px;
 	overflow: hidden;
@@ -326,6 +340,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 6px;
+	width: 100%;
 }
 
 .learnschool-admin-swatch__name {
@@ -352,6 +367,28 @@
 
 .learnschool-admin-starter-form {
 	margin: 0;
+}
+
+.learnschool-admin-starter-bulk {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px 14px;
+	margin: 0 0 12px;
+}
+
+.learnschool-admin-checkbox {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12.5px;
+	color: #50575e;
+	cursor: pointer;
+}
+
+.learnschool-admin-wrap .learnschool-admin-feedback.notice {
+	margin: 0 0 20px;
+	border-radius: 6px;
 }
 
 .learnschool-admin-starter-page {
