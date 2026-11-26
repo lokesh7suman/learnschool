@@ -75,11 +75,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Curriculum & Programs', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Curriculum & Programs', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Immunization & Health', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Immunization & Health', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->

@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Online Modules', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Online Modules', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
@@ -88,7 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Campus Safety', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Campus Safety', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
@@ -129,7 +129,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><a href="<?php echo esc_url( '' !== get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Privacy Policy', 'learnschool' ); ?></a> &bull; <a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'FAQ', 'learnschool' ); ?></a> &bull; <a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><a href="<?php echo esc_url( '' !== get_privacy_policy_url() ? get_privacy_policy_url() : home_url( '/' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Privacy Policy', 'learnschool' ); ?></a> &bull; <a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'FAQ', 'learnschool' ); ?></a> &bull; <a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
