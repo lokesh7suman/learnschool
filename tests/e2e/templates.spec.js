@@ -201,14 +201,40 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		const homePage = patterns.find( ( p ) => p.name === 'learnschool/page-home' );
 		const aboutPage = patterns.find( ( p ) => p.name === 'learnschool/page-about' );
 		const contactPage = patterns.find( ( p ) => p.name === 'learnschool/page-contact' );
+		const postsList = patterns.find( ( p ) => p.name === 'learnschool/query-posts-list' );
 		const postsWithSidebar = patterns.find( ( p ) => p.name === 'learnschool/posts-with-sidebar' );
 		const admissionsSidebar = patterns.find( ( p ) => p.name === 'learnschool/sidebar-admissions' );
 
 		expect( homePage ).toBeTruthy();
 		expect( aboutPage ).toBeTruthy();
 		expect( contactPage ).toBeTruthy();
+		expect( postsList ).toBeTruthy();
 		expect( postsWithSidebar ).toBeTruthy();
 		expect( admissionsSidebar ).toBeTruthy();
+
+		for ( const starterPattern of [ homePage, aboutPage, contactPage ] ) {
+			expect(
+				starterPattern.content,
+				`Starter layout "${ starterPattern.name }" must include an <h1> heading for page-no-title compatibility`
+			).toMatch( /<h1\b/i );
+		}
+
+		for ( const pattern of patterns.filter( ( p ) => p.name?.startsWith( 'learnschool/' ) ) ) {
+			expect( pattern.content ).not.toContain( '/#materials' );
+			expect( pattern.content ).not.toContain( '/#faq' );
+			expect( pattern.content ).not.toContain( '/#tuition' );
+		}
+
+		const listPage = await requestUtils.rest( {
+			method: 'POST',
+			path: '/wp/v2/pages',
+			data: {
+				title: 'E2E Query Posts List',
+				content: postsList.content,
+				template: 'page-no-title',
+				status: 'publish',
+			},
+		} );
 
 		const sidebarPage = await requestUtils.rest( {
 			method: 'POST',
@@ -244,6 +270,16 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 				const topicChips = document.querySelectorAll( '.learnschool-sidebar-rail .wp-block-tag-cloud .tag-cloud-link' ).length;
 				const searchBtn = document.querySelector( '.learnschool-sidebar-rail .wp-block-search__button' );
 				const searchBtnRect = searchBtn ? searchBtn.getBoundingClientRect() : null;
+				const imagelessCovers = [ ...document.querySelectorAll( '.learnschool-post-list-card' ) ]
+					.filter( ( card ) => ! card.querySelector( '.wp-block-post-featured-image' ) )
+					.map( ( card ) => {
+						const beforeStyles = getComputedStyle( card, '::before' );
+						return {
+							content: beforeStyles.content,
+							bgImage: beforeStyles.backgroundImage,
+							width: parseFloat( beforeStyles.width ),
+						};
+					} );
 				return {
 					overflow: document.documentElement.scrollWidth > window.innerWidth,
 					colCount: cols.length,
@@ -255,6 +291,7 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 					topicChips,
 					searchBtnHeight: searchBtnRect ? Math.round( searchBtnRect.height ) : 0,
 					searchBtnWidth: searchBtnRect ? Math.round( searchBtnRect.width ) : 0,
+					imagelessCovers,
 				};
 			} );
 
@@ -272,6 +309,11 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 			expect( desktopLayout.railHeight ).toBeLessThanOrEqual( 1400 );
 			expect( desktopLayout.searchBtnHeight ).toBeGreaterThanOrEqual( 44 );
 			expect( desktopLayout.searchBtnWidth ).toBeGreaterThanOrEqual( 44 );
+			for ( const cover of desktopLayout.imagelessCovers ) {
+				expect( cover.content ).not.toBe( 'none' );
+				expect( cover.bgImage ).toContain( 'post-cover-motif.svg' );
+				expect( cover.width ).toBeGreaterThanOrEqual( 200 );
+			}
 
 			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Popular Topics' );
 			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Recent Stories' );
@@ -281,6 +323,33 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 				.analyze();
 			expect( axeResults.violations ).toEqual( [] );
 
+			const listRes = await page.goto( listPage.link );
+			expect( listRes.status() ).toBe( 200 );
+			const listDesktop = await page.evaluate( () => {
+				const imagelessCovers = [ ...document.querySelectorAll( '.learnschool-post-list-card' ) ]
+					.filter( ( card ) => ! card.querySelector( '.wp-block-post-featured-image' ) )
+					.map( ( card ) => {
+						const beforeStyles = getComputedStyle( card, '::before' );
+						return {
+							content: beforeStyles.content,
+							bgImage: beforeStyles.backgroundImage,
+							width: parseFloat( beforeStyles.width ),
+						};
+					} );
+				return {
+					overflow: document.documentElement.scrollWidth > window.innerWidth,
+					cardCount: document.querySelectorAll( '.learnschool-post-list-card' ).length,
+					imagelessCovers,
+				};
+			} );
+			expect( listDesktop.overflow ).toBe( false );
+			expect( listDesktop.cardCount ).toBeGreaterThan( 0 );
+			for ( const cover of listDesktop.imagelessCovers ) {
+				expect( cover.content ).not.toBe( 'none' );
+				expect( cover.bgImage ).toContain( 'post-cover-motif.svg' );
+				expect( cover.width ).toBeGreaterThanOrEqual( 200 );
+			}
+
 			await page.setViewportSize( { width: 390, height: 844 } );
 			const mobileRes = await page.goto( sidebarPage.link );
 			expect( mobileRes.status() ).toBe( 200 );
@@ -288,15 +357,26 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 				const cols = document.querySelectorAll( '.learnschool-sidebar-columns > .wp-block-column' );
 				const leftRect = cols[ 0 ] ? cols[ 0 ].getBoundingClientRect() : null;
 				const rightRect = cols[ 1 ] ? cols[ 1 ].getBoundingClientRect() : null;
+				const imagelessBefores = [ ...document.querySelectorAll( '.learnschool-post-list-card' ) ]
+					.filter( ( card ) => ! card.querySelector( '.wp-block-post-featured-image' ) )
+					.map( ( card ) => getComputedStyle( card, '::before' ).content );
 				return {
 					overflow: document.documentElement.scrollWidth > window.innerWidth,
 					stacked: leftRect && rightRect ? rightRect.top >= leftRect.bottom - 2 : false,
+					imagelessBefores,
 				};
 			} );
 
 			expect( mobileLayout.overflow ).toBe( false );
 			expect( mobileLayout.stacked ).toBe( true );
+			for ( const beforeContent of mobileLayout.imagelessBefores ) {
+				expect( beforeContent ).toBe( 'none' );
+			}
 		} finally {
+			await requestUtils.rest( {
+				method: 'DELETE',
+				path: `/wp/v2/pages/${ listPage.id }?force=true`,
+			} );
 			await requestUtils.rest( {
 				method: 'DELETE',
 				path: `/wp/v2/pages/${ sidebarPage.id }?force=true`,
@@ -326,16 +406,21 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 			const cols = [ ...shellEl.querySelectorAll( '.learnschool-teachers-track > .wp-block-column' ) ];
 			const visibleNames = cols
 				.filter( ( col ) => getComputedStyle( col ).display !== 'none' )
+				.sort( ( a, b ) => a.getBoundingClientRect().left - b.getBoundingClientRect().left )
 				.map( ( col ) => col.querySelector( 'h3' )?.textContent?.trim() );
-			const radii = cols.map( ( col ) =>
-				getComputedStyle( col.querySelector( '.learnschool-teacher-avatar-wrap' ) ).borderRadius
+			const radiiByName = Object.fromEntries(
+				cols.map( ( col ) => [
+					col.querySelector( 'h3' )?.textContent?.trim(),
+					getComputedStyle( col.querySelector( '.learnschool-teacher-avatar-wrap' ) ).borderRadius,
+				] )
 			);
 			const prevBox = shellEl.querySelector( '.learnschool-teachers-nav--prev' ).getBoundingClientRect();
 			const nextBox = shellEl.querySelector( '.learnschool-teachers-nav--next' ).getBoundingClientRect();
 			return {
 				overflow: document.documentElement.scrollWidth > window.innerWidth,
 				visibleNames,
-				uniqueRadiiCount: new Set( radii ).size,
+				radiiByName,
+				uniqueRadiiCount: new Set( Object.values( radiiByName ) ).size,
 				prevSize: { w: Math.round( prevBox.width ), h: Math.round( prevBox.height ) },
 				nextSize: { w: Math.round( nextBox.width ), h: Math.round( nextBox.height ) },
 			};
@@ -355,22 +440,35 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		expect( desktopMetrics.nextSize.h ).toBeGreaterThanOrEqual( 44 );
 
 		await nextBtn.click();
-		const afterNextNames = await page.evaluate( () => {
-			return [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column h3' ) ]
-				.map( ( h3 ) => h3.textContent.trim() );
+		const afterNext = await page.evaluate( () => {
+			const cols = [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column' ) ];
+			const visualNames = [ ...cols ]
+				.sort( ( a, b ) => a.getBoundingClientRect().left - b.getBoundingClientRect().left )
+				.map( ( col ) => col.querySelector( 'h3' )?.textContent?.trim() );
+			const radiiByName = Object.fromEntries(
+				cols.map( ( col ) => [
+					col.querySelector( 'h3' )?.textContent?.trim(),
+					getComputedStyle( col.querySelector( '.learnschool-teacher-avatar-wrap' ) ).borderRadius,
+				] )
+			);
+			const slots = cols.map( ( col ) => col.getAttribute( 'data-slide-slot' ) );
+			return { visualNames, radiiByName, slots };
 		} );
-		expect( afterNextNames ).toEqual( [
+		expect( afterNext.visualNames ).toEqual( [
 			'Jenny Wilson',
 			'Marcus Hayes',
 			'Sofia Chen',
 			'Kristin Watson',
 		] );
+		expect( afterNext.slots ).toEqual( [ '3', '0', '1', '2' ] );
+		expect( afterNext.radiiByName ).toEqual( desktopMetrics.radiiByName );
 		await expect( shell.locator( '[aria-live="polite"]' ) ).toContainText( 'Jenny Wilson' );
 
 		await prevBtn.click();
 		const afterPrevNames = await page.evaluate( () => {
-			return [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column h3' ) ]
-				.map( ( h3 ) => h3.textContent.trim() );
+			return [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column' ) ]
+				.sort( ( a, b ) => a.getBoundingClientRect().left - b.getBoundingClientRect().left )
+				.map( ( col ) => col.querySelector( 'h3' )?.textContent?.trim() );
 		} );
 		expect( afterPrevNames ).toEqual( [
 			'Kristin Watson',

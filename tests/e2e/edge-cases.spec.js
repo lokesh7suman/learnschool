@@ -144,19 +144,31 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 				return items.map( ( li ) => {
 					const card = li.querySelector( '.is-style-learnschool-card' ) || li;
 					const title = li.querySelector( '.wp-block-post-title' );
+					const readMore = li.querySelector( '.wp-block-read-more' );
+					const excerpt = li.querySelector( '.wp-block-post-excerpt' );
 					const r = card.getBoundingClientRect();
 					const tr = title ? title.getBoundingClientRect() : null;
+					const rm = readMore ? readMore.getBoundingClientRect() : null;
+					const ex = excerpt ? excerpt.getBoundingClientRect() : null;
+					const readMorePaddingTop = readMore ? parseFloat( getComputedStyle( readMore ).paddingTop ) || 0 : 0;
 					return {
 						height: Math.round( r.height ),
 						titleTop: tr ? Math.round( tr.top - r.top ) : 0,
+						readMoreBottom: rm ? Math.round( r.bottom - rm.bottom ) : 0,
+						readMoreGap: rm && ex ? Math.round( rm.top + readMorePaddingTop - ex.bottom ) : 16,
 					};
 				} );
 			} );
 
 			const heights = homeMetrics.map( ( m ) => m.height );
 			const titleTops = homeMetrics.map( ( m ) => m.titleTop );
+			const readMoreBottoms = homeMetrics.map( ( m ) => m.readMoreBottom );
 			expect( Math.max( ...heights ) - Math.min( ...heights ) ).toBeLessThanOrEqual( 4 );
 			expect( Math.max( ...titleTops ) - Math.min( ...titleTops ) ).toBeLessThanOrEqual( 4 );
+			expect( Math.max( ...readMoreBottoms ) - Math.min( ...readMoreBottoms ) ).toBeLessThanOrEqual( 4 );
+			for ( const metric of homeMetrics ) {
+				expect( metric.readMoreGap ).toBeGreaterThanOrEqual( 12 );
+			}
 		}
 
 		// 2. Check Category Archive mixed 2-column grid on desktop vs mobile
@@ -166,14 +178,17 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 			return items.map( ( li ) => {
 				const card = li.querySelector( '.is-style-learnschool-card' ) || li;
 				const title = li.querySelector( '.wp-block-post-title' );
+				const readMore = li.querySelector( '.wp-block-read-more' );
 				const hasImg = !! li.querySelector( '.wp-block-post-featured-image' );
 				const r = card.getBoundingClientRect();
 				const tr = title ? title.getBoundingClientRect() : null;
+				const rm = readMore ? readMore.getBoundingClientRect() : null;
 				return {
 					hasImg,
 					top: Math.round( r.top ),
 					height: Math.round( r.height ),
 					titleTop: tr ? Math.round( tr.top - r.top ) : 0,
+					readMoreBottom: rm ? Math.round( r.bottom - rm.bottom ) : 0,
 				};
 			} );
 		} );
@@ -186,6 +201,7 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 				if ( Math.abs( left.top - right.top ) <= 2 ) {
 					expect( Math.abs( left.height - right.height ) ).toBeLessThanOrEqual( 4 );
 					expect( Math.abs( left.titleTop - right.titleTop ) ).toBeLessThanOrEqual( 6 );
+					expect( Math.abs( left.readMoreBottom - right.readMoreBottom ) ).toBeLessThanOrEqual( 4 );
 				}
 			}
 		}
@@ -279,15 +295,17 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 				expect( Math.max( ...lefts ) - Math.min( ...lefts ) ).toBeLessThanOrEqual( 4 );
 			}
 
-			// 2. All-imageless list on desktop: zero ::before thumbnail box, readable measure
+			// 2. All-imageless list on desktop: studio motif ::before cover renders cleanly on left
 			await page.goto( imagelessPage.link );
 			const imagelessResult = await page.evaluate( () => {
 				const overflow = document.documentElement.scrollWidth > window.innerWidth;
 				const cards = [ ...document.querySelectorAll( '.learnschool-post-list-card' ) ].map( ( card ) => {
-					const beforeContent = getComputedStyle( card, '::before' ).content;
+					const beforeStyles = getComputedStyle( card, '::before' );
 					const excerpt = card.querySelector( '.wp-block-post-excerpt' );
 					return {
-						beforeContent,
+						beforeContent: beforeStyles.content,
+						beforeBgImage: beforeStyles.backgroundImage,
+						beforeWidth: parseFloat( beforeStyles.width ),
 						excerptWidth: excerpt ? Math.round( excerpt.getBoundingClientRect().width ) : 0,
 					};
 				} );
@@ -296,17 +314,26 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 			expect( imagelessResult.overflow ).toBe( false );
 			expect( imagelessResult.cards.length ).toBeGreaterThan( 0 );
 			for ( const card of imagelessResult.cards ) {
-				expect( card.beforeContent ).toBe( 'none' );
+				expect( card.beforeContent ).not.toBe( 'none' );
+				expect( card.beforeBgImage ).toContain( 'post-cover-motif.svg' );
+				expect( card.beforeWidth ).toBeGreaterThanOrEqual( 200 );
 				expect( card.excerptWidth ).toBeLessThanOrEqual( 820 );
 			}
 
-			// 3. Mobile 390px: zero horizontal overflow on mixed list
+			// 3. Mobile 390px: zero horizontal overflow and no ::before cover box on mobile
 			await page.setViewportSize( { width: 390, height: 844 } );
 			await page.goto( mixedPage.link );
-			const mobileOverflow = await page.evaluate(
-				() => document.documentElement.scrollWidth > window.innerWidth
-			);
-			expect( mobileOverflow ).toBe( false );
+			const mobileResult = await page.evaluate( () => {
+				const overflow = document.documentElement.scrollWidth > window.innerWidth;
+				const imagelessBefores = [ ...document.querySelectorAll( '.learnschool-post-list-card' ) ]
+					.filter( ( card ) => ! card.querySelector( '.wp-block-post-featured-image' ) )
+					.map( ( card ) => getComputedStyle( card, '::before' ).content );
+				return { overflow, imagelessBefores };
+			} );
+			expect( mobileResult.overflow ).toBe( false );
+			for ( const beforeContent of mobileResult.imagelessBefores ) {
+				expect( beforeContent ).toBe( 'none' );
+			}
 		} finally {
 			await requestUtils.rest( {
 				method: 'DELETE',
