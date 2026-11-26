@@ -14,7 +14,16 @@
 	}
 }
 
-/* Sidebar Layout Columns: Stack cleanly below 960px */
+/* Sidebar Layout Columns: Sticky rail on wide desktop, stack cleanly below 960px */
+@media (min-width: 961px) {
+
+	.wp-block-columns.learnschool-sidebar-columns > .wp-block-column:last-child:has(.learnschool-sidebar-rail, aside) {
+		position: sticky;
+		top: calc(96px + var(--wp-admin--admin-bar--height, 0px));
+		align-self: start;
+	}
+}
+
 @media (max-width: 960px) {
 
 	.wp-block-columns.learnschool-sidebar-columns {
@@ -46,7 +55,7 @@
 @media (min-width: 1025px) {
 
 	.is-style-learnschool-trust-strip .wp-block-columns > .wp-block-column:not(:last-child) {
-		border-right: 1px solid var(--wp--preset--color--border, #e2e8f0);
+		border-right: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
 		padding-right: var(--wp--preset--spacing--step-4, 24px);
 	}
 }

@@ -1,0 +1,12 @@
+/**
+ * Core Post Featured Image Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/post-featured-image') on init.
+ *
+ * @package LearnSchool
+ */
+
+/* Keep portraits well-framed when displayed in wide 16:9 single post hero containers */
+.single .wp-block-post-featured-image.alignwide img {
+	object-position: 50% 25%;
+}

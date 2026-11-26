@@ -16,7 +16,7 @@
 	padding: 14px 18px;
 	margin-bottom: 10px;
 	background-color: var(--wp--preset--color--base, #fff);
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 16px;
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 	display: flex;
@@ -45,39 +45,58 @@
 /* Sidebar & Card-Nested Latest Posts */
 .is-style-learnschool-card .wp-block-latest-posts,
 .is-style-learnschool-soft-card .wp-block-latest-posts,
-aside .wp-block-latest-posts {
+.is-style-learnschool-card-border .wp-block-latest-posts,
+aside .wp-block-latest-posts,
+.learnschool-sidebar-rail .wp-block-latest-posts {
 	margin: 0;
 }
 
 .is-style-learnschool-card .wp-block-latest-posts:not(.is-grid) > li,
 .is-style-learnschool-soft-card .wp-block-latest-posts:not(.is-grid) > li,
-aside .wp-block-latest-posts:not(.is-grid) > li {
-	padding: 12px 0;
+.is-style-learnschool-card-border .wp-block-latest-posts:not(.is-grid) > li,
+aside .wp-block-latest-posts:not(.is-grid) > li,
+.learnschool-sidebar-rail .wp-block-latest-posts:not(.is-grid) > li {
+	padding: 10px 0;
 	margin-bottom: 0;
 	background-color: transparent;
 	border: none;
-	border-bottom: 1px solid var(--wp--preset--color--border, #e2e8f0);
+	border-bottom: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 0;
+}
+
+.is-style-learnschool-card .wp-block-latest-posts:not(.is-grid) > li:first-child,
+.is-style-learnschool-soft-card .wp-block-latest-posts:not(.is-grid) > li:first-child,
+.is-style-learnschool-card-border .wp-block-latest-posts:not(.is-grid) > li:first-child,
+aside .wp-block-latest-posts:not(.is-grid) > li:first-child,
+.learnschool-sidebar-rail .wp-block-latest-posts:not(.is-grid) > li:first-child {
+	padding-top: 2px;
 }
 
 .is-style-learnschool-card .wp-block-latest-posts:not(.is-grid) > li:last-child,
 .is-style-learnschool-soft-card .wp-block-latest-posts:not(.is-grid) > li:last-child,
-aside .wp-block-latest-posts:not(.is-grid) > li:last-child {
+.is-style-learnschool-card-border .wp-block-latest-posts:not(.is-grid) > li:last-child,
+aside .wp-block-latest-posts:not(.is-grid) > li:last-child,
+.learnschool-sidebar-rail .wp-block-latest-posts:not(.is-grid) > li:last-child {
 	border-bottom: none;
 	padding-bottom: 0;
 }
 
 .is-style-learnschool-card .wp-block-latest-posts:not(.is-grid) > li:hover,
 .is-style-learnschool-soft-card .wp-block-latest-posts:not(.is-grid) > li:hover,
-aside .wp-block-latest-posts:not(.is-grid) > li:hover {
+.is-style-learnschool-card-border .wp-block-latest-posts:not(.is-grid) > li:hover,
+aside .wp-block-latest-posts:not(.is-grid) > li:hover,
+.learnschool-sidebar-rail .wp-block-latest-posts:not(.is-grid) > li:hover {
 	background-color: transparent;
 	transform: none;
 }
 
 .is-style-learnschool-card .wp-block-latest-posts:not(.is-grid) > li a,
 .is-style-learnschool-soft-card .wp-block-latest-posts:not(.is-grid) > li a,
-aside .wp-block-latest-posts:not(.is-grid) > li a {
-	font-size: var(--wp--preset--font-size--base, 1rem);
+.is-style-learnschool-card-border .wp-block-latest-posts:not(.is-grid) > li a,
+aside .wp-block-latest-posts:not(.is-grid) > li a,
+.learnschool-sidebar-rail .wp-block-latest-posts:not(.is-grid) > li a {
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 700;
 	line-height: 1.45;
 }
 
@@ -92,7 +111,7 @@ aside .wp-block-latest-posts:not(.is-grid) > li a {
 
 .wp-block-latest-posts.is-grid > li {
 	background-color: var(--wp--preset--color--base, #fff);
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 24px;
 	padding: var(--wp--preset--spacing--step-4, 24px);
 	box-shadow: var(--wp--preset--shadow--card);

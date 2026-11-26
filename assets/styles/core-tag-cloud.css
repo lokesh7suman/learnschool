@@ -1,0 +1,46 @@
+/**
+ * Core Tag Cloud Styles — LearnSchool Theme
+ *
+ * Enqueued dynamically via wp_enqueue_block_style('core/tag-cloud') on init.
+ *
+ * @package LearnSchool
+ */
+
+.wp-block-tag-cloud {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0;
+}
+
+.wp-block-tag-cloud .tag-cloud-link {
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	min-height: 36px;
+	padding: 6px 14px;
+	border-radius: 9999px;
+	border: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
+	background-color: var(--wp--preset--color--surface, #fff);
+	color: var(--wp--preset--color--contrast, #121212);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 600;
+	line-height: 1.25;
+	text-decoration: none;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.wp-block-tag-cloud .tag-cloud-link:hover {
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary-light, #dec8fe) 38%, var(--wp--preset--color--base, #fff));
+	border-color: var(--wp--preset--color--primary, #704fe6);
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+	transform: translateY(-1px);
+}
+
+@media (pointer: coarse) {
+
+	.wp-block-tag-cloud .tag-cloud-link {
+		min-height: 44px;
+		padding: 8px 16px;
+	}
+}

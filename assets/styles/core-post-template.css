@@ -35,11 +35,14 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	min-width: 0;
 }
 
 .wp-block-post-template.is-layout-grid > li > .wp-block-group.is-style-learnschool-card,
 .wp-block-post-template.is-layout-grid > li > .is-style-learnschool-card {
 	height: 100%;
+	width: 100%;
+	min-width: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -54,16 +57,18 @@
 	transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
 	display: flex;
 	flex-direction: column;
+	min-width: 0;
 }
 
 .wp-block-post-template > li:hover {
 	transform: translateY(-4px);
 	border-color: var(--wp--preset--color--primary-light);
-	box-shadow: 0 16px 36px rgba(112, 79, 230, 0.1);
+	box-shadow: 0 16px 36px color-mix(in srgb, var(--wp--preset--color--primary) 10%, transparent);
 }
 
 .wp-block-post-template > li:has(> .is-style-learnschool-card),
-.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky {
+.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky,
+.wp-block-post-template > li:has(> .is-style-learnschool-card).learnschool-is-sticky {
 	background: transparent;
 	border: none;
 	border-radius: 0;
@@ -72,7 +77,8 @@
 }
 
 .wp-block-post-template > li:has(> .is-style-learnschool-card):hover,
-.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky:hover {
+.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky:hover,
+.wp-block-post-template > li:has(> .is-style-learnschool-card).learnschool-is-sticky:hover {
 	transform: none;
 	box-shadow: none;
 }
@@ -96,6 +102,7 @@
 	color: var(--wp--preset--color--primary);
 }
 
+/* Featured Image Geometry & Portrait Framing */
 .wp-block-post-template .wp-block-post-featured-image {
 	margin-bottom: 16px;
 	border-radius: 18px;
@@ -103,16 +110,21 @@
 }
 
 .wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) .wp-block-post-featured-image {
-	margin-bottom: 0;
+	margin: 0;
 	border-radius: 0;
 }
 
 .wp-block-post-template .wp-block-post-featured-image img {
+	display: block;
 	width: 100%;
-	aspect-ratio: 16 / 10;
 	object-fit: cover;
+	object-position: 50% 25%;
 	border-radius: 18px;
 	transition: transform 0.3s ease;
+}
+
+.wp-block-post-template .wp-block-post-featured-image img:not([style*="aspect-ratio"]) {
+	aspect-ratio: 16 / 10;
 }
 
 .wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) .wp-block-post-featured-image img {
@@ -120,36 +132,138 @@
 }
 
 .wp-block-post-template .learnschool-post-list-card .wp-block-post-featured-image {
-	margin-bottom: var(--wp--preset--spacing--step-3, 16px);
+	margin: 0 0 var(--wp--preset--spacing--step-3, 16px);
 	border-radius: 16px;
 }
 
 .wp-block-post-template .learnschool-post-list-card .wp-block-post-featured-image img {
-	aspect-ratio: 4 / 3;
 	border-radius: 16px;
 }
 
-.wp-block-post-template .learnschool-post-list-card:not(:has(.wp-block-post-featured-image)) {
-	border-top-width: 4px;
-	border-top-color: var(--wp--preset--color--primary-light, #dec8fe);
+.wp-block-post-template .learnschool-post-list-card .wp-block-post-featured-image img:not([style*="aspect-ratio"]) {
+	aspect-ratio: 4 / 3;
+}
+
+/* Block Editor Featured Image Placeholder Parity */
+.editor-styles-wrapper .wp-block-post-template .wp-block-post-featured-image .components-placeholder {
+	min-height: 0;
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 30%, var(--wp--preset--color--base-subtle));
+	border: 1px dashed color-mix(in srgb, var(--wp--preset--color--primary) 24%, transparent);
+	box-shadow: none;
+}
+
+.editor-styles-wrapper .wp-block-post-template .wp-block-post-featured-image .components-placeholder__illustration {
+	opacity: 0.2;
+}
+
+.editor-styles-wrapper .wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) .wp-block-post-featured-image .components-placeholder {
+	border-radius: 0;
+	border-top: none;
+	border-inline: none;
+}
+
+/* Mixed Grid Studio Cover: Keeps row baselines aligned when some posts lack featured images */
+@media (min-width: 641px) {
+
+	.wp-block-post-template.is-layout-grid:has(.wp-block-post-featured-image) > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {
+		content: "";
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 44%, var(--wp--preset--color--base-subtle));
+		background-image:
+			url(../images/doodles/sections/post-cover-motif.svg),
+			radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--wp--preset--color--accent) 32%, transparent) 0%, transparent 56%),
+			linear-gradient(135deg, color-mix(in srgb, var(--wp--preset--color--primary-light) 46%, var(--wp--preset--color--base)) 0%, color-mix(in srgb, var(--wp--preset--color--primary-light) 20%, var(--wp--preset--color--base-subtle)) 100%);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: min(60%, 190px) auto, 100% 100%, 100% 100%;
+		border-bottom: 1px solid var(--wp--preset--color--border-subtle, var(--wp--preset--color--border, #e2e8f0));
+	}
+
+	.wp-block-post-template.is-layout-grid.columns-3:has(.wp-block-post-featured-image) > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {
+		aspect-ratio: 16 / 10;
+	}
+}
+
+/* Horizontal Post List Layout */
+.wp-block-post-template .learnschool-post-list-card > .wp-block-group {
+	min-width: 0;
+}
+
+.wp-block-post-template:not(:has(.wp-block-post-featured-image)) .learnschool-post-list-card .wp-block-post-title,
+.wp-block-post-template:not(:has(.wp-block-post-featured-image)) .learnschool-post-list-card .wp-block-post-excerpt {
+	max-width: 72ch;
 }
 
 @media (min-width: 782px) {
 
-	.wp-block-post-template .learnschool-post-list-card:has(.wp-block-post-featured-image) {
+	.wp-block-post-template .learnschool-post-list-card:has(.wp-block-post-featured-image),
+	.wp-block-post-template:has(.wp-block-post-featured-image) .learnschool-post-list-card:not(:has(.wp-block-post-featured-image)) {
 		display: grid;
-		grid-template-columns: minmax(220px, 36%) 1fr;
+		grid-template-columns: clamp(220px, 26%, 300px) minmax(0, 1fr);
 		gap: var(--wp--preset--spacing--step-5, 32px);
-		align-items: center;
+		align-items: stretch;
 	}
 
-	.wp-block-post-template .learnschool-post-list-card:has(.wp-block-post-featured-image) > * {
+	.wp-block-post-template .learnschool-post-list-card:has(.wp-block-post-featured-image) > *,
+	.wp-block-post-template:has(.wp-block-post-featured-image) .learnschool-post-list-card:not(:has(.wp-block-post-featured-image)) > * {
 		margin-block-start: 0;
 		margin-top: 0;
 	}
 
 	.wp-block-post-template .learnschool-post-list-card .wp-block-post-featured-image {
 		margin-bottom: 0;
+		align-self: center;
+	}
+
+	.wp-block-post-template .learnschool-post-list-card > .wp-block-group {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.wp-block-post-template .learnschool-post-list-card .wp-block-read-more {
+		margin-top: auto;
+		align-self: flex-start;
+		padding-top: var(--wp--preset--spacing--step-1, 8px);
+	}
+
+	.wp-block-post-template:has(.wp-block-post-featured-image) .learnschool-post-list-card:not(:has(.wp-block-post-featured-image))::before {
+		content: "";
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		align-self: center;
+		border-radius: 16px;
+		border: 1px solid color-mix(in srgb, var(--wp--preset--color--primary) 14%, transparent);
+		background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 44%, var(--wp--preset--color--base-subtle));
+		background-image:
+			url(../images/doodles/sections/post-cover-motif.svg),
+			radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--wp--preset--color--accent) 32%, transparent) 0%, transparent 56%),
+			linear-gradient(135deg, color-mix(in srgb, var(--wp--preset--color--primary-light) 46%, var(--wp--preset--color--base)) 0%, color-mix(in srgb, var(--wp--preset--color--primary-light) 20%, var(--wp--preset--color--base-subtle)) 100%);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: min(64%, 170px) auto, 100% 100%, 100% 100%;
+	}
+}
+
+/* Fallback for pre-:has() browsers using native WordPress .has-post-thumbnail class */
+@supports not selector(:has(*)) {
+
+	@media (min-width: 782px) {
+
+		.wp-block-post-template > li.has-post-thumbnail .learnschool-post-list-card {
+			display: grid;
+			grid-template-columns: clamp(220px, 26%, 300px) minmax(0, 1fr);
+			gap: var(--wp--preset--spacing--step-5, 32px);
+			align-items: stretch;
+		}
+
+		.wp-block-post-template > li.has-post-thumbnail .learnschool-post-list-card .wp-block-post-featured-image {
+			margin-bottom: 0;
+			align-self: center;
+		}
 	}
 }
 
@@ -178,9 +292,10 @@
 	transform: translateX(4px);
 }
 
-.wp-block-post-template .wp-block-post-excerpt__more-link {
+.wp-block-post-template .wp-block-post-excerpt__more-link,
+.wp-block-post-template > li:not(:has(> .is-style-learnschool-card)) .wp-block-read-more {
 	margin-top: auto;
-	padding-top: 16px;
+	padding-top: var(--wp--preset--spacing--step-3, 16px);
 }
 
 .wp-block-post-template .wp-block-post-excerpt__more-link:hover,
@@ -190,14 +305,16 @@
 
 /* Sticky Post Styling — Default Grid Item (Unwrapped) */
 .sticky:not(:has(> .is-style-learnschool-card)),
-.wp-block-post-template > li.sticky:not(:has(> .is-style-learnschool-card)) {
+.wp-block-post-template > li:is(.sticky, .learnschool-is-sticky):not(:has(> .is-style-learnschool-card)) {
 	border-color: var(--wp--preset--color--primary, #704fe6);
-	box-shadow: 0 10px 28px -4px rgba(112, 79, 230, 0.12), 0 4px 8px -2px rgba(112, 79, 230, 0.04);
+	box-shadow:
+		0 10px 28px -4px color-mix(in srgb, var(--wp--preset--color--primary) 14%, transparent),
+		0 4px 8px -2px color-mix(in srgb, var(--wp--preset--color--primary) 6%, transparent);
 	position: relative;
 }
 
 .sticky:not(:has(> .is-style-learnschool-card))::before,
-.wp-block-post-template > li.sticky:not(:has(> .is-style-learnschool-card))::before {
+.wp-block-post-template > li:is(.sticky, .learnschool-is-sticky):not(:has(> .is-style-learnschool-card))::before {
 	content: var(--learnschool-sticky-label);
 	display: inline-flex;
 	align-items: center;
@@ -216,23 +333,30 @@
 }
 
 /* Sticky Post Styling — LearnSchool Modular Card */
-.wp-block-post-template > li.sticky .is-style-learnschool-card {
+.wp-block-post-template > li:is(.sticky, .learnschool-is-sticky) .is-style-learnschool-card {
 	border: 1.5px solid var(--wp--preset--color--primary, #704fe6);
 	background-color: var(--wp--preset--color--base, #fff);
-	box-shadow: 0 10px 28px -4px rgba(112, 79, 230, 0.12), 0 4px 8px -2px rgba(112, 79, 230, 0.04);
+	box-shadow:
+		0 10px 28px -4px color-mix(in srgb, var(--wp--preset--color--primary) 14%, transparent),
+		0 4px 8px -2px color-mix(in srgb, var(--wp--preset--color--primary) 6%, transparent);
 }
 
-.wp-block-post-template > li.sticky .is-style-learnschool-card:hover {
+.wp-block-post-template > li:is(.sticky, .learnschool-is-sticky) .is-style-learnschool-card:hover {
 	border-color: var(--wp--preset--color--primary-dark, #5837c7);
-	box-shadow: 0 18px 36px -6px rgba(112, 79, 230, 0.18), 0 6px 12px -3px rgba(112, 79, 230, 0.08);
+	box-shadow:
+		0 18px 36px -6px color-mix(in srgb, var(--wp--preset--color--primary) 20%, transparent),
+		0 6px 12px -3px color-mix(in srgb, var(--wp--preset--color--primary) 10%, transparent);
 	transform: translateY(-4px);
 }
 
-/* Featured Badge in Modular Card — Flows as flex item alongside Category Badges */
-.wp-block-post-template > li:has(> .is-style-learnschool-card).sticky .wp-block-post-terms::before {
+/* Featured Badge in Modular Card — Inline with Category Badges, with Fallback when Uncategorized */
+.wp-block-post-template > li:has(> .is-style-learnschool-card):is(.sticky, .learnschool-is-sticky) .wp-block-post-terms::before,
+.wp-block-post-template > li:has(> .is-style-learnschool-card):is(.sticky, .learnschool-is-sticky):not(:has(.wp-block-post-terms)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child > .wp-block-group::before,
+.wp-block-post-template > li:has(> .learnschool-post-list-card):is(.sticky, .learnschool-is-sticky):not(:has(.wp-block-post-terms)) .learnschool-post-list-card > .wp-block-group > .wp-block-group:first-child::before {
 	content: var(--learnschool-sticky-label);
 	display: inline-flex;
 	align-items: center;
+	width: fit-content;
 	padding: 4px 12px;
 	border-radius: 9999px;
 	background-color: var(--wp--preset--color--secondary, #ffbe17);
@@ -244,16 +368,19 @@
 	line-height: 1.4;
 }
 
-/* Post Card Content Spacing after Featured Image */
+.wp-block-post-template > li:has(> .is-style-learnschool-card):is(.sticky, .learnschool-is-sticky):not(:has(.wp-block-post-terms)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child > .wp-block-group::before {
+	margin-bottom: var(--wp--preset--spacing--step-2, 12px);
+}
+
+/* Post Card Content Spacing & Metadata Normalization */
 .wp-block-post-template .is-style-learnschool-card .wp-block-post-featured-image + .wp-block-group,
 .is-style-learnschool-card .wp-block-post-featured-image + .wp-block-group {
 	margin-top: 0;
 }
 
-/* Post Card Metadata (Category Badges & Date) */
 .wp-block-post-template .is-style-learnschool-card .wp-block-post-date,
 .is-style-learnschool-card .wp-block-post-date {
-	margin: var(--wp--preset--spacing--step-1, 8px) 0 var(--wp--preset--spacing--step-2, 12px);
+	margin: 0;
 	display: block;
 }
 
@@ -262,6 +389,7 @@
 .is-style-learnschool-card .wp-block-post-title {
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
+	line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
@@ -271,6 +399,7 @@
 .is-style-learnschool-card .wp-block-post-excerpt p {
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
+	line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	line-height: 1.6;

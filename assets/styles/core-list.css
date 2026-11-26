@@ -99,6 +99,45 @@ ol.is-style-learnschool-clean-list a:hover {
 	color: var(--wp--preset--color--secondary, #ffbe17);
 }
 
+aside .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list,
+aside .is-style-learnschool-card-border ul.is-style-learnschool-clean-list,
+.learnschool-sidebar-rail .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list,
+.learnschool-sidebar-rail .is-style-learnschool-card-border ul.is-style-learnschool-clean-list {
+	margin: 0;
+}
+
+aside .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list > li,
+aside .is-style-learnschool-card-border ul.is-style-learnschool-clean-list > li,
+.learnschool-sidebar-rail .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list > li,
+.learnschool-sidebar-rail .is-style-learnschool-card-border ul.is-style-learnschool-clean-list > li {
+	padding: 10px 0;
+	margin-bottom: 0;
+	border-bottom: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
+}
+
+aside .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list > li:last-child,
+aside .is-style-learnschool-card-border ul.is-style-learnschool-clean-list > li:last-child,
+.learnschool-sidebar-rail .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list > li:last-child,
+.learnschool-sidebar-rail .is-style-learnschool-card-border ul.is-style-learnschool-clean-list > li:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+aside .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list a,
+aside .is-style-learnschool-card-border ul.is-style-learnschool-clean-list a,
+.learnschool-sidebar-rail .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list a,
+.learnschool-sidebar-rail .is-style-learnschool-card-border ul.is-style-learnschool-clean-list a {
+	color: var(--wp--preset--color--contrast);
+	font-weight: 700;
+}
+
+aside .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list a:hover,
+aside .is-style-learnschool-card-border ul.is-style-learnschool-clean-list a:hover,
+.learnschool-sidebar-rail .is-style-learnschool-soft-card ul.is-style-learnschool-clean-list a:hover,
+.learnschool-sidebar-rail .is-style-learnschool-card-border ul.is-style-learnschool-clean-list a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
 /* ── RTL Language Support for Checkmarks ─────────────────────────────── */
 
 body.rtl ul.is-style-learnschool-checkmarks > li,

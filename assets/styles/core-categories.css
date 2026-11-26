@@ -23,11 +23,23 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	flex-wrap: wrap;
+	gap: 12px;
+	flex-wrap: nowrap;
 	font-weight: 600;
 	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	color: var(--wp--preset--color--contrast);
 	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.wp-block-categories-list > li:has(.children),
+.wp-block-archives-list > li:has(.children) {
+	flex-wrap: wrap;
+}
+
+.wp-block-categories-list > li > a,
+.wp-block-archives-list > li > a {
+	min-width: 0;
+	overflow-wrap: break-word;
 }
 
 .wp-block-categories-list > li:hover,
@@ -48,6 +60,82 @@
 .wp-block-categories-list a:hover,
 .wp-block-archives-list a:hover {
 	color: var(--wp--preset--color--primary);
+}
+
+/* Sidebar & Card-Nested Categories and Archives */
+.is-style-learnschool-card .wp-block-categories-list,
+.is-style-learnschool-soft-card .wp-block-categories-list,
+.is-style-learnschool-card-border .wp-block-categories-list,
+aside .wp-block-categories-list,
+.learnschool-sidebar-rail .wp-block-categories-list,
+.is-style-learnschool-card .wp-block-archives-list,
+.is-style-learnschool-soft-card .wp-block-archives-list,
+.is-style-learnschool-card-border .wp-block-archives-list,
+aside .wp-block-archives-list,
+.learnschool-sidebar-rail .wp-block-archives-list {
+	margin: 0;
+}
+
+.is-style-learnschool-card .wp-block-categories-list > li,
+.is-style-learnschool-soft-card .wp-block-categories-list > li,
+.is-style-learnschool-card-border .wp-block-categories-list > li,
+aside .wp-block-categories-list > li,
+.learnschool-sidebar-rail .wp-block-categories-list > li,
+.is-style-learnschool-card .wp-block-archives-list > li,
+.is-style-learnschool-soft-card .wp-block-archives-list > li,
+.is-style-learnschool-card-border .wp-block-archives-list > li,
+aside .wp-block-archives-list > li,
+.learnschool-sidebar-rail .wp-block-archives-list > li {
+	padding: 10px 0;
+	margin-bottom: 0;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid var(--wp--preset--color--border-default, #e2e8f0);
+	border-radius: 0;
+	color: var(--wp--preset--color--contrast-subtle);
+}
+
+.is-style-learnschool-card .wp-block-categories-list > li:last-child,
+.is-style-learnschool-soft-card .wp-block-categories-list > li:last-child,
+.is-style-learnschool-card-border .wp-block-categories-list > li:last-child,
+aside .wp-block-categories-list > li:last-child,
+.learnschool-sidebar-rail .wp-block-categories-list > li:last-child,
+.is-style-learnschool-card .wp-block-archives-list > li:last-child,
+.is-style-learnschool-soft-card .wp-block-archives-list > li:last-child,
+.is-style-learnschool-card-border .wp-block-archives-list > li:last-child,
+aside .wp-block-archives-list > li:last-child,
+.learnschool-sidebar-rail .wp-block-archives-list > li:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.is-style-learnschool-card .wp-block-categories-list > li:hover,
+.is-style-learnschool-soft-card .wp-block-categories-list > li:hover,
+.is-style-learnschool-card-border .wp-block-categories-list > li:hover,
+aside .wp-block-categories-list > li:hover,
+.learnschool-sidebar-rail .wp-block-categories-list > li:hover,
+.is-style-learnschool-card .wp-block-archives-list > li:hover,
+.is-style-learnschool-soft-card .wp-block-archives-list > li:hover,
+.is-style-learnschool-card-border .wp-block-archives-list > li:hover,
+aside .wp-block-archives-list > li:hover,
+.learnschool-sidebar-rail .wp-block-archives-list > li:hover {
+	background-color: transparent;
+	transform: none;
+}
+
+.is-style-learnschool-card .wp-block-categories-list > li a,
+.is-style-learnschool-soft-card .wp-block-categories-list > li a,
+.is-style-learnschool-card-border .wp-block-categories-list > li a,
+aside .wp-block-categories-list > li a,
+.learnschool-sidebar-rail .wp-block-categories-list > li a,
+.is-style-learnschool-card .wp-block-archives-list > li a,
+.is-style-learnschool-soft-card .wp-block-archives-list > li a,
+.is-style-learnschool-card-border .wp-block-archives-list > li a,
+aside .wp-block-archives-list > li a,
+.learnschool-sidebar-rail .wp-block-archives-list > li a {
+	font-size: var(--wp--preset--font-size--base, 1rem);
+	font-weight: 700;
+	line-height: 1.45;
 }
 
 .wp-block-categories-list .children {

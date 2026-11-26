@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" fill="none" aria-hidden="true">
+  <path d="M56 128V78C56 42.6538 84.6538 14 120 14C155.346 14 184 42.6538 184 78V128" stroke="#FFFFFF" stroke-opacity="0.78" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="120" cy="75" r="44" fill="#FFFFFF" fill-opacity="0.74" stroke="#FFFFFF" stroke-opacity="0.94" stroke-width="1.5"/>
+  <path d="M93 56C93 53.7909 94.7909 52 97 52H114C117.314 52 120 54.6863 120 58V96C120 93.7909 117.314 92 114 92H97C94.7909 92 93 90.2091 93 88V56Z" fill="#FFFFFF" fill-opacity="0.65" stroke="#1A162B" stroke-opacity="0.34" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M147 56C147 53.7909 145.209 52 143 52H126C122.686 52 120 54.6863 120 58V96C120 93.7909 122.686 92 126 92H143C145.209 92 147 90.2091 147 88V56Z" fill="#FFFFFF" fill-opacity="0.65" stroke="#1A162B" stroke-opacity="0.34" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M101 64H112M101 73H112M101 82H109" stroke="#1A162B" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
+  <path d="M128 64H139M128 73H139M128 82H136" stroke="#1A162B" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 44L54.5 50.5L61 53L54.5 55.5L52 62L49.5 55.5L43 53L49.5 50.5L52 44Z" fill="#FFFFFF" fill-opacity="0.88"/>
+  <circle cx="192" cy="48" r="4" fill="#FFFFFF" fill-opacity="0.82"/>
+  <circle cx="186" cy="108" r="3" fill="#FFFFFF" fill-opacity="0.82"/>
+</svg>

@@ -14,7 +14,7 @@
 	border-radius: 9999px;
 	padding: 14px 24px;
 	min-height: 50px;
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--contrast);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
@@ -56,8 +56,8 @@
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
 	display: flex;
 	align-items: center;
-	padding: 5px 6px 5px 22px;
-	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	padding: 4px 5px 4px 16px;
+	border: 1.5px solid var(--wp--preset--color--border-default, #e2e8f0);
 	border-radius: 9999px;
 	background-color: var(--wp--preset--color--base, #fff);
 	box-sizing: border-box;
@@ -71,11 +71,12 @@
 
 .wp-block-search.wp-block-search__button-inside input.wp-block-search__input,
 .wp-block-search.wp-block-search__button-inside .wp-block-search__input {
+	min-width: 0;
 	border: none;
 	border-radius: 0;
 	background: transparent;
 	box-shadow: none;
-	padding: 8px 12px 8px 0;
+	padding: 8px 10px 8px 0;
 	min-height: auto;
 	height: auto;
 }
@@ -91,10 +92,16 @@
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__button {
 	border-radius: 9999px;
-	padding: 10px 24px;
-	min-height: 42px;
+	padding: 10px 14px;
+	min-width: 44px;
+	min-height: 44px;
 	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	flex-shrink: 0;
+}
+
+.learnschool-sidebar-rail .wp-block-search,
+aside .wp-block-search {
+	margin: 0;
 }
 
 @media (forced-colors: active) {
