@@ -191,8 +191,11 @@ if ( ! function_exists( 'learnschool_insert_starter_page' ) ) :
 			array(
 				'post_type'              => 'page',
 				'name'                   => $config['slug'],
+				'post_parent'            => 0,
 				'post_status'            => array( 'publish', 'draft', 'pending', 'future', 'private' ),
 				'posts_per_page'         => 1,
+				'orderby'                => 'ID',
+				'order'                  => 'ASC',
 				'no_found_rows'          => true,
 				'update_post_meta_cache' => false,
 				'update_post_term_cache' => false,
@@ -498,8 +501,11 @@ if ( ! function_exists( 'learnschool_get_starter_pages_status' ) ) :
 			array(
 				'post_type'              => 'page',
 				'post_name__in'          => $slugs,
+				'post_parent'            => 0,
 				'post_status'            => array( 'publish', 'draft', 'pending', 'future', 'private' ),
 				'posts_per_page'         => count( $slugs ) + 5,
+				'orderby'                => 'ID',
+				'order'                  => 'ASC',
 				'no_found_rows'          => true,
 				'update_post_meta_cache' => false,
 				'update_post_term_cache' => false,
@@ -881,7 +887,6 @@ if ( ! function_exists( 'learnschool_render_admin_companion_panel' ) ) :
 					</div>
 					<div class="learnschool-admin-plugin-card__actions">
 						<?php if ( '' !== $learnschool_action['primary_url'] ) : ?>
-							<?php $learnschool_is_codeclove = 'codeclove-school-management' === $learnschool_action['slug']; ?>
 						<a
 							class="button <?php echo 'active' === $learnschool_action['status'] ? 'button-secondary' : 'button-primary'; ?> button-compact learnschool-plugin-action"
 							href="<?php echo esc_url( $learnschool_action['primary_url'] ); ?>"
@@ -890,8 +895,8 @@ if ( ! function_exists( 'learnschool_render_admin_companion_panel' ) ) :
 							data-plugin-basename="<?php echo esc_attr( $learnschool_action['basename'] ); ?>"
 							data-plugin-state="<?php echo esc_attr( $learnschool_action['status'] ); ?>"
 							data-loading-label="<?php echo esc_attr( $learnschool_action['loading_label'] ); ?>"
-							data-active-label="<?php echo esc_attr( $learnschool_is_codeclove ? __( 'Open Dashboard', 'learnschool' ) : __( 'Manage Plugins', 'learnschool' ) ); ?>"
-							data-active-url="<?php echo esc_url( $learnschool_is_codeclove ? admin_url( 'admin.php?page=codeclove-school-management' ) : self_admin_url( 'plugins.php' ) ); ?>"
+							data-active-label="<?php echo esc_attr__( 'Manage Plugins', 'learnschool' ); ?>"
+							data-active-url="<?php echo esc_url( self_admin_url( 'plugins.php' ) ); ?>"
 							data-plugins-url="<?php echo esc_url( self_admin_url( 'plugins.php' ) ); ?>"
 							<?php endif; ?>
 						>
@@ -1159,7 +1164,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 												<?php endif; ?>
 											<?php endforeach; ?>
 										</div>
-											<?php if ( $can_publish && ( $missing_starters > 0 || 'page' !== get_option( 'show_on_front' ) ) ) : ?>
+											<?php if ( $can_publish && ( $missing_starters > 0 || ( current_user_can( 'manage_options' ) && 'page' !== get_option( 'show_on_front' ) ) ) ) : ?>
 										<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="learnschool-admin-starter-bulk">
 											<input type="hidden" name="action" value="learnschool_setup_starter_pages" />
 												<?php wp_nonce_field( 'learnschool_setup_starter_pages' ); ?>
