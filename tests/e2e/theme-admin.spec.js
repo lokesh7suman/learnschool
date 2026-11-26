@@ -77,10 +77,16 @@ test.describe( 'LearnSchool Top-Level Menu, Setup & Companion Plugin Audit', () 
 			expect( response.status() ).toBeLessThan( 400 );
 
 			await expect( page.getByRole( 'heading', { name: 'Welcome to LearnSchool' } ) ).toBeVisible();
+			await expect( page.getByRole( 'heading', { name: 'Site Setup Guide' } ) ).toBeVisible();
+			await expect( page.locator( '.learnschool-admin-step-item' ) ).toHaveCount( 4 );
+			await expect( page.locator( '.learnschool-admin-swatch' ) ).toHaveCount( 4 );
+			await expect( page.locator( '.learnschool-admin-starter-page' ) ).toHaveCount( 5 );
+			await expect( page.getByRole( 'heading', { name: 'WordPress Launch Settings' } ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'Recommended Companion Plugin' } ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'CodeClove School Management System' } ) ).toBeVisible();
 			await expect( page.locator( '.learnschool-admin-plugin-card__icon svg' ) ).toBeVisible();
 			await expect( page.locator( '.learnschool-plugin-notice' ) ).toHaveCount( 0 );
+			await expect( page.locator( '#contextual-help-link' ) ).toBeVisible();
 
 			const actionButton = page.locator( '.learnschool-admin-plugin-card__actions a.learnschool-plugin-action' );
 			await expect( actionButton ).toBeVisible();

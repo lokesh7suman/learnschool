@@ -34,7 +34,7 @@ if ( ! function_exists( 'learnschool_get_recommended_plugins' ) ) :
 		);
 
 		/**
-		 * Filters the list of optional companion plugins displayed on the Appearance -> LearnSchool screen.
+		 * Filters the list of optional companion plugins displayed on the LearnSchool Setup Guide screen.
 		 *
 		 * @since 1.0.0
 		 * @param array<int, array{slug: string, file: string, name: string, description: string, badge: string}> $plugins Recommended plugin definitions.
