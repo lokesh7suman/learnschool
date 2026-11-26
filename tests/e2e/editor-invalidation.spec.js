@@ -96,14 +96,13 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		}
 	} );
 
-	test( 'All registered theme patterns parse in Gutenberg without block recovery or freeform blocks', async ( { page } ) => {
+	test( 'All registered theme patterns parse in Gutenberg without block recovery or freeform blocks', async ( { page, requestUtils } ) => {
 		await page.goto( '/wp-admin/post-new.php?post_type=page', { waitUntil: 'domcontentloaded' } );
-		await page.waitForFunction( () => Boolean( window.wp?.blocks?.parse && window.wp?.data && window.wp?.apiFetch ) );
+		await page.waitForFunction( () => Boolean( window.wp?.blocks?.parse && window.wp?.data ) );
+		await page.locator( '.editor-visual-editor, .edit-post-visual-editor' ).first().waitFor( { timeout: 15000 } );
 
-		const patterns = await page.evaluate( async () => {
-			const all = await window.wp.apiFetch( { path: '/wp/v2/block-patterns/patterns' } );
-			return all.filter( ( p ) => p.name && p.name.startsWith( 'learnschool/' ) );
-		} );
+		const all = await requestUtils.rest( { path: '/wp/v2/block-patterns/patterns' } );
+		const patterns = all.filter( ( p ) => p.name && p.name.startsWith( 'learnschool/' ) );
 
 		expect( patterns.length ).toBeGreaterThanOrEqual( 20 );
 

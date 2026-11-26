@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T16:44:43+00:00\n"
+"POT-Creation-Date: 2026-11-26T16:52:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -304,6 +304,28 @@ msgstr ""
 
 #: inc/recommended-plugins.php:160
 msgid "View on WordPress.org"
+msgstr ""
+
+#: inc/recommended-plugins.php:303
+msgid "LearnSchool Companion Plugin (Optional):"
+msgstr ""
+
+#. translators: %s: Recommended plugin name.
+#: inc/recommended-plugins.php:308
+#, php-format
+msgid "Install or activate %s to add student profiles, online admissions forms, daily attendance, fee invoicing, and a parent portal. Your theme works completely without it."
+msgstr ""
+
+#: inc/recommended-plugins.php:312
+msgid "LearnSchool recommends optional WordPress.org companion plugins to extend school administration. Your theme works completely without them."
+msgstr ""
+
+#: inc/recommended-plugins.php:323
+msgid "Recommended Plugins & Setup"
+msgstr ""
+
+#: inc/recommended-plugins.php:326
+msgid "Dismiss notice"
 msgstr ""
 
 #: inc/theme-admin.php:27
