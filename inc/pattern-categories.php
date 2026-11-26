@@ -67,7 +67,7 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 
 			'learnschool/pages'          => array(
 				'label'       => _x( 'Pages', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Complete starter layouts for school home, about, programs, admissions, blog, and contact pages.', 'learnschool' ),
+				'description' => __( 'Complete starter layouts for school home, about, and contact pages.', 'learnschool' ),
 			),
 
 			'learnschool/posts'          => array(

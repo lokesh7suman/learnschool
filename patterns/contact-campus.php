@@ -77,15 +77,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns -->
-
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-6"},"blockGap":"var:preset|spacing|step-3"}}} -->
-<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--step-6)"><!-- wp:button {"className":"is-style-learnschool-pill"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Schedule a Campus Visit', 'learnschool' ); ?></a></div>
-<!-- /wp:button -->
-
-<!-- wp:button {"className":"is-style-learnschool-outline"} -->
-<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Read Admissions FAQ', 'learnschool' ); ?></a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></section>
+<!-- /wp:columns --></section>
 <!-- /wp:group -->

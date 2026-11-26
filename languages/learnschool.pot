@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T17:38:40+00:00\n"
+"POT-Creation-Date: 2026-11-26T19:18:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests."
+msgid "LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 3 full-page starter layouts for Home, About Us, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests."
 msgstr ""
 
 #. Author of the theme
@@ -51,19 +51,19 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:243
 msgid "Banner"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:244
 msgid "Top announcement bars, campus alert strips, and utility ribbons."
 msgstr ""
 
-#: functions.php:243
+#: functions.php:251
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:252
 msgid "Curriculum navigation, educator profiles, and school widget sidebars."
 msgstr ""
 
@@ -83,6 +83,28 @@ msgstr ""
 
 #: inc/block-filters.php:36
 msgid "(no title)"
+msgstr ""
+
+#. translators: 1: Teacher name and role, 2: Current slide position, 3: Total number of teachers.
+#: inc/block-filters.php:331
+#, php-format
+msgid "Showing %1$s (%2$d of %3$d)"
+msgstr ""
+
+#: inc/block-filters.php:358
+msgid "carousel"
+msgstr ""
+
+#: inc/block-filters.php:359
+msgid "Our teachers"
+msgstr ""
+
+#: inc/block-filters.php:360
+msgid "Previous teacher"
+msgstr ""
+
+#: inc/block-filters.php:363
+msgid "Next teacher"
 msgstr ""
 
 #: inc/block-styles.php:32
@@ -224,7 +246,7 @@ msgid "Pages"
 msgstr ""
 
 #: inc/pattern-categories.php:70
-msgid "Complete starter layouts for school home, about, programs, admissions, blog, and contact pages."
+msgid "Complete starter layouts for school home, about, and contact pages."
 msgstr ""
 
 #: inc/pattern-categories.php:74
@@ -280,72 +302,77 @@ msgid "Recommended"
 msgstr ""
 
 #: inc/recommended-plugins.php:128
-#: inc/theme-admin.php:624
-#: inc/theme-admin.php:862
+#: inc/theme-admin.php:855
+#: inc/theme-admin.php:1126
 msgid "Active"
 msgstr ""
 
 #: inc/recommended-plugins.php:131
-#: inc/recommended-plugins.php:396
-#: inc/theme-admin.php:661
-msgid "Manage Plugins"
+#: inc/theme-admin.php:893
+msgid "Open Dashboard"
 msgstr ""
 
 #: inc/recommended-plugins.php:134
+#: inc/recommended-plugins.php:399
+#: inc/theme-admin.php:893
+msgid "Manage Plugins"
+msgstr ""
+
+#: inc/recommended-plugins.php:137
 msgid "Installed (Inactive)"
 msgstr ""
 
-#: inc/recommended-plugins.php:140
+#: inc/recommended-plugins.php:143
 msgid "Activate Plugin"
 msgstr ""
 
-#: inc/recommended-plugins.php:141
+#: inc/recommended-plugins.php:144
 msgid "Activating…"
 msgstr ""
 
-#: inc/recommended-plugins.php:148
+#: inc/recommended-plugins.php:151
 msgid "Install Plugin"
 msgstr ""
 
-#: inc/recommended-plugins.php:149
+#: inc/recommended-plugins.php:152
 msgid "Installing…"
 msgstr ""
 
-#: inc/recommended-plugins.php:176
+#: inc/recommended-plugins.php:179
 msgid "View Details"
 msgstr ""
 
-#: inc/recommended-plugins.php:176
+#: inc/recommended-plugins.php:179
 msgid "View on WordPress.org"
 msgstr ""
 
-#: inc/recommended-plugins.php:370
+#: inc/recommended-plugins.php:373
 msgid "LearnSchool Recommended Companion Plugins"
 msgstr ""
 
-#: inc/recommended-plugins.php:374
+#: inc/recommended-plugins.php:377
 msgid "Optional"
 msgstr ""
 
-#: inc/recommended-plugins.php:380
+#: inc/recommended-plugins.php:383
 msgid "Pair LearnSchool with CodeClove School Management System to manage student admissions, classes, staff, and attendance."
 msgstr ""
 
-#: inc/recommended-plugins.php:381
+#: inc/recommended-plugins.php:384
 msgid "Install optional WordPress.org companion plugins from the setup guide to add school management features."
 msgstr ""
 
 #. translators: %s: Plugin name.
-#: inc/recommended-plugins.php:398
+#: inc/recommended-plugins.php:401
 #, php-format
 msgid "%s is now active."
 msgstr ""
 
-#: inc/recommended-plugins.php:404
+#: inc/recommended-plugins.php:407
 msgid "View Setup Guide"
 msgstr ""
 
-#: inc/recommended-plugins.php:408
+#: inc/recommended-plugins.php:411
 #: inc/theme-admin.php:56
 msgid "Setup Guide"
 msgstr ""
@@ -383,13 +410,12 @@ msgid "WordPress Editors"
 msgstr ""
 
 #: inc/theme-admin.php:112
-#: inc/theme-admin.php:550
-#: inc/theme-admin.php:697
+#: inc/theme-admin.php:930
 msgid "Reading Settings"
 msgstr ""
 
 #: inc/theme-admin.php:113
-#: inc/theme-admin.php:793
+#: inc/theme-admin.php:1038
 msgid "View Live Site"
 msgstr ""
 
@@ -403,221 +429,217 @@ msgid "About Us"
 msgstr ""
 
 #: inc/theme-admin.php:172
-#: patterns/footer-newsletter.php:42
-#: patterns/footer-wonderkids.php:64
-msgid "Programs"
-msgstr ""
-
-#: inc/theme-admin.php:177
-#: patterns/footer-newsletter.php:75
-#: patterns/footer-newsletter.php:132
-#: patterns/footer-wonderkids.php:80
-#: patterns/page-admissions.php:26
-msgid "Admissions"
-msgstr ""
-
-#: inc/theme-admin.php:182
 msgid "Contact"
 msgstr ""
 
-#: inc/theme-admin.php:200
+#: inc/theme-admin.php:296
 msgid "Sorry, you are not allowed to create pages on this site."
 msgstr ""
 
-#: inc/theme-admin.php:368
+#: inc/theme-admin.php:334
+msgid "Sorry, you are not allowed to publish pages on this site."
+msgstr ""
+
+#: inc/theme-admin.php:391
+msgid "Sorry, you are not allowed to customize theme styles."
+msgstr ""
+
+#: inc/theme-admin.php:608
 msgid "Default"
 msgstr ""
 
-#: inc/theme-admin.php:475
+#: inc/theme-admin.php:716
 msgid "Logo & icon set"
 msgstr ""
 
-#: inc/theme-admin.php:477
+#: inc/theme-admin.php:718
 msgid "Logo set · Add site icon"
 msgstr ""
 
-#: inc/theme-admin.php:479
+#: inc/theme-admin.php:720
 msgid "Using fallback mascot"
 msgstr ""
 
-#: inc/theme-admin.php:482
+#: inc/theme-admin.php:725
 msgid "Custom Palette"
 msgstr ""
 
-#. translators: %d: Number of published WordPress pages.
-#: inc/theme-admin.php:497
+#. translators: 1: Created starter pages count, 2: Total starter pages count.
+#: inc/theme-admin.php:744
 #, php-format
-msgid "%d published"
-msgid_plural "%d published"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/theme-admin.php:501
-msgid "Static Home"
+msgid "%1$d of %2$d created"
 msgstr ""
 
-#: inc/theme-admin.php:502
-msgid "Front Page template"
+#: inc/theme-admin.php:749
+msgid "Static Home active"
 msgstr ""
 
-#: inc/theme-admin.php:504
-msgid "No published pages"
+#: inc/theme-admin.php:750
+msgid "Front Page template active"
 msgstr ""
 
-#: inc/theme-admin.php:513
+#: inc/theme-admin.php:758
 msgid "Site Identity, Logo & Icon"
 msgstr ""
 
-#: inc/theme-admin.php:514
+#: inc/theme-admin.php:759
 msgid "Set your school name, tagline, custom logo, and 512×512 browser icon."
 msgstr ""
 
-#: inc/theme-admin.php:517
+#: inc/theme-admin.php:762
 msgid "Edit Identity"
 msgstr ""
 
-#: inc/theme-admin.php:521
-#: inc/theme-admin.php:707
-msgid "General Settings"
-msgstr ""
-
-#: inc/theme-admin.php:530
+#: inc/theme-admin.php:770
 msgid "Colors & Typography"
 msgstr ""
 
-#: inc/theme-admin.php:531
-msgid "Pick a bundled palette in Global Styles so every page and pattern inherits your colors."
+#: inc/theme-admin.php:771
+msgid "Click any palette below to apply it immediately across every page and pattern."
 msgstr ""
 
-#: inc/theme-admin.php:534
-msgid "Open Global Styles"
+#: inc/theme-admin.php:774
+msgid "Customize in Global Styles"
 msgstr ""
 
-#: inc/theme-admin.php:542
+#: inc/theme-admin.php:782
 msgid "Create Starter School Pages"
 msgstr ""
 
-#: inc/theme-admin.php:543
-msgid "Generate ready-to-edit draft pages with Page (No Title) pre-applied so headings never duplicate."
+#: inc/theme-admin.php:783
+msgid "Your homepage already runs via Front Page template. Create Page (No Title) layouts below when you want editable menu pages."
 msgstr ""
 
-#: inc/theme-admin.php:546
-msgid "New Blank Page"
-msgstr ""
-
-#: inc/theme-admin.php:554
+#: inc/theme-admin.php:786
 msgid "All Pages"
 msgstr ""
 
-#: inc/theme-admin.php:563
+#: inc/theme-admin.php:794
 msgid "Navigation, Header CTA & Footer"
 msgstr ""
 
-#: inc/theme-admin.php:564
-msgid "Link your published pages in the menu, update the Enroll Now button, and set footer campus info."
+#: inc/theme-admin.php:795
+msgid "Arrange menu links, update the Enroll Now button, and customize footer campus details."
 msgstr ""
 
-#: inc/theme-admin.php:565
+#: inc/theme-admin.php:796
 msgid "Menu saved"
 msgstr ""
 
-#: inc/theme-admin.php:565
-msgid "Default links"
+#: inc/theme-admin.php:796
+msgid "Using page list"
 msgstr ""
 
-#: inc/theme-admin.php:567
+#: inc/theme-admin.php:798
 msgid "Manage Navigation"
 msgstr ""
 
-#: inc/theme-admin.php:571
+#: inc/theme-admin.php:802
 msgid "Edit Header"
 msgstr ""
 
-#: inc/theme-admin.php:575
+#: inc/theme-admin.php:806
 msgid "Edit Footer"
 msgstr ""
 
-#: inc/theme-admin.php:605
+#: inc/theme-admin.php:836
 msgid "Recommended Companion Plugin"
 msgstr ""
 
-#: inc/theme-admin.php:606
+#: inc/theme-admin.php:837
 msgid "Optional admissions, classes, and attendance features. LearnSchool works fully without it."
 msgstr ""
 
-#: inc/theme-admin.php:645
+#: inc/theme-admin.php:876
 msgid "Automatic plugin installation is disabled in this environment. Install manually or ask your site administrator."
 msgstr ""
 
-#: inc/theme-admin.php:698
+#: inc/theme-admin.php:931
 msgid "Static homepage & blog page"
 msgstr ""
 
-#: inc/theme-admin.php:702
+#: inc/theme-admin.php:935
 msgid "Permalinks"
 msgstr ""
 
-#: inc/theme-admin.php:703
+#: inc/theme-admin.php:936
 msgid "Clean post and page URLs"
 msgstr ""
 
-#: inc/theme-admin.php:708
+#: inc/theme-admin.php:940
+msgid "General Settings"
+msgstr ""
+
+#: inc/theme-admin.php:941
 msgid "Timezone, date & language"
 msgstr ""
 
-#: inc/theme-admin.php:712
+#: inc/theme-admin.php:945
 msgid "Site Health"
 msgstr ""
 
-#: inc/theme-admin.php:713
+#: inc/theme-admin.php:946
 msgid "Performance & security checks"
 msgstr ""
 
-#: inc/theme-admin.php:720
+#: inc/theme-admin.php:953
 msgid "WordPress Launch Settings"
 msgstr ""
 
-#: inc/theme-admin.php:771
-msgid "LearnSchool logo"
+#: inc/theme-admin.php:1007
+msgid "Palette applied to Global Styles."
 msgstr ""
 
-#: inc/theme-admin.php:776
+#: inc/theme-admin.php:1009
+msgid "Starter school pages are ready."
+msgstr ""
+
+#: inc/theme-admin.php:1021
 msgid "Welcome to LearnSchool"
 msgstr ""
 
 #. translators: %s: Current theme version number.
-#: inc/theme-admin.php:781
+#: inc/theme-admin.php:1026
 #, php-format
 msgid "Version %s · Full Site Editing block theme for schools and academies."
 msgstr ""
 
-#: inc/theme-admin.php:790
+#: inc/theme-admin.php:1035
 msgid "Open Site Editor"
 msgstr ""
 
-#: inc/theme-admin.php:808
+#: inc/theme-admin.php:1058
 msgid "Site Setup Guide"
 msgstr ""
 
-#: inc/theme-admin.php:809
+#: inc/theme-admin.php:1059
 msgid "Complete these steps in order using WordPress Full Site Editing."
 msgstr ""
 
 #. translators: 1: Completed setup steps count, 2: Total setup steps count.
-#: inc/theme-admin.php:815
+#: inc/theme-admin.php:1065
 #, php-format
 msgid "%1$d of %2$d ready"
 msgstr ""
 
-#: inc/theme-admin.php:880
+#: inc/theme-admin.php:1147
 msgid "Draft"
 msgstr ""
 
-#: inc/theme-admin.php:880
+#: inc/theme-admin.php:1147
 msgid "Edit"
 msgstr ""
 
-#: inc/theme-admin.php:914
+#: inc/theme-admin.php:1169
+#: inc/theme-admin.php:1178
+msgid "Set Home as Static Front Page"
+msgstr ""
+
+#: inc/theme-admin.php:1173
+msgid "Create All Missing Pages"
+msgstr ""
+
+#: inc/theme-admin.php:1203
 msgid "Companion plugin and WordPress settings"
 msgstr ""
 
@@ -763,14 +785,14 @@ msgstr ""
 msgid "See All"
 msgstr ""
 
-#: patterns/blog-latest.php:59
-#: patterns/hidden-post-card.php:35
+#: patterns/blog-latest.php:60
+#: patterns/hidden-post-card.php:34
 #: patterns/posts-with-sidebar.php:39
 #: patterns/query-posts-list.php:37
 msgid "Read More"
 msgstr ""
 
-#: patterns/blog-latest.php:66
+#: patterns/blog-latest.php:68
 msgid "No school articles published yet. Add your first post to see it featured here."
 msgstr ""
 
@@ -836,14 +858,6 @@ msgstr ""
 #: patterns/contact-campus.php:76
 #: patterns/header-two-row.php:31
 msgid "Mon–Fri: 8:00 AM – 5:00 PM"
-msgstr ""
-
-#: patterns/contact-campus.php:84
-msgid "Schedule a Campus Visit"
-msgstr ""
-
-#: patterns/contact-campus.php:88
-msgid "Read Admissions FAQ"
 msgstr ""
 
 #: patterns/cta-community.php
@@ -1457,6 +1471,11 @@ msgstr ""
 msgid "Email: info@learnschool.edu"
 msgstr ""
 
+#: patterns/footer-newsletter.php:42
+#: patterns/footer-wonderkids.php:64
+msgid "Programs"
+msgstr ""
+
 #: patterns/footer-newsletter.php:47
 msgid "Early Learning"
 msgstr ""
@@ -1479,6 +1498,12 @@ msgstr ""
 
 #: patterns/footer-newsletter.php:70
 msgid "School Life"
+msgstr ""
+
+#: patterns/footer-newsletter.php:75
+#: patterns/footer-newsletter.php:132
+#: patterns/footer-wonderkids.php:80
+msgid "Admissions"
 msgstr ""
 
 #: patterns/footer-newsletter.php:79
@@ -1563,7 +1588,7 @@ msgstr ""
 
 #: patterns/gallery-campus.php
 msgctxt "Pattern description"
-msgid "Asymmetric two-column architectural showcase highlighting our creative arts studio, sensory STEM pods, and low 1:4 mentorship classrooms."
+msgid "Clean architectural campus showcase featuring a full-width flagship studio split above a balanced two-column gallery for Sensory STEM pods and 1:4 educator mentorship."
 msgstr ""
 
 #: patterns/gallery-campus.php:24
@@ -1579,39 +1604,51 @@ msgid "Sunlit classrooms, sensory discovery studios, and welcoming mentorship de
 msgstr ""
 
 #: patterns/gallery-campus.php:36
-msgid "Sunlit creative arts and story studio with children exploring paints, crafts, and books"
+msgid "Sunlit Reggio-inspired creative arts and story studio with watercolor palettes, clay pots, picture books, and a window reading bench"
 msgstr ""
 
-#: patterns/gallery-campus.php:41
+#: patterns/gallery-campus.php:43
 msgid "Creative Arts & Story Studio"
 msgstr ""
 
-#: patterns/gallery-campus.php:45
+#: patterns/gallery-campus.php:47
 msgid "Sunlit Reggio-inspired studio tables stocked with watercolors, non-toxic clays, puppetry stages, and cozy picture-book reading nooks."
 msgstr ""
 
-#: patterns/gallery-campus.php:55
-msgid "Young students building wooden geometric blocks and exploring science kits together"
+#: patterns/gallery-campus.php:51
+msgid "Ages 2–6  ·  Natural Daylight Atelier"
 msgstr ""
 
-#: patterns/gallery-campus.php:60
+#: patterns/gallery-campus.php:62
+msgid "Sunlit Montessori sensory STEM discovery table with wooden geometric blocks, balance scale, magnifying lenses, and potted sprouts"
+msgstr ""
+
+#: patterns/gallery-campus.php:67
 msgid "Sensory STEM & Discovery Pods"
 msgstr ""
 
-#: patterns/gallery-campus.php:64
+#: patterns/gallery-campus.php:71
 msgid "Hands-on geometry blocks, botanical science tables, and collaborative problem-solving stations."
 msgstr ""
 
-#: patterns/gallery-campus.php:73
-msgid "Lead educator Kristin Watson mentoring small groups on campus"
+#: patterns/gallery-campus.php:75
+msgid "Ages 3–6  ·  Botanical & Math Lab"
 msgstr ""
 
-#: patterns/gallery-campus.php:79
+#: patterns/gallery-campus.php:84
+msgid "Early childhood educator preparing an illustrated storybook and observation journal in a sunlit reading nook"
+msgstr ""
+
+#: patterns/gallery-campus.php:89
 msgid "Small 1:4 Mentorship Ratios"
 msgstr ""
 
-#: patterns/gallery-campus.php:83
+#: patterns/gallery-campus.php:93
 msgid "Certified early childhood educators guiding small pods with personalized care and daily parent updates."
+msgstr ""
+
+#: patterns/gallery-campus.php:97
+msgid "1:4 Educator Ratio  ·  Daily Parent Journals"
 msgstr ""
 
 #: patterns/header-right-aligned.php
@@ -2177,60 +2214,7 @@ msgstr ""
 
 #: patterns/page-about.php
 msgctxt "Pattern description"
-msgid "Full About Us page layout featuring school mission highlights, safety and credential trust strip, leadership spotlight, family testimonials, and community CTA."
-msgstr ""
-
-#: patterns/page-admissions.php
-msgctxt "Pattern title"
-msgid "Admissions, Tuition & FAQ Page Layout"
-msgstr ""
-
-#: patterns/page-admissions.php
-msgctxt "Pattern description"
-msgid "Complete Admissions page layout with tuition plans, enrollment roadmap steps, open house events schedule, expandable FAQ accordion, and tour scheduling banner."
-msgstr ""
-
-#: patterns/page-admissions.php:26
-msgid "Warm & Transparent "
-msgstr ""
-
-#: patterns/page-admissions.php:30
-msgid "Compare transparent tuition schedules, follow our simple enrollment steps, explore upcoming open house dates, and find answers for your family."
-msgstr ""
-
-#: patterns/page-blog-sidebar.php
-msgctxt "Pattern title"
-msgid "Blog & School News Page (With Sidebar)"
-msgstr ""
-
-#: patterns/page-blog-sidebar.php
-msgctxt "Pattern description"
-msgid "Complete Blog & School Journal page layout with editorial intro header, blog feed paired with a right sidebar rail, and tour enrollment CTA. Best paired with the Page (No Title) or Full Width template."
-msgstr ""
-
-#: patterns/page-blog-sidebar.php:26
-#: patterns/page-blog.php:26
-msgid "School Stories & Classroom "
-msgstr ""
-
-#: patterns/page-blog-sidebar.php:26
-#: patterns/page-blog.php:26
-msgid "Journal"
-msgstr ""
-
-#: patterns/page-blog-sidebar.php:30
-#: patterns/page-blog.php:30
-msgid "Explore seasonal reflections, classroom activity highlights, and parenting tips from our early learning educators."
-msgstr ""
-
-#: patterns/page-blog.php
-msgctxt "Pattern title"
-msgid "Blog & School News Page Layout"
-msgstr ""
-
-#: patterns/page-blog.php
-msgctxt "Pattern description"
-msgid "Complete Blog & School Journal page layout with editorial intro header, two-column posts grid, and tour enrollment CTA."
+msgid "Focused About Us page layout featuring an editorial mission header, campus learning spaces gallery, educator portrait showcase, and family testimonials."
 msgstr ""
 
 #: patterns/page-contact.php
@@ -2240,19 +2224,7 @@ msgstr ""
 
 #: patterns/page-contact.php
 msgctxt "Pattern description"
-msgid "Full Contact Us page layout combining campus contact cards, open house schedule, and quick parent FAQ cards."
-msgstr ""
-
-#: patterns/page-contact.php:26
-msgid "Visit Our Campus & "
-msgstr ""
-
-#: patterns/page-contact.php:26
-msgid "Connect"
-msgstr ""
-
-#: patterns/page-contact.php:30
-msgid "Schedule a guided family tour, call our admissions desk, or join us at an upcoming campus open house."
+msgid "Focused Contact Us page layout combining editorial intro header, campus contact cards, and upcoming campus tour open houses."
 msgstr ""
 
 #: patterns/page-home.php
@@ -2262,17 +2234,7 @@ msgstr ""
 
 #: patterns/page-home.php
 msgctxt "Pattern description"
-msgid "Complete homepage starter layout combining the playful doodles hero, interactive features, learning materials, faculty grid, live blog feed, FAQ accordion, and tour CTA."
-msgstr ""
-
-#: patterns/page-programs.php
-msgctxt "Pattern title"
-msgid "Programs & Curriculum Page Layout"
-msgstr ""
-
-#: patterns/page-programs.php
-msgctxt "Pattern description"
-msgid "Complete Programs page layout with campus tour hero, signature learning programs, tactile curriculum showcase, four-step learning journey, and tour CTA."
+msgid "Focused homepage starter layout combining the playful doodles hero, safety trust strip, interactive features, faculty portrait grid, live blog feed, and tour CTA."
 msgstr ""
 
 #: patterns/post-meta.php
@@ -2524,67 +2486,67 @@ msgstr ""
 
 #: patterns/teachers-photos-grid.php
 msgctxt "Pattern description"
-msgid "Full-width brand purple faculty showcase featuring a bold editorial statement, yellow script highlight, and four circular teacher portraits on colored studio backdrops."
+msgid "Full-width brand purple faculty showcase featuring a bold editorial statement, yellow script highlight, and four organic pebble teacher portraits on colored studio backdrops."
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:24
+#: patterns/teachers-photos-grid.php:25
 msgid "We aim to help children "
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:24
+#: patterns/teachers-photos-grid.php:25
 msgid "discover the joy of creative"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:24
+#: patterns/teachers-photos-grid.php:25
 msgid "learning and grow into well-rounded individuals."
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:33
+#: patterns/teachers-photos-grid.php:35
 msgid "Portrait of Kristin Watson, Science Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:38
+#: patterns/teachers-photos-grid.php:41
 msgid "Kristin Watson"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:42
+#: patterns/teachers-photos-grid.php:45
 msgid "Science Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:51
+#: patterns/teachers-photos-grid.php:55
 msgid "Portrait of Jenny Wilson, Phonics & Literacy Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:56
+#: patterns/teachers-photos-grid.php:61
 #: patterns/teachers-spotlight.php:92
 msgid "Jenny Wilson"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:60
+#: patterns/teachers-photos-grid.php:65
 msgid "Literacy Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:69
+#: patterns/teachers-photos-grid.php:75
 msgid "Portrait of Marcus Hayes, Music & Rhythm Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:74
+#: patterns/teachers-photos-grid.php:81
 msgid "Marcus Hayes"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:78
+#: patterns/teachers-photos-grid.php:85
 msgid "Music Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:87
+#: patterns/teachers-photos-grid.php:95
 msgid "Portrait of Sofia Chen, Drawing & Studio Arts Teacher"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:92
+#: patterns/teachers-photos-grid.php:101
 msgid "Sofia Chen"
 msgstr ""
 
-#: patterns/teachers-photos-grid.php:96
+#: patterns/teachers-photos-grid.php:105
 msgid "Drawing Teacher"
 msgstr ""
 
@@ -2770,35 +2732,35 @@ msgctxt "Pattern description"
 msgid "4-item credential bar highlighting keypad security, background checks, organic kitchen, and state licensing."
 msgstr ""
 
-#: patterns/trust-strip.php:33
+#: patterns/trust-strip.php:34
 msgid "Keypad Security"
 msgstr ""
 
-#: patterns/trust-strip.php:37
+#: patterns/trust-strip.php:38
 msgid "Controlled badge access & 24/7 HD video monitors"
 msgstr ""
 
-#: patterns/trust-strip.php:53
+#: patterns/trust-strip.php:54
 msgid "Vetted Educators"
 msgstr ""
 
-#: patterns/trust-strip.php:57
+#: patterns/trust-strip.php:58
 msgid "100% FBI background-checked & CPR-certified staff"
 msgstr ""
 
-#: patterns/trust-strip.php:73
+#: patterns/trust-strip.php:74
 msgid "Allergy-Safe Food"
 msgstr ""
 
-#: patterns/trust-strip.php:77
+#: patterns/trust-strip.php:78
 msgid "Organic scratch kitchen & 100% nut-free campus"
 msgstr ""
 
-#: patterns/trust-strip.php:93
+#: patterns/trust-strip.php:94
 msgid "State Licensed"
 msgstr ""
 
-#: patterns/trust-strip.php:97
+#: patterns/trust-strip.php:98
 msgid "Exceeds state early-education quality and safety bars"
 msgstr ""
 

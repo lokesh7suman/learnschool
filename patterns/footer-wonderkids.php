@@ -65,7 +65,7 @@ if ( '' === $learnschool_privacy_url ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Curriculum', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Curriculum', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -81,11 +81,11 @@ if ( '' === $learnschool_privacy_url ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Questions & FAQ', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Questions & FAQ', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#materials' ) ); ?>"><?php echo esc_html__( 'Learning Kits', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Learning Kits', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -109,7 +109,7 @@ if ( '' === $learnschool_privacy_url ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Support', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Support', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->

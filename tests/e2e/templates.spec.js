@@ -196,15 +196,17 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		}
 	} );
 
-	test( 'Blog with sidebar and without sidebar options render cleanly across viewports', async ( { page, requestUtils } ) => {
+	test( 'Page starter patterns and sidebar blog options render cleanly across viewports', async ( { page, requestUtils } ) => {
 		const patterns = await requestUtils.rest( { path: '/wp/v2/block-patterns/patterns' } );
-		const blogNoSidebar = patterns.find( ( p ) => p.name === 'learnschool/page-blog' );
-		const blogWithSidebar = patterns.find( ( p ) => p.name === 'learnschool/page-blog-sidebar' );
+		const homePage = patterns.find( ( p ) => p.name === 'learnschool/page-home' );
+		const aboutPage = patterns.find( ( p ) => p.name === 'learnschool/page-about' );
+		const contactPage = patterns.find( ( p ) => p.name === 'learnschool/page-contact' );
 		const postsWithSidebar = patterns.find( ( p ) => p.name === 'learnschool/posts-with-sidebar' );
 		const admissionsSidebar = patterns.find( ( p ) => p.name === 'learnschool/sidebar-admissions' );
 
-		expect( blogNoSidebar ).toBeTruthy();
-		expect( blogWithSidebar ).toBeTruthy();
+		expect( homePage ).toBeTruthy();
+		expect( aboutPage ).toBeTruthy();
+		expect( contactPage ).toBeTruthy();
 		expect( postsWithSidebar ).toBeTruthy();
 		expect( admissionsSidebar ).toBeTruthy();
 
@@ -300,5 +302,188 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 				path: `/wp/v2/pages/${ sidebarPage.id }?force=true`,
 			} );
 		}
+	} );
+
+	test( 'Teachers portrait showcase renders organic pebble frames and interactive carousel controls', async ( { page } ) => {
+		const pageErrors = [];
+		page.on( 'pageerror', ( err ) => pageErrors.push( err.message ) );
+
+		await page.setViewportSize( { width: 1280, height: 800 } );
+		const res = await page.goto( '/' );
+		expect( res.status() ).toBe( 200 );
+
+		const shell = page.locator( '#faculty .learnschool-teachers-carousel-shell' );
+		await expect( shell ).toBeVisible();
+		await expect( shell ).toHaveAttribute( 'data-carousel-ready', 'true' );
+
+		const prevBtn = shell.locator( '.learnschool-teachers-nav--prev' );
+		const nextBtn = shell.locator( '.learnschool-teachers-nav--next' );
+		await expect( prevBtn ).toBeVisible();
+		await expect( nextBtn ).toBeVisible();
+
+		const desktopMetrics = await page.evaluate( () => {
+			const shellEl = document.querySelector( '#faculty .learnschool-teachers-carousel-shell' );
+			const cols = [ ...shellEl.querySelectorAll( '.learnschool-teachers-track > .wp-block-column' ) ];
+			const visibleNames = cols
+				.filter( ( col ) => getComputedStyle( col ).display !== 'none' )
+				.map( ( col ) => col.querySelector( 'h3' )?.textContent?.trim() );
+			const radii = cols.map( ( col ) =>
+				getComputedStyle( col.querySelector( '.learnschool-teacher-avatar-wrap' ) ).borderRadius
+			);
+			const prevBox = shellEl.querySelector( '.learnschool-teachers-nav--prev' ).getBoundingClientRect();
+			const nextBox = shellEl.querySelector( '.learnschool-teachers-nav--next' ).getBoundingClientRect();
+			return {
+				overflow: document.documentElement.scrollWidth > window.innerWidth,
+				visibleNames,
+				uniqueRadiiCount: new Set( radii ).size,
+				prevSize: { w: Math.round( prevBox.width ), h: Math.round( prevBox.height ) },
+				nextSize: { w: Math.round( nextBox.width ), h: Math.round( nextBox.height ) },
+			};
+		} );
+
+		expect( desktopMetrics.overflow ).toBe( false );
+		expect( desktopMetrics.visibleNames ).toEqual( [
+			'Kristin Watson',
+			'Jenny Wilson',
+			'Marcus Hayes',
+			'Sofia Chen',
+		] );
+		expect( desktopMetrics.uniqueRadiiCount ).toBe( 4 );
+		expect( desktopMetrics.prevSize.w ).toBeGreaterThanOrEqual( 44 );
+		expect( desktopMetrics.prevSize.h ).toBeGreaterThanOrEqual( 44 );
+		expect( desktopMetrics.nextSize.w ).toBeGreaterThanOrEqual( 44 );
+		expect( desktopMetrics.nextSize.h ).toBeGreaterThanOrEqual( 44 );
+
+		await nextBtn.click();
+		const afterNextNames = await page.evaluate( () => {
+			return [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column h3' ) ]
+				.map( ( h3 ) => h3.textContent.trim() );
+		} );
+		expect( afterNextNames ).toEqual( [
+			'Jenny Wilson',
+			'Marcus Hayes',
+			'Sofia Chen',
+			'Kristin Watson',
+		] );
+		await expect( shell.locator( '[aria-live="polite"]' ) ).toContainText( 'Jenny Wilson' );
+
+		await prevBtn.click();
+		const afterPrevNames = await page.evaluate( () => {
+			return [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column h3' ) ]
+				.map( ( h3 ) => h3.textContent.trim() );
+		} );
+		expect( afterPrevNames ).toEqual( [
+			'Kristin Watson',
+			'Jenny Wilson',
+			'Marcus Hayes',
+			'Sofia Chen',
+		] );
+
+		await page.setViewportSize( { width: 390, height: 844 } );
+		await page.goto( '/' );
+		await expect( shell ).toHaveAttribute( 'data-carousel-ready', 'true' );
+		const mobileInitial = await page.evaluate( () => {
+			const cols = [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column' ) ];
+			const visibleNames = cols
+				.filter( ( col ) => getComputedStyle( col ).display !== 'none' )
+				.map( ( col ) => col.querySelector( 'h3' )?.textContent?.trim() );
+			return {
+				overflow: document.documentElement.scrollWidth > window.innerWidth,
+				visibleNames,
+			};
+		} );
+		expect( mobileInitial.overflow ).toBe( false );
+		expect( mobileInitial.visibleNames ).toEqual( [ 'Kristin Watson' ] );
+
+		await nextBtn.click();
+		const mobileAfterNext = await page.evaluate( () => {
+			const cols = [ ...document.querySelectorAll( '#faculty .learnschool-teachers-track > .wp-block-column' ) ];
+			return cols
+				.filter( ( col ) => getComputedStyle( col ).display !== 'none' )
+				.map( ( col ) => col.querySelector( 'h3' )?.textContent?.trim() );
+		} );
+		expect( mobileAfterNext ).toEqual( [ 'Jenny Wilson' ] );
+
+		const axeResults = await new AxeBuilder( { page } )
+			.include( '#faculty' )
+			.withTags( [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa' ] )
+			.analyze();
+		expect( axeResults.violations ).toEqual( [] );
+		expect( pageErrors ).toEqual( [] );
+	} );
+
+	test( 'Trust strip renders elevated surface dock with equal columns and 48px token squircles across viewports', async ( { page } ) => {
+		await page.setViewportSize( { width: 1280, height: 800 } );
+		const res = await page.goto( '/' );
+		expect( res.status() ).toBe( 200 );
+
+		const dock = page.locator( '.is-style-learnschool-trust-strip' ).first();
+		await expect( dock ).toBeVisible();
+
+		const desktopMetrics = await page.evaluate( () => {
+			const dockEl = document.querySelector( '.is-style-learnschool-trust-strip' );
+			const cols = [ ...dockEl.querySelectorAll( '.wp-block-columns > .wp-block-column' ) ];
+			const colWidths = cols.map( ( col ) => Math.round( col.getBoundingClientRect().width ) );
+			const colTops = cols.map( ( col ) => Math.round( col.getBoundingClientRect().top ) );
+			const squircles = cols.map( ( col ) => {
+				const sq = col.querySelector( '.wp-block-group[style*="width:48px"]' );
+				const r = sq ? sq.getBoundingClientRect() : null;
+				return r ? { w: Math.round( r.width ), h: Math.round( r.height ) } : null;
+			} );
+			return {
+				overflow: document.documentElement.scrollWidth > window.innerWidth,
+				borderRadius: getComputedStyle( dockEl ).borderRadius,
+				colCount: cols.length,
+				widthSpread: Math.max( ...colWidths ) - Math.min( ...colWidths ),
+				topSpread: Math.max( ...colTops ) - Math.min( ...colTops ),
+				squircles,
+			};
+		} );
+
+		expect( desktopMetrics.overflow ).toBe( false );
+		expect( desktopMetrics.borderRadius ).toBe( '24px' );
+		expect( desktopMetrics.colCount ).toBe( 4 );
+		expect( desktopMetrics.widthSpread ).toBeLessThanOrEqual( 2 );
+		expect( desktopMetrics.topSpread ).toBeLessThanOrEqual( 2 );
+		expect( desktopMetrics.squircles ).toEqual( [
+			{ w: 48, h: 48 },
+			{ w: 48, h: 48 },
+			{ w: 48, h: 48 },
+			{ w: 48, h: 48 },
+		] );
+
+		const axeResults = await new AxeBuilder( { page } )
+			.include( '.is-style-learnschool-trust-strip' )
+			.withTags( [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa' ] )
+			.analyze();
+		expect( axeResults.violations ).toEqual( [] );
+
+		await page.setViewportSize( { width: 768, height: 1024 } );
+		await page.goto( '/' );
+		const tabletLayout = await page.evaluate( () => {
+			const cols = [ ...document.querySelectorAll( '.is-style-learnschool-trust-strip .wp-block-columns > .wp-block-column' ) ];
+			const rects = cols.map( ( col ) => col.getBoundingClientRect() );
+			return {
+				overflow: document.documentElement.scrollWidth > window.innerWidth,
+				topRowAligned: Math.abs( rects[ 0 ].top - rects[ 1 ].top ) <= 2,
+				secondRowBelow: rects[ 2 ].top >= rects[ 0 ].bottom,
+			};
+		} );
+		expect( tabletLayout.overflow ).toBe( false );
+		expect( tabletLayout.topRowAligned ).toBe( true );
+		expect( tabletLayout.secondRowBelow ).toBe( true );
+
+		await page.setViewportSize( { width: 390, height: 844 } );
+		await page.goto( '/' );
+		const mobileLayout = await page.evaluate( () => {
+			const cols = [ ...document.querySelectorAll( '.is-style-learnschool-trust-strip .wp-block-columns > .wp-block-column' ) ];
+			const rects = cols.map( ( col ) => col.getBoundingClientRect() );
+			return {
+				overflow: document.documentElement.scrollWidth > window.innerWidth,
+				stacked: rects[ 1 ].top >= rects[ 0 ].bottom && rects[ 2 ].top >= rects[ 1 ].bottom,
+			};
+		} );
+		expect( mobileLayout.overflow ).toBe( false );
+		expect( mobileLayout.stacked ).toBe( true );
 	} );
 } );

@@ -10,7 +10,7 @@ Tags: education, blog, full-site-editing, block-patterns, block-styles, style-va
 
 == Description ==
 
-LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
+LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 3 full-page starter layouts for Home, About Us, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
 
 == Installation ==
 
@@ -116,3 +116,6 @@ License: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
 * `assets/images/illustrations/realistic-teacher-kristin.jpg` - Synthetic educator portrait (Google C2PA AI generated, no real person likeness) (CC0)
 * `assets/images/illustrations/realistic-teacher-marcus.jpg` - Synthetic educator portrait (Google C2PA AI generated, no real person likeness) (CC0)
 * `assets/images/illustrations/realistic-teacher-sofia.jpg` - Synthetic educator portrait (Google C2PA AI generated, no real person likeness) (CC0)
+* `assets/images/illustrations/space-creative-arts-studio.jpg` - Empty sunlit Reggio-inspired creative arts studio interior (CC0)
+* `assets/images/illustrations/space-mentorship-reading-nook.jpg` - Synthetic adult educator in sunlit classroom reading nook (Google C2PA AI generated, no real person likeness) (CC0)
+* `assets/images/illustrations/space-sensory-stem-pod.jpg` - Empty sunlit Montessori sensory STEM and botanical classroom table (CC0)
