@@ -297,15 +297,35 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 			return $block_content;
 		}
 
-		$column_count = 0;
-		$counter      = new \WP_HTML_Tag_Processor( $block_content );
-		while ( $counter->next_tag( array( 'class_name' => 'wp-block-column' ) ) ) {
-			++$column_count;
+		$slide_index = 0;
+		$has_track   = $tags->next_tag( array( 'class_name' => 'learnschool-teachers-track' ) );
+		if ( $has_track ) {
+			while ( $tags->next_tag( array( 'class_name' => 'wp-block-column' ) ) ) {
+				$slide_context = wp_json_encode( array( 'slideIndex' => $slide_index ) );
+				if ( is_string( $slide_context ) ) {
+					$tags->set_attribute( 'data-wp-context', $slide_context );
+				}
+				$tags->set_attribute( 'data-wp-style--order', 'state.slideSlot' );
+				$tags->set_attribute( 'data-wp-bind--data-slide-slot', 'state.slideSlot' );
+				$tags->set_attribute( 'data-slide-slot', (string) $slide_index );
+
+				$existing_style = $tags->get_attribute( 'style' );
+				$order_style    = 'order:' . $slide_index;
+				$updated_style  = is_string( $existing_style ) && '' !== trim( $existing_style )
+					? rtrim( $existing_style, "; \t\n\r\0\x0B" ) . ';' . $order_style
+					: $order_style;
+				$tags->set_attribute( 'style', $updated_style );
+
+				++$slide_index;
+			}
 		}
 
+		$column_count = $slide_index;
 		if ( $column_count < 2 ) {
 			return $block_content;
 		}
+
+		$annotated_content = $tags->get_updated_html();
 
 		$theme_version = wp_get_theme()->get( 'Version' );
 		$script_path   = get_theme_file_path( 'assets/js/teachers-carousel.js' );
@@ -329,6 +349,19 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 				array(
 					/* translators: 1: Teacher name and role, 2: Current slide position, 3: Total number of teachers. */
 					'showingTemplate' => __( 'Showing %1$s (%2$d of %3$d)', 'learnschool' ),
+					'slideSlot'       => static function (): int {
+						$context = function_exists( 'wp_interactivity_get_context' )
+							? wp_interactivity_get_context( 'learnschool/teachers' )
+							: array();
+						$index   = isset( $context['slideIndex'] ) ? (int) $context['slideIndex'] : 0;
+						$active  = isset( $context['activeIndex'] ) ? (int) $context['activeIndex'] : 0;
+						$total   = isset( $context['total'] ) ? (int) $context['total'] : 0;
+						if ( $total <= 0 ) {
+							return $index;
+						}
+
+						return ( ( $index - $active ) % $total + $total ) % $total;
+					},
 				)
 			);
 		}
@@ -347,6 +380,10 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 		$prev_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>';
 		$next_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>';
 
+		$has_nested_interactive = str_contains( $annotated_content, 'data-wp-interactive' );
+		$placeholder            = '<!--learnschool-teachers-track-slot-->';
+		$shell_body             = $has_nested_interactive ? $placeholder : $annotated_content;
+
 		$shell = sprintf(
 			'<div class="learnschool-teachers-carousel-shell alignwide" data-wp-interactive="learnschool/teachers" %1$s data-wp-init="callbacks.init" data-wp-bind--data-carousel-ready="context.ready" role="region" aria-roledescription="%2$s" aria-label="%3$s">'
 			. '<button type="button" class="learnschool-teachers-nav learnschool-teachers-nav--prev" aria-label="%4$s" data-wp-on--click="actions.prev" data-wp-bind--hidden="!context.ready" hidden>%5$s</button>'
@@ -359,14 +396,18 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 			esc_attr__( 'Our teachers', 'learnschool' ),
 			esc_attr__( 'Previous teacher', 'learnschool' ),
 			$prev_svg,
-			$block_content,
+			$shell_body,
 			esc_attr__( 'Next teacher', 'learnschool' ),
 			$next_svg
 		);
 
-		return function_exists( 'wp_interactivity_process_directives' )
+		$processed = function_exists( 'wp_interactivity_process_directives' )
 			? wp_interactivity_process_directives( $shell )
 			: $shell;
+
+		return $has_nested_interactive
+			? str_replace( $placeholder, $annotated_content, $processed )
+			: $processed;
 	}
 endif;
 add_filter( 'render_block_core/group', 'learnschool_render_teachers_carousel', 10, 2 );

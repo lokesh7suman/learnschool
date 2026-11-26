@@ -2,7 +2,7 @@
  * LearnSchool Teachers Carousel Interactivity Module
  *
  * Powers accessible previous/next cycling for the teachers showcase pattern
- * using the WordPress Interactivity API.
+ * using the WordPress Interactivity API without mutating Preact-managed DOM nodes.
  *
  * @package
  * @since 1.0.0
@@ -51,15 +51,15 @@ function formatAnnouncement( activeColumn, index, total, template ) {
 	}
 
 	return template
-		.replace( '%1$s', label )
-		.replace( '%2$d', String( index + 1 ) )
-		.replace( '%3$d', String( total ) );
+		.replace( '%1$s', () => label )
+		.replace( '%2$d', () => String( index + 1 ) )
+		.replace( '%3$d', () => String( total ) );
 }
 
 /**
- * Animate visible cards smoothly after rotating the track.
+ * Animate visible cards smoothly after rotating activeIndex.
  *
- * @param {HTMLElement[]} columns   Ordered teacher columns after rotation.
+ * @param {HTMLElement[]} columns   Teacher column elements.
  * @param {number}        direction Slide direction (1 for next, -1 for prev).
  * @return {void}
  */
@@ -90,7 +90,7 @@ function animateTrackShift( columns, direction ) {
 }
 
 /**
- * Shift teacher cards forward or backward by one column and update live status.
+ * Shift teacher cards forward or backward declaratively via activeIndex and live status.
  *
  * @param {number} direction 1 for next, -1 for previous.
  * @param {string} template  Localized announcement template.
@@ -99,33 +99,43 @@ function animateTrackShift( columns, direction ) {
 function shiftCarousel( direction, template ) {
 	const { ref } = getElement();
 	const shell = ref?.closest( '.learnschool-teachers-carousel-shell' );
-	const track = shell?.querySelector( '.learnschool-teachers-track' );
 	const columns = getTrackColumns( shell );
+	const total = columns.length;
 
-	if ( ! track || columns.length < 2 ) {
+	if ( total < 2 ) {
 		return;
 	}
 
-	if ( direction > 0 ) {
-		track.appendChild( columns[ 0 ] );
-	} else {
-		track.prepend( columns[ columns.length - 1 ] );
-	}
-
 	const context = getContext();
-	const updatedColumns = getTrackColumns( shell );
-	const total = updatedColumns.length;
-	context.activeIndex = ( context.activeIndex + direction + total ) % total;
+	context.total = total;
+	context.activeIndex =
+		( Number( context.activeIndex ?? 0 ) + direction + total ) % total;
 	context.announcement = formatAnnouncement(
-		updatedColumns[ 0 ],
+		columns[ context.activeIndex ],
 		context.activeIndex,
 		total,
 		template
 	);
-	animateTrackShift( updatedColumns, direction );
+
+	window.requestAnimationFrame( () => {
+		animateTrackShift( columns, direction );
+	} );
 }
 
 const { state } = store( 'learnschool/teachers', {
+	state: {
+		get slideSlot() {
+			const context = getContext();
+			const index = Number( context.slideIndex ?? 0 );
+			const total = Number( context.total ?? 0 );
+			if ( total <= 0 ) {
+				return index;
+			}
+
+			const active = Number( context.activeIndex ?? 0 );
+			return ( ( ( index - active ) % total ) + total ) % total;
+		},
+	},
 	actions: {
 		next() {
 			shiftCarousel(
@@ -146,6 +156,7 @@ const { state } = store( 'learnschool/teachers', {
 			const columns = getTrackColumns( ref );
 			if ( columns.length >= 2 ) {
 				const context = getContext();
+				context.total = columns.length;
 				context.ready = true;
 			}
 		},
