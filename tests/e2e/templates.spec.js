@@ -2,6 +2,7 @@
  * External dependencies
  */
 const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+const AxeBuilder = require( '@axe-core/playwright' ).default || require( '@axe-core/playwright' );
 
 test.describe( 'Template & Page Rendering Matrix', () => {
 
@@ -153,6 +154,15 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		page,
 		requestUtils,
 	} ) => {
+		const recentDate = new Date( Date.now() - 2 * 86400 * 1000 );
+		const postDate = `${ recentDate.toISOString().slice( 0, 10 ) }T12:00:00`;
+		const expectedDateText = new Intl.DateTimeFormat( 'en-US', {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+			timeZone: 'UTC',
+		} ).format( new Date( `${ postDate }Z` ) );
+
 		const untitledPost = await requestUtils.rest( {
 			method: 'POST',
 			path: '/wp/v2/posts',
@@ -160,7 +170,7 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 				title: '',
 				content:
 					'This post has no title, but it still must link to the single post view somehow.',
-				date: '2009-09-05T12:00:00',
+				date: postDate,
 				status: 'publish',
 			},
 		} );
@@ -173,7 +183,7 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 				`.wp-block-post-date a[href="${ untitledPost.link }"]`
 			);
 			await expect( dateLink ).toBeVisible();
-			await expect( dateLink ).toContainText( 'September 5, 2009' );
+			await expect( dateLink ).toContainText( expectedDateText );
 
 			await dateLink.click();
 			await page.waitForLoadState( 'domcontentloaded' );
@@ -182,6 +192,112 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 			await requestUtils.rest( {
 				method: 'DELETE',
 				path: `/wp/v2/posts/${ untitledPost.id }?force=true`,
+			} );
+		}
+	} );
+
+	test( 'Blog with sidebar and without sidebar options render cleanly across viewports', async ( { page, requestUtils } ) => {
+		const patterns = await requestUtils.rest( { path: '/wp/v2/block-patterns/patterns' } );
+		const blogNoSidebar = patterns.find( ( p ) => p.name === 'learnschool/page-blog' );
+		const blogWithSidebar = patterns.find( ( p ) => p.name === 'learnschool/page-blog-sidebar' );
+		const postsWithSidebar = patterns.find( ( p ) => p.name === 'learnschool/posts-with-sidebar' );
+		const admissionsSidebar = patterns.find( ( p ) => p.name === 'learnschool/sidebar-admissions' );
+
+		expect( blogNoSidebar ).toBeTruthy();
+		expect( blogWithSidebar ).toBeTruthy();
+		expect( postsWithSidebar ).toBeTruthy();
+		expect( admissionsSidebar ).toBeTruthy();
+
+		const sidebarPage = await requestUtils.rest( {
+			method: 'POST',
+			path: '/wp/v2/pages',
+			data: {
+				title: 'E2E Blog With Sidebar',
+				content: postsWithSidebar.content,
+				template: 'page-no-title',
+				status: 'publish',
+			},
+		} );
+
+		try {
+			await page.setViewportSize( { width: 1280, height: 800 } );
+			const res = await page.goto( sidebarPage.link );
+			expect( res.status() ).toBe( 200 );
+
+			const desktopLayout = await page.evaluate( () => {
+				const cols = document.querySelectorAll( '.learnschool-sidebar-columns > .wp-block-column' );
+				const leftRect = cols[ 0 ] ? cols[ 0 ].getBoundingClientRect() : null;
+				const rightRect = cols[ 1 ] ? cols[ 1 ].getBoundingClientRect() : null;
+				const rail = document.querySelector( '.learnschool-sidebar-rail' );
+				const railRect = rail ? rail.getBoundingClientRect() : null;
+				const railCardWidths = rail
+					? [ ...rail.children ].map( ( child ) => {
+						const r = child.getBoundingClientRect();
+						return {
+							widthDelta: Math.abs( Math.round( r.width - railRect.width ) ),
+							rightDelta: Math.abs( Math.round( r.right - railRect.right ) ),
+						};
+					} )
+					: [];
+				const topicChips = document.querySelectorAll( '.learnschool-sidebar-rail .wp-block-tag-cloud .tag-cloud-link' ).length;
+				const searchBtn = document.querySelector( '.learnschool-sidebar-rail .wp-block-search__button' );
+				const searchBtnRect = searchBtn ? searchBtn.getBoundingClientRect() : null;
+				return {
+					overflow: document.documentElement.scrollWidth > window.innerWidth,
+					colCount: cols.length,
+					leftRight: leftRect ? leftRect.right : 0,
+					rightLeft: rightRect ? rightRect.left : 0,
+					sameRow: leftRect && rightRect ? Math.abs( leftRect.top - rightRect.top ) <= 8 : false,
+					railCardWidths,
+					railHeight: railRect ? Math.round( railRect.height ) : 0,
+					topicChips,
+					searchBtnHeight: searchBtnRect ? Math.round( searchBtnRect.height ) : 0,
+					searchBtnWidth: searchBtnRect ? Math.round( searchBtnRect.width ) : 0,
+				};
+			} );
+
+			expect( desktopLayout.overflow ).toBe( false );
+			expect( desktopLayout.colCount ).toBe( 2 );
+			expect( desktopLayout.sameRow ).toBe( true );
+			expect( desktopLayout.rightLeft ).toBeGreaterThanOrEqual( desktopLayout.leftRight - 1 );
+			expect( desktopLayout.railCardWidths.length ).toBe( 3 );
+			for ( const card of desktopLayout.railCardWidths ) {
+				expect( card.widthDelta ).toBeLessThanOrEqual( 1 );
+				expect( card.rightDelta ).toBeLessThanOrEqual( 1 );
+			}
+			expect( desktopLayout.topicChips ).toBeGreaterThanOrEqual( 1 );
+			expect( desktopLayout.topicChips ).toBeLessThanOrEqual( 8 );
+			expect( desktopLayout.railHeight ).toBeLessThanOrEqual( 1400 );
+			expect( desktopLayout.searchBtnHeight ).toBeGreaterThanOrEqual( 44 );
+			expect( desktopLayout.searchBtnWidth ).toBeGreaterThanOrEqual( 44 );
+
+			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Popular Topics' );
+			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Recent Stories' );
+
+			const axeResults = await new AxeBuilder( { page } )
+				.withTags( [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa' ] )
+				.analyze();
+			expect( axeResults.violations ).toEqual( [] );
+
+			await page.setViewportSize( { width: 390, height: 844 } );
+			const mobileRes = await page.goto( sidebarPage.link );
+			expect( mobileRes.status() ).toBe( 200 );
+			const mobileLayout = await page.evaluate( () => {
+				const cols = document.querySelectorAll( '.learnschool-sidebar-columns > .wp-block-column' );
+				const leftRect = cols[ 0 ] ? cols[ 0 ].getBoundingClientRect() : null;
+				const rightRect = cols[ 1 ] ? cols[ 1 ].getBoundingClientRect() : null;
+				return {
+					overflow: document.documentElement.scrollWidth > window.innerWidth,
+					stacked: leftRect && rightRect ? rightRect.top >= leftRect.bottom - 2 : false,
+				};
+			} );
+
+			expect( mobileLayout.overflow ).toBe( false );
+			expect( mobileLayout.stacked ).toBe( true );
+		} finally {
+			await requestUtils.rest( {
+				method: 'DELETE',
+				path: `/wp/v2/pages/${ sidebarPage.id }?force=true`,
 			} );
 		}
 	} );

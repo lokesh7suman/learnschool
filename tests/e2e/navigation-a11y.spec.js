@@ -163,6 +163,34 @@ test.describe( 'Interactive Navigation & Accessibility (a11y)', () => {
 		expect( layout.docScrollWidth ).toBeLessThanOrEqual( layout.innerWidth );
 	} );
 
+	test( 'Long site title wraps cleanly on desktop without squeezing to zero width or pushing CTA off-screen', async ( { page } ) => {
+		await page.setViewportSize( { width: 1280, height: 800 } );
+		await page.goto( '/' );
+
+		const desktopLayout = await page.evaluate( () => {
+			document.querySelectorAll( '.wp-block-site-title a' ).forEach( ( anchor ) => {
+				anchor.innerHTML =
+					'<span class="learnschool-title-dark">Brightwood Early Learning Montessori </span>' +
+					'<span class="learnschool-title-accent">Academy</span>';
+			} );
+
+			const title = document.querySelector( 'header .wp-block-site-title' );
+			const cta = document.querySelector( 'header .learnschool-header-actions' );
+
+			return {
+				titleRect: title ? title.getBoundingClientRect() : null,
+				ctaRect: cta ? cta.getBoundingClientRect() : null,
+				docScrollWidth: document.documentElement.scrollWidth,
+				innerWidth: window.innerWidth,
+			};
+		} );
+
+		expect( desktopLayout.titleRect.width ).toBeGreaterThanOrEqual( 180 );
+		expect( desktopLayout.titleRect.height ).toBeGreaterThan( 40 );
+		expect( desktopLayout.ctaRect.right ).toBeLessThanOrEqual( desktopLayout.innerWidth );
+		expect( desktopLayout.docScrollWidth ).toBeLessThanOrEqual( desktopLayout.innerWidth );
+	} );
+
 	test( 'Key templates pass automated WCAG 2.2 AA accessibility audit', async ( { page } ) => {
 		const routes = [ '/', '/sample-page/', '/hello-world/', '/category/uncategorized/', '/?s=school' ];
 
