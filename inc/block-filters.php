@@ -186,3 +186,82 @@ if ( ! function_exists( 'learnschool_render_classic_nextpage_links' ) ) :
 	}
 endif;
 add_filter( 'the_content', 'learnschool_render_classic_nextpage_links', 15 );
+
+if ( ! function_exists( 'learnschool_add_static_image_dimensions' ) ) :
+	/**
+	 * Adds intrinsic width and height attributes to static theme images in core/image blocks
+	 * so browsers reserve layout space before download and prevent cumulative layout shift.
+	 *
+	 * @since 1.0.0
+	 * @param string $block_content Rendered core/image block HTML.
+	 * @return string Modified block HTML with intrinsic width/height attributes when available.
+	 */
+	function learnschool_add_static_image_dimensions( string $block_content ): string {
+		if ( '' === trim( $block_content ) || ! str_contains( $block_content, '<img' ) ) {
+			return $block_content;
+		}
+
+		$tags = new \WP_HTML_Tag_Processor( $block_content );
+		if ( ! $tags->next_tag( array( 'tag_name' => 'img' ) ) ) {
+			return $block_content;
+		}
+
+		if ( null !== $tags->get_attribute( 'width' ) && null !== $tags->get_attribute( 'height' ) ) {
+			return $block_content;
+		}
+
+		$src = $tags->get_attribute( 'src' );
+		if ( ! is_string( $src ) || '' === $src ) {
+			return $block_content;
+		}
+
+		$src_path = wp_parse_url( $src, PHP_URL_PATH );
+		if ( ! is_string( $src_path ) || '' === $src_path ) {
+			return $block_content;
+		}
+
+		$marker = '/assets/images/';
+		$pos    = strpos( $src_path, $marker );
+		if ( false === $pos ) {
+			return $block_content;
+		}
+
+		$relative_subpath = substr( $src_path, $pos + 1 );
+		if ( str_contains( $relative_subpath, '..' ) ) {
+			return $block_content;
+		}
+
+		$ext = strtolower( pathinfo( $relative_subpath, PATHINFO_EXTENSION ) );
+		if ( ! in_array( $ext, array( 'png', 'jpg', 'jpeg', 'webp', 'gif', 'avif' ), true ) ) {
+			return $block_content;
+		}
+
+		$file_path = get_theme_file_path( $relative_subpath );
+		if ( ! is_file( $file_path ) ) {
+			return $block_content;
+		}
+
+		static $dimensions_cache = array();
+		if ( ! array_key_exists( $file_path, $dimensions_cache ) ) {
+			$size                           = wp_getimagesize( $file_path );
+			$dimensions_cache[ $file_path ] = is_array( $size ) && isset( $size[0], $size[1] ) && $size[0] > 0 && $size[1] > 0
+				? array( (int) $size[0], (int) $size[1] )
+				: null;
+		}
+
+		$dimensions = $dimensions_cache[ $file_path ];
+		if ( null === $dimensions ) {
+			return $block_content;
+		}
+
+		if ( null === $tags->get_attribute( 'width' ) ) {
+			$tags->set_attribute( 'width', (string) $dimensions[0] );
+		}
+		if ( null === $tags->get_attribute( 'height' ) ) {
+			$tags->set_attribute( 'height', (string) $dimensions[1] );
+		}
+
+		return $tags->get_updated_html();
+	}
+endif;
+add_filter( 'render_block_core/image', 'learnschool_add_static_image_dimensions' );

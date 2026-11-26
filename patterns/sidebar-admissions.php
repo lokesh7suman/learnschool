@@ -30,15 +30,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#tuition' ) ); ?>"><?php echo esc_html__( 'Tuition &amp; Financial Aid', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#tuition' ) ); ?>"><?php echo esc_html__( 'Tuition & Financial Aid', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Programs &amp; Curriculum', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Programs & Curriculum', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Parent Handbook &amp; FAQ', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/#faq' ) ); ?>"><?php echo esc_html__( 'Parent Handbook & FAQ', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:group -->

@@ -4,7 +4,7 @@
  * Slug: learnschool/hero-split-checklist
  * Categories: learnschool/hero
  * Keywords: hero, split, checklist, enrollment, education, illustration
- * Description: Two-column split hero section with enrollment checklist, display typography, dual CTA buttons, and joyful creative classroom illustration.
+ * Description: Two-column split hero section (includes the page H1) with enrollment checklist, display typography, dual CTA buttons, and joyful creative classroom illustration. Best paired with Front Page, Page (No Title), or Landing Page templates.
  * Inserter: true
  * Viewport Width: 1280
  *
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-8);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-8);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-6"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.15"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
-<h1 class="wp-block-heading" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.15"><?php echo esc_html__( 'Inspiring Young Minds to ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'Explore,', 'learnschool' ); ?></span> <?php echo esc_html__( 'Create &amp; ', 'learnschool' ); ?><span class="learnschool-script has-secondary-dark-color"><?php echo esc_html__( 'Grow', 'learnschool' ); ?></span></h1>
+<h1 class="wp-block-heading" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.15"><?php echo esc_html__( 'Inspiring Young Minds to ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'Explore,', 'learnschool' ); ?></span> <?php echo esc_html__( 'Create & ', 'learnschool' ); ?><span class="learnschool-script has-secondary-dark-color"><?php echo esc_html__( 'Grow', 'learnschool' ); ?></span></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-4"}}},"textColor":"contrast-subtle","fontSize":"large"} -->
@@ -31,15 +31,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"medium"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks has-medium-font-size"><!-- wp:list-item -->
-<li><?php echo esc_html__( 'State-Certified Pre-K &amp; Kindergarten with Low 1:4 Student-Teacher Ratio', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'State-Certified Pre-K & Kindergarten with Low 1:4 Student-Teacher Ratio', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><?php echo esc_html__( 'Accredited Early STEM &amp; Reggio-Inspired Creative Arts Curriculum', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Accredited Early STEM & Reggio-Inspired Creative Arts Curriculum', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><?php echo esc_html__( 'Safe, Light-Filled Classrooms &amp; Outdoor Nature Discovery Gardens', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Safe, Light-Filled Classrooms & Outdoor Nature Discovery Gardens', 'learnschool' ); ?></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 

@@ -3,7 +3,7 @@
  * Title: Hero with Tour Booking & Discovery Illustration
  * Slug: learnschool/hero-split-tour
  * Categories: learnschool/hero
- * Description: Clean split hero layout with joyful discovery illustration, display typography, handwriting highlights, and dual call-to-action buttons.
+ * Description: Clean split hero layout (includes the page H1) with joyful discovery illustration, display typography, handwriting highlights, and dual call-to-action buttons. Best paired with Front Page, Page (No Title), or Landing Page templates.
  * Keywords: hero, banner, tour, admissions, preschool, kindergarten, illustration
  * Viewport Width: 1280
  *
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--step-8);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-8);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-6"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}},"typography":{"lineHeight":"1.22"}}} -->
-<h1 class="wp-block-heading" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.22"><?php echo esc_html__( 'A Joyful Foundation for ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Curiosity', 'learnschool' ); ?></span><?php echo esc_html__( ' &amp; ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-loop has-secondary-dark-color"><?php echo esc_html__( 'Wonder', 'learnschool' ); ?></span></h1>
+<h1 class="wp-block-heading" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3);line-height:1.22"><?php echo esc_html__( 'A Joyful Foundation for ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color"><?php echo esc_html__( 'Curiosity', 'learnschool' ); ?></span><?php echo esc_html__( ' & ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-loop has-secondary-dark-color"><?php echo esc_html__( 'Wonder', 'learnschool' ); ?></span></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"fontSize":"large","textColor":"contrast-subtle"} -->

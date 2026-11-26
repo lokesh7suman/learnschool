@@ -124,14 +124,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:separator -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group alignwide"><!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size">
-<?php
-$learnschool_site_name = wp_strip_all_tags( get_bloginfo( 'name' ) );
-/* translators: 1: Current calendar year, 2: Site title. */
-printf( esc_html__( '© %1$s %2$s', 'learnschool' ), esc_html( gmdate( 'Y' ) ), '' !== $learnschool_site_name ? esc_html( $learnschool_site_name ) : esc_html__( 'My School', 'learnschool' ) );
-?>
-</p>
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"learnschool/copyright"}}},"fontSize":"small","textColor":"contrast-subtle"} -->
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '© LearnSchool', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"contrast-subtle"} -->

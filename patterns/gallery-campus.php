@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"0","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"},"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-5);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"level":3,"fontSize":"large","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h3 class="wp-block-heading has-large-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Creative Arts &amp; Story Studio', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-large-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Creative Arts & Story Studio', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"},"blockGap":"var:preset|spacing|step-1"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--step-3);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":3,"fontSize":"large","textColor":"contrast","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Sensory STEM &amp; Discovery Pods', 'learnschool' ); ?></h3>
+<h3 class="wp-block-heading has-contrast-color has-text-color has-large-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Sensory STEM & Discovery Pods', 'learnschool' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast","fontSize":"small","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->

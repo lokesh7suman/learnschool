@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"contrast-subtle","fontSize":"x-small"} -->
-<p class="has-contrast-subtle-color has-text-color has-x-small-font-size" style="margin-top:0;margin-bottom:0;font-weight:600"><?php echo esc_html__( 'Educator &amp; Contributor', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-x-small-font-size" style="margin-top:0;margin-bottom:0;font-weight:600"><?php echo esc_html__( 'Educator & Contributor', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

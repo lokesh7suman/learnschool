@@ -24,7 +24,7 @@ $learnschool_posts_page_title = $learnschool_posts_page_id > 0 ? trim( wp_strip_
 <?php if ( '' !== $learnschool_posts_page_title ) : ?>
 <h1 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-family:var(--wp--preset--font-family--quicksand)"><?php echo esc_html( $learnschool_posts_page_title ); ?></h1>
 <?php else : ?>
-<h1 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-family:var(--wp--preset--font-family--quicksand)"><?php echo esc_html__( 'Our News &amp; ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color" style="white-space:nowrap"><?php echo esc_html__( 'Articles', 'learnschool' ); ?></span></h1>
+<h1 class="wp-block-heading has-text-align-center has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2);font-family:var(--wp--preset--font-family--quicksand)"><?php echo esc_html__( 'Our News & ', 'learnschool' ); ?><span class="learnschool-script learnschool-underline-wavy has-primary-color" style="white-space:nowrap"><?php echo esc_html__( 'Articles', 'learnschool' ); ?></span></h1>
 <?php endif; ?>
 <!-- /wp:heading -->
 

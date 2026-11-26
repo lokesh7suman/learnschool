@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-4"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--step-4)"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"metadata":{"name":"testimonial_1_author","bindings":{"content":{"source":"core/pattern-overrides"}}},"style":{"typography":{"fontWeight":"700"}}} -->
-<p style="font-weight:700"><?php esc_html_e( 'Sarah &amp; David Mitchell', 'learnschool' ); ?></p>
+<p style="font-weight:700"><?php esc_html_e( 'Sarah & David Mitchell', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"metadata":{"name":"testimonial_1_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -75,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"metadata":{"name":"testimonial_2_role","bindings":{"content":{"source":"core/pattern-overrides"}}},"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php esc_html_e( 'Alumni &amp; High School Mentor', 'learnschool' ); ?></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php esc_html_e( 'Alumni & High School Mentor', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

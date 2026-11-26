@@ -3,7 +3,7 @@
  * Title: Hero with Playful Script Highlights
  * Slug: learnschool/hero-playful-doodles
  * Categories: learnschool/hero
- * Description: Playful brand hero section with handcrafted script highlights, display typography, and dual call-to-action buttons.
+ * Description: Playful brand hero section (includes the page H1) with handcrafted script highlights, display typography, and dual call-to-action buttons. Best paired with Front Page, Page (No Title), or Landing Page templates.
  * Keywords: hero, banner, script, highlights, playful, preschool, activities, buttons
  * Viewport Width: 1280
  * Inserter: true

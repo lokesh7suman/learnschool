@@ -63,11 +63,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"small"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks has-small-font-size"><!-- wp:list-item -->
-<li><?php echo esc_html__( 'Morning phonics &amp; sensory circle', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Morning phonics & sensory circle', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><?php echo esc_html__( 'Organic morning snack &amp; warm lunch', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Organic morning snack & warm lunch', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -117,15 +117,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"small"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks has-small-font-size"><!-- wp:list-item -->
-<li><?php echo esc_html__( 'Full Pre-K literacy &amp; early math labs', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Full Pre-K literacy & early math labs', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><?php echo esc_html__( 'Daily outdoor garden &amp; music studio', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Daily outdoor garden & music studio', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><?php echo esc_html__( 'Scratch meals &amp; daily portal updates', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Scratch meals & daily portal updates', 'learnschool' ); ?></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:group -->
@@ -171,11 +171,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"className":"is-style-learnschool-checkmarks","fontSize":"small"} -->
 <ul class="wp-block-list is-style-learnschool-checkmarks has-small-font-size"><!-- wp:list-item -->
-<li><?php echo esc_html__( 'Full-Day Academy core &amp; meals', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Full-Day Academy core & meals', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><?php echo esc_html__( 'Afternoon robotics, pottery &amp; stories', 'learnschool' ); ?></li>
+<li><?php echo esc_html__( 'Afternoon robotics, pottery & stories', 'learnschool' ); ?></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
