@@ -58,6 +58,9 @@ if ( ! function_exists( 'learnschool_admin_assets' ) ) :
 			array(),
 			$version
 		);
+
+		add_thickbox();
+		wp_enqueue_script( 'plugin-install' );
 	}
 endif;
 add_action( 'admin_enqueue_scripts', 'learnschool_admin_assets' );
@@ -74,12 +77,12 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 		$theme_version = $theme->get( 'Version' );
 		$version_label = is_string( $theme_version ) && '' !== $theme_version ? $theme_version : '1.0.0';
 
-		$site_editor_url = admin_url( 'site-editor.php' );
-		$styles_url      = add_query_arg(
+		$site_editor_url     = admin_url( 'site-editor.php' );
+		$styles_url          = add_query_arg(
 			array( 'p' => '/styles' ),
 			admin_url( 'site-editor.php' )
 		);
-		$header_url      = add_query_arg(
+		$header_url          = add_query_arg(
 			array(
 				'postId'   => get_stylesheet() . '//header',
 				'postType' => 'wp_template_part',
@@ -87,7 +90,10 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 			),
 			admin_url( 'site-editor.php' )
 		);
-		$new_page_url    = admin_url( 'post-new.php?post_type=page' );
+		$new_page_url        = admin_url( 'post-new.php?post_type=page' );
+		$recommended_plugins = function_exists( 'learnschool_get_recommended_plugins' )
+			? learnschool_get_recommended_plugins()
+			: array();
 		?>
 		<div class="wrap learnschool-admin-wrap">
 			<div class="learnschool-admin-hero">
@@ -161,6 +167,72 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 					</a>
 				</div>
 			</div>
+
+			<?php if ( ! empty( $recommended_plugins ) && function_exists( 'learnschool_get_recommended_plugin_action' ) ) : ?>
+			<div class="learnschool-admin-plugins">
+				<div class="learnschool-admin-plugins__header">
+					<div>
+						<h2><?php echo esc_html__( 'Recommended Companion Plugin', 'learnschool' ); ?></h2>
+						<p><?php echo esc_html__( 'Optional WordPress.org plugin tested with LearnSchool. Your theme works completely without it.', 'learnschool' ); ?></p>
+					</div>
+				</div>
+				<div class="learnschool-admin-plugin-list">
+					<?php
+					foreach ( $recommended_plugins as $learnschool_plugin ) :
+						if ( empty( $learnschool_plugin['slug'] ) || empty( $learnschool_plugin['file'] ) || empty( $learnschool_plugin['name'] ) ) {
+							continue;
+						}
+						$learnschool_action        = learnschool_get_recommended_plugin_action(
+							(string) $learnschool_plugin['slug'],
+							(string) $learnschool_plugin['file']
+						);
+						$learnschool_status_class  = 'learnschool-admin-status--' . sanitize_html_class( $learnschool_action['status'] );
+						$learnschool_details_class = $learnschool_action['is_thickbox']
+							? 'button button-secondary thickbox open-plugin-details-modal'
+							: 'button button-secondary';
+						?>
+					<div class="learnschool-admin-plugin-card">
+						<div class="learnschool-admin-plugin-card__icon" aria-hidden="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+						</div>
+						<div class="learnschool-admin-plugin-card__body">
+							<div class="learnschool-admin-plugin-card__title">
+								<h3><?php echo esc_html( (string) $learnschool_plugin['name'] ); ?></h3>
+								<span class="learnschool-admin-status <?php echo esc_attr( $learnschool_status_class ); ?>">
+									<?php echo esc_html( $learnschool_action['status_label'] ); ?>
+								</span>
+							</div>
+							<?php if ( ! empty( $learnschool_plugin['description'] ) ) : ?>
+							<p><?php echo esc_html( (string) $learnschool_plugin['description'] ); ?></p>
+							<?php endif; ?>
+							<?php if ( ! empty( $learnschool_plugin['badge'] ) ) : ?>
+							<div class="learnschool-admin-plugin-card__meta">
+								<span><?php echo esc_html( (string) $learnschool_plugin['badge'] ); ?></span>
+							</div>
+							<?php endif; ?>
+						</div>
+						<div class="learnschool-admin-plugin-card__actions">
+							<?php if ( '' !== $learnschool_action['primary_url'] ) : ?>
+							<a class="button <?php echo 'active' === $learnschool_action['status'] ? 'button-secondary' : 'button-primary'; ?>" href="<?php echo esc_url( $learnschool_action['primary_url'] ); ?>">
+								<?php echo esc_html( $learnschool_action['primary_label'] ); ?>
+							</a>
+							<?php endif; ?>
+							<a
+								class="<?php echo esc_attr( $learnschool_details_class ); ?>"
+								href="<?php echo esc_url( $learnschool_action['details_url'] ); ?>"
+								<?php if ( ! $learnschool_action['is_thickbox'] ) : ?>
+								target="_blank"
+								rel="noopener noreferrer"
+								<?php endif; ?>
+							>
+								<?php echo esc_html( $learnschool_action['details_label'] ); ?>
+							</a>
+						</div>
+					</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<?php endif; ?>
 
 			<div class="learnschool-admin-tips">
 				<h2><?php echo esc_html__( 'Included Templates & Pattern Categories', 'learnschool' ); ?></h2>

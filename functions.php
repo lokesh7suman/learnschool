@@ -256,6 +256,7 @@ require_once get_template_directory() . '/inc/block-bindings.php';
 require_once get_template_directory() . '/inc/block-styles.php';
 require_once get_template_directory() . '/inc/block-filters.php';
 require_once get_template_directory() . '/inc/site-logo.php';
+require_once get_template_directory() . '/inc/recommended-plugins.php';
 require_once get_template_directory() . '/inc/theme-admin.php';
 
 if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
