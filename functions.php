@@ -62,9 +62,6 @@ if ( ! function_exists( 'learnschool_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'learnschool_setup' );
 
-// Disable remote block patterns from the WordPress.org pattern directory.
-add_filter( 'should_load_remote_block_patterns', '__return_false' );
-
 if ( ! function_exists( 'learnschool_scripts' ) ) :
 	/**
 	 * Enqueue theme stylesheet on front-end.
@@ -85,6 +82,14 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			$version
 		);
 
+		$sticky_label = wp_json_encode( wp_strip_all_tags( __( 'Featured', 'learnschool' ) ) );
+		if ( is_string( $sticky_label ) ) {
+			wp_add_inline_style(
+				'learnschool-style',
+				":root { --learnschool-sticky-label: {$sticky_label}; }"
+			);
+		}
+
 		wp_enqueue_script(
 			'learnschool-navigation',
 			get_template_directory_uri() . '/assets/js/navigation.js',
@@ -97,13 +102,13 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			'learnschool-navigation',
 			'learnschoolNavData',
 			array(
-				'ctaUrl'         => esc_url_raw( home_url( '/admissions/how-to-apply/' ) ),
+				'ctaUrl'         => esc_url_raw( home_url( '/#admissions' ) ),
 				'ctaLabel'       => __( 'Enroll Now', 'learnschool' ),
 				'phoneHref'      => 'tel:5550192834',
 				'phoneLabel'     => __( 'Call: (555) 019-2834', 'learnschool' ),
-				'portalUrl'      => esc_url_raw( home_url( '/contact-us/parent-portal/' ) ),
-				'portalLabel'    => __( 'Parent Portal', 'learnschool' ),
-				'directoryUrl'   => esc_url_raw( home_url( '/about-us/leadership/faculty-directory/' ) ),
+				'portalUrl'      => esc_url_raw( home_url( '/#programs' ) ),
+				'portalLabel'    => __( 'Programs Overview', 'learnschool' ),
+				'directoryUrl'   => esc_url_raw( home_url( '/#faculty' ) ),
 				'directoryLabel' => __( 'Staff Directory', 'learnschool' ),
 				'hoursLabel'     => __( 'Mon–Fri: 8:00 AM – 5:00 PM', 'learnschool' ),
 			)

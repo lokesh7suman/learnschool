@@ -76,9 +76,6 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 		foreach ( $categories as $slug => $args ) {
 			register_block_pattern_category( $slug, $args );
 		}
-
-		// Ensure pattern cache is invalidated so editor reflects pattern removals/updates.
-		wp_get_theme()->delete_pattern_cache();
 	}
 endif;
 

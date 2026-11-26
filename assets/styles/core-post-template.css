@@ -154,7 +154,7 @@
 
 .sticky:not(:has(> .is-style-learnschool-card))::before,
 .wp-block-post-template > li.sticky:not(:has(> .is-style-learnschool-card))::before {
-	content: "Featured";
+	content: var(--learnschool-sticky-label);
 	display: inline-flex;
 	align-items: center;
 	align-self: flex-start;
@@ -186,7 +186,7 @@
 
 /* Featured Badge in Modular Card — Flows as flex item alongside Category Badges */
 .wp-block-post-template > li:has(> .is-style-learnschool-card).sticky .wp-block-post-terms::before {
-	content: "Featured";
+	content: var(--learnschool-sticky-label);
 	display: inline-flex;
 	align-items: center;
 	padding: 4px 12px;

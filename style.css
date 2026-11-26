@@ -5,7 +5,7 @@ Author: codeclove
 Author URI: https://codeclove.com
 Description: LearnSchool - A playful Full Site Editing block theme designed for schools, academies, early learning centers, and children's education platforms.
 Requires at least: 6.6
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.0
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -13,6 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: learnschool
 Tags: full-site-editing, block-patterns, block-styles, education, wide-blocks, custom-colors, custom-logo, editor-style
 
+LearnSchool WordPress Theme, Copyright 2026 codeclove.
 LearnSchool is distributed under the terms of the GNU GPL v2 or later.
 */
 
@@ -92,6 +93,22 @@ picture {
 
 figure.wp-block-image {
 	margin: 0;
+}
+
+.wp-caption {
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.wp-caption img {
+	max-width: 100%;
+	height: auto;
+}
+
+pre {
+	max-width: 100%;
+	overflow-x: auto;
+	box-sizing: border-box;
 }
 
 .wp-block-image img[style*="aspect-ratio"] {

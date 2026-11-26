@@ -1,8 +1,9 @@
 === LearnSchool ===
 Contributors: codeclove
 Requires at least: 6.6
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: full-site-editing, block-patterns, block-styles, education, wide-blocks, custom-colors, custom-logo, editor-style
@@ -33,6 +34,10 @@ No. LearnSchool is a native Full Site Editing block theme built entirely with co
 
 = Can I customize the colors and typography? =
 Yes. You can switch palettes or adjust colors, typography, and spacing directly through Appearance > Editor > Styles (Global Styles).
+
+== Privacy ==
+
+LearnSchool does not collect, store, or transmit personal visitor data, set tracking cookies, or make external font or third-party CDN requests. All fonts and visual assets are bundled locally within the theme package.
 
 == Changelog ==
 
