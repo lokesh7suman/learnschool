@@ -114,6 +114,8 @@
 	margin: 0;
 	border-radius: 24px 24px 0 0;
 	overflow: hidden;
+	width: 100%;
+	flex-shrink: 0;
 }
 
 .wp-block-post-template .wp-block-post-featured-image img {
@@ -134,10 +136,20 @@
 }
 
 /* Unified content group: fills remaining card height, pushes Read More to bottom */
+.wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
 .wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group > .wp-block-group:last-child {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+}
+
+.wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) .wp-block-read-more {
+	padding-top: var(--wp--preset--spacing--step-3, 16px);
 }
 
 .wp-block-post-template .learnschool-post-list-card .wp-block-post-featured-image {
@@ -178,6 +190,7 @@
 		content: "";
 		display: block;
 		width: 100%;
+		flex-shrink: 0;
 		aspect-ratio: 16 / 9;
 		background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 44%, var(--wp--preset--color--base-subtle));
 		background-image:
@@ -207,16 +220,14 @@
 
 @media (min-width: 782px) {
 
-	.wp-block-post-template .learnschool-post-list-card:has(.wp-block-post-featured-image),
-	.wp-block-post-template:has(.wp-block-post-featured-image) .learnschool-post-list-card:not(:has(.wp-block-post-featured-image)) {
+	.wp-block-post-template .learnschool-post-list-card {
 		display: grid;
 		grid-template-columns: clamp(220px, 26%, 300px) minmax(0, 1fr);
 		gap: var(--wp--preset--spacing--step-5, 32px);
 		align-items: stretch;
 	}
 
-	.wp-block-post-template .learnschool-post-list-card:has(.wp-block-post-featured-image) > *,
-	.wp-block-post-template:has(.wp-block-post-featured-image) .learnschool-post-list-card:not(:has(.wp-block-post-featured-image)) > * {
+	.wp-block-post-template .learnschool-post-list-card > * {
 		margin-block-start: 0;
 		margin-top: 0;
 	}
@@ -238,7 +249,7 @@
 		padding-top: var(--wp--preset--spacing--step-1, 8px);
 	}
 
-	.wp-block-post-template:has(.wp-block-post-featured-image) .learnschool-post-list-card:not(:has(.wp-block-post-featured-image))::before {
+	.wp-block-post-template .learnschool-post-list-card:not(:has(.wp-block-post-featured-image))::before {
 		content: "";
 		display: block;
 		width: 100%;
