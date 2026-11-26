@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T17:01:05+00:00\n"
+"POT-Creation-Date: 2026-11-26T17:08:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -17,7 +17,8 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 #: inc/site-logo.php:36
-#: inc/theme-admin.php:28
+#: inc/theme-admin.php:42
+#: inc/theme-admin.php:43
 #: patterns/cta-community.php:32
 msgid "LearnSchool"
 msgstr ""
@@ -279,13 +280,13 @@ msgid "Recommended"
 msgstr ""
 
 #: inc/recommended-plugins.php:128
-#: inc/theme-admin.php:197
+#: inc/theme-admin.php:239
 msgid "Active"
 msgstr ""
 
 #: inc/recommended-plugins.php:131
-#: inc/recommended-plugins.php:387
-#: inc/theme-admin.php:233
+#: inc/recommended-plugins.php:396
+#: inc/theme-admin.php:279
 msgid "Manage Plugins"
 msgstr ""
 
@@ -317,207 +318,218 @@ msgstr ""
 msgid "View on WordPress.org"
 msgstr ""
 
-#: inc/recommended-plugins.php:361
+#: inc/recommended-plugins.php:370
 msgid "LearnSchool Recommended Companion Plugins"
 msgstr ""
 
-#: inc/recommended-plugins.php:365
+#: inc/recommended-plugins.php:374
 msgid "Optional"
 msgstr ""
 
-#: inc/recommended-plugins.php:371
+#: inc/recommended-plugins.php:380
 msgid "Pair LearnSchool with CodeClove School Management System to manage student admissions, classes, staff, and attendance."
 msgstr ""
 
-#: inc/recommended-plugins.php:372
+#: inc/recommended-plugins.php:381
 msgid "Install optional WordPress.org companion plugins from the setup guide to add school management features."
 msgstr ""
 
 #. translators: %s: Plugin name.
-#: inc/recommended-plugins.php:389
+#: inc/recommended-plugins.php:398
 #, php-format
 msgid "%s is now active."
 msgstr ""
 
-#: inc/recommended-plugins.php:395
+#: inc/recommended-plugins.php:404
 msgid "View Setup Guide"
 msgstr ""
 
-#: inc/recommended-plugins.php:399
+#: inc/recommended-plugins.php:408
+#: inc/theme-admin.php:54
 msgid "Setup Guide"
 msgstr ""
 
-#: inc/theme-admin.php:27
+#: inc/theme-admin.php:53
 msgid "LearnSchool Setup"
 msgstr ""
 
-#: inc/theme-admin.php:107
+#: inc/theme-admin.php:62
+#: inc/theme-admin.php:63
+msgid "Site Editor"
+msgstr ""
+
+#: inc/theme-admin.php:70
+#: inc/theme-admin.php:71
+msgid "Global Styles"
+msgstr ""
+
+#: inc/theme-admin.php:149
 msgid "LearnSchool logo"
 msgstr ""
 
-#: inc/theme-admin.php:113
+#: inc/theme-admin.php:155
 msgid "Welcome to LearnSchool"
 msgstr ""
 
 #. translators: %s: Current theme version number.
-#: inc/theme-admin.php:117
+#: inc/theme-admin.php:159
 #, php-format
 msgid "Version %s"
 msgstr ""
 
-#: inc/theme-admin.php:122
+#: inc/theme-admin.php:164
 msgid "Get your school, academy, or early learning website ready in minutes using Full Site Editing blocks and starter page patterns."
 msgstr ""
 
-#: inc/theme-admin.php:128
+#: inc/theme-admin.php:170
 msgid "Open Site Editor"
 msgstr ""
 
-#: inc/theme-admin.php:131
+#: inc/theme-admin.php:173
 msgid "View Live Site"
 msgstr ""
 
-#: inc/theme-admin.php:139
+#: inc/theme-admin.php:181
 msgid "Customize Site Identity & Homepage"
 msgstr ""
 
-#: inc/theme-admin.php:140
+#: inc/theme-admin.php:182
 msgid "Replace the school logo, headline, campus photos, and teacher portraits directly inside the visual Site Editor."
 msgstr ""
 
-#: inc/theme-admin.php:142
+#: inc/theme-admin.php:184
 msgid "Edit Site Templates"
 msgstr ""
 
-#: inc/theme-admin.php:148
+#: inc/theme-admin.php:190
 msgid "Switch Color Palette & Typography"
 msgstr ""
 
-#: inc/theme-admin.php:149
+#: inc/theme-admin.php:191
 msgid "Try the bundled Coral Playground, Pastel Nursery, or Sunshine Playful style variations—or dial in your own school colors."
 msgstr ""
 
-#: inc/theme-admin.php:151
+#: inc/theme-admin.php:193
 msgid "Open Global Styles"
 msgstr ""
 
-#: inc/theme-admin.php:157
+#: inc/theme-admin.php:199
 msgid "Set Up Header Navigation"
 msgstr ""
 
-#: inc/theme-admin.php:158
+#: inc/theme-admin.php:200
 msgid "Edit the Header template part to organize navigation links, select an existing menu, or update the Enroll Now button URL."
 msgstr ""
 
-#: inc/theme-admin.php:160
+#: inc/theme-admin.php:202
 msgid "Edit Header Menu"
 msgstr ""
 
-#: inc/theme-admin.php:166
+#: inc/theme-admin.php:208
 msgid "Create School Pages in One Click"
 msgstr ""
 
-#: inc/theme-admin.php:167
+#: inc/theme-admin.php:209
 msgid "Add a new page and choose from 7 full-page starter layouts (Home, About Us, Programs, Admissions, Blog, Blog with Sidebar, Contact) in the pattern picker."
 msgstr ""
 
-#: inc/theme-admin.php:169
+#: inc/theme-admin.php:211
 msgid "Create New Page"
 msgstr ""
 
-#: inc/theme-admin.php:178
+#: inc/theme-admin.php:220
 msgid "Recommended Companion Plugin"
 msgstr ""
 
-#: inc/theme-admin.php:179
+#: inc/theme-admin.php:221
 msgid "Optional WordPress.org plugin tested with LearnSchool. Your theme works completely without it."
 msgstr ""
 
-#: inc/theme-admin.php:218
+#: inc/theme-admin.php:264
 msgid "Automatic plugin installation is disabled in this environment. Install manually or ask your site administrator."
 msgstr ""
 
-#: inc/theme-admin.php:258
+#: inc/theme-admin.php:304
 msgid "Included Templates & Pattern Categories"
 msgstr ""
 
-#: inc/theme-admin.php:261
+#: inc/theme-admin.php:307
 msgid "Page Templates"
 msgstr ""
 
-#: inc/theme-admin.php:263
+#: inc/theme-admin.php:309
 msgid "Page (Default)"
 msgstr ""
 
-#: inc/theme-admin.php:263
+#: inc/theme-admin.php:309
 msgid "Standard page with heading, content area, and comments."
 msgstr ""
 
-#: inc/theme-admin.php:264
+#: inc/theme-admin.php:310
 msgid "Page (No Title)"
 msgstr ""
 
-#: inc/theme-admin.php:264
+#: inc/theme-admin.php:310
 msgid "Edge-to-edge canvas without duplicate H1 titles or comments, ideal for starter page patterns."
 msgstr ""
 
-#: inc/theme-admin.php:265
+#: inc/theme-admin.php:311
 msgid "Full Width"
 msgstr ""
 
-#: inc/theme-admin.php:265
+#: inc/theme-admin.php:311
 msgid "Edge-to-edge layout for pages and posts with optional discussion."
 msgstr ""
 
-#: inc/theme-admin.php:266
+#: inc/theme-admin.php:312
 msgid "Page with Sidebar"
 msgstr ""
 
-#: inc/theme-admin.php:266
+#: inc/theme-admin.php:312
 msgid "Two-column layout pairing main content with a customizable Sidebar template part."
 msgstr ""
 
-#: inc/theme-admin.php:267
+#: inc/theme-admin.php:313
 msgid "Landing Page"
 msgstr ""
 
-#: inc/theme-admin.php:267
+#: inc/theme-admin.php:313
 msgid "Full showcase template without header or footer distraction."
 msgstr ""
 
-#: inc/theme-admin.php:271
+#: inc/theme-admin.php:317
 msgid "Pattern Building Blocks"
 msgstr ""
 
-#: inc/theme-admin.php:273
+#: inc/theme-admin.php:319
 msgid "Pages"
 msgstr ""
 
-#: inc/theme-admin.php:273
+#: inc/theme-admin.php:319
 msgid "Full-page starters for Home, About Us, Programs, Admissions, Blog, Blog with Sidebar, and Contact."
 msgstr ""
 
-#: inc/theme-admin.php:274
+#: inc/theme-admin.php:320
 msgid "Hero, Features & Faculty"
 msgstr ""
 
-#: inc/theme-admin.php:274
+#: inc/theme-admin.php:320
 msgid "Mix-and-match classroom sections, campus gallery, teacher grids, and curriculum highlights."
 msgstr ""
 
-#: inc/theme-admin.php:275
+#: inc/theme-admin.php:321
 msgid "Admissions, Tuition & FAQ"
 msgstr ""
 
-#: inc/theme-admin.php:275
+#: inc/theme-admin.php:321
 msgid "Enrollment roadmaps, tuition comparisons, open house cards, and zero-JS accordion FAQs."
 msgstr ""
 
-#: inc/theme-admin.php:276
+#: inc/theme-admin.php:322
 msgid "Posts, Headers & Footers"
 msgstr ""
 
-#: inc/theme-admin.php:276
+#: inc/theme-admin.php:322
 msgid "Query grids/lists, author box, single/two-row headers, and multi-column footer variations."
 msgstr ""
 

@@ -23,17 +23,18 @@
 	justify-content: center;
 	width: 44px;
 	height: 44px;
-	padding: 5px;
+	padding: 6px;
 	box-sizing: border-box;
 	border-radius: 10px;
 	background: #f5f2fe;
+	color: #5837c7;
 	flex-shrink: 0;
 }
 
-.learnschool-plugin-notice__icon img {
+.learnschool-plugin-notice__icon svg {
 	display: block;
-	width: 100%;
-	height: auto;
+	width: 22px;
+	height: 22px;
 }
 
 .learnschool-plugin-notice__content {

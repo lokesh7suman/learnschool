@@ -22,7 +22,7 @@ LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block th
 == Frequently Asked Questions ==
 
 = Does LearnSchool require any third-party plugins? =
-No. LearnSchool is a native Full Site Editing block theme built entirely with core WordPress blocks. For student admissions, classes, staff, and daily attendance, we optionally recommend CodeClove School Management System from WordPress.org (installable from Appearance > LearnSchool). You can also place any form or newsletter plugin block in the provided CTA or footer columns.
+No. LearnSchool is a native Full Site Editing block theme built entirely with core WordPress blocks. For student admissions, classes, staff, and daily attendance, we optionally recommend CodeClove School Management System from WordPress.org (installable from the LearnSchool dashboard menu). You can also place any form or newsletter plugin block in the provided CTA or footer columns.
 
 = Can I customize the colors and typography? =
 Yes. You can switch palettes or adjust colors, typography, and spacing directly through Appearance > Editor > Styles (Global Styles).

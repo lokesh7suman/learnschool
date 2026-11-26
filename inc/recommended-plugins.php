@@ -315,6 +315,20 @@ if ( ! function_exists( 'learnschool_enqueue_plugin_notice_assets' ) ) :
 endif;
 add_action( 'admin_enqueue_scripts', 'learnschool_enqueue_plugin_notice_assets' );
 
+if ( ! function_exists( 'learnschool_render_companion_plugin_icon' ) ) :
+	/**
+	 * Renders the shared school-management graduation cap SVG icon for notice and setup cards.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	function learnschool_render_companion_plugin_icon(): void {
+		?>
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+		<?php
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_render_plugin_notice' ) ) :
 	/**
 	 * Renders a refined, permanently dismissible native notice recommending LearnSchool's companion plugin.
@@ -332,7 +346,7 @@ if ( ! function_exists( 'learnschool_render_plugin_notice' ) ) :
 			return;
 		}
 
-		$welcome_url = admin_url( 'themes.php?page=learnschool-welcome' );
+		$welcome_url = admin_url( 'admin.php?page=learnschool' );
 		$plugins_url = self_admin_url( 'plugins.php' );
 		$first       = $pending[0];
 		$single_item = 1 === count( $pending );
@@ -343,13 +357,8 @@ if ( ! function_exists( 'learnschool_render_plugin_notice' ) ) :
 			data-dismiss-nonce="<?php echo esc_attr( wp_create_nonce( 'learnschool_dismiss_plugin_notice' ) ); ?>"
 		>
 			<div class="learnschool-plugin-notice__inner">
-				<div class="learnschool-plugin-notice__icon">
-					<img
-						src="<?php echo esc_url( get_theme_file_uri( 'assets/images/site-logo.png' ) ); ?>"
-						alt=""
-						width="40"
-						height="40"
-					/>
+				<div class="learnschool-plugin-notice__icon" aria-hidden="true">
+					<?php learnschool_render_companion_plugin_icon(); ?>
 				</div>
 				<div class="learnschool-plugin-notice__content">
 					<p class="learnschool-plugin-notice__title">

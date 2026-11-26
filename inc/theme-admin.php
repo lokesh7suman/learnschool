@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Setup Guide screen under Appearance -> LearnSchool.
+ * Top-level LearnSchool Admin Menu & Setup Screen.
  *
  * Provides a clean, zero-upsell onboarding page with direct shortcuts to the
  * Site Editor, Global Styles, Header Navigation, and Starter Page Patterns.
@@ -15,20 +15,62 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! function_exists( 'learnschool_get_admin_menu_icon' ) ) :
+	/**
+	 * Returns a monochromatic LearnSchool emblem SVG data URI for the top-level admin menu.
+	 *
+	 * @since 1.0.0
+	 * @return string SVG data URI compatible with all WordPress admin color schemes.
+	 */
+	function learnschool_get_admin_menu_icon(): string {
+		return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI2E3YWFhZCIgZD0iTTUgMS41SDE1QzE2LjkzMyAxLjUgMTguNSAzLjA2NyAxOC41IDVWMTVDMTguNSAxNi45MzMgMTYuOTMzIDE4LjUgMTUgMTguNUg1QzMuMDY3IDE4LjUgMS41IDE2LjkzMyAxLjUgMTVWNUMxLjUgMy4wNjcgMy4wNjcgMS41IDUgMS41Wk02LjIgNS40SDguOFYxMi40SDEzLjhWMTQuN0g2LjJWNS40Wk0xMy4xIDUuMVExMy42NSA2LjM1IDE0LjkgNi45UTEzLjY1IDcuNDUgMTMuMSA4LjdRMTIuNTUgNy40NSAxMS4zIDYuOVExMi41NSA2LjM1IDEzLjEgNS4xWiIvPjwvc3ZnPg==';
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_add_welcome_page' ) ) :
 	/**
-	 * Register the LearnSchool setup screen under the Appearance menu.
+	 * Register the LearnSchool top-level admin menu and onboarding submenus above Appearance.
 	 *
 	 * @since 1.0.0
 	 * @return void
 	 */
 	function learnschool_add_welcome_page(): void {
-		add_theme_page(
-			esc_html__( 'LearnSchool Setup', 'learnschool' ),
+		$capability = 'edit_theme_options';
+		$menu_slug  = 'learnschool';
+
+		add_menu_page(
 			esc_html__( 'LearnSchool', 'learnschool' ),
-			'edit_theme_options',
-			'learnschool-welcome',
+			esc_html__( 'LearnSchool', 'learnschool' ),
+			$capability,
+			$menu_slug,
+			'learnschool_render_welcome_page',
+			learnschool_get_admin_menu_icon(),
+			59
+		);
+
+		add_submenu_page(
+			$menu_slug,
+			esc_html__( 'LearnSchool Setup', 'learnschool' ),
+			esc_html__( 'Setup Guide', 'learnschool' ),
+			$capability,
+			$menu_slug,
 			'learnschool_render_welcome_page'
+		);
+
+		add_submenu_page(
+			$menu_slug,
+			esc_html__( 'Site Editor', 'learnschool' ),
+			esc_html__( 'Site Editor', 'learnschool' ),
+			$capability,
+			'site-editor.php'
+		);
+
+		add_submenu_page(
+			$menu_slug,
+			esc_html__( 'Global Styles', 'learnschool' ),
+			esc_html__( 'Global Styles', 'learnschool' ),
+			$capability,
+			'site-editor.php?p=%2Fstyles'
 		);
 	}
 endif;
@@ -36,14 +78,14 @@ add_action( 'admin_menu', 'learnschool_add_welcome_page' );
 
 if ( ! function_exists( 'learnschool_admin_assets' ) ) :
 	/**
-	 * Enqueue styles exclusively on the Appearance -> LearnSchool screen.
+	 * Enqueue styles exclusively on the top-level LearnSchool admin screen.
 	 *
 	 * @since 1.0.0
 	 * @param string $hook_suffix Current admin screen hook suffix.
 	 * @return void
 	 */
 	function learnschool_admin_assets( string $hook_suffix ): void {
-		if ( 'appearance_page_learnschool-welcome' !== $hook_suffix ) {
+		if ( 'toplevel_page_learnschool' !== $hook_suffix ) {
 			return;
 		}
 
@@ -196,7 +238,11 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 						?>
 					<div class="learnschool-admin-plugin-card" data-active-status="<?php echo esc_attr__( 'Active', 'learnschool' ); ?>">
 						<div class="learnschool-admin-plugin-card__icon" aria-hidden="true">
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+							<?php
+							if ( function_exists( 'learnschool_render_companion_plugin_icon' ) ) {
+								learnschool_render_companion_plugin_icon();
+							}
+							?>
 						</div>
 						<div class="learnschool-admin-plugin-card__body">
 							<div class="learnschool-admin-plugin-card__title">
