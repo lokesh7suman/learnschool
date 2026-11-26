@@ -71,13 +71,24 @@
 	color: var(--wp--preset--color--contrast, #121212);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	user-select: none;
-	padding: 2px 0;
+	padding: 4px 8px;
+	margin: -4px -8px;
+	border-radius: 12px;
+	transition: box-shadow 0.15s ease;
 }
 
 .wp-block-details.is-style-learnschool-faq-pill summary:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary, #704fe6);
-	outline-offset: 4px;
-	border-radius: 8px;
+	outline: none;
+	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
+		0 0 0 5px rgba(112, 79, 230, 0.14);
+}
+
+@media (forced-colors: active) {
+
+	.wp-block-details.is-style-learnschool-faq-pill summary:focus-visible {
+		outline: 3px solid Highlight;
+		outline-offset: 2px;
+	}
 }
 
 .wp-block-details.is-style-learnschool-faq-pill summary::-webkit-details-marker {

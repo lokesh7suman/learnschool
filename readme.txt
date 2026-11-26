@@ -15,7 +15,7 @@ LearnSchool is a clean, playful, and accessible Full-Site Editing (FSE) block th
 == Features ==
 
 * Full Site Editing (FSE) support with custom block templates and template parts
-* 27 modular Block Patterns for heroes, academics, admissions, faculty, events, FAQs, and footers
+* 33 modular Block Patterns including 5 full-page starter layouts (Home, About Us, Programs, Admissions, Contact)
 * 3 Global Style Variations (Coral Playground, Pastel Nursery, Sunshine Playful) plus custom block styles
 * Fluid Typography & Responsive Spacing Tokens
 * Privacy-first: self-hosted WOFF2 fonts with zero external CDN requests
@@ -42,7 +42,7 @@ LearnSchool does not collect, store, or transmit personal visitor data, set trac
 == Changelog ==
 
 = 1.0.0 =
-* Initial public release featuring Full-Site Editing templates, theme.json v3 design tokens, three global style variations, self-hosted typography, and 27 educational block patterns.
+* Initial public release featuring Full-Site Editing templates, theme.json v3 design tokens, three global style variations, self-hosted typography, and 33 educational and starter-page block patterns.
 
 == Copyright & License ==
 
@@ -120,9 +120,6 @@ License: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
 
 * `assets/images/illustrations/creative-classroom-art.png` - Early learning classroom arts and science discovery illustration (CC0)
 * `assets/images/illustrations/kids-discovery-art.png` - Early learning discovery, storybooks, and blocks illustration (CC0)
-* `assets/images/illustrations/blog-fun-activities.jpg` - Classroom watercolor, origami, and craft table scene (CC0)
-* `assets/images/illustrations/blog-game-ideas.jpg` - Montessori wooden sorting bowls and counting materials scene (CC0)
-* `assets/images/illustrations/blog-learning-games.jpg` - Sunlit classroom table with alphabet blocks and storybook (CC0)
 * `assets/images/illustrations/cta-community-educator.jpg` - Synthetic educator character portrait on brand purple backdrop (CC0)
 * `assets/images/illustrations/materials-digital-kit.jpg` - Learning tablet and wooden geometric shapes scene (CC0)
 * `assets/images/illustrations/materials-storybooks-kit.jpg` - Storybooks and wooden alphabet cubes flatlay (CC0)

@@ -184,7 +184,128 @@
 	}
 
 	/**
-	 * Inject conversion CTA and utility contact info into mobile drawer if not already present.
+	 * Collect live utility bar contact and portal items from the rendered header
+	 * so mobile drawer links stay identical to desktop Site Editor markup.
+	 *
+	 * @param {Object} navData Fallback localization data.
+	 * @return {Array<{href: string, label: string, kind: string}>} Ordered meta items.
+	 */
+	function collectUtilityMetaItems( navData ) {
+		const utilityBar = document.querySelector(
+			'header .learnschool-utility-bar, header .has-base-subtle-background-color'
+		);
+
+		if ( utilityBar ) {
+			const items = [];
+			const paragraphs = utilityBar.querySelectorAll( 'p' );
+			paragraphs.forEach( ( p ) => {
+				const link = p.querySelector( 'a' );
+				const label = (
+					link ? link.textContent : p.textContent
+				).trim();
+				const href = link ? link.getAttribute( 'href' ) || '' : '';
+				if ( ! label ) {
+					return;
+				}
+				let kind = 'link';
+				if ( href.startsWith( 'tel:' ) ) {
+					kind = 'phone';
+				} else if ( ! href ) {
+					kind = 'hours';
+				} else if (
+					label.toLowerCase().includes( 'staff' ) ||
+					label.toLowerCase().includes( 'faculty' )
+				) {
+					kind = 'directory';
+				}
+				items.push( { href, label, kind } );
+			} );
+
+			if ( items.length > 0 ) {
+				return items;
+			}
+		}
+
+		const fallback = [];
+		if ( navData.phoneLabel && navData.phoneHref ) {
+			fallback.push( {
+				href: navData.phoneHref,
+				label: navData.phoneLabel,
+				kind: 'phone',
+			} );
+		}
+		if ( navData.portalLabel && navData.portalUrl ) {
+			fallback.push( {
+				href: navData.portalUrl,
+				label: navData.portalLabel,
+				kind: 'link',
+			} );
+		}
+		if ( navData.directoryLabel && navData.directoryUrl ) {
+			fallback.push( {
+				href: navData.directoryUrl,
+				label: navData.directoryLabel,
+				kind: 'directory',
+			} );
+		}
+		if ( navData.hoursLabel ) {
+			fallback.push( {
+				href: '',
+				label: navData.hoursLabel,
+				kind: 'hours',
+			} );
+		}
+		return fallback;
+	}
+
+	/**
+	 * Build an icon matching a utility meta item kind.
+	 *
+	 * @param {string} kind Item kind (`phone`, `directory`, `hours`, `link`).
+	 * @return {SVGElement} Built decorative icon.
+	 */
+	function createMetaIcon( kind ) {
+		if ( kind === 'phone' ) {
+			return createSvgIcon( 15, 2, [
+				[
+					'path',
+					{
+						d: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z',
+					},
+				],
+			] );
+		}
+		if ( kind === 'directory' ) {
+			return createSvgIcon( 15, 2, [
+				[
+					'path',
+					{
+						d: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2',
+					},
+				],
+				[ 'circle', { cx: '9', cy: '7', r: '4' } ],
+				[
+					'path',
+					{
+						d: 'M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
+					},
+				],
+			] );
+		}
+		if ( kind === 'hours' ) {
+			return createSvgIcon( 15, 2, [
+				[ 'circle', { cx: '12', cy: '12', r: '10' } ],
+				[ 'polyline', { points: '12 6 12 12 16 14' } ],
+			] );
+		}
+		return createSvgIcon( 15, 2, [
+			[ 'rect', { x: '3', y: '4', width: '18', height: '16', rx: '3' } ],
+			[ 'path', { d: 'M7 9h10M7 13h6' } ],
+		] );
+	}
+
+	/**
+	 * Inject localized header attribute and conversion CTA/utility info into mobile drawer.
 	 *
 	 * @return {void}
 	 */
@@ -193,8 +314,14 @@
 		const dialogs = document.querySelectorAll(
 			'.wp-block-navigation__responsive-dialog'
 		);
+		const menuTitle = navData.menuTitle || 'Menu';
+		const metaItems = collectUtilityMetaItems( navData );
 
 		dialogs.forEach( ( dialog ) => {
+			if ( ! dialog.getAttribute( 'data-menu-title' ) ) {
+				dialog.setAttribute( 'data-menu-title', menuTitle );
+			}
+
 			if (
 				dialog.querySelector( '.learnschool-mobile-drawer__footer' )
 			) {
@@ -240,76 +367,15 @@
 			const meta = document.createElement( 'div' );
 			meta.className = 'learnschool-mobile-drawer__meta';
 
-			if ( navData.phoneLabel && navData.phoneHref ) {
+			metaItems.forEach( ( item ) => {
 				meta.appendChild(
 					createMetaItem(
-						navData.phoneHref,
-						navData.phoneLabel,
-						createSvgIcon( 15, 2, [
-							[
-								'path',
-								{
-									d: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z',
-								},
-							],
-						] )
+						item.href,
+						item.label,
+						createMetaIcon( item.kind )
 					)
 				);
-			}
-
-			if ( navData.portalLabel && navData.portalUrl ) {
-				meta.appendChild(
-					createMetaItem(
-						navData.portalUrl,
-						navData.portalLabel,
-						createSvgIcon( 15, 2, [
-							[
-								'path',
-								{
-									d: 'M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3',
-								},
-							],
-						] )
-					)
-				);
-			}
-
-			if ( navData.directoryLabel && navData.directoryUrl ) {
-				meta.appendChild(
-					createMetaItem(
-						navData.directoryUrl,
-						navData.directoryLabel,
-						createSvgIcon( 15, 2, [
-							[
-								'path',
-								{
-									d: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2',
-								},
-							],
-							[ 'circle', { cx: '9', cy: '7', r: '4' } ],
-							[
-								'path',
-								{
-									d: 'M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75',
-								},
-							],
-						] )
-					)
-				);
-			}
-
-			if ( navData.hoursLabel ) {
-				meta.appendChild(
-					createMetaItem(
-						'',
-						navData.hoursLabel,
-						createSvgIcon( 15, 2, [
-							[ 'circle', { cx: '12', cy: '12', r: '10' } ],
-							[ 'polyline', { points: '12 6 12 12 16 14' } ],
-						] )
-					)
-				);
-			}
+			} );
 
 			if ( meta.childElementCount > 0 ) {
 				footer.appendChild( meta );

@@ -102,6 +102,7 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			'learnschool-navigation',
 			'learnschoolNavData',
 			array(
+				'menuTitle'      => __( 'Menu', 'learnschool' ),
 				'ctaUrl'         => esc_url_raw( home_url( '/#admissions' ) ),
 				'ctaLabel'       => __( 'Enroll Now', 'learnschool' ),
 				'phoneHref'      => 'tel:5550192834',
@@ -167,7 +168,7 @@ if ( ! function_exists( 'learnschool_editor_assets' ) ) :
 		wp_enqueue_script(
 			'learnschool-editor-formats',
 			get_template_directory_uri() . '/assets/js/editor-formats.js',
-			array( 'wp-rich-text', 'wp-block-editor', 'wp-element', 'wp-i18n' ),
+			array( 'wp-rich-text', 'wp-block-editor', 'wp-element', 'wp-i18n', 'wp-hooks' ),
 			$version,
 			true
 		);
@@ -212,12 +213,12 @@ add_filter( 'default_wp_template_part_areas', 'learnschool_template_part_areas' 
 require_once get_template_directory() . '/inc/pattern-categories.php';
 require_once get_template_directory() . '/inc/block-styles.php';
 require_once get_template_directory() . '/inc/site-logo.php';
+require_once get_template_directory() . '/inc/theme-admin.php';
 
 if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 	/**
-	 * Style the default demo site title with two-tone branding ("Learn" in dark, "School" in brand purple).
-	 * When a custom school title is used by customers, all words render in theme primary purple.
-	 * Uses \WP_HTML_Tag_Processor for safe attribute and DOM handling.
+	 * Style the site title with two-tone branding and the Sunny Gold brush accent on the final word.
+	 * Uses \WP_HTML_Tag_Processor for safe attribute and class handling.
 	 *
 	 * @since 1.0.0
 	 * @param string $block_content Rendered block HTML.
@@ -229,30 +230,47 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 		}
 
 		$tags = new \WP_HTML_Tag_Processor( $block_content );
-		if ( $tags->next_tag( array( 'class_name' => 'wp-block-site-title' ) ) ) {
-			$tags->add_class( 'has-two-tone-title' );
-			$updated_content = $tags->get_updated_html();
+		if ( ! $tags->next_tag( array( 'class_name' => 'wp-block-site-title' ) ) ) {
+			return $block_content;
+		}
 
-			if ( false !== strpos( $updated_content, 'LearnSchool' ) ) {
-				return str_replace(
-					'LearnSchool',
-					'<span class="learnschool-title-dark">Learn</span><span class="learnschool-title-accent">School</span>',
-					$updated_content
-				);
-			}
+		$tags->add_class( 'has-two-tone-title' );
+		$updated_content = $tags->get_updated_html();
 
-			if ( false !== strpos( $updated_content, 'Learn School' ) ) {
-				return str_replace(
-					'Learn School',
-					'<span class="learnschool-title-dark">Learn </span><span class="learnschool-title-accent">School</span>',
-					$updated_content
-				);
-			}
-
+		$raw_title   = trim( wp_strip_all_tags( get_bloginfo( 'name', 'display' ) ) );
+		$clean_title = '' !== $raw_title ? $raw_title : wp_strip_all_tags( $updated_content );
+		$clean_title = trim( html_entity_decode( $clean_title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+		if ( '' === $clean_title ) {
 			return $updated_content;
 		}
 
-		return $block_content;
+		$dark_part   = '';
+		$accent_part = $clean_title;
+		$last_space  = strrpos( $clean_title, ' ' );
+		if ( false !== $last_space ) {
+			$dark_part   = substr( $clean_title, 0, $last_space + 1 );
+			$accent_part = substr( $clean_title, $last_space + 1 );
+		} elseif ( 1 === preg_match( '/^([a-zA-Z][a-z]+)([A-Z].+)$/', $clean_title, $camel_parts ) ) {
+			$dark_part   = $camel_parts[1];
+			$accent_part = $camel_parts[2];
+		}
+
+		$replacement = ( '' !== $dark_part ? '<span class="learnschool-title-dark">' . esc_html( $dark_part ) . '</span>' : '' )
+			. '<span class="learnschool-title-accent">' . esc_html( $accent_part ) . '</span>';
+
+		// Target only the inner visible title node between > and </ (never attributes or aria-labels).
+		foreach ( array( esc_html( $clean_title ), $clean_title ) as $candidate ) {
+			if ( '' === $candidate ) {
+				continue;
+			}
+			$needle = '>' . $candidate . '</';
+			$pos    = strpos( $updated_content, $needle );
+			if ( false !== $pos ) {
+				return substr_replace( $updated_content, '>' . $replacement . '</', $pos, strlen( $needle ) );
+			}
+		}
+
+		return $updated_content;
 	}
 endif;
 add_filter( 'render_block_core/site-title', 'learnschool_filter_site_title' );

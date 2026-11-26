@@ -12,6 +12,16 @@
 	margin: 0;
 }
 
+.wp-block-site-logo a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2px;
+	margin: -2px;
+	border-radius: 9999px;
+	transition: transform 0.2s ease;
+}
+
 .wp-block-site-logo img {
 	display: block;
 	width: 36px;
@@ -22,4 +32,31 @@
 
 .wp-block-site-logo a:hover img {
 	transform: scale(1.06) rotate(3deg);
+}
+
+.wp-block-site-logo a:focus-visible {
+	outline: none;
+	background-color: rgba(112, 79, 230, 0.08);
+	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
+		0 0 0 5px rgba(112, 79, 230, 0.14);
+	border-radius: 9999px;
+}
+
+@media (pointer: coarse) {
+
+	.wp-block-site-logo a {
+		box-sizing: border-box;
+		min-width: 44px;
+		min-height: 44px;
+		padding: 4px;
+		margin: -4px;
+	}
+}
+
+@media (forced-colors: active) {
+
+	.wp-block-site-logo a:focus-visible {
+		outline: 3px solid Highlight;
+		outline-offset: 2px;
+	}
 }

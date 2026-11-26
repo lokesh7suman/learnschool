@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T07:15:52+00:00\n"
+"POT-Creation-Date: 2026-11-26T07:34:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -17,6 +17,7 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 #: inc/site-logo.php:36
+#: inc/theme-admin.php:28
 #: patterns/cta-community.php:32
 msgid "LearnSchool"
 msgstr ""
@@ -37,49 +38,50 @@ msgstr ""
 msgid "codeclove"
 msgstr ""
 
-#: functions.php:98
-#: patterns/header-right-aligned.php:36
+#: functions.php:85
+msgid "Featured"
+msgstr ""
+
+#: functions.php:106
+#: patterns/header-right-aligned.php:34
 #: patterns/header-two-row.php:59
 msgid "Enroll Now"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:108
 #: patterns/header-two-row.php:27
 msgid "Call: (555) 019-2834"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:110
 #: patterns/header-two-row.php:37
 msgid "Programs Overview"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:112
 #: patterns/header-two-row.php:41
 msgid "Staff Directory"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:113
+#: patterns/contact-campus.php:76
 #: patterns/header-two-row.php:31
 msgid "Mon–Fri: 8:00 AM – 5:00 PM"
 msgstr ""
 
-#: functions.php:143
-msgid "Featured"
-msgstr ""
-
-#: functions.php:195
+#: functions.php:193
 msgid "Banner"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:194
 msgid "Top announcement bars, campus alert strips, and utility ribbons."
 msgstr ""
 
-#: functions.php:203
+#: functions.php:201
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:202
 msgid "Curriculum navigation, educator profiles, and school widget sidebars."
 msgstr ""
 
@@ -184,58 +186,221 @@ msgstr ""
 msgid "Hide on Mobile"
 msgstr ""
 
-#: inc/pattern-categories.php:46
+#: inc/pattern-categories.php:47
 msgctxt "Block pattern category"
 msgid "Call To Action"
 msgstr ""
 
-#: inc/pattern-categories.php:47
+#: inc/pattern-categories.php:48
 msgid "Conversion-focused sections, admissions roadmaps, event schedules, and enrollment forms."
 msgstr ""
 
-#: inc/pattern-categories.php:51
+#: inc/pattern-categories.php:52
 msgctxt "Block pattern category"
 msgid "FAQ"
 msgstr ""
 
-#: inc/pattern-categories.php:52
+#: inc/pattern-categories.php:53
 msgid "Frequently asked questions, expandable accordions, and parent handbook guides."
 msgstr ""
 
-#: inc/pattern-categories.php:56
+#: inc/pattern-categories.php:57
 msgctxt "Block pattern category"
 msgid "Features"
 msgstr ""
 
-#: inc/pattern-categories.php:57
+#: inc/pattern-categories.php:58
 msgid "Feature highlight grids, program showcases, and curriculum sections."
 msgstr ""
 
-#: inc/pattern-categories.php:61
+#: inc/pattern-categories.php:62
 msgctxt "Block pattern category"
 msgid "Hero"
 msgstr ""
 
-#: inc/pattern-categories.php:62
+#: inc/pattern-categories.php:63
 msgid "Full-width hero and banner sections for the top of pages."
 msgstr ""
 
-#: inc/pattern-categories.php:66
+#: inc/pattern-categories.php:67
+msgctxt "Block pattern category"
+msgid "Pages"
+msgstr ""
+
+#: inc/pattern-categories.php:68
+msgid "Complete starter layouts for school home, about, programs, admissions, and contact pages."
+msgstr ""
+
+#: inc/pattern-categories.php:72
 msgctxt "Block pattern category"
 msgid "Faculty & Staff"
 msgstr ""
 
-#: inc/pattern-categories.php:67
+#: inc/pattern-categories.php:73
 msgid "Educator profiles, teacher grids, leadership bios, and faculty spotlights."
 msgstr ""
 
-#: inc/pattern-categories.php:71
+#: inc/pattern-categories.php:77
 msgctxt "Block pattern category"
 msgid "Testimonials"
 msgstr ""
 
-#: inc/pattern-categories.php:72
+#: inc/pattern-categories.php:78
 msgid "Parent reviews, student stories, and quote showcases."
+msgstr ""
+
+#: inc/theme-admin.php:27
+msgid "LearnSchool Setup"
+msgstr ""
+
+#: inc/theme-admin.php:98
+msgid "LearnSchool logo"
+msgstr ""
+
+#: inc/theme-admin.php:104
+msgid "Welcome to LearnSchool"
+msgstr ""
+
+#. translators: %s: Current theme version number.
+#: inc/theme-admin.php:108
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: inc/theme-admin.php:113
+msgid "Get your school, academy, or early learning website ready in minutes using Full Site Editing blocks and starter page patterns."
+msgstr ""
+
+#: inc/theme-admin.php:119
+msgid "Open Site Editor"
+msgstr ""
+
+#: inc/theme-admin.php:122
+msgid "View Live Site"
+msgstr ""
+
+#: inc/theme-admin.php:130
+msgid "Customize Site Identity & Homepage"
+msgstr ""
+
+#: inc/theme-admin.php:131
+msgid "Replace the school logo, headline, campus photos, and teacher portraits directly inside the visual Site Editor."
+msgstr ""
+
+#: inc/theme-admin.php:133
+msgid "Edit Site Templates"
+msgstr ""
+
+#: inc/theme-admin.php:139
+msgid "Switch Color Palette & Typography"
+msgstr ""
+
+#: inc/theme-admin.php:140
+msgid "Try the bundled Coral Playground, Pastel Nursery, or Sunshine Playful style variations—or dial in your own school colors."
+msgstr ""
+
+#: inc/theme-admin.php:142
+msgid "Open Global Styles"
+msgstr ""
+
+#: inc/theme-admin.php:148
+msgid "Set Up Header Navigation"
+msgstr ""
+
+#: inc/theme-admin.php:149
+msgid "Edit the Header template part to organize navigation links, select an existing menu, or update the Enroll Now button URL."
+msgstr ""
+
+#: inc/theme-admin.php:151
+msgid "Edit Header Menu"
+msgstr ""
+
+#: inc/theme-admin.php:157
+msgid "Create School Pages in One Click"
+msgstr ""
+
+#: inc/theme-admin.php:158
+msgid "Add a new page and choose from full-page starter layouts (Home, About Us, Programs, Admissions, Contact) in the pattern picker."
+msgstr ""
+
+#: inc/theme-admin.php:160
+msgid "Create New Page"
+msgstr ""
+
+#: inc/theme-admin.php:166
+msgid "Included Templates & Pattern Categories"
+msgstr ""
+
+#: inc/theme-admin.php:169
+msgid "Page Templates"
+msgstr ""
+
+#: inc/theme-admin.php:171
+msgid "Page (Default)"
+msgstr ""
+
+#: inc/theme-admin.php:171
+msgid "Standard page with heading, content area, and comments."
+msgstr ""
+
+#: inc/theme-admin.php:172
+msgid "Page (No Title)"
+msgstr ""
+
+#: inc/theme-admin.php:172
+msgid "Clean canvas ideal for starter page patterns without duplicate H1 titles."
+msgstr ""
+
+#: inc/theme-admin.php:173
+msgid "Page (Full Width)"
+msgstr ""
+
+#: inc/theme-admin.php:173
+msgid "Edge-to-edge layout for custom hero sections."
+msgstr ""
+
+#: inc/theme-admin.php:174
+msgid "Landing Page"
+msgstr ""
+
+#: inc/theme-admin.php:174
+msgid "Full showcase template without distraction."
+msgstr ""
+
+#: inc/theme-admin.php:178
+msgid "Pattern Building Blocks"
+msgstr ""
+
+#: inc/theme-admin.php:180
+msgid "Pages"
+msgstr ""
+
+#: inc/theme-admin.php:180
+msgid "Full-page starters for Home, About Us, Programs, Admissions, and Contact."
+msgstr ""
+
+#: inc/theme-admin.php:181
+msgid "Hero, Features & Faculty"
+msgstr ""
+
+#: inc/theme-admin.php:181
+msgid "Mix-and-match classroom sections, teacher grids, and curriculum highlights."
+msgstr ""
+
+#: inc/theme-admin.php:182
+msgid "Admissions, Events & FAQ"
+msgstr ""
+
+#: inc/theme-admin.php:182
+msgid "Enrollment roadmaps, open house cards, and zero-JS accordion FAQs."
+msgstr ""
+
+#: inc/theme-admin.php:183
+msgid "Headers & Footers"
+msgstr ""
+
+#: inc/theme-admin.php:183
+msgid "Single-row or two-row utility headers and multi-column footer variations."
 msgstr ""
 
 #: patterns/admissions-roadmap.php
@@ -358,6 +523,72 @@ msgstr ""
 
 #: patterns/blog-latest.php:66
 msgid "No school articles published yet. Add your first post to see it featured here."
+msgstr ""
+
+#: patterns/contact-campus.php
+msgctxt "Pattern title"
+msgid "Campus Contact & Visit Details"
+msgstr ""
+
+#: patterns/contact-campus.php
+msgctxt "Pattern description"
+msgid "Three-column admissions desk, campus hours, and campus address cards with tour scheduling CTA buttons."
+msgstr ""
+
+#: patterns/contact-campus.php:24
+msgid "Get in "
+msgstr ""
+
+#: patterns/contact-campus.php:24
+msgid "touch"
+msgstr ""
+
+#: patterns/contact-campus.php:24
+msgid " with us"
+msgstr ""
+
+#: patterns/contact-campus.php:28
+msgid "Reach our admissions coordinators by phone, email, or in person during school hours."
+msgstr ""
+
+#: patterns/contact-campus.php:36
+msgid "Admissions Desk"
+msgstr ""
+
+#: patterns/contact-campus.php:40
+msgid "Questions about tours, waitlists, or enrollment documents? Call us directly."
+msgstr ""
+
+#: patterns/contact-campus.php:44
+msgid "(555) 019-2834"
+msgstr ""
+
+#: patterns/contact-campus.php:52
+msgid "Campus Location"
+msgstr ""
+
+#: patterns/contact-campus.php:56
+msgid "1450 Discovery Way, Suite 100 — Main Early Learning Wing"
+msgstr ""
+
+#: patterns/contact-campus.php:60
+msgid "Parent drop-off & visitor parking available"
+msgstr ""
+
+#: patterns/contact-campus.php:68
+msgid "School Hours"
+msgstr ""
+
+#: patterns/contact-campus.php:72
+msgid "Morning tours by appointment Tuesday through Friday."
+msgstr ""
+
+#: patterns/contact-campus.php:84
+msgid "Schedule a Campus Visit"
+msgstr ""
+
+#: patterns/contact-campus.php:88
+msgid "Read Admissions FAQ"
 msgstr ""
 
 #: patterns/cta-community.php
@@ -1556,6 +1787,56 @@ msgstr ""
 
 #: patterns/learning-materials-split.php:84
 msgid "Hands-on art, botany & building"
+msgstr ""
+
+#: patterns/page-about.php
+msgctxt "Pattern title"
+msgid "About Us Page Layout"
+msgstr ""
+
+#: patterns/page-about.php
+msgctxt "Pattern description"
+msgid "Full About Us page layout featuring school mission highlights, safety and credential trust strip, leadership spotlight, family testimonials, and community CTA."
+msgstr ""
+
+#: patterns/page-admissions.php
+msgctxt "Pattern title"
+msgid "Admissions & FAQ Page Layout"
+msgstr ""
+
+#: patterns/page-admissions.php
+msgctxt "Pattern description"
+msgid "Complete Admissions page layout with enrollment roadmap steps, open house events schedule, expandable FAQ accordion, and tour scheduling banner."
+msgstr ""
+
+#: patterns/page-contact.php
+msgctxt "Pattern title"
+msgid "Contact & Campus Visit Page Layout"
+msgstr ""
+
+#: patterns/page-contact.php
+msgctxt "Pattern description"
+msgid "Full Contact Us page layout combining campus contact cards, open house schedule, and quick parent FAQ cards."
+msgstr ""
+
+#: patterns/page-home.php
+msgctxt "Pattern title"
+msgid "Home Page Layout"
+msgstr ""
+
+#: patterns/page-home.php
+msgctxt "Pattern description"
+msgid "Complete homepage starter layout combining the playful doodles hero, interactive features, learning materials, faculty grid, live blog feed, FAQ accordion, and tour CTA."
+msgstr ""
+
+#: patterns/page-programs.php
+msgctxt "Pattern title"
+msgid "Programs & Curriculum Page Layout"
+msgstr ""
+
+#: patterns/page-programs.php
+msgctxt "Pattern description"
+msgid "Complete Programs page layout with campus tour hero, signature learning programs, tactile curriculum showcase, four-step learning journey, and tour CTA."
 msgstr ""
 
 #: patterns/teachers-photos-grid.php

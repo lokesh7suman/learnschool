@@ -14,8 +14,35 @@
  */
 
 /* ==========================================================================
-   1. Desktop Navigation Bar & Unified Trigger Pills (shadcn trigger style)
+   1. Desktop Navigation Bar & Unified Trigger Pills
    ========================================================================== */
+
+/* Geometric CSS Grid centering on desktop two-row/centered-nav headers (Brand | Nav | Actions) */
+@media (min-width: 981px) {
+
+	header .learnschool-header-main > .wp-block-group.alignwide:has(> .wp-block-navigation),
+	header > .wp-block-group > .wp-block-group.has-base-background-color > .wp-block-group.alignwide:has(> .wp-block-navigation) {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+		align-items: center;
+		column-gap: var(--wp--preset--spacing--step-3, 16px);
+	}
+
+	header .learnschool-header-main > .wp-block-group.alignwide:has(> .wp-block-navigation) > .wp-block-group:first-child,
+	header > .wp-block-group > .wp-block-group.has-base-background-color > .wp-block-group.alignwide:has(> .wp-block-navigation) > .wp-block-group:first-child {
+		justify-self: start;
+	}
+
+	header .learnschool-header-main > .wp-block-group.alignwide:has(> .wp-block-navigation) > .wp-block-navigation,
+	header > .wp-block-group > .wp-block-group.has-base-background-color > .wp-block-group.alignwide:has(> .wp-block-navigation) > .wp-block-navigation {
+		justify-self: center;
+	}
+
+	header .learnschool-header-main > .wp-block-group.alignwide:has(> .wp-block-navigation) > .learnschool-header-actions,
+	header > .wp-block-group > .wp-block-group.has-base-background-color > .wp-block-group.alignwide:has(> .wp-block-navigation) > .learnschool-header-actions {
+		justify-self: end;
+	}
+}
 
 /* Navigation link styling and horizontal layout stability */
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container,
@@ -26,13 +53,27 @@
 	gap: 4px;
 }
 
+@media (min-width: 981px) and (max-width: 1120px) {
+
+	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container,
+	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container {
+		gap: 2px;
+	}
+
+	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content,
+	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+		padding: 8px 10px;
+	}
+}
+
 /* Top-level item container */
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item {
 	display: inline-flex;
 	align-items: center;
 	position: relative;
-	border-radius: 12px;
+	box-sizing: border-box;
+	border-radius: 10px;
 	transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -50,9 +91,10 @@
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
 	display: inline-flex;
 	align-items: center;
-	min-height: 40px;
+	box-sizing: border-box;
+	min-height: 38px;
 	padding: 8px 14px;
-	border-radius: 12px;
+	border-radius: 10px;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-size: var(--wp--preset--font-size--base, 1rem);
 	font-weight: 600;
@@ -70,38 +112,67 @@
 	color: var(--wp--preset--color--contrast, #121212);
 }
 
-/* Active Page Indicator (shadcn signature hairline accent) */
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation-item.is-current > .wp-block-navigation-item__content,
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation-item__content[aria-current="page"],
-.wp-block-navigation:not(.is-responsive) .current-menu-ancestor > .wp-block-navigation-item__content {
-	color: var(--wp--preset--color--contrast, #121212);
-	position: relative;
+/* Active Page Indicator (single subtle lilac pill — zero duplicate underline) */
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.is-current,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item:has(> .wp-block-navigation-item__content[aria-current="page"]),
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-ancestor,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-parent,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current_page_ancestor,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.is-current,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:has(> .wp-block-navigation-item__content[aria-current="page"]),
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-ancestor,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-parent,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current_page_ancestor {
+	background-color: rgba(112, 79, 230, 0.08);
+	color: var(--wp--preset--color--primary-dark, #5837c7);
 }
 
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content::after,
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation-item.is-current > .wp-block-navigation-item__content::after,
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation-item__content[aria-current="page"]::after,
-.wp-block-navigation:not(.is-responsive) .current-menu-ancestor > .wp-block-navigation-item__content::after {
-	content: "";
-	position: absolute;
-	bottom: -2px;
-	inset-inline-start: 12px;
-	inset-inline-end: 12px;
-	height: 2px;
-	background-color: var(--wp--preset--color--primary, #704fe6);
-	border-radius: 9999px;
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.is-current > .wp-block-navigation-item__content,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content[aria-current="page"],
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-ancestor > .wp-block-navigation-item__content,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-parent > .wp-block-navigation-item__content,
+.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current_page_ancestor > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.is-current > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content[aria-current="page"],
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-ancestor > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-parent > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current_page_ancestor > .wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+	font-weight: 700;
+}
+
+/* Submenu items: active page tint inside dropdown popover */
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item,
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current_page_item,
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item:has(> .wp-block-navigation-item__content[aria-current="page"]) {
+	background-color: rgba(112, 79, 230, 0.08);
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item > .wp-block-navigation-item__content[aria-current="page"] {
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+	font-weight: 700;
 }
 
 /* For items with a submenu: tighten inline-end padding so chevron sits naturally */
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-item__content,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-item__content {
-	padding-inline-end: 4px;
+	padding-inline-end: 6px;
 }
 
-/* Generic touch-friendly interactive targets (minimum 44px height for accessibility) */
+/* Generic touch-friendly interactive targets */
 .wp-block-navigation .wp-block-navigation-item__content {
-	min-height: 44px;
+	box-sizing: border-box;
+	min-height: 36px;
 	display: inline-flex;
 	align-items: center;
 	white-space: nowrap;
@@ -114,12 +185,16 @@
 
 .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-item .wp-block-navigation__submenu-icon,
 .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-submenu__toggle {
-	width: auto;
-	height: 100%;
-	min-height: 40px;
-	padding-block: 0;
-	padding-inline: 2px 10px;
-	margin: 0;
+	flex-shrink: 0;
+	box-sizing: border-box;
+	width: 26px;
+	height: 26px;
+	min-width: 26px;
+	min-height: 26px;
+	padding: 0;
+	margin-block: 0;
+	margin-inline: 0 6px;
+	border-radius: 7px;
 	background: transparent;
 	border: none;
 	color: inherit;
@@ -128,6 +203,13 @@
 	align-items: center;
 	justify-content: center;
 	line-height: 1;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-submenu__toggle:hover,
+.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-submenu__toggle:focus-visible {
+	background-color: rgba(112, 79, 230, 0.1);
+	color: var(--wp--preset--color--primary-dark, #5837c7);
 }
 
 .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-item .wp-block-navigation__submenu-icon svg,
@@ -175,14 +257,17 @@
 	position: absolute;
 	top: calc(100% + 8px);
 	inset-inline-start: 0;
-	min-width: 300px;
-	padding: 8px;
+	box-sizing: border-box;
+	min-width: 224px;
+	width: max-content;
+	max-width: 280px;
+	padding: 6px;
+	gap: 2px;
 	background-color: var(--wp--preset--color--surface, #fff);
 	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
-	border-radius: 16px;
-	box-shadow: 0 10px 30px -5px rgba(112, 79, 230, 0.1),
-		0 4px 6px -2px rgba(112, 79, 230, 0.05),
-		0 0 0 1px var(--wp--preset--color--border, #e2e8f0);
+	border-radius: 14px;
+	box-shadow: 0 12px 32px -6px rgba(15, 23, 42, 0.12),
+		0 4px 10px -2px rgba(112, 79, 230, 0.08);
 	opacity: 0;
 	transform: translateY(6px);
 	transition: opacity 0.12s ease-out,
@@ -218,43 +303,54 @@
 
 /* Submenu interactive item tiles */
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4px;
 	width: 100%;
+	box-sizing: border-box;
+	border-radius: 10px;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item:hover,
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item:has(> :focus-visible) {
+	background-color: #f3eefc;
 }
 
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
 	display: flex;
 	align-items: center;
-	width: 100%;
-	min-height: 42px;
-	padding: 10px 14px;
-	border-radius: 12px;
+	flex: 1 1 auto;
+	min-width: 0;
+	box-sizing: border-box;
+	min-height: 36px;
+	padding: 8px 12px;
+	border-radius: 10px;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	font-weight: 600;
 	line-height: 1.35;
 	color: var(--wp--preset--color--contrast, #121212);
 	text-decoration: none;
-	transition: background-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+	transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus-visible {
-	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
-	color: var(--wp--preset--color--primary, #704fe6);
-	transform: translateX(4px);
+	background-color: transparent;
+	color: var(--wp--preset--color--primary-dark, #5837c7);
 }
 
-.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:active {
-	transform: translateX(4px) scale(0.98);
+.wp-block-navigation .wp-block-navigation__submenu-container a.wp-block-navigation-item__content:focus-visible,
+.wp-block-navigation .wp-block-navigation__submenu-container button.wp-block-navigation-submenu__toggle:focus-visible {
+	outline: none;
+	box-shadow: inset 0 0 0 1.5px rgba(112, 79, 230, 0.65),
+		0 0 0 3px rgba(112, 79, 230, 0.14);
 }
 
-[dir="rtl"] .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
-[dir="rtl"] .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus-visible {
-	transform: translateX(-4px);
-}
-
-[dir="rtl"] .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:active {
-	transform: translateX(-4px) scale(0.98);
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.has-child > .wp-block-navigation-submenu__toggle {
+	margin-inline: 0 4px;
 }
 
 /* ==========================================================================
@@ -267,8 +363,9 @@
 	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,
 	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
 		top: -6px;
-		inset-inline-start: calc(100% + 6px);
-		min-width: 260px;
+		inset-inline-start: calc(100% + 8px);
+		min-width: 210px;
+		max-width: 260px;
 		margin-top: 0;
 	}
 
@@ -295,37 +392,50 @@
 		inset-inline-end: -10px;
 	}
 
-	/* Nested submenu item chevron points to inline end by default */
+	/* Nested submenu item chevron points in flyout direction (inline-end by default; inline-start when right-aligned) */
 	.wp-block-navigation .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg {
 		transform: rotate(-90deg);
 	}
 
-	[dir="rtl"] .wp-block-navigation .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg {
+	[dir="rtl"] .wp-block-navigation .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg,
+	.wp-block-navigation.items-justified-right .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg,
+	.wp-block-navigation.items-justified-flex-end .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg {
 		transform: rotate(90deg);
 	}
 
-	/* Rotate when expanded or hovered */
+	[dir="rtl"] .wp-block-navigation.items-justified-right .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg,
+	[dir="rtl"] .wp-block-navigation.items-justified-flex-end .wp-block-navigation__submenu-container .has-child > .wp-block-navigation-submenu__toggle svg {
+		transform: rotate(-90deg);
+	}
+
+	/* Keep flyout chevron pointing toward its open flyout rather than flipping backward */
 	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__submenu-container .has-child:hover > .wp-block-navigation-submenu__toggle svg,
 	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg,
 	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .has-child:hover > .wp-block-navigation-submenu__toggle svg,
 	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg {
-		transform: rotate(90deg);
+		transform: rotate(-90deg);
+		opacity: 1;
 	}
 
 	[dir="rtl"] .wp-block-navigation:not(.is-responsive) .wp-block-navigation__submenu-container .has-child:hover > .wp-block-navigation-submenu__toggle svg,
 	[dir="rtl"] .wp-block-navigation:not(.is-responsive) .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg,
 	[dir="rtl"] .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .has-child:hover > .wp-block-navigation-submenu__toggle svg,
-	[dir="rtl"] .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg {
-		transform: rotate(-90deg);
+	[dir="rtl"] .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg,
+	.wp-block-navigation.items-justified-right .wp-block-navigation__submenu-container .has-child:hover > .wp-block-navigation-submenu__toggle svg,
+	.wp-block-navigation.items-justified-right .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg,
+	.wp-block-navigation.items-justified-flex-end .wp-block-navigation__submenu-container .has-child:hover > .wp-block-navigation-submenu__toggle svg,
+	.wp-block-navigation.items-justified-flex-end .wp-block-navigation__submenu-container .has-child:focus-within > .wp-block-navigation-submenu__toggle svg {
+		transform: rotate(90deg);
+		opacity: 1;
 	}
 }
 
 /* ==========================================================================
-   5. Mobile Responsive Navigation Drawer (Authentic shadcn Sheet)
+   5. Mobile & Tablet Responsive Navigation Bar and Drawer
    ========================================================================== */
 
-/* Responsive Breakpoint: switch to drawer navigation below 768px (mobile viewports) */
-@media (max-width: 768px) {
+/* Responsive Breakpoint: switch to drawer navigation at <= 980px to prevent 2-3 row tablet wrap */
+@media (max-width: 980px) {
 
 	.wp-block-navigation .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
 		display: none;
@@ -335,30 +445,55 @@
 		display: inline-flex;
 	}
 
-	/* Hide desktop action buttons on mobile bar to keep brand & hamburger clean and uncrowded */
-	header .learnschool-header-actions,
-	header .wp-block-group.alignwide > .learnschool-header-actions,
-	header .wp-block-buttons:not(.wp-block-navigation *),
-	.wp-block-template-part header .learnschool-header-actions,
-	.wp-block-template-part header .wp-block-buttons:not(.wp-block-navigation *),
-	.wp-block-template-part[data-area="header"] .wp-block-buttons:not(.wp-block-navigation *),
-	.wp-block-group.alignwide > .learnschool-header-actions,
-	.learnschool-header-signin {
-		display: none;
+	/* Keep header container single-line with [Brand] ... [CTA Pill] [Hamburger] */
+	header .wp-block-group.alignwide,
+	.wp-block-template-part header .wp-block-group.alignwide {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--wp--preset--spacing--step-2, 12px);
 	}
 
-	/* Anchor the navigation hamburger toggle cleanly to the inline end */
-	header .wp-block-navigation,
-	.wp-block-template-part header .wp-block-navigation,
-	.wp-block-template-part[data-area="header"] .wp-block-navigation,
-	.wp-block-group.alignwide > .wp-block-navigation {
+	header .wp-block-group.alignwide > .learnschool-header-actions {
+		order: 2;
+		margin-inline-start: auto;
+		flex-shrink: 0;
+	}
+
+	header .wp-block-group.alignwide > .wp-block-navigation,
+	.wp-block-template-part[data-area="header"] .wp-block-group.alignwide > .wp-block-navigation {
+		order: 3;
+		flex-shrink: 0;
 		margin-inline-start: auto;
 	}
 
-	/* Prevent header container wrap to guarantee single-line brand and hamburger */
-	header .wp-block-group.alignwide,
-	.wp-block-template-part header .wp-block-group.alignwide {
-		flex-wrap: nowrap;
+	header .wp-block-group.alignwide > .learnschool-header-actions + .wp-block-navigation,
+	header .wp-block-group.alignwide:has(> .learnschool-header-actions) > .wp-block-navigation {
+		margin-inline-start: 0;
+	}
+
+	header .wp-block-group.alignwide > .wp-block-group:has(> .learnschool-header-actions) {
+		order: 2;
+		margin-inline-start: auto;
+		flex-shrink: 0;
+		gap: var(--wp--preset--spacing--step-2, 12px);
+	}
+
+	header .wp-block-group.alignwide > .wp-block-group:has(> .learnschool-header-actions) > .learnschool-header-actions {
+		order: 1;
+	}
+
+	header .wp-block-group.alignwide > .wp-block-group:has(> .learnschool-header-actions) > .wp-block-navigation {
+		order: 2;
+	}
+}
+
+@media (max-width: 359px) {
+
+	/* Ultra-narrow screens keep Brand + Hamburger clean; Enroll CTA remains inside drawer */
+	header .learnschool-header-actions {
+		display: none;
 	}
 }
 
@@ -481,7 +616,7 @@
 	}
 }
 
-/* Header bar for Sheet Dialog — provides a dedicated, elegant top row */
+/* Header bar for Sheet Dialog — translatable via data-menu-title with fallback */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog::before {
 	content: "Menu";
 	height: 48px;
@@ -495,6 +630,10 @@
 	border-bottom: 1px solid var(--wp--preset--color--border, #e2e8f0);
 	margin-bottom: 16px;
 	flex-shrink: 0;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog[data-menu-title]::before {
+	content: attr(data-menu-title);
 }
 
 @keyframes learnschool-sheet-slide {
@@ -651,6 +790,14 @@
 	color: var(--wp--preset--color--primary, #704fe6);
 }
 
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item > .wp-block-navigation-item__content[aria-current="page"] {
+	background-color: #f3eefc;
+	color: var(--wp--preset--color--primary, #704fe6);
+	font-weight: 700;
+}
+
 .wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item > .wp-block-navigation-item__content:focus:not(:focus-visible),
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item > .wp-block-navigation-item__content:focus:not(:focus-visible) {
 	outline: none;
@@ -799,7 +946,7 @@
 
 
 /* ==========================================================================
-   6. Header Action Buttons (The shadcn Button Treatment)
+   6. Header Action Buttons & Drawer Footer Controls
    ========================================================================== */
 
 .learnschool-header-actions {
@@ -808,10 +955,15 @@
 	gap: 10px;
 }
 
-.learnschool-header-actions .wp-block-button__link {
+/* Match or exceed core-button.css variant specificity so header CTA locks at 40px rhythm */
+.learnschool-header-actions .wp-block-button .wp-block-button__link,
+.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
 	min-height: 40px;
 	height: 40px;
-	padding: 0 18px;
+	padding: 0 8px 0 18px;
+	gap: 10px;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
 	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	font-weight: 700;
@@ -825,7 +977,10 @@
 	transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 }
 
-.learnschool-header-actions .wp-block-button__link:active {
+.learnschool-header-actions .wp-block-button .wp-block-button__link:active,
+.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link:active,
+.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link:active,
+.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link:active {
 	transform: scale(0.97);
 }
 
@@ -838,11 +993,33 @@
 	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.3);
 }
 
-.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after {
+.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
+.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
+.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
+.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
 	width: 24px;
 	height: 24px;
 	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	line-height: 1;
+}
+
+@media (max-width: 479px) {
+
+	.learnschool-header-actions .wp-block-button .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+		padding: 0 14px;
+		gap: 0;
+		font-size: 0.8125rem;
+	}
+
+	.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+		display: none;
+	}
 }
 
 /* ==========================================================================
@@ -864,9 +1041,10 @@ aside.wp-block-group p a:hover {
 
 .wp-block-group.has-base-subtle-background-color p a:focus-visible,
 aside.wp-block-group p a:focus-visible {
-	outline: 2px solid currentcolor;
-	outline-offset: 2px;
-	border-radius: 8px;
+	outline: none;
+	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
+		0 0 0 4px rgba(112, 79, 230, 0.14);
+	border-radius: 6px;
 }
 
 /* ==========================================================================
@@ -936,11 +1114,18 @@ aside.wp-block-group p a:focus-visible {
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
 	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
-	padding-inline: 4px;
+	gap: 4px 12px;
+	padding-inline: 0;
+}
+
+@media (max-width: 359px) {
+
+	.learnschool-mobile-drawer__meta {
+		grid-template-columns: 1fr;
+	}
 }
 
 .learnschool-mobile-drawer__meta-link {
@@ -949,12 +1134,17 @@ aside.wp-block-group p a:focus-visible {
 	align-items: center;
 	gap: 6px;
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
-	font-size: var(--wp--preset--font-size--extra-small, 0.75rem);
+	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
+	line-height: 1.35;
 	color: var(--wp--preset--color--contrast-subtle, #4b5563);
 	text-decoration: none;
 	min-height: 44px;
 	transition: color 0.15s ease;
+}
+
+.learnschool-mobile-drawer__meta-link svg {
+	flex-shrink: 0;
 }
 
 .learnschool-mobile-drawer__meta-link:hover {
@@ -962,23 +1152,50 @@ aside.wp-block-group p a:focus-visible {
 }
 
 .learnschool-mobile-drawer__meta-link:focus-visible {
-	outline: 2px solid currentcolor;
-	outline-offset: 2px;
+	outline: none;
 	border-radius: 8px;
 	color: var(--wp--preset--color--primary, #704fe6);
+	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
+		0 0 0 4px rgba(112, 79, 230, 0.14);
 }
 
 /* ==========================================================================
    7. Accessibility & Motion Preferences
    ========================================================================== */
 
-/* Universal keyboard focus indicator (WCAG 2.2 AA) */
+/* Universal keyboard focus indicator (WCAG 2.2 AA soft lilac halo) */
 .wp-block-navigation a.wp-block-navigation-item__content:focus-visible,
 .wp-block-navigation button.wp-block-navigation-submenu__toggle:focus-visible,
 .wp-block-navigation .wp-block-navigation__responsive-container-close:focus-visible,
+.wp-block-social-links .wp-block-social-link a:focus-visible {
+	outline: none;
+	background-color: #f3eefc;
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
+		0 0 0 4px rgba(112, 79, 230, 0.14);
+}
+
 .learnschool-header-actions .wp-block-button__link:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary);
-	outline-offset: 2px;
+	outline: none;
+	box-shadow: 0 0 0 2px var(--wp--preset--color--base, #fff),
+		0 0 0 4px var(--wp--preset--color--primary, #704fe6),
+		0 0 0 7px rgba(112, 79, 230, 0.16);
+}
+
+.wp-block-social-links .wp-block-social-link a:focus-visible {
+	border-radius: 9999px;
+}
+
+@media (forced-colors: active) {
+
+	.wp-block-navigation a.wp-block-navigation-item__content:focus-visible,
+	.wp-block-navigation button.wp-block-navigation-submenu__toggle:focus-visible,
+	.wp-block-navigation .wp-block-navigation__responsive-container-close:focus-visible,
+	.learnschool-header-actions .wp-block-button__link:focus-visible,
+	.wp-block-social-links .wp-block-social-link a:focus-visible {
+		outline: 3px solid Highlight;
+		outline-offset: 2px;
+	}
 }
 
 /* Prevent auto-focused link in mobile drawer from showing false active box or outline on open */
@@ -988,8 +1205,8 @@ aside.wp-block-group p a:focus-visible {
 
 .wp-block-navigation__responsive-container.is-menu-open a.wp-block-navigation-item__content:focus-visible {
 	outline: none;
-	background-color: transparent;
-	color: var(--wp--preset--color--contrast, #121212);
+	background-color: #f3eefc;
+	color: var(--wp--preset--color--primary-dark, #5837c7);
 }
 
 .wp-block-navigation__responsive-container.is-menu-open a.wp-block-navigation-item__content:focus:not(:focus-visible),
@@ -1089,19 +1306,38 @@ aside.wp-block-group p a:focus-visible {
 	}
 
 	/* Header action button: 44px minimum height for coarse touch */
-	.learnschool-header-actions .wp-block-button__link {
+	.learnschool-header-actions .wp-block-button .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
 		min-height: 44px;
 		height: 44px;
-		padding: 0 20px;
+		padding: 0 9px 0 18px;
 	}
 
-	/* Header top utility bar links on touch */
+	.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+		width: 26px;
+		height: 26px;
+	}
+
+	/* Compact header top utility bar links on coarse touch without 72px bloat */
+	header .learnschool-utility-bar,
+	header > .wp-block-group > .has-base-subtle-background-color {
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+
 	header .has-base-subtle-background-color a,
 	aside.wp-block-group a {
+		box-sizing: border-box;
 		display: inline-flex;
 		align-items: center;
 		min-height: 44px;
-		padding-block: 6px;
+		padding-block: 0;
+		line-height: 1.35;
 	}
 
 	/* Social links in top bar on touch */
@@ -1115,29 +1351,71 @@ aside.wp-block-group p a:focus-visible {
 	}
 }
 
+@media (pointer: coarse) and (max-width: 479px) {
+
+	.learnschool-header-actions .wp-block-button .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+		padding: 0 16px;
+	}
+}
+
 /* Fine pointer (mouse, trackpad): compact desktop density */
 @media (pointer: fine) {
 
 	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content,
 	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
-		min-height: 40px;
+		min-height: 38px;
 		padding: 8px 14px;
 	}
 
-	.learnschool-header-actions .wp-block-button__link {
+	.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-item__content,
+	.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.has-child > .wp-block-navigation-item__content {
+		padding-inline-end: 6px;
+	}
+
+	.learnschool-header-actions .wp-block-button .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
 		min-height: 40px;
 		height: 40px;
-		padding: 0 18px;
+		padding: 0 8px 0 18px;
+	}
+
+	.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
+	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+		width: 24px;
+		height: 24px;
 	}
 }
 
 /* ==========================================================================
-   10. Header Utility Bar & Announcement Responsive Collapse (< 768px)
+   9. Header Utility Bar & Responsive Consolidation
    ========================================================================== */
+
+header .learnschool-utility-bar,
+header > .wp-block-group > .has-base-subtle-background-color {
+	border-bottom: 1px solid var(--wp--preset--color--border, #e2e8f0);
+}
+
+header .learnschool-header-main,
+header > .wp-block-group > .wp-block-group.has-base-background-color {
+	border-bottom: 1px solid var(--wp--preset--color--border, #e2e8f0);
+}
 
 header .learnschool-utility-bar .wp-block-group.alignwide,
 header .has-base-subtle-background-color .wp-block-group.alignwide {
 	width: 100%;
+}
+
+header .learnschool-utility-bar p,
+header .has-base-subtle-background-color p {
+	margin: 0;
+	line-height: 1.4;
 }
 
 header .learnschool-utility-bar a,
@@ -1145,7 +1423,7 @@ header .has-base-subtle-background-color a {
 	color: inherit;
 	text-decoration: none;
 	text-underline-offset: 3px;
-	transition: color 0.15s ease;
+	transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 header .learnschool-utility-bar a:hover,
@@ -1158,9 +1436,33 @@ header .has-base-subtle-background-color a:focus-visible {
 
 header .learnschool-utility-bar a:focus-visible,
 header .has-base-subtle-background-color a:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary, #704fe6);
-	outline-offset: 2px;
-	border-radius: 4px;
+	outline: none;
+	border-radius: 6px;
+	box-shadow: 0 0 0 1.5px rgba(112, 79, 230, 0.7),
+		0 0 0 4px rgba(112, 79, 230, 0.14);
+}
+
+/* Chunk utility text links cleanly apart from social icons and meet 24px+ target size */
+header .learnschool-utility-bar .wp-block-social-links,
+header .has-base-subtle-background-color .wp-block-social-links {
+	padding-inline-start: 12px;
+	border-inline-start: 1px solid var(--wp--preset--color--border, #e2e8f0);
+}
+
+header .learnschool-utility-bar .wp-block-social-links .wp-block-social-link a,
+header .has-base-subtle-background-color .wp-block-social-links .wp-block-social-link a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 9999px;
+}
+
+header .learnschool-utility-bar .wp-block-social-links .wp-block-social-link a:hover,
+header .has-base-subtle-background-color .wp-block-social-links .wp-block-social-link a:hover {
+	background-color: rgba(112, 79, 230, 0.08);
+	text-decoration: none;
 }
 
 header .learnschool-utility-bar__portal a {
@@ -1170,13 +1472,13 @@ header .learnschool-utility-bar__portal a {
 
 @media (max-width: 768px) {
 
-	/* Utility top bar: keep full-width alignment and compact padding */
+	/* Utility top bar: keep full-width alignment and compact padding on tablets */
 	header .has-base-subtle-background-color,
 	aside.wp-block-group.has-primary-background-color {
 		padding-inline: var(--wp--preset--spacing--step-3, 16px);
 	}
 
-	/* In two-row header utility bar: hide operating hours & staff directory on mobile (both remain in mobile drawer footer) */
+	/* In two-row header utility bar: hide secondary hours, directory & social icons on tablet */
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:first-child p:nth-child(2),
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child p:nth-child(2),
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child .wp-block-social-links {
@@ -1192,5 +1494,14 @@ header .learnschool-utility-bar__portal a {
 	aside.wp-block-group.has-primary-background-color:has(.wp-block-social-links) .wp-block-group.alignwide > p:nth-child(2) {
 		text-align: center;
 		width: 100%;
+	}
+}
+
+@media (max-width: 640px) {
+
+	/* Hide utility strip on mobile phones; utility links remain neatly organized inside the drawer */
+	header .learnschool-utility-bar,
+	header > .wp-block-group > .has-base-subtle-background-color {
+		display: none;
 	}
 }

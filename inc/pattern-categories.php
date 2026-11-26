@@ -12,6 +12,7 @@
  *   learnschool/faq            FAQ (frequently asked questions, expandable accordions)
  *   learnschool/features       Features (program pillars, highlights)
  *   learnschool/hero           Hero (entrance banners and campus introductions)
+ *   learnschool/pages          Pages (complete full-page starter layouts)
  *   learnschool/team           Faculty & Staff (educator profiles, teacher grids, leadership bios)
  *   learnschool/testimonial    Testimonials (parent reviews, ratings, leadership quotes)
  *
@@ -60,6 +61,11 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 			'learnschool/hero'           => array(
 				'label'       => _x( 'Hero', 'Block pattern category', 'learnschool' ),
 				'description' => __( 'Full-width hero and banner sections for the top of pages.', 'learnschool' ),
+			),
+
+			'learnschool/pages'          => array(
+				'label'       => _x( 'Pages', 'Block pattern category', 'learnschool' ),
+				'description' => __( 'Complete starter layouts for school home, about, programs, admissions, and contact pages.', 'learnschool' ),
 			),
 
 			'learnschool/team'           => array(

@@ -34,8 +34,8 @@ if ( '' === $learnschool_privacy_url ) {
 ?>
 <!-- wp:group {"align":"full","className":"learnschool-footer-studio","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","textColor":"contrast","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull learnschool-footer-studio has-contrast-color has-base-background-color has-text-color has-background" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"34%"} -->
-<div class="wp-block-column" style="flex-basis:34%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"30%"} -->
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":36,"shouldSyncIcon":false} /-->
 
 <!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
@@ -114,12 +114,14 @@ if ( '' === $learnschool_privacy_url ) {
 <!-- /wp:list --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"18%"} -->
-<div class="wp-block-column" style="flex-basis:18%"><!-- wp:social-links {"iconColor":"primary","size":"has-normal-icon-size","className":"is-style-logos-only learnschool-footer-social","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color is-style-logos-only learnschool-footer-social">
+<!-- wp:column {"width":"22%"} -->
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:social-links {"iconColor":"base","iconBackgroundColor":"primary","size":"has-normal-icon-size","className":"is-style-default learnschool-footer-social","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-2","left":"var:preset|spacing|step-2"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right"}} -->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color is-style-default learnschool-footer-social">
 <!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
 <!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
 <!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
+<!-- wp:social-link {"url":"https://linkedin.com","service":"linkedin"} /-->
+<!-- wp:social-link {"url":"https://whatsapp.com","service":"whatsapp"} /-->
 </ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:column --></div>

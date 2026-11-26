@@ -187,4 +187,37 @@
 			} );
 		},
 	} );
+
+	/**
+	 * 5. Post Date Editor Preview Fallback
+	 * Avoids "Invalid date" when core/post-date renders outside a post context
+	 * (e.g. standalone template parts or pattern previews bound to core/post-data).
+	 */
+	if ( wp.hooks && wp.hooks.addFilter ) {
+		const fallbackIsoDate = new Date().toISOString();
+
+		wp.hooks.addFilter(
+			'editor.BlockEdit',
+			'learnschool/post-date-preview-fallback',
+			function ( BlockEdit ) {
+				return function LearnSchoolPostDatePreview( props ) {
+					if (
+						props.name === 'core/post-date' &&
+						props.attributes &&
+						typeof props.attributes.datetime === 'string' &&
+						Number.isNaN( Date.parse( props.attributes.datetime ) )
+					) {
+						const nextProps = Object.assign( {}, props, {
+							attributes: Object.assign( {}, props.attributes, {
+								datetime: fallbackIsoDate,
+							} ),
+						} );
+						return createElement( BlockEdit, nextProps );
+					}
+
+					return createElement( BlockEdit, props );
+				};
+			}
+		);
+	}
 } )( window.wp );

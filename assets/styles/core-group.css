@@ -580,14 +580,27 @@ main.alignfull + .wp-block-template-part {
 	gap: 12px;
 }
 
+/* Premium solid-filled social icons — white SVG on brand-purple circle */
 .learnschool-footer-social .wp-block-social-link {
-	border: 1.5px solid var(--wp--preset--color--primary-light, #dec8fe);
+	border: none;
 	border-radius: 9999px;
-	padding: 6px;
-	transition: border-color 0.2s ease, background-color 0.2s ease;
+	padding: 2px;
+	box-shadow: 0 2px 10px rgba(112, 79, 230, 0.22);
+	transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.22s ease;
+	will-change: transform;
+}
+
+.learnschool-footer-social .wp-block-social-link a {
+	border-radius: 9999px;
 }
 
 .learnschool-footer-social .wp-block-social-link:hover {
-	border-color: var(--wp--preset--color--primary, #704fe6);
-	background-color: rgba(112, 79, 230, 0.06);
+	transform: translateY(-3px) scale(1.08);
+	box-shadow: 0 8px 22px rgba(112, 79, 230, 0.38);
+}
+
+.learnschool-footer-social .wp-block-social-link:active {
+	transform: translateY(-1px) scale(1.03);
+	box-shadow: 0 4px 12px rgba(112, 79, 230, 0.28);
 }

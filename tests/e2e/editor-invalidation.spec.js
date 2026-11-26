@@ -40,8 +40,8 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		expect( await blockRecoveryWarnings.count() ).toBe( 0 );
 	} );
 
-	test( 'Site Editor template parts (Comments, Header, Footer) load with zero block recovery warnings', async ( { page } ) => {
-		const parts = [ 'comments', 'header', 'footer' ];
+	test( 'Site Editor template parts (Comments, Header, Footer, Post Meta) load with zero block recovery warnings', async ( { page } ) => {
+		const parts = [ 'comments', 'header', 'footer', 'post-meta' ];
 
 		for ( const part of parts ) {
 			await page.goto(
@@ -61,6 +61,18 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 					warnings,
 					`Block recovery warning detected in template part "${ part }" (frame: ${ frame.url() })`
 				).toBe( 0 );
+
+				if ( part === 'post-meta' ) {
+					const invalidDates = await frame
+						.locator( '.wp-block-post-date' )
+						.filter( { hasText: 'Invalid date' } )
+						.count()
+						.catch( () => 0 );
+					expect(
+						invalidDates,
+						'Post Date rendered "Invalid date" inside post-meta template part'
+					).toBe( 0 );
+				}
 			}
 		}
 	} );
