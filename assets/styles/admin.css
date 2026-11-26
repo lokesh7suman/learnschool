@@ -157,7 +157,7 @@
 
 .learnschool-admin-tips ul {
 	margin: 0;
-	padding-left: 18px;
+	padding-inline-start: 18px;
 	list-style: disc;
 	color: #50575e;
 }
@@ -284,4 +284,42 @@
 .learnschool-admin-status--active {
 	background: #dcfce7;
 	color: #166534;
+}
+
+.learnschool-admin-plugin-card__note {
+	margin: 8px 0 0;
+	font-size: 12.5px;
+	color: #50575e;
+}
+
+.learnschool-plugin-error {
+	margin: 8px 0 0;
+	font-size: 12.5px;
+	color: #b32d2e;
+}
+
+.learnschool-plugin-action.is-busy {
+	pointer-events: none;
+	opacity: 0.78;
+}
+
+@media screen and (max-width: 600px) {
+
+	.learnschool-admin-wrap {
+		margin-inline-end: 12px;
+	}
+
+	.learnschool-admin-hero,
+	.learnschool-admin-plugins,
+	.learnschool-admin-tips {
+		padding: 18px;
+	}
+
+	.learnschool-admin-plugin-card__body {
+		flex-basis: 100%;
+	}
+
+	.learnschool-admin-plugin-card__actions {
+		width: 100%;
+	}
 }

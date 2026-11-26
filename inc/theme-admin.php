@@ -61,6 +61,9 @@ if ( ! function_exists( 'learnschool_admin_assets' ) ) :
 
 		add_thickbox();
 		wp_enqueue_script( 'plugin-install' );
+		if ( function_exists( 'learnschool_enqueue_plugin_actions_script' ) ) {
+			learnschool_enqueue_plugin_actions_script();
+		}
 	}
 endif;
 add_action( 'admin_enqueue_scripts', 'learnschool_admin_assets' );
@@ -191,7 +194,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 							? 'button button-secondary thickbox open-plugin-details-modal'
 							: 'button button-secondary';
 						?>
-					<div class="learnschool-admin-plugin-card">
+					<div class="learnschool-admin-plugin-card" data-active-status="<?php echo esc_attr__( 'Active', 'learnschool' ); ?>">
 						<div class="learnschool-admin-plugin-card__icon" aria-hidden="true">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
 						</div>
@@ -210,10 +213,27 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 								<span><?php echo esc_html( (string) $learnschool_plugin['badge'] ); ?></span>
 							</div>
 							<?php endif; ?>
+							<?php if ( ! empty( $learnschool_action['file_mods_blocked'] ) ) : ?>
+							<p class="learnschool-admin-plugin-card__note">
+								<?php echo esc_html__( 'Automatic plugin installation is disabled in this environment. Install manually or ask your site administrator.', 'learnschool' ); ?>
+							</p>
+							<?php endif; ?>
+							<p class="learnschool-plugin-error" role="alert" hidden></p>
 						</div>
 						<div class="learnschool-admin-plugin-card__actions">
 							<?php if ( '' !== $learnschool_action['primary_url'] ) : ?>
-							<a class="button <?php echo 'active' === $learnschool_action['status'] ? 'button-secondary' : 'button-primary'; ?>" href="<?php echo esc_url( $learnschool_action['primary_url'] ); ?>">
+							<a
+								class="button <?php echo 'active' === $learnschool_action['status'] ? 'button-secondary' : 'button-primary'; ?> learnschool-plugin-action"
+								href="<?php echo esc_url( $learnschool_action['primary_url'] ); ?>"
+								<?php if ( 'active' !== $learnschool_action['status'] ) : ?>
+								data-plugin-slug="<?php echo esc_attr( $learnschool_action['slug'] ); ?>"
+								data-plugin-basename="<?php echo esc_attr( $learnschool_action['basename'] ); ?>"
+								data-plugin-state="<?php echo esc_attr( $learnschool_action['status'] ); ?>"
+								data-loading-label="<?php echo esc_attr( $learnschool_action['loading_label'] ); ?>"
+								data-active-label="<?php echo esc_attr__( 'Manage Plugins', 'learnschool' ); ?>"
+								data-plugins-url="<?php echo esc_url( self_admin_url( 'plugins.php' ) ); ?>"
+								<?php endif; ?>
+							>
 								<?php echo esc_html( $learnschool_action['primary_label'] ); ?>
 							</a>
 							<?php endif; ?>
