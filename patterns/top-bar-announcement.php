@@ -6,10 +6,10 @@
  * Keywords: top bar, announcement, social, alert, notice
  * Description: High-visibility top bar featuring a centered seasonal announcement flanked by school operating hours and social profile links.
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

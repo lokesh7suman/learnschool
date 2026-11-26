@@ -5,10 +5,10 @@
  * Categories: learnschool/hero
  * Description: Clean split hero layout with joyful discovery illustration, display typography, handwriting highlights, and dual call-to-action buttons.
  * Keywords: hero, banner, tour, admissions, preschool, kindergarten, illustration
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"aspectRatio":"75/56","scale":"contain","sizeSlug":"full","linkDestination":"none","align":"center"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/kids-discovery-art.png' ) ); ?>" alt="<?php echo esc_attr__( 'Joyful early learning discovery illustration with school kids, building blocks, and books', 'learnschool' ); ?>" style="aspect-ratio:75/56;object-fit:contain"/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/illustrations/kids-discovery-art.png' ) ); ?>" alt="<?php echo esc_attr__( 'Joyful early learning discovery illustration with school kids, building blocks, and books', 'learnschool' ); ?>" style="aspect-ratio:75/56;object-fit:contain"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></section>

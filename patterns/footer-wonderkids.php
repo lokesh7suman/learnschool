@@ -32,8 +32,8 @@ if ( '' === $learnschool_privacy_url ) {
 	$learnschool_privacy_url = home_url( '/' );
 }
 ?>
-<!-- wp:group {"align":"full","className":"learnschool-footer-studio","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","textColor":"contrast","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull learnschool-footer-studio has-contrast-color has-base-background-color has-text-color has-background" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
+<!-- wp:group {"align":"full","style":{"border":{"top":{"color":"var:preset|color|border","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","textColor":"contrast","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-contrast-color has-base-background-color has-text-color has-background" style="border-top-color:var(--wp--preset--color--border);border-top-width:1px;padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"30%"} -->
 <div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":36,"shouldSyncIcon":false} /-->
@@ -47,9 +47,9 @@ if ( '' === $learnschool_privacy_url ) {
 
 <!-- wp:html -->
 <div class="learnschool-footer-doodles" aria-hidden="true">
-	<img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/doodles/sections/sunburst-yellow.svg' ) ); ?>" alt="" width="34" height="34" />
-	<img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/doodles/hero/concentric-circles.svg' ) ); ?>" alt="" width="34" height="34" />
-	<img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/doodles/sections/card-scribble.svg' ) ); ?>" alt="" width="56" height="34" />
+	<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/sections/sunburst-yellow.svg' ) ); ?>" alt="" width="34" height="34" />
+	<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/hero/concentric-circles.svg' ) ); ?>" alt="" width="34" height="34" />
+	<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/doodles/sections/card-scribble.svg' ) ); ?>" alt="" width="56" height="34" />
 </div>
 <!-- /wp:html --></div>
 <!-- /wp:column -->

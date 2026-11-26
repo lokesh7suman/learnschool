@@ -140,14 +140,6 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			)
 		);
 
-		register_block_style(
-			'core/details',
-			array(
-				'name'  => 'learnschool-accordion',
-				'label' => esc_html__( 'Accordion Card', 'learnschool' ),
-			)
-		);
-
 		// ── Separator style variations ────────────────────────────────────────
 		register_block_style(
 			'core/separator',

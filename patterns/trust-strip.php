@@ -6,10 +6,10 @@
  * Description: 4-item credential bar highlighting keypad security, background checks, organic kitchen, and state licensing.
  * Keywords: trust, safety, licensing, credentials, security, preschool
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

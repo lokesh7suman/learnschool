@@ -91,7 +91,7 @@
 	box-sizing: border-box;
 	padding: 8px 18px;
 	border-radius: 9999px;
-	background-color: #f3eefc;
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
 	color: var(--wp--preset--color--primary);
 	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	font-weight: 600;
@@ -155,4 +155,22 @@
 	background-color: var(--wp--preset--color--primary-dark);
 	transform: translateY(-2px);
 	box-shadow: 0 4px 14px rgba(112, 79, 230, 0.25);
+}
+
+.wp-block-comments .wp-block-comment-template > li.bypostauthor {
+	border-color: var(--wp--preset--color--primary-light);
+	background-color: var(--wp--preset--color--base-subtle, #f8f9fa);
+}
+
+.wp-block-comments .wp-block-comment-template ol {
+	list-style: none;
+	margin-top: 20px;
+	padding-left: var(--wp--preset--spacing--step-4, 24px);
+}
+
+@media (max-width: 600px) {
+
+	.wp-block-comments .wp-block-comment-template ol {
+		padding-left: var(--wp--preset--spacing--step-3, 16px);
+	}
 }

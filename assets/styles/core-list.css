@@ -90,16 +90,12 @@ ol.is-style-learnschool-clean-list a:hover {
 }
 
 .has-midnight-background-color ul.is-style-learnschool-clean-list a,
-.has-midnight-background-color ol.is-style-learnschool-clean-list a,
-.is-style-learnschool-midnight ul.is-style-learnschool-clean-list a,
-.is-style-learnschool-midnight ol.is-style-learnschool-clean-list a {
+.has-midnight-background-color ol.is-style-learnschool-clean-list a {
 	color: rgba(255, 255, 255, 0.82);
 }
 
 .has-midnight-background-color ul.is-style-learnschool-clean-list a:hover,
-.has-midnight-background-color ol.is-style-learnschool-clean-list a:hover,
-.is-style-learnschool-midnight ul.is-style-learnschool-clean-list a:hover,
-.is-style-learnschool-midnight ol.is-style-learnschool-clean-list a:hover {
+.has-midnight-background-color ol.is-style-learnschool-clean-list a:hover {
 	color: var(--wp--preset--color--secondary, #ffbe17);
 }
 

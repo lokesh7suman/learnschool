@@ -28,7 +28,6 @@ phpunit.xml*
 playwright.config.js
 artifacts/
 tests/
-patterns-backup/
 
 # Local development
 .nvmrc

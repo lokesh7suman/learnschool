@@ -49,12 +49,12 @@ if ( ! function_exists( 'learnschool_admin_assets' ) ) :
 
 		$theme_version = wp_get_theme()->get( 'Version' );
 		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG
-			? (string) filemtime( get_template_directory() . '/assets/styles/admin.css' )
+			? (string) filemtime( get_theme_file_path( 'assets/styles/admin.css' ) )
 			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
 
 		wp_enqueue_style(
 			'learnschool-admin',
-			get_template_directory_uri() . '/assets/styles/admin.css',
+			get_theme_file_uri( 'assets/styles/admin.css' ),
 			array(),
 			$version
 		);
@@ -81,7 +81,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 		);
 		$header_url      = add_query_arg(
 			array(
-				'postId'   => 'learnschool//header',
+				'postId'   => get_stylesheet() . '//header',
 				'postType' => 'wp_template_part',
 				'canvas'   => 'edit',
 			),
@@ -94,7 +94,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 				<div class="learnschool-admin-hero__identity">
 					<img
 						class="learnschool-admin-hero__logo"
-						src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/site-logo.png' ) ); ?>"
+						src="<?php echo esc_url( get_theme_file_uri( 'assets/images/site-logo.png' ) ); ?>"
 						alt="<?php echo esc_attr__( 'LearnSchool logo', 'learnschool' ); ?>"
 						width="56"
 						height="56"
@@ -155,7 +155,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 				<div class="learnschool-admin-card">
 					<span class="learnschool-admin-step">4</span>
 					<h2><?php echo esc_html__( 'Create School Pages in One Click', 'learnschool' ); ?></h2>
-					<p><?php echo esc_html__( 'Add a new page and choose from full-page starter layouts (Home, About Us, Programs, Admissions, Tuition, Blog, Contact) in the pattern picker.', 'learnschool' ); ?></p>
+					<p><?php echo esc_html__( 'Add a new page and choose from 6 full-page starter layouts (Home, About Us, Programs, Admissions, Blog, Contact) in the pattern picker.', 'learnschool' ); ?></p>
 					<a class="button button-primary" href="<?php echo esc_url( $new_page_url ); ?>">
 						<?php echo esc_html__( 'Create New Page', 'learnschool' ); ?>
 					</a>
@@ -178,7 +178,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 					<div>
 						<h3><?php echo esc_html__( 'Pattern Building Blocks', 'learnschool' ); ?></h3>
 						<ul>
-							<li><strong><?php echo esc_html__( 'Pages', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full-page starters for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Pages', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full-page starters for Home, About Us, Programs, Admissions, Blog, and Contact.', 'learnschool' ); ?></li>
 							<li><strong><?php echo esc_html__( 'Hero, Features & Faculty', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Mix-and-match classroom sections, campus gallery, teacher grids, and curriculum highlights.', 'learnschool' ); ?></li>
 							<li><strong><?php echo esc_html__( 'Admissions, Tuition & FAQ', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Enrollment roadmaps, tuition comparisons, open house cards, and zero-JS accordion FAQs.', 'learnschool' ); ?></li>
 							<li><strong><?php echo esc_html__( 'Posts, Headers & Footers', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Query grids/lists, author box, single/two-row headers, and multi-column footer variations.', 'learnschool' ); ?></li>

@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"medium","style":{"typography":{"fontWeight":"700"}}} -->
-<p class="has-medium-font-size" style="font-weight:700"><a href="tel:5550192834"><?php echo esc_html__( '(555) 019-2834', 'learnschool' ); ?></a></p>
+<p class="has-medium-font-size" style="font-weight:700"><a href="<?php echo esc_url( 'tel:5550192834' ); ?>"><?php echo esc_html__( '(555) 019-2834', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->

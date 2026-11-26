@@ -6,10 +6,10 @@
  * Description: Three age-tiered early education program pillars with curriculum highlights, age badges, and enrollment CTAs.
  * Keywords: programs, pillars, toddler, preschool, kindergarten, curriculum, admissions
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

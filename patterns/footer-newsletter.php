@@ -7,10 +7,10 @@
  * Keywords: footer, newsletter, sitemap, legal, columns, mega-footer
  * Description: Four-column footer featuring newsletter signup, categorized sitemaps, social links, and bottom legal bar.
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
-<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '100 Academy Way, Cambridge, MA', 'learnschool' ); ?><br><a href="tel:5552345678" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Phone: (555) 234-5678', 'learnschool' ); ?></a><br><a href="mailto:info@learnschool.edu" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Email: info@learnschool.edu', 'learnschool' ); ?></a></p>
+<p class="has-contrast-subtle-color has-text-color has-small-font-size"><?php echo esc_html__( '100 Academy Way, Cambridge, MA', 'learnschool' ); ?><br><a href="<?php echo esc_url( 'tel:5552345678' ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Phone: (555) 234-5678', 'learnschool' ); ?></a><br><a href="<?php echo esc_url( 'mailto:info@learnschool.edu' ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html__( 'Email: info@learnschool.edu', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

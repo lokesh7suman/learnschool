@@ -11,7 +11,7 @@
 .wp-block-quote {
 	position: relative;
 	border-left: 4px solid var(--wp--preset--color--primary);
-	background: #fbf9ff;
+	background: var(--wp--preset--color--base-subtle, #f8f9fa);
 	padding: 22px 30px;
 	margin: 28px 0;
 	box-shadow: 0 4px 16px rgba(112, 79, 230, 0.04);
@@ -20,7 +20,7 @@
 .wp-block-quote p {
 	font-size: var(--wp--preset--font-size--medium, 1.125rem);
 	line-height: 1.7;
-	color: #1e293b;
+	color: var(--wp--preset--color--contrast, #121212);
 	margin: 0 0 8px;
 }
 
@@ -48,7 +48,7 @@
 .wp-block-pullquote {
 	border: 2px solid var(--wp--preset--color--accent);
 	border-radius: 28px;
-	background: #fffdf5;
+	background: var(--wp--preset--color--base-subtle, #f8f9fa);
 	padding: 36px 40px;
 	margin: 36px 0;
 	text-align: center;

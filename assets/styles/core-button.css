@@ -8,8 +8,7 @@
 
 /* Shared Action Button Geometry (Pill & Outline) */
 .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-.wp-block-button.is-style-outline-purple .wp-block-button__link {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -30,8 +29,7 @@
 
 /* Shared Arrow Badge */
 .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
-.wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link::after {
 	content: "\2197";
 	display: inline-flex;
 	align-items: center;
@@ -47,8 +45,7 @@
 }
 
 .wp-block-button.is-style-learnschool-pill .wp-block-button__link:hover::after,
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after,
-.wp-block-button.is-style-outline-purple .wp-block-button__link:hover::after {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after {
 	transform: translate(2px, -2px);
 }
 
@@ -77,29 +74,25 @@
 }
 
 /* Outline Purple Pill Button Variant */
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-.wp-block-button.is-style-outline-purple .wp-block-button__link {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 	background-color: transparent;
 	color: var(--wp--preset--color--primary, #704fe6);
 	border-color: var(--wp--preset--color--primary, #704fe6);
 }
 
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline-purple .wp-block-button__link:hover {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--primary, #704fe6);
 	color: var(--wp--preset--color--base, #fff);
 	border-color: var(--wp--preset--color--primary, #704fe6);
 	transform: translateY(-2px);
 }
 
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
-.wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link::after {
 	background-color: color-mix(in srgb, var(--wp--preset--color--primary, #704fe6) 10%, transparent);
 	color: var(--wp--preset--color--primary, #704fe6);
 }
 
-.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after,
-.wp-block-button.is-style-outline-purple .wp-block-button__link:hover::after {
+.wp-block-button.is-style-learnschool-outline .wp-block-button__link:hover::after {
 	background-color: var(--wp--preset--color--base, #fff);
 	color: var(--wp--preset--color--primary, #704fe6);
 }
@@ -208,8 +201,7 @@
 
 /* Yellow Button Style */
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link,
-.is-style-learnschool-yellow .wp-block-button__link,
-.is-style-yellow-pill .wp-block-button__link {
+.is-style-learnschool-yellow .wp-block-button__link {
 	background-color: var(--wp--preset--color--secondary, #ffbe17);
 	color: var(--wp--preset--color--contrast, #121028);
 	font-family: var(--wp--preset--font-family--quicksand), sans-serif;
@@ -229,8 +221,7 @@
 }
 
 .wp-block-button.is-style-learnschool-yellow .wp-block-button__link:hover,
-.is-style-learnschool-yellow .wp-block-button__link:hover,
-.is-style-yellow-pill .wp-block-button__link:hover {
+.is-style-learnschool-yellow .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--secondary-dark, #d97706);
 	transform: translateY(-2px);
 	box-shadow: 0 8px 24px color-mix(in srgb, var(--wp--preset--color--secondary-dark, #d97706) 45%, transparent);
@@ -339,4 +330,9 @@
 		min-height: 40px;
 		height: auto;
 	}
+}
+
+.wp-block-button .wp-block-button__link:focus-visible {
+	outline: 3px solid var(--wp--preset--color--primary-dark, #5837c7);
+	outline-offset: 3px;
 }

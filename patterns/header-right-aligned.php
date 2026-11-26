@@ -5,11 +5,11 @@
  * Categories: header
  * Block Types: core/template-part/header
  * Description: Clean header with site logo and title on the left, primary navigation aligned to the right, and call-to-action button.
- * Keywords: header, navigation, logo, menu, clean, right-aligned, school, academics, shadcn
+ * Keywords: header, navigation, logo, menu, clean, right-aligned, school, academics, modern
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

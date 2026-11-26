@@ -42,6 +42,11 @@
 	header > .wp-block-group > .wp-block-group.has-base-background-color > .wp-block-group.alignwide:has(> .wp-block-navigation) > .learnschool-header-actions {
 		justify-self: end;
 	}
+
+	header .learnschool-header-main > .wp-block-group.alignwide > .wp-block-group:has(> .learnschool-header-actions),
+	header > .wp-block-group > .wp-block-group.has-base-background-color > .wp-block-group.alignwide > .wp-block-group:has(> .learnschool-header-actions) {
+		flex-shrink: 0;
+	}
 }
 
 /* Navigation link styling and horizontal layout stability */
@@ -115,14 +120,12 @@
 /* Active Page Indicator (single subtle lilac pill — zero duplicate underline) */
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item,
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.is-current,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item:has(> .wp-block-navigation-item__content[aria-current="page"]),
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-ancestor,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-parent,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current_page_ancestor,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item,
-.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.is-current,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item:has(> .wp-block-navigation-item__content[aria-current="page"]),
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-ancestor,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-parent,
@@ -133,14 +136,12 @@
 
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content,
-.wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item.is-current > .wp-block-navigation-item__content,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content[aria-current="page"],
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-ancestor > .wp-block-navigation-item__content,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current-menu-parent > .wp-block-navigation-item__content,
 .wp-block-navigation:not(.is-responsive) .wp-block-navigation__container > .current_page_ancestor > .wp-block-navigation-item__content,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current-menu-item > .wp-block-navigation-item__content,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.current_page_item > .wp-block-navigation-item__content,
-.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item.is-current > .wp-block-navigation-item__content,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content[aria-current="page"],
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-ancestor > .wp-block-navigation-item__content,
 .wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container > .current-menu-parent > .wp-block-navigation-item__content,
@@ -522,7 +523,7 @@
 }
 
 .wp-block-navigation__responsive-container-open:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary);
+	outline: 3px solid var(--wp--preset--color--primary-dark, #5837c7);
 	outline-offset: 2px;
 }
 
@@ -958,8 +959,7 @@
 /* Match or exceed core-button.css variant specificity so header CTA locks at 40px rhythm */
 .learnschool-header-actions .wp-block-button .wp-block-button__link,
 .learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 	min-height: 40px;
 	height: 40px;
 	padding: 0 8px 0 18px;
@@ -979,8 +979,7 @@
 
 .learnschool-header-actions .wp-block-button .wp-block-button__link:active,
 .learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link:active,
-.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link:active,
-.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link:active {
+.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link:active {
 	transform: scale(0.97);
 }
 
@@ -995,8 +994,7 @@
 
 .learnschool-header-actions .wp-block-button .wp-block-button__link::after,
 .learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
-.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
-.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after {
 	width: 24px;
 	height: 24px;
 	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
@@ -1007,8 +1005,7 @@
 
 	.learnschool-header-actions .wp-block-button .wp-block-button__link,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 		padding: 0 14px;
 		gap: 0;
 		font-size: 0.8125rem;
@@ -1016,8 +1013,7 @@
 
 	.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after {
 		display: none;
 	}
 }
@@ -1054,7 +1050,6 @@ aside.wp-block-group p a:focus-visible {
 /* Universal keyboard focus indicator (WCAG 2.2 AA soft lilac halo) */
 .wp-block-navigation a.wp-block-navigation-item__content:focus-visible,
 .wp-block-navigation button.wp-block-navigation-submenu__toggle:focus-visible,
-.wp-block-navigation .wp-block-navigation__responsive-container-close:focus-visible,
 .wp-block-social-links .wp-block-social-link a:focus-visible {
 	outline: none;
 	background-color: #f3eefc;
@@ -1063,11 +1058,17 @@ aside.wp-block-group p a:focus-visible {
 		0 0 0 4px rgba(112, 79, 230, 0.14);
 }
 
-.learnschool-header-actions .wp-block-button__link:focus-visible {
-	outline: none;
-	box-shadow: 0 0 0 2px var(--wp--preset--color--base, #fff),
-		0 0 0 4px var(--wp--preset--color--primary, #704fe6),
-		0 0 0 7px rgba(112, 79, 230, 0.16);
+.wp-block-navigation .wp-block-navigation__responsive-container-close:focus-visible {
+	outline: 3px solid var(--wp--preset--color--primary-dark, #5837c7);
+	outline-offset: 2px;
+	background-color: #f3eefc;
+	color: var(--wp--preset--color--primary-dark, #5837c7);
+}
+
+.learnschool-header-actions .wp-block-button__link:focus-visible,
+.learnschool-header-actions .wp-block-button .wp-block-button__link:focus-visible {
+	outline: 3px solid var(--wp--preset--color--primary-dark, #5837c7);
+	outline-offset: 3px;
 }
 
 .wp-block-social-links .wp-block-social-link a:focus-visible {
@@ -1193,8 +1194,7 @@ aside.wp-block-group p a:focus-visible {
 	/* Header action button: 44px minimum height for coarse touch */
 	.learnschool-header-actions .wp-block-button .wp-block-button__link,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 		min-height: 44px;
 		height: 44px;
 		padding: 0 9px 0 18px;
@@ -1202,8 +1202,7 @@ aside.wp-block-group p a:focus-visible {
 
 	.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after {
 		width: 26px;
 		height: 26px;
 	}
@@ -1226,7 +1225,6 @@ aside.wp-block-group p a:focus-visible {
 	}
 
 	/* Social links in top bar on touch */
-	header .wp-block-social-links.has-small-icon-size .wp-block-social-link a,
 	aside.wp-block-group .wp-block-social-links.has-small-icon-size .wp-block-social-link a {
 		min-width: 44px;
 		min-height: 44px;
@@ -1240,8 +1238,7 @@ aside.wp-block-group p a:focus-visible {
 
 	.learnschool-header-actions .wp-block-button .wp-block-button__link,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 		padding: 0 16px;
 	}
 }
@@ -1262,8 +1259,7 @@ aside.wp-block-group p a:focus-visible {
 
 	.learnschool-header-actions .wp-block-button .wp-block-button__link,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 		min-height: 40px;
 		height: 40px;
 		padding: 0 8px 0 18px;
@@ -1271,8 +1267,7 @@ aside.wp-block-group p a:focus-visible {
 
 	.learnschool-header-actions .wp-block-button .wp-block-button__link::after,
 	.learnschool-header-actions .wp-block-button.is-style-learnschool-pill .wp-block-button__link::after,
-	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after,
-	.learnschool-header-actions .wp-block-button.is-style-outline-purple .wp-block-button__link::after {
+	.learnschool-header-actions .wp-block-button.is-style-learnschool-outline .wp-block-button__link::after {
 		width: 24px;
 		height: 24px;
 	}
@@ -1327,29 +1322,6 @@ header .has-base-subtle-background-color a:focus-visible {
 		0 0 0 4px rgba(112, 79, 230, 0.14);
 }
 
-/* Chunk utility text links cleanly apart from social icons and meet 24px+ target size */
-header .learnschool-utility-bar .wp-block-social-links,
-header .has-base-subtle-background-color .wp-block-social-links {
-	padding-inline-start: 12px;
-	border-inline-start: 1px solid var(--wp--preset--color--border, #e2e8f0);
-}
-
-header .learnschool-utility-bar .wp-block-social-links .wp-block-social-link a,
-header .has-base-subtle-background-color .wp-block-social-links .wp-block-social-link a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 28px;
-	height: 28px;
-	border-radius: 9999px;
-}
-
-header .learnschool-utility-bar .wp-block-social-links .wp-block-social-link a:hover,
-header .has-base-subtle-background-color .wp-block-social-links .wp-block-social-link a:hover {
-	background-color: rgba(112, 79, 230, 0.08);
-	text-decoration: none;
-}
-
 header .learnschool-utility-bar__portal a {
 	color: var(--wp--preset--color--contrast, #121212);
 	font-weight: 600;
@@ -1363,15 +1335,13 @@ header .learnschool-utility-bar__portal a {
 		padding-inline: var(--wp--preset--spacing--step-3, 16px);
 	}
 
-	/* In two-row header utility bar: hide secondary hours, directory & social icons on tablet */
+	/* In two-row header utility bar: hide secondary hours & directory on tablet */
 	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:first-child p:nth-child(2),
-	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child p:nth-child(2),
-	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child .wp-block-social-links {
+	header .has-base-subtle-background-color .wp-block-group.alignwide > .wp-block-group:last-child p:nth-child(2) {
 		display: none;
 	}
 
-	/* In announcement top bar: hide clock/hours and social links; keep announcement bold and centered */
-	aside.wp-block-group.has-primary-background-color:has(.wp-block-social-links) .wp-block-group.alignwide > p:first-child,
+	/* In announcement top bar: hide social links; keep announcement bold and centered */
 	aside.wp-block-group.has-primary-background-color:has(.wp-block-social-links) .wp-block-group.alignwide > .wp-block-social-links {
 		display: none;
 	}

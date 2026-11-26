@@ -7,10 +7,10 @@
  * Keywords: header, two-row, utility, top-bar, contact, portals, navigation, school, academics
  * Description: Two-tier header featuring a top utility contact strip above the primary multi-level navigation bar.
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group alignfull learnschool-utility-bar has-contrast-subtle-color has-base-subtle-background-color has-text-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--step-1);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-1);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="tel:5550192834" style="white-space:nowrap"><?php echo esc_html__( 'Call: (555) 019-2834', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size"><a href="<?php echo esc_url( 'tel:5550192834' ); ?>" style="white-space:nowrap"><?php echo esc_html__( 'Call: (555) 019-2834', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->

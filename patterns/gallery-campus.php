@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"54%"} -->
 <div class="wp-block-column" style="flex-basis:54%"><!-- wp:group {"className":"is-style-learnschool-card-arch","style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-4","left":"0","right":"0"}}},"backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card-arch has-base-subtle-background-color has-background" style="min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-4);padding-left:0"><!-- wp:image {"aspectRatio":"4/3","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/creative-classroom-art.png' ) ); ?>" alt="<?php echo esc_attr__( 'Sunlit creative arts and story studio with children exploring paints, crafts, and books', 'learnschool' ); ?>" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/illustrations/creative-classroom-art.png' ) ); ?>" alt="<?php echo esc_attr__( 'Sunlit creative arts and story studio with children exploring paints, crafts, and books', 'learnschool' ); ?>" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"0","left":"var:preset|spacing|step-5","right":"var:preset|spacing|step-5"},"blockGap":"var:preset|spacing|step-2"}},"layout":{"type":"constrained"}} -->
@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column" style="flex-basis:46%"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"blockGap":"var:preset|spacing|step-4"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="min-height:100%"><!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"24px"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|step-4","left":"0","right":"0"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card has-primary-light-background-color has-background" style="border-radius:24px;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--step-4);padding-left:0"><!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/kids-discovery-art.png' ) ); ?>" alt="<?php echo esc_attr__( 'Young students building wooden geometric blocks and exploring science kits together', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:cover"/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/illustrations/kids-discovery-art.png' ) ); ?>" alt="<?php echo esc_attr__( 'Young students building wooden geometric blocks and exploring science kits together', 'learnschool' ); ?>" style="aspect-ratio:16/9;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|step-3","bottom":"0","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"},"blockGap":"var:preset|spacing|step-1"}},"layout":{"type":"constrained"}} -->
@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group is-style-learnschool-card has-surface-background-color has-background" style="border-radius:24px;padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-3","left":"var:preset|spacing|step-4"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"38%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:38%"><!-- wp:image {"aspectRatio":"4/3","scale":"cover","sizeSlug":"medium","linkDestination":"none","className":"is-style-learnschool-arch learnschool-portrait-top"} -->
-<figure class="wp-block-image size-medium is-style-learnschool-arch learnschool-portrait-top"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/realistic-teacher-kristin.jpg' ) ); ?>" alt="<?php echo esc_attr__( 'Lead educator Kristin Watson mentoring small groups on campus', 'learnschool' ); ?>" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-medium is-style-learnschool-arch learnschool-portrait-top"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/illustrations/realistic-teacher-kristin.jpg' ) ); ?>" alt="<?php echo esc_attr__( 'Lead educator Kristin Watson mentoring small groups on campus', 'learnschool' ); ?>" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 

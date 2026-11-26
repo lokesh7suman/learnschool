@@ -6,10 +6,10 @@
  * Keywords: materials, reversed, split, books, curriculum
  * Description: Reversed two-column layout with a prominent visual showcase on the left and structured feature breakdown with bullet points and action button on the right.
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

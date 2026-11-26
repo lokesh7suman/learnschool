@@ -6,10 +6,10 @@
  * Inserter: true
  * Keywords: teachers, principal, leadership, faculty, team
  * Description: Asymmetrical layout featuring an expansive message and bio from the school principal on the left, paired with a 2x2 grid of key subject educators on the right.
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

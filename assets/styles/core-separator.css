@@ -23,7 +23,7 @@ hr {
 	max-width: 100%;
 }
 
-:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-separator.is-style-wide {
+.has-midnight-background-color .wp-block-separator.is-style-wide {
 	height: 2px;
 	opacity: 0.75;
 }

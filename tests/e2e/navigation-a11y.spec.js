@@ -91,6 +91,78 @@ test.describe( 'Interactive Navigation & Accessibility (a11y)', () => {
 		}
 	} );
 
+	test( 'Buttons display visible keyboard focus outline on Tab navigation', async ( { page } ) => {
+		await page.setViewportSize( { width: 1280, height: 800 } );
+		await page.goto( '/' );
+
+		const buttonSelectors = [
+			'.learnschool-header-actions .wp-block-button__link',
+			'main .wp-block-button.is-style-learnschool-pill .wp-block-button__link',
+			'main .wp-block-button.is-style-learnschool-outline .wp-block-button__link',
+			'main .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link',
+			'main .wp-block-button.is-style-learnschool-yellow .wp-block-button__link',
+		];
+
+		// Trigger keyboard modality first so :focus-visible activates on programmatic/sequential focus checks.
+		await page.keyboard.press( 'Tab' );
+
+		for ( const selector of buttonSelectors ) {
+			const button = page.locator( selector ).first();
+			await expect( button ).toBeAttached();
+			await button.focus();
+
+			const focusStyles = await button.evaluate( ( el ) => {
+				const styles = window.getComputedStyle( el );
+				return {
+					matchesFocusVisible: el.matches( ':focus-visible' ),
+					outlineStyle: styles.outlineStyle,
+					outlineWidth: parseFloat( styles.outlineWidth ),
+					outlineColor: styles.outlineColor,
+				};
+			} );
+
+			expect( focusStyles.matchesFocusVisible, `Expected ${ selector } to match :focus-visible` ).toBe( true );
+			expect( focusStyles.outlineStyle, `Expected ${ selector } to render a focus outline` ).not.toBe( 'none' );
+			expect( focusStyles.outlineWidth, `Expected ${ selector } outline width >= 2px` ).toBeGreaterThanOrEqual( 2 );
+		}
+	} );
+
+	test( 'Long site title wraps cleanly on mobile without collapsing logo or clipping header controls', async ( { page } ) => {
+		await page.setViewportSize( { width: 390, height: 844 } );
+		await page.goto( '/' );
+
+		const layout = await page.evaluate( () => {
+			document.querySelectorAll( '.wp-block-site-title a' ).forEach( ( anchor ) => {
+				anchor.innerHTML =
+					'<span class="learnschool-title-dark">Brightwood Early Learning </span>' +
+					'<span class="learnschool-title-accent">Academy</span>';
+			} );
+
+			const title = document.querySelector( 'header .wp-block-site-title' );
+			const logo = document.querySelector( 'header .wp-block-site-logo' );
+			const cta = document.querySelector( 'header .learnschool-header-actions' );
+			const hamburger = document.querySelector( 'header .wp-block-navigation__responsive-container-open' );
+			const titleStyles = title ? window.getComputedStyle( title ) : null;
+
+			return {
+				whiteSpace: titleStyles ? titleStyles.whiteSpace : null,
+				titleRect: title ? title.getBoundingClientRect() : null,
+				logoRect: logo ? logo.getBoundingClientRect() : null,
+				ctaRect: cta ? cta.getBoundingClientRect() : null,
+				hamburgerRect: hamburger ? hamburger.getBoundingClientRect() : null,
+				docScrollWidth: document.documentElement.scrollWidth,
+				innerWidth: window.innerWidth,
+			};
+		} );
+
+		expect( layout.whiteSpace ).not.toBe( 'nowrap' );
+		expect( layout.titleRect.height ).toBeGreaterThan( 40 );
+		expect( layout.logoRect.width ).toBeGreaterThanOrEqual( 32 );
+		expect( layout.ctaRect.right ).toBeLessThanOrEqual( layout.innerWidth );
+		expect( layout.hamburgerRect.right ).toBeLessThanOrEqual( layout.innerWidth );
+		expect( layout.docScrollWidth ).toBeLessThanOrEqual( layout.innerWidth );
+	} );
+
 	test( 'Key templates pass automated WCAG 2.2 AA accessibility audit', async ( { page } ) => {
 		const routes = [ '/', '/sample-page/', '/hello-world/', '/category/uncategorized/', '/?s=school' ];
 

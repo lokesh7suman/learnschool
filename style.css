@@ -3,7 +3,7 @@ Theme Name: LearnSchool
 Theme URI: https://codeclove.com/themes/learnschool/
 Author: CodeClove
 Author URI: https://codeclove.com/
-Description: LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 40 modular block patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
+Description: LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 32 modular section patterns alongside 6 full-page starter layouts for Home, About Us, Programs, Admissions, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.0
@@ -11,11 +11,8 @@ Version: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: learnschool
-Tags: education, blog, full-site-editing, block-patterns, block-styles, style-variations, education, custom-logo, editor-style, translation-ready, sticky-post, one-column, two-columns, right-sidebar, threaded-comments
+Tags: education, blog, full-site-editing, block-patterns, block-styles, style-variations, custom-logo, editor-style, translation-ready, sticky-post, one-column, two-columns, right-sidebar, threaded-comments
 */
-
-/* Cascade layers registered for future specificity management */
-@layer learnschool.reset, learnschool.base, learnschool.components;
 
 /* ==========================================================================
    1. Typography & Global Resets
@@ -216,13 +213,6 @@ select {
 	background-size: 16px 16px;
 }
 
-/* Responsive Two-Column Form Field Grid */
-.learnschool-form-grid-2col {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: var(--wp--preset--spacing--step-3);
-}
-
 /* Modern Typography: Balanced Headings & Refined Paragraph Wraps */
 h1,
 h2,
@@ -259,12 +249,7 @@ li,
 }
 
 /* Script cursive font for accent words in titles */
-.font-accent-script,
-.font-courgette,
-.has-courgette-font-family,
-span.script-accent,
-.script-accent,
-span.learnschool-script {
+.has-courgette-font-family {
 	font-family: var(--wp--preset--font-family--courgette), Courgette, "Brush Script MT", cursive;
 	font-style: normal;
 	font-weight: 400;
@@ -312,7 +297,7 @@ span.learnschool-script {
 	outline: none;
 }
 
-a:focus-visible,
+a:where(:not(.wp-block-button__link, .wp-element-button)):focus-visible,
 input[type="checkbox"]:focus-visible,
 input[type="radio"]:focus-visible,
 input[type="range"]:focus-visible,
@@ -327,11 +312,14 @@ button:focus-visible,
 input[type="submit"]:focus-visible,
 input[type="button"]:focus-visible,
 input[type="reset"]:focus-visible,
-.wp-block-button__link:focus-visible {
-	outline: none;
-	box-shadow: 0 0 0 2px var(--wp--preset--color--base, #fff),
-		0 0 0 4px var(--wp--preset--color--primary, #704fe6),
-		0 0 0 7px rgba(112, 79, 230, 0.16);
+.wp-block-button__link:focus-visible,
+.wp-element-button:focus-visible {
+	outline: 3px solid var(--wp--preset--color--primary-dark, #5837c7);
+	outline-offset: 3px;
+}
+
+:is(.has-primary-background-color, .has-primary-dark-background-color, .has-midnight-background-color, .has-contrast-background-color) :is(button, input[type="submit"], input[type="button"], input[type="reset"], .wp-block-button__link, .wp-element-button):focus-visible {
+	outline-color: var(--wp--preset--color--base, #fff);
 }
 
 :where(a:focus-visible) {
@@ -360,7 +348,8 @@ input[type="reset"]:focus-visible,
 	select:focus-visible,
 	textarea:focus-visible,
 	summary:focus-visible,
-	.wp-block-button__link:focus-visible {
+	.wp-block-button__link:focus-visible,
+	.wp-element-button:focus-visible {
 		outline: 3px solid Highlight;
 		outline-offset: 3px;
 	}
@@ -373,8 +362,7 @@ input[type="reset"]:focus-visible,
 	}
 
 	.wp-block-button.is-style-learnschool-pill .wp-block-button__link,
-	.wp-block-button.is-style-learnschool-outline .wp-block-button__link,
-	.wp-block-button.is-style-outline-purple .wp-block-button__link {
+	.wp-block-button.is-style-learnschool-outline .wp-block-button__link {
 		border: 2px solid ButtonText;
 	}
 
@@ -480,68 +468,7 @@ span.learnschool-script {
 	line-height: 1.24;
 }
 
-/* Suppress inline text doodle highlights and underlines in clean mode */
-.is-style-learnschool-clean mark.learnschool-highlight,
-.is-style-learnschool-clean span.learnschool-highlight,
-.is-style-learnschool-clean span.learnschool-underline-wavy,
-.is-style-learnschool-clean span.learnschool-underline-loop,
-.is-style-clean mark.learnschool-highlight,
-.is-style-clean span.learnschool-highlight,
-.is-style-clean span.learnschool-underline-wavy,
-.is-style-clean span.learnschool-underline-loop,
-mark.learnschool-highlight.is-style-learnschool-clean,
-span.learnschool-highlight.is-style-learnschool-clean,
-span.learnschool-underline-wavy.is-style-learnschool-clean,
-span.learnschool-underline-loop.is-style-learnschool-clean,
-mark.learnschool-highlight.is-style-clean,
-span.learnschool-highlight.is-style-clean,
-span.learnschool-underline-wavy.is-style-clean,
-span.learnschool-underline-loop.is-style-clean {
-	background-image: none;
-	margin-inline: 0;
-	padding: 0;
-}
-
-.is-style-learnschool-clean mark.learnschool-highlight::after,
-.is-style-learnschool-clean span.learnschool-highlight::after,
-.is-style-learnschool-clean span.learnschool-underline-wavy::after,
-.is-style-learnschool-clean span.learnschool-underline-loop::after,
-.is-style-clean mark.learnschool-highlight::after,
-.is-style-clean span.learnschool-highlight::after,
-.is-style-clean span.learnschool-underline-wavy::after,
-.is-style-clean span.learnschool-underline-loop::after,
-mark.learnschool-highlight.is-style-learnschool-clean::after,
-span.learnschool-highlight.is-style-learnschool-clean::after,
-span.learnschool-underline-wavy.is-style-learnschool-clean::after,
-span.learnschool-underline-loop.is-style-learnschool-clean::after,
-mark.learnschool-highlight.is-style-clean::after,
-span.learnschool-highlight.is-style-clean::after,
-span.learnschool-underline-wavy.is-style-clean::after,
-span.learnschool-underline-loop.is-style-clean::after {
-	display: none;
-}
-
-/* Image & Doodle Customizations */
-.is-style-learnschool-flip img,
-.is-style-flip img,
-.is-style-flip-horizontal img,
-img.is-style-learnschool-flip,
-img.is-style-flip,
-img.is-style-flip-horizontal {
-	transform: scaleX(-1);
-}
-
-.is-style-learnschool-subtle,
-.is-style-subtle {
-	opacity: 0.70;
-}
-
-/* ==========================================================================
-   3. Footer Helpers, Utilities & Document Layout
-   ========================================================================== */
-
 /* Footer Link Reset - Removes default browser underlines & bullets in footers */
-.learnschool-footer .wp-block-list,
 footer .wp-block-list,
 [class*="footer"] .wp-block-list {
 	list-style: none;
@@ -549,7 +476,6 @@ footer .wp-block-list,
 	margin-left: 0;
 }
 
-.learnschool-footer .wp-block-list > li,
 footer .wp-block-list > li,
 [class*="footer"] .wp-block-list > li {
 	list-style: none;
@@ -557,7 +483,6 @@ footer .wp-block-list > li,
 	margin-bottom: 10px;
 }
 
-.learnschool-footer .wp-block-list a,
 footer .wp-block-list a,
 [class*="footer"] .wp-block-list a {
 	color: var(--wp--preset--color--contrast-subtle);
@@ -565,7 +490,6 @@ footer .wp-block-list a,
 	transition: color 0.2s ease;
 }
 
-.learnschool-footer .wp-block-list a:hover,
 footer .wp-block-list a:hover,
 [class*="footer"] .wp-block-list a:hover {
 	color: var(--wp--preset--color--primary);
@@ -583,27 +507,15 @@ footer .has-midnight-background-color .wp-block-list a:hover,
 }
 
 /* Clean Phone / Contact Links */
-.learnschool-phone-link,
-.learnschool-footer a[href^="tel:"],
+footer a[href^="tel:"],
 header a[href^="tel:"] {
 	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
-.learnschool-footer a[href^="tel:"]:hover,
+footer a[href^="tel:"]:hover,
 header a[href^="tel:"]:hover {
 	color: var(--wp--preset--color--primary-dark);
-}
-
-
-/* Mobile helper classes */
-@media (max-width: 781px) {
-
-	.learnschool-hide-on-mobile,
-	.is-style-learnschool-hide-mobile {
-		display: none;
-	}
-
 }
 
 /* RTL (Right-to-Left) Language Layout Support */

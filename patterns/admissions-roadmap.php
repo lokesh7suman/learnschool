@@ -5,10 +5,10 @@
  * Categories: learnschool/call-to-action
  * Description: 3-step admissions and enrollment process guide with private tour call to action.
  * Keywords: admissions, enrollment, tour, registration, roadmap, steps
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

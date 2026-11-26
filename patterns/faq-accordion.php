@@ -5,10 +5,10 @@
  * Categories: learnschool/faq
  * Description: Zero-JS expandable accordion built with native core/details blocks for parent questions.
  * Keywords: faq, accordion, questions, details, immunization, meals, tuition
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

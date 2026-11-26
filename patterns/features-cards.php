@@ -6,10 +6,10 @@
  * Description: Modern Bento Grid showcasing four intentional early education pillars with metrics and feature tags.
  * Keywords: features, bento, grid, services, cards, early education, montessori
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

@@ -6,10 +6,10 @@
  * Keywords: alert, notice, emergency, banner, announcement
  * Description: A high-visibility alert banner for urgent school notices and announcements.
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

@@ -72,16 +72,16 @@
 	opacity: 0.85;
 }
 
-:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title a,
-:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title .learnschool-title-dark {
+.has-midnight-background-color .wp-block-site-title a,
+.has-midnight-background-color .wp-block-site-title .learnschool-title-dark {
 	color: var(--wp--preset--color--base, #fff);
 }
 
-:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title .learnschool-title-accent {
+.has-midnight-background-color .wp-block-site-title .learnschool-title-accent {
 	color: var(--wp--preset--color--primary-light, #dec8fe);
 }
 
-:where(.has-midnight-background-color, .is-style-learnschool-midnight) .wp-block-site-title a:focus-visible {
+.has-midnight-background-color .wp-block-site-title a:focus-visible {
 	background-color: rgba(255, 255, 255, 0.1);
 	box-shadow: 0 0 0 1.5px var(--wp--preset--color--base, #fff),
 		0 0 0 5px rgba(255, 255, 255, 0.18);

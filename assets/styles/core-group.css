@@ -51,6 +51,11 @@
 .wp-block-group.is-style-learnschool-card-large {
 	border-radius: 28px;
 	overflow: hidden;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wp-block-group.is-style-learnschool-card-large:hover {
+	transform: translateY(-4px);
 }
 
 .wp-block-group.is-style-learnschool-trust-strip {
@@ -93,54 +98,12 @@
 	border-color: var(--wp--preset--color--border, #e2e8f0);
 }
 
-/* ── Sketch Block Style Variation (Organic Hand-Drawn Radius) ───────── */
-
-.wp-block-group.is-style-learnschool-sketch,
-.is-style-learnschool-sketch,
-.is-style-sketch {
-	border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-	border: 2px solid var(--wp--preset--color--border, currentcolor);
-	transition: border-radius 0.3s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.wp-block-group.is-style-learnschool-sketch:hover,
-.is-style-learnschool-sketch:hover,
-.is-style-sketch:hover {
-	border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
-}
-
-/* ── Elevated, Glass, Tinted, Midnight & Surface Variations ─────────── */
-
-.wp-block-group.is-style-learnschool-elevated {
-	background-color: var(--wp--preset--color--surface, #fff);
-	border-radius: 24px;
-	box-shadow: var(--wp--preset--shadow--elevated);
-}
-
-.wp-block-group.is-style-learnschool-glass {
-	background: rgba(255, 255, 255, 0.75);
-	backdrop-filter: blur(12px) saturate(180%);
-	-webkit-backdrop-filter: blur(12px) saturate(180%);
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	border-radius: 20px;
-}
-
-.wp-block-group.is-style-learnschool-tinted {
-	background-color: rgba(112, 79, 230, 0.05);
-	border: 1px solid var(--wp--preset--color--primary-light, #dec8fe);
-	border-radius: 20px;
-}
-
 /* ── Squircle Avatar & Icon Container Reset (Eliminate WP Core Padding) ─ */
 
 .wp-block-group[style*="width:48px"],
 .wp-block-group[style*="width: 48px"],
-.wp-block-group[style*="width:56px"],
-.wp-block-group[style*="width: 56px"],
 .wp-block-group[style*="width:68px"],
-.wp-block-group[style*="width: 68px"],
-.wp-block-group[style*="width:72px"],
-.wp-block-group[style*="width: 72px"] {
+.wp-block-group[style*="width: 68px"] {
 	box-sizing: border-box;
 	padding: 0;
 	display: flex;
@@ -151,67 +114,11 @@
 
 .wp-block-group[style*="width:48px"] svg,
 .wp-block-group[style*="width: 48px"] svg,
-.wp-block-group[style*="width:56px"] svg,
-.wp-block-group[style*="width: 56px"] svg,
 .wp-block-group[style*="width:68px"] svg,
-.wp-block-group[style*="width: 68px"] svg,
-.wp-block-group[style*="width:72px"] svg,
-.wp-block-group[style*="width: 72px"] svg {
+.wp-block-group[style*="width: 68px"] svg {
 	display: block;
 	flex-shrink: 0;
 	margin: auto;
-}
-
-.wp-block-group.is-style-learnschool-midnight {
-	background-color: var(--wp--preset--color--midnight, #0f172a);
-	color: var(--wp--preset--color--base, #fff);
-}
-
-.wp-block-group.is-style-learnschool-midnight :where(h1, h2, h3, h4, h5, h6, .wp-block-heading):not([class*="has-"]) {
-	color: var(--wp--preset--color--base, #fff);
-}
-
-.wp-block-group.is-style-learnschool-surface,
-.wp-block-group.is-style-surface {
-	background-color: var(--wp--preset--color--base-subtle, #f5f5f5);
-}
-
-.wp-block-group.is-style-learnschool-lilac,
-.wp-block-group.is-style-lilac {
-	background-color: var(--wp--preset--color--primary-light, #dec8fe);
-}
-
-/* ── Card Hover Lift & Micro-Interactions ───────────────────────────── */
-
-.is-style-learnschool-card,
-.is-style-learnschool-card-arch,
-.is-style-learnschool-card-large,
-.is-style-learnschool-elevated,
-.is-style-learnschool-glass,
-.is-style-learnschool-tinted {
-	overflow: hidden;
-	transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.is-style-learnschool-card:hover,
-.is-style-learnschool-card-arch:hover,
-.is-style-learnschool-card-large:hover,
-.is-style-learnschool-elevated:hover,
-.is-style-learnschool-glass:hover,
-.is-style-learnschool-tinted:hover {
-	transform: translateY(-4px);
-}
-
-.is-style-learnschool-elevated:hover {
-	box-shadow: 0 24px 48px -12px rgba(18, 18, 18, 0.14), 0 10px 14px -4px rgba(18, 18, 18, 0.06);
-}
-
-.is-style-learnschool-glass:hover {
-	box-shadow: 0 12px 32px -4px rgba(112, 79, 230, 0.12);
-}
-
-.is-style-learnschool-tinted:hover {
-	box-shadow: 0 12px 28px -4px rgba(112, 79, 230, 0.08);
 }
 
 /* ── Equal-Height Card Grids and Bottom-Aligned Buttons ─────────────── */
@@ -220,9 +127,6 @@
 
 	.wp-block-columns .wp-block-column > .wp-block-group:only-child[class*="is-style-learnschool-card"],
 	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-soft-card:only-child,
-	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-elevated:only-child,
-	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-glass:only-child,
-	.wp-block-columns .wp-block-column > .wp-block-group.is-style-learnschool-tinted:only-child,
 	.wp-block-columns .wp-block-column > .wp-block-group:only-child:has(.wp-block-buttons) {
 		display: flex;
 		flex-direction: column;
@@ -243,28 +147,11 @@
 
 .wp-block-columns .wp-block-column .wp-block-group[class*="is-style-learnschool-card"] .wp-block-buttons,
 .wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-soft-card .wp-block-buttons,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-elevated .wp-block-buttons,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-glass .wp-block-buttons,
-.wp-block-columns .wp-block-column .wp-block-group.is-style-learnschool-tinted .wp-block-buttons,
 .wp-block-columns .wp-block-column > .wp-block-group > .wp-block-buttons:last-child {
 	margin-top: auto;
 }
 
 /* ── Card Role Badge Pill ────────────────────────────────────────────── */
-
-.is-style-learnschool-card .wp-block-group[style*="border-radius:100px"],
-.is-style-learnschool-card .wp-block-group[style*="border-radius: 100px"] {
-	width: fit-content;
-	display: inline-flex;
-	align-items: center;
-}
-
-.is-style-learnschool-card .wp-block-group[style*="border-radius:100px"] p,
-.is-style-learnschool-card .wp-block-group[style*="border-radius: 100px"] p {
-	margin: 0;
-	line-height: 1.25;
-	letter-spacing: 0.02em;
-}
 
 .is-style-learnschool-card p[style*="border-radius:9999px"],
 .is-style-learnschool-card p[style*="border-radius: 9999px"],
@@ -278,14 +165,6 @@
 	flex-shrink: 0;
 }
 
-/* ── Card Footer Metadata ────────────────────────────────────────────── */
-
-.is-style-learnschool-card .wp-block-group[style*="border-top-color"] p {
-	letter-spacing: 0.02em;
-	font-feature-settings: "tnum" 1;
-	line-height: 1.4;
-}
-
 /* ── Calendar & Event Date Badges ───────────────────────────────────── */
 
 .is-style-learnschool-card .wp-block-group.has-primary-background-color.has-base-color {
@@ -297,19 +176,6 @@
 
 .is-style-learnschool-card .wp-block-group.has-primary-background-color.has-base-color p {
 	margin: 0;
-}
-
-/* ── Prose Content Wrapper ───────────────────────────────────────────── */
-
-.wp-block-group.is-style-learnschool-prose {
-	max-width: 68ch;
-	margin-inline: auto;
-	font-size: var(--wp--preset--font-size--medium);
-	line-height: 1.75;
-}
-
-.wp-block-group.is-style-learnschool-prose :where(h2, h3, h4) {
-	margin-top: var(--wp--preset--spacing--step-5);
 }
 
 /* ── Full-Width Section Layout Resets ────────────────────────────────── */
@@ -360,11 +226,6 @@ main.alignfull + .wp-block-template-part {
 			168px 168px,
 			84px 84px;
 	}
-}
-
-.is-style-learnschool-clean .learnschool-hero-doodles > .wp-block-group.alignwide,
-.learnschool-hero-doodles.is-style-learnschool-clean > .wp-block-group.alignwide {
-	background-image: none;
 }
 
 /* ── Section 2: Interactive Features Cards & Tilted Hashtags ─────────── */
@@ -572,11 +433,6 @@ main.alignfull + .wp-block-template-part {
 		width: 92px;
 		height: 92px;
 	}
-}
-
-.is-style-learnschool-clean .learnschool-materials-capsule::before,
-.learnschool-materials-capsules.is-style-learnschool-clean .learnschool-materials-capsule::before {
-	display: none;
 }
 
 /* ── Section 4: Purple Teachers Showcase ─────────────────────────────── */

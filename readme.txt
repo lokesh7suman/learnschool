@@ -6,11 +6,11 @@ Requires PHP: 8.0
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: education, blog, full-site-editing, block-patterns, block-styles, style-variations, education, custom-logo, editor-style, translation-ready, sticky-post, one-column, two-columns, right-sidebar, threaded-comments
+Tags: education, blog, full-site-editing, block-patterns, block-styles, style-variations, custom-logo, editor-style, translation-ready, sticky-post, one-column, two-columns, right-sidebar, threaded-comments
 
 == Description ==
 
-LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 40 modular block patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
+LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 32 modular section patterns alongside 6 full-page starter layouts for Home, About Us, Programs, Admissions, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
 
 == Installation ==
 
@@ -61,7 +61,7 @@ Both bundled font families are licensed under the SIL Open Font License, Version
 
 === Icons ===
 
-* Lucide Icons (inline SVG UI icons in `assets/js/navigation.js`, `style.css`, and block patterns)
+* Lucide Icons (inline SVG UI icons in `style.css` and block patterns)
   Author: Lucide Contributors
   Source: https://lucide.dev
   License: ISC License (https://opensource.org/licenses/ISC)
@@ -75,10 +75,6 @@ Both bundled font families are licensed under the SIL Open Font License, Version
   Author: Phosphor Icons
   Source: https://phosphoricons.com
   License: MIT License (https://opensource.org/licenses/MIT)
-
-* Vuesax / Pathway Vector Icons (inline badge icons in `patterns/features-journey.php`)
-  Author: codeclove (custom adapted geometric vector icons)
-  License: GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 === Theme Vector Graphics, Doodles & Branding ===
 

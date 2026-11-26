@@ -6,10 +6,10 @@
  * Keywords: events, open house, schedule, calendar, admission, tour
  * Description: Upcoming academy events and open-house schedule list with date badges, location markers, and RSVP buttons.
  * Inserter: true
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);

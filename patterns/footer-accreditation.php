@@ -6,10 +6,10 @@
  * Block Types: core/template-part/footer
  * Description: 4-column preschool footer on a deep midnight surface with state licensing badge, program links, campus hours, and parent resources.
  * Keywords: footer, licensing, hours, campus, contact, links
+ * Viewport Width: 1280
  *
  * @package LearnSchool
  * @since 1.0.0
- * Viewport Width: 1280
  */
 
 declare(strict_types=1);
@@ -27,8 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"fontSize":"small","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"0"}},"color":{"text":"rgba(255, 255, 255, 0.78)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78);margin-top:var(--wp--preset--spacing--step-3);margin-bottom:0"><?php echo esc_html__( 'Nurturing curiosity, confidence, and compassion in young minds through inquiry-based learning and joyful play.', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-3","bottom":"0"}}},"textColor":"border","fontSize":"small"} -->
+<p class="has-border-color has-text-color has-small-font-size" style="margin-top:var(--wp--preset--spacing--step-3);margin-bottom:0"><?php echo esc_html__( 'Nurturing curiosity, confidence, and compassion in young minds through inquiry-based learning and joyful play.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -93,12 +93,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Campus Hours', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255, 255, 255, 0.78)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78)"><strong style="color:var(--wp--preset--color--base)"><?php echo esc_html__( 'Monday – Friday:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '7:30 AM – 6:00 PM', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"border","fontSize":"small"} -->
+<p class="has-border-color has-text-color has-small-font-size"><strong style="color:var(--wp--preset--color--base)"><?php echo esc_html__( 'Monday – Friday:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '7:30 AM – 6:00 PM', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255, 255, 255, 0.78)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78)"><strong style="color:var(--wp--preset--color--base)"><?php echo esc_html__( 'Campus Location:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '124 Early Learning Way, Suite 100', 'learnschool' ); ?><br><?php echo esc_html__( 'Austin, TX 78701', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"border","fontSize":"small"} -->
+<p class="has-border-color has-text-color has-small-font-size"><strong style="color:var(--wp--preset--color--base)"><?php echo esc_html__( 'Campus Location:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '124 Early Learning Way, Suite 100', 'learnschool' ); ?><br><?php echo esc_html__( 'Austin, TX 78701', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"small","textColor":"secondary"} -->
@@ -121,8 +121,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:separator -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
-<div class="wp-block-group alignwide"><!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255, 255, 255, 0.72)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.72)">
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"textColor":"border","fontSize":"small"} -->
+<p class="has-border-color has-text-color has-small-font-size">
 <?php
 $learnschool_site_name = wp_strip_all_tags( get_bloginfo( 'name' ) );
 /* translators: 1: Current calendar year, 2: Site title. */
@@ -131,8 +131,8 @@ printf( esc_html__( '© %1$s %2$s', 'learnschool' ), esc_html( gmdate( 'Y' ) ), 
 </p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255, 255, 255, 0.72)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.72)"><?php echo esc_html__( 'Equal Opportunity Early Childhood Care Provider', 'learnschool' ); ?></p>
+<!-- wp:paragraph {"textColor":"border","fontSize":"small"} -->
+<p class="has-border-color has-text-color has-small-font-size"><?php echo esc_html__( 'Equal Opportunity Early Childhood Care Provider', 'learnschool' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

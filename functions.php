@@ -106,17 +106,20 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 
 		wp_enqueue_script(
 			'learnschool-navigation',
-			get_template_directory_uri() . '/assets/js/navigation.js',
+			get_theme_file_uri( 'assets/js/navigation.js' ),
 			array(),
 			$version,
-			true
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
 		);
 
 		wp_localize_script(
 			'learnschool-navigation',
 			'learnschoolNavData',
 			array(
-				'menuTitle' => esc_html__( 'Menu', 'learnschool' ),
+				'menuTitle' => wp_strip_all_tags( __( 'Menu', 'learnschool' ) ),
 			)
 		);
 	}
@@ -194,15 +197,21 @@ if ( ! function_exists( 'learnschool_editor_assets' ) ) :
 	function learnschool_editor_assets(): void {
 		$theme_version = wp_get_theme()->get( 'Version' );
 		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG
-			? (string) filemtime( get_template_directory() . '/assets/js/editor-formats.js' )
+			? (string) filemtime( get_theme_file_path( 'assets/js/editor-formats.js' ) )
 			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
 
 		wp_enqueue_script(
 			'learnschool-editor-formats',
-			get_template_directory_uri() . '/assets/js/editor-formats.js',
+			get_theme_file_uri( 'assets/js/editor-formats.js' ),
 			array( 'wp-rich-text', 'wp-block-editor', 'wp-element', 'wp-i18n', 'wp-hooks' ),
 			$version,
 			true
+		);
+
+		wp_set_script_translations(
+			'learnschool-editor-formats',
+			'learnschool',
+			get_theme_file_path( 'languages' )
 		);
 	}
 endif;
@@ -266,14 +275,11 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 			return $block_content;
 		}
 
-		$tags->add_class( 'has-two-tone-title' );
-		$updated_content = $tags->get_updated_html();
-
 		$raw_title   = trim( wp_strip_all_tags( get_bloginfo( 'name', 'display' ) ) );
-		$clean_title = '' !== $raw_title ? $raw_title : wp_strip_all_tags( $updated_content );
+		$clean_title = '' !== $raw_title ? $raw_title : wp_strip_all_tags( $block_content );
 		$clean_title = trim( html_entity_decode( $clean_title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
 		if ( '' === $clean_title ) {
-			return $updated_content;
+			return $block_content;
 		}
 
 		$dark_part   = '';
@@ -296,13 +302,13 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 				continue;
 			}
 			$needle = '>' . $candidate . '</';
-			$pos    = strpos( $updated_content, $needle );
+			$pos    = strpos( $block_content, $needle );
 			if ( false !== $pos ) {
-				return substr_replace( $updated_content, '>' . $replacement . '</', $pos, strlen( $needle ) );
+				return substr_replace( $block_content, '>' . $replacement . '</', $pos, strlen( $needle ) );
 			}
 		}
 
-		return $updated_content;
+		return $block_content;
 	}
 endif;
 add_filter( 'render_block_core/site-title', 'learnschool_filter_site_title' );

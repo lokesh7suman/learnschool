@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-group alignwide learnschool-cta-banner has-base-color has-primary-background-color has-text-color has-background" style="border-radius:36px;padding-top:var(--wp--preset--spacing--step-5);padding-right:var(--wp--preset--spacing--step-6);padding-bottom:0;padding-left:var(--wp--preset--spacing--step-6)"><!-- wp:columns {"verticalAlignment":"bottom","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-6"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-bottom"><!-- wp:column {"verticalAlignment":"bottom","width":"44%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:44%"><!-- wp:image {"scale":"cover","sizeSlug":"large","linkDestination":"none","className":"learnschool-cta-banner__portrait","style":{"spacing":{"margin":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
-<figure class="wp-block-image size-large learnschool-cta-banner__portrait" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0"><img src="<?php echo esc_url( get_parent_theme_file_uri( 'assets/images/illustrations/cta-community-educator.jpg' ) ); ?>" alt="<?php echo esc_attr__( 'Smiling LearnSchool educator holding a notebook and welcoming families', 'learnschool' ); ?>"/></figure>
+<figure class="wp-block-image size-large learnschool-cta-banner__portrait" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/illustrations/cta-community-educator.jpg' ) ); ?>" alt="<?php echo esc_attr__( 'Smiling LearnSchool educator holding a notebook and welcoming families', 'learnschool' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
