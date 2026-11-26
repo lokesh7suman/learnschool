@@ -109,9 +109,11 @@
 	overflow: hidden;
 }
 
+/* Card image: clip to card top corners, flush to edges */
 .wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) .wp-block-post-featured-image {
 	margin: 0;
-	border-radius: 0;
+	border-radius: 24px 24px 0 0;
+	overflow: hidden;
 }
 
 .wp-block-post-template .wp-block-post-featured-image img {
@@ -129,6 +131,13 @@
 
 .wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) .wp-block-post-featured-image img {
 	border-radius: 0;
+}
+
+/* Unified content group: fills remaining card height, pushes Read More to bottom */
+.wp-block-post-template .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group > .wp-block-group:last-child {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 }
 
 .wp-block-post-template .learnschool-post-list-card .wp-block-post-featured-image {
@@ -162,10 +171,10 @@
 	border-inline: none;
 }
 
-/* Mixed Grid Studio Cover: Keeps row baselines aligned when some posts lack featured images */
+/* Grid Studio Cover: Shows branded motif cover on desktop/tablet when a post lacks a featured image */
 @media (min-width: 641px) {
 
-	.wp-block-post-template.is-layout-grid:has(.wp-block-post-featured-image) > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {
+	.wp-block-post-template.is-layout-grid > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {
 		content: "";
 		display: block;
 		width: 100%;
@@ -181,7 +190,7 @@
 		border-bottom: 1px solid var(--wp--preset--color--border-subtle, var(--wp--preset--color--border-default, #e2e8f0));
 	}
 
-	.wp-block-post-template.is-layout-grid.columns-3:has(.wp-block-post-featured-image) > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {
+	.wp-block-post-template.is-layout-grid.columns-3 > li:not(:has(.wp-block-post-featured-image)) .is-style-learnschool-card:not(.learnschool-post-list-card) > .wp-block-group:first-child::before {
 		aspect-ratio: 16 / 10;
 	}
 }

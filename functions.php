@@ -143,9 +143,16 @@ if ( ! function_exists( 'learnschool_enqueue_block_styles' ) ) :
 			return;
 		}
 
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$is_debug      = defined( 'WP_DEBUG' ) && WP_DEBUG;
+
 		foreach ( $files as $file ) {
 			$filename   = basename( $file, '.css' );
 			$block_name = str_replace( 'core-', 'core/', $filename );
+			$mtime      = $is_debug ? filemtime( $file ) : false;
+			$version    = false !== $mtime
+				? (string) $mtime
+				: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
 
 			wp_enqueue_block_style(
 				$block_name,
@@ -153,6 +160,7 @@ if ( ! function_exists( 'learnschool_enqueue_block_styles' ) ) :
 					'handle' => "learnschool-block-{$filename}",
 					'src'    => get_theme_file_uri( "assets/styles/{$filename}.css" ),
 					'path'   => get_theme_file_path( "assets/styles/{$filename}.css" ),
+					'ver'    => $version,
 				)
 			);
 		}

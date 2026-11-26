@@ -11,7 +11,7 @@
 				{ "slug": "contrast",        "color": "#1a162b", "name": "Contrast / Deep Ink" },
 				{ "slug": "contrast-subtle", "color": "#615873", "name": "Contrast Subtle / Muted Velvet" },
 				{ "slug": "primary",         "color": "#ff525d", "name": "Primary / Electric Coral" },
-				{ "slug": "primary-dark",    "color": "#e03140", "name": "Primary Dark / Rich Strawberry" },
+				{ "slug": "primary-dark",    "color": "#c81d2e", "name": "Primary Dark / Rich Strawberry" },
 				{ "slug": "primary-light",   "color": "#ffe4e6", "name": "Primary Light / Soft Blush" },
 				{ "slug": "secondary",       "color": "#00d2d3", "name": "Secondary / Electric Aqua Mint" },
 				{ "slug": "secondary-dark",  "color": "#01a3a4", "name": "Secondary Dark / Deep Teal" },

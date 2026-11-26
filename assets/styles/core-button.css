@@ -117,7 +117,8 @@
 }
 
 .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover,
-.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
+.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link,
+.is-style-learnschool-card-arch:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link {
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base, #fff);
 	border-color: var(--wp--preset--color--primary);
@@ -142,7 +143,8 @@
 }
 
 .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link:hover::after,
-.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
+.is-style-learnschool-card:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after,
+.is-style-learnschool-card-arch:hover .wp-block-button.is-style-learnschool-link-sm .wp-block-button__link::after {
 	transform: translate(2px, -2px);
 	background-color: color-mix(in srgb, var(--wp--preset--color--base, #fff) 25%, transparent);
 	color: var(--wp--preset--color--base, #fff);

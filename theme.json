@@ -585,6 +585,18 @@
 							"background": "var:preset|color|surface"
 						},
 						"shadow": "var:preset|shadow|card"
+					},
+					"learnschool-trust-strip": {
+						"border": {
+							"color": "var:preset|color|border-default",
+							"radius": "24px",
+							"style": "solid",
+							"width": "1px"
+						},
+						"color": {
+							"background": "var:preset|color|surface"
+						},
+						"shadow": "var:preset|shadow|card"
 					}
 				}
 			},

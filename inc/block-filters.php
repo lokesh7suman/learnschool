@@ -265,3 +265,108 @@ if ( ! function_exists( 'learnschool_add_static_image_dimensions' ) ) :
 	}
 endif;
 add_filter( 'render_block_core/image', 'learnschool_add_static_image_dimensions' );
+
+if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
+	/**
+	 * Enhances the teachers portrait showcase group with accessible WordPress
+	 * Interactivity API prev/next carousel controls on the frontend.
+	 *
+	 * Keeps the underlying pattern markup pure Gutenberg core blocks while
+	 * progressively enabling interactive navigation when hydrated.
+	 *
+	 * @since 1.0.0
+	 * @param string               $block_content Rendered core/group block HTML.
+	 * @param array<string, mixed> $block         Parsed block data.
+	 * @return string Enhanced block HTML with interactive carousel controls when applicable.
+	 */
+	function learnschool_render_teachers_carousel( string $block_content, array $block ): string {
+		if ( is_admin() || '' === trim( $block_content ) ) {
+			return $block_content;
+		}
+
+		$class_name = isset( $block['attrs']['className'] ) && is_string( $block['attrs']['className'] )
+			? $block['attrs']['className']
+			: '';
+
+		if ( ! str_contains( $class_name, 'learnschool-teachers-carousel' ) ) {
+			return $block_content;
+		}
+
+		$tags = new \WP_HTML_Tag_Processor( $block_content );
+		if ( ! $tags->next_tag( array( 'class_name' => 'learnschool-teachers-carousel' ) ) ) {
+			return $block_content;
+		}
+
+		$column_count = 0;
+		$counter      = new \WP_HTML_Tag_Processor( $block_content );
+		while ( $counter->next_tag( array( 'class_name' => 'wp-block-column' ) ) ) {
+			++$column_count;
+		}
+
+		if ( $column_count < 2 ) {
+			return $block_content;
+		}
+
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$script_path   = get_theme_file_path( 'assets/js/teachers-carousel.js' );
+		$mtime         = is_file( $script_path ) ? filemtime( $script_path ) : false;
+		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG && false !== $mtime
+			? (string) $mtime
+			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
+
+		if ( function_exists( 'wp_enqueue_script_module' ) ) {
+			wp_enqueue_script_module(
+				'learnschool-teachers-carousel',
+				get_theme_file_uri( 'assets/js/teachers-carousel.js' ),
+				array( '@wordpress/interactivity' ),
+				$version
+			);
+		}
+
+		if ( function_exists( 'wp_interactivity_state' ) ) {
+			wp_interactivity_state(
+				'learnschool/teachers',
+				array(
+					/* translators: 1: Teacher name and role, 2: Current slide position, 3: Total number of teachers. */
+					'showingTemplate' => __( 'Showing %1$s (%2$d of %3$d)', 'learnschool' ),
+				)
+			);
+		}
+
+		$context = array(
+			'ready'        => false,
+			'activeIndex'  => 0,
+			'total'        => $column_count,
+			'announcement' => '',
+		);
+
+		$context_attr = function_exists( 'wp_interactivity_data_wp_context' )
+			? wp_interactivity_data_wp_context( $context )
+			: 'data-wp-context="' . esc_attr( (string) wp_json_encode( $context ) ) . '"';
+
+		$prev_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>';
+		$next_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>';
+
+		$shell = sprintf(
+			'<div class="learnschool-teachers-carousel-shell alignwide" data-wp-interactive="learnschool/teachers" %1$s data-wp-init="callbacks.init" data-wp-bind--data-carousel-ready="context.ready" role="region" aria-roledescription="%2$s" aria-label="%3$s">'
+			. '<button type="button" class="learnschool-teachers-nav learnschool-teachers-nav--prev" aria-label="%4$s" data-wp-on--click="actions.prev" data-wp-bind--hidden="!context.ready" hidden>%5$s</button>'
+			. '%6$s'
+			. '<button type="button" class="learnschool-teachers-nav learnschool-teachers-nav--next" aria-label="%7$s" data-wp-on--click="actions.next" data-wp-bind--hidden="!context.ready" hidden>%8$s</button>'
+			. '<span class="screen-reader-text" aria-live="polite" data-wp-text="context.announcement"></span>'
+			. '</div>',
+			$context_attr,
+			esc_attr__( 'carousel', 'learnschool' ),
+			esc_attr__( 'Our teachers', 'learnschool' ),
+			esc_attr__( 'Previous teacher', 'learnschool' ),
+			$prev_svg,
+			$block_content,
+			esc_attr__( 'Next teacher', 'learnschool' ),
+			$next_svg
+		);
+
+		return function_exists( 'wp_interactivity_process_directives' )
+			? wp_interactivity_process_directives( $shell )
+			: $shell;
+	}
+endif;
+add_filter( 'render_block_core/group', 'learnschool_render_teachers_carousel', 10, 2 );

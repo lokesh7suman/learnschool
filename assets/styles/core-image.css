@@ -23,6 +23,33 @@
 	transition: border-radius 0.5s ease;
 }
 
+.learnschool-teacher-avatar-wrap .wp-block-image.is-style-learnschool-pebble {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: inherit;
+}
+
+.learnschool-teacher-avatar-wrap.has-accent-background-color .wp-block-image.is-style-learnschool-pebble img {
+	border-radius: 62% 38% 42% 58% / 48% 58% 42% 52%;
+}
+
+.learnschool-teacher-avatar-wrap.has-warning-background-color .wp-block-image.is-style-learnschool-pebble img {
+	border-radius: 48% 52% 44% 56% / 52% 48% 58% 42%;
+}
+
+.learnschool-teacher-avatar-wrap.has-primary-light-background-color .wp-block-image.is-style-learnschool-pebble img {
+	border-radius: 52% 48% 58% 42% / 48% 52% 44% 56%;
+}
+
+.learnschool-teacher-avatar-wrap.has-info-light-background-color .wp-block-image.is-style-learnschool-pebble img {
+	border-radius: 54% 46% 46% 54% / 44% 56% 48% 52%;
+}
+
+.learnschool-teacher-avatar-wrap:hover .wp-block-image.is-style-learnschool-pebble img {
+	border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+}
+
 /* ── Flip Horizontal Variation ───────────────────────────────────────── */
 
 .wp-block-image.is-style-learnschool-flip img,
@@ -60,6 +87,11 @@ img.is-style-learnschool-flip {
 	object-position: top center;
 }
 
+.wp-block-image.learnschool-gallery-nook-photo img,
+.learnschool-gallery-nook-photo img {
+	object-position: 50% 24%;
+}
+
 .is-style-learnschool-card .wp-block-image img,
 .is-style-learnschool-card-arch .wp-block-image img,
 .is-style-learnschool-card-large .wp-block-image img {
@@ -70,6 +102,11 @@ img.is-style-learnschool-flip {
 .is-style-learnschool-card-arch:hover .wp-block-image img,
 .is-style-learnschool-card-large:hover .wp-block-image img {
 	transform: scale(1.04);
+}
+
+.is-style-learnschool-card.learnschool-gallery-static-card:hover .wp-block-image img,
+.is-style-learnschool-card-arch.learnschool-gallery-static-card:hover .wp-block-image img {
+	transform: none;
 }
 
 /* ── Responsive Image Helpers ────────────────────────────────────────── */
