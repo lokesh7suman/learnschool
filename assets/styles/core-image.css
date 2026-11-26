@@ -59,11 +59,24 @@ img.is-style-flip-horizontal {
 
 /* ── Card Image Zoom Micro-Interactions ──────────────────────────────── */
 
-.is-style-learnschool-card .wp-block-image img {
+.is-style-learnschool-card figure.wp-block-image:not(.is-resized),
+.is-style-learnschool-card-arch figure.wp-block-image:not(.is-resized) {
 	width: 100%;
-	height: 260px;
+	max-width: none;
+	margin: 0;
+}
+
+.is-style-learnschool-card .wp-block-image img,
+.is-style-learnschool-card-arch .wp-block-image img {
+	width: 100%;
+	height: auto;
 	object-fit: cover;
 	display: block;
+}
+
+.wp-block-image.learnschool-portrait-top img,
+.learnschool-portrait-top img {
+	object-position: top center;
 }
 
 .is-style-learnschool-card .wp-block-image img,

@@ -38,8 +38,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
-<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":2,"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
@@ -66,8 +66,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"20%"} -->
-<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'School Life', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:20%"><!-- wp:heading {"level":2,"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'School Life', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
@@ -94,8 +94,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"30%"} -->
-<div class="wp-block-column" style="flex-basis:30%"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Stay Connected', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:30%"><!-- wp:heading {"level":2,"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Stay Connected', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|step-2","bottom":"var:preset|spacing|step-3"}}},"textColor":"contrast-subtle","fontSize":"small"} -->

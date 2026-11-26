@@ -28,7 +28,7 @@
 	align-items: center;
 	padding: 4px 14px;
 	border-radius: 9999px;
-	background-color: #f3eefc;
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 35%, transparent);
 	color: var(--wp--preset--color--primary);
 	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
@@ -63,4 +63,14 @@
 	background-color: var(--wp--preset--color--primary, #704fe6);
 	color: var(--wp--preset--color--base, #fff);
 	border-color: var(--wp--preset--color--primary, #704fe6);
+}
+
+@media (max-width: 640px) {
+
+	.taxonomy-category a,
+	.wp-block-post-terms a,
+	.wp-block-post-terms.is-style-learnschool-badge a,
+	.wp-block-post-terms.taxonomy-post_tag a {
+		padding: 8px 14px;
+	}
 }

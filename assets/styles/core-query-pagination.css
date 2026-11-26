@@ -38,7 +38,7 @@
 	height: 38px;
 	padding: 0 8px;
 	border-radius: 9999px;
-	border: 1px solid #e0e0e0;
+	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
 	font-size: var(--wp--preset--font-size--x-small, 0.75rem);
 	font-weight: 600;
 	line-height: 1;
@@ -51,7 +51,7 @@
 .wp-block-query-pagination-numbers .page-numbers:hover {
 	border-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--primary);
-	background-color: #f7f4fe;
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary-light) 25%, var(--wp--preset--color--base));
 }
 
 .wp-block-query-pagination-numbers .page-numbers.current {
@@ -83,6 +83,14 @@
 .wp-block-query-pagination-next:hover {
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--base, #fff);
+}
+
+@media (max-width: 640px) {
+
+	.wp-block-query-pagination-numbers .page-numbers {
+		min-width: 44px;
+		height: 44px;
+	}
 }
 
 @media (max-width: 580px) {

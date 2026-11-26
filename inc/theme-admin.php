@@ -155,7 +155,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 				<div class="learnschool-admin-card">
 					<span class="learnschool-admin-step">4</span>
 					<h2><?php echo esc_html__( 'Create School Pages in One Click', 'learnschool' ); ?></h2>
-					<p><?php echo esc_html__( 'Add a new page and choose from full-page starter layouts (Home, About Us, Programs, Admissions, Contact) in the pattern picker.', 'learnschool' ); ?></p>
+					<p><?php echo esc_html__( 'Add a new page and choose from full-page starter layouts (Home, About Us, Programs, Admissions, Tuition, Blog, Contact) in the pattern picker.', 'learnschool' ); ?></p>
 					<a class="button button-primary" href="<?php echo esc_url( $new_page_url ); ?>">
 						<?php echo esc_html__( 'Create New Page', 'learnschool' ); ?>
 					</a>
@@ -169,18 +169,19 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 						<h3><?php echo esc_html__( 'Page Templates', 'learnschool' ); ?></h3>
 						<ul>
 							<li><strong><?php echo esc_html__( 'Page (Default)', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Standard page with heading, content area, and comments.', 'learnschool' ); ?></li>
-							<li><strong><?php echo esc_html__( 'Page (No Title)', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Clean canvas ideal for starter page patterns without duplicate H1 titles.', 'learnschool' ); ?></li>
-							<li><strong><?php echo esc_html__( 'Page (Full Width)', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Edge-to-edge layout for custom hero sections.', 'learnschool' ); ?></li>
-							<li><strong><?php echo esc_html__( 'Landing Page', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full showcase template without distraction.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Page (No Title)', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Edge-to-edge canvas without duplicate H1 titles or comments, ideal for starter page patterns.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Full Width', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Edge-to-edge layout for pages and posts with optional discussion.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Page with Sidebar', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Two-column layout pairing main content with a customizable Sidebar template part.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Landing Page', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full showcase template without header or footer distraction.', 'learnschool' ); ?></li>
 						</ul>
 					</div>
 					<div>
 						<h3><?php echo esc_html__( 'Pattern Building Blocks', 'learnschool' ); ?></h3>
 						<ul>
-							<li><strong><?php echo esc_html__( 'Pages', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full-page starters for Home, About Us, Programs, Admissions, and Contact.', 'learnschool' ); ?></li>
-							<li><strong><?php echo esc_html__( 'Hero, Features & Faculty', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Mix-and-match classroom sections, teacher grids, and curriculum highlights.', 'learnschool' ); ?></li>
-							<li><strong><?php echo esc_html__( 'Admissions, Events & FAQ', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Enrollment roadmaps, open house cards, and zero-JS accordion FAQs.', 'learnschool' ); ?></li>
-							<li><strong><?php echo esc_html__( 'Headers & Footers', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Single-row or two-row utility headers and multi-column footer variations.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Pages', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full-page starters for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Hero, Features & Faculty', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Mix-and-match classroom sections, campus gallery, teacher grids, and curriculum highlights.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Admissions, Tuition & FAQ', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Enrollment roadmaps, tuition comparisons, open house cards, and zero-JS accordion FAQs.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Posts, Headers & Footers', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Query grids/lists, author box, single/two-row headers, and multi-column footer variations.', 'learnschool' ); ?></li>
 						</ul>
 					</div>
 				</div>

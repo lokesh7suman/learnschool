@@ -2,7 +2,7 @@
 /**
  * Title: Read Our Blog 3-Card Grid
  * Slug: learnschool/blog-latest
- * Categories: learnschool/features
+ * Categories: learnschool/posts, learnschool/features
  * Description: Editorial three-column blog showcase with "Read our blog" script heading, "See All" action link, and dynamic three-column latest posts Query Loop.
  * Keywords: blog, articles, stories, journal, reading, cards, posts, query
  * Viewport Width: 1280

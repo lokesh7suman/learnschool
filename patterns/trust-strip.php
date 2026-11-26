@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:html -->
-<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--primary);background:rgba(112,79,230,0.08);width:52px;height:52px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<div class="learnschool-icon-chip">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
 </div>
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Keypad Security', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Keypad Security', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -43,14 +43,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:html -->
-<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--primary);background:rgba(112,79,230,0.08);width:52px;height:52px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<div class="learnschool-icon-chip">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
 </div>
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Vetted Educators', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Vetted Educators', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -63,14 +63,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:html -->
-<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--secondary-dark);background:rgba(255,190,23,0.15);width:52px;height:52px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<div class="learnschool-icon-chip learnschool-icon-chip--accent">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2"/><path d="M17 5c0 4.5-2 9-5 13-3-4-5-8.5-5-13a5 5 0 0 1 10 0z"/></svg>
 </div>
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Allergy-Safe Food', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'Allergy-Safe Food', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->
@@ -83,14 +83,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:html -->
-<div class="learnschool-icon-wrap" style="color:var(--wp--preset--color--primary);background:rgba(112,79,230,0.08);width:52px;height:52px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">
+<div class="learnschool-icon-chip">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
 </div>
 <!-- /wp:html -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
-<h3 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'State Licensed', 'learnschool' ); ?></h3>
+<div class="wp-block-group"><!-- wp:heading {"level":2,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-1"}}},"textColor":"contrast","fontSize":"medium"} -->
+<h2 class="wp-block-heading has-contrast-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--step-1)"><?php echo esc_html__( 'State Licensed', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"contrast-subtle","fontSize":"small"} -->

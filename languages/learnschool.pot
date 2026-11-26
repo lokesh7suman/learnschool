@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T10:01:13+00:00\n"
+"POT-Creation-Date: 2026-11-26T11:00:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -38,27 +38,27 @@ msgstr ""
 msgid "codeclove"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:73
 msgid "Featured"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:119
 msgid "Menu"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:226
 msgid "Banner"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:227
 msgid "Top announcement bars, campus alert strips, and utility ribbons."
 msgstr ""
 
-#: functions.php:193
+#: functions.php:234
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:235
 msgid "Curriculum navigation, educator profiles, and school widget sidebars."
 msgstr ""
 
@@ -163,66 +163,84 @@ msgstr ""
 msgid "Hide on Mobile"
 msgstr ""
 
-#: inc/pattern-categories.php:47
+#: inc/pattern-categories.php:49
 msgctxt "Block pattern category"
 msgid "Call To Action"
 msgstr ""
 
-#: inc/pattern-categories.php:48
+#: inc/pattern-categories.php:50
 msgid "Conversion-focused sections, admissions roadmaps, event schedules, and enrollment forms."
 msgstr ""
 
-#: inc/pattern-categories.php:52
+#: inc/pattern-categories.php:54
 msgctxt "Block pattern category"
 msgid "FAQ"
 msgstr ""
 
-#: inc/pattern-categories.php:53
+#: inc/pattern-categories.php:55
 msgid "Frequently asked questions, expandable accordions, and parent handbook guides."
 msgstr ""
 
-#: inc/pattern-categories.php:57
+#: inc/pattern-categories.php:59
 msgctxt "Block pattern category"
 msgid "Features"
 msgstr ""
 
-#: inc/pattern-categories.php:58
+#: inc/pattern-categories.php:60
 msgid "Feature highlight grids, program showcases, and curriculum sections."
 msgstr ""
 
-#: inc/pattern-categories.php:62
+#: inc/pattern-categories.php:64
 msgctxt "Block pattern category"
 msgid "Hero"
 msgstr ""
 
-#: inc/pattern-categories.php:63
+#: inc/pattern-categories.php:65
 msgid "Full-width hero and banner sections for the top of pages."
 msgstr ""
 
-#: inc/pattern-categories.php:67
+#: inc/pattern-categories.php:69
 msgctxt "Block pattern category"
 msgid "Pages"
 msgstr ""
 
-#: inc/pattern-categories.php:68
-msgid "Complete starter layouts for school home, about, programs, admissions, and contact pages."
+#: inc/pattern-categories.php:70
+msgid "Complete starter layouts for school home, about, programs, admissions, blog, and contact pages."
 msgstr ""
 
-#: inc/pattern-categories.php:72
+#: inc/pattern-categories.php:74
+msgctxt "Block pattern category"
+msgid "Posts & Blog"
+msgstr ""
+
+#: inc/pattern-categories.php:75
+msgid "Blog post grids, list layouts, archive streams, and single-post author cards."
+msgstr ""
+
+#: inc/pattern-categories.php:79
+msgctxt "Block pattern category"
+msgid "Tuition & Pricing"
+msgstr ""
+
+#: inc/pattern-categories.php:80
+msgid "Tuition tables, program tier comparisons, and sibling discount highlights."
+msgstr ""
+
+#: inc/pattern-categories.php:84
 msgctxt "Block pattern category"
 msgid "Faculty & Staff"
 msgstr ""
 
-#: inc/pattern-categories.php:73
+#: inc/pattern-categories.php:85
 msgid "Educator profiles, teacher grids, leadership bios, and faculty spotlights."
 msgstr ""
 
-#: inc/pattern-categories.php:77
+#: inc/pattern-categories.php:89
 msgctxt "Block pattern category"
 msgid "Testimonials"
 msgstr ""
 
-#: inc/pattern-categories.php:78
+#: inc/pattern-categories.php:90
 msgid "Parent reviews, student stories, and quote showcases."
 msgstr ""
 
@@ -297,7 +315,7 @@ msgid "Create School Pages in One Click"
 msgstr ""
 
 #: inc/theme-admin.php:158
-msgid "Add a new page and choose from full-page starter layouts (Home, About Us, Programs, Admissions, Contact) in the pattern picker."
+msgid "Add a new page and choose from full-page starter layouts (Home, About Us, Programs, Admissions, Tuition, Blog, Contact) in the pattern picker."
 msgstr ""
 
 #: inc/theme-admin.php:160
@@ -325,59 +343,67 @@ msgid "Page (No Title)"
 msgstr ""
 
 #: inc/theme-admin.php:172
-msgid "Clean canvas ideal for starter page patterns without duplicate H1 titles."
+msgid "Edge-to-edge canvas without duplicate H1 titles or comments, ideal for starter page patterns."
 msgstr ""
 
 #: inc/theme-admin.php:173
-msgid "Page (Full Width)"
+msgid "Full Width"
 msgstr ""
 
 #: inc/theme-admin.php:173
-msgid "Edge-to-edge layout for custom hero sections."
+msgid "Edge-to-edge layout for pages and posts with optional discussion."
 msgstr ""
 
 #: inc/theme-admin.php:174
+msgid "Page with Sidebar"
+msgstr ""
+
+#: inc/theme-admin.php:174
+msgid "Two-column layout pairing main content with a customizable Sidebar template part."
+msgstr ""
+
+#: inc/theme-admin.php:175
 msgid "Landing Page"
 msgstr ""
 
-#: inc/theme-admin.php:174
-msgid "Full showcase template without distraction."
+#: inc/theme-admin.php:175
+msgid "Full showcase template without header or footer distraction."
 msgstr ""
 
-#: inc/theme-admin.php:178
+#: inc/theme-admin.php:179
 msgid "Pattern Building Blocks"
 msgstr ""
 
-#: inc/theme-admin.php:180
+#: inc/theme-admin.php:181
 msgid "Pages"
 msgstr ""
 
-#: inc/theme-admin.php:180
-msgid "Full-page starters for Home, About Us, Programs, Admissions, and Contact."
+#: inc/theme-admin.php:181
+msgid "Full-page starters for Home, About Us, Programs, Admissions, Tuition, Blog, and Contact."
 msgstr ""
 
-#: inc/theme-admin.php:181
+#: inc/theme-admin.php:182
 msgid "Hero, Features & Faculty"
 msgstr ""
 
-#: inc/theme-admin.php:181
-msgid "Mix-and-match classroom sections, teacher grids, and curriculum highlights."
-msgstr ""
-
 #: inc/theme-admin.php:182
-msgid "Admissions, Events & FAQ"
-msgstr ""
-
-#: inc/theme-admin.php:182
-msgid "Enrollment roadmaps, open house cards, and zero-JS accordion FAQs."
+msgid "Mix-and-match classroom sections, campus gallery, teacher grids, and curriculum highlights."
 msgstr ""
 
 #: inc/theme-admin.php:183
-msgid "Headers & Footers"
+msgid "Admissions, Tuition & FAQ"
 msgstr ""
 
 #: inc/theme-admin.php:183
-msgid "Single-row or two-row utility headers and multi-column footer variations."
+msgid "Enrollment roadmaps, tuition comparisons, open house cards, and zero-JS accordion FAQs."
+msgstr ""
+
+#: inc/theme-admin.php:184
+msgid "Posts, Headers & Footers"
+msgstr ""
+
+#: inc/theme-admin.php:184
+msgid "Query grids/lists, author box, single/two-row headers, and multi-column footer variations."
 msgstr ""
 
 #: patterns/admissions-roadmap.php
@@ -395,7 +421,11 @@ msgid "Simple 3-Step "
 msgstr ""
 
 #: patterns/admissions-roadmap.php:23
-msgid "Enrollment Journey"
+msgid "Enrollment"
+msgstr ""
+
+#: patterns/admissions-roadmap.php:23
+msgid "Journey"
 msgstr ""
 
 #: patterns/admissions-roadmap.php:27
@@ -411,6 +441,7 @@ msgstr ""
 #: patterns/footer-wonderkids.php:100
 #: patterns/hero-playful-doodles.php:33
 #: patterns/hero-split-tour.php:33
+#: patterns/pricing-tuition.php:135
 msgid "Schedule a Tour"
 msgstr ""
 
@@ -474,6 +505,24 @@ msgstr ""
 
 #: patterns/alert-bar.php:29
 msgid "Apply Online"
+msgstr ""
+
+#: patterns/author-box.php
+msgctxt "Pattern title"
+msgid "Single Post Author Bio Card"
+msgstr ""
+
+#: patterns/author-box.php
+msgctxt "Pattern description"
+msgid "Soft studio card displaying the post author's circular halo avatar, educator label, name link, and biography for single posts or articles."
+msgstr ""
+
+#: patterns/author-box.php:27
+msgid "About the Author"
+msgstr ""
+
+#: patterns/author-box.php:31
+msgid "Educator &amp; Contributor"
 msgstr ""
 
 #: patterns/blog-latest.php
@@ -683,7 +732,6 @@ msgid "Two-column frequently asked questions section with playful sunburst/scrib
 msgstr ""
 
 #: patterns/faq-accordion-doodle.php:25
-#: patterns/faq-simple.php:26
 msgid "Frequently "
 msgstr ""
 
@@ -783,64 +831,6 @@ msgstr ""
 
 #: patterns/faq-accordion.php:58
 msgid "Waitlist priority is determined by application date, with priority placement given to currently enrolled families. We offer a 10% tuition discount for the second enrolled sibling."
-msgstr ""
-
-#: patterns/faq-simple.php
-msgctxt "Pattern title"
-msgid "FAQ Simple Cards"
-msgstr ""
-
-#: patterns/faq-simple.php
-msgctxt "Pattern description"
-msgid "Frequently asked questions accordion with circular toggle buttons."
-msgstr ""
-
-#: patterns/faq-simple.php:26
-msgid "Asked"
-msgstr ""
-
-#: patterns/faq-simple.php:26
-msgid "Questions"
-msgstr ""
-
-#: patterns/faq-simple.php:30
-msgid "Everything you need to know about our modern curriculum, safety standards, and daily classroom routines."
-msgstr ""
-
-#: patterns/faq-simple.php:36
-msgid "Ask a Question"
-msgstr ""
-
-#: patterns/faq-simple.php:44
-msgid "What makes LearnSchool different from other education platforms?"
-msgstr ""
-
-#: patterns/faq-simple.php:45
-msgid "LearnSchool combines gamified learning science, child-friendly adaptive feedback, and zero-distraction interactive interfaces crafted exclusively for elementary and primary learners."
-msgstr ""
-
-#: patterns/faq-simple.php:50
-msgid "How can I access LearnSchool learning tools and reports?"
-msgstr ""
-
-#: patterns/faq-simple.php:51
-msgid "LearnSchool is accessible through modern web browsers, tablet apps (iPad, Android), and desktop environments, with progress syncing seamlessly across all parent-linked devices."
-msgstr ""
-
-#: patterns/faq-simple.php:56
-msgid "What about the security of children's data using this platform?"
-msgstr ""
-
-#: patterns/faq-simple.php:57
-msgid "We strictly adhere to COPPA, FERPA, and GDPR-K regulations. There are no third-party ad trackers, zero behavioral targeting, and all student data is encrypted at rest and in transit."
-msgstr ""
-
-#: patterns/faq-simple.php:62
-msgid "Are financial aid options or sibling discounts available?"
-msgstr ""
-
-#: patterns/faq-simple.php:63
-msgid "Yes! We provide a 10% tuition discount for the second sibling and offer both need-based and merit-based financial assistance packages."
 msgstr ""
 
 #: patterns/features-activities.php
@@ -1280,6 +1270,7 @@ msgstr ""
 #: patterns/footer-newsletter.php:75
 #: patterns/footer-newsletter.php:138
 #: patterns/footer-wonderkids.php:80
+#: patterns/page-admissions.php:26
 msgid "Admissions"
 msgstr ""
 
@@ -1362,6 +1353,64 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
+#: patterns/gallery-campus.php
+msgctxt "Pattern title"
+msgid "Campus Classrooms & Activities Gallery"
+msgstr ""
+
+#: patterns/gallery-campus.php
+msgctxt "Pattern description"
+msgid "Asymmetric two-column architectural showcase highlighting our creative arts studio, sensory STEM pods, and low 1:4 mentorship classrooms."
+msgstr ""
+
+#: patterns/gallery-campus.php:24
+msgid "Explore Our Learning "
+msgstr ""
+
+#: patterns/gallery-campus.php:24
+msgid "Spaces"
+msgstr ""
+
+#: patterns/gallery-campus.php:28
+msgid "Sunlit classrooms, sensory discovery studios, and welcoming mentorship designed for curious minds."
+msgstr ""
+
+#: patterns/gallery-campus.php:36
+msgid "Sunlit creative arts and story studio with children exploring paints, crafts, and books"
+msgstr ""
+
+#: patterns/gallery-campus.php:41
+msgid "Creative Arts &amp; Story Studio"
+msgstr ""
+
+#: patterns/gallery-campus.php:45
+msgid "Sunlit Reggio-inspired studio tables stocked with watercolors, non-toxic clays, puppetry stages, and cozy picture-book reading nooks."
+msgstr ""
+
+#: patterns/gallery-campus.php:55
+msgid "Young students building wooden geometric blocks and exploring science kits together"
+msgstr ""
+
+#: patterns/gallery-campus.php:60
+msgid "Sensory STEM &amp; Discovery Pods"
+msgstr ""
+
+#: patterns/gallery-campus.php:64
+msgid "Hands-on geometry blocks, botanical science tables, and collaborative problem-solving stations."
+msgstr ""
+
+#: patterns/gallery-campus.php:73
+msgid "Lead educator Kristin Watson mentoring small groups on campus"
+msgstr ""
+
+#: patterns/gallery-campus.php:79
+msgid "Small 1:4 Mentorship Ratios"
+msgstr ""
+
+#: patterns/gallery-campus.php:83
+msgid "Certified early childhood educators guiding small pods with personalized care and daily parent updates."
+msgstr ""
+
 #: patterns/header-right-aligned.php
 msgctxt "Pattern title"
 msgid "Header with Right-Aligned Navigation"
@@ -1435,6 +1484,7 @@ msgstr ""
 
 #: patterns/hero-playful-doodles.php:37
 #: patterns/hero-split-checklist.php:52
+#: patterns/hidden-404.php:38
 msgid "Explore Programs"
 msgstr ""
 
@@ -1481,6 +1531,7 @@ msgid "Safe, Light-Filled Classrooms &amp; Outdoor Nature Discovery Gardens"
 msgstr ""
 
 #: patterns/hero-split-checklist.php:48
+#: patterns/hidden-sidebar.php:48
 msgid "Book a Tour"
 msgstr ""
 
@@ -1524,6 +1575,139 @@ msgstr ""
 
 #: patterns/hero-split-tour.php:44
 msgid "Joyful early learning discovery illustration with school kids, building blocks, and books"
+msgstr ""
+
+#: patterns/hidden-404.php
+msgctxt "Pattern title"
+msgid "404 Page Content"
+msgstr ""
+
+#: patterns/hidden-404.php
+msgctxt "Pattern description"
+msgid "Localized 404 recovery heading, guidance text, search bar, and action buttons for the 404 template."
+msgstr ""
+
+#: patterns/hidden-404.php:21
+msgid "Oops! Page "
+msgstr ""
+
+#: patterns/hidden-404.php:21
+msgid "not found"
+msgstr ""
+
+#: patterns/hidden-404.php:25
+msgid "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let’s get you back on track!"
+msgstr ""
+
+#: patterns/hidden-404.php:29
+#: patterns/hidden-search-main.php:24
+#: patterns/hidden-sidebar.php:26
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-404.php:29
+#: patterns/hidden-search-main.php:24
+#: patterns/hidden-sidebar.php:26
+msgid "Search articles, guides..."
+msgstr ""
+
+#: patterns/hidden-404.php:34
+msgid "Back to Homepage"
+msgstr ""
+
+#: patterns/hidden-blog-header.php
+msgctxt "Pattern title"
+msgid "Blog Header Banner"
+msgstr ""
+
+#: patterns/hidden-blog-header.php
+msgctxt "Pattern description"
+msgid "Localized blog archive title and subtitle header for the home/blog posts index template."
+msgstr ""
+
+#: patterns/hidden-blog-header.php:21
+msgid "Our News &amp; "
+msgstr ""
+
+#: patterns/hidden-blog-header.php:21
+msgid "Articles"
+msgstr ""
+
+#: patterns/hidden-blog-header.php:25
+msgid "Stay informed with the latest stories, school announcements, activities, and educational tips."
+msgstr ""
+
+#: patterns/hidden-post-card.php
+msgctxt "Pattern title"
+msgid "Post Card Item"
+msgstr ""
+
+#: patterns/hidden-post-card.php
+msgctxt "Pattern description"
+msgid "Reusable post card markup with featured image, category pill badge, publish date, title, excerpt, and localized read-more link."
+msgstr ""
+
+#: patterns/hidden-post-card.php:35
+#: patterns/query-posts-list.php:37
+msgid "Read More"
+msgstr ""
+
+#: patterns/hidden-post-navigation.php
+msgctxt "Pattern title"
+msgid "Single Post Navigation"
+msgstr ""
+
+#: patterns/hidden-post-navigation.php
+msgctxt "Pattern description"
+msgid "Localized previous and next post navigation bar for single posts."
+msgstr ""
+
+#: patterns/hidden-post-navigation.php:20
+msgid "Previous Story"
+msgstr ""
+
+#: patterns/hidden-post-navigation.php:21
+msgid "Next Story"
+msgstr ""
+
+#: patterns/hidden-search-main.php
+msgctxt "Pattern title"
+msgid "Search Results Main Content"
+msgstr ""
+
+#: patterns/hidden-search-main.php
+msgctxt "Pattern description"
+msgid "Localized search header, retry search form, results grid, and empty-search state for the search template."
+msgstr ""
+
+#: patterns/hidden-search-main.php:41
+msgid "No results found matching your search. Please try another keyword."
+msgstr ""
+
+#: patterns/hidden-sidebar.php
+msgctxt "Pattern title"
+msgid "Default School Sidebar"
+msgstr ""
+
+#: patterns/hidden-sidebar.php
+msgctxt "Pattern description"
+msgid "Localized sidebar featuring site search, recent school news links, and an admissions tour card."
+msgstr ""
+
+#: patterns/hidden-sidebar.php:23
+msgid "Search School"
+msgstr ""
+
+#: patterns/hidden-sidebar.php:31
+msgid "Recent News"
+msgstr ""
+
+#: patterns/hidden-sidebar.php:39
+msgid "Plan a Family Visit"
+msgstr ""
+
+#: patterns/hidden-sidebar.php:43
+msgid "See our classrooms in action and talk with our admissions coordinator."
 msgstr ""
 
 #: patterns/interactive-programs.php
@@ -1654,72 +1838,72 @@ msgctxt "Pattern description"
 msgid "Reversed two-column layout with a prominent visual showcase on the left and structured feature breakdown with bullet points and action button on the right."
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:35
-msgid "Storybooks & Phonics"
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:39
-msgid "Ages 3–5"
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:44
-msgid "Illustrated readers, vocabulary cards, and tactile sensory trace sheets for early literacy."
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:59
-msgid "Digital Touch Labs"
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:63
-msgid "Adaptive"
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:68
-msgid "Self-paced audio puzzles, pattern matching, and guided science explorations on safe tablets."
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:83
-msgid "Science & Craft Kits"
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:87
-msgid "Hands-On"
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:92
-msgid "Botanical seed germination kits, non-toxic modeling clays, and tactile geometric arches."
-msgstr ""
-
-#: patterns/learning-materials-reversed.php:101
+#: patterns/learning-materials-reversed.php:25
 msgid "Textbooks, Digital Labs & "
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:101
+#: patterns/learning-materials-reversed.php:25
 msgid "Creative Kits"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:105
+#: patterns/learning-materials-reversed.php:29
 msgid "We believe educational materials should feel like invitations to wonder, not obligations. Our blended curriculum combines tactile books, responsive touch apps, and physical maker kits."
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:110
+#: patterns/learning-materials-reversed.php:34
 msgid "Visual Storybooks & Illustrated Activity Worksheets"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:114
+#: patterns/learning-materials-reversed.php:38
 msgid "Self-Paced Digital Exercises & Interactive Quizzes"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:118
+#: patterns/learning-materials-reversed.php:42
 msgid "Hands-on Science & Creative Craft Activity Packs"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:124
+#: patterns/learning-materials-reversed.php:48
 msgid "Curriculum Guide"
 msgstr ""
 
-#: patterns/learning-materials-reversed.php:128
+#: patterns/learning-materials-reversed.php:52
 msgid "Sample Lesson"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:69
+msgid "Storybooks & Phonics"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:73
+msgid "Ages 3–5"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:78
+msgid "Illustrated readers, vocabulary cards, and tactile sensory trace sheets for early literacy."
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:93
+msgid "Digital Touch Labs"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:97
+msgid "Adaptive"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:102
+msgid "Self-paced audio puzzles, pattern matching, and guided science explorations on safe tablets."
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:117
+msgid "Science & Craft Kits"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:121
+msgid "Hands-On"
+msgstr ""
+
+#: patterns/learning-materials-reversed.php:126
+msgid "Botanical seed germination kits, non-toxic modeling clays, and tactile geometric arches."
 msgstr ""
 
 #: patterns/learning-materials-split.php
@@ -1800,12 +1984,42 @@ msgstr ""
 
 #: patterns/page-admissions.php
 msgctxt "Pattern title"
-msgid "Admissions & FAQ Page Layout"
+msgid "Admissions, Tuition & FAQ Page Layout"
 msgstr ""
 
 #: patterns/page-admissions.php
 msgctxt "Pattern description"
-msgid "Complete Admissions page layout with enrollment roadmap steps, open house events schedule, expandable FAQ accordion, and tour scheduling banner."
+msgid "Complete Admissions page layout with tuition plans, enrollment roadmap steps, open house events schedule, expandable FAQ accordion, and tour scheduling banner."
+msgstr ""
+
+#: patterns/page-admissions.php:26
+msgid "Warm &amp; Transparent "
+msgstr ""
+
+#: patterns/page-admissions.php:30
+msgid "Compare transparent tuition schedules, follow our simple enrollment steps, explore upcoming open house dates, and find answers for your family."
+msgstr ""
+
+#: patterns/page-blog.php
+msgctxt "Pattern title"
+msgid "Blog & School News Page Layout"
+msgstr ""
+
+#: patterns/page-blog.php
+msgctxt "Pattern description"
+msgid "Complete Blog & School Journal page layout with editorial intro header, two-column posts grid, and tour enrollment CTA."
+msgstr ""
+
+#: patterns/page-blog.php:26
+msgid "School Stories &amp; Classroom "
+msgstr ""
+
+#: patterns/page-blog.php:26
+msgid "Journal"
+msgstr ""
+
+#: patterns/page-blog.php:30
+msgid "Explore seasonal reflections, classroom activity highlights, and parenting tips from our early learning educators."
 msgstr ""
 
 #: patterns/page-contact.php
@@ -1816,6 +2030,18 @@ msgstr ""
 #: patterns/page-contact.php
 msgctxt "Pattern description"
 msgid "Full Contact Us page layout combining campus contact cards, open house schedule, and quick parent FAQ cards."
+msgstr ""
+
+#: patterns/page-contact.php:26
+msgid "Visit Our Campus &amp; "
+msgstr ""
+
+#: patterns/page-contact.php:26
+msgid "Connect"
+msgstr ""
+
+#: patterns/page-contact.php:30
+msgid "Schedule a guided family tour, call our admissions desk, or join us at an upcoming campus open house."
 msgstr ""
 
 #: patterns/page-home.php
@@ -1850,6 +2076,177 @@ msgstr ""
 
 #: patterns/post-meta.php:29
 msgid "By"
+msgstr ""
+
+#: patterns/pricing-tuition.php
+msgctxt "Pattern title"
+msgid "Tuition & Program Plans (3-Column)"
+msgstr ""
+
+#: patterns/pricing-tuition.php
+msgctxt "Pattern description"
+msgid "Three-column tuition and schedule comparison featuring Half-Day Mornings, elevated Full-Day Academy, and All-Day Extended Enrichment plans."
+msgstr ""
+
+#: patterns/pricing-tuition.php:24
+msgid "Simple, Transparent "
+msgstr ""
+
+#: patterns/pricing-tuition.php:24
+msgid "Tuition"
+msgstr ""
+
+#: patterns/pricing-tuition.php:28
+msgid "Every tuition plan includes daily organic meals, hands-on craft kits, parent portal journals, and a 10% second-sibling discount."
+msgstr ""
+
+#: patterns/pricing-tuition.php:38
+msgid "Half-Day Mornings"
+msgstr ""
+
+#: patterns/pricing-tuition.php:42
+msgid "8:30–12:30"
+msgstr ""
+
+#: patterns/pricing-tuition.php:47
+msgid "Morning Discovery"
+msgstr ""
+
+#: patterns/pricing-tuition.php:51
+msgid "Gentle morning rhythm ideal for toddlers transitioning into joyful classroom play."
+msgstr ""
+
+#: patterns/pricing-tuition.php:56
+msgid "$890"
+msgstr ""
+
+#: patterns/pricing-tuition.php:60
+#: patterns/pricing-tuition.php:114
+#: patterns/pricing-tuition.php:168
+msgid "/ month"
+msgstr ""
+
+#: patterns/pricing-tuition.php:66
+msgid "Morning phonics &amp; sensory circle"
+msgstr ""
+
+#: patterns/pricing-tuition.php:70
+msgid "Organic morning snack &amp; warm lunch"
+msgstr ""
+
+#: patterns/pricing-tuition.php:74
+msgid "Weekly parent milestone highlights"
+msgstr ""
+
+#: patterns/pricing-tuition.php:81
+msgid "Inquire Now"
+msgstr ""
+
+#: patterns/pricing-tuition.php:92
+msgid "Most Popular"
+msgstr ""
+
+#: patterns/pricing-tuition.php:96
+msgid "8:00–3:30"
+msgstr ""
+
+#: patterns/pricing-tuition.php:101
+msgid "Full-Day Academy"
+msgstr ""
+
+#: patterns/pricing-tuition.php:105
+msgid "Complete core Pre-K curriculum, STEM labs, studio arts, and afternoon rest time."
+msgstr ""
+
+#: patterns/pricing-tuition.php:110
+msgid "$1,280"
+msgstr ""
+
+#: patterns/pricing-tuition.php:120
+msgid "Full Pre-K literacy &amp; early math labs"
+msgstr ""
+
+#: patterns/pricing-tuition.php:124
+msgid "Daily outdoor garden &amp; music studio"
+msgstr ""
+
+#: patterns/pricing-tuition.php:128
+msgid "Scratch meals &amp; daily portal updates"
+msgstr ""
+
+#: patterns/pricing-tuition.php:146
+msgid "All-Day Care"
+msgstr ""
+
+#: patterns/pricing-tuition.php:150
+msgid "7:30–6:00"
+msgstr ""
+
+#: patterns/pricing-tuition.php:155
+msgid "Extended Enrichment"
+msgstr ""
+
+#: patterns/pricing-tuition.php:159
+msgid "Seamless morning care and after-school enrichment clubs for busy working families."
+msgstr ""
+
+#: patterns/pricing-tuition.php:164
+msgid "$1,490"
+msgstr ""
+
+#: patterns/pricing-tuition.php:174
+msgid "Full-Day Academy core &amp; meals"
+msgstr ""
+
+#: patterns/pricing-tuition.php:178
+msgid "Afternoon robotics, pottery &amp; stories"
+msgstr ""
+
+#: patterns/pricing-tuition.php:182
+msgid "Priority seasonal camp registration"
+msgstr ""
+
+#: patterns/pricing-tuition.php:189
+msgid "Reserve Spot"
+msgstr ""
+
+#: patterns/query-posts-grid-default.php
+msgctxt "Pattern title"
+msgid "Default Posts 2-Column Grid Query"
+msgstr ""
+
+#: patterns/query-posts-grid-default.php
+msgctxt "Pattern description"
+msgid "Two-column editorial Query Loop grid inheriting the page or archive query, shared across Home, Index, and Archive templates."
+msgstr ""
+
+#: patterns/query-posts-grid-default.php:35
+msgid "No posts or announcements found."
+msgstr ""
+
+#: patterns/query-posts-grid.php
+msgctxt "Pattern title"
+msgid "Posts 2-Column Editorial Grid"
+msgstr ""
+
+#: patterns/query-posts-grid.php
+msgctxt "Pattern description"
+msgid "Standalone two-column blog post grid with pagination and category badges for custom news and journal pages."
+msgstr ""
+
+#: patterns/query-posts-grid.php:35
+#: patterns/query-posts-list.php:50
+msgid "No posts or announcements published yet."
+msgstr ""
+
+#: patterns/query-posts-list.php
+msgctxt "Pattern title"
+msgid "Posts Horizontal List Layout"
+msgstr ""
+
+#: patterns/query-posts-list.php
+msgctxt "Pattern description"
+msgid "Editorial single-column horizontal post cards with media thumbnail on the left and details on the right."
 msgstr ""
 
 #: patterns/teachers-photos-grid.php
@@ -2169,6 +2566,11 @@ msgstr ""
 
 #: theme.json
 msgctxt "Custom template name"
+msgid "Page with Sidebar"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
 msgid "Landing Page"
 msgstr ""
 
@@ -2180,6 +2582,11 @@ msgstr ""
 #: theme.json
 msgctxt "Template part name"
 msgid "Footer"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
 msgstr ""
 
 #: theme.json

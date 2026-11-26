@@ -33,8 +33,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"22%"} -->
-<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"fontSize":"medium","textColor":"base"} -->
-<h4 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Our Programs', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":2,"fontSize":"medium","textColor":"base"} -->
+<h2 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Our Programs', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
@@ -61,8 +61,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"22%"} -->
-<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"fontSize":"medium","textColor":"base"} -->
-<h4 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Parent Resources', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":2,"fontSize":"medium","textColor":"base"} -->
+<h2 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Parent Resources', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
@@ -89,16 +89,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"22%"} -->
-<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":4,"fontSize":"medium","textColor":"base"} -->
-<h4 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Campus Hours', 'learnschool' ); ?></h4>
+<div class="wp-block-column" style="flex-basis:22%"><!-- wp:heading {"level":2,"fontSize":"medium","textColor":"base"} -->
+<h2 class="wp-block-heading has-base-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Campus Hours', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255, 255, 255, 0.78)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78)"><strong style="color:#ffffff"><?php echo esc_html__( 'Monday – Friday:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '7:30 AM – 6:00 PM', 'learnschool' ); ?></p>
+<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78)"><strong style="color:var(--wp--preset--color--base)"><?php echo esc_html__( 'Monday – Friday:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '7:30 AM – 6:00 PM', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small","style":{"color":{"text":"rgba(255, 255, 255, 0.78)"}}} -->
-<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78)"><strong style="color:#ffffff"><?php echo esc_html__( 'Campus Location:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '124 Early Learning Way, Suite 100', 'learnschool' ); ?><br><?php echo esc_html__( 'Austin, TX 78701', 'learnschool' ); ?></p>
+<p class="has-text-color has-small-font-size" style="color:rgba(255, 255, 255, 0.78)"><strong style="color:var(--wp--preset--color--base)"><?php echo esc_html__( 'Campus Location:', 'learnschool' ); ?></strong><br><?php echo esc_html__( '124 Early Learning Way, Suite 100', 'learnschool' ); ?><br><?php echo esc_html__( 'Austin, TX 78701', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}},"fontSize":"small","textColor":"secondary"} -->

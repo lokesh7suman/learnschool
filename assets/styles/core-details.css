@@ -9,12 +9,12 @@
 /* ── Base Details / Accordion Block ─────────────────────────────────── */
 
 .wp-block-details {
-	border: 1.5px solid #edf0f8;
+	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
 	border-radius: 20px;
 	padding: 18px 24px;
 	background-color: var(--wp--preset--color--base, #fff);
 	margin-bottom: 16px;
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+	box-shadow: var(--wp--preset--shadow--card);
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 

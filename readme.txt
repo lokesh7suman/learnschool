@@ -15,7 +15,7 @@ LearnSchool is a clean, playful, and accessible Full-Site Editing (FSE) block th
 == Features ==
 
 * Full Site Editing (FSE) support with custom block templates and template parts
-* 33 modular Block Patterns including 5 full-page starter layouts (Home, About Us, Programs, Admissions, Contact)
+* 40 modular Block Patterns including 7 full-page starter layouts (Home, About Us, Programs, Admissions, Tuition, Blog, Contact)
 * 3 Global Style Variations (Coral Playground, Pastel Nursery, Sunshine Playful) plus custom block styles
 * Fluid Typography & Responsive Spacing Tokens
 * Privacy-first: self-hosted WOFF2 fonts with zero external CDN requests
@@ -42,7 +42,7 @@ LearnSchool does not collect, store, or transmit personal visitor data, set trac
 == Changelog ==
 
 = 1.0.0 =
-* Initial public release featuring Full-Site Editing templates, theme.json v3 design tokens, three global style variations, self-hosted typography, and 33 educational and starter-page block patterns.
+* Initial public release featuring Full-Site Editing templates, theme.json v3 design tokens, three global style variations, self-hosted typography, and 40 educational and starter-page block patterns.
 
 == Copyright & License ==
 

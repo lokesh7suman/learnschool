@@ -15,9 +15,17 @@
 	}
 }
 
+/* Desktop Column Order Reverse (Preserves Semantic H2->H3 DOM Order) */
+@media (min-width: 782px) {
+
+	.wp-block-columns.learnschool-columns-desktop-reverse {
+		flex-direction: row-reverse;
+	}
+}
+
 /* Card Columns Variation */
 .wp-block-columns.is-style-learnschool-column-cards > .wp-block-column {
-	border-radius: var(--wp--preset--spacing--step-4, 24px);
+	border-radius: 24px;
 	padding: var(--wp--preset--spacing--step-4, 24px);
 	background-color: var(--wp--preset--color--surface, #fff);
 	border: 1px solid var(--wp--preset--color--border, #e2e8f0);
@@ -27,6 +35,21 @@
 .wp-block-columns.is-style-learnschool-column-cards > .wp-block-column:hover {
 	transform: translateY(-4px);
 	box-shadow: var(--wp--preset--shadow--card);
+}
+
+/* Sidebar Layout Columns: Stack cleanly below 960px */
+@media (max-width: 960px) {
+
+	.wp-block-columns.learnschool-sidebar-columns {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		flex-wrap: wrap;
+	}
+
+	.wp-block-columns.learnschool-sidebar-columns > .wp-block-column {
+		flex-basis: 100%;
+		width: 100%;
+	}
 }
 
 /* Tablet Responsive 2x2 Layout for Trust Strip & Multi-Column Grids */

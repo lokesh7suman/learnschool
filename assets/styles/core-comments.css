@@ -26,11 +26,11 @@
 
 .wp-block-comments .wp-block-comment-template > li {
 	background-color: var(--wp--preset--color--base, #fff);
-	border: 1.5px solid #edf0f8;
-	border-radius: var(--wp--preset--spacing--step-4, 24px);
+	border: 1.5px solid var(--wp--preset--color--border, #e2e8f0);
+	border-radius: 24px;
 	padding: var(--wp--preset--spacing--step-4, 24px) var(--wp--preset--spacing--step-5, 28px);
 	margin-bottom: 20px;
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+	box-shadow: var(--wp--preset--shadow--card);
 	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 

@@ -62,6 +62,23 @@ if ( ! function_exists( 'learnschool_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'learnschool_setup' );
 
+if ( ! function_exists( 'learnschool_sticky_label_css' ) ) :
+	/**
+	 * Builds the CSS custom property declaration for the localized sticky post badge label.
+	 *
+	 * @since 1.0.0
+	 * @return string Inline CSS declaration or empty string on encoding failure.
+	 */
+	function learnschool_sticky_label_css(): string {
+		$sticky_label = wp_json_encode( wp_strip_all_tags( __( 'Featured', 'learnschool' ) ) );
+		if ( ! is_string( $sticky_label ) ) {
+			return '';
+		}
+
+		return ":root { --learnschool-sticky-label: {$sticky_label}; }";
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_scripts' ) ) :
 	/**
 	 * Enqueue theme stylesheet on front-end.
@@ -82,12 +99,9 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 			$version
 		);
 
-		$sticky_label = wp_json_encode( wp_strip_all_tags( __( 'Featured', 'learnschool' ) ) );
-		if ( is_string( $sticky_label ) ) {
-			wp_add_inline_style(
-				'learnschool-style',
-				":root { --learnschool-sticky-label: {$sticky_label}; }"
-			);
+		$sticky_css = learnschool_sticky_label_css();
+		if ( '' !== $sticky_css ) {
+			wp_add_inline_style( 'learnschool-style', $sticky_css );
 		}
 
 		wp_enqueue_script(
@@ -142,6 +156,33 @@ if ( ! function_exists( 'learnschool_enqueue_block_styles' ) ) :
 	}
 endif;
 add_action( 'init', 'learnschool_enqueue_block_styles' );
+
+if ( ! function_exists( 'learnschool_block_assets' ) ) :
+	/**
+	 * Expose dynamic CSS custom properties inside the block editor iframe.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	function learnschool_block_assets(): void {
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		$sticky_css = learnschool_sticky_label_css();
+		if ( '' === $sticky_css ) {
+			return;
+		}
+
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$version       = is_string( $theme_version ) ? $theme_version : '1.0.0';
+
+		wp_register_style( 'learnschool-editor-tokens', false, array(), $version );
+		wp_enqueue_style( 'learnschool-editor-tokens' );
+		wp_add_inline_style( 'learnschool-editor-tokens', $sticky_css );
+	}
+endif;
+add_action( 'enqueue_block_assets', 'learnschool_block_assets' );
 
 if ( ! function_exists( 'learnschool_editor_assets' ) ) :
 	/**

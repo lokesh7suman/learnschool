@@ -40,8 +40,8 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 		expect( await blockRecoveryWarnings.count() ).toBe( 0 );
 	} );
 
-	test( 'Site Editor template parts (Comments, Header, Footer, Post Meta) load with zero block recovery warnings', async ( { page } ) => {
-		const parts = [ 'comments', 'header', 'footer', 'post-meta' ];
+	test( 'Site Editor template parts (Comments, Header, Footer, Post Meta, Sidebar) load with zero block recovery warnings', async ( { page } ) => {
+		const parts = [ 'comments', 'header', 'footer', 'post-meta', 'sidebar' ];
 
 		for ( const part of parts ) {
 			await page.goto(
@@ -117,6 +117,13 @@ test.describe( 'Gutenberg Site Editor & Block Invalidation Audit', () => {
 						const blockPath = `${ pathStr }/${ idx }:${ block.name }`;
 						if ( ! block.isValid || block.name === 'core/freeform' || block.name === 'core/missing' ) {
 							invalid.push( { path: blockPath, name: block.name, isValid: block.isValid } );
+						}
+						if (
+							( block.name === 'core/paragraph' || block.name === 'core/heading' ) &&
+							typeof block.attributes?.content === 'string' &&
+							block.attributes.content.includes( '<svg' )
+						) {
+							invalid.push( { path: blockPath, name: block.name, reason: 'inline-svg-in-richtext' } );
 						}
 						if ( block.innerBlocks?.length ) {
 							walk( block.innerBlocks, blockPath );
