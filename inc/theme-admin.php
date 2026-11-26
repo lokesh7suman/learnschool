@@ -155,7 +155,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 				<div class="learnschool-admin-card">
 					<span class="learnschool-admin-step">4</span>
 					<h2><?php echo esc_html__( 'Create School Pages in One Click', 'learnschool' ); ?></h2>
-					<p><?php echo esc_html__( 'Add a new page and choose from 6 full-page starter layouts (Home, About Us, Programs, Admissions, Blog, Contact) in the pattern picker.', 'learnschool' ); ?></p>
+					<p><?php echo esc_html__( 'Add a new page and choose from 7 full-page starter layouts (Home, About Us, Programs, Admissions, Blog, Blog with Sidebar, Contact) in the pattern picker.', 'learnschool' ); ?></p>
 					<a class="button button-primary" href="<?php echo esc_url( $new_page_url ); ?>">
 						<?php echo esc_html__( 'Create New Page', 'learnschool' ); ?>
 					</a>
@@ -178,7 +178,7 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 					<div>
 						<h3><?php echo esc_html__( 'Pattern Building Blocks', 'learnschool' ); ?></h3>
 						<ul>
-							<li><strong><?php echo esc_html__( 'Pages', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full-page starters for Home, About Us, Programs, Admissions, Blog, and Contact.', 'learnschool' ); ?></li>
+							<li><strong><?php echo esc_html__( 'Pages', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Full-page starters for Home, About Us, Programs, Admissions, Blog, Blog with Sidebar, and Contact.', 'learnschool' ); ?></li>
 							<li><strong><?php echo esc_html__( 'Hero, Features & Faculty', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Mix-and-match classroom sections, campus gallery, teacher grids, and curriculum highlights.', 'learnschool' ); ?></li>
 							<li><strong><?php echo esc_html__( 'Admissions, Tuition & FAQ', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Enrollment roadmaps, tuition comparisons, open house cards, and zero-JS accordion FAQs.', 'learnschool' ); ?></li>
 							<li><strong><?php echo esc_html__( 'Posts, Headers & Footers', 'learnschool' ); ?></strong> &mdash; <?php echo esc_html__( 'Query grids/lists, author box, single/two-row headers, and multi-column footer variations.', 'learnschool' ); ?></li>

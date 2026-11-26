@@ -38,6 +38,7 @@ const patterns = [
 	'templates/**',
 	'functions.php',
 	'index.php',
+	'license.txt',
 	'readme.txt',
 	'screenshot.png',
 	'style.css',

@@ -10,7 +10,7 @@ Tags: education, blog, full-site-editing, block-patterns, block-styles, style-va
 
 == Description ==
 
-LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 32 modular section patterns alongside 6 full-page starter layouts for Home, About Us, Programs, Admissions, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
+LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 7 full-page starter layouts for Home, About Us, Programs, Admissions, Blog, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests.
 
 == Installation ==
 
@@ -45,19 +45,19 @@ This theme bundles the following third-party and original resources:
 
 === Fonts ===
 
-Both bundled font families are licensed under the SIL Open Font License, Version 1.1.
+Both bundled font families are licensed under the SIL Open Font License, Version 1.1 (see each font directory's `OFL.txt`).
 
 * Quicksand Variable Font (`assets/fonts/quicksand/quicksand-variable.woff2`)
   Author: Andrew Paglinawan
   Source: https://fonts.google.com/specimen/Quicksand
-  License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL)
-  Copyright: Copyright 2011 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily)
+  License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL, `assets/fonts/quicksand/OFL.txt`)
+  Copyright: Copyright 2011 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily), with Reserved Font Name "Quicksand"
 
 * Courgette Regular Font (`assets/fonts/courgette/courgette-regular.woff2`)
   Author: Karolina Lach / Sorkin Type Co
   Source: https://fonts.google.com/specimen/Courgette
-  License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL)
-  Copyright: Copyright 2012 The Courgette Project Authors (https://github.com/googlefonts/courgette)
+  License: SIL Open Font License, 1.1 (https://scripts.sil.org/OFL, `assets/fonts/courgette/OFL.txt`)
+  Copyright: Copyright (c) 2012 by Sorkin Type Co (https://www.sorkintype.com), with Reserved Font Name "Courgette"
 
 === Icons ===
 
@@ -93,6 +93,7 @@ Copyright: Copyright (C) 2026 codeclove
 * `assets/images/doodles/sections/card-scribble.svg` - Decorative scribble underline motif
 * `assets/images/doodles/sections/hashtags-cloud.svg` - Decorative backdrop doodle
 * `assets/images/doodles/sections/oval-highlight.svg` - Decorative oval brush loop
+* `assets/images/doodles/sections/post-cover-motif.svg` - Decorative open-book cover motif for imageless post cards
 * `assets/images/doodles/sections/scallop-badge.svg` - Decorative scalloped ring motif
 * `assets/images/doodles/sections/sunburst-yellow.svg` - Decorative sunburst motif
 * `assets/images/doodles/text-highlights/highlight-brush.svg` - Inline text highlight brush SVG
