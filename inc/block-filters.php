@@ -147,6 +147,74 @@ if ( ! function_exists( 'learnschool_expand_navigation_page_list' ) ) :
 endif;
 add_filter( 'block_core_navigation_render_inner_blocks', 'learnschool_expand_navigation_page_list' );
 
+if ( ! function_exists( 'learnschool_highlight_active_custom_nav_link' ) ) :
+	/**
+	 * Marks custom core/navigation-link items as active when their URL path matches
+	 * the current page request, preserving active-pill styling for theme pattern menus.
+	 *
+	 * @since 1.0.0
+	 * @param string               $block_content Rendered core/navigation-link HTML.
+	 * @param array<string, mixed> $block         Parsed block data.
+	 * @return string Modified HTML with current-menu-item and aria-current="page" when active.
+	 */
+	function learnschool_highlight_active_custom_nav_link( string $block_content, array $block ): string {
+		if ( is_admin() || '' === trim( $block_content ) || str_contains( $block_content, 'aria-current=' ) ) {
+			return $block_content;
+		}
+
+		$raw_url = isset( $block['attrs']['url'] ) && is_string( $block['attrs']['url'] )
+			? $block['attrs']['url']
+			: '';
+		if ( '' === $raw_url ) {
+			return $block_content;
+		}
+
+		$link_host = wp_parse_url( $raw_url, PHP_URL_HOST );
+		$site_host = wp_parse_url( home_url( '/' ), PHP_URL_HOST );
+		if ( is_string( $link_host ) && '' !== $link_host && is_string( $site_host ) && 0 !== strcasecmp( $link_host, $site_host ) ) {
+			return $block_content;
+		}
+
+		$link_path    = wp_parse_url( $raw_url, PHP_URL_PATH );
+		$request_uri  = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( (string) $_SERVER['REQUEST_URI'] ) ) : '';
+		$current_path = wp_parse_url( $request_uri, PHP_URL_PATH );
+
+		if ( ! is_string( $link_path ) || ! is_string( $current_path ) ) {
+			return $block_content;
+		}
+
+		$normalized_link    = '/' === $link_path ? '/' : trailingslashit( $link_path );
+		$normalized_current = '/' === $current_path ? '/' : trailingslashit( $current_path );
+		$home_path          = wp_parse_url( home_url( '/' ), PHP_URL_PATH );
+		$normalized_home    = is_string( $home_path ) && '' !== $home_path ? trailingslashit( $home_path ) : '/';
+
+		if ( $normalized_link === $normalized_home ) {
+			return $block_content;
+		}
+
+		$posts_page_id  = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
+		$news_path      = ( $posts_page_id > 0 && function_exists( 'learnschool_get_news_url' ) )
+			? wp_parse_url( learnschool_get_news_url(), PHP_URL_PATH )
+			: '';
+		$is_active_news = is_string( $news_path ) && '' !== $news_path && is_home() && trailingslashit( $news_path ) === $normalized_link;
+
+		if ( $normalized_link !== $normalized_current && ! $is_active_news ) {
+			return $block_content;
+		}
+
+		$tags = new \WP_HTML_Tag_Processor( $block_content );
+		if ( $tags->next_tag( array( 'tag_name' => 'LI' ) ) ) {
+			$tags->add_class( 'current-menu-item' );
+		}
+		if ( $tags->next_tag( array( 'tag_name' => 'A' ) ) ) {
+			$tags->set_attribute( 'aria-current', 'page' );
+		}
+
+		return $tags->get_updated_html();
+	}
+endif;
+add_filter( 'render_block_core/navigation-link', 'learnschool_highlight_active_custom_nav_link', 10, 2 );
+
 if ( ! function_exists( 'learnschool_render_classic_nextpage_links' ) ) :
 	/**
 	 * Renders wp_link_pages() for classic <!--nextpage--> paginated posts inside core/post-content.

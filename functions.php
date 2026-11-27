@@ -267,6 +267,26 @@ require_once get_template_directory() . '/inc/site-logo.php';
 require_once get_template_directory() . '/inc/recommended-plugins.php';
 require_once get_template_directory() . '/inc/theme-admin.php';
 
+if ( ! function_exists( 'learnschool_get_news_url' ) ) :
+	/**
+	 * Returns the canonical URL for the school News / Posts archive or page.
+	 *
+	 * @since 1.0.0
+	 * @return string Canonical News page or archive URL.
+	 */
+	function learnschool_get_news_url(): string {
+		$posts_page = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
+		if ( $posts_page > 0 ) {
+			$permalink = get_permalink( $posts_page );
+			if ( is_string( $permalink ) && '' !== $permalink ) {
+				return $permalink;
+			}
+		}
+
+		return home_url( '/news/' );
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 	/**
 	 * Style the site title with two-tone branding and the Sunny Gold brush accent on the final word.
