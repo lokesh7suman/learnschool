@@ -26,8 +26,8 @@ if ( ! function_exists( 'learnschool_add_welcome_page' ) ) :
 	 */
 	function learnschool_add_welcome_page(): void {
 		$hook_suffix = add_theme_page(
-			esc_html__( 'LearnSchool Setup', 'learnschool' ),
-			esc_html__( 'LearnSchool', 'learnschool' ),
+			__( 'LearnSchool Setup', 'learnschool' ),
+			__( 'LearnSchool', 'learnschool' ),
 			'edit_theme_options',
 			'learnschool',
 			'learnschool_render_welcome_page'
@@ -63,13 +63,35 @@ if ( ! function_exists( 'learnschool_register_admin_help' ) ) :
 			)
 		);
 
+		$styles_url = learnschool_get_site_editor_url( '/styles', array( 'path' => '/wp_global_styles' ) );
+
 		$screen->set_help_sidebar(
 			'<p><strong>' . esc_html__( 'Quick Links', 'learnschool' ) . '</strong></p>' .
 			'<p><a href="' . esc_url( admin_url( 'site-editor.php' ) ) . '">' . esc_html__( 'Site Editor', 'learnschool' ) . '</a></p>' .
-			'<p><a href="' . esc_url( admin_url( 'site-editor.php?p=%2Fstyles' ) ) . '">' . esc_html__( 'Global Styles', 'learnschool' ) . '</a></p>' .
+			'<p><a href="' . esc_url( $styles_url ) . '">' . esc_html__( 'Global Styles', 'learnschool' ) . '</a></p>' .
 			'<p><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'View Live Site', 'learnschool' ) . '</a></p>' .
 			'<p><a href="' . esc_url( 'https://codeclove.com/contact-us/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Theme Support', 'learnschool' ) . '</a></p>'
 		);
+	}
+endif;
+
+if ( ! function_exists( 'learnschool_get_site_editor_url' ) ) :
+	/**
+	 * Builds a version-compatible Site Editor deep link across WordPress 6.7 and 6.8+.
+	 *
+	 * @since 1.0.0
+	 * @param string               $p_route      Route parameter introduced in WordPress 6.8 (e.g. '/styles').
+	 * @param array<string, mixed> $legacy_query Query args used by WordPress 6.7 Site Editor.
+	 * @return string Fully formed Site Editor admin URL.
+	 */
+	function learnschool_get_site_editor_url( string $p_route, array $legacy_query ): string {
+		$site_editor_url = admin_url( 'site-editor.php' );
+
+		if ( version_compare( get_bloginfo( 'version' ), '6.8', '>=' ) ) {
+			return add_query_arg( array( 'p' => $p_route ), $site_editor_url );
+		}
+
+		return add_query_arg( $legacy_query, $site_editor_url );
 	}
 endif;
 
@@ -86,10 +108,9 @@ if ( ! function_exists( 'learnschool_admin_assets' ) ) :
 			return;
 		}
 
-		$theme_version = wp_get_theme()->get( 'Version' );
-		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG
-			? (string) filemtime( get_theme_file_path( 'assets/styles/admin.css' ) )
-			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
+		$version = function_exists( 'learnschool_asset_version' )
+			? learnschool_asset_version( 'assets/styles/admin.css' )
+			: '1.0.0';
 
 		wp_enqueue_style(
 			'learnschool-admin',
@@ -179,11 +200,15 @@ if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 		$active_map         = is_array( $active_palette_raw ) ? learnschool_extract_palette_map( $active_palette_raw ) : array();
 		$active_signature   = learnschool_extract_palette_signature( $active_map );
 
-		$presets = array();
-
-		$theme_data      = \WP_Theme_JSON_Resolver::get_theme_data()->get_raw_data();
-		$default_palette = $theme_data['settings']['color']['palette']['theme'] ?? array();
-		$default_map     = is_array( $default_palette ) ? learnschool_extract_palette_map( $default_palette ) : array();
+		$presets         = array();
+		$theme_json_path = get_theme_file_path( 'theme.json' );
+		$theme_data      = is_file( $theme_json_path )
+			? wp_json_file_decode( $theme_json_path, array( 'associative' => true ) )
+			: array();
+		$default_palette = is_array( $theme_data ) && isset( $theme_data['settings']['color']['palette'] ) && is_array( $theme_data['settings']['color']['palette'] )
+			? $theme_data['settings']['color']['palette']
+			: array();
+		$default_map     = learnschool_extract_palette_map( $default_palette );
 
 		if ( ! empty( $default_map ) ) {
 			$default_signature = learnschool_extract_palette_signature( $default_map );
@@ -204,14 +229,28 @@ if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 			);
 		}
 
-		$variations = \WP_Theme_JSON_Resolver::get_style_variations( 'theme' );
-		if ( is_array( $variations ) ) {
-			foreach ( $variations as $variation ) {
+		$variation_map = array();
+		$style_dirs    = is_child_theme()
+			? array( get_template_directory() . '/styles/*.json', get_stylesheet_directory() . '/styles/*.json' )
+			: array( get_template_directory() . '/styles/*.json' );
+		foreach ( $style_dirs as $pattern ) {
+			$found = glob( $pattern );
+			if ( is_array( $found ) ) {
+				foreach ( $found as $path ) {
+					$variation_map[ basename( $path ) ] = $path;
+				}
+			}
+		}
+		ksort( $variation_map );
+		$variation_files = array_values( $variation_map );
+		if ( ! empty( $variation_files ) ) {
+			foreach ( $variation_files as $variation_file ) {
+				$variation = wp_json_file_decode( $variation_file, array( 'associative' => true ) );
 				if ( ! is_array( $variation ) ) {
 					continue;
 				}
 				$title       = isset( $variation['title'] ) && is_string( $variation['title'] ) ? $variation['title'] : '';
-				$var_palette = $variation['settings']['color']['palette']['theme'] ?? array();
+				$var_palette = $variation['settings']['color']['palette'] ?? array();
 				if ( '' === $title || ! is_array( $var_palette ) ) {
 					continue;
 				}
@@ -262,36 +301,36 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 	 * }> Ordered setup steps.
 	 */
 	function learnschool_get_admin_setup_steps( array $presets ): array {
-		$stylesheet      = get_stylesheet();
-		$site_editor_url = admin_url( 'site-editor.php' );
+		$stylesheet = get_stylesheet();
+
+		$header_url = add_query_arg(
+			array( 'canvas' => 'edit' ),
+			learnschool_get_site_editor_url(
+				'/wp_template_part/' . $stylesheet . '//header',
+				array(
+					'postType' => 'wp_template_part',
+					'postId'   => $stylesheet . '//header',
+				)
+			)
+		);
+		$footer_url = add_query_arg(
+			array( 'canvas' => 'edit' ),
+			learnschool_get_site_editor_url(
+				'/wp_template_part/' . $stylesheet . '//footer',
+				array(
+					'postType' => 'wp_template_part',
+					'postId'   => $stylesheet . '//footer',
+				)
+			)
+		);
 
 		$identity_url = version_compare( get_bloginfo( 'version' ), '7.0', '>=' )
-			? add_query_arg( array( 'p' => '/identity' ), $site_editor_url )
-			: add_query_arg(
-				array(
-					'p'      => '/wp_template_part/' . $stylesheet . '//header',
-					'canvas' => 'edit',
-				),
-				$site_editor_url
-			);
+			? learnschool_get_site_editor_url( '/identity', array( 'path' => '/wp_global_styles' ) )
+			: $header_url;
 
-		$styles_url     = add_query_arg( array( 'p' => '/styles' ), $site_editor_url );
-		$patterns_url   = add_query_arg( array( 'p' => '/pattern' ), $site_editor_url );
-		$navigation_url = add_query_arg( array( 'p' => '/navigation' ), $site_editor_url );
-		$header_url     = add_query_arg(
-			array(
-				'p'      => '/wp_template_part/' . $stylesheet . '//header',
-				'canvas' => 'edit',
-			),
-			$site_editor_url
-		);
-		$footer_url     = add_query_arg(
-			array(
-				'p'      => '/wp_template_part/' . $stylesheet . '//footer',
-				'canvas' => 'edit',
-			),
-			$site_editor_url
-		);
+		$styles_url     = learnschool_get_site_editor_url( '/styles', array( 'path' => '/wp_global_styles' ) );
+		$patterns_url   = learnschool_get_site_editor_url( '/pattern', array( 'postType' => 'wp_block' ) );
+		$navigation_url = learnschool_get_site_editor_url( '/navigation', array( 'postType' => 'wp_navigation' ) );
 
 		$custom_logo_set = has_custom_logo();
 		$site_icon_set   = has_site_icon();
@@ -399,17 +438,16 @@ if ( ! function_exists( 'learnschool_render_admin_resources_panel' ) ) :
 	 * @return void
 	 */
 	function learnschool_render_admin_resources_panel(): void {
-		$site_editor_url = admin_url( 'site-editor.php' );
-		$shortcuts       = array(
+		$shortcuts = array(
 			array(
 				'label' => __( 'Page Templates', 'learnschool' ),
 				'hint'  => __( 'Front Page, Page (No Title), Sidebar, Full Width & Landing', 'learnschool' ),
-				'url'   => add_query_arg( array( 'p' => '/template' ), $site_editor_url ),
+				'url'   => learnschool_get_site_editor_url( '/template', array( 'postType' => 'wp_template' ) ),
 			),
 			array(
 				'label' => __( 'Block Patterns', 'learnschool' ),
 				'hint'  => __( '33 modular sections and 6 full-page school layouts', 'learnschool' ),
-				'url'   => add_query_arg( array( 'p' => '/pattern' ), $site_editor_url ),
+				'url'   => learnschool_get_site_editor_url( '/pattern', array( 'postType' => 'wp_block' ) ),
 			),
 			array(
 				'label' => __( 'Reading Settings', 'learnschool' ),
@@ -451,12 +489,16 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 	 * @return void
 	 */
 	function learnschool_render_welcome_page(): void {
+		if ( ! current_user_can( 'edit_theme_options' ) ) {
+			wp_die( esc_html__( 'Sorry, you are not allowed to edit theme options on this site.', 'learnschool' ), 403 );
+		}
+
 		$theme         = wp_get_theme();
 		$theme_version = $theme->get( 'Version' );
 		$version_label = is_string( $theme_version ) && '' !== $theme_version ? $theme_version : '1.0.0';
 
 		$site_editor_url = admin_url( 'site-editor.php' );
-		$styles_url      = add_query_arg( array( 'p' => '/styles' ), $site_editor_url );
+		$styles_url      = learnschool_get_site_editor_url( '/styles', array( 'path' => '/wp_global_styles' ) );
 		$presets         = learnschool_get_admin_style_presets();
 		$steps           = learnschool_get_admin_setup_steps( $presets );
 		$starter_layouts = learnschool_get_starter_layout_labels();
