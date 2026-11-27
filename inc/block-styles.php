@@ -29,7 +29,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'learnschool-card',
-				'label' => esc_html__( 'Card', 'learnschool' ),
+				'label' => __( 'Card', 'learnschool' ),
 			)
 		);
 
@@ -37,7 +37,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'learnschool-card-border',
-				'label' => esc_html__( 'Card Border', 'learnschool' ),
+				'label' => __( 'Card Border', 'learnschool' ),
 			)
 		);
 
@@ -45,7 +45,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'learnschool-soft-card',
-				'label' => esc_html__( 'Soft Card', 'learnschool' ),
+				'label' => __( 'Soft Card', 'learnschool' ),
 			)
 		);
 
@@ -53,7 +53,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'learnschool-card-arch',
-				'label' => esc_html__( 'Card Arch', 'learnschool' ),
+				'label' => __( 'Card Arch', 'learnschool' ),
 			)
 		);
 
@@ -61,7 +61,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'learnschool-card-large',
-				'label' => esc_html__( 'Card Large', 'learnschool' ),
+				'label' => __( 'Card Large', 'learnschool' ),
 			)
 		);
 
@@ -69,7 +69,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'learnschool-trust-strip',
-				'label' => esc_html__( 'Trust Strip', 'learnschool' ),
+				'label' => __( 'Trust Strip', 'learnschool' ),
 			)
 		);
 
@@ -78,7 +78,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'learnschool-pill',
-				'label' => esc_html__( 'Pill Button', 'learnschool' ),
+				'label' => __( 'Pill Button', 'learnschool' ),
 			)
 		);
 
@@ -86,7 +86,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'learnschool-outline',
-				'label' => esc_html__( 'Outline Button', 'learnschool' ),
+				'label' => __( 'Outline Button', 'learnschool' ),
 			)
 		);
 
@@ -94,7 +94,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'learnschool-warm-accent',
-				'label' => esc_html__( 'Warm Accent Button', 'learnschool' ),
+				'label' => __( 'Warm Accent Button', 'learnschool' ),
 			)
 		);
 
@@ -102,7 +102,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'learnschool-yellow',
-				'label' => esc_html__( 'Yellow Button', 'learnschool' ),
+				'label' => __( 'Yellow Button', 'learnschool' ),
 			)
 		);
 
@@ -110,7 +110,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'learnschool-link-sm',
-				'label' => esc_html__( 'Arrow Link', 'learnschool' ),
+				'label' => __( 'Arrow Link', 'learnschool' ),
 			)
 		);
 
@@ -119,7 +119,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/quote',
 			array(
 				'name'  => 'learnschool-philosophy',
-				'label' => esc_html__( 'Philosophy Card', 'learnschool' ),
+				'label' => __( 'Philosophy Card', 'learnschool' ),
 			)
 		);
 
@@ -127,7 +127,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/quote',
 			array(
 				'name'  => 'learnschool-quote',
-				'label' => esc_html__( 'Card Quote', 'learnschool' ),
+				'label' => __( 'Card Quote', 'learnschool' ),
 			)
 		);
 
@@ -136,7 +136,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/details',
 			array(
 				'name'  => 'learnschool-faq-pill',
-				'label' => esc_html__( 'FAQ Pill Card', 'learnschool' ),
+				'label' => __( 'FAQ Pill Card', 'learnschool' ),
 			)
 		);
 
@@ -145,7 +145,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/separator',
 			array(
 				'name'  => 'learnschool-gradient-pill',
-				'label' => esc_html__( 'Gradient Pill', 'learnschool' ),
+				'label' => __( 'Gradient Pill', 'learnschool' ),
 			)
 		);
 
@@ -154,7 +154,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/post-terms',
 			array(
 				'name'  => 'learnschool-badge',
-				'label' => esc_html__( 'Badge', 'learnschool' ),
+				'label' => __( 'Badge', 'learnschool' ),
 			)
 		);
 
@@ -163,7 +163,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/list',
 			array(
 				'name'  => 'learnschool-checkmarks',
-				'label' => esc_html__( 'Checkmarks', 'learnschool' ),
+				'label' => __( 'Checkmarks', 'learnschool' ),
 			)
 		);
 
@@ -171,7 +171,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/list',
 			array(
 				'name'  => 'learnschool-clean-list',
-				'label' => esc_html__( 'Clean Unstyled List', 'learnschool' ),
+				'label' => __( 'Clean Unstyled List', 'learnschool' ),
 			)
 		);
 
@@ -180,7 +180,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/cover',
 			array(
 				'name'  => 'learnschool-rounded',
-				'label' => esc_html__( 'Rounded Frame', 'learnschool' ),
+				'label' => __( 'Rounded Frame', 'learnschool' ),
 			)
 		);
 
@@ -188,7 +188,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/cover',
 			array(
 				'name'  => 'learnschool-arch',
-				'label' => esc_html__( 'Arch Frame', 'learnschool' ),
+				'label' => __( 'Arch Frame', 'learnschool' ),
 			)
 		);
 
@@ -197,7 +197,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/image',
 			array(
 				'name'  => 'learnschool-arch',
-				'label' => esc_html__( 'Arch Frame', 'learnschool' ),
+				'label' => __( 'Arch Frame', 'learnschool' ),
 			)
 		);
 
@@ -205,7 +205,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/image',
 			array(
 				'name'  => 'learnschool-pebble',
-				'label' => esc_html__( 'Pebble Mask', 'learnschool' ),
+				'label' => __( 'Pebble Mask', 'learnschool' ),
 			)
 		);
 
@@ -213,7 +213,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/image',
 			array(
 				'name'  => 'learnschool-flip',
-				'label' => esc_html__( 'Flip Horizontal', 'learnschool' ),
+				'label' => __( 'Flip Horizontal', 'learnschool' ),
 			)
 		);
 
@@ -221,7 +221,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/image',
 			array(
 				'name'  => 'learnschool-subtle',
-				'label' => esc_html__( 'Subtle / Decorative', 'learnschool' ),
+				'label' => __( 'Subtle / Decorative', 'learnschool' ),
 			)
 		);
 
@@ -229,7 +229,7 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 			'core/image',
 			array(
 				'name'  => 'learnschool-hide-mobile',
-				'label' => esc_html__( 'Hide on Mobile', 'learnschool' ),
+				'label' => __( 'Hide on Mobile', 'learnschool' ),
 			)
 		);
 	}

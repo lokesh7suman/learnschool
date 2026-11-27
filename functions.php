@@ -48,11 +48,10 @@ if ( ! function_exists( 'learnschool_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'               => 512,
-				'width'                => 512,
-				'flex-height'          => true,
-				'flex-width'           => true,
-				'unlink-homepage-logo' => true,
+				'height'      => 512,
+				'width'       => 512,
+				'flex-height' => true,
+				'flex-width'  => true,
 			)
 		);
 
@@ -62,6 +61,48 @@ if ( ! function_exists( 'learnschool_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'learnschool_setup' );
 
+if ( ! function_exists( 'learnschool_asset_version' ) ) :
+	/**
+	 * Resolves a cache-busting asset version using file modification time in WP_DEBUG mode.
+	 *
+	 * @since 1.0.0
+	 * @param string $relative_path Theme-relative asset path.
+	 * @return string Version string for enqueued assets.
+	 */
+	function learnschool_asset_version( string $relative_path ): string {
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$fallback      = is_string( $theme_version ) && '' !== $theme_version ? $theme_version : '1.0.0';
+
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			$file_path = get_theme_file_path( $relative_path );
+			$mtime     = is_file( $file_path ) ? filemtime( $file_path ) : false;
+			if ( false !== $mtime ) {
+				return (string) $mtime;
+			}
+		}
+
+		return $fallback;
+	}
+endif;
+
+if ( ! function_exists( 'learnschool_get_plain_site_title' ) ) :
+	/**
+	 * Returns the decoded, tag-stripped site title for plain-text or single-pass escaping contexts.
+	 *
+	 * @since 1.0.0
+	 * @param string $fallback Optional fallback string when no site title is configured.
+	 * @return string Decoded plain-text site title or fallback string.
+	 */
+	function learnschool_get_plain_site_title( string $fallback = '' ): string {
+		$decoded  = html_entity_decode( (string) get_bloginfo( 'name', 'display' ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+		$stripped = wp_strip_all_tags( $decoded );
+		$trimmed  = preg_replace( '/^[\s\p{Z}\p{C}]+|[\s\p{Z}\p{C}]+$/u', '', $stripped );
+		$clean    = is_string( $trimmed ) ? $trimmed : trim( $stripped );
+
+		return '' !== $clean ? $clean : $fallback;
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_sticky_label_css' ) ) :
 	/**
 	 * Builds the CSS custom property declaration for the localized sticky post badge label.
@@ -70,7 +111,10 @@ if ( ! function_exists( 'learnschool_sticky_label_css' ) ) :
 	 * @return string Inline CSS declaration or empty string on encoding failure.
 	 */
 	function learnschool_sticky_label_css(): string {
-		$sticky_label = wp_json_encode( wp_strip_all_tags( __( 'Featured', 'learnschool' ) ), JSON_HEX_TAG );
+		$raw_label    = wp_strip_all_tags( __( 'Featured', 'learnschool' ) );
+		$clean_label  = preg_replace( '/[\r\n\t]+/', ' ', trim( $raw_label ) );
+		$clean_label  = is_string( $clean_label ) ? $clean_label : trim( $raw_label );
+		$sticky_label = wp_json_encode( $clean_label, JSON_HEX_TAG | JSON_UNESCAPED_UNICODE );
 		if ( ! is_string( $sticky_label ) ) {
 			return '';
 		}
@@ -87,10 +131,7 @@ if ( ! function_exists( 'learnschool_scripts' ) ) :
 	 * @return void
 	 */
 	function learnschool_scripts(): void {
-		$theme_version = wp_get_theme()->get( 'Version' );
-		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG
-			? (string) filemtime( get_stylesheet_directory() . '/style.css' )
-			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
+		$version = learnschool_asset_version( 'style.css' );
 
 		wp_enqueue_style(
 			'learnschool-style',
@@ -143,26 +184,30 @@ if ( ! function_exists( 'learnschool_enqueue_block_styles' ) ) :
 			return;
 		}
 
-		$theme_version = wp_get_theme()->get( 'Version' );
-		$is_debug      = defined( 'WP_DEBUG' ) && WP_DEBUG;
+		$shared_blocks = array(
+			'core-quote'      => array( 'core/pullquote' ),
+			'core-categories' => array( 'core/archives' ),
+		);
 
 		foreach ( $files as $file ) {
-			$filename   = basename( $file, '.css' );
-			$block_name = str_replace( 'core-', 'core/', $filename );
-			$mtime      = $is_debug ? filemtime( $file ) : false;
-			$version    = false !== $mtime
-				? (string) $mtime
-				: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
-
-			wp_enqueue_block_style(
-				$block_name,
-				array(
-					'handle' => "learnschool-block-{$filename}",
-					'src'    => get_theme_file_uri( "assets/styles/{$filename}.css" ),
-					'path'   => get_theme_file_path( "assets/styles/{$filename}.css" ),
-					'ver'    => $version,
-				)
+			$filename      = basename( $file, '.css' );
+			$block_name    = str_replace( 'core-', 'core/', $filename );
+			$relative_path = "assets/styles/{$filename}.css";
+			$version       = learnschool_asset_version( $relative_path );
+			$style_args    = array(
+				'handle' => "learnschool-block-{$filename}",
+				'src'    => get_theme_file_uri( $relative_path ),
+				'path'   => get_theme_file_path( $relative_path ),
+				'ver'    => $version,
 			);
+
+			wp_enqueue_block_style( $block_name, $style_args );
+
+			foreach ( $shared_blocks[ $filename ] ?? array() as $extra_block ) {
+				$extra_args           = $style_args;
+				$extra_args['handle'] = "learnschool-block-{$filename}-" . sanitize_key( $extra_block );
+				wp_enqueue_block_style( $extra_block, $extra_args );
+			}
 		}
 	}
 endif;
@@ -203,10 +248,7 @@ if ( ! function_exists( 'learnschool_editor_assets' ) ) :
 	 * @return void
 	 */
 	function learnschool_editor_assets(): void {
-		$theme_version = wp_get_theme()->get( 'Version' );
-		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG
-			? (string) filemtime( get_theme_file_path( 'assets/js/editor-formats.js' ) )
-			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
+		$version = learnschool_asset_version( 'assets/js/editor-formats.js' );
 
 		wp_enqueue_script(
 			'learnschool-editor-formats',
@@ -240,16 +282,16 @@ if ( ! function_exists( 'learnschool_template_part_areas' ) ) :
 		$areas[] = array(
 			'area'        => 'banner',
 			'area_tag'    => 'aside',
-			'label'       => esc_html__( 'Banner', 'learnschool' ),
-			'description' => esc_html__( 'Top announcement bars, campus alert strips, and utility ribbons.', 'learnschool' ),
+			'label'       => _x( 'Banner', 'template part area', 'learnschool' ),
+			'description' => __( 'Top announcement bars, campus alert strips, and utility ribbons.', 'learnschool' ),
 			'icon'        => 'layout',
 		);
 
 		$areas[] = array(
 			'area'        => 'sidebar',
 			'area_tag'    => 'aside',
-			'label'       => esc_html__( 'Sidebar', 'learnschool' ),
-			'description' => esc_html__( 'Curriculum navigation, educator profiles, and school widget sidebars.', 'learnschool' ),
+			'label'       => _x( 'Sidebar', 'template part area', 'learnschool' ),
+			'description' => __( 'Curriculum navigation, educator profiles, and school widget sidebars.', 'learnschool' ),
 			'icon'        => 'sidebar',
 		);
 
@@ -305,20 +347,21 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 			return $block_content;
 		}
 
-		$raw_title   = trim( wp_strip_all_tags( get_bloginfo( 'name', 'display' ) ) );
-		$clean_title = '' !== $raw_title ? $raw_title : wp_strip_all_tags( $block_content );
-		$clean_title = trim( html_entity_decode( $clean_title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+		// Mirror core/site-title which renders esc_html( get_bloginfo( 'name' ) ) without wptexturize.
+		$raw_name    = (string) get_bloginfo( 'name' );
+		$fallback    = html_entity_decode( $block_content, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+		$clean_title = '' !== trim( wp_strip_all_tags( $raw_name ) ) ? wp_strip_all_tags( $raw_name ) : wp_strip_all_tags( $fallback );
+		$clean_title = trim( $clean_title );
 		if ( '' === $clean_title ) {
 			return $block_content;
 		}
 
 		$dark_part   = '';
 		$accent_part = $clean_title;
-		$last_space  = strrpos( $clean_title, ' ' );
-		if ( false !== $last_space ) {
-			$dark_part   = substr( $clean_title, 0, $last_space + 1 );
-			$accent_part = substr( $clean_title, $last_space + 1 );
-		} elseif ( 1 === preg_match( '/^([a-zA-Z][a-z]+)([A-Z].+)$/', $clean_title, $camel_parts ) ) {
+		if ( 1 === preg_match( '/^(.+\s)(\S+)$/su', $clean_title, $space_parts ) ) {
+			$dark_part   = $space_parts[1];
+			$accent_part = $space_parts[2];
+		} elseif ( 1 === preg_match( '/^([\p{L}\p{N}]+?)(\p{Lu}.+)$/u', $clean_title, $camel_parts ) ) {
 			$dark_part   = $camel_parts[1];
 			$accent_part = $camel_parts[2];
 		}
@@ -326,16 +369,12 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 		$replacement = ( '' !== $dark_part ? '<span class="learnschool-title-dark">' . esc_html( $dark_part ) . '</span>' : '' )
 			. '<span class="learnschool-title-accent">' . esc_html( $accent_part ) . '</span>';
 
-		// Target only the inner visible title node between > and </ (never attributes or aria-labels).
-		foreach ( array( esc_html( $clean_title ), $clean_title ) as $candidate ) {
-			if ( '' === $candidate ) {
-				continue;
-			}
-			$needle = '>' . $candidate . '</';
-			$pos    = strpos( $block_content, $needle );
-			if ( false !== $pos ) {
-				return substr_replace( $block_content, '>' . $replacement . '</', $pos, strlen( $needle ) );
-			}
+		// Replace only the inner title node text immediately before its closing tag.
+		$candidate = esc_html( $clean_title );
+		$needle    = '>' . $candidate . '</';
+		$pos       = strrpos( $block_content, $needle );
+		if ( false !== $pos ) {
+			return substr_replace( $block_content, '>' . $replacement . '</', $pos, strlen( $needle ) );
 		}
 
 		return $block_content;

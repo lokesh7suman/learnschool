@@ -26,7 +26,7 @@
 .wp-block-site-logo img {
 	display: block;
 	width: 36px;
-	height: 36px;
+	height: auto;
 	object-fit: contain;
 	transition: transform 0.25s ease;
 }

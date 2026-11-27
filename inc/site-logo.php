@@ -15,25 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'learnschool_get_plain_site_title' ) ) :
-	/**
-	 * Returns the decoded plain-text site title for single-pass attribute escaping.
-	 *
-	 * @since 1.0.0
-	 * @param string $fallback Optional fallback string when no site title is configured.
-	 * @return string Decoded site title or fallback string.
-	 */
-	function learnschool_get_plain_site_title( string $fallback = '' ): string {
-		$raw_title = trim( wp_strip_all_tags( get_bloginfo( 'name', 'display' ) ) );
-
-		if ( '' !== $raw_title ) {
-			return trim( html_entity_decode( $raw_title, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
-		}
-
-		return $fallback;
-	}
-endif;
-
 if ( ! function_exists( 'learnschool_default_custom_logo' ) ) :
 	/**
 	 * Filters the custom logo output to provide our transparent fallback logo
@@ -97,15 +78,25 @@ if ( ! function_exists( 'learnschool_render_site_logo_block' ) ) :
 					$processor->set_attribute( 'aria-label', $site_title );
 				}
 			}
+		} else {
+			$processor = new \WP_HTML_Tag_Processor( $block_content );
 		}
 
 		if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
 			$width = (int) $block['attrs']['width'];
 			if ( $width > 0 ) {
+				$src         = $processor->get_attribute( 'src' );
+				$is_fallback = is_string( $src ) && str_contains( $src, 'assets/images/site-logo.png' );
 				$processor->set_attribute( 'width', (string) $width );
-				$processor->set_attribute( 'height', (string) $width );
+				if ( $is_fallback ) {
+					$processor->set_attribute( 'height', (string) $width );
+				} else {
+					$processor->remove_attribute( 'height' );
+				}
 				$existing_style = $processor->get_attribute( 'style' );
-				$style          = ! empty( $existing_style ) ? rtrim( $existing_style, ';' ) . "; width: {$width}px;" : "width: {$width}px;";
+				$style          = is_string( $existing_style ) && '' !== trim( $existing_style )
+					? rtrim( $existing_style, "; \t\n\r\0\x0B" ) . "; width: {$width}px;"
+					: "width: {$width}px;";
 				$processor->set_attribute( 'style', $style );
 			}
 		}
