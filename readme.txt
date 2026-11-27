@@ -61,7 +61,7 @@ Both bundled font families are licensed under the SIL Open Font License, Version
 
 === Icons ===
 
-* Lucide Icons (inline SVG UI icons in `style.css` and block patterns)
+* Lucide Icons (inline SVG UI icons in `style.css`, `inc/block-filters.php`, and block patterns)
   Author: Lucide Contributors
   Source: https://lucide.dev
   License: ISC License (https://opensource.org/licenses/ISC)
@@ -99,6 +99,9 @@ Copyright: Copyright (C) 2026 codeclove
 * `assets/images/doodles/text-highlights/highlight-brush.svg` - Inline text highlight brush SVG
 * `assets/images/doodles/text-highlights/underline-loop.svg` - Inline loop underline SVG
 * `assets/images/doodles/text-highlights/underline-wavy.svg` - Inline wavy underline SVG
+* `assets/styles/core-site-title.css` - Decorative wavy underline SVG mask
+* `assets/js/editor-formats.js` - Inline SVG toolbar icons for Gutenberg doodle formats
+* `inc/theme-admin.php` - LearnSchool emblem inline SVG in setup screen header
 * `screenshot.png` - Theme presentation screenshot composed of LearnSchool demo templates and assets
 
 === Bundled Illustrations & Starter Media ===
