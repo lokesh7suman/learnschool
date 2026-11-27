@@ -23,215 +23,63 @@ if ( ! function_exists( 'learnschool_register_block_styles' ) ) :
 	 * @return void
 	 */
 	function learnschool_register_block_styles(): void {
-
-		// ── Group style variations ────────────────────────────────────────────
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card',
-				'label' => __( 'Card', 'learnschool' ),
-			)
+		$styles_by_block = array(
+			'core/group'      => array(
+				'learnschool-card'        => __( 'Card', 'learnschool' ),
+				'learnschool-card-border' => __( 'Card Border', 'learnschool' ),
+				'learnschool-soft-card'   => __( 'Soft Card', 'learnschool' ),
+				'learnschool-card-arch'   => __( 'Card Arch', 'learnschool' ),
+				'learnschool-card-large'  => __( 'Card Large', 'learnschool' ),
+				'learnschool-trust-strip' => __( 'Trust Strip', 'learnschool' ),
+			),
+			'core/button'     => array(
+				'learnschool-pill'        => __( 'Pill Button', 'learnschool' ),
+				'learnschool-outline'     => __( 'Outline Button', 'learnschool' ),
+				'learnschool-warm-accent' => __( 'Warm Accent Button', 'learnschool' ),
+				'learnschool-yellow'      => __( 'Yellow Button', 'learnschool' ),
+				'learnschool-link-sm'     => __( 'Arrow Link', 'learnschool' ),
+			),
+			'core/quote'      => array(
+				'learnschool-philosophy' => __( 'Philosophy Card', 'learnschool' ),
+				'learnschool-quote'      => __( 'Card Quote', 'learnschool' ),
+			),
+			'core/details'    => array(
+				'learnschool-faq-pill' => __( 'FAQ Pill Card', 'learnschool' ),
+			),
+			'core/separator'  => array(
+				'learnschool-gradient-pill' => __( 'Gradient Pill', 'learnschool' ),
+			),
+			'core/post-terms' => array(
+				'learnschool-badge' => __( 'Badge', 'learnschool' ),
+			),
+			'core/list'       => array(
+				'learnschool-checkmarks' => __( 'Checkmarks', 'learnschool' ),
+				'learnschool-clean-list' => __( 'Clean Unstyled List', 'learnschool' ),
+			),
+			'core/cover'      => array(
+				'learnschool-rounded' => __( 'Rounded Frame', 'learnschool' ),
+				'learnschool-arch'    => __( 'Arch Frame', 'learnschool' ),
+			),
+			'core/image'      => array(
+				'learnschool-arch'        => __( 'Arch Frame', 'learnschool' ),
+				'learnschool-pebble'      => __( 'Pebble Mask', 'learnschool' ),
+				'learnschool-flip'        => __( 'Flip Horizontal', 'learnschool' ),
+				'learnschool-subtle'      => __( 'Subtle / Decorative', 'learnschool' ),
+				'learnschool-hide-mobile' => __( 'Hide on Mobile', 'learnschool' ),
+			),
 		);
 
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card-border',
-				'label' => __( 'Card Border', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-soft-card',
-				'label' => __( 'Soft Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card-arch',
-				'label' => __( 'Card Arch', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-card-large',
-				'label' => __( 'Card Large', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/group',
-			array(
-				'name'  => 'learnschool-trust-strip',
-				'label' => __( 'Trust Strip', 'learnschool' ),
-			)
-		);
-
-		// ── Button style variations ───────────────────────────────────────────
-		register_block_style(
-			'core/button',
-			array(
-				'name'  => 'learnschool-pill',
-				'label' => __( 'Pill Button', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/button',
-			array(
-				'name'  => 'learnschool-outline',
-				'label' => __( 'Outline Button', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/button',
-			array(
-				'name'  => 'learnschool-warm-accent',
-				'label' => __( 'Warm Accent Button', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/button',
-			array(
-				'name'  => 'learnschool-yellow',
-				'label' => __( 'Yellow Button', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/button',
-			array(
-				'name'  => 'learnschool-link-sm',
-				'label' => __( 'Arrow Link', 'learnschool' ),
-			)
-		);
-
-		// ── Quote style variations ────────────────────────────────────────────
-		register_block_style(
-			'core/quote',
-			array(
-				'name'  => 'learnschool-philosophy',
-				'label' => __( 'Philosophy Card', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/quote',
-			array(
-				'name'  => 'learnschool-quote',
-				'label' => __( 'Card Quote', 'learnschool' ),
-			)
-		);
-
-		// ── Details / Accordion style variations ──────────────────────────────
-		register_block_style(
-			'core/details',
-			array(
-				'name'  => 'learnschool-faq-pill',
-				'label' => __( 'FAQ Pill Card', 'learnschool' ),
-			)
-		);
-
-		// ── Separator style variations ────────────────────────────────────────
-		register_block_style(
-			'core/separator',
-			array(
-				'name'  => 'learnschool-gradient-pill',
-				'label' => __( 'Gradient Pill', 'learnschool' ),
-			)
-		);
-
-		// ── Post terms style variations ───────────────────────────────────────
-		register_block_style(
-			'core/post-terms',
-			array(
-				'name'  => 'learnschool-badge',
-				'label' => __( 'Badge', 'learnschool' ),
-			)
-		);
-
-		// ── List style variations ─────────────────────────────────────────────
-		register_block_style(
-			'core/list',
-			array(
-				'name'  => 'learnschool-checkmarks',
-				'label' => __( 'Checkmarks', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/list',
-			array(
-				'name'  => 'learnschool-clean-list',
-				'label' => __( 'Clean Unstyled List', 'learnschool' ),
-			)
-		);
-
-		// ── Cover style variations ────────────────────────────────────────────
-		register_block_style(
-			'core/cover',
-			array(
-				'name'  => 'learnschool-rounded',
-				'label' => __( 'Rounded Frame', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/cover',
-			array(
-				'name'  => 'learnschool-arch',
-				'label' => __( 'Arch Frame', 'learnschool' ),
-			)
-		);
-
-		// ── Image style variations ────────────────────────────────────────────
-		register_block_style(
-			'core/image',
-			array(
-				'name'  => 'learnschool-arch',
-				'label' => __( 'Arch Frame', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/image',
-			array(
-				'name'  => 'learnschool-pebble',
-				'label' => __( 'Pebble Mask', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/image',
-			array(
-				'name'  => 'learnschool-flip',
-				'label' => __( 'Flip Horizontal', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/image',
-			array(
-				'name'  => 'learnschool-subtle',
-				'label' => __( 'Subtle / Decorative', 'learnschool' ),
-			)
-		);
-
-		register_block_style(
-			'core/image',
-			array(
-				'name'  => 'learnschool-hide-mobile',
-				'label' => __( 'Hide on Mobile', 'learnschool' ),
-			)
-		);
+		foreach ( $styles_by_block as $block_name => $styles ) {
+			foreach ( $styles as $style_name => $label ) {
+				register_block_style(
+					$block_name,
+					array(
+						'name'  => $style_name,
+						'label' => $label,
+					)
+				);
+			}
+		}
 	}
 endif;
 add_action( 'init', 'learnschool_register_block_styles' );
