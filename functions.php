@@ -348,10 +348,11 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 		}
 
 		// Mirror core/site-title which renders esc_html( get_bloginfo( 'name' ) ) without wptexturize.
-		$raw_name    = (string) get_bloginfo( 'name' );
-		$fallback    = html_entity_decode( $block_content, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
-		$clean_title = '' !== trim( wp_strip_all_tags( $raw_name ) ) ? wp_strip_all_tags( $raw_name ) : wp_strip_all_tags( $fallback );
-		$clean_title = trim( $clean_title );
+		$clean_title = trim( wp_strip_all_tags( (string) get_bloginfo( 'name' ) ) );
+		if ( '' === $clean_title ) {
+			$fallback    = html_entity_decode( $block_content, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+			$clean_title = trim( wp_strip_all_tags( $fallback ) );
+		}
 		if ( '' === $clean_title ) {
 			return $block_content;
 		}
@@ -370,9 +371,8 @@ if ( ! function_exists( 'learnschool_filter_site_title' ) ) :
 			. '<span class="learnschool-title-accent">' . esc_html( $accent_part ) . '</span>';
 
 		// Replace only the inner title node text immediately before its closing tag.
-		$candidate = esc_html( $clean_title );
-		$needle    = '>' . $candidate . '</';
-		$pos       = strrpos( $block_content, $needle );
+		$needle = '>' . esc_html( $clean_title ) . '</';
+		$pos    = strrpos( $block_content, $needle );
 		if ( false !== $pos ) {
 			return substr_replace( $block_content, '>' . $replacement . '</', $pos, strlen( $needle ) );
 		}

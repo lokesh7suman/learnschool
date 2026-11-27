@@ -71,34 +71,30 @@ if ( ! function_exists( 'learnschool_render_site_logo_block' ) ) :
 		}
 
 		$processor = new \WP_HTML_Tag_Processor( $block_content );
-		if ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
-			if ( ! $processor->get_attribute( 'aria-label' ) ) {
-				$site_title = learnschool_get_plain_site_title();
-				if ( '' !== $site_title ) {
-					$processor->set_attribute( 'aria-label', $site_title );
-				}
-			}
-		} else {
+		if ( ! $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
 			$processor = new \WP_HTML_Tag_Processor( $block_content );
+		} elseif ( ! $processor->get_attribute( 'aria-label' ) ) {
+			$site_title = learnschool_get_plain_site_title();
+			if ( '' !== $site_title ) {
+				$processor->set_attribute( 'aria-label', $site_title );
+			}
 		}
 
-		if ( $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
-			$width = (int) $block['attrs']['width'];
-			if ( $width > 0 ) {
-				$src         = $processor->get_attribute( 'src' );
-				$is_fallback = is_string( $src ) && str_contains( $src, 'assets/images/site-logo.png' );
-				$processor->set_attribute( 'width', (string) $width );
-				if ( $is_fallback ) {
-					$processor->set_attribute( 'height', (string) $width );
-				} else {
-					$processor->remove_attribute( 'height' );
-				}
-				$existing_style = $processor->get_attribute( 'style' );
-				$style          = is_string( $existing_style ) && '' !== trim( $existing_style )
-					? rtrim( $existing_style, "; \t\n\r\0\x0B" ) . "; width: {$width}px;"
-					: "width: {$width}px;";
-				$processor->set_attribute( 'style', $style );
+		$width = (int) $block['attrs']['width'];
+		if ( $width > 0 && $processor->next_tag( array( 'tag_name' => 'img' ) ) ) {
+			$src         = $processor->get_attribute( 'src' );
+			$is_fallback = is_string( $src ) && str_contains( $src, 'assets/images/site-logo.png' );
+			$processor->set_attribute( 'width', (string) $width );
+			if ( $is_fallback ) {
+				$processor->set_attribute( 'height', (string) $width );
+			} else {
+				$processor->remove_attribute( 'height' );
 			}
+			$existing_style = $processor->get_attribute( 'style' );
+			$style          = is_string( $existing_style ) && '' !== trim( $existing_style )
+				? rtrim( $existing_style, "; \t\n\r\0\x0B" ) . "; width: {$width}px;"
+				: "width: {$width}px;";
+			$processor->set_attribute( 'style', $style );
 		}
 
 		return $processor->get_updated_html();
