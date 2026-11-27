@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-27T10:55:51+00:00\n"
+"POT-Creation-Date: 2026-11-27T11:03:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -87,121 +87,121 @@ msgid "(no title)"
 msgstr ""
 
 #. translators: 1: Teacher name and role, 2: Current slide position, 3: Total number of teachers.
-#: inc/block-filters.php:476
+#: inc/block-filters.php:526
 #, php-format
 msgid "Showing %1$s (%2$d of %3$d)"
 msgstr ""
 
-#: inc/block-filters.php:528
+#: inc/block-filters.php:578
 msgid "carousel"
 msgstr ""
 
-#: inc/block-filters.php:529
+#: inc/block-filters.php:579
 msgid "Our teachers"
 msgstr ""
 
-#: inc/block-filters.php:530
+#: inc/block-filters.php:580
 msgid "Previous teacher"
 msgstr ""
 
-#: inc/block-filters.php:533
+#: inc/block-filters.php:583
 msgid "Next teacher"
 msgstr ""
 
-#: inc/block-styles.php:32
+#: inc/block-styles.php:28
 msgid "Card"
 msgstr ""
 
-#: inc/block-styles.php:40
+#: inc/block-styles.php:29
 msgid "Card Border"
 msgstr ""
 
-#: inc/block-styles.php:48
+#: inc/block-styles.php:30
 msgid "Soft Card"
 msgstr ""
 
-#: inc/block-styles.php:56
+#: inc/block-styles.php:31
 msgid "Card Arch"
 msgstr ""
 
-#: inc/block-styles.php:64
+#: inc/block-styles.php:32
 msgid "Card Large"
 msgstr ""
 
-#: inc/block-styles.php:72
+#: inc/block-styles.php:33
 msgid "Trust Strip"
 msgstr ""
 
-#: inc/block-styles.php:81
+#: inc/block-styles.php:36
 msgid "Pill Button"
 msgstr ""
 
-#: inc/block-styles.php:89
+#: inc/block-styles.php:37
 msgid "Outline Button"
 msgstr ""
 
-#: inc/block-styles.php:97
+#: inc/block-styles.php:38
 msgid "Warm Accent Button"
 msgstr ""
 
-#: inc/block-styles.php:105
+#: inc/block-styles.php:39
 msgid "Yellow Button"
 msgstr ""
 
-#: inc/block-styles.php:113
+#: inc/block-styles.php:40
 msgid "Arrow Link"
 msgstr ""
 
-#: inc/block-styles.php:122
+#: inc/block-styles.php:43
 msgid "Philosophy Card"
 msgstr ""
 
-#: inc/block-styles.php:130
+#: inc/block-styles.php:44
 msgid "Card Quote"
 msgstr ""
 
-#: inc/block-styles.php:139
+#: inc/block-styles.php:47
 msgid "FAQ Pill Card"
 msgstr ""
 
-#: inc/block-styles.php:148
+#: inc/block-styles.php:50
 msgid "Gradient Pill"
 msgstr ""
 
-#: inc/block-styles.php:157
+#: inc/block-styles.php:53
 msgid "Badge"
 msgstr ""
 
-#: inc/block-styles.php:166
+#: inc/block-styles.php:56
 msgid "Checkmarks"
 msgstr ""
 
-#: inc/block-styles.php:174
+#: inc/block-styles.php:57
 msgid "Clean Unstyled List"
 msgstr ""
 
-#: inc/block-styles.php:183
+#: inc/block-styles.php:60
 msgid "Rounded Frame"
 msgstr ""
 
-#: inc/block-styles.php:191
-#: inc/block-styles.php:200
+#: inc/block-styles.php:61
+#: inc/block-styles.php:64
 msgid "Arch Frame"
 msgstr ""
 
-#: inc/block-styles.php:208
+#: inc/block-styles.php:65
 msgid "Pebble Mask"
 msgstr ""
 
-#: inc/block-styles.php:216
+#: inc/block-styles.php:66
 msgid "Flip Horizontal"
 msgstr ""
 
-#: inc/block-styles.php:224
+#: inc/block-styles.php:67
 msgid "Subtle / Decorative"
 msgstr ""
 
-#: inc/block-styles.php:232
+#: inc/block-styles.php:68
 msgid "Hide on Mobile"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgid "Global Styles"
 msgstr ""
 
 #: inc/theme-admin.php:72
-#: inc/theme-admin.php:532
+#: inc/theme-admin.php:533
 msgid "View Live Site"
 msgstr ""
 
@@ -370,177 +370,177 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: inc/theme-admin.php:217
+#: inc/theme-admin.php:242
 msgid "Default"
 msgstr ""
 
-#: inc/theme-admin.php:339
+#: inc/theme-admin.php:340
 msgid "Logo & icon set"
 msgstr ""
 
-#: inc/theme-admin.php:341
+#: inc/theme-admin.php:342
 msgid "Logo set · Add site icon"
 msgstr ""
 
-#: inc/theme-admin.php:343
+#: inc/theme-admin.php:344
 msgid "Using fallback mascot"
 msgstr ""
 
-#: inc/theme-admin.php:346
+#: inc/theme-admin.php:347
 msgid "Custom Palette"
 msgstr ""
 
-#: inc/theme-admin.php:361
+#: inc/theme-admin.php:362
 msgid "Site Identity, Logo & Icon"
 msgstr ""
 
-#: inc/theme-admin.php:362
+#: inc/theme-admin.php:363
 msgid "Set your school name, tagline, custom logo, and 512×512 browser icon inside WordPress."
 msgstr ""
 
-#: inc/theme-admin.php:365
+#: inc/theme-admin.php:366
 msgid "Edit Identity"
 msgstr ""
 
-#: inc/theme-admin.php:373
+#: inc/theme-admin.php:374
 msgid "Colors & Typography"
 msgstr ""
 
-#: inc/theme-admin.php:374
+#: inc/theme-admin.php:375
 msgid "Preview the bundled color palettes below, then switch variations or customize fonts and spacing in Global Styles."
 msgstr ""
 
-#: inc/theme-admin.php:377
+#: inc/theme-admin.php:378
 msgid "Open Global Styles"
 msgstr ""
 
-#: inc/theme-admin.php:385
+#: inc/theme-admin.php:386
 msgid "Build School Pages with Starter Layouts"
 msgstr ""
 
-#: inc/theme-admin.php:386
+#: inc/theme-admin.php:387
 msgid "Your homepage works out of the box via the Front Page template. Add a new page in WordPress, pick any starter layout from the pattern modal, and switch the template to Page (No Title)."
 msgstr ""
 
 #. translators: %d: Number of included full-page starter layouts.
-#: inc/theme-admin.php:389
+#: inc/theme-admin.php:390
 #, php-format
 msgid "%d page layouts included"
 msgstr ""
 
-#: inc/theme-admin.php:393
+#: inc/theme-admin.php:394
 msgid "Add New Page"
 msgstr ""
 
-#: inc/theme-admin.php:397
+#: inc/theme-admin.php:398
 msgid "All Pages"
 msgstr ""
 
-#: inc/theme-admin.php:401
+#: inc/theme-admin.php:402
 msgid "Browse Patterns"
 msgstr ""
 
-#: inc/theme-admin.php:410
+#: inc/theme-admin.php:411
 msgid "Navigation, Header CTA & Footer"
 msgstr ""
 
-#: inc/theme-admin.php:411
+#: inc/theme-admin.php:412
 msgid "Arrange menu links, update the Enroll Now button, and customize footer campus details in the Site Editor."
 msgstr ""
 
-#: inc/theme-admin.php:412
+#: inc/theme-admin.php:413
 msgid "Menu saved"
 msgstr ""
 
-#: inc/theme-admin.php:412
+#: inc/theme-admin.php:413
 msgid "Using page list"
 msgstr ""
 
-#: inc/theme-admin.php:414
+#: inc/theme-admin.php:415
 msgid "Manage Navigation"
 msgstr ""
 
-#: inc/theme-admin.php:418
+#: inc/theme-admin.php:419
 msgid "Edit Header"
 msgstr ""
 
-#: inc/theme-admin.php:422
+#: inc/theme-admin.php:423
 msgid "Edit Footer"
 msgstr ""
 
-#: inc/theme-admin.php:443
+#: inc/theme-admin.php:444
 msgid "Page Templates"
 msgstr ""
 
-#: inc/theme-admin.php:444
+#: inc/theme-admin.php:445
 msgid "Front Page, Page (No Title), Sidebar, Full Width & Landing"
 msgstr ""
 
-#: inc/theme-admin.php:448
+#: inc/theme-admin.php:449
 msgid "Block Patterns"
 msgstr ""
 
-#: inc/theme-admin.php:449
+#: inc/theme-admin.php:450
 msgid "33 modular sections and 6 full-page school layouts"
 msgstr ""
 
-#: inc/theme-admin.php:453
+#: inc/theme-admin.php:454
 msgid "Reading Settings"
 msgstr ""
 
-#: inc/theme-admin.php:454
+#: inc/theme-admin.php:455
 msgid "Optional static homepage and posts page assignment"
 msgstr ""
 
-#: inc/theme-admin.php:462
+#: inc/theme-admin.php:463
 msgid "Included in LearnSchool"
 msgstr ""
 
-#: inc/theme-admin.php:463
+#: inc/theme-admin.php:464
 msgid "Jump straight to templates and patterns in the Site Editor."
 msgstr ""
 
-#: inc/theme-admin.php:493
+#: inc/theme-admin.php:494
 msgid "Sorry, you are not allowed to edit theme options on this site."
 msgstr ""
 
-#: inc/theme-admin.php:515
+#: inc/theme-admin.php:516
 msgid "Welcome to LearnSchool"
 msgstr ""
 
 #. translators: %s: Current theme version number.
-#: inc/theme-admin.php:520
+#: inc/theme-admin.php:521
 #, php-format
 msgid "Version %s · Full Site Editing block theme for schools and academies."
 msgstr ""
 
-#: inc/theme-admin.php:529
+#: inc/theme-admin.php:530
 msgid "Open Site Editor"
 msgstr ""
 
-#: inc/theme-admin.php:547
+#: inc/theme-admin.php:548
 msgid "Site Setup Guide"
 msgstr ""
 
-#: inc/theme-admin.php:548
+#: inc/theme-admin.php:549
 msgid "Follow these steps to set up your school site using native WordPress Full Site Editing."
 msgstr ""
 
 #. translators: %d: Number of setup steps in the guide.
-#: inc/theme-admin.php:554
+#: inc/theme-admin.php:555
 #, php-format
 msgid "%d quick steps"
 msgstr ""
 
-#: inc/theme-admin.php:594
+#: inc/theme-admin.php:595
 msgid "Active"
 msgstr ""
 
-#: inc/theme-admin.php:603
+#: inc/theme-admin.php:604
 msgid "Included starter page layouts"
 msgstr ""
 
-#: inc/theme-admin.php:629
+#: inc/theme-admin.php:630
 msgid "Included templates and patterns"
 msgstr ""
 
