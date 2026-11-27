@@ -3,7 +3,7 @@
  * Title: Community Enrollment CTA Banner
  * Slug: learnschool/cta-community
  * Categories: learnschool/call-to-action
- * Description: Rounded purple call-to-action card featuring an educator portrait on the left and a community inquiry form with sunny gold submit button on the right.
+ * Description: Rounded purple call-to-action card featuring an educator portrait on the left and a community inquiry heading with sunny gold call-to-action button on the right.
  * Keywords: cta, banner, form, community, admissions, contact, signup
  * Viewport Width: 1280
  * Inserter: true

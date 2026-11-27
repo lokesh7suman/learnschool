@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"anchor":"faq","tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-background-color has-background" id="faq" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-6","left":"var:preset|spacing|step-6"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"42%"} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"42%","className":"learnschool-faq-doodle-col"} -->
 <div class="wp-block-column learnschool-faq-doodle-col" style="flex-basis:42%"><!-- wp:heading {"level":2,"fontSize":"xx-large","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-4"}}}} -->
 <h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'Frequently ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'asked', 'learnschool' ); ?></span><br><?php echo esc_html__( 'questions', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
