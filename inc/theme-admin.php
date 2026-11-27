@@ -188,6 +188,34 @@ if ( ! function_exists( 'learnschool_extract_palette_signature' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'learnschool_build_style_preset_entry' ) ) :
+	/**
+	 * Builds a style preset swatch entry from a mapped theme.json color palette.
+	 *
+	 * @since 1.0.0
+	 * @param string                $slug             Preset slug.
+	 * @param string                $title            Human-readable preset title.
+	 * @param array<string, string> $palette_map      Mapped hex colors keyed by slug.
+	 * @param string                $active_signature Active palette signature for comparison.
+	 * @return array{slug: string, title: string, is_active: bool, colors: array<int, string>} Style preset entry.
+	 */
+	function learnschool_build_style_preset_entry( string $slug, string $title, array $palette_map, string $active_signature ): array {
+		$signature = learnschool_extract_palette_signature( $palette_map );
+
+		return array(
+			'slug'      => $slug,
+			'title'     => $title,
+			'is_active' => '|||' !== $active_signature && $active_signature === $signature,
+			'colors'    => array(
+				$palette_map['base'] ?? '#ffffff',
+				$palette_map['base-subtle'] ?? '#f8f9fa',
+				$palette_map['primary'] ?? '#704fe6',
+				$palette_map['secondary'] ?? '#ffbe17',
+			),
+		);
+	}
+endif;
+
 if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 	/**
 	 * Returns the theme's default palette and bundled style variations with active state detection.
@@ -205,27 +233,15 @@ if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 		$theme_data      = is_file( $theme_json_path )
 			? wp_json_file_decode( $theme_json_path, array( 'associative' => true ) )
 			: array();
-		$default_palette = is_array( $theme_data ) && isset( $theme_data['settings']['color']['palette'] ) && is_array( $theme_data['settings']['color']['palette'] )
-			? $theme_data['settings']['color']['palette']
-			: array();
-		$default_map     = learnschool_extract_palette_map( $default_palette );
+		$default_palette = is_array( $theme_data ) ? ( $theme_data['settings']['color']['palette'] ?? array() ) : array();
+		$default_map     = is_array( $default_palette ) ? learnschool_extract_palette_map( $default_palette ) : array();
 
 		if ( ! empty( $default_map ) ) {
-			$default_signature = learnschool_extract_palette_signature( $default_map );
-			$presets[]         = array(
-				'slug'      => 'default',
-				'title'     => __( 'Default', 'learnschool' ),
-				'is_active' => '|||' !== $active_signature && $active_signature === $default_signature,
-				'colors'    => array_values(
-					array_filter(
-						array(
-							$default_map['base'] ?? '#ffffff',
-							$default_map['base-subtle'] ?? '#f8f9fa',
-							$default_map['primary'] ?? '#704fe6',
-							$default_map['secondary'] ?? '#ffbe17',
-						)
-					)
-				),
+			$presets[] = learnschool_build_style_preset_entry(
+				'default',
+				__( 'Default', 'learnschool' ),
+				$default_map,
+				$active_signature
 			);
 		}
 
@@ -235,46 +251,35 @@ if ( ! function_exists( 'learnschool_get_admin_style_presets' ) ) :
 			: array( get_template_directory() . '/styles/*.json' );
 		foreach ( $style_dirs as $pattern ) {
 			$found = glob( $pattern );
-			if ( is_array( $found ) ) {
-				foreach ( $found as $path ) {
-					$variation_map[ basename( $path ) ] = $path;
-				}
+			if ( ! is_array( $found ) ) {
+				continue;
+			}
+			foreach ( $found as $path ) {
+				$variation_map[ basename( $path ) ] = $path;
 			}
 		}
 		ksort( $variation_map );
-		$variation_files = array_values( $variation_map );
-		if ( ! empty( $variation_files ) ) {
-			foreach ( $variation_files as $variation_file ) {
-				$variation = wp_json_file_decode( $variation_file, array( 'associative' => true ) );
-				if ( ! is_array( $variation ) ) {
-					continue;
-				}
-				$title       = isset( $variation['title'] ) && is_string( $variation['title'] ) ? $variation['title'] : '';
-				$var_palette = $variation['settings']['color']['palette'] ?? array();
-				if ( '' === $title || ! is_array( $var_palette ) ) {
-					continue;
-				}
-				$var_map = learnschool_extract_palette_map( $var_palette );
-				if ( empty( $var_map ) ) {
-					continue;
-				}
-				$var_signature = learnschool_extract_palette_signature( $var_map );
-				$presets[]     = array(
-					'slug'      => sanitize_title( $title ),
-					'title'     => $title,
-					'is_active' => '|||' !== $active_signature && $active_signature === $var_signature,
-					'colors'    => array_values(
-						array_filter(
-							array(
-								$var_map['base'] ?? '#ffffff',
-								$var_map['base-subtle'] ?? '#f8f9fa',
-								$var_map['primary'] ?? '#704fe6',
-								$var_map['secondary'] ?? '#ffbe17',
-							)
-						)
-					),
-				);
+
+		foreach ( $variation_map as $variation_file ) {
+			$variation = wp_json_file_decode( $variation_file, array( 'associative' => true ) );
+			if ( ! is_array( $variation ) ) {
+				continue;
 			}
+			$title       = isset( $variation['title'] ) && is_string( $variation['title'] ) ? $variation['title'] : '';
+			$var_palette = $variation['settings']['color']['palette'] ?? array();
+			if ( '' === $title || ! is_array( $var_palette ) ) {
+				continue;
+			}
+			$var_map = learnschool_extract_palette_map( $var_palette );
+			if ( empty( $var_map ) ) {
+				continue;
+			}
+			$presets[] = learnschool_build_style_preset_entry(
+				sanitize_title( $title ),
+				$title,
+				$var_map,
+				$active_signature
+			);
 		}
 
 		return $presets;
@@ -303,26 +308,22 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 	function learnschool_get_admin_setup_steps( array $presets ): array {
 		$stylesheet = get_stylesheet();
 
-		$header_url = add_query_arg(
-			array( 'canvas' => 'edit' ),
-			learnschool_get_site_editor_url(
-				'/wp_template_part/' . $stylesheet . '//header',
-				array(
-					'postType' => 'wp_template_part',
-					'postId'   => $stylesheet . '//header',
+		$template_part_url = static function ( string $part ) use ( $stylesheet ): string {
+			$post_id = $stylesheet . '//' . $part;
+
+			return add_query_arg(
+				array( 'canvas' => 'edit' ),
+				learnschool_get_site_editor_url(
+					'/wp_template_part/' . $post_id,
+					array(
+						'postType' => 'wp_template_part',
+						'postId'   => $post_id,
+					)
 				)
-			)
-		);
-		$footer_url = add_query_arg(
-			array( 'canvas' => 'edit' ),
-			learnschool_get_site_editor_url(
-				'/wp_template_part/' . $stylesheet . '//footer',
-				array(
-					'postType' => 'wp_template_part',
-					'postId'   => $stylesheet . '//footer',
-				)
-			)
-		);
+			);
+		};
+		$header_url        = $template_part_url( 'header' );
+		$footer_url        = $template_part_url( 'footer' );
 
 		$identity_url = version_compare( get_bloginfo( 'version' ), '7.0', '>=' )
 			? learnschool_get_site_editor_url( '/identity', array( 'path' => '/wp_global_styles' ) )
