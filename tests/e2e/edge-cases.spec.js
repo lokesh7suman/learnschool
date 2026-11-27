@@ -381,4 +381,96 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 		expect( mobileOverflow ).toBe( false );
 	} );
 
+	test( 'Special-character site title renders with single escaping across title, logo aria-label, and copyright binding', async ( { page, requestUtils } ) => {
+		const originalSettings = await requestUtils.rest( { path: '/wp/v2/settings' } );
+		const originalTitle = originalSettings.title || '';
+
+		try {
+			await requestUtils.rest( {
+				method: 'POST',
+				path: '/wp/v2/settings',
+				data: { title: "St. Jude's & Kids Academy" },
+			} );
+
+			const res = await page.goto( '/' );
+			expect( res.status() ).toBe( 200 );
+
+			const logoAria = await page.locator( 'header .wp-block-site-logo a.custom-logo-link' ).first().getAttribute( 'aria-label' );
+			expect( logoAria ).toContain( 'St. Jude' );
+			expect( logoAria ).toContain( '&' );
+			expect( logoAria ).not.toContain( '&amp;' );
+			expect( logoAria ).not.toContain( '&#039;' );
+
+			const titleAccent = await page.locator( 'header .wp-block-site-title .learnschool-title-accent' ).first().textContent();
+			expect( titleAccent ).toBe( 'Academy' );
+
+			const footerText = await page.locator( 'footer' ).innerText();
+			expect( footerText ).toContain( 'St. Jude' );
+			expect( footerText ).not.toContain( '&amp;' );
+			expect( footerText ).not.toContain( '&#039;' );
+		} finally {
+			await requestUtils.rest( {
+				method: 'POST',
+				path: '/wp/v2/settings',
+				data: { title: originalTitle },
+			} );
+		}
+	} );
+
+	test( 'Carousel scopes direct columns, standalone Pullquote loads styles, and query-param nav links differentiate active tabs', async ( { page, requestUtils } ) => {
+		const content = [
+			'<!-- wp:group {"className":"learnschool-teachers-carousel"} -->',
+			'<div class="wp-block-group learnschool-teachers-carousel">',
+			'<!-- wp:columns {"className":"learnschool-teachers-track"} -->',
+			'<div class="wp-block-columns learnschool-teachers-track">',
+			'<!-- wp:column --><div class="wp-block-column"><!-- wp:columns --><div class="wp-block-columns"><!-- wp:column --><div class="wp-block-column"><p>Inner Column A</p></div><!-- /wp:column --><!-- wp:column --><div class="wp-block-column"><p>Inner Column B</p></div><!-- /wp:column --></div><!-- /wp:columns --><p>Teacher One</p></div><!-- /wp:column -->',
+			'<!-- wp:column --><div class="wp-block-column"><p>Teacher Two</p></div><!-- /wp:column -->',
+			'</div><!-- /wp:columns -->',
+			'</div><!-- /wp:group -->',
+			'<!-- wp:pullquote --><figure class="wp-block-pullquote"><blockquote><p>Independent pullquote test</p><cite>Tester</cite></blockquote></figure><!-- /wp:pullquote -->',
+			'<!-- wp:navigation {"overlayMenu":"never"} -->',
+			'<!-- wp:navigation-link {"label":"STEM Track","url":"https://development.test/e2e-regression-check/?track=stem","kind":"custom"} /-->',
+			'<!-- wp:navigation-link {"label":"Arts Track","url":"https://development.test/e2e-regression-check/?track=arts","kind":"custom"} /-->',
+			'<!-- /wp:navigation -->',
+		].join( '\n' );
+
+		const testPage = await requestUtils.rest( {
+			method: 'POST',
+			path: '/wp/v2/pages',
+			data: {
+				title: 'E2E Regression Check',
+				slug: 'e2e-regression-check',
+				content,
+				status: 'publish',
+			},
+		} );
+
+		try {
+			const pageUrl = new URL( testPage.link );
+			pageUrl.searchParams.set( 'track', 'stem' );
+			const res = await page.goto( pageUrl.toString() );
+			expect( res.status() ).toBe( 200 );
+
+			// Only the 2 direct column slides are tagged, excluding the 2 nested inner columns.
+			await expect( page.locator( '.learnschool-teachers-track [data-slide-slot]' ) ).toHaveCount( 2 );
+
+			// Standalone core/pullquote receives theme radius without core/quote present on page.
+			const pullquoteRadius = await page.locator( '.wp-block-pullquote' ).evaluate(
+				( el ) => window.getComputedStyle( el ).borderRadius
+			);
+			expect( pullquoteRadius ).toBe( '28px' );
+
+			// Query-string nav link marks matching track active and leaves sibling track inactive.
+			const stemCurrent = await page.getByRole( 'link', { name: 'STEM Track' } ).getAttribute( 'aria-current' );
+			const artsCurrent = await page.getByRole( 'link', { name: 'Arts Track' } ).getAttribute( 'aria-current' );
+			expect( stemCurrent ).toBe( 'page' );
+			expect( artsCurrent ).toBeNull();
+		} finally {
+			await requestUtils.rest( {
+				method: 'DELETE',
+				path: `/wp/v2/pages/${ testPage.id }?force=true`,
+			} );
+		}
+	} );
+
 } );
