@@ -32,9 +32,45 @@ test.describe( 'Interactive Navigation & Accessibility (a11y)', () => {
 			await expect( hamburger ).not.toBeVisible();
 		}
 
-		// Desktop navigation container should be visible
-		const navContainer = page.locator( '.wp-block-navigation' ).first();
+		// Desktop navigation container should be visible with realistic school links (no anchors or test menu)
+		const navContainer = page.locator( 'header .wp-block-navigation' ).first();
 		await expect( navContainer ).toBeVisible();
+		for ( const label of [ 'Home', 'About Us', 'Programs', 'Admissions', 'News', 'Contact' ] ) {
+			await expect( navContainer ).toContainText( label );
+		}
+		await expect( navContainer ).not.toContainText( 'Menu Description' );
+
+		const headerHrefs = await page.locator( 'header a[href]' ).evaluateAll( ( links ) =>
+			links.map( ( a ) => a.getAttribute( 'href' ) || '' )
+		);
+		for ( const href of headerHrefs ) {
+			expect( href ).not.toContain( '/#' );
+		}
+
+		const footer = page.locator( 'footer.wp-block-template-part' ).first();
+		await expect( footer ).toBeVisible();
+		for ( const heading of [ 'Explore', 'Admissions', 'Connect' ] ) {
+			await expect( footer ).toContainText( heading );
+		}
+		const footerHrefs = await footer.locator( 'a[href]' ).evaluateAll( ( links ) =>
+			links.map( ( a ) => a.getAttribute( 'href' ) || '' )
+		);
+		for ( const href of footerHrefs ) {
+			expect( href ).not.toContain( '/#' );
+		}
+
+		const aboutRes = await page.goto( '/about/' );
+		expect( aboutRes.status() ).toBe( 200 );
+		await expect(
+			page.locator( 'header .wp-block-navigation a[aria-current="page"]' )
+		).toContainText( 'About Us' );
+
+		const newsRes = await page.goto( '/news/' );
+		expect( newsRes.status() ).toBe( 200 );
+		await expect( page.locator( 'main h1' ).first() ).toContainText( 'News' );
+		await expect(
+			page.locator( 'header .wp-block-navigation a[aria-current="page"]' )
+		).toContainText( 'News' );
 	} );
 
 	test( 'Mobile navigation toggles drawer open and closes via Escape and close button', async ( { page } ) => {

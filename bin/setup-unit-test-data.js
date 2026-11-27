@@ -201,31 +201,31 @@ if ( $menu && class_exists( 'WP_Classic_To_Block_Menu_Converter' ) ) {
 		$nav_posts = get_posts(
 			array(
 				'post_type'      => 'wp_navigation',
-				'post_status'    => 'publish',
+				'name'           => 'testing-menu',
+				'post_status'    => array( 'publish', 'draft', 'private' ),
 				'posts_per_page' => 1,
-				'orderby'        => 'date',
-				'order'          => 'DESC',
 			)
 		);
 		if ( ! empty( $nav_posts ) ) {
 			wp_update_post(
 				array(
 					'ID'           => $nav_posts[0]->ID,
+					'post_status'  => 'publish',
 					'post_content' => wp_slash( $blocks ),
 				)
 			);
-			echo 'Updated wp_navigation #' . $nav_posts[0]->ID . " from Testing Menu.\\n";
+			echo 'Updated wp_navigation #' . $nav_posts[0]->ID . " (testing-menu).\\n";
 		} else {
 			$new_id = wp_insert_post(
 				array(
 					'post_type'    => 'wp_navigation',
 					'post_status'  => 'publish',
-					'post_title'   => 'Navigation',
-					'post_name'    => 'navigation',
+					'post_title'   => 'Testing Menu',
+					'post_name'    => 'testing-menu',
 					'post_content' => wp_slash( $blocks ),
 				)
 			);
-			echo 'Created wp_navigation #' . $new_id . " from Testing Menu.\\n";
+			echo 'Created wp_navigation #' . $new_id . " (testing-menu).\\n";
 		}
 	}
 }

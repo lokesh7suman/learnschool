@@ -14,57 +14,77 @@ async function assertNoHorizontalOverflow( page ) {
 }
 
 test.describe( 'Theme Unit Test Suite', () => {
-	test( 'Testing Menu renders multi-level dropdowns cleanly on desktop and caps deep nesting indentation on mobile', async ( { page } ) => {
-		await page.setViewportSize( { width: 1280, height: 800 } );
-		const res = await page.goto( '/' );
-		expect( res.status() ).toBe( 200 );
+	test( 'Testing Menu renders multi-level dropdowns cleanly on desktop and caps deep nesting indentation on mobile', async ( { page, requestUtils } ) => {
+		const navMenus = await requestUtils.rest( { path: '/wp/v2/navigation?slug=testing-menu' } );
+		expect( navMenus.length ).toBeGreaterThan( 0 );
 
-		const desktopNav = page.locator( 'header nav.wp-block-navigation' ).first();
-		await expect( desktopNav ).toBeVisible();
-		await expect( desktopNav ).toContainText( 'Depth' );
-		await expect( desktopNav ).toContainText( 'Menu Description' );
-		await assertNoHorizontalOverflow( page );
+		const testPage = await requestUtils.rest( {
+			method: 'POST',
+			path: '/wp/v2/pages',
+			data: {
+				title: 'E2E Testing Menu',
+				content: `<!-- wp:navigation {"ref":${ navMenus[ 0 ].id },"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"}} /-->`,
+				status: 'publish',
+			},
+		} );
 
-		// Hovering/focusing "Depth" on desktop reveals Level 01.
-		const depthItem = desktopNav.locator( 'li.wp-block-navigation-item', { hasText: 'Depth' } ).first();
-		await depthItem.hover();
-		await expect( depthItem.getByRole( 'link', { name: 'Level 01', exact: true } ) ).toBeVisible();
+		try {
+			await page.setViewportSize( { width: 1280, height: 800 } );
+			const res = await page.goto( testPage.link );
+			expect( res.status() ).toBe( 200 );
 
-		// Mobile drawer: expand 10-level deep menu and confirm labels stay readable without horizontal overflow.
-		await page.setViewportSize( { width: 390, height: 844 } );
-		await page.goto( '/' );
-		const openBtn = page.locator( 'header .wp-block-navigation__responsive-container-open' ).first();
-		await openBtn.click();
+			const desktopNav = page.locator( 'main nav.wp-block-navigation' ).first();
+			await expect( desktopNav ).toBeVisible();
+			await expect( desktopNav ).toContainText( 'Depth' );
+			await expect( desktopNav ).toContainText( 'Menu Description' );
+			await assertNoHorizontalOverflow( page );
 
-		const drawer = page.locator( 'header .wp-block-navigation__responsive-container.is-menu-open' ).first();
-		await expect( drawer ).toBeVisible();
+			// Hovering/focusing "Depth" on desktop reveals Level 01.
+			const depthItem = desktopNav.locator( 'li.wp-block-navigation-item', { hasText: 'Depth' } ).first();
+			await depthItem.hover();
+			await expect( depthItem.getByRole( 'link', { name: 'Level 01', exact: true } ) ).toBeVisible();
 
-		const depthToggle = drawer.getByRole( 'button', { name: 'Depth submenu' } );
-		await expect( depthToggle ).toHaveAttribute( 'aria-expanded', 'false' );
+			// Mobile drawer: expand 10-level deep menu and confirm labels stay readable without horizontal overflow.
+			await page.setViewportSize( { width: 390, height: 844 } );
+			await page.goto( testPage.link );
+			const openBtn = page.locator( 'main .wp-block-navigation__responsive-container-open' ).first();
+			await openBtn.click();
 
-		for ( const label of [
-			'Depth',
-			'Level 01',
-			'Level 02',
-			'Level 03',
-			'Level 04',
-			'Level 05',
-			'Level 06',
-			'Level 07',
-			'Level 08',
-			'Level 09',
-		] ) {
-			await drawer.getByRole( 'link', { name: label, exact: true } ).click();
+			const drawer = page.locator( 'main .wp-block-navigation__responsive-container.is-menu-open' ).first();
+			await expect( drawer ).toBeVisible();
+
+			const depthToggle = drawer.getByRole( 'button', { name: 'Depth submenu' } );
+			await expect( depthToggle ).toHaveAttribute( 'aria-expanded', 'false' );
+
+			for ( const label of [
+				'Depth',
+				'Level 01',
+				'Level 02',
+				'Level 03',
+				'Level 04',
+				'Level 05',
+				'Level 06',
+				'Level 07',
+				'Level 08',
+				'Level 09',
+			] ) {
+				await drawer.getByRole( 'link', { name: label, exact: true } ).click();
+			}
+
+			await expect( depthToggle ).toHaveAttribute( 'aria-expanded', 'true' );
+			const level10Link = drawer.getByRole( 'link', { name: 'Level 10', exact: true } );
+			await expect( level10Link ).toBeVisible();
+
+			const level10Box = await level10Link.boundingBox();
+			expect( level10Box ).not.toBeNull();
+			expect( level10Box.width ).toBeGreaterThanOrEqual( 120 );
+			await assertNoHorizontalOverflow( page );
+		} finally {
+			await requestUtils.rest( {
+				method: 'DELETE',
+				path: `/wp/v2/pages/${ testPage.id }?force=true`,
+			} );
 		}
-
-		await expect( depthToggle ).toHaveAttribute( 'aria-expanded', 'true' );
-		const level10Link = drawer.getByRole( 'link', { name: 'Level 10', exact: true } );
-		await expect( level10Link ).toBeVisible();
-
-		const level10Box = await level10Link.boundingBox();
-		expect( level10Box ).not.toBeNull();
-		expect( level10Box.width ).toBeGreaterThanOrEqual( 120 );
-		await assertNoHorizontalOverflow( page );
 	} );
 
 	test( 'Embedded core/navigation with core/page-list outputs valid flat ul > li structure', async ( { page } ) => {

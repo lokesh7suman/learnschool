@@ -127,10 +127,13 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 				const items = [ ...document.querySelectorAll( '#blog ul.wp-block-post-template > li' ) ];
 				return items.map( ( li ) => {
 					const card = li.querySelector( '.is-style-learnschool-card' ) || li;
+					const body = card.querySelector( ':scope > .wp-block-group > .wp-block-group:last-child' );
 					const title = li.querySelector( '.wp-block-post-title' );
 					const readMore = li.querySelector( '.wp-block-read-more' );
 					const excerpt = li.querySelector( '.wp-block-post-excerpt' );
 					const r = card.getBoundingClientRect();
+					const cardStyles = getComputedStyle( card );
+					const innerCardWidth = r.width - ( parseFloat( cardStyles.borderLeftWidth ) || 0 ) - ( parseFloat( cardStyles.borderRightWidth ) || 0 );
 					const tr = title ? title.getBoundingClientRect() : null;
 					const rm = readMore ? readMore.getBoundingClientRect() : null;
 					const ex = excerpt ? excerpt.getBoundingClientRect() : null;
@@ -138,6 +141,8 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 					return {
 						height: Math.round( r.height ),
 						titleTop: tr ? Math.round( tr.top - r.top ) : 0,
+						titleLeft: tr ? Math.round( tr.left - r.left ) : 0,
+						bodyWidthDelta: body ? Math.round( Math.abs( innerCardWidth - body.getBoundingClientRect().width ) ) : 0,
 						readMoreBottom: rm ? Math.round( r.bottom - rm.bottom ) : 0,
 						readMoreGap: rm && ex ? Math.round( rm.top + readMorePaddingTop - ex.bottom ) : 16,
 					};
@@ -146,11 +151,14 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 
 			const heights = homeMetrics.map( ( m ) => m.height );
 			const titleTops = homeMetrics.map( ( m ) => m.titleTop );
+			const titleLefts = homeMetrics.map( ( m ) => m.titleLeft );
 			const readMoreBottoms = homeMetrics.map( ( m ) => m.readMoreBottom );
 			expect( Math.max( ...heights ) - Math.min( ...heights ) ).toBeLessThanOrEqual( 4 );
 			expect( Math.max( ...titleTops ) - Math.min( ...titleTops ) ).toBeLessThanOrEqual( 4 );
+			expect( Math.max( ...titleLefts ) - Math.min( ...titleLefts ) ).toBeLessThanOrEqual( 2 );
 			expect( Math.max( ...readMoreBottoms ) - Math.min( ...readMoreBottoms ) ).toBeLessThanOrEqual( 4 );
 			for ( const metric of homeMetrics ) {
+				expect( metric.bodyWidthDelta ).toBeLessThanOrEqual( 2 );
 				expect( metric.readMoreGap ).toBeGreaterThanOrEqual( 12 );
 			}
 		}
@@ -161,10 +169,13 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 			const items = [ ...document.querySelectorAll( 'ul.wp-block-post-template > li' ) ];
 			return items.map( ( li ) => {
 				const card = li.querySelector( '.is-style-learnschool-card' ) || li;
+				const body = card.querySelector( ':scope > .wp-block-group > .wp-block-group:last-child' );
 				const title = li.querySelector( '.wp-block-post-title' );
 				const readMore = li.querySelector( '.wp-block-read-more' );
 				const hasImg = !! li.querySelector( '.wp-block-post-featured-image' );
 				const r = card.getBoundingClientRect();
+				const cardStyles = getComputedStyle( card );
+				const innerCardWidth = r.width - ( parseFloat( cardStyles.borderLeftWidth ) || 0 ) - ( parseFloat( cardStyles.borderRightWidth ) || 0 );
 				const tr = title ? title.getBoundingClientRect() : null;
 				const rm = readMore ? readMore.getBoundingClientRect() : null;
 				return {
@@ -172,6 +183,8 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 					top: Math.round( r.top ),
 					height: Math.round( r.height ),
 					titleTop: tr ? Math.round( tr.top - r.top ) : 0,
+					titleLeft: tr ? Math.round( tr.left - r.left ) : 0,
+					bodyWidthDelta: body ? Math.round( Math.abs( innerCardWidth - body.getBoundingClientRect().width ) ) : 0,
 					readMoreBottom: rm ? Math.round( r.bottom - rm.bottom ) : 0,
 				};
 			} );
@@ -179,12 +192,16 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 
 		// Compare cards sharing a row (same top coordinate)
 		if ( archiveItems.length >= 2 ) {
+			for ( const item of archiveItems ) {
+				expect( item.bodyWidthDelta ).toBeLessThanOrEqual( 2 );
+			}
 			for ( let i = 0; i + 1 < archiveItems.length; i += 2 ) {
 				const left = archiveItems[ i ];
 				const right = archiveItems[ i + 1 ];
 				if ( Math.abs( left.top - right.top ) <= 2 ) {
 					expect( Math.abs( left.height - right.height ) ).toBeLessThanOrEqual( 4 );
 					expect( Math.abs( left.titleTop - right.titleTop ) ).toBeLessThanOrEqual( 6 );
+					expect( Math.abs( left.titleLeft - right.titleLeft ) ).toBeLessThanOrEqual( 2 );
 					expect( Math.abs( left.readMoreBottom - right.readMoreBottom ) ).toBeLessThanOrEqual( 4 );
 				}
 			}
@@ -339,11 +356,22 @@ test.describe( 'WordPress.org TRT Edge-Case Test Suite', () => {
 			const overflow = document.documentElement.scrollWidth > window.innerWidth;
 			const cards = [ ...document.querySelectorAll( 'ul.wp-block-post-template > li' ) ];
 			const hasReadMore = cards.every( ( li ) => !! li.querySelector( '.wp-block-read-more' ) );
-			return { overflow, count: cards.length, hasReadMore };
+			const maxBodyWidthDelta = cards.reduce( ( max, li ) => {
+				const card = li.querySelector( '.is-style-learnschool-card' ) || li;
+				const body = card.querySelector( ':scope > .wp-block-group > .wp-block-group:last-child' );
+				if ( ! body ) {
+					return max;
+				}
+				const cardStyles = getComputedStyle( card );
+				const innerCardWidth = card.getBoundingClientRect().width - ( parseFloat( cardStyles.borderLeftWidth ) || 0 ) - ( parseFloat( cardStyles.borderRightWidth ) || 0 );
+				return Math.max( max, Math.round( Math.abs( innerCardWidth - body.getBoundingClientRect().width ) ) );
+			}, 0 );
+			return { overflow, count: cards.length, hasReadMore, maxBodyWidthDelta };
 		} );
 		expect( result.overflow ).toBe( false );
 		expect( result.count ).toBeGreaterThan( 0 );
 		expect( result.hasReadMore ).toBe( true );
+		expect( result.maxBodyWidthDelta ).toBeLessThanOrEqual( 2 );
 
 		await page.setViewportSize( { width: 390, height: 844 } );
 		await page.goto( '/?s=Edge+Case' );

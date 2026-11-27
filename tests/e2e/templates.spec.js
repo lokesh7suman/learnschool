@@ -149,6 +149,9 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		const patterns = await requestUtils.rest( { path: '/wp/v2/block-patterns/patterns' } );
 		const homePage = patterns.find( ( p ) => p.name === 'learnschool/page-home' );
 		const aboutPage = patterns.find( ( p ) => p.name === 'learnschool/page-about' );
+		const programsPage = patterns.find( ( p ) => p.name === 'learnschool/page-programs' );
+		const admissionsPage = patterns.find( ( p ) => p.name === 'learnschool/page-admissions' );
+		const newsPage = patterns.find( ( p ) => p.name === 'learnschool/page-news' );
 		const contactPage = patterns.find( ( p ) => p.name === 'learnschool/page-contact' );
 		const postsList = patterns.find( ( p ) => p.name === 'learnschool/query-posts-list' );
 		const postsWithSidebar = patterns.find( ( p ) => p.name === 'learnschool/posts-with-sidebar' );
@@ -156,12 +159,15 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 
 		expect( homePage ).toBeTruthy();
 		expect( aboutPage ).toBeTruthy();
+		expect( programsPage ).toBeTruthy();
+		expect( admissionsPage ).toBeTruthy();
+		expect( newsPage ).toBeTruthy();
 		expect( contactPage ).toBeTruthy();
 		expect( postsList ).toBeTruthy();
 		expect( postsWithSidebar ).toBeTruthy();
 		expect( admissionsSidebar ).toBeTruthy();
 
-		for ( const starterPattern of [ homePage, aboutPage, contactPage ] ) {
+		for ( const starterPattern of [ homePage, aboutPage, programsPage, admissionsPage, newsPage, contactPage ] ) {
 			expect(
 				starterPattern.content,
 				`Starter layout "${ starterPattern.name }" must include an <h1> heading for page-no-title compatibility`
@@ -169,9 +175,10 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 		}
 
 		for ( const pattern of patterns.filter( ( p ) => p.name?.startsWith( 'learnschool/' ) ) ) {
-			expect( pattern.content ).not.toContain( '/#materials' );
-			expect( pattern.content ).not.toContain( '/#faq' );
-			expect( pattern.content ).not.toContain( '/#tuition' );
+			expect(
+				pattern.content,
+				`Pattern "${ pattern.name }" should link to real pages instead of /# section anchors`
+			).not.toMatch( /href="[^"]*\/#/ );
 		}
 
 		const listPage = await requestUtils.rest( {
@@ -265,7 +272,7 @@ test.describe( 'Template & Page Rendering Matrix', () => {
 			}
 
 			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Popular Topics' );
-			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Recent Stories' );
+			await expect( page.locator( '.learnschool-sidebar-rail' ) ).toContainText( 'Recent News' );
 
 			const axeResults = await new AxeBuilder( { page } )
 				.withTags( [ 'wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa' ] )

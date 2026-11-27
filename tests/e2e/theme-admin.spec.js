@@ -81,7 +81,7 @@ test.describe( 'LearnSchool Top-Level Menu, Setup & Companion Plugin Audit', () 
 			await expect( page.getByRole( 'heading', { name: 'Site Setup Guide' } ) ).toBeVisible();
 			await expect( page.locator( '.learnschool-admin-step-item' ) ).toHaveCount( 4 );
 			await expect( page.locator( '.learnschool-admin-swatch' ) ).toHaveCount( 4 );
-			await expect( page.locator( '.learnschool-admin-starter-page' ) ).toHaveCount( 3 );
+			await expect( page.locator( '.learnschool-admin-starter-page' ) ).toHaveCount( 6 );
 			await expect( page.getByRole( 'heading', { name: 'WordPress Launch Settings' } ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'Recommended Companion Plugin' } ) ).toBeVisible();
 			await expect( page.getByRole( 'heading', { name: 'CodeClove School Management System' } ) ).toBeVisible();
