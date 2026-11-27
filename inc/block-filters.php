@@ -23,9 +23,10 @@ if ( ! function_exists( 'learnschool_build_navigation_blocks_from_pages' ) ) :
 	 * @param int                              $parent_id        Parent page ID (0 for top-level).
 	 * @param array<int, array<int, \WP_Post>> $pages_by_parent  Pages grouped by post_parent ID.
 	 * @param bool                             $is_top_level     Whether current depth is top-level.
+	 * @param array<int, true>                 $visited_ids      Visited page IDs to guard against cycles.
 	 * @return array<int, array<string, mixed>> Parsed navigation link/submenu block arrays.
 	 */
-	function learnschool_build_navigation_blocks_from_pages( int $parent_id, array $pages_by_parent, bool $is_top_level = true ): array {
+	function learnschool_build_navigation_blocks_from_pages( int $parent_id, array $pages_by_parent, bool $is_top_level = true, array $visited_ids = array() ): array {
 		if ( empty( $pages_by_parent[ $parent_id ] ) ) {
 			return array();
 		}
@@ -33,16 +34,25 @@ if ( ! function_exists( 'learnschool_build_navigation_blocks_from_pages' ) ) :
 		$blocks = array();
 
 		foreach ( $pages_by_parent[ $parent_id ] as $page ) {
-			$title        = '' !== trim( $page->post_title ) ? $page->post_title : __( '(no title)', 'learnschool' );
-			$permalink    = get_permalink( $page );
-			$url          = is_string( $permalink ) ? $permalink : home_url( '/' );
-			$child_blocks = learnschool_build_navigation_blocks_from_pages( (int) $page->ID, $pages_by_parent, false );
-			$has_children = ! empty( $child_blocks );
+			$page_id = (int) $page->ID;
+			if ( isset( $visited_ids[ $page_id ] ) ) {
+				continue;
+			}
+
+			$next_visited             = $visited_ids;
+			$next_visited[ $page_id ] = true;
+
+			$stripped_title = trim( wp_strip_all_tags( (string) $page->post_title ) );
+			$title          = '' !== $stripped_title ? $stripped_title : __( '(no title)', 'learnschool' );
+			$permalink      = get_permalink( $page );
+			$url            = is_string( $permalink ) ? $permalink : home_url( '/' );
+			$child_blocks   = learnschool_build_navigation_blocks_from_pages( $page_id, $pages_by_parent, false, $next_visited );
+			$has_children   = ! empty( $child_blocks );
 
 			$attrs = array(
-				'label' => wp_strip_all_tags( $title ),
+				'label' => $title,
 				'type'  => 'page',
-				'id'    => (int) $page->ID,
+				'id'    => $page_id,
 				'url'   => $url,
 				'kind'  => 'post-type',
 			);
@@ -158,7 +168,7 @@ if ( ! function_exists( 'learnschool_highlight_active_custom_nav_link' ) ) :
 	 * @return string Modified HTML with current-menu-item and aria-current="page" when active.
 	 */
 	function learnschool_highlight_active_custom_nav_link( string $block_content, array $block ): string {
-		if ( is_admin() || '' === trim( $block_content ) || str_contains( $block_content, 'aria-current=' ) ) {
+		if ( is_admin() || '' === trim( $block_content ) ) {
 			return $block_content;
 		}
 
@@ -188,25 +198,47 @@ if ( ! function_exists( 'learnschool_highlight_active_custom_nav_link' ) ) :
 		$home_path          = wp_parse_url( home_url( '/' ), PHP_URL_PATH );
 		$normalized_home    = is_string( $home_path ) && '' !== $home_path ? trailingslashit( $home_path ) : '/';
 
-		if ( $normalized_link === $normalized_home ) {
-			return $block_content;
-		}
+		$link_query_raw    = wp_parse_url( $raw_url, PHP_URL_QUERY );
+		$current_query_raw = wp_parse_url( $request_uri, PHP_URL_QUERY );
+		if ( is_string( $link_query_raw ) && '' !== $link_query_raw ) {
+			$link_args    = array();
+			$current_args = array();
+			parse_str( $link_query_raw, $link_args );
+			if ( is_string( $current_query_raw ) && '' !== $current_query_raw ) {
+				parse_str( $current_query_raw, $current_args );
+			}
+			ksort( $link_args );
+			ksort( $current_args );
+			if ( $normalized_link !== $normalized_current || $link_args !== $current_args ) {
+				return $block_content;
+			}
+		} else {
+			if ( $normalized_link === $normalized_home ) {
+				return $block_content;
+			}
 
-		$posts_page_id  = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
-		$news_path      = ( $posts_page_id > 0 && function_exists( 'learnschool_get_news_url' ) )
-			? wp_parse_url( learnschool_get_news_url(), PHP_URL_PATH )
-			: '';
-		$is_active_news = is_string( $news_path ) && '' !== $news_path && is_home() && trailingslashit( $news_path ) === $normalized_link;
+			$posts_page_id  = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
+			$news_path      = ( $posts_page_id > 0 && function_exists( 'learnschool_get_news_url' ) )
+				? wp_parse_url( learnschool_get_news_url(), PHP_URL_PATH )
+				: '';
+			$is_active_news = is_string( $news_path ) && '' !== $news_path && is_home() && trailingslashit( $news_path ) === $normalized_link;
 
-		if ( $normalized_link !== $normalized_current && ! $is_active_news ) {
-			return $block_content;
+			if ( $normalized_link !== $normalized_current && ! $is_active_news ) {
+				return $block_content;
+			}
 		}
 
 		$tags = new \WP_HTML_Tag_Processor( $block_content );
 		if ( $tags->next_tag( array( 'tag_name' => 'LI' ) ) ) {
 			$tags->add_class( 'current-menu-item' );
+		} else {
+			$tags = new \WP_HTML_Tag_Processor( $block_content );
 		}
+
 		if ( $tags->next_tag( array( 'tag_name' => 'A' ) ) ) {
+			if ( null !== $tags->get_attribute( 'aria-current' ) ) {
+				return $block_content;
+			}
 			$tags->set_attribute( 'aria-current', 'page' );
 		}
 
@@ -368,8 +400,36 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 		$slide_index = 0;
 		$has_track   = $tags->next_tag( array( 'class_name' => 'learnschool-teachers-track' ) );
 		if ( $has_track ) {
-			while ( $tags->next_tag( array( 'class_name' => 'wp-block-column' ) ) ) {
-				$slide_context = wp_json_encode( array( 'slideIndex' => $slide_index ) );
+			$track_tag        = $tags->get_tag();
+			$track_depth      = 1;
+			$div_depth        = ( 'DIV' === $track_tag ) ? 1 : 0;
+			$target_div_depth = ( 'DIV' === $track_tag ) ? 2 : 1;
+
+			while ( $tags->next_tag( array( 'tag_closers' => 'visit' ) ) ) {
+				$current_tag = $tags->get_tag();
+				$is_closer   = $tags->is_tag_closer();
+				if ( $current_tag === $track_tag ) {
+					$track_depth += $is_closer ? -1 : 1;
+					if ( $track_depth <= 0 ) {
+						break;
+					}
+				}
+				if ( 'DIV' === $current_tag ) {
+					$div_depth += $is_closer ? -1 : 1;
+				}
+
+				if ( $is_closer || 'DIV' !== $current_tag || $target_div_depth !== $div_depth || ! $tags->has_class( 'wp-block-column' ) ) {
+					continue;
+				}
+
+				$existing_context_raw = $tags->get_attribute( 'data-wp-context' );
+				$existing_context     = is_string( $existing_context_raw )
+					? json_decode( $existing_context_raw, true )
+					: array();
+				$slide_context_data   = is_array( $existing_context )
+					? array_merge( $existing_context, array( 'slideIndex' => $slide_index ) )
+					: array( 'slideIndex' => $slide_index );
+				$slide_context        = wp_json_encode( $slide_context_data );
 				if ( is_string( $slide_context ) ) {
 					$tags->set_attribute( 'data-wp-context', $slide_context );
 				}
@@ -395,12 +455,9 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 
 		$annotated_content = $tags->get_updated_html();
 
-		$theme_version = wp_get_theme()->get( 'Version' );
-		$script_path   = get_theme_file_path( 'assets/js/teachers-carousel.js' );
-		$mtime         = is_file( $script_path ) ? filemtime( $script_path ) : false;
-		$version       = defined( 'WP_DEBUG' ) && WP_DEBUG && false !== $mtime
-			? (string) $mtime
-			: ( is_string( $theme_version ) ? $theme_version : '1.0.0' );
+		$version = function_exists( 'learnschool_asset_version' )
+			? learnschool_asset_version( 'assets/js/teachers-carousel.js' )
+			: '1.0.0';
 
 		if ( function_exists( 'wp_enqueue_script_module' ) ) {
 			wp_enqueue_script_module(
@@ -448,9 +505,17 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 		$prev_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>';
 		$next_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>';
 
-		$has_nested_interactive = str_contains( $annotated_content, 'data-wp-interactive' );
-		$placeholder            = '<!--learnschool-teachers-track-slot-->';
-		$shell_body             = $has_nested_interactive ? $placeholder : $annotated_content;
+		$has_nested_interactive = false;
+		$interactive_scan       = new \WP_HTML_Tag_Processor( $annotated_content );
+		while ( $interactive_scan->next_tag() ) {
+			if ( null !== $interactive_scan->get_attribute( 'data-wp-interactive' ) ) {
+				$has_nested_interactive = true;
+				break;
+			}
+		}
+
+		$placeholder = '<!--' . wp_unique_id( 'learnschool-teachers-track-slot-' ) . '-->';
+		$shell_body  = $has_nested_interactive ? $placeholder : $annotated_content;
 
 		$shell = sprintf(
 			'<div class="learnschool-teachers-carousel-shell alignwide" data-wp-interactive="learnschool/teachers" %1$s data-wp-init="callbacks.init" data-wp-bind--data-carousel-ready="context.ready" role="region" aria-roledescription="%2$s" aria-label="%3$s">'
@@ -473,9 +538,14 @@ if ( ! function_exists( 'learnschool_render_teachers_carousel' ) ) :
 			? wp_interactivity_process_directives( $shell )
 			: $shell;
 
-		return $has_nested_interactive
-			? str_replace( $placeholder, $annotated_content, $processed )
-			: $processed;
+		if ( $has_nested_interactive ) {
+			$slot_pos = strpos( $processed, $placeholder );
+			if ( false !== $slot_pos ) {
+				return substr_replace( $processed, $annotated_content, $slot_pos, strlen( $placeholder ) );
+			}
+		}
+
+		return $processed;
 	}
 endif;
 add_filter( 'render_block_core/group', 'learnschool_render_teachers_carousel', 10, 2 );
