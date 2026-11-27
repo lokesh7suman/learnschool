@@ -32,6 +32,8 @@ const patterns = [
 	'languages/*.pot',
 	'languages/*.mo',
 	'languages/*.po',
+	'languages/*.json',
+	'languages/*.l10n.php',
 	'parts/**',
 	'patterns/**',
 	'styles/**',

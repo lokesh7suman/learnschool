@@ -80,7 +80,7 @@ Both bundled font families are licensed under the SIL Open Font License, Version
 
 The following SVG doodles, logo artwork, and theme screenshot were created specifically for LearnSchool by the theme author (codeclove):
 Author: codeclove
-License: GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+License: GNU General Public License v2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
 Copyright: Copyright (C) 2026 codeclove
 
 * `assets/images/site-logo.png` - LearnSchool mascot emblem logo
