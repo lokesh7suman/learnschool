@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-link-sm"} -->
-<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Explore Classroom Spaces', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'Explore Classroom Spaces', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-link-sm"} -->
-<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#faculty' ) ); ?>"><?php echo esc_html__( 'Meet Our Educators', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php echo esc_html__( 'Meet Our Educators', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -116,7 +116,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-link-sm"} -->
-<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'View Literacy Approach', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'View Literacy Approach', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -154,7 +154,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-link-sm"} -->
-<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Explore STEM Activities', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'Explore STEM Activities', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

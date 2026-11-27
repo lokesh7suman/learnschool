@@ -4,8 +4,8 @@
  * Slug: learnschool/query-posts-grid
  * Categories: learnschool/posts
  * Block Types: core/query
- * Description: Standalone two-column blog post grid with pagination and category badges for custom news and journal pages.
- * Keywords: blog, posts, grid, query, news, journal
+ * Description: Standalone two-column news post grid with pagination and category badges for custom school news pages.
+ * Keywords: news, posts, grid, query, articles, blog
  * Viewport Width: 1280
  * Inserter: true
  *

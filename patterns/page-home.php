@@ -5,7 +5,7 @@
  * Categories: learnschool/pages
  * Post Types: page
  * Block Types: core/post-content
- * Description: Focused homepage starter layout combining the playful doodles hero, safety trust strip, interactive features, faculty portrait grid, live blog feed, and tour CTA.
+ * Description: Focused homepage starter layout combining the playful doodles hero, safety trust strip, interactive features, faculty portrait grid, live school news feed, and tour CTA.
  * Keywords: home, homepage, landing, full-page, layout
  * Viewport Width: 1280
  * Inserter: true

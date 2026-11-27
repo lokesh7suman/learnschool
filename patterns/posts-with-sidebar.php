@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Blog Posts with Sidebar
+ * Title: News Posts with Sidebar
  * Slug: learnschool/posts-with-sidebar
  * Categories: learnschool/posts
- * Description: Two-column editorial blog feed paired with a curated right sidebar rail featuring search, topic chips, and recent stories.
- * Keywords: blog, posts, list, sidebar, query, journal, editorial, two-columns
+ * Description: Two-column editorial school news feed paired with a curated right sidebar rail featuring search, topic chips, and recent stories.
+ * Keywords: news, posts, list, sidebar, query, articles, editorial, two-columns, blog
  * Viewport Width: 1280
  * Inserter: true
  *
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-outline"} -->
-<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Explore Programs', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'Explore Programs', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -67,10 +67,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"className":"learnschool-sidebar-rail","style":{"spacing":{"blockGap":"var:preset|spacing|step-4"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group learnschool-sidebar-rail"><!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"24px","width":"1px","style":"solid"},"shadow":"var:preset|shadow|card","spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"borderColor":"border-default","backgroundColor":"surface","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card has-border-color has-border-default-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:24px;box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":2,"fontSize":"medium","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
-<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Search Journal', 'learnschool' ); ?></h2>
+<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Search News', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:search {"label":"<?php echo esc_attr__( 'Search', 'learnschool' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( 'Search articles, guides...', 'learnschool' ); ?>","buttonText":"<?php echo esc_attr__( 'Search', 'learnschool' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
+<!-- wp:search {"label":"<?php echo esc_attr__( 'Search', 'learnschool' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( 'Search news, updates...', 'learnschool' ); ?>","buttonText":"<?php echo esc_attr__( 'Search', 'learnschool' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"is-style-learnschool-soft-card","style":{"border":{"radius":"24px","width":"1px","style":"solid"},"spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"borderColor":"border-default","backgroundColor":"base-subtle","layout":{"type":"constrained"}} -->
@@ -83,7 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"className":"is-style-learnschool-card","style":{"border":{"radius":"24px","width":"1px","style":"solid"},"shadow":"var:preset|shadow|card","spacing":{"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"borderColor":"border-default","backgroundColor":"surface","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-learnschool-card has-border-color has-border-default-border-color has-surface-background-color has-background" style="border-style:solid;border-width:1px;border-radius:24px;box-shadow:var(--wp--preset--shadow--card);padding-top:var(--wp--preset--spacing--step-4);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-4);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:heading {"level":2,"fontSize":"medium","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-2"}}}} -->
-<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Recent Stories', 'learnschool' ); ?></h2>
+<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-2)"><?php echo esc_html__( 'Recent News', 'learnschool' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:latest-posts {"postsToShow":3,"displayPostDate":true} /--></div>

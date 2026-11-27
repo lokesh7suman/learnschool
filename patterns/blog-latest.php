@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Read Our Blog 3-Card Grid
+ * Title: Latest School News 3-Card Grid
  * Slug: learnschool/blog-latest
  * Categories: learnschool/posts, learnschool/features
- * Description: Editorial three-column blog showcase with "Read our blog" script heading, "See All" action link, and dynamic three-column latest posts Query Loop.
- * Keywords: blog, articles, stories, journal, reading, cards, posts, query
+ * Description: Editorial three-column school news showcase with "School news" script heading, "See All" action link, and dynamic three-column latest posts Query Loop.
+ * Keywords: news, announcements, articles, stories, cards, posts, query, blog
  * Viewport Width: 1280
  * Inserter: true
  *
@@ -18,24 +18,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$learnschool_posts_page = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
-$learnschool_blog_url   = home_url( '/#blog' );
-if ( $learnschool_posts_page > 0 ) {
-	$learnschool_permalink = get_permalink( $learnschool_posts_page );
-	if ( is_string( $learnschool_permalink ) ) {
-		$learnschool_blog_url = $learnschool_permalink;
-	}
-}
+$learnschool_news_url = function_exists( 'learnschool_get_news_url' ) ? learnschool_get_news_url() : home_url( '/news/' );
 ?>
 <!-- wp:group {"anchor":"blog","tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-7","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull has-base-background-color has-background" id="blog" style="padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-7);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|step-5"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--step-5)"><!-- wp:heading {"level":2,"fontSize":"xx-large","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html__( 'Read our ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'blog', 'learnschool' ); ?></span></h2>
+<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:0;margin-bottom:0"><?php echo esc_html__( 'School ', 'learnschool' ); ?><span class="learnschool-script has-primary-color"><?php echo esc_html__( 'news', 'learnschool' ); ?></span></h2>
 <!-- /wp:heading -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-link-sm"} -->
-<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $learnschool_blog_url ); ?>"><?php echo esc_html__( 'See All', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-link-sm"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $learnschool_news_url ); ?>"><?php echo esc_html__( 'See All', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -43,7 +36,7 @@ if ( $learnschool_posts_page > 0 ) {
 <!-- wp:query {"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":false},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
 <!-- wp:group {"className":"is-style-learnschool-card","style":{"dimensions":{"minHeight":"100%"},"border":{"radius":"24px"},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"backgroundColor":"base","layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:24px;min-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-learnschool-card has-base-background-color has-background" style="border-radius:24px;min-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10","scale":"cover"} /-->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"},"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
@@ -65,7 +58,7 @@ if ( $learnschool_posts_page > 0 ) {
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph {"align":"center","textColor":"contrast-subtle","fontSize":"medium","style":{"spacing":{"margin":{"top":"var:preset|spacing|step-4","bottom":"var:preset|spacing|step-4"}}}} -->
-<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-4);margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'No school articles published yet. Add your first post to see it featured here.', 'learnschool' ); ?></p>
+<p class="has-text-align-center has-contrast-subtle-color has-text-color has-medium-font-size" style="margin-top:var(--wp--preset--spacing--step-4);margin-bottom:var(--wp--preset--spacing--step-4)"><?php echo esc_html__( 'No school news published yet. Add your first post to see it featured here.', 'learnschool' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query --></section>

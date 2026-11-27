@@ -18,6 +18,8 @@ declare(strict_types=1);
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$learnschool_news_url = function_exists( 'learnschool_get_news_url' ) ? learnschool_get_news_url() : home_url( '/news/' );
 ?>
 <!-- wp:group {"align":"full","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull"><!-- wp:group {"align":"full","className":"learnschool-utility-bar","style":{"spacing":{"padding":{"top":"var:preset|spacing|step-1","bottom":"var:preset|spacing|step-1","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}},"border":{"bottom":{"color":"var:preset|color|border-default","width":"1px"}}},"backgroundColor":"base-subtle","textColor":"contrast-subtle","layout":{"type":"constrained"}} -->
@@ -34,11 +36,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-3"}}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"learnschool-utility-bar__portal","fontSize":"small"} -->
-<p class="has-small-font-size learnschool-utility-bar__portal"><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Programs Overview', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size learnschool-utility-bar__portal"><a href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'Programs Overview', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/#faculty' ) ); ?>"><?php echo esc_html__( 'Staff Directory', 'learnschool' ); ?></a></p>
+<p class="has-small-font-size"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php echo esc_html__( 'Staff Directory', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -52,11 +54,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} /-->
+<!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal"}} -->
+<!-- wp:home-link {"label":"<?php echo esc_attr__( 'Home', 'learnschool' ); ?>"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'About Us', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/about/' ) ); ?>","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Programs', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/programs/' ) ); ?>","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Admissions', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/admissions/' ) ); ?>","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'News', 'learnschool' ); ?>","url":"<?php echo esc_url( $learnschool_news_url ); ?>","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Contact', 'learnschool' ); ?>","url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>","kind":"custom"} /-->
+<!-- /wp:navigation -->
 
 <!-- wp:buttons {"className":"learnschool-header-actions"} -->
 <div class="wp-block-buttons learnschool-header-actions"><!-- wp:button {"className":"is-style-learnschool-pill","backgroundColor":"primary","textColor":"base"} -->
-<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Enroll Now', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-pill"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/admissions/' ) ); ?>"><?php echo esc_html__( 'Enroll Now', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

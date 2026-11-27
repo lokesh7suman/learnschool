@@ -26,19 +26,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
 <ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Admissions Roadmap', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/admissions/' ) ); ?>"><?php echo esc_html__( 'Admissions Roadmap', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Tuition & Financial Aid', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/admissions/' ) ); ?>"><?php echo esc_html__( 'Tuition & Financial Aid', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Programs & Curriculum', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'Programs & Curriculum', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Parent Handbook & FAQ', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/admissions/' ) ); ?>"><?php echo esc_html__( 'Parent Handbook & FAQ', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:group -->
@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-yellow"} -->
-<div class="wp-block-button is-style-learnschool-yellow"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Book a Tour', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-yellow"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php echo esc_html__( 'Book a Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

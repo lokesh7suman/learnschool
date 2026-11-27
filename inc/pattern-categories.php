@@ -67,12 +67,12 @@ if ( ! function_exists( 'learnschool_register_pattern_categories' ) ) :
 
 			'learnschool/pages'          => array(
 				'label'       => _x( 'Pages', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Complete starter layouts for school home, about, and contact pages.', 'learnschool' ),
+				'description' => __( 'Complete starter layouts for school home, about, programs, admissions, news, and contact pages.', 'learnschool' ),
 			),
 
 			'learnschool/posts'          => array(
 				'label'       => _x( 'Posts', 'Block pattern category', 'learnschool' ),
-				'description' => __( 'Blog post grids, list layouts, archive streams, and single-post author cards.', 'learnschool' ),
+				'description' => __( 'School news grids, list layouts, archive streams, and single-post author cards.', 'learnschool' ),
 			),
 
 			'learnschool/pricing'        => array(

@@ -19,23 +19,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$learnschool_posts_page = ( 'page' === get_option( 'show_on_front' ) ) ? absint( get_option( 'page_for_posts' ) ) : 0;
-$learnschool_blog_url   = home_url( '/#blog' );
-if ( $learnschool_posts_page > 0 ) {
-	$learnschool_permalink = get_permalink( $learnschool_posts_page );
-	if ( is_string( $learnschool_permalink ) ) {
-		$learnschool_blog_url = $learnschool_permalink;
-	}
-}
+$learnschool_news_url    = function_exists( 'learnschool_get_news_url' ) ? learnschool_get_news_url() : home_url( '/news/' );
 $learnschool_privacy_url = get_privacy_policy_url();
 if ( '' === $learnschool_privacy_url ) {
-	$learnschool_privacy_url = home_url( '/' );
+	$learnschool_privacy_url = home_url( '/privacy-policy/' );
 }
 ?>
 <!-- wp:group {"align":"full","style":{"border":{"top":{"color":"var:preset|color|border-default","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|step-7","bottom":"var:preset|spacing|step-6","left":"var:preset|spacing|step-4","right":"var:preset|spacing|step-4"}}},"backgroundColor":"base","textColor":"contrast","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-contrast-color has-base-background-color has-text-color has-background" style="border-top-color:var(--wp--preset--color--border-default);border-top-width:1px;padding-top:var(--wp--preset--spacing--step-7);padding-right:var(--wp--preset--spacing--step-4);padding-bottom:var(--wp--preset--spacing--step-6);padding-left:var(--wp--preset--spacing--step-4)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|step-5","left":"var:preset|spacing|step-5"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"30%"} -->
-<div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"28%"} -->
+<div class="wp-block-column" style="flex-basis:28%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|step-2"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":36,"shouldSyncIcon":false} /-->
 
 <!-- wp:site-title {"level":0,"isLink":true,"fontSize":"large"} /--></div>
@@ -55,61 +48,65 @@ if ( '' === $learnschool_privacy_url ) {
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"16%"} -->
-<div class="wp-block-column" style="flex-basis:16%"><!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<div class="wp-block-column" style="flex-basis:16%"><!-- wp:heading {"level":2,"fontSize":"medium","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
+<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Explore', 'learnschool' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
 <ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Home', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php echo esc_html__( 'About Us', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Curriculum', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/programs/' ) ); ?>"><?php echo esc_html__( 'Programs', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#faculty' ) ); ?>"><?php echo esc_html__( 'Faculty', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( $learnschool_news_url ); ?>"><?php echo esc_html__( 'School News', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"16%"} -->
-<div class="wp-block-column" style="flex-basis:16%"><!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<div class="wp-block-column" style="flex-basis:16%"><!-- wp:heading {"level":2,"fontSize":"medium","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
+<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
 <ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Admissions', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/admissions/' ) ); ?>"><?php echo esc_html__( 'How to Apply', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Questions & FAQ', 'learnschool' ); ?></a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Learning Kits', 'learnschool' ); ?></a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li><a href="<?php echo esc_url( $learnschool_blog_url ); ?>"><?php echo esc_html__( 'Our Blog', 'learnschool' ); ?></a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"width":"16%"} -->
-<div class="wp-block-column" style="flex-basis:16%"><!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
-<ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
 <li><a href="<?php echo esc_url( $learnschool_privacy_url ); ?>"><?php echo esc_html__( 'Privacy Policy', 'learnschool' ); ?></a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"18%"} -->
+<div class="wp-block-column" style="flex-basis:18%"><!-- wp:heading {"level":2,"fontSize":"medium","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|step-3"}}}} -->
+<h2 class="wp-block-heading has-medium-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--step-3)"><?php echo esc_html__( 'Connect', 'learnschool' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"fontSize":"small","className":"is-style-learnschool-clean-list"} -->
+<ul class="wp-block-list has-small-font-size is-style-learnschool-clean-list"><!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php echo esc_html__( 'Contact Us', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#programs' ) ); ?>"><?php echo esc_html__( 'Activities', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( 'tel:5550192834' ); ?>"><?php echo esc_html__( 'Call (555) 019-2834', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( home_url( '/#admissions' ) ); ?>"><?php echo esc_html__( 'Support', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( 'mailto:admissions@learnschool.edu' ); ?>"><?php echo esc_html__( 'Email Admissions', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->
