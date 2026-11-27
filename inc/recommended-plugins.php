@@ -27,9 +27,9 @@ if ( ! function_exists( 'learnschool_get_recommended_plugins' ) ) :
 			array(
 				'slug'        => 'codeclove-school-management',
 				'file'        => 'codeclove-school-management/codeclove-school-management.php',
-				'name'        => __( 'CodeClove School Management System', 'learnschool' ),
-				'description' => __( 'Modern, country-aware school management system for student admissions, classes, staff, and daily attendance.', 'learnschool' ),
-				'badge'       => __( 'Optional · Free on WordPress.org', 'learnschool' ),
+				'name'        => esc_html__( 'CodeClove School Management System', 'learnschool' ),
+				'description' => esc_html__( 'Modern, country-aware school management system for student admissions, classes, staff, and daily attendance.', 'learnschool' ),
+				'badge'       => esc_html__( 'Optional · Free on WordPress.org', 'learnschool' ),
 			),
 		);
 

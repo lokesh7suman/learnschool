@@ -158,17 +158,32 @@ if ( ! function_exists( 'learnschool_get_starter_page_definitions' ) ) :
 	 */
 	function learnschool_get_starter_page_definitions(): array {
 		return array(
-			'home'    => array(
+			'home'       => array(
 				'title'   => __( 'Home', 'learnschool' ),
 				'slug'    => 'home',
 				'pattern' => 'learnschool/page-home',
 			),
-			'about'   => array(
+			'about'      => array(
 				'title'   => __( 'About Us', 'learnschool' ),
 				'slug'    => 'about',
 				'pattern' => 'learnschool/page-about',
 			),
-			'contact' => array(
+			'programs'   => array(
+				'title'   => __( 'Programs', 'learnschool' ),
+				'slug'    => 'programs',
+				'pattern' => 'learnschool/page-programs',
+			),
+			'admissions' => array(
+				'title'   => __( 'Admissions', 'learnschool' ),
+				'slug'    => 'admissions',
+				'pattern' => 'learnschool/page-admissions',
+			),
+			'news'       => array(
+				'title'   => __( 'News', 'learnschool' ),
+				'slug'    => 'news',
+				'pattern' => 'learnschool/page-news',
+			),
+			'contact'    => array(
 				'title'   => __( 'Contact', 'learnschool' ),
 				'slug'    => 'contact',
 				'pattern' => 'learnschool/page-contact',
@@ -367,6 +382,21 @@ if ( ! function_exists( 'learnschool_handle_setup_starter_pages' ) ) :
 				}
 				if ( (int) get_option( 'page_on_front' ) !== (int) $home_post->ID ) {
 					update_option( 'page_on_front', (int) $home_post->ID );
+					$has_changes = true;
+				}
+			}
+		}
+
+		if ( $set_reading && ! empty( $created_ids['news'] ) && 'page' === get_option( 'show_on_front' ) ) {
+			$news_post = get_post( $created_ids['news'] );
+			if ( $news_post instanceof \WP_Post && 'draft' === $news_post->post_status ) {
+				wp_publish_post( $news_post->ID );
+				$news_post   = get_post( $news_post->ID );
+				$has_changes = true;
+			}
+			if ( $news_post instanceof \WP_Post && 'publish' === $news_post->post_status ) {
+				if ( (int) get_option( 'page_for_posts' ) !== (int) $news_post->ID ) {
+					update_option( 'page_for_posts', (int) $news_post->ID );
 					$has_changes = true;
 				}
 			}
@@ -745,15 +775,20 @@ if ( ! function_exists( 'learnschool_get_admin_setup_steps' ) ) :
 		}
 
 		$has_static_home = 'page' === get_option( 'show_on_front' ) && (int) get_option( 'page_on_front' ) > 0;
+		$has_posts_page  = $has_static_home && (int) get_option( 'page_for_posts' ) > 0;
 		$pages_status    = sprintf(
 			/* translators: 1: Created starter pages count, 2: Total starter pages count. */
 			__( '%1$d of %2$d created', 'learnschool' ),
 			$created_starters,
 			$total_starters
 		);
-		$pages_status .= $has_static_home
-			? ' · ' . __( 'Static Home active', 'learnschool' )
-			: ' · ' . __( 'Front Page template active', 'learnschool' );
+		if ( $has_posts_page ) {
+			$pages_status .= ' · ' . __( 'Static Home & News active', 'learnschool' );
+		} elseif ( $has_static_home ) {
+			$pages_status .= ' · ' . __( 'Static Home active', 'learnschool' );
+		} else {
+			$pages_status .= ' · ' . __( 'Front Page template active', 'learnschool' );
+		}
 
 		$nav_counts    = wp_count_posts( 'wp_navigation' );
 		$has_nav_menus = isset( $nav_counts->publish ) && (int) $nav_counts->publish > 0;
@@ -933,7 +968,7 @@ if ( ! function_exists( 'learnschool_render_admin_settings_panel' ) ) :
 		$shortcuts = array(
 			array(
 				'label' => __( 'Reading Settings', 'learnschool' ),
-				'hint'  => __( 'Static homepage & blog page', 'learnschool' ),
+				'hint'  => __( 'Static homepage & news page', 'learnschool' ),
 				'url'   => admin_url( 'options-reading.php' ),
 			),
 			array(
@@ -1164,23 +1199,24 @@ if ( ! function_exists( 'learnschool_render_welcome_page' ) ) :
 												<?php endif; ?>
 											<?php endforeach; ?>
 										</div>
-											<?php if ( $can_publish && ( $missing_starters > 0 || ( current_user_can( 'manage_options' ) && 'page' !== get_option( 'show_on_front' ) ) ) ) : ?>
+											<?php $needs_reading_setup = current_user_can( 'manage_options' ) && ( 'page' !== get_option( 'show_on_front' ) || (int) get_option( 'page_for_posts' ) <= 0 ); ?>
+											<?php if ( $can_publish && ( $missing_starters > 0 || $needs_reading_setup ) ) : ?>
 										<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="learnschool-admin-starter-bulk">
 											<input type="hidden" name="action" value="learnschool_setup_starter_pages" />
 												<?php wp_nonce_field( 'learnschool_setup_starter_pages' ); ?>
 												<?php if ( 0 === $missing_starters ) : ?>
 											<input type="hidden" name="set_static_reading" value="1" />
 											<button type="submit" class="button button-primary button-compact">
-													<?php echo esc_html__( 'Set Home as Static Front Page', 'learnschool' ); ?>
+													<?php echo esc_html__( 'Set Static Home & News Pages', 'learnschool' ); ?>
 											</button>
 											<?php else : ?>
 											<button type="submit" class="button button-primary button-compact">
 												<?php echo esc_html__( 'Create All Missing Pages', 'learnschool' ); ?>
 											</button>
-												<?php if ( current_user_can( 'manage_options' ) && 'page' !== get_option( 'show_on_front' ) ) : ?>
+												<?php if ( $needs_reading_setup ) : ?>
 												<label class="learnschool-admin-checkbox">
 													<input type="checkbox" name="set_static_reading" value="1" />
-													<span><?php echo esc_html__( 'Set Home as Static Front Page', 'learnschool' ); ?></span>
+													<span><?php echo esc_html__( 'Set Static Home & News Pages', 'learnschool' ); ?></span>
 												</label>
 												<?php endif; ?>
 											<?php endif; ?>
