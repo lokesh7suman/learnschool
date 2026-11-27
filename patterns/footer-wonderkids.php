@@ -106,7 +106,7 @@ if ( '' === $learnschool_privacy_url ) {
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="<?php echo esc_url( 'mailto:admissions@learnschool.edu' ); ?>"><?php echo esc_html__( 'Email Admissions', 'learnschool' ); ?></a></li>
+<li><a href="<?php echo esc_url( 'mailto:admissions@example.org' ); ?>"><?php echo esc_html__( 'Email Admissions', 'learnschool' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>
 <!-- /wp:column -->

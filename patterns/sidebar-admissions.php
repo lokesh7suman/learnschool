@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small","textColor":"primary","style":{"typography":{"fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p class="has-primary-color has-text-color has-small-font-size" style="margin-top:0;margin-bottom:0;font-weight:600"><a href="<?php echo esc_url( 'mailto:admissions@learnschool.edu' ); ?>"><?php echo esc_html__( 'admissions@learnschool.edu', 'learnschool' ); ?></a></p>
+<p class="has-primary-color has-text-color has-small-font-size" style="margin-top:0;margin-bottom:0;font-weight:600"><a href="<?php echo esc_url( 'mailto:admissions@example.org' ); ?>"><?php echo esc_html__( 'admissions@example.org', 'learnschool' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

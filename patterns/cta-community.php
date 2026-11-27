@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:buttons {"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-learnschool-yellow"} -->
-<div class="wp-block-button is-style-learnschool-yellow"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:admissions@learnschool.edu' ); ?>"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></div>
+<div class="wp-block-button is-style-learnschool-yellow"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( 'mailto:admissions@example.org' ); ?>"><?php echo esc_html__( 'Schedule a Tour', 'learnschool' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
