@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-27T05:03:57+00:00\n"
+"POT-Creation-Date: 2026-11-27T09:05:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnschool\n"
@@ -17,8 +17,7 @@ msgstr ""
 #. Theme Name of the theme
 #: style.css
 #: inc/site-logo.php:36
-#: inc/theme-admin.php:44
-#: inc/theme-admin.php:45
+#: inc/theme-admin.php:30
 #: patterns/cta-community.php:32
 msgid "LearnSchool"
 msgstr ""
@@ -30,7 +29,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress `theme.json` v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 6 full-page starter layouts for Home, About Us, Programs, Admissions, News, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests."
+msgid "LearnSchool is a clean, playful, and accessible Full Site Editing (FSE) block theme designed for schools, early learning centers, academies, and educational institutions. Built with modern WordPress theme.json v3 standards, it features custom block templates, template parts, fluid typography, and responsive spacing tokens that let educators and administrators customize their entire site without writing code. To speed up site setup, the theme includes 33 modular section patterns alongside 6 full-page starter layouts for Home, About Us, Programs, Admissions, News, and Contact pages. It also provides custom block styles, 3 Global Style Variations—Coral Playground, Pastel Nursery, and Sunshine Playful—and privacy-first, self-hosted WOFF2 fonts with zero external CDN requests."
 msgstr ""
 
 #. Author of the theme
@@ -285,154 +284,58 @@ msgstr ""
 msgid "Parent reviews, student stories, and quote showcases."
 msgstr ""
 
-#: inc/recommended-plugins.php:30
-msgid "CodeClove School Management System"
-msgstr ""
-
-#: inc/recommended-plugins.php:31
-msgid "Modern, country-aware school management system for student admissions, classes, staff, and daily attendance."
-msgstr ""
-
-#: inc/recommended-plugins.php:32
-msgid "Optional · Free on WordPress.org"
-msgstr ""
-
-#: inc/recommended-plugins.php:124
-msgid "Recommended"
-msgstr ""
-
-#: inc/recommended-plugins.php:128
-#: inc/theme-admin.php:896
-#: inc/theme-admin.php:1166
-msgid "Active"
-msgstr ""
-
-#: inc/recommended-plugins.php:131
-msgid "Open Dashboard"
-msgstr ""
-
-#: inc/recommended-plugins.php:134
-#: inc/recommended-plugins.php:399
-#: inc/theme-admin.php:933
-msgid "Manage Plugins"
-msgstr ""
-
-#: inc/recommended-plugins.php:137
-msgid "Installed (Inactive)"
-msgstr ""
-
-#: inc/recommended-plugins.php:143
-msgid "Activate Plugin"
-msgstr ""
-
-#: inc/recommended-plugins.php:144
-msgid "Activating…"
-msgstr ""
-
-#: inc/recommended-plugins.php:151
-msgid "Install Plugin"
-msgstr ""
-
-#: inc/recommended-plugins.php:152
-msgid "Installing…"
-msgstr ""
-
-#: inc/recommended-plugins.php:179
-msgid "View Details"
-msgstr ""
-
-#: inc/recommended-plugins.php:179
-msgid "View on WordPress.org"
-msgstr ""
-
-#: inc/recommended-plugins.php:373
-msgid "LearnSchool Recommended Companion Plugins"
-msgstr ""
-
-#: inc/recommended-plugins.php:377
-msgid "Optional"
-msgstr ""
-
-#: inc/recommended-plugins.php:383
-msgid "Pair LearnSchool with CodeClove School Management System to manage student admissions, classes, staff, and attendance."
-msgstr ""
-
-#: inc/recommended-plugins.php:384
-msgid "Install optional WordPress.org companion plugins from the setup guide to add school management features."
-msgstr ""
-
-#. translators: %s: Plugin name.
-#: inc/recommended-plugins.php:401
-#, php-format
-msgid "%s is now active."
-msgstr ""
-
-#: inc/recommended-plugins.php:407
-msgid "View Setup Guide"
-msgstr ""
-
-#: inc/recommended-plugins.php:411
-#: inc/theme-admin.php:56
-msgid "Setup Guide"
-msgstr ""
-
-#: inc/theme-admin.php:55
+#: inc/theme-admin.php:29
 msgid "LearnSchool Setup"
 msgstr ""
 
-#: inc/theme-admin.php:64
-#: inc/theme-admin.php:65
-#: inc/theme-admin.php:110
-msgid "Site Editor"
-msgstr ""
-
-#: inc/theme-admin.php:72
-#: inc/theme-admin.php:73
-#: inc/theme-admin.php:111
-msgid "Global Styles"
-msgstr ""
-
-#: inc/theme-admin.php:101
+#: inc/theme-admin.php:59
 msgid "FSE Tips"
 msgstr ""
 
-#: inc/theme-admin.php:103
-msgid "LearnSchool renders a fallback mascot logo on the live site until you upload your own School Logo and Site Icon under Design > Identity."
+#: inc/theme-admin.php:61
+msgid "LearnSchool displays a fallback mascot logo on the front end until you upload your own School Logo and Site Icon in WordPress."
 msgstr ""
 
-#: inc/theme-admin.php:104
-msgid "Full-page starter layouts use the Page (No Title) template so WordPress does not output a second H1 heading above the hero. Creating pages from this guide applies that template automatically."
+#: inc/theme-admin.php:62
+msgid "When adding a new page, pick a LearnSchool layout from the pattern modal and assign the Page (No Title) template in the Page sidebar so WordPress does not output a second H1 heading above the hero."
 msgstr ""
 
-#: inc/theme-admin.php:109
-msgid "WordPress Editors"
+#: inc/theme-admin.php:67
+msgid "Quick Links"
 msgstr ""
 
-#: inc/theme-admin.php:112
-#: inc/theme-admin.php:970
-msgid "Reading Settings"
+#: inc/theme-admin.php:68
+msgid "Site Editor"
 msgstr ""
 
-#: inc/theme-admin.php:113
-#: inc/theme-admin.php:1078
+#: inc/theme-admin.php:69
+msgid "Global Styles"
+msgstr ""
+
+#: inc/theme-admin.php:70
+#: inc/theme-admin.php:490
 msgid "View Live Site"
 msgstr ""
 
-#: inc/theme-admin.php:162
+#: inc/theme-admin.php:71
+msgid "Theme Support"
+msgstr ""
+
+#: inc/theme-admin.php:113
 #: patterns/footer-wonderkids.php:57
 #: patterns/header-right-aligned.php:33
 #: patterns/header-two-row.php:58
 msgid "Home"
 msgstr ""
 
-#: inc/theme-admin.php:167
+#: inc/theme-admin.php:114
 #: patterns/footer-wonderkids.php:61
 #: patterns/header-right-aligned.php:34
 #: patterns/header-two-row.php:59
 msgid "About Us"
 msgstr ""
 
-#: inc/theme-admin.php:172
+#: inc/theme-admin.php:115
 #: patterns/footer-newsletter.php:48
 #: patterns/footer-wonderkids.php:65
 #: patterns/header-right-aligned.php:35
@@ -441,7 +344,7 @@ msgstr ""
 msgid "Programs"
 msgstr ""
 
-#: inc/theme-admin.php:177
+#: inc/theme-admin.php:116
 #: patterns/footer-newsletter.php:81
 #: patterns/footer-newsletter.php:138
 #: patterns/footer-wonderkids.php:76
@@ -451,233 +354,188 @@ msgstr ""
 msgid "Admissions"
 msgstr ""
 
-#: inc/theme-admin.php:182
+#: inc/theme-admin.php:117
 #: patterns/header-right-aligned.php:37
 #: patterns/header-two-row.php:62
 #: patterns/page-news.php:26
 msgid "News"
 msgstr ""
 
-#: inc/theme-admin.php:187
+#: inc/theme-admin.php:118
 #: patterns/footer-newsletter.php:138
 #: patterns/header-right-aligned.php:38
 #: patterns/header-two-row.php:63
 msgid "Contact"
 msgstr ""
 
-#: inc/theme-admin.php:314
-msgid "Sorry, you are not allowed to create pages on this site."
-msgstr ""
-
-#: inc/theme-admin.php:352
-msgid "Sorry, you are not allowed to publish pages on this site."
-msgstr ""
-
-#: inc/theme-admin.php:424
-msgid "Sorry, you are not allowed to customize theme styles."
-msgstr ""
-
-#: inc/theme-admin.php:644
+#: inc/theme-admin.php:192
 msgid "Default"
 msgstr ""
 
-#: inc/theme-admin.php:752
+#: inc/theme-admin.php:300
 msgid "Logo & icon set"
 msgstr ""
 
-#: inc/theme-admin.php:754
+#: inc/theme-admin.php:302
 msgid "Logo set · Add site icon"
 msgstr ""
 
-#: inc/theme-admin.php:756
+#: inc/theme-admin.php:304
 msgid "Using fallback mascot"
 msgstr ""
 
-#: inc/theme-admin.php:761
+#: inc/theme-admin.php:307
 msgid "Custom Palette"
 msgstr ""
 
-#. translators: 1: Created starter pages count, 2: Total starter pages count.
-#: inc/theme-admin.php:781
-#, php-format
-msgid "%1$d of %2$d created"
-msgstr ""
-
-#: inc/theme-admin.php:786
-msgid "Static Home & News active"
-msgstr ""
-
-#: inc/theme-admin.php:788
-msgid "Static Home active"
-msgstr ""
-
-#: inc/theme-admin.php:790
-msgid "Front Page template active"
-msgstr ""
-
-#: inc/theme-admin.php:799
+#: inc/theme-admin.php:322
 msgid "Site Identity, Logo & Icon"
 msgstr ""
 
-#: inc/theme-admin.php:800
-msgid "Set your school name, tagline, custom logo, and 512×512 browser icon."
+#: inc/theme-admin.php:323
+msgid "Set your school name, tagline, custom logo, and 512×512 browser icon inside WordPress."
 msgstr ""
 
-#: inc/theme-admin.php:803
+#: inc/theme-admin.php:326
 msgid "Edit Identity"
 msgstr ""
 
-#: inc/theme-admin.php:811
+#: inc/theme-admin.php:334
 msgid "Colors & Typography"
 msgstr ""
 
-#: inc/theme-admin.php:812
-msgid "Click any palette below to apply it immediately across every page and pattern."
+#: inc/theme-admin.php:335
+msgid "Preview the bundled color palettes below, then switch variations or customize fonts and spacing in Global Styles."
 msgstr ""
 
-#: inc/theme-admin.php:815
-msgid "Customize in Global Styles"
+#: inc/theme-admin.php:338
+msgid "Open Global Styles"
 msgstr ""
 
-#: inc/theme-admin.php:823
-msgid "Create Starter School Pages"
+#: inc/theme-admin.php:346
+msgid "Build School Pages with Starter Layouts"
 msgstr ""
 
-#: inc/theme-admin.php:824
-msgid "Your homepage already runs via Front Page template. Create Page (No Title) layouts below when you want editable menu pages."
+#: inc/theme-admin.php:347
+msgid "Your homepage works out of the box via the Front Page template. Add a new page in WordPress, pick any starter layout from the pattern modal, and switch the template to Page (No Title)."
 msgstr ""
 
-#: inc/theme-admin.php:827
+#. translators: %d: Number of included full-page starter layouts.
+#: inc/theme-admin.php:350
+#, php-format
+msgid "%d page layouts included"
+msgstr ""
+
+#: inc/theme-admin.php:354
+msgid "Add New Page"
+msgstr ""
+
+#: inc/theme-admin.php:358
 msgid "All Pages"
 msgstr ""
 
-#: inc/theme-admin.php:835
+#: inc/theme-admin.php:362
+msgid "Browse Patterns"
+msgstr ""
+
+#: inc/theme-admin.php:371
 msgid "Navigation, Header CTA & Footer"
 msgstr ""
 
-#: inc/theme-admin.php:836
-msgid "Arrange menu links, update the Enroll Now button, and customize footer campus details."
+#: inc/theme-admin.php:372
+msgid "Arrange menu links, update the Enroll Now button, and customize footer campus details in the Site Editor."
 msgstr ""
 
-#: inc/theme-admin.php:837
+#: inc/theme-admin.php:373
 msgid "Menu saved"
 msgstr ""
 
-#: inc/theme-admin.php:837
+#: inc/theme-admin.php:373
 msgid "Using page list"
 msgstr ""
 
-#: inc/theme-admin.php:839
+#: inc/theme-admin.php:375
 msgid "Manage Navigation"
 msgstr ""
 
-#: inc/theme-admin.php:843
+#: inc/theme-admin.php:379
 msgid "Edit Header"
 msgstr ""
 
-#: inc/theme-admin.php:847
+#: inc/theme-admin.php:383
 msgid "Edit Footer"
 msgstr ""
 
-#: inc/theme-admin.php:877
-msgid "Recommended Companion Plugin"
+#: inc/theme-admin.php:405
+msgid "Page Templates"
 msgstr ""
 
-#: inc/theme-admin.php:878
-msgid "Optional admissions, classes, and attendance features. LearnSchool works fully without it."
+#: inc/theme-admin.php:406
+msgid "Front Page, Page (No Title), Sidebar, Full Width & Landing"
 msgstr ""
 
-#: inc/theme-admin.php:917
-msgid "Automatic plugin installation is disabled in this environment. Install manually or ask your site administrator."
+#: inc/theme-admin.php:410
+msgid "Block Patterns"
 msgstr ""
 
-#: inc/theme-admin.php:971
-msgid "Static homepage & news page"
+#: inc/theme-admin.php:411
+msgid "33 modular sections and 6 full-page school layouts"
 msgstr ""
 
-#: inc/theme-admin.php:975
-msgid "Permalinks"
+#: inc/theme-admin.php:415
+msgid "Reading Settings"
 msgstr ""
 
-#: inc/theme-admin.php:976
-msgid "Clean post and page URLs"
+#: inc/theme-admin.php:416
+msgid "Optional static homepage and posts page assignment"
 msgstr ""
 
-#: inc/theme-admin.php:980
-msgid "General Settings"
+#: inc/theme-admin.php:424
+msgid "Included in LearnSchool"
 msgstr ""
 
-#: inc/theme-admin.php:981
-msgid "Timezone, date & language"
+#: inc/theme-admin.php:425
+msgid "Jump straight to templates and patterns in the Site Editor."
 msgstr ""
 
-#: inc/theme-admin.php:985
-msgid "Site Health"
-msgstr ""
-
-#: inc/theme-admin.php:986
-msgid "Performance & security checks"
-msgstr ""
-
-#: inc/theme-admin.php:993
-msgid "WordPress Launch Settings"
-msgstr ""
-
-#: inc/theme-admin.php:1047
-msgid "Palette applied to Global Styles."
-msgstr ""
-
-#: inc/theme-admin.php:1049
-msgid "Starter school pages are ready."
-msgstr ""
-
-#: inc/theme-admin.php:1061
+#: inc/theme-admin.php:473
 msgid "Welcome to LearnSchool"
 msgstr ""
 
 #. translators: %s: Current theme version number.
-#: inc/theme-admin.php:1066
+#: inc/theme-admin.php:478
 #, php-format
 msgid "Version %s · Full Site Editing block theme for schools and academies."
 msgstr ""
 
-#: inc/theme-admin.php:1075
+#: inc/theme-admin.php:487
 msgid "Open Site Editor"
 msgstr ""
 
-#: inc/theme-admin.php:1098
+#: inc/theme-admin.php:505
 msgid "Site Setup Guide"
 msgstr ""
 
-#: inc/theme-admin.php:1099
-msgid "Complete these steps in order using WordPress Full Site Editing."
+#: inc/theme-admin.php:506
+msgid "Follow these steps to set up your school site using native WordPress Full Site Editing."
 msgstr ""
 
-#. translators: 1: Completed setup steps count, 2: Total setup steps count.
-#: inc/theme-admin.php:1105
+#. translators: %d: Number of setup steps in the guide.
+#: inc/theme-admin.php:512
 #, php-format
-msgid "%1$d of %2$d ready"
+msgid "%d quick steps"
 msgstr ""
 
-#: inc/theme-admin.php:1187
-msgid "Draft"
+#: inc/theme-admin.php:552
+msgid "Active"
 msgstr ""
 
-#: inc/theme-admin.php:1187
-msgid "Edit"
+#: inc/theme-admin.php:561
+msgid "Included starter page layouts"
 msgstr ""
 
-#: inc/theme-admin.php:1210
-#: inc/theme-admin.php:1219
-msgid "Set Static Home & News Pages"
-msgstr ""
-
-#: inc/theme-admin.php:1214
-msgid "Create All Missing Pages"
-msgstr ""
-
-#: inc/theme-admin.php:1244
-msgid "Companion plugin and WordPress settings"
+#: inc/theme-admin.php:587
+msgid "Included templates and patterns"
 msgstr ""
 
 #: patterns/admissions-roadmap.php

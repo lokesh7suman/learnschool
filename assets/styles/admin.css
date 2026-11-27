@@ -1,19 +1,19 @@
 /**
- * Admin Setup Screen Styles (LearnSchool top-level admin menu)
+ * Admin Onboarding Screen Styles (Appearance -> LearnSchool)
  *
  * Aligns natively with WordPress 7.x Design System tokens (--wp-admin-theme-color,
  * 8px card surfaces, and hairline borders).
- * Loaded exclusively on toplevel_page_learnschool.
+ * Loaded exclusively on appearance_page_learnschool.
  */
 
-.toplevel_page_learnschool #wpcontent,
-.toplevel_page_learnschool.auto-fold #wpcontent {
+.appearance_page_learnschool #wpcontent,
+.appearance_page_learnschool.auto-fold #wpcontent {
 	padding-inline-start: 0;
 }
 
-.toplevel_page_learnschool .notice,
-.toplevel_page_learnschool div.updated,
-.toplevel_page_learnschool div.error {
+.appearance_page_learnschool .notice,
+.appearance_page_learnschool div.updated,
+.appearance_page_learnschool div.error {
 	margin: 16px 24px 0;
 }
 
@@ -110,7 +110,7 @@
 	min-width: 0;
 }
 
-/* ── Native WP 7.x Panel Surface (8px radius, hairline border) ──────── */
+/* ── Native WP Panel Surface (8px radius, hairline border) ────────────── */
 
 .learnschool-admin-panel {
 	background: #fff;
@@ -173,7 +173,7 @@
 	text-decoration: underline;
 }
 
-/* ── Sequential Setup Steps ─────────────────────────────────────────── */
+/* ── Sequential Onboarding Steps ────────────────────────────────────── */
 
 .learnschool-admin-steps {
 	margin: 0;
@@ -206,11 +206,6 @@
 	font-weight: 600;
 	font-variant-numeric: tabular-nums;
 	flex-shrink: 0;
-}
-
-.learnschool-admin-step-item.is-complete .learnschool-admin-step-item__marker {
-	background: #eff9f1;
-	color: #007017;
 }
 
 .learnschool-admin-step-item__body {
@@ -266,24 +261,20 @@
 	color: #007017;
 }
 
-/* ── Global Style Variations Swatches (embedded in Step 2) ──────────── */
+/* ── Global Style Variations Preview Swatches (links to Global Styles) ── */
 
 .learnschool-admin-swatches {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
 	gap: 10px;
-	margin: 0 0 12px;
-}
-
-.learnschool-admin-swatch-form {
-	margin: 0;
-	display: flex;
+	margin: 0 0 14px;
 }
 
 .learnschool-admin-swatch {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+	box-sizing: border-box;
 	width: 100%;
 	padding: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.12);
@@ -293,13 +284,13 @@
 	text-align: start;
 	text-decoration: none;
 	color: #1e1e1e;
-	cursor: pointer;
 	transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .learnschool-admin-swatch:hover {
 	border-color: var(--wp-admin-theme-color, #3858e9);
 	background: rgba(var(--wp-admin-theme-color--rgb, 56, 88, 233), 0.03);
+	color: #1e1e1e;
 }
 
 .learnschool-admin-swatch:focus-visible {
@@ -308,14 +299,7 @@
 	box-shadow: 0 0 0 var(--wp-admin-border-width-focus, 1.5px) var(--wp-admin-theme-color, #3858e9);
 }
 
-.learnschool-admin-swatch:disabled {
-	opacity: 1;
-	cursor: default;
-	color: #1e1e1e;
-}
-
-.learnschool-admin-swatch.is-active,
-.learnschool-admin-swatch.is-active:hover {
+.learnschool-admin-swatch.is-active {
 	border-color: var(--wp-admin-theme-color, #3858e9);
 	background: rgba(var(--wp-admin-theme-color--rgb, 56, 88, 233), 0.05);
 }
@@ -356,202 +340,33 @@
 	color: var(--wp-admin-theme-color, #3858e9);
 }
 
-/* ── One-Click Starter Page Chips (embedded in Step 3) ──────────────── */
+/* ── Read-Only Bundled Page Layout Chips (embedded in Step 3) ────────── */
 
-.learnschool-admin-starter-pages {
+.learnschool-admin-layout-chips {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	margin: 0 0 12px;
+	margin: 0 0 14px;
+	padding: 0;
+	list-style: none;
 }
 
-.learnschool-admin-starter-form {
+.learnschool-admin-layout-chip {
+	display: inline-flex;
+	align-items: center;
+	min-height: 28px;
+	padding: 0 11px;
 	margin: 0;
-}
-
-.learnschool-admin-starter-bulk {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 10px 14px;
-	margin: 0 0 12px;
-}
-
-.learnschool-admin-checkbox {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	font-size: 12.5px;
-	color: #50575e;
-	cursor: pointer;
-}
-
-.learnschool-admin-wrap .learnschool-admin-feedback.notice {
-	margin: 0 0 20px;
-	border-radius: 6px;
-}
-
-.learnschool-admin-starter-page {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	min-height: 32px;
-	padding: 0 12px;
-	border: 1px solid rgba(0, 0, 0, 0.14);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 4px;
 	background: #f6f7f7;
-	color: #1e1e1e;
+	color: #2c3338;
 	font-size: 12.5px;
 	font-weight: 500;
 	line-height: 1.2;
-	text-decoration: none;
-	cursor: pointer;
-	transition: border-color 0.12s ease, background-color 0.12s ease, color 0.12s ease;
 }
 
-.learnschool-admin-starter-page:hover {
-	border-color: var(--wp-admin-theme-color, #3858e9);
-	background: rgba(var(--wp-admin-theme-color--rgb, 56, 88, 233), 0.05);
-	color: var(--wp-admin-theme-color-darker-20, #183ad6);
-}
-
-.learnschool-admin-starter-page:focus-visible {
-	outline: none;
-	border-color: var(--wp-admin-theme-color, #3858e9);
-	box-shadow: 0 0 0 var(--wp-admin-border-width-focus, 1.5px) var(--wp-admin-theme-color, #3858e9);
-}
-
-.learnschool-admin-starter-page.is-created {
-	background: #eff9f1;
-	border-color: rgba(0, 112, 23, 0.25);
-	color: #007017;
-}
-
-.learnschool-admin-starter-page.is-created:hover {
-	background: #e4f5e7;
-	border-color: #007017;
-	color: #005a12;
-}
-
-.learnschool-admin-starter-page small {
-	font-size: 11px;
-	font-weight: 600;
-	color: inherit;
-}
-
-/* ── Side Rail: Companion Plugin ────────────────────────────────────── */
-
-.learnschool-admin-plugin-list {
-	display: flex;
-	flex-direction: column;
-}
-
-.learnschool-admin-plugin-card {
-	display: flex;
-	flex-direction: column;
-	gap: 14px;
-	padding: 16px 20px 20px;
-}
-
-.learnschool-admin-plugin-card + .learnschool-admin-plugin-card {
-	border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.learnschool-admin-plugin-card__top {
-	display: flex;
-	align-items: flex-start;
-	gap: 12px;
-}
-
-.learnschool-admin-plugin-card__icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	border-radius: 6px;
-	background: rgba(var(--wp-admin-theme-color--rgb, 56, 88, 233), 0.08);
-	color: var(--wp-admin-theme-color, #3858e9);
-	flex-shrink: 0;
-}
-
-.learnschool-admin-plugin-card__body {
-	flex: 1 1 auto;
-	min-width: 0;
-}
-
-.learnschool-admin-plugin-card__title {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 6px 8px;
-	margin-bottom: 6px;
-}
-
-.learnschool-admin-plugin-card__title h3 {
-	margin: 0;
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 1.35;
-	color: #1e1e1e;
-}
-
-.learnschool-admin-plugin-card__body p {
-	margin: 0;
-	font-size: 13px;
-	line-height: 1.5;
-	color: #50575e;
-}
-
-.learnschool-admin-plugin-card__actions {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 8px;
-}
-
-.learnschool-admin-status {
-	display: inline-block;
-	padding: 1px 8px;
-	border-radius: 9999px;
-	font-size: 11px;
-	font-weight: 600;
-	line-height: 1.6;
-}
-
-.learnschool-admin-status--not-installed {
-	background: rgba(var(--wp-admin-theme-color--rgb, 56, 88, 233), 0.08);
-	color: var(--wp-admin-theme-color, #3858e9);
-}
-
-.learnschool-admin-status--inactive {
-	background: #fef8ee;
-	color: #996800;
-}
-
-.learnschool-admin-status--active {
-	background: #eff9f1;
-	color: #007017;
-}
-
-.learnschool-admin-plugin-card__note {
-	margin: 8px 0 0;
-	font-size: 12.5px;
-	color: #50575e;
-}
-
-.learnschool-plugin-error {
-	margin: 8px 0 0;
-	font-size: 12.5px;
-	color: #b32d2e;
-}
-
-.learnschool-plugin-action.is-busy {
-	pointer-events: none;
-	opacity: 0.78;
-}
-
-/* ── Side Rail: WordPress Launch Settings Shortcuts ─────────────────── */
+/* ── Side Rail: Support & Theme Resource Links ──────────────────────── */
 
 .learnschool-admin-links {
 	margin: 0;
@@ -569,7 +384,7 @@
 
 .learnschool-admin-links a {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	justify-content: space-between;
 	gap: 12px;
 	padding: 12px 20px;
@@ -586,17 +401,34 @@
 	outline-offset: -2px;
 }
 
-.learnschool-admin-links span {
-	font-size: 13px;
-	font-weight: 500;
-	color: var(--wp-admin-theme-color, #3858e9);
-	white-space: nowrap;
+.learnschool-admin-links__copy {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
 }
 
-.learnschool-admin-links small {
+.learnschool-admin-links__copy strong {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--wp-admin-theme-color, #3858e9);
+}
+
+.learnschool-admin-links__copy small {
 	font-size: 12px;
-	color: #5d5d5d;
-	text-align: end;
+	line-height: 1.4;
+	color: #50575e;
+}
+
+.learnschool-admin-links__icon {
+	font-size: 14px;
+	line-height: 1;
+	color: #50575e;
+	flex-shrink: 0;
+}
+
+.learnschool-admin-links a:hover .learnschool-admin-links__icon {
+	color: var(--wp-admin-theme-color, #3858e9);
 }
 
 /* ── Responsive Breakpoints ─────────────────────────────────────────── */
@@ -617,10 +449,6 @@
 	.learnschool-admin-wrap {
 		margin: 16px auto 32px;
 		padding: 0 16px;
-	}
-
-	.learnschool-admin-starter-page {
-		min-height: 40px;
 	}
 }
 
@@ -646,16 +474,5 @@
 
 	.learnschool-admin-step-item__actions {
 		gap: 10px 16px;
-	}
-
-	.learnschool-admin-plugin-card__actions {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-
-	.learnschool-admin-plugin-card__actions .button {
-		text-align: center;
-		width: 100%;
-		margin-bottom: 0;
 	}
 }
