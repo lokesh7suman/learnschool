@@ -136,6 +136,13 @@
 		flex-grow: 1;
 		height: 100%;
 	}
+
+	/* Prevent constrained flex-column cards from centering narrow children via WP core auto margins */
+	.wp-block-columns .wp-block-column > :where(.wp-block-group.is-layout-constrained:not(.learnschool-sidebar-rail):only-child[class*="is-style-learnschool-card"], .wp-block-group.is-layout-constrained:not(.learnschool-sidebar-rail).is-style-learnschool-soft-card:only-child, .wp-block-group.is-layout-constrained:not(.learnschool-sidebar-rail):only-child:has(.wp-block-buttons)) > :where(:not(.alignleft):not(.alignright):not(.aligncenter):not(.is-resized):not([style*="width"]):not([style*="border-radius:9999px"]):not([style*="border-radius: 9999px"])) {
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
 }
 
 /* Sidebar Rail: Guarantee full column width without constrained shrink-wrap */
