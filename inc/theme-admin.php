@@ -68,7 +68,7 @@ if ( ! function_exists( 'learnschool_register_admin_help' ) ) :
 			'<p><a href="' . esc_url( admin_url( 'site-editor.php' ) ) . '">' . esc_html__( 'Site Editor', 'learnschool' ) . '</a></p>' .
 			'<p><a href="' . esc_url( admin_url( 'site-editor.php?p=%2Fstyles' ) ) . '">' . esc_html__( 'Global Styles', 'learnschool' ) . '</a></p>' .
 			'<p><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'View Live Site', 'learnschool' ) . '</a></p>' .
-			'<p><a href="' . esc_url( 'https://codeclove.com/support-portal/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Theme Support', 'learnschool' ) . '</a></p>'
+			'<p><a href="' . esc_url( 'https://codeclove.com/contact-us/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Theme Support', 'learnschool' ) . '</a></p>'
 		);
 	}
 endif;
